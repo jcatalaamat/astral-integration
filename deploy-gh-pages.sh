@@ -25,7 +25,7 @@ cp -R ../dist/client/* .
 touch .nojekyll
 
 # Make sure CNAME file exists
-echo "proyectosalvaje.com" > CNAME
+echo "astral-integration.com" > CNAME
 
 # Commit and push
 git add -A

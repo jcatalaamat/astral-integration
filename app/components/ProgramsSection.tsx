@@ -404,7 +404,7 @@ export default function ProgramsSection() {
                     
                     <div className="flex justify-center md:justify-start">
                       <a 
-                        href="mailto:info@proyectosalvaje.com" 
+                        href="mailto:info@astral-integration.com" 
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`px-6 py-2 rounded-full inline-flex items-center border ${program.color.border} ${program.color.text} ${program.color.hover} transition-all duration-300`}
@@ -488,7 +488,7 @@ export default function ProgramsSection() {
                     
                     <div className="flex justify-center md:justify-start">
                       <a 
-                        href="mailto:info@proyectosalvaje.com" 
+                        href="mailto:info@astral-integration.com" 
                         target="_blank"
                         rel="noopener noreferrer"
                         className="px-6 py-2 rounded-full inline-flex items-center border border-[#E6D7C4] text-earth-800 hover:bg-[#f6f2eb] transition-all duration-300"
@@ -532,7 +532,7 @@ export default function ProgramsSection() {
                 Ready to walk this path of learning?
               </motion.h3>
               <a 
-                href="mailto:info@proyectosalvaje.com" 
+                href="mailto:info@astral-integration.com" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary-gold px-6 md:px-8 py-2 md:py-3 rounded-full inline-flex items-center shadow-xl transition-all duration-300 transform hover:scale-105 text-sm md:text-base"

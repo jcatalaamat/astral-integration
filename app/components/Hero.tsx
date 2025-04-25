@@ -163,7 +163,7 @@ export default function Hero() {
             className="flex flex-col md:flex-row items-center justify-center space-y-3 md:space-y-0 md:gap-5 mt-8 md:mt-10"
           >
             <a 
-              href="mailto:info@proyectosalvaje.com" 
+              href="mailto:info@astral-integration.com" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="hero-button btn-sacred-invite group relative overflow-hidden w-full md:w-auto border border-earth-500 text-[#3b2f2f] font-semibold px-6 py-3 rounded-full bg-white/70 hover:bg-earth-50"

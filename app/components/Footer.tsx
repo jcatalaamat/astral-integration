@@ -14,7 +14,7 @@ export default function Footer() {
     // Open email client with the subscription information
     const subject = `Newsletter Subscription`;
     const body = `Email: ${email}%0D%0A%0D%0APlease add me to your newsletter list.`;
-    window.open(`mailto:info@proyectosalvaje.com?subject=${encodeURIComponent(subject)}&body=${body}`, '_blank');
+    window.open(`mailto:info@astral-integration.com?subject=${encodeURIComponent(subject)}&body=${body}`, '_blank');
     
     // Reset form and show success message
     setSubscribeStatus('Thanks for subscribing!');
@@ -119,7 +119,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-earth-300 mb-2">
-                <span className="font-medium text-amber-gold">Email:</span> <a href="mailto:info@proyectosalvaje.com" className="hover:text-amber-gold transition-colors duration-200">info@proyectosalvaje.com</a>
+                <span className="font-medium text-amber-gold">Email:</span> <a href="mailto:info@astral-integration.com" className="hover:text-amber-gold transition-colors duration-200">info@astral-integration.com</a>
               </p>
               <p className="text-earth-300">
                 <span className="font-medium text-amber-gold">Location:</span> Mazunte, Oaxaca, Mexico

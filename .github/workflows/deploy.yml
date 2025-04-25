@@ -30,12 +30,12 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Set environment variable
-        run: echo "ONE_SERVER_URL=https://proyectosalvaje.com" > .env
+        run: echo "ONE_SERVER_URL=https://astral-integration.com" > .env
 
       - name: Build
         run: yarn build:web
         env:
-          ONE_SERVER_URL: https://proyectosalvaje.com
+          ONE_SERVER_URL: https://astral-integration.com
 
       - name: Setup Git Identity
         run: |
@@ -63,7 +63,7 @@ jobs:
           touch .nojekyll
 
           # Make sure CNAME file exists
-          echo "proyectosalvaje.com" > CNAME
+          echo "astral-integration.com" > CNAME
 
           # Commit and push
           git add -A

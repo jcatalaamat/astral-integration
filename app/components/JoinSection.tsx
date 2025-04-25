@@ -62,7 +62,7 @@ export default function JoinSection() {
     // Redirect to email instead of form submission
     const subject = `${formData.interest} - Interest from ${formData.name}`;
     const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0AInterest: ${formData.interest}%0D%0A%0D%0A${formData.message}`;
-    window.open(`mailto:info@proyectosalvaje.com?subject=${encodeURIComponent(subject)}&body=${body}`, '_blank');
+    window.open(`mailto:info@astral-integration.com?subject=${encodeURIComponent(subject)}&body=${body}`, '_blank');
     
     // Reset form
     setFormData({
@@ -366,7 +366,7 @@ export default function JoinSection() {
               <h4 className="text-lg font-medium text-earth-900 mb-3 font-serif">Connect With Us</h4>
               <div className="flex space-x-4">
                 <a 
-                  href="mailto:info@proyectosalvaje.com" 
+                  href="mailto:info@astral-integration.com" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-earth-600 hover:text-earth-900 transition-colors"
@@ -376,7 +376,7 @@ export default function JoinSection() {
                   </svg>
                 </a>
                 <a 
-                  href="mailto:info@proyectosalvaje.com" 
+                  href="mailto:info@astral-integration.com" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-earth-600 hover:text-earth-900 transition-colors"
@@ -386,7 +386,7 @@ export default function JoinSection() {
                   </svg>
                 </a>
                 <a 
-                  href="mailto:info@proyectosalvaje.com" 
+                  href="mailto:info@astral-integration.com" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-earth-600 hover:text-earth-900 transition-colors"
@@ -396,7 +396,7 @@ export default function JoinSection() {
                   </svg>
                 </a>
                 <a 
-                  href="mailto:info@proyectosalvaje.com"
+                  href="mailto:info@astral-integration.com"
                   target="_blank" 
                   rel="noopener noreferrer"  
                   className="text-earth-600 hover:text-earth-900 transition-colors"
@@ -406,7 +406,7 @@ export default function JoinSection() {
                   </svg>
                 </a>
                 <a 
-                  href="mailto:info@proyectosalvaje.com" 
+                  href="mailto:info@astral-integration.com" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-earth-600 hover:text-earth-900 transition-colors"
