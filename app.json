@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Proyecto Salvaje",
+    "name": "Astral Integration",
     "slug": "proyecto-salvaje",
     "sdkVersion": "52.0.0",
     "newArchEnabled": true,
@@ -18,8 +18,8 @@
       "backgroundColor": "#FBF9F5"
     },
     "web": {
-      "name": "Proyecto Salvaje",
-      "short_name": "Proyecto Salvaje",
+      "name": "Astral Integration",
+      "short_name": "Astral Integration",
       "description": "Regenerando la conexión entre la humanidad y la naturaleza",
       "lang": "es-ES",
       "themeColor": "#B09480",

@@ -129,7 +129,7 @@ export default function Footer() {
               <a href="/" className="focus:outline-none">
                 <img
                   src="/favicon.svg"
-                  alt="Proyecto Salvaje Logo"
+                  alt="Astral Integration Logo"
                   className="h-10 w-auto"
                 />
               </a>
@@ -139,7 +139,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center text-earth-500 text-sm">
-          <p>© {new Date().getFullYear()} Proyecto Salvaje. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Astral Integration. All rights reserved.</p>
         </div>
       </div>
     </footer>
