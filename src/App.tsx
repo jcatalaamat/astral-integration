@@ -45,59 +45,66 @@ function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden relative">
-      {/* Animated mesh background */}
-      <div className="fixed inset-0 opacity-30">
-        <div className="absolute top-0 -left-4 w-96 h-96 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{animationDuration: '7s'}}></div>
-        <div className="absolute top-0 -right-4 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{animationDuration: '9s', animationDelay: '2s'}}></div>
-        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{animationDuration: '11s', animationDelay: '4s'}}></div>
+    <div className="min-h-screen bg-gradient-to-b from-cosmic-900 via-cosmic-800 to-black text-sacred-moon overflow-hidden relative">
+      {/* Cosmic aurora background */}
+      <div className="fixed inset-0 opacity-20">
+        <div className="absolute top-0 -left-4 w-[600px] h-[600px] bg-mystic-purple rounded-full mix-blend-screen filter blur-3xl animate-breathe" style={{animationDuration: '8s'}}></div>
+        <div className="absolute top-1/4 -right-4 w-[500px] h-[500px] bg-mystic-indigo rounded-full mix-blend-screen filter blur-3xl animate-breathe" style={{animationDuration: '10s', animationDelay: '2s'}}></div>
+        <div className="absolute bottom-0 left-1/3 w-[550px] h-[550px] bg-mystic-violet rounded-full mix-blend-screen filter blur-3xl animate-breathe" style={{animationDuration: '12s', animationDelay: '4s'}}></div>
       </div>
 
-      {/* Mouse spotlight effect */}
+      {/* Mystical spotlight effect */}
       <div className="fixed inset-0 pointer-events-none" style={spotlightStyle}></div>
 
-      {/* Grid overlay */}
-      <div className="fixed inset-0 opacity-5" style={{
-        backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-        backgroundSize: '50px 50px'
+      {/* Sacred geometry overlay */}
+      <div className="fixed inset-0 opacity-[0.03]" style={{
+        backgroundImage: 'linear-gradient(rgba(139, 92, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px)',
+        backgroundSize: '60px 60px'
       }}></div>
+
+      {/* Floating particles */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-sacred-gold rounded-full animate-float opacity-40" style={{animationDelay: '0s'}}></div>
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-mystic-lavender rounded-full animate-float opacity-30" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-sacred-glow rounded-full animate-float opacity-35" style={{animationDelay: '4s'}}></div>
+      </div>
 
       <div className="relative z-10">
         {/* Navigation */}
-        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/30 border-b border-white/10">
+        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-cosmic-900/50 border-b border-mystic-purple/20">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-20">
               {/* Logo */}
               <div className="flex items-center gap-3">
-                <Sparkles className="w-8 h-8 text-orange-400" />
-                <span className="text-xl font-bold bg-gradient-to-r from-orange-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                <Sparkles className="w-8 h-8 text-mystic-violet animate-glow" />
+                <span className="text-xl font-serif bg-gradient-to-r from-mystic-lavender via-sacred-gold to-mystic-violet bg-clip-text text-transparent">
                   Astral Integration
                 </span>
               </div>
 
               {/* Nav Links - Hidden on mobile */}
               <div className="hidden md:flex items-center gap-8">
-                <button onClick={() => scrollToSection('offerings')} className="text-gray-400 hover:text-white transition-colors">
-                  {t.navigation.offerings}
+                <button onClick={() => scrollToSection('offerings')} className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
+                  Sacred Work
                 </button>
-                <button onClick={() => scrollToSection('about')} className="text-gray-400 hover:text-white transition-colors">
-                  {t.navigation.about}
+                <button onClick={() => scrollToSection('transformation')} className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
+                  The Journey
                 </button>
-                <button onClick={() => scrollToSection('testimonials')} className="text-gray-400 hover:text-white transition-colors">
-                  {t.navigation.testimonials}
+                <button onClick={() => scrollToSection('testimonials')} className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
+                  Transformations
                 </button>
-                <button onClick={() => scrollToSection('booking')} className="px-6 py-2 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full font-semibold hover:shadow-lg hover:shadow-orange-500/50 transition-all">
-                  {t.navigation.booking}
+                <button onClick={() => scrollToSection('booking')} className="px-6 py-2 bg-gradient-to-r from-mystic-purple to-mystic-indigo rounded-full font-semibold hover:shadow-lg hover:shadow-mystic-purple/50 transition-all animate-breathe">
+                  Work With Me
                 </button>
               </div>
 
               {/* Language Toggle */}
               <button
                 onClick={() => setLanguage(language === 'en' ? 'es' : language === 'es' ? 'ca' : 'en')}
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-mystic-purple/20 backdrop-blur-xl border border-mystic-lavender/30 hover:bg-mystic-purple/30 transition-all"
               >
-                <Globe className="w-4 h-4" />
-                <span className="text-sm font-medium">{language === 'en' ? 'EN' : language === 'es' ? 'ES' : 'CA'}</span>
+                <Globe className="w-4 h-4 text-sacred-gold" />
+                <span className="text-sm font-medium text-sacred-moon">{language === 'en' ? 'EN' : language === 'es' ? 'ES' : 'CA'}</span>
               </button>
             </div>
           </div>
@@ -106,69 +113,63 @@ function LandingPage() {
         {/* Hero Section */}
         <div className="container mx-auto px-4 pt-32 pb-20 md:pt-40 md:pb-32">
           <div className="max-w-6xl mx-auto text-center">
-            {/* Main Headline */}
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-              <span className="inline-block animate-fadeIn bg-gradient-to-r from-orange-400 via-pink-400 to-purple-400 bg-clip-text text-transparent" style={{
-                backgroundSize: '200% auto',
-                animation: 'gradient 3s linear infinite'
+            {/* Sacred Symbol */}
+            <div className="text-5xl mb-8 text-sacred-gold animate-breathe opacity-60">⊹</div>
+
+            {/* Main Headline - Bold Transformation */}
+            <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
+              <span className="inline-block animate-fadeIn bg-gradient-to-r from-mystic-lavender via-sacred-gold to-mystic-violet bg-clip-text text-transparent animate-shimmer" style={{
+                backgroundSize: '200% auto'
               }}>
-                {t.hero.title}
+                Timeline Shift Into Your Highest Self
               </span>
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-2xl md:text-3xl text-gray-400 mb-6 max-w-4xl mx-auto leading-relaxed">
-              {t.hero.subtitle}
+            {/* Subtitle - Powerful */}
+            <p className="text-2xl md:text-3xl text-mystic-lavender/80 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Soul realignment for initiates ready to transcend limitations and become game changers
             </p>
 
-            {/* Tagline */}
-            <p className="text-lg text-gray-500 mb-12">
-              {t.hero.tagline}
+            {/* Sacred Message - Soft Wisdom */}
+            <div className="text-base text-mystic-lavender/60 mb-4 font-serif italic">
+              1:1 Mentorship • Soul Work • Integration
+            </div>
+
+            {/* Divider */}
+            <div className="flex justify-center items-center gap-4 my-6">
+              <div className="h-px w-16 bg-gradient-to-r from-transparent via-mystic-purple/50 to-transparent"></div>
+              <div className="text-xl text-sacred-gold/40">✧</div>
+              <div className="h-px w-16 bg-gradient-to-r from-transparent via-mystic-purple/50 to-transparent"></div>
+            </div>
+
+            {/* Gentle Sacred Message */}
+            <p className="text-sm text-mystic-lavender/50 mb-2 font-serif italic">
+              This is not self-help. This is soul remembrance.
+            </p>
+            <p className="text-sm text-mystic-lavender/40 mb-12 font-serif">
+              Your journey begins with one sacred step.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
               <button
                 onClick={() => scrollToSection('booking')}
-                className="group px-8 py-4 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 text-white rounded-xl font-semibold hover:shadow-2xl hover:shadow-orange-500/50 transform hover:scale-105 transition-all flex items-center gap-3"
+                className="group px-8 py-4 bg-gradient-to-r from-mystic-purple via-mystic-indigo to-mystic-violet text-sacred-moon rounded-2xl font-semibold hover:shadow-2xl hover:shadow-mystic-purple/50 transition-all flex items-center gap-3 animate-breathe"
               >
-                <span>{t.hero.cta}</span>
+                <span>Begin Your Initiation</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={() => scrollToSection('offerings')}
-                className="px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all"
+                className="px-8 py-4 bg-mystic-purple/20 backdrop-blur-xl border border-mystic-lavender/30 text-sacred-moon rounded-2xl font-semibold hover:bg-mystic-purple/30 transition-all"
               >
-                {t.hero.secondaryCta}
+                Explore Soul Work
               </button>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-pink-500 rounded-2xl blur opacity-20 group-hover:opacity-30 transition"></div>
-                <div className="relative bg-zinc-900/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6">
-                  <TrendingUp className="w-8 h-8 text-orange-400 mb-3 mx-auto" />
-                  <div className="text-2xl font-bold text-white mb-1">{t.hero.stats.transformations.split(' ')[0]}</div>
-                  <div className="text-sm text-gray-500">{t.hero.stats.transformations.split(' ').slice(1).join(' ')}</div>
-                </div>
-              </div>
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl blur opacity-20 group-hover:opacity-30 transition"></div>
-                <div className="relative bg-zinc-900/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6">
-                  <Clock className="w-8 h-8 text-pink-400 mb-3 mx-auto" />
-                  <div className="text-2xl font-bold text-white mb-1">{t.hero.stats.sessions.split(' ')[0]}</div>
-                  <div className="text-sm text-gray-500">{t.hero.stats.sessions.split(' ').slice(1).join(' ')}</div>
-                </div>
-              </div>
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur opacity-20 group-hover:opacity-30 transition"></div>
-                <div className="relative bg-zinc-900/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6">
-                  <Users className="w-8 h-8 text-purple-400 mb-3 mx-auto" />
-                  <div className="text-2xl font-bold text-white mb-1">{language === 'es' ? 'Linajes' : language === 'ca' ? 'Llinatges' : 'Lineages'}</div>
-                  <div className="text-sm text-gray-500">{t.hero.stats.lineages}</div>
-                </div>
-              </div>
+            {/* Gentle Closing */}
+            <div className="text-xs text-mystic-lavender/40 font-serif italic">
+              This is your first breath back home.
             </div>
           </div>
         </div>
@@ -183,36 +184,53 @@ function LandingPage() {
         <NewsletterSection language={language} translations={t} />
 
         {/* Footer */}
-        <footer className="container mx-auto px-4 py-16 border-t border-white/5">
+        <footer className="container mx-auto px-4 py-20 border-t border-mystic-purple/20">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center space-y-6 mb-8">
+            {/* Sacred Symbol */}
+            <div className="text-center mb-12">
+              <div className="text-4xl text-sacred-gold/40 animate-breathe mb-8">⊹</div>
+            </div>
+
+            <div className="text-center space-y-6 mb-12">
               {/* Logo */}
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <Sparkles className="w-8 h-8 text-orange-400" />
-                <span className="text-xl font-bold bg-gradient-to-r from-orange-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <Sparkles className="w-8 h-8 text-mystic-violet animate-glow" />
+                <span className="text-xl font-serif bg-gradient-to-r from-mystic-lavender via-sacred-gold to-mystic-violet bg-clip-text text-transparent">
                   Astral Integration
                 </span>
               </div>
 
-              {/* Tagline */}
-              <p className="text-gray-500 text-lg">
-                {t.footer.tagline}
-              </p>
+              {/* Sacred Blessing */}
+              <div className="space-y-3 mb-8">
+                <p className="text-lg text-mystic-lavender/80 font-serif italic">
+                  The Mirror Path
+                </p>
+                <p className="text-base text-mystic-lavender/60 font-serif">
+                  Reflect. Remember. Return.
+                </p>
+              </div>
+
+              {/* Sacred Divider */}
+              <div className="flex justify-center items-center gap-4 my-8">
+                <div className="h-px w-20 bg-gradient-to-r from-transparent via-mystic-purple/50 to-transparent"></div>
+                <div className="text-xl text-sacred-gold/40">✧</div>
+                <div className="h-px w-20 bg-gradient-to-r from-transparent via-mystic-purple/50 to-transparent"></div>
+              </div>
 
               {/* Email */}
               <p className="text-sm">
-                <a href={`mailto:${t.footer.email}`} className="text-orange-400 hover:text-orange-300 transition-colors">
+                <a href={`mailto:${t.footer.email}`} className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors font-serif">
                   {t.footer.email}
                 </a>
               </p>
 
               {/* Social */}
               <div className="flex items-center justify-center gap-6 text-sm">
-                <a href={`https://instagram.com/${t.footer.social.instagram.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-400 transition-colors">
+                <a href={`https://instagram.com/${t.footer.social.instagram.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-mystic-lavender/60 hover:text-mystic-violet transition-colors font-serif">
                   Instagram
                 </a>
-                <span className="text-gray-700">•</span>
-                <a href={`https://${t.footer.social.bio}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <span className="text-mystic-purple/40">•</span>
+                <a href={`https://${t.footer.social.bio}`} target="_blank" rel="noopener noreferrer" className="text-mystic-lavender/60 hover:text-mystic-violet transition-colors font-serif">
                   Bio Link
                 </a>
               </div>
@@ -220,23 +238,38 @@ function LandingPage() {
 
             {/* Links */}
             <div className="flex items-center justify-center gap-6 text-sm mb-8">
-              <Link to="/support" className="text-gray-400 hover:text-orange-400 transition-colors">
+              <Link to="/support" className="text-mystic-lavender/50 hover:text-sacred-gold transition-colors font-serif">
                 Support
               </Link>
-              <span className="text-gray-700">•</span>
-              <Link to="/privacy" className="text-gray-400 hover:text-orange-400 transition-colors">
+              <span className="text-mystic-purple/40">•</span>
+              <Link to="/privacy" className="text-mystic-lavender/50 hover:text-sacred-gold transition-colors font-serif">
                 Privacy
               </Link>
             </div>
 
-            {/* Copyright & Disclaimer */}
+            {/* Sacred Closing Blessing */}
+            <div className="text-center space-y-4 mb-8">
+              <p className="text-base text-mystic-lavender/70 font-serif italic">
+                May your return be soft, your voice be heard, and your path be lit from within.
+              </p>
+              <p className="text-sm text-mystic-lavender/50 font-serif">
+                May your path be lit with remembrance.
+              </p>
+            </div>
+
+            {/* Final Blessing */}
             <div className="text-center space-y-2">
-              <p className="text-sm text-gray-600">
-                {t.footer.made}
+              <p className="text-sm text-mystic-lavender/60 font-serif">
+                Awaken. Remember. Embody. You are already home.
               </p>
-              <p className="text-xs text-gray-700">
-                {t.footer.disclaimer}
+              <p className="text-xs text-mystic-lavender/40 mt-4">
+                © 2023 Jordi Sacred Coaching. All rights reserved.
               </p>
+            </div>
+
+            {/* Bottom Symbol */}
+            <div className="text-center mt-12">
+              <div className="text-2xl text-mystic-violet/30 animate-breathe">☉</div>
             </div>
           </div>
         </footer>

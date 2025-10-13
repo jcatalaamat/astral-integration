@@ -12,20 +12,20 @@ const OfferingsSection = ({ translations }: OfferingsSectionProps) => {
     {
       key: 'soulWork',
       icon: Sparkles,
-      gradient: 'from-orange-500 via-pink-500 to-purple-500',
-      shadowColor: 'shadow-orange-500/50'
+      gradient: 'from-sacred-gold via-mystic-lavender to-mystic-purple',
+      shadowColor: 'shadow-mystic-purple/50'
     },
     {
       key: 'integration',
       icon: Heart,
-      gradient: 'from-pink-500 via-purple-500 to-blue-500',
-      shadowColor: 'shadow-pink-500/50'
+      gradient: 'from-mystic-lavender via-mystic-indigo to-mystic-violet',
+      shadowColor: 'shadow-mystic-indigo/50'
     },
     {
       key: 'entrepreneur',
       icon: Zap,
-      gradient: 'from-purple-500 via-blue-500 to-cyan-500',
-      shadowColor: 'shadow-purple-500/50'
+      gradient: 'from-mystic-indigo via-mystic-violet to-mystic-purple',
+      shadowColor: 'shadow-mystic-violet/50'
     }
   ];
 
@@ -34,11 +34,11 @@ const OfferingsSection = ({ translations }: OfferingsSectionProps) => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-            {t.title}
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-mystic-lavender via-sacred-gold to-mystic-violet bg-clip-text text-transparent">
+            Sacred Pathways to Liberation
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            {t.subtitle}
+          <p className="text-xl text-mystic-lavender/70 max-w-2xl mx-auto">
+            Choose your initiation
           </p>
         </div>
 
@@ -50,28 +50,28 @@ const OfferingsSection = ({ translations }: OfferingsSectionProps) => {
 
             return (
               <div key={offering.key} className="group relative">
-                {/* Glow Effect */}
-                <div className={`absolute -inset-1 bg-gradient-to-r ${offering.gradient} rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition duration-500`}></div>
+                {/* Mystical Glow Effect */}
+                <div className={`absolute -inset-1 bg-gradient-to-r ${offering.gradient} rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition duration-500 animate-breathe`}></div>
 
                 {/* Card */}
-                <div className="relative h-full bg-zinc-900/90 backdrop-blur-xl rounded-3xl border border-white/10 p-8 hover:border-white/20 transition-all">
+                <div className="relative h-full bg-cosmic-800/60 backdrop-blur-xl rounded-3xl border border-mystic-purple/30 p-8 hover:border-mystic-purple/50 transition-all">
                   {/* Icon */}
-                  <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${offering.gradient} rounded-2xl mb-6 group-hover:scale-110 transition-transform`}>
-                    <Icon className="w-8 h-8 text-white" />
+                  <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${offering.gradient} rounded-2xl mb-6 group-hover:scale-105 transition-transform animate-glow`}>
+                    <Icon className="w-8 h-8 text-sacred-moon" />
                   </div>
 
                   {/* Tagline */}
-                  <div className="text-sm text-gray-500 uppercase tracking-wider mb-2">
+                  <div className="text-sm text-mystic-lavender/50 uppercase tracking-wider mb-2 font-serif">
                     {offeringData.tagline}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold mb-4 text-white">
+                  <h3 className="text-2xl font-serif mb-4 text-sacred-moon">
                     {offeringData.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 mb-6 leading-relaxed">
+                  <p className="text-mystic-lavender/70 mb-6 leading-relaxed font-serif">
                     {offeringData.description}
                   </p>
 
@@ -79,21 +79,21 @@ const OfferingsSection = ({ translations }: OfferingsSectionProps) => {
                   <div className="space-y-3 mb-8">
                     {offeringData.includes.map((item: string, idx: number) => (
                       <div key={idx} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-300">{item}</span>
+                        <CheckCircle className="w-5 h-5 text-sacred-gold flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-mystic-lavender/80 font-serif">{item}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* Price */}
-                  <div className="mb-6 pb-6 border-b border-white/10">
-                    <span className={`text-lg font-semibold bg-gradient-to-r ${offering.gradient} bg-clip-text text-transparent`}>
+                  <div className="mb-6 pb-6 border-b border-mystic-purple/20">
+                    <span className={`text-lg font-semibold font-serif bg-gradient-to-r ${offering.gradient} bg-clip-text text-transparent`}>
                       {offeringData.price}
                     </span>
                   </div>
 
                   {/* CTA Button */}
-                  <button className={`w-full group/btn px-6 py-4 bg-gradient-to-r ${offering.gradient} text-white rounded-xl font-semibold hover:shadow-2xl ${offering.shadowColor} transform hover:scale-105 transition-all flex items-center justify-center gap-2`}>
+                  <button className={`w-full group/btn px-6 py-4 bg-gradient-to-r ${offering.gradient} text-sacred-moon rounded-2xl font-serif hover:shadow-2xl ${offering.shadowColor} transition-all flex items-center justify-center gap-2 animate-breathe`}>
                     <span>{offeringData.cta}</span>
                     <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                   </button>

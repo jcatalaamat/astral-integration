@@ -1,4 +1,4 @@
-import { Star, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface TestimonialsSectionProps {
   language: 'en' | 'es' | 'ca';
@@ -8,31 +8,25 @@ interface TestimonialsSectionProps {
 const TestimonialsSection = ({ language, translations }: TestimonialsSectionProps) => {
   const t = translations.testimonials;
 
-  // Sample testimonials - replace with real data
+  // Sacred witness testimonials
   const testimonials = [
     {
-      quote: language === 'es'
-        ? "Trabajar con este proceso cambió completamente mi línea temporal. Liberé patrones ancestrales que ni siquiera sabía que cargaba."
-        : "Working with this process completely shifted my timeline. I released ancestral patterns I didn't even know I was carrying.",
+      quote: "Working with this process completely shifted my timeline. I released ancestral patterns I didn't even know I was carrying.",
       author: "Sarah M.",
-      role: language === 'es' ? "Empresaria Consciente" : "Conscious Entrepreneur",
-      gradient: "from-orange-500 to-pink-500"
+      role: "Conscious Entrepreneur",
+      gradient: "from-sacred-gold to-mystic-lavender"
     },
     {
-      quote: language === 'es'
-        ? "La integración después de mi ceremonia de Bufo fue transformadora. Finalmente entendí mis visiones y las ancle en mi realidad."
-        : "The integration after my Bufo ceremony was transformative. I finally understood my visions and anchored them into my reality.",
+      quote: "The integration after my Bufo ceremony was transformative. I finally understood my visions and anchored them into my reality.",
       author: "Marcus L.",
-      role: language === 'es' ? "Buscador Espiritual" : "Spiritual Seeker",
-      gradient: "from-pink-500 to-purple-500"
+      role: "Spiritual Seeker",
+      gradient: "from-mystic-lavender to-mystic-indigo"
     },
     {
-      quote: language === 'es'
-        ? "Mi negocio finalmente está alineado con mi propósito del alma. La abundancia fluye de manera que nunca imaginé posible."
-        : "My business is finally aligned with my soul's purpose. Abundance flows in ways I never imagined possible.",
+      quote: "My business is finally aligned with my soul's purpose. Abundance flows in ways I never imagined possible.",
       author: "Elena R.",
-      role: language === 'es' ? "Sanadora & Coach" : "Healer & Coach",
-      gradient: "from-purple-500 to-blue-500"
+      role: "Healer & Coach",
+      gradient: "from-mystic-indigo to-mystic-violet"
     }
   ];
 
@@ -41,11 +35,11 @@ const TestimonialsSection = ({ language, translations }: TestimonialsSectionProp
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            {t.title}
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-sacred-moon">
+            Voices from the Journey
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            {t.subtitle}
+          <p className="text-xl text-mystic-lavender/70 max-w-2xl mx-auto">
+            Real transformations from brave souls
           </p>
         </div>
 
@@ -53,29 +47,28 @@ const TestimonialsSection = ({ language, translations }: TestimonialsSectionProp
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="group relative">
-              {/* Glow Effect */}
-              <div className={`absolute -inset-1 bg-gradient-to-r ${testimonial.gradient} rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition duration-500`}></div>
+              {/* Mystical Glow Effect */}
+              <div className={`absolute -inset-1 bg-gradient-to-r ${testimonial.gradient} rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition duration-500 animate-breathe`}></div>
 
               {/* Card */}
-              <div className="relative h-full bg-zinc-900/90 backdrop-blur-xl rounded-3xl border border-white/10 p-8 hover:border-white/20 transition-all">
-                {/* Stars */}
-                <div className="flex gap-1 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
+              <div className="relative h-full bg-cosmic-800/60 backdrop-blur-xl rounded-3xl border border-mystic-purple/30 p-8 hover:border-mystic-purple/50 transition-all">
+                {/* Opening Quote Symbol */}
+                <div className="text-5xl text-mystic-violet/30 font-serif mb-4">"</div>
 
                 {/* Quote */}
-                <blockquote className="text-gray-300 leading-relaxed mb-6 italic">
-                  "{testimonial.quote}"
+                <blockquote className="text-mystic-lavender/80 leading-relaxed mb-6 font-serif italic">
+                  {testimonial.quote}
                 </blockquote>
 
-                {/* Author */}
-                <div className="pt-6 border-t border-white/10">
-                  <div className={`font-semibold text-white mb-1 bg-gradient-to-r ${testimonial.gradient} bg-clip-text text-transparent`}>
+                {/* Closing Quote Symbol */}
+                <div className="text-5xl text-mystic-violet/30 font-serif text-right mb-4">"</div>
+
+                {/* Author Section */}
+                <div className="pt-6 border-t border-mystic-purple/20">
+                  <div className={`font-semibold text-lg mb-1 bg-gradient-to-r ${testimonial.gradient} bg-clip-text text-transparent`}>
                     {testimonial.author}
                   </div>
-                  <div className="text-sm text-gray-500">
+                  <div className="text-sm text-mystic-lavender/60">
                     {testimonial.role}
                   </div>
                 </div>
@@ -86,8 +79,8 @@ const TestimonialsSection = ({ language, translations }: TestimonialsSectionProp
 
         {/* CTA Button */}
         <div className="text-center">
-          <button className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 text-white rounded-xl font-semibold hover:shadow-2xl hover:shadow-pink-500/50 transform hover:scale-105 transition-all">
-            <span>{t.cta}</span>
+          <button className="group inline-flex items-center gap-3 px-8 py-4 bg-mystic-purple/20 backdrop-blur-xl border border-mystic-lavender/30 text-sacred-moon rounded-2xl font-semibold hover:bg-mystic-purple/30 transition-all">
+            <span>Read Full Stories</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
