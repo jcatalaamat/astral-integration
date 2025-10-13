@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useParams, Link } from 'react-router-dom';
-import { Sparkles, Globe, ArrowRight, TrendingUp, Users, Clock } from 'lucide-react';
+import { Sparkles, Globe, ArrowRight } from 'lucide-react';
 import enTranslations from './translations/en.json';
 import esTranslations from './translations/es.json';
 import caTranslations from './translations/ca.json';

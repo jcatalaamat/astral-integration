@@ -5,8 +5,7 @@ interface AboutSectionProps {
   translations: any;
 }
 
-const AboutSection = ({ translations }: AboutSectionProps) => {
-  const t = translations.about;
+const AboutSection = ({}: AboutSectionProps) => {
 
   return (
     <div id="about" className="container mx-auto px-4 py-32">

@@ -3,8 +3,7 @@ interface TransformationStagesProps {
   translations: any;
 }
 
-const TransformationStages = ({ translations }: TransformationStagesProps) => {
-  const t = translations.transformation;
+const TransformationStages = ({}: TransformationStagesProps) => {
 
   const stages = [
     {

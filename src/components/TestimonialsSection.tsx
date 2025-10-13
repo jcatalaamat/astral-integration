@@ -5,8 +5,7 @@ interface TestimonialsSectionProps {
   translations: any;
 }
 
-const TestimonialsSection = ({ language, translations }: TestimonialsSectionProps) => {
-  const t = translations.testimonials;
+const TestimonialsSection = ({}: TestimonialsSectionProps) => {
 
   // Sacred witness testimonials
   const testimonials = [
