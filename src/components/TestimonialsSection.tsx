@@ -6,6 +6,12 @@ interface TestimonialsSectionProps {
 }
 
 const TestimonialsSection = ({}: TestimonialsSectionProps) => {
+  const scrollToBooking = () => {
+    const element = document.getElementById('booking');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   // Sacred witness testimonials
   const testimonials = [
@@ -78,8 +84,11 @@ const TestimonialsSection = ({}: TestimonialsSectionProps) => {
 
         {/* CTA Button */}
         <div className="text-center">
-          <button className="group inline-flex items-center gap-3 px-8 py-4 bg-mystic-purple/20 backdrop-blur-xl border border-mystic-lavender/30 text-sacred-moon rounded-2xl font-semibold hover:bg-mystic-purple/30 transition-all">
-            <span>Read Full Stories</span>
+          <button
+            onClick={scrollToBooking}
+            className="group inline-flex items-center gap-3 px-8 py-4 bg-mystic-purple/20 backdrop-blur-xl border border-mystic-lavender/30 text-sacred-moon rounded-2xl font-semibold hover:bg-mystic-purple/30 transition-all cursor-pointer"
+          >
+            <span>Begin Your Journey</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>

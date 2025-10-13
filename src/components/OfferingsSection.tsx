@@ -8,6 +8,13 @@ interface OfferingsSectionProps {
 const OfferingsSection = ({ translations }: OfferingsSectionProps) => {
   const t = translations.offerings;
 
+  const scrollToBooking = () => {
+    const element = document.getElementById('booking');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const offerings = [
     {
       key: 'soulWork',
@@ -93,7 +100,10 @@ const OfferingsSection = ({ translations }: OfferingsSectionProps) => {
                   </div>
 
                   {/* CTA Button */}
-                  <button className={`w-full group/btn px-6 py-4 bg-gradient-to-r ${offering.gradient} text-sacred-moon rounded-2xl font-serif hover:shadow-2xl ${offering.shadowColor} transition-all flex items-center justify-center gap-2 animate-breathe`}>
+                  <button
+                    onClick={scrollToBooking}
+                    className={`w-full group/btn px-6 py-4 bg-gradient-to-r ${offering.gradient} text-sacred-moon rounded-2xl font-serif hover:shadow-2xl ${offering.shadowColor} transition-all flex items-center justify-center gap-2 animate-breathe cursor-pointer`}
+                  >
                     <span>{offeringData.cta}</span>
                     <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                   </button>

@@ -6,6 +6,12 @@ interface AboutSectionProps {
 }
 
 const AboutSection = ({}: AboutSectionProps) => {
+  const scrollToBooking = () => {
+    const element = document.getElementById('booking');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div id="about" className="container mx-auto px-4 py-32">
@@ -71,7 +77,10 @@ const AboutSection = ({}: AboutSectionProps) => {
 
             {/* CTA Button */}
             <div className="text-center">
-              <button className="px-8 py-3 bg-mystic-purple/20 backdrop-blur-xl border border-mystic-lavender/30 text-sacred-moon rounded-2xl font-semibold hover:bg-mystic-purple/30 transition-all">
+              <button
+                onClick={scrollToBooking}
+                className="px-8 py-3 bg-mystic-purple/20 backdrop-blur-xl border border-mystic-lavender/30 text-sacred-moon rounded-2xl font-semibold hover:bg-mystic-purple/30 transition-all cursor-pointer"
+              >
                 Discover My Journey
               </button>
             </div>
