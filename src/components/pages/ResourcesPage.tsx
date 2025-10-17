@@ -1,161 +1,156 @@
 import { Link } from 'react-router-dom';
-import { BookOpen, Heart, Download } from 'lucide-react';
+import Navigation from '../Navigation';
 
 export default function ResourcesPage() {
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-cosmic-900 via-cosmic-800 to-black text-sacred-moon">
-      {/* Cosmic aurora background */}
-      <div className="fixed inset-0 opacity-10">
-        <div className="absolute top-0 -left-4 w-[600px] h-[600px] bg-mystic-purple rounded-full mix-blend-screen filter blur-3xl animate-breathe" style={{animationDuration: '8s'}}></div>
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-sacred-green rounded-full mix-blend-screen filter blur-3xl animate-breathe" style={{animationDuration: '10s', animationDelay: '2s'}}></div>
+    <div className="min-h-screen">
+      <Navigation />
+      {/* Full-Screen Opening */}
+      <div className="h-screen relative flex items-center justify-center bg-gradient-to-br from-cosmic-900/90 via-indigo-deep/80 to-black/90">
+        <div className="relative z-10 text-center px-4">
+          <div className="text-5xl mb-8 text-sacred-gold animate-breathe opacity-60">⊹</div>
+          <h1 className="text-5xl md:text-7xl font-serif text-sacred-moon mb-8 font-light">
+            Resources
+          </h1>
+          <p className="text-xl md:text-2xl text-sacred-moon/80 font-light max-w-2xl mx-auto">
+            Teachings, reflections, and tools for your journey.
+          </p>
+        </div>
       </div>
 
-      {/* Sacred geometry overlay */}
-      <div className="fixed inset-0 opacity-[0.02]" style={{
-        backgroundImage: 'linear-gradient(rgba(139, 92, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px)',
-        backgroundSize: '60px 60px'
-      }}></div>
+      {/* Free Offerings */}
+      <div className="bg-sacred-cream py-32">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-12">
+            <h2 className="text-4xl md:text-5xl font-serif text-indigo-deep">
+              Free Guided Meditations
+            </h2>
+            <p className="text-xl text-indigo-deep/70 leading-relaxed">
+              Meditations for grounding, healing, and integration. Download and use as needed.
+            </p>
+            <Link
+              to="/contact"
+              onClick={scrollToTop}
+              className="inline-block px-10 py-4 bg-indigo-deep text-sacred-cream rounded-full hover:bg-indigo-deep/90 transition-colors font-medium"
+            >
+              Request meditation pack
+            </Link>
+          </div>
+        </div>
+      </div>
 
-      <div className="relative z-10">
-        {/* Hero Section */}
-        <div className="container mx-auto px-4 pt-32 pb-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="text-4xl mb-6 text-sacred-gold animate-breathe opacity-60">⊹</div>
-            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 bg-gradient-to-r from-mystic-lavender via-sacred-gold to-mystic-violet bg-clip-text text-transparent">
-              Resources & Teachings
-            </h1>
-            <p className="text-xl md:text-2xl text-mystic-lavender/80 mb-8">
-              Free tools, reflections, and wisdom for your journey
+      {/* Teachings Section */}
+      <div className="relative py-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-deep/30 via-cosmic-900/50 to-black/60"></div>
+
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-serif text-sacred-moon text-center mb-20">
+              Recent Writings
+            </h2>
+
+            <div className="space-y-12">
+              <div className="border-l-4 border-sacred-gold/40 pl-8 py-4">
+                <h3 className="text-2xl font-serif text-sacred-moon mb-3">
+                  The Fall of Society: 2025-2100
+                </h3>
+                <p className="text-sacred-moon/70">
+                  What's coming, and how to prepare your soul for the great transition.
+                </p>
+              </div>
+
+              <div className="border-l-4 border-sacred-gold/40 pl-8 py-4">
+                <h3 className="text-2xl font-serif text-sacred-moon mb-3">
+                  Becoming Love: Ego Dissolution
+                </h3>
+                <p className="text-sacred-moon/70">
+                  What Bufo taught me about surrendering identity and remembering wholeness.
+                </p>
+              </div>
+
+              <div className="border-l-4 border-sacred-gold/40 pl-8 py-4">
+                <h3 className="text-2xl font-serif text-sacred-moon mb-3">
+                  The Masculine Awakening
+                </h3>
+                <p className="text-sacred-moon/70">
+                  Why men's work is the most important work right now, and what it means to embody sacred masculinity.
+                </p>
+              </div>
+            </div>
+
+            <p className="text-center text-sacred-moon/60 mt-16 italic">
+              More writings coming soon...
             </p>
           </div>
         </div>
+      </div>
 
-        {/* Free Meditations */}
-        <div className="container mx-auto px-4 pb-16">
-          <div className="max-w-5xl mx-auto">
-            <div className="bg-cosmic-900/50 backdrop-blur-xl border border-mystic-lavender/20 rounded-3xl p-12 mb-16">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="flex-shrink-0">
-                  <div className="w-24 h-24 bg-gradient-to-br from-mystic-purple/30 to-sacred-gold/30 rounded-full flex items-center justify-center">
-                    <Download className="w-12 h-12 text-sacred-gold" />
-                  </div>
-                </div>
-                <div className="flex-1 text-center md:text-left">
-                  <h2 className="text-3xl font-serif font-bold mb-4 text-mystic-lavender">
-                    Free Guided Meditations
-                  </h2>
-                  <p className="text-mystic-lavender/80 mb-6">
-                    Download a collection of guided meditations for grounding, healing, and awakening.
-                    Perfect for daily practice or integration work.
-                  </p>
-                  <Link
-                    to="/contact"
-                    onClick={scrollToTop}
-                    className="inline-block px-8 py-3 bg-gradient-to-r from-mystic-purple to-mystic-indigo rounded-full text-sacred-moon font-semibold hover:shadow-lg hover:shadow-mystic-purple/50 transition-all"
-                  >
-                    Download Free Pack
-                  </Link>
-                </div>
-              </div>
-            </div>
+      {/* Testimonials - Visual Section */}
+      <div className="bg-sacred-cream py-32">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-serif text-indigo-deep text-center mb-20">
+              Voices From The Journey
+            </h2>
 
-            {/* Blog/Teachings Section */}
-            <div className="mb-16">
-              <h2 className="text-3xl font-serif font-bold mb-12 text-center text-mystic-lavender">
-                Recent Teachings & Reflections
-              </h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                {/* Blog Post 1 */}
-                <div className="bg-cosmic-900/50 backdrop-blur-xl border border-mystic-lavender/20 rounded-2xl overflow-hidden hover:border-mystic-purple/40 transition-all">
-                  <div className="aspect-video bg-gradient-to-br from-mystic-purple/20 to-mystic-indigo/20 flex items-center justify-center">
-                    <BookOpen className="w-12 h-12 text-sacred-gold opacity-40" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-serif font-bold text-mystic-lavender mb-2">
-                      The Fall of Society: 2025-2100
-                    </h3>
-                    <p className="text-mystic-lavender/70 text-sm mb-4">
-                      What's coming, and how to prepare your soul for the great transition.
-                    </p>
-                    <button className="text-sacred-gold hover:text-sacred-glow transition-colors text-sm font-semibold">
-                      Read More →
-                    </button>
-                  </div>
-                </div>
-
-                {/* Blog Post 2 */}
-                <div className="bg-cosmic-900/50 backdrop-blur-xl border border-mystic-lavender/20 rounded-2xl overflow-hidden hover:border-mystic-purple/40 transition-all">
-                  <div className="aspect-video bg-gradient-to-br from-sacred-gold/20 to-mystic-violet/20 flex items-center justify-center">
-                    <Heart className="w-12 h-12 text-sacred-gold opacity-40" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-serif font-bold text-mystic-lavender mb-2">
-                      Becoming Love: Ego Dissolution
-                    </h3>
-                    <p className="text-mystic-lavender/70 text-sm mb-4">
-                      What Bufo taught me about surrendering identity and remembering wholeness.
-                    </p>
-                    <button className="text-sacred-gold hover:text-sacred-glow transition-colors text-sm font-semibold">
-                      Read More →
-                    </button>
-                  </div>
-                </div>
-
-                {/* Blog Post 3 */}
-                <div className="bg-cosmic-900/50 backdrop-blur-xl border border-mystic-lavender/20 rounded-2xl overflow-hidden hover:border-mystic-purple/40 transition-all">
-                  <div className="aspect-video bg-gradient-to-br from-mystic-indigo/20 to-sacred-green/20 flex items-center justify-center">
-                    <BookOpen className="w-12 h-12 text-sacred-gold opacity-40" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-serif font-bold text-mystic-lavender mb-2">
-                      The Masculine Awakening
-                    </h3>
-                    <p className="text-mystic-lavender/70 text-sm mb-4">
-                      Why men's work is the most important work right now, and what it means to be a king.
-                    </p>
-                    <button className="text-sacred-gold hover:text-sacred-glow transition-colors text-sm font-semibold">
-                      Read More →
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonials Preview */}
-            <div className="bg-sacred-moon/5 backdrop-blur-xl border border-mystic-lavender/20 rounded-3xl p-12">
-              <h2 className="text-3xl font-serif font-bold mb-8 text-center text-mystic-lavender">
-                Transformation Stories
-              </h2>
-              <div className="space-y-8 mb-8">
-                <div className="text-center">
-                  <p className="text-lg text-mystic-lavender/80 italic mb-4">
-                    "Working with Astral changed my life. Not in a cliché way—in a 'I can't go back to who
-                    I was' way. He sees you. Really sees you. And he holds space for whatever needs to emerge."
-                  </p>
-                  <p className="text-sacred-gold font-semibold">— Maria, Barcelona</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-lg text-mystic-lavender/80 italic mb-4">
-                    "The Bufo ceremony was the most profound experience of my life. Astral's preparation,
-                    presence, and integration support made me feel completely safe to surrender. I finally
-                    understand what 'coming home to myself' means."
-                  </p>
-                  <p className="text-sacred-gold font-semibold">— David, USA</p>
-                </div>
-              </div>
-              <div className="text-center">
-                <p className="text-mystic-lavender/70 mb-4">
-                  Read more stories from souls who've walked this path
+            <div className="space-y-16">
+              <div className="text-center space-y-4">
+                <p className="text-xl md:text-2xl text-indigo-deep/80 leading-relaxed italic">
+                  "Working with Astral changed my life. Not in a cliché way—in a 'I can't go back to who
+                  I was' way. He sees you. Really sees you. And he holds space for whatever needs to emerge."
                 </p>
-                <button className="text-sacred-gold hover:text-sacred-glow transition-colors font-semibold">
-                  View All Testimonials →
-                </button>
+                <p className="text-sacred-gold font-medium">— Maria, Barcelona</p>
               </div>
+
+              <div className="text-center space-y-4">
+                <p className="text-xl md:text-2xl text-indigo-deep/80 leading-relaxed italic">
+                  "The Bufo ceremony was the most profound experience of my life. Astral's preparation,
+                  presence, and integration support made me feel completely safe to surrender. I finally
+                  understand what 'coming home to myself' means."
+                </p>
+                <p className="text-sacred-gold font-medium">— David, USA</p>
+              </div>
+
+              <div className="text-center space-y-4">
+                <p className="text-xl md:text-2xl text-indigo-deep/80 leading-relaxed italic">
+                  "The men's circle gave me permission to feel everything I'd been holding back for decades.
+                  To cry. To rage. To laugh. To finally be myself without apology."
+                </p>
+                <p className="text-sacred-gold font-medium">— Carlos, Mexico</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Simple Invitation */}
+      <div className="relative min-h-[60vh] flex items-center">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-deep/50 via-mystic-purple/40 to-cosmic-900/70"></div>
+
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <h2 className="text-4xl md:text-5xl font-serif text-sacred-moon">
+              Ready to begin your journey?
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4">
+              <Link
+                to="/services"
+                onClick={scrollToTop}
+                className="px-10 py-4 bg-sacred-cream text-indigo-deep rounded-full hover:bg-sacred-moon transition-colors font-medium"
+              >
+                Explore how we work
+              </Link>
+              <Link
+                to="/contact"
+                onClick={scrollToTop}
+                className="px-10 py-4 border-2 border-sacred-cream text-sacred-cream rounded-full hover:bg-sacred-cream hover:text-indigo-deep transition-colors font-medium"
+              >
+                Get in touch
+              </Link>
             </div>
           </div>
         </div>

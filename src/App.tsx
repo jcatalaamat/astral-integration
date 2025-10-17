@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useParams, Link } from 'react-router-dom';
-import { Sparkles, Globe, ArrowRight, Menu, X } from 'lucide-react';
+import { Sparkles, Globe, Menu, X } from 'lucide-react';
 import './i18n';
 import enTranslations from './translations/en.json';
 import esTranslations from './translations/es.json';
@@ -9,19 +9,14 @@ import EventPreview from './components/EventPreview';
 import PlacePreview from './components/PlacePreview';
 import SupportPage from './components/SupportPage';
 import PrivacyPage from './components/PrivacyPage';
-import AboutPage from './components/pages/AboutPage';
+import AboutPageNew from './components/pages/AboutPageNew';
 import ServicesPage from './components/pages/ServicesPage';
 import InnerAscendPage from './components/pages/InnerAscendPage';
 import RetreatsPage from './components/pages/RetreatsPage';
 import ResourcesPage from './components/pages/ResourcesPage';
 import ContactPage from './components/pages/ContactPage';
-import OfferingsSection from './components/OfferingsSection';
-import TransformationStages from './components/TransformationStages';
-import AboutSection from './components/AboutSection';
-import TestimonialsSection from './components/TestimonialsSection';
-import BookingSection from './components/BookingSection';
-import ResourcesSection from './components/ResourcesSection';
-import NewsletterSection from './components/NewsletterSection';
+import ScrollToTop from './components/ScrollToTop';
+// Removed old section components - now using visual storytelling approach
 
 // Main Landing Page Component
 function LandingPage() {
@@ -126,61 +121,172 @@ function LandingPage() {
           </div>
         </nav>
 
-        {/* Hero Section */}
-        <div className="container mx-auto px-4 pt-32 pb-20 md:pt-40 md:pb-32">
-          <div className="max-w-6xl mx-auto text-center">
-            {/* Sacred Symbol */}
-            <div className="text-5xl mb-8 text-sacred-gold animate-breathe opacity-60">⊹</div>
+        {/* Full-Screen Hero */}
+        <div className="h-screen relative flex items-center justify-center">
+          {/* Background Image Placeholder */}
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-deep/40 via-cosmic-900/60 to-sacred-green/30">
+            <div className="absolute inset-0 opacity-5" style={{
+              backgroundImage: `radial-gradient(circle at 2px 2px, rgb(255 255 255 / 0.15) 1px, transparent 0)`,
+              backgroundSize: '50px 50px'
+            }}></div>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
-            {/* Main Headline - More Accessible */}
-            <h1 className="text-5xl md:text-7xl font-serif font-bold mb-4 leading-tight">
-              <span className="inline-block bg-gradient-to-r from-mystic-lavender via-sacred-gold to-mystic-violet bg-clip-text text-transparent">
-                Guiding Souls on a Journey of the Self
-              </span>
+          {/* Hero Content */}
+          <div className="relative z-10 text-center px-4">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-light text-sacred-moon mb-6 animate-fadeIn">
+              Astral
             </h1>
-
-            {/* Subtitle - Grounded & Clear */}
-            <p className="text-xl md:text-2xl text-mystic-lavender/80 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Mentorship, healing, and medicine work for deep transformation
+            <p className="text-xl md:text-2xl text-sacred-moon/80 font-light tracking-wide">
+              Guiding souls home to themselves
             </p>
+          </div>
 
-            {/* Sacred Message - Soft Wisdom */}
-            <div className="text-base text-mystic-lavender/70 mb-8 font-serif">
-              Energy Healing • Bufo Ceremonies • Family Constellations • Conscious Community
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <Link
-                to="/contact"
-                className="group px-8 py-4 bg-gradient-to-r from-mystic-purple via-mystic-indigo to-mystic-violet text-sacred-moon rounded-2xl font-semibold hover:shadow-2xl hover:shadow-mystic-purple/50 transition-all flex items-center gap-3"
-              >
-                <span>Begin Your Journey</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/services"
-                className="px-8 py-4 bg-mystic-purple/20 backdrop-blur-xl border border-mystic-lavender/30 text-sacred-moon rounded-2xl font-semibold hover:bg-mystic-purple/30 transition-all"
-              >
-                Explore Services
-              </Link>
-            </div>
-
-            {/* Location Info */}
-            <div className="text-sm text-mystic-lavender/60 font-serif">
-              Based in Mazunte, Mexico & Barcelona, Spain
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+            <div className="w-6 h-10 border-2 border-sacred-moon/40 rounded-full flex items-start justify-center p-2">
+              <div className="w-1.5 h-1.5 bg-sacred-moon/60 rounded-full"></div>
             </div>
           </div>
         </div>
 
-        {/* All Sections */}
-        <OfferingsSection language={language} translations={t} />
-        <TransformationStages language={language} translations={t} />
-        <AboutSection language={language} translations={t} />
-        <TestimonialsSection language={language} translations={t} />
-        <BookingSection language={language} translations={t} />
-        <ResourcesSection language={language} translations={t} />
-        <NewsletterSection language={language} translations={t} />
+        {/* Visual Story Section 1 - The Journey Begins */}
+        <div className="min-h-screen flex items-center bg-sacred-cream">
+          <div className="container mx-auto px-4 py-32">
+            <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+              {/* Large Image */}
+              <div className="aspect-[4/5] relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-sacred-green/20 via-indigo-deep/30 to-mystic-purple/20 rounded-2xl"></div>
+              </div>
+
+              {/* Minimal Text */}
+              <div className="space-y-8">
+                <p className="text-5xl md:text-6xl font-serif text-indigo-deep leading-tight">
+                  The journey begins with surrender.
+                </p>
+                <p className="text-lg text-indigo-deep/70 leading-relaxed">
+                  For over a decade, I've walked beside souls navigating the depths of transformation—through
+                  medicine work, energy healing, and the sacred art of letting go.
+                </p>
+                <Link to="/about" className="inline-block text-sacred-green hover:text-indigo-deep transition-colors font-medium">
+                  My story →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Visual Quote Section */}
+        <div className="relative h-[70vh]">
+          <div className="absolute inset-0 bg-gradient-to-br from-mystic-purple/30 via-indigo-deep/40 to-sacred-green/20"></div>
+          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="relative z-10 h-full flex items-center justify-center px-4">
+            <blockquote className="max-w-4xl text-center">
+              <p className="text-3xl md:text-5xl font-serif text-sacred-moon leading-relaxed mb-8">
+                "This work is not about becoming someone new.<br/>
+                It's about remembering who you've always been."
+              </p>
+            </blockquote>
+          </div>
+        </div>
+
+        {/* Ways to Work Together - Visual */}
+        <div className="bg-sacred-cream py-32">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-4xl md:text-6xl font-serif text-indigo-deep text-center mb-20">
+                Ways to Walk Together
+              </h2>
+
+              <div className="space-y-32">
+                {/* Circle Work */}
+                <div className="grid lg:grid-cols-5 gap-12 items-center">
+                  <div className="lg:col-span-3 aspect-[16/10] relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-mystic-purple/20 to-indigo-deep/30 rounded-2xl"></div>
+                  </div>
+                  <div className="lg:col-span-2 space-y-6">
+                    <h3 className="text-3xl font-serif text-indigo-deep">Sacred Circles</h3>
+                    <p className="text-indigo-deep/70 leading-relaxed">
+                      Join a container of souls committed to growth. Men's circles, women's leadership,
+                      and creative masterminds for healers and visionaries.
+                    </p>
+                    <Link to="/services" className="inline-block text-sacred-green hover:text-indigo-deep transition-colors">
+                      Explore circles →
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Medicine Work */}
+                <div className="grid lg:grid-cols-5 gap-12 items-center">
+                  <div className="lg:col-span-2 space-y-6 order-2 lg:order-1">
+                    <h3 className="text-3xl font-serif text-indigo-deep">Medicine Journeys</h3>
+                    <p className="text-indigo-deep/70 leading-relaxed">
+                      Bufo Alvarius ceremonies held with reverence and deep preparation. A sacred passage
+                      to ego dissolution and divine remembrance.
+                    </p>
+                    <Link to="/services" className="inline-block text-sacred-green hover:text-indigo-deep transition-colors">
+                      Learn about medicine work →
+                    </Link>
+                  </div>
+                  <div className="lg:col-span-3 aspect-[16/10] relative order-1 lg:order-2">
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-deep/30 to-sacred-green/20 rounded-2xl"></div>
+                  </div>
+                </div>
+
+                {/* 1:1 Work */}
+                <div className="grid lg:grid-cols-5 gap-12 items-center">
+                  <div className="lg:col-span-3 aspect-[16/10] relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-sacred-green/20 to-mystic-purple/20 rounded-2xl"></div>
+                  </div>
+                  <div className="lg:col-span-2 space-y-6">
+                    <h3 className="text-3xl font-serif text-indigo-deep">One-to-One Journeys</h3>
+                    <p className="text-indigo-deep/70 leading-relaxed">
+                      Deep transformational work tailored to your unique path. Energy healing, family
+                      constellations, and bespoke mentorship.
+                    </p>
+                    <Link to="/services" className="inline-block text-sacred-green hover:text-indigo-deep transition-colors">
+                      Discover 1:1 work →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Testimonial - Magazine Style */}
+        <div className="relative min-h-[80vh] flex items-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-deep/50 via-cosmic-900/60 to-black/70"></div>
+          <div className="relative z-10 container mx-auto px-4 py-32">
+            <div className="max-w-4xl mx-auto">
+              <p className="text-3xl md:text-4xl font-serif text-sacred-moon leading-relaxed mb-12 italic">
+                "Working with Astral changed my life. Not in a cliché way—in a 'I can't go back to who I was'
+                way. He sees you. Really sees you. And he holds space for whatever needs to emerge."
+              </p>
+              <p className="text-sacred-gold text-lg">— Maria, Barcelona</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Gentle Invitation */}
+        <div className="bg-sacred-cream py-32">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center space-y-8">
+              <h2 className="text-4xl md:text-5xl font-serif text-indigo-deep">
+                Ready to begin?
+              </h2>
+              <p className="text-xl text-indigo-deep/70">
+                Let's have a conversation about where you are and where you want to go.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-block px-12 py-4 bg-indigo-deep text-sacred-cream rounded-full hover:bg-indigo-deep/90 transition-colors font-medium text-lg"
+              >
+                Get in touch
+              </Link>
+            </div>
+          </div>
+        </div>
 
         {/* Footer */}
         <footer className="container mx-auto px-4 py-20 border-t border-mystic-purple/20">
@@ -262,7 +368,7 @@ function LandingPage() {
                 Awaken. Remember. Embody. You are already home.
               </p>
               <p className="text-xs text-mystic-lavender/40 mt-4">
-                © 2023 Jordi Sacred Coaching. All rights reserved.
+                © 2025 Astral Integration. All rights reserved.
               </p>
             </div>
 
@@ -297,9 +403,10 @@ function PlaceRoute() {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/about" element={<AboutPage />} />
+        <Route path="/about" element={<AboutPageNew />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/inner-ascend" element={<InnerAscendPage />} />
         <Route path="/retreats" element={<RetreatsPage />} />

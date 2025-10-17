@@ -24,11 +24,19 @@ export default {
           moon: '#F5F5F0',      // Updated to off-white
           glow: '#fef3c7',
           green: '#9CAF88',     // New sage green for grounding
+          cream: '#FAF8F3',     // Warm cream for light sections
+          sand: '#E8E4DD',      // Sandy beige
         },
         // Design spec colors for reference
         indigo: {
           deep: '#2C1654',      // Deep Indigo from design specs
         }
+      },
+      fontSize: {
+        // Add larger editorial sizes
+        '8xl': ['6rem', { lineHeight: '1' }],
+        '9xl': ['8rem', { lineHeight: '1' }],
+        '10xl': ['10rem', { lineHeight: '1' }],
       },
       fontFamily: {
         serif: ['Cormorant Garamond', 'Georgia', 'Cambria', 'serif'],
