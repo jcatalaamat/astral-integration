@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useParams, Link } from 'react-router-dom';
-import { Sparkles, Globe, ArrowRight } from 'lucide-react';
+import { Sparkles, Globe, ArrowRight, Menu, X } from 'lucide-react';
+import './i18n';
 import enTranslations from './translations/en.json';
 import esTranslations from './translations/es.json';
 import caTranslations from './translations/ca.json';
@@ -8,6 +9,12 @@ import EventPreview from './components/EventPreview';
 import PlacePreview from './components/PlacePreview';
 import SupportPage from './components/SupportPage';
 import PrivacyPage from './components/PrivacyPage';
+import AboutPage from './components/pages/AboutPage';
+import ServicesPage from './components/pages/ServicesPage';
+import InnerAscendPage from './components/pages/InnerAscendPage';
+import RetreatsPage from './components/pages/RetreatsPage';
+import ResourcesPage from './components/pages/ResourcesPage';
+import ContactPage from './components/pages/ContactPage';
 import OfferingsSection from './components/OfferingsSection';
 import TransformationStages from './components/TransformationStages';
 import AboutSection from './components/AboutSection';
@@ -18,56 +25,24 @@ import NewsletterSection from './components/NewsletterSection';
 
 // Main Landing Page Component
 function LandingPage() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [language, setLanguage] = useState<'en' | 'es' | 'ca'>('en');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const t = language === 'es' ? esTranslations : language === 'ca' ? caTranslations : enTranslations;
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  const spotlightStyle = {
-    background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(251, 146, 60, 0.15), transparent 40%)`
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-cosmic-900 via-cosmic-800 to-black text-sacred-moon overflow-hidden relative">
-      {/* Cosmic aurora background */}
-      <div className="fixed inset-0 opacity-20">
+      {/* Cosmic aurora background - dialed down from opacity-20 to opacity-10 */}
+      <div className="fixed inset-0 opacity-10">
         <div className="absolute top-0 -left-4 w-[600px] h-[600px] bg-mystic-purple rounded-full mix-blend-screen filter blur-3xl animate-breathe" style={{animationDuration: '8s'}}></div>
-        <div className="absolute top-1/4 -right-4 w-[500px] h-[500px] bg-mystic-indigo rounded-full mix-blend-screen filter blur-3xl animate-breathe" style={{animationDuration: '10s', animationDelay: '2s'}}></div>
-        <div className="absolute bottom-0 left-1/3 w-[550px] h-[550px] bg-mystic-violet rounded-full mix-blend-screen filter blur-3xl animate-breathe" style={{animationDuration: '12s', animationDelay: '4s'}}></div>
+        <div className="absolute top-1/4 -right-4 w-[500px] h-[500px] bg-sacred-green rounded-full mix-blend-screen filter blur-3xl animate-breathe" style={{animationDuration: '10s', animationDelay: '2s'}}></div>
       </div>
 
-      {/* Mystical spotlight effect */}
-      <div className="fixed inset-0 pointer-events-none" style={spotlightStyle}></div>
-
-      {/* Sacred geometry overlay */}
-      <div className="fixed inset-0 opacity-[0.03]" style={{
+      {/* Sacred geometry overlay - reduced opacity */}
+      <div className="fixed inset-0 opacity-[0.02]" style={{
         backgroundImage: 'linear-gradient(rgba(139, 92, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px)',
         backgroundSize: '60px 60px'
       }}></div>
-
-      {/* Floating particles */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-sacred-gold rounded-full animate-float opacity-40" style={{animationDelay: '0s'}}></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-mystic-lavender rounded-full animate-float opacity-30" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-sacred-glow rounded-full animate-float opacity-35" style={{animationDelay: '4s'}}></div>
-      </div>
 
       <div className="relative z-10">
         {/* Navigation */}
@@ -75,38 +50,79 @@ function LandingPage() {
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-20">
               {/* Logo */}
-              <div className="flex items-center gap-3">
+              <Link to="/" className="flex items-center gap-3">
                 <Sparkles className="w-8 h-8 text-mystic-violet animate-glow" />
                 <span className="text-xl font-serif bg-gradient-to-r from-mystic-lavender via-sacred-gold to-mystic-violet bg-clip-text text-transparent">
                   Astral Integration
                 </span>
-              </div>
+              </Link>
 
               {/* Nav Links - Hidden on mobile */}
-              <div className="hidden md:flex items-center gap-8">
-                <button onClick={() => scrollToSection('offerings')} className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
-                  Sacred Work
-                </button>
-                <button onClick={() => scrollToSection('transformation')} className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
-                  The Journey
-                </button>
-                <button onClick={() => scrollToSection('testimonials')} className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
-                  Transformations
-                </button>
-                <button onClick={() => scrollToSection('booking')} className="px-6 py-2 bg-gradient-to-r from-mystic-purple to-mystic-indigo rounded-full font-semibold hover:shadow-lg hover:shadow-mystic-purple/50 transition-all animate-breathe">
-                  Work With Me
-                </button>
+              <div className="hidden lg:flex items-center gap-6">
+                <Link to="/about" className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
+                  About
+                </Link>
+                <Link to="/services" className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
+                  Services
+                </Link>
+                <Link to="/inner-ascend" className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
+                  Community
+                </Link>
+                <Link to="/retreats" className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
+                  Retreats
+                </Link>
+                <Link to="/resources" className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
+                  Resources
+                </Link>
+                <Link to="/contact" className="px-6 py-2 bg-gradient-to-r from-mystic-purple to-mystic-indigo rounded-full font-semibold hover:shadow-lg hover:shadow-mystic-purple/50 transition-all">
+                  Contact
+                </Link>
               </div>
 
-              {/* Language Toggle */}
-              <button
-                onClick={() => setLanguage(language === 'en' ? 'es' : language === 'es' ? 'ca' : 'en')}
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-mystic-purple/20 backdrop-blur-xl border border-mystic-lavender/30 hover:bg-mystic-purple/30 transition-all"
-              >
-                <Globe className="w-4 h-4 text-sacred-gold" />
-                <span className="text-sm font-medium text-sacred-moon">{language === 'en' ? 'EN' : language === 'es' ? 'ES' : 'CA'}</span>
-              </button>
+              {/* Right Side: Language + Mobile Menu */}
+              <div className="flex items-center gap-4">
+                {/* Language Toggle */}
+                <button
+                  onClick={() => setLanguage(language === 'en' ? 'es' : language === 'es' ? 'ca' : 'en')}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-mystic-purple/20 backdrop-blur-xl border border-mystic-lavender/30 hover:bg-mystic-purple/30 transition-all"
+                >
+                  <Globe className="w-4 h-4 text-sacred-gold" />
+                  <span className="text-sm font-medium text-sacred-moon">{language === 'en' ? 'EN' : language === 'es' ? 'ES' : 'CA'}</span>
+                </button>
+
+                {/* Mobile Menu Button */}
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="lg:hidden p-2 text-mystic-lavender hover:text-sacred-gold transition-colors"
+                >
+                  {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                </button>
+              </div>
             </div>
+
+            {/* Mobile Menu */}
+            {mobileMenuOpen && (
+              <div className="lg:hidden py-4 space-y-3 border-t border-mystic-purple/20">
+                <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-mystic-lavender/80 hover:text-sacred-gold transition-colors">
+                  About
+                </Link>
+                <Link to="/services" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-mystic-lavender/80 hover:text-sacred-gold transition-colors">
+                  Services
+                </Link>
+                <Link to="/inner-ascend" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-mystic-lavender/80 hover:text-sacred-gold transition-colors">
+                  Community
+                </Link>
+                <Link to="/retreats" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-mystic-lavender/80 hover:text-sacred-gold transition-colors">
+                  Retreats
+                </Link>
+                <Link to="/resources" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-mystic-lavender/80 hover:text-sacred-gold transition-colors">
+                  Resources
+                </Link>
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sacred-gold font-semibold">
+                  Contact
+                </Link>
+              </div>
+            )}
           </div>
         </nav>
 
@@ -116,60 +132,43 @@ function LandingPage() {
             {/* Sacred Symbol */}
             <div className="text-5xl mb-8 text-sacred-gold animate-breathe opacity-60">⊹</div>
 
-            {/* Main Headline - Bold Transformation */}
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
-              <span className="inline-block animate-fadeIn bg-gradient-to-r from-mystic-lavender via-sacred-gold to-mystic-violet bg-clip-text text-transparent animate-shimmer" style={{
-                backgroundSize: '200% auto'
-              }}>
-                Timeline Shift Into Your Highest Self
+            {/* Main Headline - More Accessible */}
+            <h1 className="text-5xl md:text-7xl font-serif font-bold mb-4 leading-tight">
+              <span className="inline-block bg-gradient-to-r from-mystic-lavender via-sacred-gold to-mystic-violet bg-clip-text text-transparent">
+                Guiding Souls on a Journey of the Self
               </span>
             </h1>
 
-            {/* Subtitle - Powerful */}
-            <p className="text-2xl md:text-3xl text-mystic-lavender/80 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Soul realignment for initiates ready to transcend limitations and become game changers
+            {/* Subtitle - Grounded & Clear */}
+            <p className="text-xl md:text-2xl text-mystic-lavender/80 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Mentorship, healing, and medicine work for deep transformation
             </p>
 
             {/* Sacred Message - Soft Wisdom */}
-            <div className="text-base text-mystic-lavender/60 mb-4 font-serif italic">
-              1:1 Mentorship • Soul Work • Integration
+            <div className="text-base text-mystic-lavender/70 mb-8 font-serif">
+              Energy Healing • Bufo Ceremonies • Family Constellations • Conscious Community
             </div>
-
-            {/* Divider */}
-            <div className="flex justify-center items-center gap-4 my-6">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent via-mystic-purple/50 to-transparent"></div>
-              <div className="text-xl text-sacred-gold/40">✧</div>
-              <div className="h-px w-16 bg-gradient-to-r from-transparent via-mystic-purple/50 to-transparent"></div>
-            </div>
-
-            {/* Gentle Sacred Message */}
-            <p className="text-sm text-mystic-lavender/50 mb-2 font-serif italic">
-              This is not self-help. This is soul remembrance.
-            </p>
-            <p className="text-sm text-mystic-lavender/40 mb-12 font-serif">
-              Your journey begins with one sacred step.
-            </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-              <button
-                onClick={() => scrollToSection('booking')}
-                className="group px-8 py-4 bg-gradient-to-r from-mystic-purple via-mystic-indigo to-mystic-violet text-sacred-moon rounded-2xl font-semibold hover:shadow-2xl hover:shadow-mystic-purple/50 transition-all flex items-center gap-3 animate-breathe"
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+              <Link
+                to="/contact"
+                className="group px-8 py-4 bg-gradient-to-r from-mystic-purple via-mystic-indigo to-mystic-violet text-sacred-moon rounded-2xl font-semibold hover:shadow-2xl hover:shadow-mystic-purple/50 transition-all flex items-center gap-3"
               >
-                <span>Begin Your Initiation</span>
+                <span>Begin Your Journey</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button
-                onClick={() => scrollToSection('offerings')}
+              </Link>
+              <Link
+                to="/services"
                 className="px-8 py-4 bg-mystic-purple/20 backdrop-blur-xl border border-mystic-lavender/30 text-sacred-moon rounded-2xl font-semibold hover:bg-mystic-purple/30 transition-all"
               >
-                Explore Soul Work
-              </button>
+                Explore Services
+              </Link>
             </div>
 
-            {/* Gentle Closing */}
-            <div className="text-xs text-mystic-lavender/40 font-serif italic">
-              This is your first breath back home.
+            {/* Location Info */}
+            <div className="text-sm text-mystic-lavender/60 font-serif">
+              Based in Mazunte, Mexico & Barcelona, Spain
             </div>
           </div>
         </div>
@@ -300,6 +299,12 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/inner-ascend" element={<InnerAscendPage />} />
+        <Route path="/retreats" element={<RetreatsPage />} />
+        <Route path="/resources" element={<ResourcesPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="/event/:id" element={<EventRoute />} />
         <Route path="/place/:id" element={<PlaceRoute />} />
         <Route path="/support" element={<SupportPage />} />

@@ -1,0 +1,60 @@
+Astral_Website_Project/
+│
+├── 📍_QUICK_START_GUIDE.md          ← Start here for quick overview
+├── START_HERE.md                     ← Main implementation guide (18,000 words)
+├── PROJECT_SUMMARY.md                ← Quick reference summary
+│
+├── 01_Reference_Notes/
+│   ├── README.md                     ← Guide to using the reference notes
+│   └── Organized Notes/
+│       ├── Spiritual & Healing/
+│       │   ├── Inner Ascend Community/
+│       │   ├── Ceremonies & Medicine Work/
+│       │   ├── Meditation & Practices/
+│       │   ├── Healing Modalities/
+│       │   └── Spiritual Teachings/
+│       ├── Business & Projects/
+│       │   ├── Inner Ascend Business/
+│       │   ├── App & Platform Ideas/
+│       │   ├── Coaching Programs/
+│       │   ├── Community & Ecovillage Projects/
+│       │   └── Business Ideas & Strategy/
+│       ├── Personal & Reflections/
+│       │   ├── Dreams & Visions/
+│       │   ├── Love & Relationships/
+│       │   ├── Personal Growth/
+│       │   └── Daily Reflections/
+│       ├── Technical & Development/
+│       │   ├── Code Snippets/
+│       │   ├── Software Projects/
+│       │   └── Technical Tasks/
+│       ├── Creative Content/
+│       │   ├── AI Prompts & Experiments/
+│       │   ├── Music & Songs/
+│       │   ├── Writing & Storytelling/
+│       │   └── Marketing & Content/
+│       ├── Quick Captures/
+│       │   ├── Links & References/
+│       │   ├── Todo Lists/
+│       │   └── Random Notes/
+│       └── Archive/
+│           └── Unclear or Incomplete Notes/
+│
+├── 02_Design_Specs/
+│   ├── Website_Design_Concept.md     ← Complete website design & copy
+│   └── Astral_Offerings_Services_2025.md ← All services, pricing, posts
+│
+├── 03_Content_Structure/
+│   └── React_Content_Structure_Guide.md ← Technical architecture
+│
+└── 04_Implementation_Guide/
+    └── [Created as you build the site]
+
+CONTENTS:
+- 6 Documentation files (guides & specs)
+- 434 Reference notes (organized from Apple Notes)
+- 38 Folders (structured organization)
+- 7+ Pages designed (full copy written)
+- 20+ Services defined (with pricing)
+- 20 Social media posts (ready to publish)
+- 30,000+ words of documentation
