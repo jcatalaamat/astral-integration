@@ -137,8 +137,11 @@ function LandingPage() {
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-light text-sacred-moon mb-6 animate-fadeIn">
               Astral Integration
             </h1>
-            <p className="text-xl md:text-2xl text-sacred-moon/80 font-light tracking-wide">
+            <p className="text-xl md:text-2xl text-sacred-moon/80 font-light tracking-wide mb-8">
               Guiding souls home to themselves
+            </p>
+            <p className="text-sm md:text-base text-sacred-moon/60 font-light italic max-w-2xl mx-auto">
+              For those who hear the call. For those ready to remember.
             </p>
           </div>
 
@@ -146,6 +149,31 @@ function LandingPage() {
           <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
             <div className="w-6 h-10 border-2 border-sacred-moon/40 rounded-full flex items-start justify-center p-2">
               <div className="w-1.5 h-1.5 bg-sacred-moon/60 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Who This Is For - Wisdom Section */}
+        <div className="bg-gradient-to-b from-black via-cosmic-900/90 to-cosmic-900 py-32">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center space-y-12">
+              <div className="text-3xl text-sacred-gold/40">⊛</div>
+              <h2 className="text-3xl md:text-4xl font-serif text-sacred-moon leading-relaxed">
+                This work is for the ones who can no longer pretend
+              </h2>
+              <div className="space-y-6 text-sacred-moon/70 leading-relaxed text-lg max-w-3xl mx-auto">
+                <p>
+                  For those who've tried everything else. For the seekers who are tired of seeking.
+                  For the ones who know there's something deeper calling.
+                </p>
+                <p className="text-sacred-moon/60 italic">
+                  You're not broken. You're not lost. You're initiating.
+                </p>
+                <p>
+                  This is for the souls ready to stop performing, stop bypassing, and start remembering
+                  what they came here to do.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -209,6 +237,51 @@ function LandingPage() {
                 It's about remembering who you've always been."
               </p>
             </blockquote>
+          </div>
+        </div>
+
+        {/* The Approach - Philosophy Section */}
+        <div className="bg-white py-32">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-serif text-indigo-deep mb-8">
+                  How This Work Happens
+                </h2>
+                <p className="text-xl text-indigo-deep/70 max-w-3xl mx-auto leading-relaxed">
+                  This isn't therapy. It isn't coaching. It's something older. Something that can't be rushed.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-12 mt-20">
+                <div className="space-y-4">
+                  <div className="text-sacred-gold text-3xl">✧</div>
+                  <h3 className="text-xl font-serif text-indigo-deep">Presence Over Technique</h3>
+                  <p className="text-indigo-deep/70 leading-relaxed">
+                    I don't fix you. I hold space for you to remember your own wholeness.
+                    The transformation happens in the field between us.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="text-sacred-gold text-3xl">✧</div>
+                  <h3 className="text-xl font-serif text-indigo-deep">Body. Heart. Soul.</h3>
+                  <p className="text-indigo-deep/70 leading-relaxed">
+                    Real healing isn't just mental. We work through the body, honor the heart,
+                    and listen to what your soul has been trying to say.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="text-sacred-gold text-3xl">✧</div>
+                  <h3 className="text-xl font-serif text-indigo-deep">Integration Is Everything</h3>
+                  <p className="text-indigo-deep/70 leading-relaxed">
+                    Insight without integration is just spiritual entertainment.
+                    We anchor the work into your daily life, your relationships, your reality.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -342,6 +415,75 @@ function LandingPage() {
                     Become the medicine. Step into service, hold space for others, create ripples of transformation.
                   </p>
                 </div>
+              </div>
+
+              {/* Closing Wisdom */}
+              <div className="text-center mt-20 max-w-3xl mx-auto">
+                <p className="text-lg text-indigo-deep/60 leading-relaxed italic">
+                  This isn't a quick fix. This isn't a weekend workshop. This is the work of a lifetime—
+                  compressed into the time your soul needs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* What People Don't Tell You - Truth Section */}
+        <div className="bg-gradient-to-b from-white via-sacred-cream to-white py-32">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto space-y-12">
+              <div className="text-center">
+                <h2 className="text-3xl md:text-4xl font-serif text-indigo-deep mb-8">
+                  What People Don't Tell You About Transformation
+                </h2>
+                <p className="text-xl text-indigo-deep/70 leading-relaxed mb-12">
+                  It's not all light. It's not all love. Sometimes it's messy. Sometimes it's uncomfortable.
+                  And that's exactly where the real work begins.
+                </p>
+              </div>
+
+              <div className="space-y-8 text-indigo-deep/70 leading-relaxed">
+                <div className="border-l-2 border-sacred-gold/40 pl-6">
+                  <p className="mb-2">
+                    <span className="font-serif text-indigo-deep text-lg">You might lose people.</span>
+                  </p>
+                  <p className="text-sm text-indigo-deep/60">
+                    Not everyone can hold space for who you're becoming. And that's okay.
+                  </p>
+                </div>
+
+                <div className="border-l-2 border-sacred-gold/40 pl-6">
+                  <p className="mb-2">
+                    <span className="font-serif text-indigo-deep text-lg">You might question everything.</span>
+                  </p>
+                  <p className="text-sm text-indigo-deep/60">
+                    Including this work. Including me. That's part of reclaiming your sovereignty.
+                  </p>
+                </div>
+
+                <div className="border-l-2 border-sacred-gold/40 pl-6">
+                  <p className="mb-2">
+                    <span className="font-serif text-indigo-deep text-lg">You might feel worse before you feel better.</span>
+                  </p>
+                  <p className="text-sm text-indigo-deep/60">
+                    Healing brings things to the surface. That's not a sign it's not working—it's a sign it is.
+                  </p>
+                </div>
+
+                <div className="border-l-2 border-sacred-gold/40 pl-6">
+                  <p className="mb-2">
+                    <span className="font-serif text-indigo-deep text-lg">You will have to do the work.</span>
+                  </p>
+                  <p className="text-sm text-indigo-deep/60">
+                    I can guide. I can hold. I can witness. But I can't do it for you. No one can.
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-center mt-16">
+                <p className="text-lg text-indigo-deep/70 italic">
+                  If you're still reading, if this resonates—you're ready.
+                </p>
               </div>
             </div>
           </div>
