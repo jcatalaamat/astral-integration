@@ -15,6 +15,7 @@ import InnerAscendPage from './components/pages/InnerAscendPage';
 import RetreatsPage from './components/pages/RetreatsPage';
 import ResourcesPage from './components/pages/ResourcesPage';
 import ContactPage from './components/pages/ContactPage';
+import CollaborationsPage from './components/pages/CollaborationsPage';
 import ScrollToTop from './components/ScrollToTop';
 // Removed old section components - now using visual storytelling approach
 
@@ -66,6 +67,9 @@ function LandingPage() {
                 <Link to="/retreats" className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
                   Retreats
                 </Link>
+                <Link to="/collaborations" className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
+                  Collaborations
+                </Link>
                 <Link to="/resources" className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
                   Resources
                 </Link>
@@ -109,6 +113,9 @@ function LandingPage() {
                 </Link>
                 <Link to="/retreats" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-mystic-lavender/80 hover:text-sacred-gold transition-colors">
                   Retreats
+                </Link>
+                <Link to="/collaborations" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-mystic-lavender/80 hover:text-sacred-gold transition-colors">
+                  Collaborations
                 </Link>
                 <Link to="/resources" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-mystic-lavender/80 hover:text-sacred-gold transition-colors">
                   Resources
@@ -679,6 +686,7 @@ function App() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/inner-ascend" element={<InnerAscendPage />} />
         <Route path="/retreats" element={<RetreatsPage />} />
+        <Route path="/collaborations" element={<CollaborationsPage />} />
         <Route path="/resources" element={<ResourcesPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/event/:id" element={<EventRoute />} />
