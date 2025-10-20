@@ -1,0 +1,9 @@
+# Images for all 1:1
+
+Assignee: Nina Moore
+Status: Not started
+Summary: No content
+Project: Website Launch (../Projects%2002c5b465531a4749a1df0eb1c683ac11/Website%20Launch%200584f494a5154646b911bd165a6bacb6.md)
+Sprint: Sprint 2 (../Sprints%20262ee40d2e4f41eda1103e78030fc19c/Sprint%202%202cdd14d15e4b48258fe46447eee479f1.md)
+Parent-task: Website Pages (Website%20Pages%20b4b66307126040bf99fdabe48ec45036.md)
+Team: Content Marketing

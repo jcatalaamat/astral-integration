@@ -1,0 +1,278 @@
+# Brain Dump (Tactical)
+
+# Table Story
+
+[To-do](Brain%20Dump%20(Tactical)%20bd4ab1b68ac542279c980b3daf8d3dde/To-do%201e7dfbbabe2541b4b46ae9eee8ead6eb.csv)
+
+- Celebrate
+    - What can I do to celebrate?
+        - Print Images from the past
+        - Make a video about Kero
+- What is the one thing I can do that is going to make next week way easier?
+    - Have some movement every day
+    - Create a routine on developing projects
+- What are the 3 top projects I want to work on? Personal, Spiritual, Emotional
+    - Self Care
+    - Spiritual Healing Business
+    - Inner Ascend Mastermind
+- Swap
+    - with woman from session
+- Work on Student Manual
+- Work on Student Manual 2
+- Work on Personal Writing (journal / Notion)
+- Finish Bufo PDF
+- Record yourself channelling Songs (playing guitar / without)
+- Record video on the land with micro small
+- Record meditation with microphone in computer (short script Sky, belief activation (101 beliefs etc)
+- Record
+    - Making poetry
+    - me recording looking at my own camera face
+- Bufo Process
+    - Waiver
+    - How they contact us
+    - How to organise ceremonies
+    - What’s the approach to close clients
+- Clear
+    - Inner Ascend
+    - IA
+- What if all the other men and women are struggling but It doesn't seem like because they don't share like I don't share? What if they were in need of love and attention just as I was? What would I be able to shine in them? What xan I ask them? How can I make them shine? Be in the picture? How can I make sure they feel taken care of? How can I love them?
+    - What id they were struggling with the exact same issue? Anger? Grief? Deep loneliness and isolation? What would they need? What if I could give it to them? A space where to let go, where to connect with this wounded aspect of them?
+    - Think of Christoph, Sasha, Olivia, what do they all need? Love? In what form?
+    - There’s a key here
+    - What if they are all reflections of me and need and crave stuff like me? A warm little place where to watch a Christmas movie, to snuggle up, have a tea, spend some time? Who are the people more hard for you to speak to and imagine their upbringing? What happened to them that they are not able to open to you in the same form you’d want them to be open to you? How are you expecting each of those 10 main people in life the ones you are seeing more often to act or behave around you that would make you the happiest? You may have to improvise subjects of speaking to break the ice and make yourself available to them
+    - Hare Krishna
+    - sing hip hop
+    - What would you tell them about their bodies? How would they move their bodies best? How would you guide them? What would you tell to them?
+        - Record a meditation feel the energy from the bottom of your feet
+            - Improvise a recorded meditation, start with 5 minutes
+    - Open your chest, your eye brows, your heels, activate your genetic upgrading gifts
+    - Keep focusing on what would the body need, imagine to write a script up about how to run this session for them, like a daily routine they can make after reading this script about how to move their energy bodies
+- 3-4 more important people in you life
+    - Tell them how you feel
+- Record healing session how you'd like to heal yourself and speak to yourself create container and walk you through healing
+- What's up with Spanish? What's up with catalan? Ask yourself a good question about languages
+- Connect to the catalan language and look for the magic
+- Be grateful for your anger and experiences and shadows that kept you alive and made you who you are
+- Heal all relationships no need more than feel into people and speak to them
+    - Choose all experiences and express how they made you feel
+    - Meditate an hour a day in mother
+    - Meditate on releasing the loss, meeting the anger, the pain,
+    - Release all other relationship grudges. Make a trauma tree on these things on the main relationship stuff
+    - Release main pains from Nina and Paris and serving together and old times. Go through experiences and heal each of them by expressing the pain
+    - Write affirmation letters to yourself and your inner child
+    - Make a self work list and follow am order of prompt exercises to know and track your progress and healing
+    - Give free exercise healing for your close ones. Who are the people you most adore in youe life in order and heal them and give them free conversation and soul advice reading
+    - I give free sessions to my friends and a personalised report or advice on how to work in exchange for a review or and video testimonial
+    - Where do top emotions play a role in your life? Journal minimum a page for each of them
+        - Anger
+        - Pain
+        - Sadness
+        - Grief
+        - Lust
+        - Explosive anger
+    - 
+- Go through
+    - Red Notebook
+    - Small Notebook
+    - Go through iPhone Notes
+    - Go through Notion Notes
+    - Organise ebook
+- Analyse
+    - I would like to just be able to meditate and sit around my client and the client to melt and do the whole work herself. Sacred witness
+        - Sacred space holder
+        - Healing through love and
+            - Opening the heart
+            - Divine light
+            - Wisdom energy activation
+    - Access Consciousness
+    - Reiki
+    - Developing Psychic Awareness
+    - Intimacy & Polarity John Wineland
+    - Relationship with
+        - Parents
+        - Núria
+        - Óscar
+        - Nina
+    - Prepare different albums to print
+        - Marcos
+        - Kero
+        - Nina
+        - Mountains
+        - Past
+    - AI
+        - AI tools
+        - Lyra Discord
+        - Erin
+        - Engineering Prompts for People (Business)
+        - Helping Social Media for people
+    - Record / Film
+        - Meditation for Instagram (Video)
+        - Your own practice, see if you use it after
+    - Daily Rituals
+        - Gratitude
+    - Anna Kitney Launch & Grow
+    - Enegy Healing Circle
+    - Kundalini Morning
+    - Led Therapy
+- Send energetic emails
+    - Sulvei
+    - Azahara
+    - Alice
+    - Irene
+- Create Balance
+    - Nimai
+    - Emilio
+- Meditate Release
+    - Madara
+    - Alice
+    - Irene
+    - Laura Adan
+- People to reconnect with
+    - Madara
+    - Fabio
+    - Zoi
+    - Tom
+- Mens group online
+- Mens group in person
+- Nimai shakti pad together events
+- Energy healing in person events
+- Tipee events
+- Energy healing ceremonies
+    - online
+    - astral integration yoga
+    - yoga nidra
+    - storytelling
+- Bufo
+- Clear thought
+    - Human design
+- Meditate
+    - Recognition
+    - Love
+    - Light
+    - Flow your emotions
+    - On what you fear the most
+- Work on
+    - Fear of success, ostracised
+    - Fear of screaming
+    - Of emotional release
+    - Insist on making something as you like - your idea
+    - Releasing nudges from English extra-escolar and teen ages
+- Clear fear
+    - That I'm a murder
+    - Feet fetish fear
+- Quotes
+    - The child is dead. Long live the king!
+    - Creating the love you want to see in the world
+    - You want to live in
+    - Creating inner transformative experiences
+    - Tranaforming the way you see yourself in the world
+    - Opening yourself to limitless possibilities
+    - Transform the way you see yourself in others
+        - Insult
+    - Acknowledging the parts of self you don't want to see in the world
+        - What parts of you would you prefer not to see anymore?
+        - What behaviours?
+    - Asses your daily habits
+- Rework on song book
+- Sweat! Release toxins
+- Make financial pdf plan
+- Liver flush
+- Parasite cleanse
+- Vegan food
+- Things to offer
+    - Quantum dna upgrade
+- Setting short, medium, long term goals & big why
+- Make a
+    - Study plan for
+        - Gene keys
+        - Anna Kitney
+        - Other video platforms
+        - Work with YouTube interviews or video explanations on the background
+- What kind of content do I want to create?
+    - How to increase your whole body vibration
+    - Opening your intuition
+    - Creating the most aligned life
+    - Finding your inner compass
+    - Creating the business you truly want to
+    - How would I have fun serving others?
+        - What kind of therapy sessions I'd like to give?
+- Watch
+    - Masculine mastery
+    - Launch and grow
+    - Peak performance
+    - Tik tok reels maker
+    - remote solopreneur
+    - Gene keys venus sequence
+- Name obsession
+    - Why is name somimportant?
+    - What am I trying to unfold?
+- Rituals
+    - Incantation of solace
+    - lady's prayer
+    - Self Reiki
+    - Self love
+        - Grooming hair
+        - Self touch
+        - Moving belly massage
+        - Kundalini practice
+        - Body weight workout
+        - Lower body stretching
+        - Belly, lower belly massage
+        - Calisthenics
+    - Meditate for every organ and system and create and discreate emotions
+- Release
+    - Rage
+    - Bitterness
+    - Self punishment
+    - Higher mind over thinking
+    - Cats story
+- Stop saying
+    - I don't know
+    - Just
+    - Limiting language
+        - Express from Órgiva
+            - Asperger
+- What if
+    - I was going to make friends without my partner
+    - Not choosing the right thing
+- Forgive moments where you almost got ‘clients’
+    - Clear the word ‘client’
+- Reflect
+    - Life in Ibiza
+    - Portugal 2020
+- Meditate to pictures of
+    - Castelldefels
+- Meditation and
+    - Movement channel
+    - Recording
+    - Inviting my family members in me (family constellations) invitar a los mios, meditacions practica
+- Make routine for
+    - Checking emails - how often
+    - Writing social - is it necessary?
+    - Top 10 priorities?
+    - What daily actions can i take that are going to get me closer to my goal?
+- Finantial plan
+    - Money coming in
+    - Money coming up
+    - Target goal
+    - How do I make it?
+- Healing
+    - The gut
+    - Intestines
+    - Liver
+    - Brain hemispheres
+- Reflection
+    - What about being a Medium? What’s bad about it? Why can’t I marketise it?
+    - What about Jaume?
+    - Who am I to tell what I can see, sense and feel?
+    - How to change that?
+- Write
+    - Catalan poetry
+    - Instagram bilingüe
+        - No rules
+- Me
+    - I am worthy healer
+- I'm a medium Channeller
+    - I channel for others and can ask how they are about whay i see
+        - To be interested
+- Consider Readwise -

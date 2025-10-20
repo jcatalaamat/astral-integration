@@ -1,0 +1,42 @@
+﻿Name,Phase,Type
+Settings,Onboarding,Touchpoint
+Create first workspace,Activation,Action
+This is taking too long,Activation,Emotion
+Enable email notifications,Onboarding,Action
+Share page,Activation,Action
+Video,Onboarding,Touchpoint
+Connect Twitter Account,Register,Action
+What are all these blocks?,Register,Emotion
+Initial recommendations in dashboard,Register,Opportunities
+The potential is exciting,Activation,Emotion
+Magic Link instead of password step,Activation,Opportunities
+Add perferences,Onboarding,Action
+Add blocks,Activation,Action
+Short attention spans / churn,Onboarding,Painpoint
+Pick a template,Activation,Action
+Give permissions,Register,Action
+Sharing settings,Register,Touchpoint
+Ask for permissions only when needed,Activation,Opportunities
+Story-like video onboarding,Onboarding,Opportunities
+Webinar,Onboarding,Touchpoint
+Choose plan,Register,Action
+Signup,Activation,Team
+So many options to pick from!,Register,Emotion
+1:1 onboarding for biz accs,Onboarding,Opportunities
+I did it! Let me show it,Register,Emotion
+Referral Code,Activation,Touchpoint
+This is taking too long. Let me create something already!,Onboarding,Emotion
+Too many options to pick from. Paralysis by analysis,Register,Painpoint
+Workspace,Register,Touchpoint
+Email,Activation,Touchpoint
+Walkthrough video,Onboarding,Action
+Alrighty this makes sense,Onboarding,Emotion
+Why are they asking all these questions?,Activation,Emotion
+Find friends,Register,Action
+Complete profile,Onboarding,Action
+Free Resources,Activation,Touchpoint
+Short attention spans / churn,Activation,Painpoint
+Signup,Onboarding,Team
+Templates List,Onboarding,Touchpoint
+Acquisition,Activation,Team
+Pre-fill workspace with templates according to registration inputs,Register,Opportunities

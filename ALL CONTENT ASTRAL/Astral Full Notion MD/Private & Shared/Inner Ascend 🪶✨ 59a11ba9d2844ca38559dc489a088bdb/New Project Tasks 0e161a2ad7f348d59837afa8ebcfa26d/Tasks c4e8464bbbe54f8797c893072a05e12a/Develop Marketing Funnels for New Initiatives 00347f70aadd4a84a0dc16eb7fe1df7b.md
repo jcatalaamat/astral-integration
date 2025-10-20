@@ -1,0 +1,10 @@
+# Develop Marketing Funnels for New Initiatives
+
+Status: Not started
+Summary: No content
+Project: Collective (../Projects%2096c1732559b04ea5a2166797e8dd90c9/Collective%20cd286ab071814e479a72a3df3963214a.md), Social Media / Marketing (../Projects%2096c1732559b04ea5a2166797e8dd90c9/Social%20Media%20Marketing%20bcbc70ac10a648b8952b0aa9987f153c.md)
+Task ID: TAS-11
+
+## Description
+
+-

@@ -1,0 +1,102 @@
+# Practitioner Training
+
+Description: min info to embody transformation practice (QR)
+Column: November 13, 2021 7:43 AM
+No: Yes
+Word Count: 1269
+Yes: No
+
+- You cannot get enough clearings from teachers to be able to fully be yourself
+- Triggers are there to show you where you hurt
+- If you choose to fully be yourself you have to accept its integral part in your life
+- Inside, outside
+- One thing, everything (in its own dimension)
+- How to integrate clearing into everyday life
+- The time to face a clearing is when it happens. You don't wait next month to deal with cutting your finger when you cook.
+- Spontaneous clearings (life timeline thought meditation)
+- Clearing clues - clenching
+- from doing to being
+- challenges come exactly for you to feel them then, they dont say you are bad for not seeing it before or blaming or regreting. the moment the trigger and the anxiety and the anger is there, it is the right moment to feel it
+    - if 'too big', they move on to next time → effortlessness
+    - you move at the right pace, always, going and realigning yourself to the highest timeline
+    - highest timeline occurs when you face the fear when it comes up, releasing it
+    - triggers are based on fear
+    - you do this to yourself, and the way you will truly awaken will be the most beautful and sweet way you could have ever prepared for yourself
+    - it always comes
+    - there is no escape
+- asking the right questions to unlock energies
+- going deep - not stopping when it feels uncomfortable
+    - use clues like hunger, thirst, moving, singing thoughts, negative thoughts - your higher self is teaching you and when you most uncomfortable feel its most easy to discern the truth
+    - emotions are there to guide you, negative thoughts are frozen parts of you, every traumatic event has a version of you stored, your mind is the field where the frozen aspects of you are calling you to free them, they are like emotions, they point to the hurt, they are guides. when you clear your hurt the mind clears
+- not forcing a practice on yourself - the energy shifts first and then the action comes effortlessly - otherwise you doubt yourself and if you doubt yourself somewhere, even if it was for your best interest, then you will also doubt yourself in places where you are righteous
+- it's all about you - you first - your interest first
+- opening the heart is the only option
+- no free will - you either act from fear, which has been taught to you, or you open the heart, which you have chosen when you decided to awaken after saying no to fear at some point
+    - once you are in motion the only choice in every situation is to surrender to what is and open the heart - life becomes a movie where if you realise the fear you choose to open, if you are not aware of the fear you choose to close, it means that its a synchronicity for the universe to unfold to affect somewhat everyone else
+- trust and create the best version of the universe for yourself - at your right pace - being ok to change at any time -
+- if you feel light, it is true for you, if not, then it's not for you, at least not at that time
+- if you dont feel excited about what you hear, feel, about a theory, about a practice, about something, it's for you to simply greet it and let it go, you dont have sex with the people that are cool only because are cool, you get to know them when you happen to be bumping into them. - the universe brings you opportunities and respects your pace at all times - it wants you to progress from one to another, not to strongly cut you and throw you to something - when the shift comes, its from inside, you suddenly find yourself enjoying something and doing it, there is no reason to not enjoy something when we do it. there is no 'at the beginning is not enjoyable' if you dont enjoy then that's your limit.
+    - begin doing core exercises? do 4 minuts and you stop enjoying? that's your right pace → it makes you dissolve the ego into anything you want to accomplish → you are perfect, need nothing else → destroy ego imprints and results you look fore
+- anything you want, anything you desire → ego
+    - anything you enjoy → soul
+    - change the positive/negative attachments from the past, they dont define you
+        - because u enjoyed something in the past doesnt mean you like or love it. time does not exist, there is no reason to believe you should be the same when everything about you keeps changing
+- forbidden words → coming from the limitations of the ego
+- change the language
+- everyone is a vibration, everyone heals, its a natural state
+- everything is medicine
+- we are in constant exchange of information with EVERYTHING - all scales, from closest to further - from people to planets
+- everything is in relation to you - planets, solar system, galaxies
+- you learnt everything in relation to someone
+- child development - phases - conditioning, environments, education, ancestral trauma, genetics
+- inner child, teenager, young adult, parents - they are all interconnected and they come in cycles and sometimes they intermingle
+- accept your story - keep accepting - keep releasing - forgive - all are parts of you - your nature as human - you're a particular point of consciousness like any other, the difference is your unique story - release it
+- loop blocks of fears
+- the idea of holding space & presence → channel
+- what you can speak in relation to your heart is truth
+- love is god
+- god is the synchronicity of everything - we're all enlightened unity - we're waves in a universal ocean of energy
+- love is nothing of what we call love
+- love is not romantic
+- love is quantum particles of light
+- love is the power of creation
+- the truth about connecting with your heart - acting from the heart - speaking from the heart - what means to open the heart - the heart as the guide
+- the bliss of the heart - the intelligence of the heart - the heart taps into the quantum field of information
+- you are a benevolent god - right pace - right time - no mistakes - grace - best possible life
+- when you live from the heart, nothing else matters - everything is good as it is - accept life - forgive what is - see your channel awakening
+- anchors are there to show you where you are strong - they guide you into realising you're doing good
+    - when i channel i feel good
+    - when i am being i feel in ecstasi or bliss
+    - when it shifts, is gone
+    - when i feel my intuition is moving me i don't find another option to be any different
+    - these anchors show you your truth and can come back to reassure of your good work
+- discern the truth
+    - tone of voice
+    - words chosen
+    - encabalgamiento
+    - jumps on the tone, very subtle
+    - body twitches
+    - placing of the tongue in the palate
+    - ear beeping
+- clearings
+    - yawns
+    - full breath that feel like settled
+- checkpoint save - transition - marks
+    - scratching head
+    - massaging face
+    - stretching body parts
+    - raising arms
+    - 
+- misalignments
+    - actions that are slightly abusive for the body
+        - braiding the hair with a little pain
+        - scratching the body
+    - distractions
+    - channeling while looking at one point of reference and the eyesight looking somewhere else when the word or the direction of the statement is misaligning
+    - going from focused point of looking to blurred image
+- avoidance of channel or deepening presence
+    - picking nails
+    - cleaning dirt in the nails
+    - picking or massaging toes
+    - an active and pseudo strong action with your hands on body parts → dissipate energy and distract part of your energy rise - split awareness between following the person or the thread and doing an action that takes quite a body awareness
+    -

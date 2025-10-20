@@ -1,0 +1,408 @@
+﻿Name,Description,ID,Notes,Priority,Section,States,Status,Subsection,UI Components,User Actions
+"
+1) Product Map & Navigation
+
+
+
+
+1.1 High-level sitemap (top-level sections)
+
+
+• Home / Feed — unified stream of posts, shares, event highlights, host spotlights.
+• Discover / Marketplace — browse sessions, healings, practitioners, and offerings; filters.
+• Events — calendar & list of retreats, workshops, circles; RSVP/Book.
+• Groups & Circles — community spaces; posts, events, and chat per group.
+• Chat — 1:1 and group threads; message requests.
+• Wallet & Credits — balance, top-up, earn (streaks/daily actions), transaction history.
+• Profile — user profile, followers/following, listings, badges, subscription status.
+• Subscription / Upgrade — plans, benefits, verified badge info.
+• Notifications — activity center (bookings, RSVPs, comments, follows, reminders).
+• Create (+) — floating action (new post, new event, new listing, new group) routed to wizards.
+• Support / Help — FAQs, guidance, safety/ethics, report issue.
+
+
+
+
+1.2 Navigation flow between pages
+
+
+• Primary tabs (top or bottom): Feed · Discover · Events · Groups · Profile.
+• Global search in header on Feed/Discover/Events.
+• Floating “+ Create” reveals quick actions: Post, Event, Listing, Group.
+• Deep-links: shares open Listing/Event/Group directly; “Message host” opens Chat with prefilled context.
+• Contextual jumps:
+
+    ◦ Card → Detail → Host Profile → Follow / Message.
+    ◦ Book/RSVP → Wallet & Credits if insufficient balance → Top-up → back to confirm.
+    ◦ Attempt premium action → Upgrade modal → on success returns to original action.
+
+• Back stack preserves filter state and scroll position on Discover and Events.
+
+
+
+
+1.3 Free vs subscription-gated areas
+
+
+• Free: browse all, follow, like/comment, join open groups, RSVP free events, message requests (rate limited), basic listing for sessions (standard placement), top-up credits, earn via daily actions.
+• Subscription unlocks: premium listing boost (top placement), create retreats & paid workshops, create paid / verified groups, advanced analytics (views/CTR/bookings), verified badge, unlimited DMs, link-out CTAs, promo codes.
+• Soft gates: attempts show Upgrade modal with concise benefit bullets; preserve draft so user never loses progress.
+
+
+
+Next Steps (Section 1):
+
+1. Lock primary tabs + route structure. 2) Define FAB (+) menu actions. 3) List every premium trigger so the Upgrade modal can catch them consistently.
+
+
+
+
+2) Core User Tasks (by persona)
+
+
+
+
+2.1 Seeker (discover, book, join, engage)
+
+
+1. Open Discover → set filters (modality, price/credits, live/remote, dates).
+2. Tap a ListingCard → scan photos, description, reviews/karma, host badge.
+3. Hit Book with Credits → select slot (if applicable) → confirm → success receipt.
+4. If low credits → Top-up (preset amounts) → auto-return to confirmation.
+5. Follow host, Save listing, Share to a friend.
+6. Browse Events → RSVP/Book → add to calendar → reminder set.
+7. Join Groups → introduce self → chat or ask a question in thread.
+
+
+
+
+2.2 Practitioner / Host (list, promote, host events)
+
+
+1. Create Listing wizard: basics → photos → pricing/credits → availability (optional) → publish.
+2. Promote: toggle “Boost (sub)” → preview boosted placement → confirm (if subscribed).
+3. Create Event wizard: details → capacity & pricing → publish → share to Feed/Groups.
+4. Manage attendees: view RSVPs, message all, export list, mark attendance.
+5. Engage: post to Feed; cross-post listing to relevant Groups.
+6. Respond to DMs/comments; pin FAQs on listing.
+7. Review analytics (views, clicks, bookings) — subscription perk.
+
+
+
+
+2.3 Community Creator (manage group, post content)
+
+
+1. Create Group: name, description, cover, type (open/request/paid*).
+2. Set guidelines & membership questions; invite first members.
+3. Post content, schedule circles, pin welcome post.
+4. Approve join requests; assign moderators.
+5. Run a live thread during a circle (text chat); share recap post.
+6. Enable paid membership & perks (if subscribed).
+7. Review group insights (growth, active members) — subscription perk.
+
+
+
+
+2.4 Admin / Moderator (approve, verify, moderate)
+
+
+1. Review queue: reports, new retreat posts, suspicious content.
+2. Approve/Reject with reasons; auto-notify creator.
+3. Verify: check subscription or review manual request → grant badge.
+4. Feature quality listings/events on Feed; rotate weekly.
+5. Escalate safety issues; freeze content; message parties.
+6. Sanctions: warn, mute, remove; audit log visible to admins.
+7. Maintain library of guidelines/templates.
+
+
+
+Next Steps (Section 2):
+Map each task to a single wizard or screen; add “done” success screens with clear next CTAs (Share, Post to Feed, Message Attendees).
+
+
+
+3) Behaviors & Interactions
+
+
+
+
+3.1 Marketplace flows (browse & book with credits)
+
+
+• Browse: grid/list, quick filters (Chips), sort (Top · New · Price · Rating).
+• Detail: sticky Book with Credits bar, host avatar + badge, trust cues (karma/years).
+• Booking: select time/format → confirm dialog → Spinner → Toast “Booked”.
+• Low balance: Sheet/Modal: pick top-up pack → confirm → return and auto-complete booking.
+• Capacity/Slots: show remaining; Waitlist if full; auto-notify when spot opens.
+• Cancellations: inline policy hint; “Request cancel” opens confirm dialog; show credit outcome (refund/partial).
+• Receipts: minimal success screen with Add to Calendar and Message host buttons.
+
+
+
+
+3.2 Event/retreat flows (create, publish, RSVP, join)
+
+
+• Create Event wizard (4 steps):
+
+    1. Basics (title, type: retreat/workshop/circle; online/offline).
+    2. When & Where (date/time, venue/map, timezone).
+    3. Access (free/credits, capacity, waitlist).
+    4. Media & Publish (cover, gallery, preview).
+
+• Draft autosave; Preview mode; Duplicate existing event.
+• RSVP/Book: confirm → success; Share to Feed toggle.
+• Reminders: T-24h and T-1h notifications.
+• Join: online events reveal join link at T-10m; offline shows map & check-in QR.
+• Host tools: “Message attendees”, “Mark attended”, “Close RSVPs”.
+
+
+
+
+3.3 Social flows (post, like, comment, follow, share)
+
+
+• Compose post (text + media + attach event/listing).
+• Interactions: like, comment (1 level), reshare to groups; copy link.
+• Follow: updates surface on Feed; mute option.
+• Safety: report, hide, block; inline confirmations.
+
+
+
+
+3.4 Group & chat flows (create group, join, chat, host circle)
+
+
+• Create Group: pick type (open/request/paid*), add rules, cover.
+• Join: instant for open; request form for gated; pay/credits if paid*.
+• Chat inside group: channel threads; Start Circle (scheduled event linked to group).
+• Role actions: pin, lock thread, slow mode.
+• Member directory with follow/DM.
+
+
+
+
+3.5 Subscription gating behaviors
+
+
+• On premium action (e.g., “Boost Listing”, “Create Retreat”, “Create Paid Group”):
+
+    ◦ Upgrade Modal shows concise 3–5 benefits + plan toggle + “Continue” → Sheet for plan confirm.
+    ◦ After success: return to action with success toast; badge appears instantly on avatar.
+
+
+
+
+
+3.6 Verification badge logic
+
+
+• Auto-verify: active Pro/Creator plan → badge granted.
+• Manual request (for non-subs): short form (links, ID doc upload placeholder) → Pending state; decision via Admin queue.
+• Badge states: none · pending (clock icon) · verified (checkmark). Tooltip explains criteria.
+
+
+
+Next Steps (Section 3):
+Prototype the Upgrade Modal, Top-up Sheet, and Create Event wizard as the three keystone interactions; add success toasts & reminders.
+
+
+
+4) Screen-by-Screen UI Tasks
+
+
+Tamagui primitives you’ll likely use throughout: YStack, XStack, ScrollView, Card, ListItem, Button, Input, TextArea, Select, ToggleGroup, Tabs, Avatar, Badge, Chip, Separator, Sheet, Dialog/Modal, Tooltip, Spinner, Progress, Checkbox, Switch, Toast.
+
+
+
+4.1 Home / Feed
+
+
+• Purpose: Catch attention, drive to actions (discover, RSVP, follow, top-up).
+• Key UI: YStack, PostCard (Card), EventCard, ListingCard, Chip filters, Button(“Create”), Avatar+Badge, Tabs (All / Following).
+• Actions: Like, comment, reshare, follow; tap cards to open details; create post.
+• States:
+
+    ◦ Empty: show welcome, “Follow hosts to personalize your Feed”, quick follow suggestions.
+    ◦ Loading: skeleton cards.
+    ◦ Error: retry banner.
+    ◦ Success: infinite scroll with pull-to-refresh.
+
+• Next Steps: Build PostCard, EventCard, ListingCard once and reuse.
+
+
+
+
+4.2 Discover / Marketplace
+
+
+• Purpose: Find sessions/healings quickly via filters.
+• Key UI: XStack filter bar (Chips + Select), Grid/List toggle, Card grid, Sort Select, Search Input.
+• Actions: Filter, sort, save, open details, book.
+• States:
+
+    ◦ Empty (no results): show “widen search” tips.
+    ◦ Loading: grid skeletons.
+    ◦ Error: inline retry.
+    ◦ Success: persistent filter chips; scroll position remembered.
+
+• Next Steps: Implement sticky filter bar and remembered filters per route.
+
+
+
+
+4.3 Event / Retreat Listing (detail)
+
+
+• Purpose: Convert interest to RSVP/Booking.
+• Key UI: Header media (Carousel), Title + date/time, Host row (Avatar+Badge), RichText, Map (optional), Sticky bottom bar (Book/RSVP), Share.
+• Actions: RSVP/Book, Message Host, Save, Share, Follow host, Add to calendar.
+• States:
+
+    ◦ Empty: (n/a)
+    ◦ Loading: skeleton page.
+    ◦ Error: “Couldn’t load event” with retry.
+    ◦ Success: capacity indicator + waitlist; post-success receipt.
+
+• Next Steps: Build the sticky booking bar + top-up path.
+
+
+
+
+4.4 Wallet & Credits
+
+
+• Purpose: Manage balance, top-up, see history, earn via daily actions.
+• Key UI: Balance Card (Progress), Top-up Sheet (preset buttons), History List (ListItem), Earn section (daily streak, “Check-in” button).
+• Actions: Top-up, redeem promo, see receipts.
+• States:
+
+    ◦ Empty: “No transactions yet” with how-to.
+    ◦ Loading: spinner on top-up.
+    ◦ Error: top-up failed (show guidance).
+    ◦ Success: toast + animated balance bump.
+
+• Next Steps: Implement Top-up Sheet with return-to-origin flow.
+
+
+
+
+4.5 Groups & Circles
+
+
+• Purpose: Build community, host circles.
+• Key UI: GroupList (Card), GroupDetail with Tabs (Posts · Events · Members · About), “Join” Button, Rules Sheet.
+• Actions: Join, post, schedule circle, pin post, invite.
+• States:
+
+    ◦ Empty: “No posts yet — start the conversation.”
+    ◦ Loading: skeletons.
+    ◦ Error: load/join retry.
+    ◦ Success: members grid, post composer.
+
+• Next Steps: Create GroupDetail tabs and simple post composer.
+
+
+
+
+4.6 Chat
+
+
+• Purpose: Lightweight messaging for coordination.
+• Key UI: Thread list (ListItem), Message view (YStack), Composer (Input + Send Button), Message requests banner.
+• Actions: Accept request, send message, attach event/listing, quick replies.
+• States:
+
+    ◦ Empty: “No messages yet — try messaging a host after booking.”
+    ◦ Loading: spinner.
+    ◦ Error: retry toast.
+    ◦ Success: typing indicator, read receipts (simple).
+
+• Next Steps: Implement message requests with Accept/Decline.
+
+
+
+
+4.7 Profile (with subscription & verified states)
+
+
+• Purpose: Showcase identity, listings, social graph, and plan.
+• Key UI: Header (Avatar, Name, Badge, Follow/Message), Tabs (Listings · Events · Activity · About), Plan pill (Free/Pro), Verify CTA.
+• Actions: Edit profile, share profile, upgrade, request verification (if not subscribed).
+• States:
+
+    ◦ Empty listings: “Create your first offering” CTA.
+    ◦ Loading: skeleton header + cards.
+    ◦ Error: inline retry.
+    ◦ Success: badge state reflects plan (none/pending/verified).
+
+• Next Steps: Badge Tooltip + Verify flow entry.
+
+
+
+
+4.8 Subscription Upgrade
+
+
+• Purpose: Convert at moment of intent.
+• Key UI: Dialog/Sheet with plan toggle, benefits list, price, CTA; FAQs collapsible.
+• Actions: Choose plan, confirm, see benefits applied.
+• States:
+
+    ◦ Loading: pay/confirm spinner.
+    ◦ Error: inline help + contact.
+    ◦ Success: confetti toast; return to source action.
+
+• Next Steps: Centralize the modal so any gate can invoke it.
+
+
+
+
+4.9 Notifications
+
+
+• Purpose: Action center for time-sensitive items.
+• Key UI: Filter tabs (All · Bookings · Social · System), ListItems with inline actions (Accept, View, Reply).
+• Actions: Open detail, quick actions, clear all.
+• States:
+
+    ◦ Empty: “You’re all caught up.”
+    ◦ Loading: skeleton list.
+    ◦ Error: retry banner.
+    ◦ Success: batch mark-as-read.
+
+• Next Steps: Add event reminders and waitlist-opened alerts.
+
+
+
+Next Steps (Section 4):
+Finalize Card components, Sticky bars, Modals/Sheets, and a Tokens/Theme file so screens render consistently with minimal bespoke styling.
+
+
+
+5) First Build Checklist (UI / Navigation only)
+
+
+1. App shell + routing: tabs (Feed, Discover, Events, Groups, Profile) with route preservation.
+2. Design tokens & primitives: spacing/typography/colors; base Card, Button, Chip, Badge, Avatar.
+3. PostCard / ListingCard / EventCard components (one codepath, props for variants).
+4. Feed screen with placeholder posts and interactions (like/comment stubs).
+5. Discover screen with sticky filter bar (chips + select), grid/list toggle, skeletons.
+6. Event detail page with header media, sticky Book/RSVP bar, success receipt.
+7. Wallet page: balance card, Top-up Sheet, transaction placeholders.
+8. Upgrade modal (global): plan toggle, benefits list, success return to origin.
+9. Create Event wizard (4 steps) with draft autosave + preview; publish shows success.
+10. Groups list + Group detail tabs (Posts · Events · Members · About) with join states.
+11. Chat list + thread view with message requests banner and simple composer.
+12. Profile header with Verified badge states (none/pending/verified) + plan pill.
+13. Notifications center with filter tabs and inline actions.
+14. Global “+ Create” FAB (Post, Event, Listing, Group) routing to respective wizards.
+
+
+
+Next Steps (Section 5):
+Stand up shell (1–3), then ship Discover → Detail → Book path and Upgrade modal; follow with Create Event wizard and Wallet flow to complete the first end-to-end journey.
+
+
+Design tone alignment & onboarding content can draw from your Student Manual themes (self-reflection, radical honesty, body wisdom) for copy in empty states and tooltips.  ",,,,,,,Not Started,,,

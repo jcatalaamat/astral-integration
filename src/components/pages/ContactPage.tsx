@@ -59,6 +59,44 @@ export default function ContactPage() {
               </p>
             </div>
 
+            {/* Booking Options */}
+            <div className="grid md:grid-cols-2 gap-6 mb-16">
+              {/* Sacred Discovery Call */}
+              <div className="bg-cosmic-900/20 backdrop-blur-xl border border-sacred-moon/20 rounded-2xl p-6">
+                <div className="space-y-3">
+                  <div className="text-2xl text-sacred-gold">✦</div>
+                  <h3 className="text-xl font-serif text-sacred-moon">Sacred Discovery Call</h3>
+                  <p className="text-sm text-sacred-moon/70 leading-relaxed">
+                    A 30-minute soul connection to explore if we're meant to journey together
+                  </p>
+                  <div className="pt-2">
+                    <span className="text-sacred-gold font-medium">Complimentary</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quantum Leap Intensive */}
+              <div className="bg-cosmic-900/20 backdrop-blur-xl border border-sacred-gold/30 rounded-2xl p-6">
+                <div className="space-y-3">
+                  <div className="text-2xl text-sacred-gold">✧</div>
+                  <h3 className="text-xl font-serif text-sacred-moon">Quantum Leap Intensive</h3>
+                  <p className="text-sm text-sacred-moon/70 leading-relaxed">
+                    3-month deep dive transformation container for serious initiates
+                  </p>
+                  <div className="pt-2">
+                    <span className="text-sacred-gold font-medium">Premium</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Urgency Message */}
+            <div className="text-center mb-12">
+              <p className="text-sm text-sacred-moon/60 italic">
+                Only 4 soul work spots available this month
+              </p>
+            </div>
+
             {/* Contact Form */}
             <div className="bg-cosmic-900/30 backdrop-blur-xl border border-sacred-moon/10 rounded-2xl p-8 md:p-12">
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -184,6 +222,35 @@ export default function ContactPage() {
                   I respond to every message personally. Typically within 24-48 hours.
                 </p>
               </div>
+            </div>
+
+            {/* Newsletter Signup */}
+            <div className="mt-20 bg-cosmic-900/20 backdrop-blur-xl border border-sacred-moon/10 rounded-2xl p-8 md:p-10 text-center">
+              <div className="text-3xl mb-6 text-sacred-gold animate-breathe opacity-60">⊹</div>
+              <h3 className="text-2xl md:text-3xl font-serif text-sacred-moon mb-4">
+                Join the Inner Circle
+              </h3>
+              <p className="text-sacred-moon/80 mb-3">
+                Receive transmissions, integration practices, and soul medicine
+              </p>
+              <p className="text-sm text-sacred-moon/60 mb-8 italic">
+                Sacred transmissions 2x monthly
+              </p>
+
+              {/* Newsletter Form */}
+              <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input
+                  type="email"
+                  placeholder="Your email portal"
+                  className="flex-1 px-6 py-3 bg-cosmic-900/50 border border-sacred-moon/20 rounded-full text-sacred-moon placeholder-sacred-moon/40 focus:outline-none focus:border-sacred-gold/50 transition-colors"
+                />
+                <button
+                  type="submit"
+                  className="px-8 py-3 bg-sacred-gold text-cosmic-900 rounded-full font-medium hover:bg-sacred-glow transition-all"
+                >
+                  Enter the Mystery
+                </button>
+              </form>
             </div>
           </div>
         </div>

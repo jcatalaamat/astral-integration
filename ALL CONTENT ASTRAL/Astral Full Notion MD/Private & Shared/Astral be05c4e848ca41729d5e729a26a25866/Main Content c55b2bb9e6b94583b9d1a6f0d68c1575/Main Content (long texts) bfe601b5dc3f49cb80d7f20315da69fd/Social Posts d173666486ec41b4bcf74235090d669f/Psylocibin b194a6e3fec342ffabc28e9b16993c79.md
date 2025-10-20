@@ -1,0 +1,5 @@
+# Psylocibin
+
+No: No
+Series: oda to medicine
+Yes: No

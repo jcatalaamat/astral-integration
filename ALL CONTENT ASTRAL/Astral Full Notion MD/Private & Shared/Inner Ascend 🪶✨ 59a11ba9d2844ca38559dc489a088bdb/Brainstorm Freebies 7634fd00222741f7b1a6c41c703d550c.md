@@ -1,0 +1,13 @@
+# Brainstorm Freebies
+
+1. **Guided Meditations**: Provide a series of pre-recorded, downloadable guided meditations on various topics.
+2. **Daily Practice Videos or 21-Day Challenge Series**: Develop a series of daily practice videos or a 21-day challenge series featuring a mix of yoga, breathwork, and meditation exercises. Each video can guide members through a unique routine, allowing them to create a regular practice habit. 
+3. **E-Book on Spiritual Development**: Create an introductory e-book (based on the Training Manual) covering basic principles of self-growth and spiritual development, as per the philosophy of Inner Ascend.
+4. **Free Introductory Workshop / Webinar / Masterclass**: Organize a free introductory session showcasing a glimpse into the Inner Ascend Practitioner Training. This could cover essential topics like self-healing, energy work, emotional transformation, trauma release, and shadow work. These sessions can offer powerful insights and demonstrate the value of the full training to potential participants.
+5. **Mini E-course**: Develop a short, introductory e-course based on our Practitioner Training or one of our course. This could include instructional videos, workbooks, and resources for further study.
+6. **20-Minute Discovery Call**: Offer a 20-minute discovery call with one of our coaches. This initial conversation allows potential clients to discuss their needs, get to know our coaching style, and see how our services could benefit them.
+7. **Free Laser Coaching Session**: Offer a free initial consultation or coaching session as an introduction to your personalized coaching packages.
+8. **Spiritual Practices Checklist**: Create a printable checklist or guide that highlights different spiritual practices that can help users connect to themselves more deeply.
+9. **Emotional Emergency Toolkit**: Prepare a digital toolkit for emotional emergencies, which could include mindfulness exercises, quick stress relief techniques, nervous-system regulation techniques, affirmations for emotional stability, and guidelines on when to seek professional help. This resource can be crucial for anyone struggling with an immediate emotional crisis and seeking immediate, effective tools for self-regulation.
+10. **Access to previously Recorded Events & Webinars**: Allow free access to a previously recorded webinar of Inner Ascend.
+11. **Newsletter Subscription**: Encourage website visitors to subscribe to a weekly or monthly newsletter that offers spiritual insights, upcoming events, or tips for a healthier lifestyle.

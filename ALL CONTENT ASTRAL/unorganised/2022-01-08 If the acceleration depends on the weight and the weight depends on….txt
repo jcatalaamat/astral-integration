@@ -1,0 +1,1 @@
+If the acceleration depends on the weight and the weight depends on the time of your work the faster you do your work the lower the Weight the faster you accelerate the longer you goD = a*t / w/t

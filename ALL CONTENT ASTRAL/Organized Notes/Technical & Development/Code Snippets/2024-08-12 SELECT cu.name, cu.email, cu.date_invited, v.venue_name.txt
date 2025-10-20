@@ -1,0 +1,1 @@
+SELECT cu.name, cu.email, cu.date_invited, v.venue_nameFROM CustomerUsers cuJOIN Customers c ON cu.customer_id = c.customer_idJOIN Venues v ON cu.venue_id = v.venue_idWHERE v.venue_id IN (2545, 2673, 2569, 2778)  AND DATE(cu.date_invited) = CURRENT_DATE - INTERVAL '1 day'  AND TIME(cu.date_invited) = '20:08:00'

@@ -1,0 +1,1 @@
+Need to get invitation from guest Id so I can RSVPThen refactor current guest page to simplify where possiblethen integrate my meal selections and fix save/ make dropdown selection save without loading, and save to save everything, or just have them split, meal selections with another button

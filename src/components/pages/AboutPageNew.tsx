@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Navigation from '../Navigation';
+import AudioPlayer from '../ui/AudioPlayer';
 
 export default function AboutPage() {
   const scrollToTop = () => {
@@ -149,6 +150,28 @@ export default function AboutPage() {
             <div className="aspect-square bg-gradient-to-br from-sacred-green/20 to-sacred-gold/20 rounded-lg"></div>
             <div className="aspect-square bg-gradient-to-br from-mystic-purple/20 to-indigo-deep/30 rounded-lg"></div>
             <div className="aspect-square bg-gradient-to-br from-sacred-gold/30 to-sacred-green/20 rounded-lg"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Personal Quote Section - Sacred Depth */}
+      <div className="relative min-h-[70vh] flex items-center">
+        <div className="absolute inset-0 bg-gradient-to-br from-mystic-purple/40 via-indigo-deep/50 to-cosmic-900/70"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
+
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-12">
+            <div className="text-4xl text-sacred-gold/40 mb-8">⊛</div>
+            <blockquote className="text-3xl md:text-5xl font-serif text-sacred-moon leading-relaxed italic">
+              "I am not here to teach you who you are.<br/>
+              I'm here to remind you what you've always known."
+            </blockquote>
+            <div className="text-lg text-sacred-moon/60 font-light mb-12">— Jordi</div>
+
+            {/* Audio Player */}
+            <div className="flex justify-center pt-8">
+              <AudioPlayer duration="0:30" />
+            </div>
           </div>
         </div>
       </div>

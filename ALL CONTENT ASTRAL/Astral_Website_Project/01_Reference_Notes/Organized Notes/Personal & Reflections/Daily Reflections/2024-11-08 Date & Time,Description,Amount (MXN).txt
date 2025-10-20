@@ -1,0 +1,1 @@
+Date &amp Time,Description,Amount (MXN)will be refund -Today, 16:36,Amazon,-409.99triple -Today, 15:56,Amazon,-409.99reembolso- Today, 15:56,Amazon,-890.00Today, 13:56,Amazon,-412.00triple -Today, 13:56,Amazon,-1,549.00triple -Today, 13:56,Amazon,-659.00parrilla- Today, 13:56,Amazon,-799.00

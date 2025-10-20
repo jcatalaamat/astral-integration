@@ -1,0 +1,42 @@
+﻿Name,Type,Phase
+Connect Twitter Account,Action,Register
+Find friends,Action,Register
+Choose plan,Action,Register
+Give permissions,Action,Register
+Walkthrough video,Action,Onboarding
+Complete profile,Action,Onboarding
+Add perferences,Action,Onboarding
+Enable email notifications,Action,Onboarding
+Create first workspace,Action,Activation
+Add blocks,Action,Activation
+Pick a template,Action,Activation
+Share page,Action,Activation
+Referral Code,Touchpoint,Activation
+Email,Touchpoint,Activation
+Webinar,Touchpoint,Onboarding
+Video,Touchpoint,Onboarding
+Settings,Touchpoint,Onboarding
+Templates List,Touchpoint,Onboarding
+Free Resources,Touchpoint,Activation
+Why are they asking all these questions?,Emotion,Activation
+This is taking too long,Emotion,Activation
+This is taking too long. Let me create something already!,Emotion,Onboarding
+Alrighty this makes sense,Emotion,Onboarding
+The potential is exciting,Emotion,Activation
+Acquisition,Team,Activation
+Signup,Team,Activation
+Initial recommendations in dashboard,Opportunities,Register
+Pre-fill workspace with templates according to registration inputs,Opportunities,Register
+Story-like video onboarding,Opportunities,Onboarding
+1:1 onboarding for biz accs,Opportunities,Onboarding
+Ask for permissions only when needed,Opportunities,Activation
+Magic Link instead of password step,Opportunities,Activation
+Short attention spans / churn,Painpoint,Activation
+Short attention spans / churn,Painpoint,Onboarding
+Too many options to pick from. Paralysis by analysis,Painpoint,Register
+Signup,Team,Onboarding
+Workspace,Touchpoint,Register
+Sharing settings,Touchpoint,Register
+What are all these blocks?,Emotion,Register
+So many options to pick from!,Emotion,Register
+I did it! Let me show it,Emotion,Register

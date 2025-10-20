@@ -22,23 +22,105 @@ export default function ResourcesPage() {
         </div>
       </div>
 
-      {/* Free Offerings */}
+      {/* Free Resources Vault */}
       <div className="bg-sacred-cream py-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-12">
-            <h2 className="text-4xl md:text-5xl font-serif text-indigo-deep">
-              Free Guided Meditations
-            </h2>
-            <p className="text-xl text-indigo-deep/70 leading-relaxed">
-              Meditations for grounding, healing, and integration. Download and use as needed.
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-serif text-indigo-deep mb-6">
+                Integration Tools
+              </h2>
+              <p className="text-xl text-indigo-deep/70 leading-relaxed">
+                Free resources for your journey
+              </p>
+            </div>
+
+            {/* Resource Cards Grid */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Timeline Shifting Meditation */}
+              <div className="group relative bg-white border border-indigo-deep/10 rounded-2xl p-8 hover:shadow-xl transition-all hover:border-sacred-gold/30">
+                <div className="space-y-4">
+                  <div className="text-4xl text-sacred-gold">✦</div>
+                  <h3 className="text-2xl font-serif text-indigo-deep">Timeline Shifting Meditation</h3>
+                  <p className="text-indigo-deep/70 leading-relaxed">
+                    A guided journey to realign with your highest timeline and shift your reality.
+                  </p>
+                  <div className="pt-4">
+                    <Link
+                      to="/contact"
+                      onClick={scrollToTop}
+                      className="inline-flex items-center text-sacred-green hover:text-indigo-deep transition-colors font-medium"
+                    >
+                      Request PDF →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Ancestral Healing Guide */}
+              <div className="group relative bg-white border border-indigo-deep/10 rounded-2xl p-8 hover:shadow-xl transition-all hover:border-sacred-gold/30">
+                <div className="space-y-4">
+                  <div className="text-4xl text-sacred-gold">✦</div>
+                  <h3 className="text-2xl font-serif text-indigo-deep">Ancestral Healing Guide</h3>
+                  <p className="text-indigo-deep/70 leading-relaxed">
+                    Practices to clear inherited patterns and honor your lineage.
+                  </p>
+                  <div className="pt-4">
+                    <Link
+                      to="/contact"
+                      onClick={scrollToTop}
+                      className="inline-flex items-center text-sacred-green hover:text-indigo-deep transition-colors font-medium"
+                    >
+                      Request PDF →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Post-Ceremony Integration Workbook */}
+              <div className="group relative bg-white border border-indigo-deep/10 rounded-2xl p-8 hover:shadow-xl transition-all hover:border-sacred-gold/30">
+                <div className="space-y-4">
+                  <div className="text-4xl text-sacred-gold">✦</div>
+                  <h3 className="text-2xl font-serif text-indigo-deep">Post-Ceremony Integration Workbook</h3>
+                  <p className="text-indigo-deep/70 leading-relaxed">
+                    Tools to ground your medicine journey insights into embodied wisdom.
+                  </p>
+                  <div className="pt-4">
+                    <Link
+                      to="/contact"
+                      onClick={scrollToTop}
+                      className="inline-flex items-center text-sacred-green hover:text-indigo-deep transition-colors font-medium"
+                    >
+                      Request PDF →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sacred Business Blueprint */}
+              <div className="group relative bg-white border border-indigo-deep/10 rounded-2xl p-8 hover:shadow-xl transition-all hover:border-sacred-gold/30">
+                <div className="space-y-4">
+                  <div className="text-4xl text-sacred-gold">✦</div>
+                  <h3 className="text-2xl font-serif text-indigo-deep">Sacred Business Blueprint</h3>
+                  <p className="text-indigo-deep/70 leading-relaxed">
+                    Align your offerings with soul purpose and universal flow.
+                  </p>
+                  <div className="pt-4">
+                    <Link
+                      to="/contact"
+                      onClick={scrollToTop}
+                      className="inline-flex items-center text-sacred-green hover:text-indigo-deep transition-colors font-medium"
+                    >
+                      Request PDF →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-center text-indigo-deep/60 mt-12 italic text-sm">
+              Request any or all resources via the contact form. They'll be sent to your inbox within 24 hours.
             </p>
-            <Link
-              to="/contact"
-              onClick={scrollToTop}
-              className="inline-block px-10 py-4 bg-indigo-deep text-sacred-cream rounded-full hover:bg-indigo-deep/90 transition-colors font-medium"
-            >
-              Request meditation pack
-            </Link>
           </div>
         </div>
       </div>

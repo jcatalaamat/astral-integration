@@ -1,0 +1,23 @@
+# Newsletter
+
+- Tips and tricks to overcome your spiritual and emotional blocks
+- Wisdom seeking
+- Opening yourself to greater spaces
+- Opening your love to new levels
+- Awakening your divine timings
+- Tips and tricks to creative and productive spiritual journey and insights
+- Channelling
+- Releasing the way you thought you were into what you haven’t been able to perceive just yet
+- Opening yourself to infinite possibilities into creating the life you most desire
+- WhatsApp/ newsletter/ focused on me? Inner ascend? What would be most serving?
+- Substack?
+- Inner ascend blog and newsletter email welcome to the collective and today we talk about this person and this service and we all contribute to make this place a better one!!! I feel like yes
+- I have decided to make a newsletter, to directly speak to each and everyone of you - let you know how I am - what I am - doing - being. Whatever, is there to see, to express. To heal. To share wisdom, insights. To create
+- To post
+- To sell
+- To offer
+- To create trust and connection.
+- To clear energies
+- What are the subjects and topics?
+- What's the catch? A pdf? A meditation?
+- Prepare

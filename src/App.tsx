@@ -135,7 +135,7 @@ function LandingPage() {
           {/* Hero Content */}
           <div className="relative z-10 text-center px-4">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-light text-sacred-moon mb-6 animate-fadeIn">
-              Astral
+              Astral Integration
             </h1>
             <p className="text-xl md:text-2xl text-sacred-moon/80 font-light tracking-wide">
               Guiding souls home to themselves
@@ -171,6 +171,28 @@ function LandingPage() {
                 <Link to="/about" className="inline-block text-sacred-green hover:text-indigo-deep transition-colors font-medium">
                   My story →
                 </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Hero Stats Section - Elegant Social Proof */}
+        <div className="bg-gradient-to-b from-sacred-cream to-white py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-3 gap-12 text-center">
+                <div className="space-y-3">
+                  <div className="text-5xl md:text-6xl font-serif text-sacred-gold">1,500+</div>
+                  <div className="text-indigo-deep/70 font-light text-lg">Souls awakened</div>
+                </div>
+                <div className="space-y-3">
+                  <div className="text-5xl md:text-6xl font-serif text-sacred-gold">10,000+</div>
+                  <div className="text-indigo-deep/70 font-light text-lg">Healing hours</div>
+                </div>
+                <div className="space-y-3">
+                  <div className="text-5xl md:text-6xl font-serif text-sacred-gold">∞</div>
+                  <div className="text-indigo-deep/70 font-light text-lg">Ancient wisdom lineages</div>
+                </div>
               </div>
             </div>
           </div>
@@ -254,6 +276,77 @@ function LandingPage() {
           </div>
         </div>
 
+        {/* The Initiation Process - 4 Stages */}
+        <div className="bg-white py-32">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              {/* Title */}
+              <div className="text-center mb-20">
+                <div className="text-4xl text-sacred-gold/40 mb-6">⊹</div>
+                <h2 className="text-4xl md:text-5xl font-serif text-indigo-deep mb-4">
+                  The Initiation Process
+                </h2>
+                <p className="text-lg text-indigo-deep/60 font-light">
+                  Every transformation follows the same sacred pattern
+                </p>
+              </div>
+
+              {/* 4 Stages - Horizontal Flow */}
+              <div className="grid md:grid-cols-4 gap-8 md:gap-6">
+                {/* Stage 1: Dissolution */}
+                <div className="relative">
+                  <div className="text-center space-y-4">
+                    <div className="text-4xl text-sacred-gold mb-4">⊹</div>
+                    <div className="text-2xl font-serif text-indigo-deep mb-2">1</div>
+                    <h3 className="text-xl font-serif text-indigo-deep">Dissolution</h3>
+                    <p className="text-sm text-indigo-deep/70 leading-relaxed">
+                      Release what no longer serves. Clear ancestral patterns, childhood wounds, and energetic debris.
+                    </p>
+                  </div>
+                  {/* Arrow - hidden on mobile */}
+                  <div className="hidden md:block absolute top-12 -right-4 text-sacred-gold/30 text-2xl">→</div>
+                </div>
+
+                {/* Stage 2: Activation */}
+                <div className="relative">
+                  <div className="text-center space-y-4">
+                    <div className="text-4xl text-sacred-gold mb-4">⊛</div>
+                    <div className="text-2xl font-serif text-indigo-deep mb-2">2</div>
+                    <h3 className="text-xl font-serif text-indigo-deep">Activation</h3>
+                    <p className="text-sm text-indigo-deep/70 leading-relaxed">
+                      Awaken dormant gifts. Open your channel, activate intuition, remember your cosmic blueprint.
+                    </p>
+                  </div>
+                  <div className="hidden md:block absolute top-12 -right-4 text-sacred-gold/30 text-2xl">→</div>
+                </div>
+
+                {/* Stage 3: Integration */}
+                <div className="relative">
+                  <div className="text-center space-y-4">
+                    <div className="text-4xl text-sacred-gold mb-4">⊝</div>
+                    <div className="text-2xl font-serif text-indigo-deep mb-2">3</div>
+                    <h3 className="text-xl font-serif text-indigo-deep">Integration</h3>
+                    <p className="text-sm text-indigo-deep/70 leading-relaxed">
+                      Embody your truth. Anchor new frequencies, align actions with soul purpose, manifest your vision.
+                    </p>
+                  </div>
+                  <div className="hidden md:block absolute top-12 -right-4 text-sacred-gold/30 text-2xl">→</div>
+                </div>
+
+                {/* Stage 4: Mastery */}
+                <div className="text-center space-y-4">
+                  <div className="text-4xl text-sacred-gold mb-4">✧</div>
+                  <div className="text-2xl font-serif text-indigo-deep mb-2">4</div>
+                  <h3 className="text-xl font-serif text-indigo-deep">Mastery</h3>
+                  <p className="text-sm text-indigo-deep/70 leading-relaxed">
+                    Become the medicine. Step into service, hold space for others, create ripples of transformation.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Testimonial - Magazine Style */}
         <div className="relative min-h-[80vh] flex items-center">
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-deep/50 via-cosmic-900/60 to-black/70"></div>
@@ -264,6 +357,40 @@ function LandingPage() {
                 way. He sees you. Really sees you. And he holds space for whatever needs to emerge."
               </p>
               <p className="text-sacred-gold text-lg">— Maria, Barcelona</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Newsletter Section - Inner Circle */}
+        <div className="relative py-32">
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-deep/60 via-cosmic-900/70 to-black/80"></div>
+          <div className="relative z-10 container mx-auto px-4">
+            <div className="max-w-2xl mx-auto text-center">
+              <div className="text-4xl mb-8 text-sacred-gold animate-breathe opacity-60">⊹</div>
+              <h2 className="text-4xl md:text-5xl font-serif text-sacred-moon mb-6">
+                Join the Inner Circle
+              </h2>
+              <p className="text-lg text-sacred-moon/80 mb-4 font-light">
+                Receive transmissions, integration practices, and soul medicine
+              </p>
+              <p className="text-sm text-sacred-moon/60 mb-12 italic">
+                Sacred transmissions 2x monthly
+              </p>
+
+              {/* Newsletter Form */}
+              <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input
+                  type="email"
+                  placeholder="Your email portal"
+                  className="flex-1 px-6 py-4 bg-cosmic-900/50 border border-sacred-moon/20 rounded-full text-sacred-moon placeholder-sacred-moon/40 focus:outline-none focus:border-sacred-gold/50 transition-colors"
+                />
+                <button
+                  type="submit"
+                  className="px-8 py-4 bg-sacred-gold text-cosmic-900 rounded-full font-medium hover:bg-sacred-glow transition-all"
+                >
+                  Enter the Mystery
+                </button>
+              </form>
             </div>
           </div>
         </div>
