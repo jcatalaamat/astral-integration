@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Navigation from '../Navigation';
+import Footer from '../Footer';
 
 export default function InnerAscendPage() {
   const scrollToTop = () => {
@@ -268,6 +269,5 @@ export default function InnerAscendPage() {
         </div>
       </div>
     </div>
-
   );
 }

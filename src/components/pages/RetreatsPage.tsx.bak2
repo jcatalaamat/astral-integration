@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import ImagePlaceholder from '../ui/ImagePlaceholder';
 import Navigation from '../Navigation';
+import Footer from '../Footer';
 
 export default function RetreatsPage() {
   const scrollToTop = () => {
@@ -257,6 +258,5 @@ export default function RetreatsPage() {
         </div>
       </div>
     </div>
-
   );
 }

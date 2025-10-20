@@ -257,6 +257,5 @@ export default function RetreatsPage() {
         </div>
       </div>
     </div>
-
   );
 }

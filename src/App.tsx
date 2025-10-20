@@ -496,16 +496,135 @@ function LandingPage() {
           </div>
         </div>
 
-        {/* Testimonial - Magazine Style */}
-        <div className="relative min-h-[80vh] flex items-center">
+        {/* Testimonials - Multiple Voices */}
+        <div className="relative py-32">
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-deep/50 via-cosmic-900/60 to-black/70"></div>
-          <div className="relative z-10 container mx-auto px-4 py-32">
+          <div className="relative z-10 container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-serif text-sacred-moon text-center mb-20">
+                Voices From The Journey
+              </h2>
+
+              <div className="space-y-20">
+                {/* Testimonial 1 */}
+                <div className="max-w-4xl mx-auto">
+                  <p className="text-2xl md:text-3xl font-serif text-sacred-moon leading-relaxed mb-8 italic">
+                    "Working with Astral changed my life. Not in a cliché way—in a 'I can't go back to who I was'
+                    way. He sees you. Really sees you. And he holds space for whatever needs to emerge."
+                  </p>
+                  <p className="text-sacred-gold text-lg">— Maria, Barcelona</p>
+                </div>
+
+                {/* Testimonial 2 */}
+                <div className="max-w-4xl mx-auto">
+                  <p className="text-2xl md:text-3xl font-serif text-sacred-moon leading-relaxed mb-8 italic">
+                    "The Bufo ceremony was the most profound experience of my life. Astral's preparation, presence,
+                    and integration support made me feel completely safe to surrender. I finally understand what
+                    'coming home to myself' means."
+                  </p>
+                  <p className="text-sacred-gold text-lg">— David, USA</p>
+                </div>
+
+                {/* Testimonial 3 */}
+                <div className="max-w-4xl mx-auto">
+                  <p className="text-2xl md:text-3xl font-serif text-sacred-moon leading-relaxed mb-8 italic">
+                    "The men's circle gave me permission to feel everything I'd been holding back for decades.
+                    To cry. To rage. To laugh. To finally be myself without apology. This work saved my life."
+                  </p>
+                  <p className="text-sacred-gold text-lg">— Carlos, Mexico</p>
+                </div>
+
+                {/* Testimonial 4 */}
+                <div className="max-w-4xl mx-auto">
+                  <p className="text-2xl md:text-3xl font-serif text-sacred-moon leading-relaxed mb-8 italic">
+                    "After years of therapy and self-help, I finally found someone who could hold space for the
+                    darkness without trying to 'fix' me. Astral helped me integrate my shadow and step into my power."
+                  </p>
+                  <p className="text-sacred-gold text-lg">— Sofia, Spain</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section - Common Questions */}
+        <div className="bg-sacred-cream py-32">
+          <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <p className="text-3xl md:text-4xl font-serif text-sacred-moon leading-relaxed mb-12 italic">
-                "Working with Astral changed my life. Not in a cliché way—in a 'I can't go back to who I was'
-                way. He sees you. Really sees you. And he holds space for whatever needs to emerge."
-              </p>
-              <p className="text-sacred-gold text-lg">— Maria, Barcelona</p>
+              <h2 className="text-4xl md:text-5xl font-serif text-indigo-deep text-center mb-20">
+                Questions You Might Have
+              </h2>
+
+              <div className="space-y-12">
+                <div className="border-b border-indigo-deep/10 pb-8">
+                  <h3 className="text-2xl font-serif text-indigo-deep mb-4">
+                    How is this different from therapy or coaching?
+                  </h3>
+                  <p className="text-indigo-deep/70 leading-relaxed">
+                    Therapy focuses on healing trauma and managing symptoms. Coaching focuses on goals and performance.
+                    This work goes deeper—into the soul, the body, the energy field. We're not just healing wounds or
+                    achieving goals. We're remembering who you are beyond all the conditioning. It's more shamanic than
+                    clinical, more mystical than methodical.
+                  </p>
+                </div>
+
+                <div className="border-b border-indigo-deep/10 pb-8">
+                  <h3 className="text-2xl font-serif text-indigo-deep mb-4">
+                    Do I need experience with plant medicine to work with you?
+                  </h3>
+                  <p className="text-indigo-deep/70 leading-relaxed">
+                    No. While I offer Bufo ceremonies and integration support for those working with plant medicines,
+                    many people come to me for energy healing, family constellations, or mentorship without ever touching
+                    medicine. The medicine is just one tool. What matters is your readiness to do deep work.
+                  </p>
+                </div>
+
+                <div className="border-b border-indigo-deep/10 pb-8">
+                  <h3 className="text-2xl font-serif text-indigo-deep mb-4">
+                    How long does this work take?
+                  </h3>
+                  <p className="text-indigo-deep/70 leading-relaxed">
+                    There's no fixed timeline. Some people have breakthrough moments in a single session. Others work with
+                    me for months or years. Transformation isn't linear. It's not about "fixing" you in 6 sessions—it's
+                    about supporting your unique unfolding for however long it takes. I offer single sessions, 3-month
+                    containers, and 6-month deep dives.
+                  </p>
+                </div>
+
+                <div className="border-b border-indigo-deep/10 pb-8">
+                  <h3 className="text-2xl font-serif text-indigo-deep mb-4">
+                    Is this work safe? How do you hold space?
+                  </h3>
+                  <p className="text-indigo-deep/70 leading-relaxed">
+                    Safety is paramount. For medicine work, I do thorough preparation, medical screening, and create a
+                    trauma-informed container. For all work, I hold space with presence, not technique. I've trained in
+                    energy healing, family constellations, and shamanic practices for over a decade. I work with your
+                    nervous system, not against it. And I never push you beyond what you're ready for.
+                  </p>
+                </div>
+
+                <div className="border-b border-indigo-deep/10 pb-8">
+                  <h3 className="text-2xl font-serif text-indigo-deep mb-4">
+                    Where are you based? Do you work online or in-person?
+                  </h3>
+                  <p className="text-indigo-deep/70 leading-relaxed">
+                    I split my time between Barcelona (Spain) and Mazunte (Mexico). I offer both in-person sessions
+                    (when I'm in your area or you travel to me) and online sessions via video call. Medicine ceremonies
+                    and retreats are always in-person. Energy healing and mentorship work beautifully online.
+                  </p>
+                </div>
+
+                <div className="pb-8">
+                  <h3 className="text-2xl font-serif text-indigo-deep mb-4">
+                    How do I know if this is right for me?
+                  </h3>
+                  <p className="text-indigo-deep/70 leading-relaxed">
+                    You'll know. If you've read this far and something inside you says "yes"—that's your signal.
+                    Book a discovery call. We'll talk. There's no pressure, no pitch. Just an honest conversation about
+                    where you are and whether I'm the right guide for your journey. Trust your intuition.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

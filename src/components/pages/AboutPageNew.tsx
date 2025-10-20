@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Navigation from '../Navigation';
 import AudioPlayer from '../ui/AudioPlayer';
+import Footer from '../Footer';
 
 export default function AboutPage() {
   const scrollToTop = () => {
@@ -193,6 +194,134 @@ export default function AboutPage() {
         </div>
       </div>
 
+      {/* What I Offer - Modalities */}
+      <div className="bg-white py-32">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-serif text-indigo-deep mb-8">
+                What I Bring to the Work
+              </h2>
+              <p className="text-xl text-indigo-deep/70 max-w-3xl mx-auto leading-relaxed">
+                My approach draws from multiple lineages and modalities, woven together through years
+                of training, practice, and direct experience.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-sacred-cream/50 rounded-2xl p-8 space-y-4">
+                <div className="text-3xl text-sacred-gold">✧</div>
+                <h3 className="text-xl font-serif text-indigo-deep">Bufo Alvarius Facilitation</h3>
+                <p className="text-indigo-deep/70 leading-relaxed text-sm">
+                  10+ years experience holding sacred space for 5-MeO-DMT journeys. Trained in trauma-informed
+                  facilitation and integration support.
+                </p>
+              </div>
+
+              <div className="bg-sacred-cream/50 rounded-2xl p-8 space-y-4">
+                <div className="text-3xl text-sacred-gold">✧</div>
+                <h3 className="text-xl font-serif text-indigo-deep">Energy Healing</h3>
+                <p className="text-indigo-deep/70 leading-relaxed text-sm">
+                  Shamanic energy work, chakra balancing, cord cutting, entity release. Working with the subtle
+                  body to clear what blocks your flow.
+                </p>
+              </div>
+
+              <div className="bg-sacred-cream/50 rounded-2xl p-8 space-y-4">
+                <div className="text-3xl text-sacred-gold">✧</div>
+                <h3 className="text-xl font-serif text-indigo-deep">Family Constellations</h3>
+                <p className="text-indigo-deep/70 leading-relaxed text-sm">
+                  Systemic healing work to reveal and resolve inherited patterns, ancestral trauma, and family
+                  dynamics that keep you stuck.
+                </p>
+              </div>
+
+              <div className="bg-sacred-cream/50 rounded-2xl p-8 space-y-4">
+                <div className="text-3xl text-sacred-gold">✧</div>
+                <h3 className="text-xl font-serif text-indigo-deep">Somatic Release</h3>
+                <p className="text-indigo-deep/70 leading-relaxed text-sm">
+                  Trauma lives in the body. We work through breathwork, movement, and presence to release what's
+                  been stored in your nervous system.
+                </p>
+              </div>
+
+              <div className="bg-sacred-cream/50 rounded-2xl p-8 space-y-4">
+                <div className="text-3xl text-sacred-gold">✧</div>
+                <h3 className="text-xl font-serif text-indigo-deep">Masculine Embodiment</h3>
+                <p className="text-indigo-deep/70 leading-relaxed text-sm">
+                  Sacred men's work to reclaim authentic power, emotional depth, and presence. Moving from
+                  performance to embodiment.
+                </p>
+              </div>
+
+              <div className="bg-sacred-cream/50 rounded-2xl p-8 space-y-4">
+                <div className="text-3xl text-sacred-gold">✧</div>
+                <h3 className="text-xl font-serif text-indigo-deep">Spiritual Business Mentorship</h3>
+                <p className="text-indigo-deep/70 leading-relaxed text-sm">
+                  For healers and conscious entrepreneurs. Building sustainable practices aligned with soul
+                  purpose and universal flow.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Values & Ethics */}
+      <div className="relative py-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-deep/40 via-cosmic-900/60 to-black/70"></div>
+
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-serif text-sacred-moon text-center mb-16">
+              How I Work: Values & Ethics
+            </h2>
+
+            <div className="space-y-8 text-sacred-moon/70 leading-relaxed">
+              <div className="bg-cosmic-900/20 backdrop-blur-xl border border-sacred-moon/20 rounded-2xl p-6">
+                <h3 className="text-xl font-serif text-sacred-moon mb-3">Consent & Sovereignty</h3>
+                <p className="text-sm">
+                  Your body, your choice. Always. I never push, manipulate, or override your boundaries.
+                  You're in control of your journey. I'm just here to hold space.
+                </p>
+              </div>
+
+              <div className="bg-cosmic-900/20 backdrop-blur-xl border border-sacred-moon/20 rounded-2xl p-6">
+                <h3 className="text-xl font-serif text-sacred-moon mb-3">Trauma-Informed</h3>
+                <p className="text-sm">
+                  I understand how trauma lives in the nervous system. I work with your body's wisdom, not
+                  against it. Healing happens when you feel safe enough to let go.
+                </p>
+              </div>
+
+              <div className="bg-cosmic-900/20 backdrop-blur-xl border border-sacred-moon/20 rounded-2xl p-6">
+                <h3 className="text-xl font-serif text-sacred-moon mb-3">No Spiritual Bypassing</h3>
+                <p className="text-sm">
+                  We don't skip over the hard stuff with positive thinking or "love and light." Real healing
+                  means facing the shadow, feeling the pain, and integrating it all.
+                </p>
+              </div>
+
+              <div className="bg-cosmic-900/20 backdrop-blur-xl border border-sacred-moon/20 rounded-2xl p-6">
+                <h3 className="text-xl font-serif text-sacred-moon mb-3">Cultural Respect</h3>
+                <p className="text-sm">
+                  I honor the indigenous origins of the medicines and practices I work with. This isn't
+                  appropriation—it's respectful collaboration with sacred traditions.
+                </p>
+              </div>
+
+              <div className="bg-cosmic-900/20 backdrop-blur-xl border border-sacred-moon/20 rounded-2xl p-6">
+                <h3 className="text-xl font-serif text-sacred-moon mb-3">Confidentiality</h3>
+                <p className="text-sm">
+                  What happens in session stays in session. Your story is yours to tell, not mine. I protect
+                  your privacy absolutely.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Simple Invitation */}
       <div className="bg-sacred-cream py-32">
         <div className="container mx-auto px-4">
@@ -219,6 +348,8 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

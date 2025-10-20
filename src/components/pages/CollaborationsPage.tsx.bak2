@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Navigation from '../Navigation';
+import Footer from '../Footer';
 
 export default function CollaborationsPage() {
   const scrollToTop = () => {
@@ -336,6 +337,5 @@ export default function CollaborationsPage() {
         </div>
       </div>
     </div>
-
   );
 }

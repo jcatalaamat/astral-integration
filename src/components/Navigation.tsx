@@ -32,6 +32,9 @@ export default function Navigation() {
             <Link to="/retreats" className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
               Retreats
             </Link>
+            <Link to="/collaborations" className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
+              Collaborations
+            </Link>
             <Link to="/resources" className="text-mystic-lavender/70 hover:text-sacred-gold transition-colors">
               Resources
             </Link>
@@ -75,6 +78,9 @@ export default function Navigation() {
             </Link>
             <Link to="/retreats" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-mystic-lavender/80 hover:text-sacred-gold transition-colors">
               Retreats
+            </Link>
+            <Link to="/collaborations" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-mystic-lavender/80 hover:text-sacred-gold transition-colors">
+              Collaborations
             </Link>
             <Link to="/resources" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-mystic-lavender/80 hover:text-sacred-gold transition-colors">
               Resources

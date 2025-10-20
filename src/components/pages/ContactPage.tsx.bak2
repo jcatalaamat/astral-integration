@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Navigation from '../Navigation';
+import Footer from '../Footer';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -256,6 +257,5 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
-
   );
 }
