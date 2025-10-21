@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Navigation from '../Navigation';
+import Footer from '../Footer';
+import WarmHero from '../shared/WarmHero';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -37,24 +39,20 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-warm-white">
       <Navigation />
-      {/* Full-Screen Opening */}
-      <div className="min-h-screen relative flex items-center justify-center bg-gradient-to-br from-cosmic-900/90 via-indigo-deep/80 to-black/90">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 -left-4 w-[600px] h-[600px] bg-mystic-purple rounded-full mix-blend-screen filter blur-3xl animate-breathe" style={{animationDuration: '8s'}}></div>
-          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-sacred-green rounded-full mix-blend-screen filter blur-3xl animate-breathe" style={{animationDuration: '10s', animationDelay: '2s'}}></div>
-        </div>
 
-        <div className="relative z-10 container mx-auto px-4 py-32">
+      {/* Hero Section */}
+      <div className="min-h-[60vh] relative flex items-center justify-center bg-gradient-to-br from-accent-terracotta/10 via-warm-peach to-accent-sage/10">
+        <div className="relative z-10 container mx-auto px-4 py-24">
           <div className="max-w-3xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
-              <div className="text-5xl mb-8 text-sacred-gold animate-breathe opacity-60">⊹</div>
-              <h1 className="text-5xl md:text-7xl font-serif text-sacred-moon mb-8 font-light">
+              <div className="text-5xl mb-8 text-accent-gold/60 animate-breathe">⊹</div>
+              <h1 className="text-5xl md:text-6xl font-serif text-text-heading mb-8 font-light">
                 Let's Connect
               </h1>
-              <p className="text-xl text-sacred-moon/80 font-light">
+              <p className="text-xl text-text-secondary font-light">
                 Tell me where you are. Tell me what you're looking for.
               </p>
             </div>
@@ -62,29 +60,29 @@ export default function ContactPage() {
             {/* Booking Options */}
             <div className="grid md:grid-cols-2 gap-6 mb-16">
               {/* Sacred Discovery Call */}
-              <div className="bg-cosmic-900/20 backdrop-blur-xl border border-sacred-moon/20 rounded-2xl p-6">
+              <div className="bg-warm-white/80 backdrop-blur-md border border-text-primary/10 rounded-2xl p-6">
                 <div className="space-y-3">
-                  <div className="text-2xl text-sacred-gold">✦</div>
-                  <h3 className="text-xl font-serif text-sacred-moon">Sacred Discovery Call</h3>
-                  <p className="text-sm text-sacred-moon/70 leading-relaxed">
+                  <div className="text-2xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">Sacred Discovery Call</h3>
+                  <p className="text-sm text-text-secondary leading-relaxed">
                     A 30-minute soul connection to explore if we're meant to journey together
                   </p>
                   <div className="pt-2">
-                    <span className="text-sacred-gold font-medium">Complimentary</span>
+                    <span className="text-accent-gold font-medium">Complimentary</span>
                   </div>
                 </div>
               </div>
 
               {/* Quantum Leap Intensive */}
-              <div className="bg-cosmic-900/20 backdrop-blur-xl border border-sacred-gold/30 rounded-2xl p-6">
+              <div className="bg-warm-white/80 backdrop-blur-md border border-accent-gold/30 rounded-2xl p-6">
                 <div className="space-y-3">
-                  <div className="text-2xl text-sacred-gold">✧</div>
-                  <h3 className="text-xl font-serif text-sacred-moon">Quantum Leap Intensive</h3>
-                  <p className="text-sm text-sacred-moon/70 leading-relaxed">
+                  <div className="text-2xl text-accent-gold">✧</div>
+                  <h3 className="text-xl font-serif text-text-heading">Quantum Leap Intensive</h3>
+                  <p className="text-sm text-text-secondary leading-relaxed">
                     3-month deep dive transformation container for serious initiates
                   </p>
                   <div className="pt-2">
-                    <span className="text-sacred-gold font-medium">Premium</span>
+                    <span className="text-accent-gold font-medium">Premium</span>
                   </div>
                 </div>
               </div>
@@ -92,16 +90,16 @@ export default function ContactPage() {
 
             {/* Urgency Message */}
             <div className="text-center mb-12">
-              <p className="text-sm text-sacred-moon/60 italic">
+              <p className="text-sm text-text-secondary/80 italic">
                 Only 4 soul work spots available this month
               </p>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-cosmic-900/30 backdrop-blur-xl border border-sacred-moon/10 rounded-2xl p-8 md:p-12">
+            <div className="bg-warm-cream/50 backdrop-blur-md border border-text-primary/10 rounded-2xl p-8 md:p-12">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-sacred-moon/80 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-text-secondary mb-2">
                     Your Name
                   </label>
                   <input
@@ -110,13 +108,13 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
-                    className="w-full px-4 py-3 bg-cosmic-900/50 border border-sacred-moon/20 rounded-lg text-sacred-moon placeholder-sacred-moon/40 focus:outline-none focus:border-sacred-gold/50 transition-colors"
+                    className="w-full px-4 py-3 bg-warm-white border border-text-primary/20 rounded-lg text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-gold/50 transition-colors"
                     placeholder="Your name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-sacred-moon/80 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-text-secondary mb-2">
                     Email
                   </label>
                   <input
@@ -125,13 +123,13 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
-                    className="w-full px-4 py-3 bg-cosmic-900/50 border border-sacred-moon/20 rounded-lg text-sacred-moon placeholder-sacred-moon/40 focus:outline-none focus:border-sacred-gold/50 transition-colors"
+                    className="w-full px-4 py-3 bg-warm-white border border-text-primary/20 rounded-lg text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-gold/50 transition-colors"
                     placeholder="your@email.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-sacred-moon/80 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-text-secondary mb-2">
                     What are you interested in?
                   </label>
                   <select
@@ -139,7 +137,7 @@ export default function ContactPage() {
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     required
-                    className="w-full px-4 py-3 bg-cosmic-900/50 border border-sacred-moon/20 rounded-lg text-sacred-moon focus:outline-none focus:border-sacred-gold/50 transition-colors"
+                    className="w-full px-4 py-3 bg-warm-white border border-text-primary/20 rounded-lg text-text-primary focus:outline-none focus:border-accent-gold/50 transition-colors"
                   >
                     <option value="">Select...</option>
                     <option value="1:1 Work">1:1 Deep Work</option>
@@ -148,13 +146,14 @@ export default function ContactPage() {
                     <option value="Retreats">Retreats</option>
                     <option value="Inner Ascend">Inner Ascend Community</option>
                     <option value="Trainings">Facilitator Training</option>
-                    <option value="General">Just saying hello</option>
+                    <option value="Collaborations">Collaborations</option>
+                    <option value="Other">Other / Just Connecting</option>
                   </select>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-sacred-moon/80 mb-2">
-                    Your Message
+                  <label htmlFor="message" className="block text-sm font-medium text-text-secondary mb-2">
+                    Tell me about your journey
                   </label>
                   <textarea
                     id="message"
@@ -162,100 +161,31 @@ export default function ContactPage() {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-cosmic-900/50 border border-sacred-moon/20 rounded-lg text-sacred-moon placeholder-sacred-moon/40 focus:outline-none focus:border-sacred-gold/50 transition-colors resize-none"
-                    placeholder="Where are you on your journey? What are you seeking?"
+                    className="w-full px-4 py-3 bg-warm-white border border-text-primary/20 rounded-lg text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-gold/50 transition-colors resize-none"
+                    placeholder="Where are you now? What are you seeking? What's calling you to this work?"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={status === 'sending'}
-                  className="w-full px-8 py-4 bg-sacred-gold text-cosmic-900 rounded-full font-medium hover:bg-sacred-glow transition-all disabled:opacity-50"
+                  className="w-full py-4 bg-accent-gold text-warm-white rounded-full hover:bg-accent-terracotta transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {status === 'sending' ? (
-                    <span>Sending...</span>
-                  ) : status === 'success' ? (
-                    <span>Message sent ✓</span>
-                  ) : status === 'error' ? (
-                    <span>Error - Please try again</span>
-                  ) : (
-                    <span>Send message</span>
-                  )}
+                  {status === 'sending' ? 'Sending...' : status === 'success' ? 'Message sent ✓' : status === 'error' ? 'Error - please try again' : 'Send Message'}
                 </button>
-              </form>
 
-              {/* Contact Details */}
-              <div className="mt-12 pt-12 border-t border-sacred-moon/10 space-y-6 text-center">
-                <div>
-                  <p className="text-sm text-sacred-moon/60 mb-1">Email</p>
-                  <a
-                    href="mailto:hello@astral-integration.com"
-                    className="text-sacred-gold hover:text-sacred-glow transition-colors"
-                  >
-                    hello@astral-integration.com
-                  </a>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6 text-sm">
-                  <div>
-                    <p className="text-sacred-gold mb-1">Mazunte, Mexico</p>
-                    <p className="text-sacred-moon/60">Retreats & ceremonies</p>
-                  </div>
-                  <div>
-                    <p className="text-sacred-gold mb-1">Barcelona, Spain</p>
-                    <p className="text-sacred-moon/60">1:1 sessions & European retreats</p>
-                  </div>
-                </div>
-
-                <div className="pt-4">
-                  <a
-                    href="https://instagram.com/astralintegration"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sacred-moon/70 hover:text-sacred-gold transition-colors text-sm"
-                  >
-                    @astralintegration
-                  </a>
-                </div>
-
-                <p className="text-xs text-sacred-moon/50 italic pt-4">
-                  I respond to every message personally. Typically within 24-48 hours.
-                </p>
-              </div>
-            </div>
-
-            {/* Newsletter Signup */}
-            <div className="mt-20 bg-cosmic-900/20 backdrop-blur-xl border border-sacred-moon/10 rounded-2xl p-8 md:p-10 text-center">
-              <div className="text-3xl mb-6 text-sacred-gold animate-breathe opacity-60">⊹</div>
-              <h3 className="text-2xl md:text-3xl font-serif text-sacred-moon mb-4">
-                Join the Inner Circle
-              </h3>
-              <p className="text-sacred-moon/80 mb-3">
-                Receive transmissions, integration practices, and soul medicine
-              </p>
-              <p className="text-sm text-sacred-moon/60 mb-8 italic">
-                Sacred transmissions 2x monthly
-              </p>
-
-              {/* Newsletter Form */}
-              <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-                <input
-                  type="email"
-                  placeholder="Your email portal"
-                  className="flex-1 px-6 py-3 bg-cosmic-900/50 border border-sacred-moon/20 rounded-full text-sacred-moon placeholder-sacred-moon/40 focus:outline-none focus:border-sacred-gold/50 transition-colors"
-                />
-                <button
-                  type="submit"
-                  className="px-8 py-3 bg-sacred-gold text-cosmic-900 rounded-full font-medium hover:bg-sacred-glow transition-all"
-                >
-                  Enter the Mystery
-                </button>
+                {status === 'success' && (
+                  <p className="text-center text-accent-gold text-sm">
+                    Thank you. I'll respond within 48 hours.
+                  </p>
+                )}
               </form>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
+      <Footer />
+    </div>
   );
 }
