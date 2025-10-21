@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import ImagePlaceholder from '../ui/ImagePlaceholder';
 import Navigation from '../Navigation';
 
 export default function RetreatsPage() {
@@ -12,7 +11,13 @@ export default function RetreatsPage() {
       <Navigation />
       {/* Full-Screen Opening */}
       <div className="h-screen relative flex items-center justify-center">
-        <ImagePlaceholder className="absolute inset-0" overlay="dark" />
+        <div className="absolute inset-0 bg-gradient-to-br from-cosmic-900/80 via-indigo-deep/70 to-black/90">
+          {/* Cosmic aurora background */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 -left-4 w-[600px] h-[600px] bg-mystic-purple rounded-full mix-blend-screen filter blur-3xl animate-breathe" style={{animationDuration: '8s'}}></div>
+            <div className="absolute top-1/4 -right-4 w-[500px] h-[500px] bg-sacred-green rounded-full mix-blend-screen filter blur-3xl animate-breathe" style={{animationDuration: '10s', animationDelay: '2s'}}></div>
+          </div>
+        </div>
 
         <div className="relative z-10 text-center px-4">
           <h1 className="text-5xl md:text-7xl font-serif text-sacred-moon mb-8 font-light">
