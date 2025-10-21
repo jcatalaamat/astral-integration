@@ -34,7 +34,7 @@ export const projects: Project[] = [
     },
     cta2: {
       text: 'Explore Services',
-      url: 'https://astral-integration.com/services'
+      url: '/services'
     }
   },
   {
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     features: [],
     cta: {
       primary: 'Apply for Ceremony',
-      url: 'https://spiritawakeningmedicine.com/'
+      url: 'http://spiritawakeningmedicine.com/'
     },
     cta2: {
       text: 'Learn More',
@@ -67,11 +67,11 @@ export const projects: Project[] = [
     features: [],
     cta: {
       primary: 'Book Session',
-      url: 'https://nina-moore.com/'
+      url: 'http://nina-moore.com/'
     },
     cta2: {
       text: 'Explore Programs',
-      url: 'https://nina-moore.com/'
+      url: 'http://nina-moore.com/'
     }
   },
   {
