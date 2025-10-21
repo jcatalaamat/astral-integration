@@ -16,7 +16,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       rel={project.cta.url.startsWith('http') ? 'noopener noreferrer' : undefined}
       className="group block py-4 -mx-6 md:-mx-8 px-6 md:px-8 border-b border-[#1A1A1A]/5 last:border-b-0 hover:bg-[#F5F3EF]/40 transition-all duration-200"
     >
-      <div className="flex items-start gap-4 md:items-center md:gap-6">
+      <div className="flex items-center gap-4 md:gap-6">
         {/* Number - smaller, more subtle */}
         <div className="flex-shrink-0 w-8 md:w-10 text-right">
           <span className="text-[10px] font-mono text-[#C9A167]/70 tracking-wider">
@@ -41,39 +41,27 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             {project.description}
           </p>
 
-          {/* Status/Price - shown below description on mobile, inline on desktop */}
-          {(project.status || project.price) && (
-            <div className="flex items-center gap-2 mt-2 md:hidden">
-              {project.status && (
-                <span className="text-[9px] uppercase tracking-wide text-[#C9A167] font-medium px-2.5 py-1 bg-[#C9A167]/8 border border-[#C9A167]/25 rounded-full">
-                  {project.status}
-                </span>
-              )}
-              {project.price && (
-                <span className="text-xs font-semibold text-[#C9A167]">
-                  {project.price}
-                </span>
-              )}
+          {/* Status - shown below description on mobile, inline on desktop */}
+          {project.status && (
+            <div className="flex items-center justify-center gap-2 mt-2 md:hidden">
+              <span className="text-[9px] uppercase tracking-wide text-[#C9A167] font-medium px-2.5 py-1 bg-[#C9A167]/8 border border-[#C9A167]/25 rounded-full">
+                {project.status}
+              </span>
             </div>
           )}
         </div>
 
-        {/* Status/Price - desktop only, right side */}
-        <div className="hidden md:flex flex-shrink-0 items-center gap-2">
-          {project.status && (
+        {/* Status - desktop only, right side */}
+        {project.status && (
+          <div className="hidden md:flex flex-shrink-0 items-center gap-2">
             <span className="text-[9px] uppercase tracking-wide text-[#C9A167] font-medium px-2.5 py-1 bg-[#C9A167]/8 border border-[#C9A167]/25 rounded-full">
               {project.status}
             </span>
-          )}
-          {project.price && (
-            <span className="text-xs font-semibold text-[#C9A167]">
-              {project.price}
-            </span>
-          )}
-        </div>
+          </div>
+        )}
 
-        {/* Arrow - desktop only */}
-        <div className="hidden md:block flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200">
+        {/* Arrow - always visible */}
+        <div className="flex-shrink-0 group-hover:translate-x-0.5 transition-all duration-200">
           <ArrowRight className="w-4 h-4 text-[#C9A167]/60" />
         </div>
       </div>

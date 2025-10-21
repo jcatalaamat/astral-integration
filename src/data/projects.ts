@@ -76,7 +76,7 @@ export const projects: Project[] = [
   },
   {
     id: 'astralamat',
-    name: 'Astralamat',
+    name: 'Astral Amat',
     category: 'tech',
     icon: '💼',
     tagline: 'CTO Services & Technical Leadership',
