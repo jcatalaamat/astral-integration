@@ -16,6 +16,7 @@ import RetreatsPage from './components/pages/RetreatsPage';
 import ResourcesPage from './components/pages/ResourcesPage';
 import ContactPage from './components/pages/ContactPage';
 import CollaborationsPage from './components/pages/CollaborationsPage';
+import LinksPage from './components/pages/LinksPage';
 import ScrollToTop from './components/ScrollToTop';
 // Removed old section components - now using visual storytelling approach
 
@@ -808,6 +809,7 @@ function App() {
         <Route path="/collaborations" element={<CollaborationsPage />} />
         <Route path="/resources" element={<ResourcesPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/links" element={<LinksPage />} />
         <Route path="/event/:id" element={<EventRoute />} />
         <Route path="/place/:id" element={<PlaceRoute />} />
         <Route path="/support" element={<SupportPage />} />
