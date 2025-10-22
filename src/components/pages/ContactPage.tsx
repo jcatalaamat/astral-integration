@@ -2,7 +2,6 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
-import WarmHero from '../shared/WarmHero';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
