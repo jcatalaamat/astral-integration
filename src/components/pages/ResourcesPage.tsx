@@ -48,11 +48,11 @@ export default function ResourcesPage() {
                   </p>
                   <div className="pt-2">
                     <a
-                      href="/resources/Timeline_Shifting_Meditation.pdf"
+                      href="/resources/Timeline_Shifting_Meditation.docx"
                       download
                       className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Download PDF →
+                      Download Guide →
                     </a>
                   </div>
                 </div>
@@ -68,11 +68,11 @@ export default function ResourcesPage() {
                   </p>
                   <div className="pt-2">
                     <a
-                      href="/resources/Ancestral_Healing_Guide.pdf"
+                      href="/resources/Ancestral_Healing_Guide.docx"
                       download
                       className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Download PDF →
+                      Download Guide →
                     </a>
                   </div>
                 </div>
@@ -88,11 +88,11 @@ export default function ResourcesPage() {
                   </p>
                   <div className="pt-2">
                     <a
-                      href="/resources/Post_Ceremony_Integration_Workbook.pdf"
+                      href="/resources/Post_Ceremony_Integration_Workbook.docx"
                       download
                       className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Download PDF →
+                      Download Guide →
                     </a>
                   </div>
                 </div>
@@ -108,11 +108,11 @@ export default function ResourcesPage() {
                   </p>
                   <div className="pt-2">
                     <a
-                      href="/resources/Sacred_Business_Blueprint.pdf"
+                      href="/resources/Sacred_Business_Blueprint.docx"
                       download
                       className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Download PDF →
+                      Download Guide →
                     </a>
                   </div>
                 </div>
@@ -128,11 +128,11 @@ export default function ResourcesPage() {
                   </p>
                   <div className="pt-2">
                     <a
-                      href="/resources/Sacred_Rupture_Journey.pdf"
+                      href="/resources/Sacred_Rupture_Journey.docx"
                       download
                       className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Download PDF →
+                      Download Guide →
                     </a>
                   </div>
                 </div>
@@ -148,11 +148,11 @@ export default function ResourcesPage() {
                   </p>
                   <div className="pt-2">
                     <a
-                      href="/resources/Bufo_Integration_Companion.pdf"
+                      href="/resources/Bufo_Integration_Companion.docx"
                       download
                       className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Download PDF →
+                      Download Guide →
                     </a>
                   </div>
                 </div>
@@ -168,11 +168,11 @@ export default function ResourcesPage() {
                   </p>
                   <div className="pt-2">
                     <a
-                      href="/resources/The_Masculine_Journey.pdf"
+                      href="/resources/The_Masculine_Journey.docx"
                       download
                       className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Download PDF →
+                      Download Guide →
                     </a>
                   </div>
                 </div>
@@ -188,11 +188,11 @@ export default function ResourcesPage() {
                   </p>
                   <div className="pt-2">
                     <a
-                      href="/resources/The_Feminine_Journey.pdf"
+                      href="/resources/The_Feminine_Journey.docx"
                       download
                       className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Download PDF →
+                      Download Guide →
                     </a>
                   </div>
                 </div>
@@ -208,11 +208,11 @@ export default function ResourcesPage() {
                   </p>
                   <div className="pt-2">
                     <a
-                      href="/resources/Building_Your_Sacred_Practice.pdf"
+                      href="/resources/Building_Your_Sacred_Practice.docx"
                       download
                       className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Download PDF →
+                      Download Guide →
                     </a>
                   </div>
                 </div>
@@ -228,11 +228,11 @@ export default function ResourcesPage() {
                   </p>
                   <div className="pt-2">
                     <a
-                      href="/resources/The_Void_Companion.pdf"
+                      href="/resources/The_Void_Companion.docx"
                       download
                       className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Download PDF →
+                      Download Guide →
                     </a>
                   </div>
                 </div>
@@ -248,11 +248,11 @@ export default function ResourcesPage() {
                   </p>
                   <div className="pt-2">
                     <a
-                      href="/resources/Couples_Conscious_Partnership.pdf"
+                      href="/resources/Couples_Conscious_Partnership.docx"
                       download
                       className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Download PDF →
+                      Download Guide →
                     </a>
                   </div>
                 </div>
@@ -268,11 +268,11 @@ export default function ResourcesPage() {
                   </p>
                   <div className="pt-2">
                     <a
-                      href="/resources/Grief_Sacred_Sorrow.pdf"
+                      href="/resources/Grief_Sacred_Sorrow.docx"
                       download
                       className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Download PDF →
+                      Download Guide →
                     </a>
                   </div>
                 </div>
@@ -288,11 +288,11 @@ export default function ResourcesPage() {
                   </p>
                   <div className="pt-2">
                     <a
-                      href="/resources/Somatic_Healing_Trauma_Release.pdf"
+                      href="/resources/Somatic_Healing_Trauma_Release.docx"
                       download
                       className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Download PDF →
+                      Download Guide →
                     </a>
                   </div>
                 </div>
@@ -308,11 +308,11 @@ export default function ResourcesPage() {
                   </p>
                   <div className="pt-2">
                     <a
-                      href="/resources/Death_Practice_Mortality.pdf"
+                      href="/resources/Death_Practice_Mortality.docx"
                       download
                       className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Download PDF →
+                      Download Guide →
                     </a>
                   </div>
                 </div>
