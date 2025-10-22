@@ -37,90 +37,290 @@ export default function ResourcesPage() {
             </div>
 
             {/* Resource Cards Grid */}
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Timeline Shifting Meditation */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-8 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-4">
-                  <div className="text-4xl text-accent-gold">✦</div>
-                  <h3 className="text-2xl font-serif text-text-heading">Timeline Shifting Meditation</h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    A guided journey to realign with your highest timeline and shift your reality.
+              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
+                <div className="space-y-3">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">Presence Mentorship Guide</h3>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Month-by-month deepening practices and daily presence work for embodied awareness.
                   </p>
-                  <div className="pt-4">
-                    <Link
-                      to="/contact"
-                      onClick={scrollToTop}
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium"
+                  <div className="pt-2">
+                    <a
+                      href="/resources/Timeline_Shifting_Meditation.pdf"
+                      download
+                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Request PDF →
-                    </Link>
+                      Download PDF →
+                    </a>
                   </div>
                 </div>
               </div>
 
               {/* Ancestral Healing Guide */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-8 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-4">
-                  <div className="text-4xl text-accent-gold">✦</div>
-                  <h3 className="text-2xl font-serif text-text-heading">Ancestral Healing Guide</h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    Practices to clear inherited patterns and honor your lineage.
+              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
+                <div className="space-y-3">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">Ancestral Healing Guide</h3>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Family constellations work to clear inherited patterns and honor your lineage.
                   </p>
-                  <div className="pt-4">
-                    <Link
-                      to="/contact"
-                      onClick={scrollToTop}
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium"
+                  <div className="pt-2">
+                    <a
+                      href="/resources/Ancestral_Healing_Guide.pdf"
+                      download
+                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Request PDF →
-                    </Link>
+                      Download PDF →
+                    </a>
                   </div>
                 </div>
               </div>
 
               {/* Post-Ceremony Integration Workbook */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-8 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-4">
-                  <div className="text-4xl text-accent-gold">✦</div>
-                  <h3 className="text-2xl font-serif text-text-heading">Post-Ceremony Integration Workbook</h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    Tools to ground your medicine journey insights into embodied wisdom.
+              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
+                <div className="space-y-3">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">Psychedelic Integration</h3>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Complete guide for integrating all medicine work - psilocybin, LSD, ayahuasca, MDMA.
                   </p>
-                  <div className="pt-4">
-                    <Link
-                      to="/contact"
-                      onClick={scrollToTop}
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium"
+                  <div className="pt-2">
+                    <a
+                      href="/resources/Post_Ceremony_Integration_Workbook.pdf"
+                      download
+                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Request PDF →
-                    </Link>
+                      Download PDF →
+                    </a>
                   </div>
                 </div>
               </div>
 
               {/* Sacred Business Blueprint */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-8 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-4">
-                  <div className="text-4xl text-accent-gold">✦</div>
-                  <h3 className="text-2xl font-serif text-text-heading">Sacred Business Blueprint</h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    Align your offerings with soul purpose and universal flow.
+              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
+                <div className="space-y-3">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">Sacred Business Blueprint</h3>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Creative path guide to align your offerings with soul purpose and sacred flow.
                   </p>
-                  <div className="pt-4">
-                    <Link
-                      to="/contact"
-                      onClick={scrollToTop}
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium"
+                  <div className="pt-2">
+                    <a
+                      href="/resources/Sacred_Business_Blueprint.pdf"
+                      download
+                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
                     >
-                      Request PDF →
-                    </Link>
+                      Download PDF →
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sacred Rupture Journey */}
+              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
+                <div className="space-y-3">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">Sacred Rupture Journey</h3>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Navigating spiritual emergence and identity dissolution after profound medicine work.
+                  </p>
+                  <div className="pt-2">
+                    <a
+                      href="/resources/Sacred_Rupture_Journey.pdf"
+                      download
+                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
+                    >
+                      Download PDF →
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bufo Integration Companion */}
+              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
+                <div className="space-y-3">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">Bufo Integration Companion</h3>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Specific guide for integrating 5-MeO-DMT/Bufo journeys and working with the void.
+                  </p>
+                  <div className="pt-2">
+                    <a
+                      href="/resources/Bufo_Integration_Companion.pdf"
+                      download
+                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
+                    >
+                      Download PDF →
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* The Masculine Journey */}
+              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
+                <div className="space-y-3">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">The Masculine Journey</h3>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Men's work guide including father wound healing and reclaiming healthy masculine.
+                  </p>
+                  <div className="pt-2">
+                    <a
+                      href="/resources/The_Masculine_Journey.pdf"
+                      download
+                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
+                    >
+                      Download PDF →
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* The Feminine Journey */}
+              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
+                <div className="space-y-3">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">The Feminine Journey</h3>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Women's work including mother wound healing and reclaiming feminine power.
+                  </p>
+                  <div className="pt-2">
+                    <a
+                      href="/resources/The_Feminine_Journey.pdf"
+                      download
+                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
+                    >
+                      Download PDF →
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Building Your Sacred Practice */}
+              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
+                <div className="space-y-3">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">Building Your Sacred Practice</h3>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Create sustainable daily practices for meditation, grounding, and spiritual growth.
+                  </p>
+                  <div className="pt-2">
+                    <a
+                      href="/resources/Building_Your_Sacred_Practice.pdf"
+                      download
+                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
+                    >
+                      Download PDF →
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* The Void Companion */}
+              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
+                <div className="space-y-3">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">The Void Companion</h3>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Working with emptiness, meaninglessness, and the existential void after awakening.
+                  </p>
+                  <div className="pt-2">
+                    <a
+                      href="/resources/The_Void_Companion.pdf"
+                      download
+                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
+                    >
+                      Download PDF →
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Couples & Conscious Partnership */}
+              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
+                <div className="space-y-3">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">Couples & Conscious Partnership</h3>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Relationship work for creating conscious, sacred partnerships and navigating conflict.
+                  </p>
+                  <div className="pt-2">
+                    <a
+                      href="/resources/Couples_Conscious_Partnership.pdf"
+                      download
+                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
+                    >
+                      Download PDF →
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Grief & Sacred Sorrow */}
+              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
+                <div className="space-y-3">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">Grief & Sacred Sorrow</h3>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Processing grief, loss, and ancestral sorrow with ceremony and ritual.
+                  </p>
+                  <div className="pt-2">
+                    <a
+                      href="/resources/Grief_Sacred_Sorrow.pdf"
+                      download
+                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
+                    >
+                      Download PDF →
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Somatic Healing & Trauma Release */}
+              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
+                <div className="space-y-3">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">Somatic Healing & Trauma Release</h3>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Body-based practices for releasing stored trauma and returning to embodied presence.
+                  </p>
+                  <div className="pt-2">
+                    <a
+                      href="/resources/Somatic_Healing_Trauma_Release.pdf"
+                      download
+                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
+                    >
+                      Download PDF →
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Death Practice & Mortality */}
+              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
+                <div className="space-y-3">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-xl font-serif text-text-heading">Death Practice & Mortality</h3>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Contemplating mortality, preparing for death, and living fully in the face of impermanence.
+                  </p>
+                  <div className="pt-2">
+                    <a
+                      href="/resources/Death_Practice_Mortality.pdf"
+                      download
+                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
+                    >
+                      Download PDF →
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
 
             <p className="text-center text-text-secondary mt-12 italic text-sm">
-              Request any or all resources via the contact form. They'll be sent to your inbox within 24 hours.
+              All resources are freely available for download. May they serve your journey.
             </p>
           </div>
         </div>
