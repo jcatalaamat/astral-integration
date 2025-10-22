@@ -19,7 +19,7 @@ export default function LinksHero() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 py-8">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-24 pb-8">
         {/* Profile Photo - Smaller */}
         <div className="mb-6 animate-fadeIn">
           <div className="relative">
