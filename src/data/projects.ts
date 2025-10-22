@@ -28,13 +28,13 @@ export const projects: Project[] = [
     description: 'Deep transformational mentorship, ancestral healing, and timeline shifting sessions',
     status: 'Booking Open',
     features: [],
-    cta: {
-      primary: 'Schedule Free Call',
+    cta2: {
+      text: 'Schedule Free Call',
       url: 'https://calendly.com/astral-integration/discovery-call'
     },
-    cta2: {
-      text: 'Explore Services',
-      url: '/services'
+    cta: {
+      primary: 'Explore Services',
+      url: '/'
     }
   },
   {
@@ -76,7 +76,7 @@ export const projects: Project[] = [
   },
   {
     id: 'astralamat',
-    name: 'Astral Amat',
+    name: 'Jordi Amat',
     category: 'tech',
     icon: '💼',
     tagline: 'CTO Services & Technical Leadership',
@@ -85,11 +85,11 @@ export const projects: Project[] = [
     features: [],
     cta: {
       primary: 'View Portfolio',
-      url: 'https://astralamat.com'
+      url: 'https://jordiamat.com'
     },
     cta2: {
       text: "Let's Connect",
-      url: 'mailto:hello@astralamat.com'
+      url: 'mailto:hello@jordiamat.com'
     }
   },
   {

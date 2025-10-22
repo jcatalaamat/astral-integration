@@ -9,7 +9,7 @@ export default function ProjectGrid() {
           {/* Section Header - minimal, no top margin */}
           <div className="mb-6 text-center pt-6">
             <h2 className="text-[10px] uppercase tracking-widest text-[#1A1A1A]/40" style={{letterSpacing: '0.18em'}}>
-              My Projects
+              My Work
             </h2>
           </div>
 

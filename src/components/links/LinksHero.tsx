@@ -30,25 +30,49 @@ export default function LinksHero() {
           </div>
         </div>
 
-        {/* Name / Brand - Match bio.site exactly */}
+        {/* Name - Personal + Brand */}
         <h1
-          className="text-2xl md:text-3xl font-serif text-[#0A0A0A] mb-4 tracking-wide uppercase text-center animate-fadeIn"
-          style={{animationDelay: '0.1s', letterSpacing: '0.1em'}}
+          className="text-2xl md:text-3xl font-serif text-[#0A0A0A] mb-2 text-center animate-fadeIn"
+          style={{animationDelay: '0.1s'}}
         >
-          ASTRAL INTEGRATION
+          Jordi Amat
         </h1>
 
-        {/* Tagline - Match bio.site multi-line format */}
+        {/* Brand name */}
         <p
-          className="text-[9px] md:text-[10px] text-[#1A1A1A]/60 tracking-widest uppercase mb-2 text-center leading-relaxed max-w-3xl animate-fadeIn"
-          style={{animationDelay: '0.2s', letterSpacing: '0.12em', lineHeight: '1.8'}}
+          className="text-base md:text-lg text-[#1A1A1A]/60 mb-3 text-center tracking-wide uppercase animate-fadeIn font-serif"
+          style={{animationDelay: '0.15s', letterSpacing: '0.08em'}}
+        >
+          Astral Integration
+        </p>
+
+        {/* Main tagline */}
+        <p
+          className="text-sm md:text-base text-[#1A1A1A]/70 mb-3 text-center leading-relaxed max-w-2xl animate-fadeIn font-light"
+          style={{animationDelay: '0.2s'}}
+        >
+          Building Technology That Serves Human Consciousness
+        </p>
+
+        {/* Role badges */}
+        <p
+          className="text-xs text-[#1A1A1A]/50 mb-4 text-center leading-relaxed animate-fadeIn"
+          style={{animationDelay: '0.25s'}}
+        >
+          CTO • Soul Guide • Community Builder
+        </p>
+
+        {/* Original spiritual taglines - smaller */}
+        <p
+          className="text-[9px] md:text-[10px] text-[#1A1A1A]/50 tracking-widest uppercase mb-2 text-center leading-relaxed max-w-3xl animate-fadeIn"
+          style={{animationDelay: '0.3s', letterSpacing: '0.12em', lineHeight: '1.8'}}
         >
           SACRED EARTH MEDICINE & SELF-REALIZATION • YOU WERE ALWAYS WHOLE • NOW RECLAIM IT
         </p>
 
         <p
-          className="text-[9px] md:text-[10px] text-[#1A1A1A]/50 tracking-widest uppercase mb-6 text-center leading-relaxed max-w-3xl animate-fadeIn"
-          style={{animationDelay: '0.3s', letterSpacing: '0.12em', lineHeight: '1.8'}}
+          className="text-[9px] md:text-[10px] text-[#1A1A1A]/40 tracking-widest uppercase mb-6 text-center leading-relaxed max-w-3xl animate-fadeIn"
+          style={{animationDelay: '0.35s', letterSpacing: '0.12em', lineHeight: '1.8'}}
         >
           INTEGRATION COACHING | BUFO ALVARIUS | CEREMONIES | IMMERSIONS • RETREATS • 1:1 SESSIONS
         </p>
