@@ -35,12 +35,12 @@ export default function LinksHero() {
         </div>
 
         {/* Name - Personal + Brand */}
-        <h1
+        {/* <h1
           className="text-2xl md:text-3xl font-serif text-[#0A0A0A] mb-2 text-center animate-fadeIn"
           style={{animationDelay: '0.1s'}}
         >
           Jordi Amat
-        </h1>
+        </h1> */}
 
         {/* Brand name */}
         <p
