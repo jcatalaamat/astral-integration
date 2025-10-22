@@ -1,10 +1,4 @@
-import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useParams, Link } from 'react-router-dom';
-import { Globe } from 'lucide-react';
-import './i18n';
-import enTranslations from './translations/en.json';
-import esTranslations from './translations/es.json';
-import caTranslations from './translations/ca.json';
 import EventPreview from './components/EventPreview';
 import PlacePreview from './components/PlacePreview';
 import SupportPage from './components/SupportPage';
@@ -24,9 +18,6 @@ import WarmHero from './components/shared/WarmHero';
 
 // Main Landing Page Component
 function LandingPage() {
-  const [language, setLanguage] = useState<'en' | 'es' | 'ca'>('en');
-
-  const t = language === 'es' ? esTranslations : language === 'ca' ? caTranslations : enTranslations;
 
   return (
     <div className="min-h-screen bg-warm-white">
@@ -38,20 +29,9 @@ function LandingPage() {
         subtitle="Guiding souls home to themselves"
         height="large"
       >
-        <p className="text-text-secondary/80 font-light italic max-w-2xl mx-auto mb-8">
+        <p className="text-text-secondary/80 font-light italic max-w-2xl mx-auto">
           For those who hear the call. For those ready to remember.
         </p>
-
-        {/* Language Toggle */}
-        <div className="flex justify-center">
-          <button
-            onClick={() => setLanguage(language === 'en' ? 'es' : language === 'es' ? 'ca' : 'en')}
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-warm-white/80 backdrop-blur-md border border-text-primary/10 hover:border-accent-gold/30 transition-all"
-          >
-            <Globe className="w-4 h-4 text-accent-gold" />
-            <span className="text-sm font-medium text-text-primary">{language === 'en' ? 'EN' : language === 'es' ? 'ES' : 'CA'}</span>
-          </button>
-        </div>
       </WarmHero>
 
       {/* Who This Is For - Wisdom Section */}
