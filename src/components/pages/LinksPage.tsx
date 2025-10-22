@@ -31,7 +31,7 @@ export default function LinksPage() {
       <ProjectGrid />
 
       {/* Newsletter Section */}
-      <LinksNewsletter />
+      {/* <LinksNewsletter /> */}
 
       {/* Footer */}
       <footer className="bg-white border-t border-[#1A1A1A]/5 py-16">

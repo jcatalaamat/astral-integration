@@ -25,7 +25,11 @@ export default function LinksHero() {
           <div className="relative">
             <div className="absolute inset-0 bg-[#C9A167]/10 rounded-full blur-2xl" />
             <div className="relative w-24 h-24 rounded-full border border-[#C9A167]/30 overflow-hidden bg-gradient-to-br from-[#EDE8E2] to-[#F5F3EF]">
-              <div className="w-full h-full bg-gradient-to-br from-[#D4A89F]/20 to-[#C9A167]/10" />
+              <img
+                src="/jordi-profile.jpg"
+                alt="Jordi Amat"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
