@@ -26,9 +26,9 @@ export default function Navigation() {
             <Link to="/services" className="text-text-secondary hover:text-accent-gold transition-colors text-sm font-medium">
               Services
             </Link>
-            <Link to="/inner-ascend" className="text-text-secondary hover:text-accent-gold transition-colors text-sm font-medium">
+            {/* <Link to="/inner-ascend" className="text-text-secondary hover:text-accent-gold transition-colors text-sm font-medium">
               Community
-            </Link>
+            </Link> */}
             <Link to="/retreats" className="text-text-secondary hover:text-accent-gold transition-colors text-sm font-medium">
               Retreats
             </Link>
@@ -73,9 +73,9 @@ export default function Navigation() {
             <Link to="/services" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-text-secondary hover:text-accent-gold transition-colors">
               Services
             </Link>
-            <Link to="/inner-ascend" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-text-secondary hover:text-accent-gold transition-colors">
+            {/* <Link to="/inner-ascend" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-text-secondary hover:text-accent-gold transition-colors">
               Community
-            </Link>
+            </Link> */}
             <Link to="/retreats" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-text-secondary hover:text-accent-gold transition-colors">
               Retreats
             </Link>
