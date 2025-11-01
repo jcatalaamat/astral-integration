@@ -67,24 +67,24 @@ export default function Navigation() {
             }`}>
               Resources
             </Link>
-            <Link to="/contact" className="px-6 py-2 bg-accent-gold text-white rounded-full font-semibold hover:bg-accent-gold/90 hover:shadow-warm transition-all">
+            <Link to="/contact" className={`px-6 py-2 rounded-full font-semibold transition-all ${
+              isScrolled
+                ? 'bg-accent-gold text-white hover:bg-accent-gold/90 hover:shadow-warm'
+                : 'bg-white/20 text-white border border-white/30 hover:bg-white/30 backdrop-blur-sm'
+            }`}>
               Contact
             </Link>
           </div>
 
           {/* Right Side: Language + Mobile Menu */}
           <div className="flex items-center gap-4">
-            {/* Language Toggle */}
+            {/* Language Toggle - Hidden */}
             <button
               onClick={() => setLanguage(language === 'en' ? 'es' : language === 'es' ? 'ca' : 'en')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all ${
-                isScrolled
-                  ? 'bg-warm-sand/50 border border-accent-gold/20 hover:bg-warm-sand'
-                  : 'bg-white/20 border border-white/30 hover:bg-white/30 backdrop-blur-sm'
-              }`}
+              className="hidden"
             >
-              <Globe className={`w-4 h-4 transition-colors ${isScrolled ? 'text-accent-gold' : 'text-white'}`} />
-              <span className={`text-sm font-medium transition-colors ${isScrolled ? 'text-text-primary' : 'text-white'}`}>
+              <Globe className="w-4 h-4" />
+              <span className="text-sm font-medium">
                 {language === 'en' ? 'EN' : language === 'es' ? 'ES' : 'CA'}
               </span>
             </button>

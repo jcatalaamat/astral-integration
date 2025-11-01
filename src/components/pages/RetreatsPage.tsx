@@ -55,13 +55,13 @@ export default function RetreatsPage() {
 
       {/* Full Width Quote */}
       <div className="relative min-h-[60vh] flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/15 via-warm-peach to-accent-coral/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/15 via-warm-peach to-accent-sage/10"></div>
 
         <div className="relative z-10 container mx-auto px-4">
-          <p className="text-3xl md:text-5xl font-serif text-text-heading text-center leading-tight max-w-4xl mx-auto italic">
+          <blockquote className="text-3xl md:text-5xl font-serif text-text-heading text-center leading-relaxed max-w-4xl mx-auto italic">
             "Transformation doesn't happen on a schedule.<br/>
             It happens when you finally have the space to let go."
-          </p>
+          </blockquote>
         </div>
       </div>
 
@@ -190,7 +190,7 @@ export default function RetreatsPage() {
               <div className="space-y-4">
                 <div className="text-accent-gold text-3xl">✦</div>
                 <h3 className="text-xl font-serif text-text-heading">Ceremony</h3>
-                <p className="text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   Sacred medicine journeys held with reverence, preparation, and integration.
                 </p>
               </div>
@@ -198,7 +198,7 @@ export default function RetreatsPage() {
               <div className="space-y-4">
                 <div className="text-accent-gold text-3xl">✦</div>
                 <h3 className="text-xl font-serif text-text-heading">Healing</h3>
-                <p className="text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   Energy work, somatic release, breathwork, and bodywork to move what's stuck.
                 </p>
               </div>
@@ -206,7 +206,7 @@ export default function RetreatsPage() {
               <div className="space-y-4">
                 <div className="text-accent-gold text-3xl">✦</div>
                 <h3 className="text-xl font-serif text-text-heading">Integration</h3>
-                <p className="text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   Daily circles, journaling, nature walks. Making sense of what arises.
                 </p>
               </div>
@@ -214,7 +214,7 @@ export default function RetreatsPage() {
               <div className="space-y-4">
                 <div className="text-accent-gold text-3xl">✦</div>
                 <h3 className="text-xl font-serif text-text-heading">Nourishment</h3>
-                <p className="text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   Farm-to-table organic meals prepared with intention. Feeding body and soul.
                 </p>
               </div>
@@ -222,7 +222,7 @@ export default function RetreatsPage() {
               <div className="space-y-4">
                 <div className="text-accent-gold text-3xl">✦</div>
                 <h3 className="text-xl font-serif text-text-heading">Community</h3>
-                <p className="text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   Witness and be witnessed. You're not alone in this journey.
                 </p>
               </div>
@@ -230,7 +230,7 @@ export default function RetreatsPage() {
               <div className="space-y-4">
                 <div className="text-accent-gold text-3xl">✦</div>
                 <h3 className="text-xl font-serif text-text-heading">Sacred Space</h3>
-                <p className="text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   Ceremony altars, meditation areas, ocean/mountain access. Beauty matters.
                 </p>
               </div>
@@ -252,7 +252,7 @@ export default function RetreatsPage() {
             <div className="space-y-8">
               <div className="bg-warm-white/80 rounded-2xl p-8 space-y-4">
                 <h3 className="text-2xl font-serif text-text-heading">Group Retreats</h3>
-                <p className="text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   €1,200-2,200 depending on location and duration
                 </p>
                 <p className="text-sm text-text-secondary/80">
@@ -262,7 +262,7 @@ export default function RetreatsPage() {
 
               <div className="bg-warm-white/80 rounded-2xl p-8 space-y-4">
                 <h3 className="text-2xl font-serif text-text-heading">Private Retreats</h3>
-                <p className="text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   Custom pricing based on duration, location, and group size
                 </p>
                 <p className="text-sm text-text-secondary/80">
@@ -295,7 +295,7 @@ export default function RetreatsPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-serif text-text-heading mb-2">Initial Call</h3>
-                  <p className="text-text-secondary">
+                  <p className="text-text-secondary leading-relaxed">
                     We'll have a conversation about where you are, what you're seeking, and whether
                     this retreat feels aligned.
                   </p>
@@ -308,7 +308,7 @@ export default function RetreatsPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-serif text-text-heading mb-2">Preparation</h3>
-                  <p className="text-text-secondary">
+                  <p className="text-text-secondary leading-relaxed">
                     1-2 preparation sessions to set intentions, address questions, and prepare your
                     nervous system for the work ahead.
                   </p>
@@ -321,7 +321,7 @@ export default function RetreatsPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-serif text-text-heading mb-2">The Journey</h3>
-                  <p className="text-text-secondary">
+                  <p className="text-text-secondary leading-relaxed">
                     Full immersion. Surrender. Trust the process. Let the container hold you.
                   </p>
                 </div>
@@ -333,7 +333,7 @@ export default function RetreatsPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-serif text-text-heading mb-2">Integration</h3>
-                  <p className="text-text-secondary">
+                  <p className="text-text-secondary leading-relaxed">
                     Post-retreat support to help anchor the insights and navigate re-entry into
                     daily life.
                   </p>

@@ -93,11 +93,11 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/15 via-warm-peach to-accent-sage/10"></div>
 
         <div className="relative z-10 container mx-auto px-4">
-          <p className="text-3xl md:text-5xl font-serif text-text-heading text-center leading-tight max-w-4xl mx-auto italic">
+          <blockquote className="text-3xl md:text-5xl font-serif text-text-heading text-center leading-relaxed max-w-4xl mx-auto italic">
             "The medicine doesn't heal you.<br/>
             You heal yourself.<br/>
             The medicine just shows you the way."
-          </p>
+          </blockquote>
         </div>
       </div>
 
@@ -165,7 +165,7 @@ export default function ServicesPage() {
 
       {/* One-to-One Work */}
       <div className="relative min-h-[80vh] flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/15 via-warm-peach to-accent-coral/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/15 via-warm-peach to-accent-sage/10"></div>
 
         <div className="relative z-10 container mx-auto px-4 py-24">
           <div className="max-w-6xl mx-auto">
@@ -217,7 +217,7 @@ export default function ServicesPage() {
             <div className="grid md:grid-cols-2 gap-8 mt-12">
               <div className="bg-warm-white/80 rounded-2xl p-8 space-y-4">
                 <h3 className="text-xl font-serif text-text-heading">Energy Healing</h3>
-                <p className="text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   90-minute session of deep somatic and energetic work.
                 </p>
                 <p className="text-accent-gold">€88-111 • sliding scale</p>
@@ -225,7 +225,7 @@ export default function ServicesPage() {
 
               <div className="bg-warm-white/80 rounded-2xl p-8 space-y-4">
                 <h3 className="text-xl font-serif text-text-heading">Family Constellations</h3>
-                <p className="text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   2-hour session to reveal and resolve ancestral patterns.
                 </p>
                 <p className="text-accent-gold">€120-150 • sliding scale</p>

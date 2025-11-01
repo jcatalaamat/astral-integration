@@ -22,14 +22,14 @@ export default function AboutPage() {
       />
 
       {/* The Breakdown - Image with Text Overlay */}
-      <div className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-accent-terracotta/10 via-warm-peach to-accent-sage/10">
+      <div className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-accent-terracotta/15 via-warm-peach to-accent-sage/10">
         <div className="container mx-auto px-4 py-24">
           <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <h2 className="text-4xl md:text-5xl font-serif text-text-heading">
                 The Breakdown
               </h2>
-              <div className="space-y-6 text-text-secondary leading-relaxed text-lg">
+              <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
                 <p>
                   For years, I performed. I wore masks. I did what I thought I was supposed to do.
                 </p>
@@ -69,7 +69,7 @@ export default function AboutPage() {
               <h2 className="text-4xl md:text-5xl font-serif text-text-heading">
                 The Awakening
               </h2>
-              <div className="space-y-6 text-text-secondary leading-relaxed text-lg">
+              <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
                 <p>
                   Plant medicine showed me who I was beyond the story.
                 </p>
@@ -88,13 +88,13 @@ export default function AboutPage() {
 
       {/* Full Width Quote */}
       <div className="relative min-h-[60vh] flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-r from-accent-terracotta/20 to-accent-coral/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/15 via-warm-peach to-accent-coral/10"></div>
 
         <div className="relative z-10 container mx-auto px-4">
-          <p className="text-4xl md:text-5xl font-serif text-text-heading text-center leading-tight max-w-5xl mx-auto">
+          <blockquote className="text-3xl md:text-5xl font-serif text-text-heading text-center leading-relaxed max-w-5xl mx-auto italic">
             "Awakening isn't enough.<br/>
             Integration is where the real work happens."
-          </p>
+          </blockquote>
         </div>
       </div>
 
@@ -107,12 +107,12 @@ export default function AboutPage() {
                 <h2 className="text-4xl md:text-5xl font-serif text-text-heading">
                   Becoming a Guide
                 </h2>
-                <div className="space-y-6 text-text-secondary leading-relaxed text-lg">
+                <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
                   <p>
                     I spent years learning from elders, shamans, therapists, healers. Training in
                     family constellations, somatic therapy, energy healing, Bufo facilitation.
                   </p>
-                  <p className="text-xl text-accent-gold">
+                  <p className="text-xl text-accent-gold italic">
                     But my greatest teacher has been my own journey—and the thousands of souls
                     I've had the honor to witness.
                   </p>
@@ -130,17 +130,17 @@ export default function AboutPage() {
 
             {/* Experience Stats - Minimal */}
             <div className="grid md:grid-cols-3 gap-12 text-center mt-24">
-              <div>
-                <div className="text-6xl font-serif text-accent-gold mb-2">10+</div>
-                <div className="text-text-secondary">Years</div>
+              <div className="space-y-3">
+                <div className="text-5xl md:text-6xl font-serif text-accent-gold">10+</div>
+                <div className="text-text-secondary font-light text-lg">Years</div>
               </div>
-              <div>
-                <div className="text-6xl font-serif text-accent-gold mb-2">500+</div>
-                <div className="text-text-secondary">Ceremonies</div>
+              <div className="space-y-3">
+                <div className="text-5xl md:text-6xl font-serif text-accent-gold">500+</div>
+                <div className="text-text-secondary font-light text-lg">Ceremonies</div>
               </div>
-              <div>
-                <div className="text-6xl font-serif text-accent-gold mb-2">1000+</div>
-                <div className="text-text-secondary">Souls Witnessed</div>
+              <div className="space-y-3">
+                <div className="text-5xl md:text-6xl font-serif text-accent-gold">1000+</div>
+                <div className="text-text-secondary font-light text-lg">Souls Witnessed</div>
               </div>
             </div>
           </div>
@@ -205,13 +205,13 @@ export default function AboutPage() {
       </div>
 
       {/* Philosophy - Simple */}
-      <div className="bg-accent-gold/10 py-24">
+      <div className="bg-warm-cream py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto space-y-12 text-center">
             <p className="text-3xl md:text-4xl font-serif text-text-heading leading-relaxed">
               My work is a crossing between coaching, teaching, energy healing, therapy, and mysticism.
             </p>
-            <p className="text-xl md:text-2xl text-text-secondary leading-relaxed">
+            <p className="text-xl text-text-secondary leading-relaxed">
               I don't have all the answers. I don't perform miracles. I don't promise instant transformation.
             </p>
             <p className="text-2xl md:text-3xl font-serif text-accent-gold italic">
@@ -226,7 +226,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-8">
+              <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-6">
                 What I Bring to the Work
               </h2>
               <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
@@ -237,54 +237,54 @@ export default function AboutPage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-warm-cream/50 rounded-2xl p-8 space-y-4">
-                <div className="text-3xl text-accent-gold">✧</div>
+                <div className="text-accent-gold text-3xl">✧</div>
                 <h3 className="text-xl font-serif text-text-heading">Bufo Alvarius Facilitation</h3>
-                <p className="text-text-secondary leading-relaxed text-sm">
+                <p className="text-text-secondary leading-relaxed">
                   10+ years experience holding sacred space for 5-MeO-DMT journeys. Trained in trauma-informed
                   facilitation and integration support.
                 </p>
               </div>
 
               <div className="bg-warm-cream/50 rounded-2xl p-8 space-y-4">
-                <div className="text-3xl text-accent-gold">✧</div>
+                <div className="text-accent-gold text-3xl">✧</div>
                 <h3 className="text-xl font-serif text-text-heading">Energy Healing</h3>
-                <p className="text-text-secondary leading-relaxed text-sm">
+                <p className="text-text-secondary leading-relaxed">
                   Shamanic energy work, chakra balancing, cord cutting, entity release. Working with the subtle
                   body to clear what blocks your flow.
                 </p>
               </div>
 
               <div className="bg-warm-cream/50 rounded-2xl p-8 space-y-4">
-                <div className="text-3xl text-accent-gold">✧</div>
+                <div className="text-accent-gold text-3xl">✧</div>
                 <h3 className="text-xl font-serif text-text-heading">Family Constellations</h3>
-                <p className="text-text-secondary leading-relaxed text-sm">
+                <p className="text-text-secondary leading-relaxed">
                   Systemic healing work to reveal and resolve inherited patterns, ancestral trauma, and family
                   dynamics that keep you stuck.
                 </p>
               </div>
 
               <div className="bg-warm-cream/50 rounded-2xl p-8 space-y-4">
-                <div className="text-3xl text-accent-gold">✧</div>
+                <div className="text-accent-gold text-3xl">✧</div>
                 <h3 className="text-xl font-serif text-text-heading">Somatic Release</h3>
-                <p className="text-text-secondary leading-relaxed text-sm">
+                <p className="text-text-secondary leading-relaxed">
                   Trauma lives in the body. We work through breathwork, movement, and presence to release what's
                   been stored in your nervous system.
                 </p>
               </div>
 
               <div className="bg-warm-cream/50 rounded-2xl p-8 space-y-4">
-                <div className="text-3xl text-accent-gold">✧</div>
+                <div className="text-accent-gold text-3xl">✧</div>
                 <h3 className="text-xl font-serif text-text-heading">Masculine Embodiment</h3>
-                <p className="text-text-secondary leading-relaxed text-sm">
+                <p className="text-text-secondary leading-relaxed">
                   Sacred men's work to reclaim authentic power, emotional depth, and presence. Moving from
                   performance to embodiment.
                 </p>
               </div>
 
               <div className="bg-warm-cream/50 rounded-2xl p-8 space-y-4">
-                <div className="text-3xl text-accent-gold">✧</div>
+                <div className="text-accent-gold text-3xl">✧</div>
                 <h3 className="text-xl font-serif text-text-heading">Spiritual Business Mentorship</h3>
-                <p className="text-text-secondary leading-relaxed text-sm">
+                <p className="text-text-secondary leading-relaxed">
                   For healers and conscious entrepreneurs. Building sustainable practices aligned with soul
                   purpose and universal flow.
                 </p>
@@ -296,7 +296,7 @@ export default function AboutPage() {
 
       {/* Values & Ethics */}
       <div className="relative py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/15 via-warm-peach to-accent-sage/15"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/15 via-warm-peach to-accent-sage/10"></div>
 
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -304,10 +304,10 @@ export default function AboutPage() {
               How I Work: Values & Ethics
             </h2>
 
-            <div className="space-y-6 leading-relaxed">
+            <div className="space-y-6">
               <div className="bg-warm-white/80 backdrop-blur-md border border-text-primary/10 rounded-2xl p-6">
                 <h3 className="text-xl font-serif text-text-heading mb-3">Consent & Sovereignty</h3>
-                <p className="text-sm text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   Your body, your choice. Always. I never push, manipulate, or override your boundaries.
                   You're in control of your journey. I'm just here to hold space.
                 </p>
@@ -315,7 +315,7 @@ export default function AboutPage() {
 
               <div className="bg-warm-white/80 backdrop-blur-md border border-text-primary/10 rounded-2xl p-6">
                 <h3 className="text-xl font-serif text-text-heading mb-3">Trauma-Informed</h3>
-                <p className="text-sm text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   I understand how trauma lives in the nervous system. I work with your body's wisdom, not
                   against it. Healing happens when you feel safe enough to let go.
                 </p>
@@ -323,7 +323,7 @@ export default function AboutPage() {
 
               <div className="bg-warm-white/80 backdrop-blur-md border border-text-primary/10 rounded-2xl p-6">
                 <h3 className="text-xl font-serif text-text-heading mb-3">No Spiritual Bypassing</h3>
-                <p className="text-sm text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   We don't skip over the hard stuff with positive thinking or "love and light." Real healing
                   means facing the shadow, feeling the pain, and integrating it all.
                 </p>
@@ -331,7 +331,7 @@ export default function AboutPage() {
 
               <div className="bg-warm-white/80 backdrop-blur-md border border-text-primary/10 rounded-2xl p-6">
                 <h3 className="text-xl font-serif text-text-heading mb-3">Cultural Respect</h3>
-                <p className="text-sm text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   I honor the indigenous origins of the medicines and practices I work with. This isn't
                   appropriation—it's respectful collaboration with sacred traditions.
                 </p>
@@ -339,7 +339,7 @@ export default function AboutPage() {
 
               <div className="bg-warm-white/80 backdrop-blur-md border border-text-primary/10 rounded-2xl p-6">
                 <h3 className="text-xl font-serif text-text-heading mb-3">Confidentiality</h3>
-                <p className="text-sm text-text-secondary">
+                <p className="text-text-secondary leading-relaxed">
                   What happens in session stays in session. Your story is yours to tell, not mine. I protect
                   your privacy absolutely.
                 </p>

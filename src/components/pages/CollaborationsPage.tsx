@@ -64,13 +64,13 @@ export default function CollaborationsPage() {
             <div className="grid md:grid-cols-2 gap-12">
               {/* Medicine Facilitation */}
               <div className="bg-warm-white/80 backdrop-blur-xl border border-text-primary/10 rounded-2xl p-8 space-y-6">
-                <div className="text-4xl text-accent-gold">✦</div>
+                <div className="text-accent-gold text-4xl">✦</div>
                 <h3 className="text-2xl font-serif text-text-heading">Bufo Alvarius Medicine Facilitation</h3>
                 <p className="text-text-secondary leading-relaxed">
                   Over a decade of experience holding sacred space for 5-MeO-DMT journeys. I bring preparation,
                   presence, integration support, and deep reverence for the medicine.
                 </p>
-                <ul className="space-y-3 text-text-secondary text-sm">
+                <ul className="space-y-3 text-text-secondary">
                   <li>• Pre-ceremony preparation and screening</li>
                   <li>• Safe, trauma-informed facilitation</li>
                   <li>• Post-ceremony integration support</li>
@@ -80,13 +80,13 @@ export default function CollaborationsPage() {
 
               {/* Teaching & Workshops */}
               <div className="bg-warm-white/80 backdrop-blur-xl border border-text-primary/10 rounded-2xl p-8 space-y-6">
-                <div className="text-4xl text-accent-gold">✦</div>
+                <div className="text-accent-gold text-4xl">✦</div>
                 <h3 className="text-2xl font-serif text-text-heading">Workshops & Teachings</h3>
                 <p className="text-text-secondary leading-relaxed">
                   I offer experiential workshops on integration, energy healing, masculine embodiment,
                   and spiritual business. Tailored to your audience and container.
                 </p>
-                <ul className="space-y-3 text-text-secondary text-sm">
+                <ul className="space-y-3 text-text-secondary">
                   <li>• Integration after plant medicine</li>
                   <li>• Energy healing & somatic release</li>
                   <li>• Sacred masculinity & men's work</li>
@@ -96,13 +96,13 @@ export default function CollaborationsPage() {
 
               {/* Retreat Co-Facilitation */}
               <div className="bg-warm-white/80 backdrop-blur-xl border border-text-primary/10 rounded-2xl p-8 space-y-6">
-                <div className="text-4xl text-accent-gold">✦</div>
+                <div className="text-accent-gold text-4xl">✦</div>
                 <h3 className="text-2xl font-serif text-text-heading">Retreat Co-Facilitation</h3>
                 <p className="text-text-secondary leading-relaxed">
                   Let's design transformational retreats together. I bring ceremony, healing sessions,
                   integration circles, and deep presence to multi-day immersions.
                 </p>
-                <ul className="space-y-3 text-text-secondary text-sm">
+                <ul className="space-y-3 text-text-secondary">
                   <li>• 3-14 day retreat formats</li>
                   <li>• Custom program design</li>
                   <li>• Ceremony + integration containers</li>
@@ -112,13 +112,13 @@ export default function CollaborationsPage() {
 
               {/* Guest Facilitation */}
               <div className="bg-warm-white/80 backdrop-blur-xl border border-text-primary/10 rounded-2xl p-8 space-y-6">
-                <div className="text-4xl text-accent-gold">✦</div>
+                <div className="text-accent-gold text-4xl">✦</div>
                 <h3 className="text-2xl font-serif text-text-heading">Guest Facilitation at Your Center</h3>
                 <p className="text-text-secondary leading-relaxed">
                   If you run a retreat center, healing space, or conscious community—I'm available for
                   guest facilitation residencies. Bring medicine work and transformational offerings to your space.
                 </p>
-                <ul className="space-y-3 text-text-secondary text-sm">
+                <ul className="space-y-3 text-text-secondary">
                   <li>• 1-4 week residencies</li>
                   <li>• Medicine ceremonies for your community</li>
                   <li>• Workshops and teachings</li>
@@ -140,27 +140,27 @@ export default function CollaborationsPage() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center space-y-4">
-                <div className="text-3xl text-accent-gold">✧</div>
+                <div className="text-accent-gold text-3xl">✧</div>
                 <h3 className="text-xl font-serif text-text-heading">Retreat Centers</h3>
-                <p className="text-text-secondary leading-relaxed text-sm">
+                <p className="text-text-secondary leading-relaxed">
                   Centers in Mexico, Spain, Costa Rica, and beyond looking to offer medicine work
                   and transformational programming.
                 </p>
               </div>
 
               <div className="text-center space-y-4">
-                <div className="text-3xl text-accent-gold">✧</div>
+                <div className="text-accent-gold text-3xl">✧</div>
                 <h3 className="text-xl font-serif text-text-heading">Healers & Facilitators</h3>
-                <p className="text-text-secondary leading-relaxed text-sm">
+                <p className="text-text-secondary leading-relaxed">
                   Conscious practitioners who want to co-create retreats, workshops, or offer
                   medicine work to their communities.
                 </p>
               </div>
 
               <div className="text-center space-y-4">
-                <div className="text-3xl text-accent-gold">✧</div>
+                <div className="text-accent-gold text-3xl">✧</div>
                 <h3 className="text-xl font-serif text-text-heading">Conscious Communities</h3>
-                <p className="text-text-secondary leading-relaxed text-sm">
+                <p className="text-text-secondary leading-relaxed">
                   Intentional communities, co-living spaces, and transformation-focused groups
                   seeking ceremony and integration support.
                 </p>
@@ -172,11 +172,11 @@ export default function CollaborationsPage() {
 
       {/* Quote Section */}
       <div className="relative min-h-[60vh] flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/10 via-warm-peach to-accent-sage/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/15 via-warm-peach to-accent-sage/10"></div>
 
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <blockquote className="text-2xl md:text-4xl font-serif text-text-heading leading-relaxed italic">
+            <blockquote className="text-3xl md:text-5xl font-serif text-text-heading leading-relaxed italic">
               "The most sacred work happens when healers come together—not in competition,
               but in collaboration. Not to build empires, but to serve transformation."
             </blockquote>
@@ -245,10 +245,10 @@ export default function CollaborationsPage() {
               How We Can Work Together
             </h2>
 
-            <div className="space-y-8 text-text-secondary leading-relaxed">
+            <div className="space-y-8">
               <div className="bg-warm-cream/50 rounded-2xl p-8">
                 <h3 className="text-xl font-serif text-text-heading mb-4">1. Discovery Call</h3>
-                <p>
+                <p className="text-text-secondary leading-relaxed">
                   We start with a conversation. No pitches, no pressure—just an exploration of whether
                   our visions align and what we might create together.
                 </p>
@@ -256,7 +256,7 @@ export default function CollaborationsPage() {
 
               <div className="bg-warm-cream/50 rounded-2xl p-8">
                 <h3 className="text-xl font-serif text-text-heading mb-4">2. Co-Design</h3>
-                <p>
+                <p className="text-text-secondary leading-relaxed">
                   If it's a yes, we design the container together. What's the vision? Who are we serving?
                   What medicine wants to come through? We make it sacred from the start.
                 </p>
@@ -264,7 +264,7 @@ export default function CollaborationsPage() {
 
               <div className="bg-warm-cream/50 rounded-2xl p-8">
                 <h3 className="text-xl font-serif text-text-heading mb-4">3. Aligned Action</h3>
-                <p>
+                <p className="text-text-secondary leading-relaxed">
                   I handle my side—facilitation, ceremony, integration, content. You handle yours—venue,
                   logistics, marketing, or whatever gifts you bring. We trust the process.
                 </p>
@@ -272,7 +272,7 @@ export default function CollaborationsPage() {
 
               <div className="bg-warm-cream/50 rounded-2xl p-8">
                 <h3 className="text-xl font-serif text-text-heading mb-4">4. We Show Up & Serve</h3>
-                <p>
+                <p className="text-text-secondary leading-relaxed">
                   When it's time, we hold the container together. Presence over perfection. Service over ego.
                   Transformation over transactions.
                 </p>
@@ -284,7 +284,7 @@ export default function CollaborationsPage() {
 
       {/* What I'm NOT Looking For */}
       <div className="relative py-32">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/10 via-warm-peach to-accent-sage/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/15 via-warm-peach to-accent-sage/10"></div>
 
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-3xl mx-auto space-y-8">
