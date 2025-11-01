@@ -16,7 +16,8 @@ export default function ServicesPage() {
       <WarmHero
         title="Ways We Walk Together"
         subtitle="Each path is unique. Each journey unfolds in its own time."
-        height="large"
+        height="extra-large"
+        image="/images/services/hero.jpg"
       />
 
       {/* Sacred Circles - Visual Section */}
@@ -24,8 +25,12 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-              <div className="aspect-[4/5] relative order-2 lg:order-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/20 to-accent-coral/20 rounded-2xl"></div>
+              <div className="aspect-[4/5] relative order-2 lg:order-1 overflow-hidden rounded-2xl">
+                <img
+                  src="/images/services/sacred-circles.jpg"
+                  alt="Sacred Circles"
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               <div className="space-y-8 order-1 lg:order-2">
@@ -118,8 +123,12 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-              <div className="aspect-square relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent-coral/20 to-accent-sage/20 rounded-2xl"></div>
+              <div className="aspect-square relative overflow-hidden rounded-2xl">
+                <img
+                  src="/images/services/medicine-journeys.jpg"
+                  alt="Medicine Journeys"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
@@ -161,8 +170,12 @@ export default function ServicesPage() {
         <div className="relative z-10 container mx-auto px-4 py-24">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-5 gap-16 items-center">
-              <div className="lg:col-span-3 aspect-[16/10] relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent-sage/20 to-accent-terracotta/20 rounded-2xl"></div>
+              <div className="lg:col-span-3 aspect-[16/10] relative overflow-hidden rounded-2xl">
+                <img
+                  src="/images/services/deep-work.jpg"
+                  alt="Deep Work"
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               <div className="lg:col-span-2 space-y-8">

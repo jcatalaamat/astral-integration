@@ -3,7 +3,7 @@ interface WarmHeroProps {
   subtitle?: string;
   image?: string; // optional hero image URL
   gradient?: boolean; // use gradient if no image (default true)
-  height?: 'small' | 'medium' | 'large'; // 50vh, 70vh, 90vh
+  height?: 'small' | 'medium' | 'large' | 'extra-large'; // 50vh, 70vh, 90vh, 100vh
   children?: React.ReactNode; // optional extra content (CTAs, etc.)
 }
 
@@ -18,7 +18,8 @@ export default function WarmHero({
   const heightClasses = {
     small: 'min-h-[50vh]',
     medium: 'min-h-[70vh]',
-    large: 'min-h-[90vh]'
+    large: 'min-h-[90vh]',
+    'extra-large': 'min-h-screen'
   };
 
   return (

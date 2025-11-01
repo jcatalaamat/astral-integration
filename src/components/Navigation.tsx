@@ -1,41 +1,70 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Globe, Menu, X } from 'lucide-react';
+import { Globe, Menu, X } from 'lucide-react';
 
 export default function Navigation() {
   const [language, setLanguage] = useState<'en' | 'es' | 'ca'>('en');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-warm-white/95 backdrop-blur-md border-b border-text-primary/5 shadow-sm">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled
+        ? 'bg-warm-white/95 backdrop-blur-md border-b border-text-primary/5 shadow-sm'
+        : 'bg-transparent'
+    }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <Sparkles className="w-8 h-8 text-accent-gold group-hover:animate-glow transition-all" />
-            <span className="text-xl font-serif bg-gradient-to-r from-accent-terracotta via-accent-gold to-accent-coral bg-clip-text text-transparent">
+            <span className={`text-xl font-serif transition-all duration-300 ${
+              isScrolled
+                ? 'bg-gradient-to-r from-accent-terracotta via-accent-gold to-accent-coral bg-clip-text text-transparent'
+                : 'text-warm-white drop-shadow-lg'
+            }`}>
               Astral Integration
             </span>
           </Link>
 
           {/* Nav Links - Hidden on mobile */}
           <div className="hidden lg:flex items-center gap-6">
-            <Link to="/about" className="text-text-secondary hover:text-accent-gold transition-colors text-sm font-medium">
+            <Link to="/about" className={`transition-colors text-sm font-medium ${
+              isScrolled ? 'text-text-secondary hover:text-accent-gold' : 'text-warm-white/90 hover:text-white drop-shadow-md'
+            }`}>
               About
             </Link>
-            <Link to="/services" className="text-text-secondary hover:text-accent-gold transition-colors text-sm font-medium">
+            <Link to="/services" className={`transition-colors text-sm font-medium ${
+              isScrolled ? 'text-text-secondary hover:text-accent-gold' : 'text-warm-white/90 hover:text-white drop-shadow-md'
+            }`}>
               Services
             </Link>
-            {/* <Link to="/inner-ascend" className="text-text-secondary hover:text-accent-gold transition-colors text-sm font-medium">
+            {/* <Link to="/inner-ascend" className={`transition-colors text-sm font-medium ${
+              isScrolled ? 'text-text-secondary hover:text-accent-gold' : 'text-warm-white/90 hover:text-white drop-shadow-md'
+            }`}>
               Community
             </Link> */}
-            <Link to="/retreats" className="text-text-secondary hover:text-accent-gold transition-colors text-sm font-medium">
+            <Link to="/retreats" className={`transition-colors text-sm font-medium ${
+              isScrolled ? 'text-text-secondary hover:text-accent-gold' : 'text-warm-white/90 hover:text-white drop-shadow-md'
+            }`}>
               Retreats
             </Link>
-            <Link to="/collaborations" className="text-text-secondary hover:text-accent-gold transition-colors text-sm font-medium">
+            <Link to="/collaborations" className={`transition-colors text-sm font-medium ${
+              isScrolled ? 'text-text-secondary hover:text-accent-gold' : 'text-warm-white/90 hover:text-white drop-shadow-md'
+            }`}>
               Collaborations
             </Link>
-            <Link to="/resources" className="text-text-secondary hover:text-accent-gold transition-colors text-sm font-medium">
+            <Link to="/resources" className={`transition-colors text-sm font-medium ${
+              isScrolled ? 'text-text-secondary hover:text-accent-gold' : 'text-warm-white/90 hover:text-white drop-shadow-md'
+            }`}>
               Resources
             </Link>
             <Link to="/contact" className="px-6 py-2 bg-accent-gold text-white rounded-full font-semibold hover:bg-accent-gold/90 hover:shadow-warm transition-all">
@@ -48,16 +77,24 @@ export default function Navigation() {
             {/* Language Toggle */}
             <button
               onClick={() => setLanguage(language === 'en' ? 'es' : language === 'es' ? 'ca' : 'en')}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-warm-sand/50 border border-accent-gold/20 hover:bg-warm-sand transition-all"
+              className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all ${
+                isScrolled
+                  ? 'bg-warm-sand/50 border border-accent-gold/20 hover:bg-warm-sand'
+                  : 'bg-white/20 border border-white/30 hover:bg-white/30 backdrop-blur-sm'
+              }`}
             >
-              <Globe className="w-4 h-4 text-accent-gold" />
-              <span className="text-sm font-medium text-text-primary">{language === 'en' ? 'EN' : language === 'es' ? 'ES' : 'CA'}</span>
+              <Globe className={`w-4 h-4 transition-colors ${isScrolled ? 'text-accent-gold' : 'text-white'}`} />
+              <span className={`text-sm font-medium transition-colors ${isScrolled ? 'text-text-primary' : 'text-white'}`}>
+                {language === 'en' ? 'EN' : language === 'es' ? 'ES' : 'CA'}
+              </span>
             </button>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-text-secondary hover:text-accent-gold transition-colors"
+              className={`lg:hidden p-2 transition-colors ${
+                isScrolled ? 'text-text-secondary hover:text-accent-gold' : 'text-white hover:text-white/80'
+              }`}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>

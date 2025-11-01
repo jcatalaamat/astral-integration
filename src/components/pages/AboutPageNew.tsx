@@ -17,7 +17,8 @@ export default function AboutPage() {
       <WarmHero
         title="Every healer has their story"
         subtitle="Mine began with a breakdown that became a breakthrough."
-        height="large"
+        height="extra-large"
+        image="/images/about/hero.jpg"
       />
 
       {/* The Breakdown - Image with Text Overlay */}
@@ -41,8 +42,12 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="aspect-square">
-              <div className="w-full h-full bg-gradient-to-br from-accent-terracotta/20 to-accent-sage/20 rounded-2xl"></div>
+            <div className="aspect-square overflow-hidden rounded-2xl">
+              <img
+                src="/images/about/breakdown.jpg"
+                alt="The Breakdown"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -52,8 +57,12 @@ export default function AboutPage() {
       <div className="bg-warm-cream py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-            <div className="aspect-[4/5]">
-              <div className="w-full h-full bg-gradient-to-br from-accent-gold/20 to-accent-coral/20 rounded-2xl"></div>
+            <div className="aspect-[4/5] overflow-hidden rounded-2xl">
+              <img
+                src="/images/about/awakening.jpg"
+                alt="The Awakening"
+                className="w-full h-full object-cover"
+              />
             </div>
 
             <div className="space-y-8">
@@ -110,8 +119,12 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="aspect-square">
-                <div className="w-full h-full bg-gradient-to-br from-accent-sage/20 to-accent-terracotta/20 rounded-2xl"></div>
+              <div className="aspect-square overflow-hidden rounded-2xl">
+                <img
+                  src="/images/about/guide.jpg"
+                  alt="Becoming a Guide"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
@@ -138,10 +151,34 @@ export default function AboutPage() {
       <div className="py-20 bg-warm-cream">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
-            <div className="aspect-square bg-gradient-to-br from-accent-terracotta/20 to-accent-coral/20 rounded-lg"></div>
-            <div className="aspect-square bg-gradient-to-br from-accent-sage/20 to-accent-gold/20 rounded-lg"></div>
-            <div className="aspect-square bg-gradient-to-br from-accent-coral/20 to-accent-terracotta/20 rounded-lg"></div>
-            <div className="aspect-square bg-gradient-to-br from-accent-gold/20 to-accent-sage/20 rounded-lg"></div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img
+                src="/images/about/gallery-1.jpg"
+                alt="Gallery moment 1"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img
+                src="/images/about/gallery-2.jpg"
+                alt="Gallery moment 2"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img
+                src="/images/about/gallery-3.jpg"
+                alt="Gallery moment 3"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img
+                src="/images/about/gallery-4.jpg"
+                alt="Gallery moment 4"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
           </div>
         </div>
       </div>

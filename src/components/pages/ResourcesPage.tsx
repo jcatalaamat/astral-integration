@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
+import WarmHero from '../shared/WarmHero';
 
 export default function ResourcesPage() {
   const scrollToTop = () => {
@@ -10,18 +11,13 @@ export default function ResourcesPage() {
   return (
     <div className="min-h-screen bg-warm-white">
       <Navigation />
-      {/* Full-Screen Opening */}
-      <div className="h-screen relative flex items-center justify-center bg-gradient-to-br from-warm-peach via-warm-cream to-warm-white">
-        <div className="relative z-10 text-center px-4">
-          <div className="text-5xl mb-8 text-accent-gold/60 animate-breathe">⊹</div>
-          <h1 className="text-5xl md:text-7xl font-serif text-text-heading mb-8 font-light">
-            Resources
-          </h1>
-          <p className="text-xl md:text-2xl text-text-secondary font-light max-w-2xl mx-auto">
-            Teachings, reflections, and tools for your journey.
-          </p>
-        </div>
-      </div>
+      {/* Hero Section */}
+      <WarmHero
+        title="Resources"
+        subtitle="Teachings, reflections, and tools for your journey."
+        height="extra-large"
+        image="/images/resources/hero.jpg"
+      />
 
       {/* Free Resources Vault */}
       <div className="bg-warm-cream py-32">

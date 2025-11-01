@@ -28,7 +28,8 @@ function LandingPage() {
       <WarmHero
         title="Astral Integration"
         subtitle="Guiding souls home to themselves"
-        height="large"
+        height="extra-large"
+        image="/images/homepage/hero.jpg"
       >
         <p className="text-text-secondary/80 font-light italic max-w-2xl mx-auto">
           For those who hear the call. For those ready to remember.
@@ -65,8 +66,12 @@ function LandingPage() {
         <div className="container mx-auto px-4 py-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
             {/* Large Image */}
-            <div className="aspect-[4/5] relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/20 via-accent-coral/20 to-accent-sage/20 rounded-2xl"></div>
+            <div className="aspect-[4/5] relative overflow-hidden rounded-2xl">
+              <img
+                src="/images/homepage/journey-begins.jpg"
+                alt="The journey begins with surrender"
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Minimal Text */}
@@ -177,8 +182,12 @@ function LandingPage() {
             <div className="space-y-24">
               {/* Circle Work */}
               <div className="grid lg:grid-cols-5 gap-12 items-center">
-                <div className="lg:col-span-3 aspect-[16/10] relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/20 to-accent-coral/25 rounded-2xl"></div>
+                <div className="lg:col-span-3 aspect-[16/10] relative overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/homepage/circles.jpg"
+                    alt="Sacred Circles"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="lg:col-span-2 space-y-6">
                   <h3 className="text-3xl font-serif text-text-heading">Sacred Circles</h3>
@@ -204,15 +213,23 @@ function LandingPage() {
                     Learn about medicine work →
                   </Link>
                 </div>
-                <div className="lg:col-span-3 aspect-[16/10] relative order-1 lg:order-2">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent-sage/20 to-accent-terracotta/20 rounded-2xl"></div>
+                <div className="lg:col-span-3 aspect-[16/10] relative order-1 lg:order-2 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/homepage/medicine.jpg"
+                    alt="Medicine Journeys"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
               {/* 1:1 Work */}
               <div className="grid lg:grid-cols-5 gap-12 items-center">
-                <div className="lg:col-span-3 aspect-[16/10] relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent-coral/20 to-accent-sage/20 rounded-2xl"></div>
+                <div className="lg:col-span-3 aspect-[16/10] relative overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/homepage/one-to-one.jpg"
+                    alt="One-to-One Journeys"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="lg:col-span-2 space-y-6">
                   <h3 className="text-3xl font-serif text-text-heading">One-to-One Journeys</h3>
@@ -505,7 +522,14 @@ function LandingPage() {
 
       {/* Newsletter Section - Inner Circle */}
       <div className="relative py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/20 via-warm-peach to-accent-coral/15"></div>
+        <div className="absolute inset-0">
+          <img
+            src="/images/homepage/inner-circle.jpg"
+            alt="Join the Inner Circle"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/40 via-warm-peach/50 to-accent-coral/40"></div>
+        </div>
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <div className="text-4xl mb-8 text-accent-gold/60 animate-breathe">⊹</div>

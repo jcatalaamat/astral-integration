@@ -42,7 +42,15 @@ export default function ContactPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <div className="min-h-[60vh] relative flex items-center justify-center bg-gradient-to-br from-accent-terracotta/10 via-warm-peach to-accent-sage/10">
+      <div className="min-h-[60vh] relative flex items-center justify-center">
+        <div className="absolute inset-0">
+          <img
+            src="/images/contact/hero.jpg"
+            alt="Contact"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/30 via-warm-peach/40 to-accent-sage/30"></div>
+        </div>
         <div className="relative z-10 container mx-auto px-4 py-24">
           <div className="max-w-3xl mx-auto">
             {/* Header */}

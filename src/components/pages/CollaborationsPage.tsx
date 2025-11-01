@@ -13,10 +13,17 @@ export default function CollaborationsPage() {
 
       {/* Full-Screen Opening */}
       <div className="h-screen relative flex items-center justify-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-warm-peach via-warm-cream to-accent-sage/10"></div>
+        <div className="absolute inset-0">
+          <img
+            src="/images/collaborations/hero.jpg"
+            alt="Collaborations"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-warm-peach/40 via-warm-cream/60 to-accent-sage/30"></div>
+        </div>
 
         <div className="relative z-10 text-center px-4">
-          <div className="text-5xl mb-8 text-accent-gold/60 animate-breathe">⊹</div>
+          <div className="text-5xl mb-8 text-accent-gold/80 animate-breathe">⊹</div>
           <h1 className="text-5xl md:text-7xl font-serif text-text-heading mb-8 font-light">
             Collaborations
           </h1>

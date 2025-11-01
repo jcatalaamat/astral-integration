@@ -16,7 +16,8 @@ export default function RetreatsPage() {
       <WarmHero
         title="Sacred Immersions"
         subtitle="Sometimes the deepest work happens when you step away from everything you know."
-        height="large"
+        height="extra-large"
+        image="/images/retreats/hero.jpg"
       />
 
       {/* What Makes A Retreat Sacred */}
@@ -40,8 +41,12 @@ export default function RetreatsPage() {
                 </p>
               </div>
 
-              <div className="aspect-[4/5] relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/20 to-accent-sage/20 rounded-2xl"></div>
+              <div className="aspect-[4/5] relative overflow-hidden rounded-2xl">
+                <img
+                  src="/images/retreats/sacred-container.jpg"
+                  alt="Sacred Container"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -71,8 +76,12 @@ export default function RetreatsPage() {
             <div className="space-y-24">
               {/* Mazunte */}
               <div className="grid lg:grid-cols-5 gap-16 items-center">
-                <div className="lg:col-span-3 aspect-[16/10] relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent-sage/20 to-accent-coral/20 rounded-2xl"></div>
+                <div className="lg:col-span-3 aspect-[16/10] relative overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/retreats/mazunte.jpg"
+                    alt="Mazunte, Mexico"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 <div className="lg:col-span-2 space-y-6">
@@ -100,8 +109,12 @@ export default function RetreatsPage() {
                   </p>
                 </div>
 
-                <div className="lg:col-span-3 aspect-[16/10] relative order-1 lg:order-2">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/20 to-accent-gold/20 rounded-2xl"></div>
+                <div className="lg:col-span-3 aspect-[16/10] relative order-1 lg:order-2 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/retreats/barcelona.jpg"
+                    alt="Barcelona & Catalunya"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
