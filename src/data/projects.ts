@@ -48,7 +48,7 @@ export const projects: Project[] = [
     features: [],
     cta: {
       primary: 'Apply for Ceremony',
-      url: 'http://spiritawakeningmedicine.com/'
+      url: 'https://spiritawakeningmedicine.com/'
     },
     cta2: {
       text: 'Learn More',
@@ -67,11 +67,11 @@ export const projects: Project[] = [
     features: [],
     cta: {
       primary: 'Book Session',
-      url: 'http://nina-moore.com/'
+      url: 'https://nina-moore.com/'
     },
     cta2: {
       text: 'Explore Programs',
-      url: 'http://nina-moore.com/'
+      url: 'https://nina-moore.com/'
     }
   },
   {
