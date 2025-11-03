@@ -1,3 +1,5 @@
+import ResponsiveImage from './ResponsiveImage';
+
 interface WarmHeroProps {
   title: string;
   subtitle?: string;
@@ -28,9 +30,11 @@ export default function WarmHero({
       {image ? (
         // Image background
         <div className="absolute inset-0">
-          <img
+          <ResponsiveImage
             src={image}
             alt=""
+            priority={true}
+            loading="eager"
             className="w-full h-full object-cover"
           />
           {/* Warm overlay for text readability */}

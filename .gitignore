@@ -104,3 +104,10 @@ dist
 # Temporary folders
 tmp/
 temp/
+
+# Optimized images (generated at build time)
+public/images/optimized/
+
+# Photo folders (temporary storage)
+fotos nina astral spirit/
+new photos astral/
