@@ -19,6 +19,44 @@ import WarmHero from './components/shared/WarmHero';
 
 // Main Landing Page Component
 function LandingPage() {
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail || !newsletterEmail.includes('@')) return;
+
+    setNewsletterStatus('loading');
+
+    try {
+      const convertKitApiKey = (import.meta as any).env.VITE_CONVERTKIT_API_KEY || 'WL4dvqOgWKNB2eq6RLOflQ';
+      const convertKitFormId = (import.meta as any).env.VITE_CONVERTKIT_FORM_ID || '8630317';
+
+      const response = await fetch(`https://api.convertkit.com/v3/forms/${convertKitFormId}/subscribe`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          api_key: convertKitApiKey,
+          email: newsletterEmail,
+          tags: ['astral-integration-newsletter', 'homepage-signup']
+        })
+      });
+
+      if (response.ok) {
+        setNewsletterStatus('success');
+        setNewsletterEmail('');
+        setTimeout(() => setNewsletterStatus('idle'), 5000);
+      } else {
+        throw new Error('Subscription failed');
+      }
+    } catch (error) {
+      console.error('Newsletter subscription error:', error);
+      setNewsletterStatus('error');
+      setTimeout(() => setNewsletterStatus('idle'), 5000);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-warm-white">
@@ -31,9 +69,17 @@ function LandingPage() {
         height="extra-large"
         image="/images/homepage/hero.jpg"
       >
-        <p className="text-text-secondary/80 font-light italic max-w-2xl mx-auto">
+        <p className="text-text-secondary/80 font-light italic max-w-2xl mx-auto mb-8">
           For those who hear the call. For those ready to remember.
         </p>
+        <div className="flex justify-center">
+          <Link
+            to="/contact"
+            className="px-10 py-4 bg-accent-gold text-warm-white rounded-full hover:bg-accent-terracotta transition-colors font-medium text-lg shadow-lg"
+          >
+            Start Your Discovery Call
+          </Link>
+        </div>
       </WarmHero>
 
       {/* Who This Is For - Wisdom Section */}
@@ -544,19 +590,125 @@ function LandingPage() {
             </p>
 
             {/* Newsletter Form */}
-            <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-              <input
-                type="email"
-                placeholder="Your email portal"
-                className="flex-1 px-6 py-4 bg-warm-white/80 border border-text-primary/20 rounded-full text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-gold/50 transition-colors"
-              />
-              <button
-                type="submit"
-                className="px-8 py-4 bg-accent-gold text-warm-white rounded-full font-medium hover:bg-accent-terracotta transition-all"
-              >
-                Enter the Mystery
-              </button>
-            </form>
+            {newsletterStatus === 'success' ? (
+              <div className="max-w-lg mx-auto text-center bg-warm-white/90 backdrop-blur-md border border-accent-gold/30 rounded-2xl p-6">
+                <div className="text-3xl text-accent-gold mb-3">✓</div>
+                <h3 className="text-xl font-serif text-text-heading mb-2">
+                  Welcome to the Circle
+                </h3>
+                <p className="text-sm text-text-secondary">
+                  Check your email to confirm your subscription
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input
+                  type="email"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  placeholder="Your email portal"
+                  required
+                  className="flex-1 px-6 py-4 bg-warm-white/80 border border-text-primary/20 rounded-full text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-gold/50 transition-colors"
+                />
+                <button
+                  type="submit"
+                  disabled={newsletterStatus === 'loading'}
+                  className="px-8 py-4 bg-accent-gold text-warm-white rounded-full font-medium hover:bg-accent-terracotta transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {newsletterStatus === 'loading' ? 'Subscribing...' : 'Enter the Mystery'}
+                </button>
+              </form>
+            )}
+            {newsletterStatus === 'error' && (
+              <p className="text-center text-accent-terracotta text-sm mt-4">
+                Something went wrong. Please try again.
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Pricing/Investment Section */}
+      <div className="bg-warm-white py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            {/* Title */}
+            <div className="text-center mb-16">
+              <div className="text-4xl text-accent-gold/40 mb-6">⊛</div>
+              <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-4">
+                Investment in Your Transformation
+              </h2>
+              <p className="text-lg text-text-secondary font-light max-w-3xl mx-auto leading-relaxed">
+                This work is an investment in yourself, your lineage, and the collective awakening.
+                Sacred containers are priced to honor the depth of transformation while remaining accessible.
+              </p>
+            </div>
+
+            {/* 3 Tiers */}
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {/* Tier 1: Discovery Call */}
+              <div className="bg-warm-cream border border-text-primary/10 rounded-2xl p-8 hover:border-accent-gold/30 transition-all">
+                <div className="text-center space-y-6">
+                  <div className="text-3xl text-accent-gold">✦</div>
+                  <h3 className="text-2xl font-serif text-text-heading">Single Discovery Call</h3>
+                  <div className="py-4">
+                    <div className="text-5xl font-serif text-accent-gold mb-2">Free</div>
+                    <div className="text-sm text-text-secondary">30-minute soul connection</div>
+                  </div>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    A complimentary conversation to explore if we're meant to journey together.
+                    No pressure, no pitch—just honest presence.
+                  </p>
+                </div>
+              </div>
+
+              {/* Tier 2: 3-Month Journey */}
+              <div className="bg-gradient-to-br from-warm-cream to-warm-peach/20 border-2 border-accent-gold/40 rounded-2xl p-8 relative transform md:scale-105 shadow-lg">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-accent-gold text-warm-white text-xs font-medium rounded-full">
+                  Most Popular
+                </div>
+                <div className="text-center space-y-6">
+                  <div className="text-3xl text-accent-gold">⊹</div>
+                  <h3 className="text-2xl font-serif text-text-heading">3-Month Journey</h3>
+                  <div className="py-4">
+                    <div className="text-5xl font-serif text-accent-gold mb-2">€1,800-2,500</div>
+                    <div className="text-sm text-text-secondary">Quantum leap intensive</div>
+                  </div>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Deep transformational container with bi-weekly 1:1 sessions, energy healing,
+                    integration practices, and ongoing Voxer support.
+                  </p>
+                </div>
+              </div>
+
+              {/* Tier 3: 6-Month Deep Work */}
+              <div className="bg-warm-cream border border-text-primary/10 rounded-2xl p-8 hover:border-accent-gold/30 transition-all">
+                <div className="text-center space-y-6">
+                  <div className="text-3xl text-accent-gold">✧</div>
+                  <h3 className="text-2xl font-serif text-text-heading">6-Month Deep Work</h3>
+                  <div className="py-4">
+                    <div className="text-5xl font-serif text-accent-gold mb-2">€3,600-5,100</div>
+                    <div className="text-sm text-text-secondary">Complete initiation</div>
+                  </div>
+                  <p className="text-text-secondary leading-relaxed text-sm">
+                    Full soul initiation journey with weekly sessions, medicine integration,
+                    family constellations, and mastery-level mentorship.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Sliding Scale Note */}
+            <div className="text-center max-w-3xl mx-auto">
+              <div className="bg-warm-cream/50 backdrop-blur-md border border-accent-gold/20 rounded-xl p-6">
+                <p className="text-text-secondary leading-relaxed">
+                  <span className="font-serif text-text-heading">Sliding scale available.</span>
+                  {' '}I believe this work should be accessible to all who are called. If financial
+                  circumstances are a barrier, let's talk. A limited number of reduced-rate spots
+                  are offered each quarter to honor different life seasons and economic realities.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

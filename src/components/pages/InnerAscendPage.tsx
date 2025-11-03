@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import { Users, Star, Crown } from 'lucide-react';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
+import WarmHero from '../shared/WarmHero';
 
 export default function InnerAscendPage() {
   const scrollToTop = () => {
@@ -10,26 +12,14 @@ export default function InnerAscendPage() {
   return (
     <div className="min-h-screen bg-warm-white">
       <Navigation />
-      {/* Full-Screen Opening */}
-      <div className="h-screen relative flex items-center justify-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-warm-peach via-warm-cream to-warm-white">
-          {/* Warm aurora background */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-0 -left-4 w-[600px] h-[600px] bg-accent-terracotta/30 rounded-full mix-blend-multiply filter blur-3xl animate-breathe" style={{animationDuration: '8s'}}></div>
-            <div className="absolute top-1/4 -right-4 w-[500px] h-[500px] bg-accent-sage/30 rounded-full mix-blend-multiply filter blur-3xl animate-breathe" style={{animationDuration: '10s', animationDelay: '2s'}}></div>
-          </div>
-        </div>
 
-        <div className="relative z-10 text-center px-4">
-          <div className="text-5xl mb-8 text-accent-gold/60 animate-breathe">⊹</div>
-          <h1 className="text-5xl md:text-7xl font-serif font-light text-text-heading mb-8">
-            Inner Ascend
-          </h1>
-          <p className="text-2xl md:text-3xl text-text-secondary font-serif italic font-light max-w-3xl mx-auto">
-            A community for visionaries, healers, and awakened souls
-          </p>
-        </div>
-      </div>
+      {/* Hero Section */}
+      <WarmHero
+        title="Inner Ascend"
+        subtitle="Your soul family. Welcome home."
+        height="extra-large"
+        image="/images/homepage/inner-circle.jpg"
+      />
 
       {/* What Is This - Visual Section */}
       <div className="bg-warm-cream py-32">
@@ -194,7 +184,7 @@ export default function InnerAscendPage() {
       {/* How to Join - Light Section */}
       <div className="bg-warm-cream py-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-6">
                 Three Ways to Participate
@@ -204,32 +194,203 @@ export default function InnerAscendPage() {
               </p>
             </div>
 
-            <div className="space-y-12">
-              {/* Community Tier */}
-              <div className="border-l-4 border-accent-sage/40 pl-8 py-4">
-                <h3 className="text-2xl font-serif text-text-heading mb-3">Community (Free)</h3>
-                <p className="text-text-secondary mb-4">
-                  Join the Discord, attend monthly open calls, access the token exchange marketplace.
-                  See if this is your tribe.
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Community Tier - Free */}
+              <div className="bg-warm-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border-2 border-accent-sage/20">
+                <div className="flex items-center justify-center w-16 h-16 bg-accent-sage/10 rounded-full mb-6 mx-auto">
+                  <Users className="w-8 h-8 text-accent-sage" />
+                </div>
+                <h3 className="text-2xl font-serif text-text-heading mb-2 text-center">Community</h3>
+                <div className="text-center mb-6">
+                  <span className="text-3xl font-bold text-accent-sage">Free</span>
+                </div>
+                <p className="text-text-secondary mb-6 text-center leading-relaxed">
+                  See if this is your tribe
                 </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent-sage mt-1">✦</span>
+                    <span className="text-text-secondary">Discord access</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent-sage mt-1">✦</span>
+                    <span className="text-text-secondary">Monthly open calls</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent-sage mt-1">✦</span>
+                    <span className="text-text-secondary">Token exchange marketplace</span>
+                  </li>
+                </ul>
+                <Link
+                  to="/contact"
+                  onClick={scrollToTop}
+                  className="block w-full text-center px-6 py-3 bg-accent-sage/10 text-accent-sage rounded-full hover:bg-accent-sage/20 transition-colors font-medium"
+                >
+                  Join Free
+                </Link>
               </div>
 
               {/* Active Member */}
-              <div className="border-l-4 border-accent-gold pl-8 py-4">
-                <h3 className="text-2xl font-serif text-text-heading mb-3">Active Member</h3>
-                <p className="text-text-secondary mb-4">
-                  Weekly calls, token economy access, co-creation opportunities, monthly group healing.
-                  For those ready to dive in.
+              <div className="relative bg-warm-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-accent-gold transform md:-translate-y-4">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent-gold text-warm-white px-4 py-1 rounded-full text-sm font-semibold">
+                  Most Popular
+                </div>
+                <div className="flex items-center justify-center w-16 h-16 bg-accent-gold/10 rounded-full mb-6 mx-auto">
+                  <Star className="w-8 h-8 text-accent-gold" />
+                </div>
+                <h3 className="text-2xl font-serif text-text-heading mb-2 text-center">Active Member</h3>
+                <div className="text-center mb-6">
+                  <span className="text-3xl font-bold text-accent-gold">$111</span>
+                  <span className="text-text-tertiary">/month</span>
+                </div>
+                <p className="text-text-secondary mb-6 text-center leading-relaxed">
+                  For those ready to dive in
                 </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent-gold mt-1">✦</span>
+                    <span className="text-text-secondary">Everything in Community</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent-gold mt-1">✦</span>
+                    <span className="text-text-secondary">Weekly live calls</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent-gold mt-1">✦</span>
+                    <span className="text-text-secondary">Full token economy access</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent-gold mt-1">✦</span>
+                    <span className="text-text-secondary">Co-creation opportunities</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent-gold mt-1">✦</span>
+                    <span className="text-text-secondary">Monthly group healing</span>
+                  </li>
+                </ul>
+                <Link
+                  to="/contact"
+                  onClick={scrollToTop}
+                  className="block w-full text-center px-6 py-3 bg-accent-gold text-warm-white rounded-full hover:bg-accent-terracotta transition-colors font-medium"
+                >
+                  Become a Member
+                </Link>
               </div>
 
               {/* Core Circle */}
-              <div className="border-l-4 border-accent-terracotta/50 pl-8 py-4">
-                <h3 className="text-2xl font-serif text-text-heading mb-3">Core Circle</h3>
-                <p className="text-text-secondary mb-4">
-                  Everything in Active Member plus mastermind collaboration, 1:1 monthly check-ins,
-                  business guidance, and priority support. For leaders and visionaries.
+              <div className="bg-warm-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border-2 border-accent-terracotta/40">
+                <div className="flex items-center justify-center w-16 h-16 bg-accent-terracotta/10 rounded-full mb-6 mx-auto">
+                  <Crown className="w-8 h-8 text-accent-terracotta" />
+                </div>
+                <h3 className="text-2xl font-serif text-text-heading mb-2 text-center">Core Circle</h3>
+                <div className="text-center mb-6">
+                  <span className="text-3xl font-bold text-accent-terracotta">$333</span>
+                  <span className="text-text-tertiary">/month</span>
+                </div>
+                <p className="text-text-secondary mb-6 text-center leading-relaxed">
+                  For leaders and visionaries
                 </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent-terracotta mt-1">✦</span>
+                    <span className="text-text-secondary">Everything in Active Member</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent-terracotta mt-1">✦</span>
+                    <span className="text-text-secondary">Mastermind collaboration</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent-terracotta mt-1">✦</span>
+                    <span className="text-text-secondary">1:1 monthly check-ins</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent-terracotta mt-1">✦</span>
+                    <span className="text-text-secondary">Business guidance</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-accent-terracotta mt-1">✦</span>
+                    <span className="text-text-secondary">Priority support</span>
+                  </li>
+                </ul>
+                <Link
+                  to="/contact"
+                  onClick={scrollToTop}
+                  className="block w-full text-center px-6 py-3 bg-accent-terracotta/10 text-accent-terracotta rounded-full hover:bg-accent-terracotta/20 transition-colors font-medium"
+                >
+                  Apply Now
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonials Section */}
+      <div className="bg-warm-white py-32">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-6">
+                Voices from the Circle
+              </h2>
+              <p className="text-lg text-text-secondary">
+                Hear from members who found their soul family
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Testimonial 1 */}
+              <div className="bg-warm-cream rounded-2xl p-8 shadow-sm hover:shadow-md transition-all">
+                <div className="text-accent-gold text-3xl mb-4">"</div>
+                <p className="text-text-secondary leading-relaxed mb-6 italic">
+                  Inner Ascend changed my life. I finally found a community where I can be fully myself.
+                  The weekly calls are pure magic, and the connections I've made are irreplaceable.
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-accent-gold/10 rounded-full flex items-center justify-center">
+                    <span className="text-accent-gold text-xl">✦</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-text-heading">Sarah M.</p>
+                    <p className="text-sm text-text-tertiary">Healer & Coach</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Testimonial 2 */}
+              <div className="bg-warm-cream rounded-2xl p-8 shadow-sm hover:shadow-md transition-all">
+                <div className="text-accent-gold text-3xl mb-4">"</div>
+                <p className="text-text-secondary leading-relaxed mb-6 italic">
+                  The token economy is genius. I've exchanged hundreds of dollars worth of services
+                  without spending money. This community truly operates on abundance.
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-accent-gold/10 rounded-full flex items-center justify-center">
+                    <span className="text-accent-gold text-xl">✦</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-text-heading">Marcus L.</p>
+                    <p className="text-sm text-text-tertiary">Entrepreneur</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Testimonial 3 */}
+              <div className="bg-warm-cream rounded-2xl p-8 shadow-sm hover:shadow-md transition-all">
+                <div className="text-accent-gold text-3xl mb-4">"</div>
+                <p className="text-text-secondary leading-relaxed mb-6 italic">
+                  I've been in other communities, but none like this. The level of authenticity,
+                  depth, and genuine support here is unmatched. This is truly my soul family.
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-accent-gold/10 rounded-full flex items-center justify-center">
+                    <span className="text-accent-gold text-xl">✦</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-text-heading">Elena R.</p>
+                    <p className="text-sm text-text-tertiary">Artist & Visionary</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

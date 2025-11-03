@@ -1,12 +1,238 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
 import WarmHero from '../shared/WarmHero';
+
+type Category = 'all' | 'integration' | 'transformation' | 'advanced' | 'relational';
+
+interface Resource {
+  title: string;
+  description: string;
+  downloadPath: string;
+  category: Category;
+  pages: number;
+  readingTime: number;
+  downloads: string;
+  icon: string;
+  iconColor: string;
+}
 
 export default function ResourcesPage() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const [selectedCategory, setSelectedCategory] = useState<Category>('all');
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // EmailJS integration - replace with your actual EmailJS credentials
+      // For now, simulating a successful submission
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // TODO: Integrate with EmailJS or ConvertKit
+      // Example EmailJS call:
+      // await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+      //   email: email,
+      //   message: 'New newsletter signup'
+      // }, 'YOUR_PUBLIC_KEY');
+
+      setSubmitStatus('success');
+      setEmail('');
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    } catch (error) {
+      console.error('Email submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const resources: Resource[] = [
+    // Integration & Embodiment (5 guides)
+    {
+      title: 'Psychedelic Integration',
+      description: 'Complete guide for integrating all medicine work - psilocybin, LSD, ayahuasca, MDMA.',
+      downloadPath: '/resources/Post_Ceremony_Integration_Workbook.docx',
+      category: 'integration',
+      pages: 12,
+      readingTime: 25,
+      downloads: '500+',
+      icon: '✦',
+      iconColor: 'text-accent-gold'
+    },
+    {
+      title: 'Bufo Integration Companion',
+      description: 'Specific guide for integrating 5-MeO-DMT/Bufo journeys and working with the void.',
+      downloadPath: '/resources/Bufo_Integration_Companion.docx',
+      category: 'integration',
+      pages: 10,
+      readingTime: 20,
+      downloads: '300+',
+      icon: '✧',
+      iconColor: 'text-accent-terracotta'
+    },
+    {
+      title: 'Somatic Healing & Trauma Release',
+      description: 'Body-based practices for releasing stored trauma and returning to embodied presence.',
+      downloadPath: '/resources/Somatic_Healing_Trauma_Release.docx',
+      category: 'integration',
+      pages: 14,
+      readingTime: 30,
+      downloads: '350+',
+      icon: '⊹',
+      iconColor: 'text-accent-sage'
+    },
+    {
+      title: 'Building Your Sacred Practice',
+      description: 'Create sustainable daily practices for meditation, grounding, and spiritual growth.',
+      downloadPath: '/resources/Building_Your_Sacred_Practice.docx',
+      category: 'integration',
+      pages: 9,
+      readingTime: 18,
+      downloads: '450+',
+      icon: '✦',
+      iconColor: 'text-accent-gold'
+    },
+    {
+      title: 'Presence Mentorship Guide',
+      description: 'Month-by-month deepening practices and daily presence work for embodied awareness.',
+      downloadPath: '/resources/Timeline_Shifting_Meditation.docx',
+      category: 'integration',
+      pages: 16,
+      readingTime: 35,
+      downloads: '280+',
+      icon: '✧',
+      iconColor: 'text-accent-terracotta'
+    },
+
+    // Life Work & Transformation (4 guides)
+    {
+      title: 'Sacred Business Blueprint',
+      description: 'Creative path guide to align your offerings with soul purpose and sacred flow.',
+      downloadPath: '/resources/Sacred_Business_Blueprint.docx',
+      category: 'transformation',
+      pages: 11,
+      readingTime: 22,
+      downloads: '420+',
+      icon: '⊹',
+      iconColor: 'text-accent-sage'
+    },
+    {
+      title: 'Sacred Rupture Journey',
+      description: 'Navigating spiritual emergence and identity dissolution after profound medicine work.',
+      downloadPath: '/resources/Sacred_Rupture_Journey.docx',
+      category: 'transformation',
+      pages: 13,
+      readingTime: 28,
+      downloads: '260+',
+      icon: '✦',
+      iconColor: 'text-accent-gold'
+    },
+    {
+      title: 'The Masculine Journey',
+      description: 'Men\'s work guide including father wound healing and reclaiming healthy masculine.',
+      downloadPath: '/resources/The_Masculine_Journey.docx',
+      category: 'transformation',
+      pages: 15,
+      readingTime: 32,
+      downloads: '380+',
+      icon: '✧',
+      iconColor: 'text-accent-terracotta'
+    },
+    {
+      title: 'The Feminine Journey',
+      description: 'Women\'s work including mother wound healing and reclaiming feminine power.',
+      downloadPath: '/resources/The_Feminine_Journey.docx',
+      category: 'transformation',
+      pages: 15,
+      readingTime: 32,
+      downloads: '400+',
+      icon: '⊹',
+      iconColor: 'text-accent-sage'
+    },
+
+    // Advanced Practices (3 guides)
+    {
+      title: 'The Void Companion',
+      description: 'Working with emptiness, meaninglessness, and the existential void after awakening.',
+      downloadPath: '/resources/The_Void_Companion.docx',
+      category: 'advanced',
+      pages: 12,
+      readingTime: 25,
+      downloads: '220+',
+      icon: '✦',
+      iconColor: 'text-accent-gold'
+    },
+    {
+      title: 'Death Practice & Mortality',
+      description: 'Contemplating mortality, preparing for death, and living fully in the face of impermanence.',
+      downloadPath: '/resources/Death_Practice_Mortality.docx',
+      category: 'advanced',
+      pages: 10,
+      readingTime: 20,
+      downloads: '200+',
+      icon: '✧',
+      iconColor: 'text-accent-terracotta'
+    },
+    {
+      title: 'Grief & Sacred Sorrow',
+      description: 'Processing grief, loss, and ancestral sorrow with ceremony and ritual.',
+      downloadPath: '/resources/Grief_Sacred_Sorrow.docx',
+      category: 'advanced',
+      pages: 11,
+      readingTime: 22,
+      downloads: '240+',
+      icon: '⊹',
+      iconColor: 'text-accent-sage'
+    },
+
+    // Relational & Ancestral (2 guides)
+    {
+      title: 'Ancestral Healing Guide',
+      description: 'Family constellations work to clear inherited patterns and honor your lineage.',
+      downloadPath: '/resources/Ancestral_Healing_Guide.docx',
+      category: 'relational',
+      pages: 13,
+      readingTime: 27,
+      downloads: '310+',
+      icon: '✦',
+      iconColor: 'text-accent-gold'
+    },
+    {
+      title: 'Couples & Conscious Partnership',
+      description: 'Relationship work for creating conscious, sacred partnerships and navigating conflict.',
+      downloadPath: '/resources/Couples_Conscious_Partnership.docx',
+      category: 'relational',
+      pages: 14,
+      readingTime: 30,
+      downloads: '340+',
+      icon: '✧',
+      iconColor: 'text-accent-terracotta'
+    }
+  ];
+
+  const filteredResources = selectedCategory === 'all'
+    ? resources
+    : resources.filter(r => r.category === selectedCategory);
+
+  const categories = [
+    { id: 'all' as Category, label: 'All Resources', count: resources.length },
+    { id: 'integration' as Category, label: 'Integration & Embodiment', count: 5 },
+    { id: 'transformation' as Category, label: 'Life Work & Transformation', count: 4 },
+    { id: 'advanced' as Category, label: 'Advanced Practices', count: 3 },
+    { id: 'relational' as Category, label: 'Relational & Ancestral', count: 2 }
+  ];
 
   return (
     <div className="min-h-screen bg-warm-white">
@@ -18,6 +244,57 @@ export default function ResourcesPage() {
         height="extra-large"
         image="/images/resources/hero.jpg"
       />
+
+      {/* Newsletter Signup Section */}
+      <div className="bg-gradient-to-br from-accent-terracotta/5 via-warm-peach/30 to-accent-sage/5 py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-6">
+              Get the Full Library + Weekly Integration Practices
+            </h2>
+            <p className="text-xl text-text-secondary mb-10 leading-relaxed">
+              Join 500+ conscious seekers receiving integration wisdom
+            </p>
+
+            <form onSubmit={handleEmailSubmit} className="max-w-md mx-auto">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  disabled={isSubmitting}
+                  className="flex-1 px-6 py-4 rounded-full border-2 border-accent-gold/30 focus:border-accent-gold focus:outline-none text-text-primary placeholder-text-secondary/50 disabled:opacity-50 disabled:cursor-not-allowed"
+                />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="px-10 py-4 bg-accent-gold text-warm-white rounded-full hover:bg-accent-terracotta transition-colors font-medium whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Sending...' : 'Get Access'}
+                </button>
+              </div>
+
+              {/* Success/Error Messages */}
+              {submitStatus === 'success' && (
+                <p className="mt-4 text-accent-sage font-medium">
+                  Thank you! Check your email for the full library.
+                </p>
+              )}
+              {submitStatus === 'error' && (
+                <p className="mt-4 text-accent-terracotta font-medium">
+                  Something went wrong. Please try again.
+                </p>
+              )}
+            </form>
+
+            <p className="text-sm text-text-secondary/60 mt-6 italic">
+              Free resources below. Full library and weekly practices via email.
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* Free Resources Vault */}
       <div className="bg-warm-cream py-32">
@@ -32,337 +309,71 @@ export default function ResourcesPage() {
               </p>
             </div>
 
+            {/* Category Filter Tabs */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`px-6 py-3 rounded-full font-medium transition-all ${
+                    selectedCategory === category.id
+                      ? 'bg-accent-gold text-warm-white shadow-lg'
+                      : 'bg-warm-white text-text-secondary border border-text-primary/10 hover:border-accent-gold/30 hover:shadow-md'
+                  }`}
+                >
+                  {category.label} ({category.count})
+                </button>
+              ))}
+            </div>
+
             {/* Resource Cards Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Timeline Shifting Meditation */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-3">
-                  <div className="text-3xl text-accent-gold">✦</div>
-                  <h3 className="text-xl font-serif text-text-heading">Presence Mentorship Guide</h3>
-                  <p className="text-text-secondary leading-relaxed text-sm">
-                    Month-by-month deepening practices and daily presence work for embodied awareness.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="/resources/Timeline_Shifting_Meditation.docx"
-                      download
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
-                    >
-                      Download Guide →
-                    </a>
-                  </div>
-                </div>
-              </div>
+              {filteredResources.map((resource, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30"
+                >
+                  <div className="space-y-3">
+                    {/* Icon with larger size */}
+                    <div className={`text-5xl ${resource.iconColor}`}>{resource.icon}</div>
 
-              {/* Ancestral Healing Guide */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-3">
-                  <div className="text-3xl text-accent-gold">✦</div>
-                  <h3 className="text-xl font-serif text-text-heading">Ancestral Healing Guide</h3>
-                  <p className="text-text-secondary leading-relaxed text-sm">
-                    Family constellations work to clear inherited patterns and honor your lineage.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="/resources/Ancestral_Healing_Guide.docx"
-                      download
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
-                    >
-                      Download Guide →
-                    </a>
-                  </div>
-                </div>
-              </div>
+                    {/* Metadata */}
+                    <div className="flex items-center gap-3 text-xs text-text-secondary/70">
+                      <span>{resource.pages} pages</span>
+                      <span>•</span>
+                      <span>{resource.readingTime} min read</span>
+                    </div>
 
-              {/* Post-Ceremony Integration Workbook */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-3">
-                  <div className="text-3xl text-accent-gold">✦</div>
-                  <h3 className="text-xl font-serif text-text-heading">Psychedelic Integration</h3>
-                  <p className="text-text-secondary leading-relaxed text-sm">
-                    Complete guide for integrating all medicine work - psilocybin, LSD, ayahuasca, MDMA.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="/resources/Post_Ceremony_Integration_Workbook.docx"
-                      download
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
-                    >
-                      Download Guide →
-                    </a>
-                  </div>
-                </div>
-              </div>
+                    {/* Title */}
+                    <h3 className="text-xl font-serif text-text-heading">{resource.title}</h3>
 
-              {/* Sacred Business Blueprint */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-3">
-                  <div className="text-3xl text-accent-gold">✦</div>
-                  <h3 className="text-xl font-serif text-text-heading">Sacred Business Blueprint</h3>
-                  <p className="text-text-secondary leading-relaxed text-sm">
-                    Creative path guide to align your offerings with soul purpose and sacred flow.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="/resources/Sacred_Business_Blueprint.docx"
-                      download
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
-                    >
-                      Download Guide →
-                    </a>
-                  </div>
-                </div>
-              </div>
+                    {/* Description */}
+                    <p className="text-text-secondary leading-relaxed text-sm">
+                      {resource.description}
+                    </p>
 
-              {/* Sacred Rupture Journey */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-3">
-                  <div className="text-3xl text-accent-gold">✦</div>
-                  <h3 className="text-xl font-serif text-text-heading">Sacred Rupture Journey</h3>
-                  <p className="text-text-secondary leading-relaxed text-sm">
-                    Navigating spiritual emergence and identity dissolution after profound medicine work.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="/resources/Sacred_Rupture_Journey.docx"
-                      download
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
-                    >
-                      Download Guide →
-                    </a>
-                  </div>
-                </div>
-              </div>
+                    {/* Download Stats */}
+                    <div className="text-xs text-text-secondary/60 italic">
+                      Downloaded {resource.downloads} times
+                    </div>
 
-              {/* Bufo Integration Companion */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-3">
-                  <div className="text-3xl text-accent-gold">✦</div>
-                  <h3 className="text-xl font-serif text-text-heading">Bufo Integration Companion</h3>
-                  <p className="text-text-secondary leading-relaxed text-sm">
-                    Specific guide for integrating 5-MeO-DMT/Bufo journeys and working with the void.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="/resources/Bufo_Integration_Companion.docx"
-                      download
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
-                    >
-                      Download Guide →
-                    </a>
+                    {/* Download Link */}
+                    <div className="pt-2">
+                      <a
+                        href={resource.downloadPath}
+                        download
+                        className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
+                      >
+                        Download Guide →
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              {/* The Masculine Journey */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-3">
-                  <div className="text-3xl text-accent-gold">✦</div>
-                  <h3 className="text-xl font-serif text-text-heading">The Masculine Journey</h3>
-                  <p className="text-text-secondary leading-relaxed text-sm">
-                    Men's work guide including father wound healing and reclaiming healthy masculine.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="/resources/The_Masculine_Journey.docx"
-                      download
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
-                    >
-                      Download Guide →
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* The Feminine Journey */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-3">
-                  <div className="text-3xl text-accent-gold">✦</div>
-                  <h3 className="text-xl font-serif text-text-heading">The Feminine Journey</h3>
-                  <p className="text-text-secondary leading-relaxed text-sm">
-                    Women's work including mother wound healing and reclaiming feminine power.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="/resources/The_Feminine_Journey.docx"
-                      download
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
-                    >
-                      Download Guide →
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Building Your Sacred Practice */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-3">
-                  <div className="text-3xl text-accent-gold">✦</div>
-                  <h3 className="text-xl font-serif text-text-heading">Building Your Sacred Practice</h3>
-                  <p className="text-text-secondary leading-relaxed text-sm">
-                    Create sustainable daily practices for meditation, grounding, and spiritual growth.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="/resources/Building_Your_Sacred_Practice.docx"
-                      download
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
-                    >
-                      Download Guide →
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* The Void Companion */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-3">
-                  <div className="text-3xl text-accent-gold">✦</div>
-                  <h3 className="text-xl font-serif text-text-heading">The Void Companion</h3>
-                  <p className="text-text-secondary leading-relaxed text-sm">
-                    Working with emptiness, meaninglessness, and the existential void after awakening.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="/resources/The_Void_Companion.docx"
-                      download
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
-                    >
-                      Download Guide →
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Couples & Conscious Partnership */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-3">
-                  <div className="text-3xl text-accent-gold">✦</div>
-                  <h3 className="text-xl font-serif text-text-heading">Couples & Conscious Partnership</h3>
-                  <p className="text-text-secondary leading-relaxed text-sm">
-                    Relationship work for creating conscious, sacred partnerships and navigating conflict.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="/resources/Couples_Conscious_Partnership.docx"
-                      download
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
-                    >
-                      Download Guide →
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Grief & Sacred Sorrow */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-3">
-                  <div className="text-3xl text-accent-gold">✦</div>
-                  <h3 className="text-xl font-serif text-text-heading">Grief & Sacred Sorrow</h3>
-                  <p className="text-text-secondary leading-relaxed text-sm">
-                    Processing grief, loss, and ancestral sorrow with ceremony and ritual.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="/resources/Grief_Sacred_Sorrow.docx"
-                      download
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
-                    >
-                      Download Guide →
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Somatic Healing & Trauma Release */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-3">
-                  <div className="text-3xl text-accent-gold">✦</div>
-                  <h3 className="text-xl font-serif text-text-heading">Somatic Healing & Trauma Release</h3>
-                  <p className="text-text-secondary leading-relaxed text-sm">
-                    Body-based practices for releasing stored trauma and returning to embodied presence.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="/resources/Somatic_Healing_Trauma_Release.docx"
-                      download
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
-                    >
-                      Download Guide →
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Death Practice & Mortality */}
-              <div className="group relative bg-warm-white border border-text-primary/10 rounded-2xl p-6 hover:shadow-xl transition-all hover:border-accent-gold/30">
-                <div className="space-y-3">
-                  <div className="text-3xl text-accent-gold">✦</div>
-                  <h3 className="text-xl font-serif text-text-heading">Death Practice & Mortality</h3>
-                  <p className="text-text-secondary leading-relaxed text-sm">
-                    Contemplating mortality, preparing for death, and living fully in the face of impermanence.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="/resources/Death_Practice_Mortality.docx"
-                      download
-                      className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium text-sm"
-                    >
-                      Download Guide →
-                    </a>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
 
             <p className="text-center text-text-secondary mt-12 italic text-sm">
               All resources are freely available for download. May they serve your journey.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Teachings Section */}
-      <div className="relative py-32">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/10 via-warm-peach to-accent-sage/10"></div>
-
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-serif text-text-heading text-center mb-20">
-              Recent Writings
-            </h2>
-
-            <div className="space-y-12">
-              <div className="border-l-4 border-accent-gold/40 pl-8 py-4">
-                <h3 className="text-2xl font-serif text-text-heading mb-3">
-                  The Fall of Society: 2025-2100
-                </h3>
-                <p className="text-text-secondary">
-                  What's coming, and how to prepare your soul for the great transition.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-accent-gold/40 pl-8 py-4">
-                <h3 className="text-2xl font-serif text-text-heading mb-3">
-                  Becoming Love: Ego Dissolution
-                </h3>
-                <p className="text-text-secondary">
-                  What Bufo taught me about surrendering identity and remembering wholeness.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-accent-gold/40 pl-8 py-4">
-                <h3 className="text-2xl font-serif text-text-heading mb-3">
-                  The Masculine Awakening
-                </h3>
-                <p className="text-text-secondary">
-                  Why men's work is the most important work right now, and what it means to embody sacred masculinity.
-                </p>
-              </div>
-            </div>
-
-            <p className="text-center text-text-secondary mt-16 italic">
-              More writings coming soon...
             </p>
           </div>
         </div>

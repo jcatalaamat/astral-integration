@@ -32,9 +32,9 @@ export default function Footer() {
                 <Link to="/collaborations" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
                   Collaborations
                 </Link>
-                {/* <Link to="/inner-ascend" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
+                <Link to="/inner-ascend" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
                   Community
-                </Link> */}
+                </Link>
               </nav>
             </div>
 
@@ -44,6 +44,9 @@ export default function Footer() {
               <nav className="flex flex-col space-y-2">
                 <Link to="/resources" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
                   Free Downloads
+                </Link>
+                <Link to="/links" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
+                  Links
                 </Link>
                 <Link to="/contact" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
                   Contact

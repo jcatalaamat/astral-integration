@@ -51,12 +51,24 @@ export default function ServicesPage() {
                       A space for men to release, heal, and step into their fullness.
                       The Self. The King. The Magician. The Lover.
                     </p>
+                    <p className="text-sm text-text-secondary/80 mb-2">
+                      Weekly/bi-weekly calls • 8-12 men • Deep transformation work
+                    </p>
+                    <p className="text-sm text-text-secondary/80 mb-3 italic">
+                      Who this is for: Men ready to release anger healthily, heal ancestral wounds, and embody their divine essence
+                    </p>
                     <p className="text-sm text-accent-gold">€150-200/month • sliding scale available</p>
                   </div>
                   <div className="border-l-2 border-accent-gold/50 pl-6">
                     <h3 className="text-xl font-serif text-text-heading mb-2">Women's Leadership Circle</h3>
                     <p className="text-text-secondary mb-2">
                       Sacred feminine leadership through storytelling and ancestral healing.
+                    </p>
+                    <p className="text-sm text-text-secondary/80 mb-2">
+                      Bi-weekly group calls • Limited to 8-12 women
+                    </p>
+                    <p className="text-sm text-text-secondary/80 mb-3 italic">
+                      Who this is for: Women ready to awaken their channeling portal, clear ancestral patterns, and step into leadership
                     </p>
                     <p className="text-sm text-accent-gold">€150/month • sliding scale available</p>
                   </div>
@@ -65,12 +77,21 @@ export default function ServicesPage() {
                     <p className="text-text-secondary mb-2">
                       For visionaries building conscious businesses. Spiritual guidance meets practical strategy.
                     </p>
+                    <p className="text-sm text-text-secondary/80 mb-2">
+                      Weekly calls + daily WhatsApp community support
+                    </p>
+                    <p className="text-sm text-text-secondary/80 mb-3 italic">
+                      Who this is for: Healers, entrepreneurs, and conscious creators ready to unlock their gifts and build aligned programs
+                    </p>
                     <p className="text-sm text-accent-gold">€420/month</p>
                   </div>
                   <div className="border-l-2 border-accent-gold/50 pl-6">
                     <h3 className="text-xl font-serif text-text-heading mb-2">Healing Circle</h3>
                     <p className="text-text-secondary mb-2">
                       Monthly community healing ceremony. Energy healing, meditation, and sacred space holding.
+                    </p>
+                    <p className="text-sm text-text-secondary/80 mb-3 italic">
+                      Who this is for: Anyone seeking community healing and connection
                     </p>
                     <p className="text-sm text-accent-gold">Donation-based (suggested €20-50)</p>
                   </div>
@@ -79,8 +100,24 @@ export default function ServicesPage() {
                     <p className="text-text-secondary mb-2">
                       Support space for conscious fathers navigating parenting, work-life balance, and personal growth.
                     </p>
+                    <p className="text-sm text-text-secondary/80 mb-2">
+                      Bi-weekly online sessions
+                    </p>
+                    <p className="text-sm text-text-secondary/80 mb-3 italic">
+                      Who this is for: Fathers ready to deepen emotional awareness while balancing family and personal growth
+                    </p>
                     <p className="text-sm text-accent-gold">€100/month</p>
                   </div>
+                </div>
+                <div className="mt-8 text-center">
+                  <Link
+                    to="/contact"
+                    onClick={scrollToTop}
+                    className="inline-block px-8 py-3 bg-accent-gold text-warm-white rounded-full hover:bg-accent-terracotta transition-colors font-medium"
+                  >
+                    Join the Next Circle →
+                  </Link>
+                  <p className="text-sm text-accent-gold/80 mt-3">Limited spots available</p>
                 </div>
               </div>
             </div>
@@ -159,45 +196,140 @@ export default function ServicesPage() {
                 <p className="text-xs text-accent-gold">€300-400 • sliding scale</p>
               </div>
             </div>
+            <div className="mt-12 text-center">
+              <Link
+                to="/contact"
+                onClick={scrollToTop}
+                className="inline-block px-8 py-3 bg-accent-gold text-warm-white rounded-full hover:bg-accent-terracotta transition-colors font-medium"
+              >
+                Apply for Screening →
+              </Link>
+              <p className="text-sm text-accent-gold/80 mt-3">Health screening required • Limited availability</p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* One-to-One Work */}
-      <div className="relative min-h-[80vh] flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/15 via-warm-peach to-accent-sage/10"></div>
-
-        <div className="relative z-10 container mx-auto px-4 py-24">
+      {/* Premium Programs */}
+      <div className="bg-warm-white py-24">
+        <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-5 gap-16 items-center">
-              <div className="lg:col-span-3 aspect-[16/10] relative overflow-hidden rounded-2xl">
-                <img
-                  src="/images/services/deep-work.jpg"
-                  alt="Deep Work"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-6">
+                Premium Transformation Programs
+              </h2>
+              <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+                For those ready to transform not just their patterns, but their entire relationship with themselves.
+              </p>
+            </div>
 
-              <div className="lg:col-span-2 space-y-8">
-                <h2 className="text-4xl md:text-5xl font-serif text-text-heading">
-                  Deep Work
-                </h2>
-                <p className="text-lg text-text-secondary leading-relaxed">
-                  Sometimes the work requires going deeper. Longer. More intentionally.
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* 6-Month Journey */}
+              <div className="bg-warm-cream rounded-2xl p-10 space-y-6">
+                <div className="text-accent-gold text-3xl">✧</div>
+                <h3 className="text-3xl font-serif text-text-heading">6-Month Transformation Journey</h3>
+                <p className="text-lg text-text-secondary italic">
+                  Becoming the Self You Haven't Dared to Be
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  3-month and 6-month journeys for those ready to transform not just their patterns,
-                  but their entire relationship with themselves.
+                  Deep transformational work for those ready to completely shift their reality.
+                  This is not a quick fix—this is profound, lasting change.
                 </p>
-                <div className="space-y-4 pt-4 text-text-secondary text-sm">
-                  <p>• Weekly 1:1 sessions</p>
-                  <p>• Energy healing & somatic work</p>
-                  <p>• Family constellations</p>
-                  <p>• Ongoing support between sessions</p>
+                <div className="space-y-3 text-text-secondary">
+                  <p className="flex items-start">
+                    <span className="text-accent-gold mr-2">•</span>
+                    Weekly 1:1 sessions
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-accent-gold mr-2">•</span>
+                    Energy healing & clearings
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-accent-gold mr-2">•</span>
+                    Family constellations work
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-accent-gold mr-2">•</span>
+                    Medicine integration (if applicable)
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-accent-gold mr-2">•</span>
+                    Somatic bodywork
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-accent-gold mr-2">•</span>
+                    Channeled transmissions
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-accent-gold mr-2">•</span>
+                    Voxer/WhatsApp support between sessions
+                  </p>
                 </div>
-                <p className="text-accent-gold pt-4">3 months: €888-1,111 | 6 months: €1,200-2,400</p>
-                <p className="text-text-secondary/80 text-sm pt-2">Sliding scale • Payment plans available</p>
+                <div className="pt-4 border-t border-accent-gold/30">
+                  <p className="text-accent-gold text-lg font-medium">€3,600-5,100</p>
+                  <p className="text-sm text-text-secondary/80">Payment plans available • Sliding scale</p>
+                </div>
+                <p className="text-sm text-text-secondary/80 italic">
+                  Best for: Those ready for deep transformation across all areas of life
+                </p>
               </div>
+
+              {/* 3-Month Intensive */}
+              <div className="bg-warm-cream rounded-2xl p-10 space-y-6">
+                <div className="text-accent-gold text-3xl">✧</div>
+                <h3 className="text-3xl font-serif text-text-heading">3-Month Intensive Program</h3>
+                <p className="text-lg text-text-secondary italic">
+                  Accelerated Healing & Integration
+                </p>
+                <p className="text-text-secondary leading-relaxed">
+                  Focused, intensive work on a specific area of your life.
+                  Perfect for those with clear intention and readiness to go deep, fast.
+                </p>
+                <div className="space-y-3 text-text-secondary">
+                  <p className="flex items-start">
+                    <span className="text-accent-gold mr-2">•</span>
+                    Weekly 1:1 sessions
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-accent-gold mr-2">•</span>
+                    Targeted work on specific trauma or pattern
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-accent-gold mr-2">•</span>
+                    Relationship healing & alignment
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-accent-gold mr-2">•</span>
+                    Business & purpose alignment
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-accent-gold mr-2">•</span>
+                    Medicine integration support
+                  </p>
+                  <p className="flex items-start">
+                    <span className="text-accent-gold mr-2">•</span>
+                    Spiritual awakening guidance
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-accent-gold/30">
+                  <p className="text-accent-gold text-lg font-medium">€1,800-2,500</p>
+                  <p className="text-sm text-text-secondary/80">Payment plans available • Sliding scale</p>
+                </div>
+                <p className="text-sm text-text-secondary/80 italic">
+                  Best for: Those with clear intention ready for accelerated transformation
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 text-center">
+              <Link
+                to="/contact"
+                onClick={scrollToTop}
+                className="inline-block px-10 py-4 bg-accent-gold text-warm-white rounded-full hover:bg-accent-terracotta transition-colors font-medium text-lg"
+              >
+                Book Discovery Call →
+              </Link>
+              <p className="text-sm text-accent-gold/80 mt-3">Limited spots available • 3 openings for Q2 2025</p>
             </div>
           </div>
         </div>
@@ -206,29 +338,194 @@ export default function ServicesPage() {
       {/* Single Sessions */}
       <div className="bg-warm-cream py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-12">
-            <h2 className="text-4xl md:text-5xl font-serif text-text-heading">
-              Single Sessions
-            </h2>
-            <p className="text-xl text-text-secondary leading-relaxed">
-              Not ready for a full container? Start here.
-            </p>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center space-y-6 mb-16">
+              <h2 className="text-4xl md:text-5xl font-serif text-text-heading">
+                Single Sessions & Specialized Services
+              </h2>
+              <p className="text-xl text-text-secondary leading-relaxed">
+                Not ready for a full container? Start here.
+              </p>
+            </div>
 
-            <div className="grid md:grid-cols-2 gap-8 mt-12">
-              <div className="bg-warm-white/80 rounded-2xl p-8 space-y-4">
-                <h3 className="text-xl font-serif text-text-heading">Energy Healing</h3>
-                <p className="text-text-secondary leading-relaxed">
-                  90-minute session of deep somatic and energetic work.
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Mystery School Session */}
+              <div className="bg-warm-white/80 rounded-2xl p-8 space-y-4 border border-accent-gold/20">
+                <div className="text-accent-gold text-xl">⊹</div>
+                <h3 className="text-xl font-serif text-text-heading">Mystery School Session</h3>
+                <p className="text-text-secondary leading-relaxed text-sm">
+                  Deep energy healing that shifts belief systems at the root. Experience clearing,
+                  emotional release, and transformation in 60 minutes.
                 </p>
-                <p className="text-accent-gold">€88-111 • sliding scale</p>
+                <p className="text-accent-gold font-medium">€120-150</p>
+                <p className="text-xs text-text-secondary/70">Package of 4: €500 (save €100)</p>
               </div>
 
-              <div className="bg-warm-white/80 rounded-2xl p-8 space-y-4">
-                <h3 className="text-xl font-serif text-text-heading">Family Constellations</h3>
-                <p className="text-text-secondary leading-relaxed">
-                  2-hour session to reveal and resolve ancestral patterns.
+              {/* Psychic & Intuitive Services */}
+              <div className="bg-warm-white/80 rounded-2xl p-8 space-y-4 border border-accent-gold/20">
+                <div className="text-accent-gold text-xl">⊹</div>
+                <h3 className="text-xl font-serif text-text-heading">Psychic & Intuitive Services</h3>
+                <p className="text-text-secondary leading-relaxed text-sm">
+                  Medical intuitive body scans, psychic readings, ancestral healing,
+                  soul blueprint channeling, and spiritual guidance.
                 </p>
-                <p className="text-accent-gold">€120-150 • sliding scale</p>
+                <p className="text-accent-gold font-medium">€120</p>
+                <p className="text-xs text-text-secondary/70">60-minute session</p>
+              </div>
+
+              {/* Family Constellations */}
+              <div className="bg-warm-white/80 rounded-2xl p-8 space-y-4 border border-accent-gold/20">
+                <div className="text-accent-gold text-xl">⊹</div>
+                <h3 className="text-xl font-serif text-text-heading">Family Constellations</h3>
+                <p className="text-text-secondary leading-relaxed text-sm">
+                  Reveal and resolve ancestral patterns affecting relationships,
+                  money, health, and repeating cycles.
+                </p>
+                <p className="text-accent-gold font-medium">€150</p>
+                <p className="text-xs text-text-secondary/70">2-hour session • sliding scale</p>
+              </div>
+
+              {/* Relationship Coaching */}
+              <div className="bg-warm-white/80 rounded-2xl p-8 space-y-4 border border-accent-gold/20">
+                <div className="text-accent-gold text-xl">⊹</div>
+                <h3 className="text-xl font-serif text-text-heading">Relationship Coaching</h3>
+                <p className="text-text-secondary leading-relaxed text-sm">
+                  Work on your relationship with yourself first, then partnerships,
+                  heartbreak healing, sacred union, and family dynamics.
+                </p>
+                <p className="text-accent-gold font-medium">€120</p>
+                <p className="text-xs text-text-secondary/70">Per session</p>
+              </div>
+
+              {/* Somatic Energy Healing */}
+              <div className="bg-warm-white/80 rounded-2xl p-8 space-y-4 border border-accent-gold/20">
+                <div className="text-accent-gold text-xl">⊹</div>
+                <h3 className="text-xl font-serif text-text-heading">Somatic Energy Healing</h3>
+                <p className="text-text-secondary leading-relaxed text-sm">
+                  Trauma-informed bodywork combining bio-energy, emotional release,
+                  breathwork, and embodiment practices.
+                </p>
+                <p className="text-accent-gold font-medium">€120-150</p>
+                <p className="text-xs text-text-secondary/70">90-minute session • sliding scale</p>
+              </div>
+
+              {/* Spiritual Business Coaching */}
+              <div className="bg-warm-white/80 rounded-2xl p-8 space-y-4 border border-accent-gold/20">
+                <div className="text-accent-gold text-xl">⊹</div>
+                <h3 className="text-xl font-serif text-text-heading">Spiritual Business Coaching</h3>
+                <p className="text-text-secondary leading-relaxed text-sm">
+                  For conscious entrepreneurs merging spiritual insight with practical strategy.
+                  Scale with soul intact.
+                </p>
+                <p className="text-accent-gold font-medium">€150</p>
+                <p className="text-xs text-text-secondary/70">Or €420/month for 4 sessions</p>
+              </div>
+            </div>
+
+            <div className="mt-12 text-center">
+              <Link
+                to="/contact"
+                onClick={scrollToTop}
+                className="inline-block px-10 py-4 bg-accent-gold text-warm-white rounded-full hover:bg-accent-terracotta transition-colors font-medium"
+              >
+                Book a Session →
+              </Link>
+              <p className="text-sm text-accent-gold/80 mt-3">Flexible scheduling • Sliding scale available</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonials */}
+      <div className="bg-warm-white py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-4">
+                Voices from the Journey
+              </h2>
+              <p className="text-xl text-text-secondary">
+                What others have experienced
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Testimonial 1 */}
+              <div className="bg-warm-cream border-2 border-accent-gold/20 rounded-2xl p-8 space-y-4">
+                <div className="text-accent-gold text-2xl">✦</div>
+                <p className="text-text-secondary leading-relaxed italic">
+                  "The 6-month journey didn't just change my life—it showed me who I've always been beneath the trauma.
+                  I finally feel at home in my own skin."
+                </p>
+                <div className="pt-4 border-t border-accent-gold/20">
+                  <p className="font-serif text-text-heading">Marcus</p>
+                  <p className="text-sm text-text-secondary/70">6-Month Transformation Journey</p>
+                </div>
+              </div>
+
+              {/* Testimonial 2 */}
+              <div className="bg-warm-cream border-2 border-accent-gold/20 rounded-2xl p-8 space-y-4">
+                <div className="text-accent-gold text-2xl">✦</div>
+                <p className="text-text-secondary leading-relaxed italic">
+                  "After years of trying different healing modalities, the Mystery School sessions gave me
+                  breakthroughs I didn't think were possible. The depth of this work is unmatched."
+                </p>
+                <div className="pt-4 border-t border-accent-gold/20">
+                  <p className="font-serif text-text-heading">Sophia</p>
+                  <p className="text-sm text-text-secondary/70">Mystery School Sessions</p>
+                </div>
+              </div>
+
+              {/* Testimonial 3 */}
+              <div className="bg-warm-cream border-2 border-accent-gold/20 rounded-2xl p-8 space-y-4">
+                <div className="text-accent-gold text-2xl">✦</div>
+                <p className="text-text-secondary leading-relaxed italic">
+                  "The Men's Circle gave me permission to feel everything I'd been suppressing for decades.
+                  I'm finally showing up as a whole human, not just the parts others wanted to see."
+                </p>
+                <div className="pt-4 border-t border-accent-gold/20">
+                  <p className="font-serif text-text-heading">David</p>
+                  <p className="text-sm text-text-secondary/70">Men's Circle</p>
+                </div>
+              </div>
+
+              {/* Testimonial 4 */}
+              <div className="bg-warm-cream border-2 border-accent-gold/20 rounded-2xl p-8 space-y-4">
+                <div className="text-accent-gold text-2xl">✦</div>
+                <p className="text-text-secondary leading-relaxed italic">
+                  "The Bufo ceremony was the most profound spiritual experience of my life.
+                  The preparation and integration support made it safe to completely surrender."
+                </p>
+                <div className="pt-4 border-t border-accent-gold/20">
+                  <p className="font-serif text-text-heading">Elena</p>
+                  <p className="text-sm text-text-secondary/70">Medicine Journey</p>
+                </div>
+              </div>
+
+              {/* Testimonial 5 */}
+              <div className="bg-warm-cream border-2 border-accent-gold/20 rounded-2xl p-8 space-y-4">
+                <div className="text-accent-gold text-2xl">✦</div>
+                <p className="text-text-secondary leading-relaxed italic">
+                  "Family constellations revealed patterns I'd been unconsciously living out for my entire life.
+                  One session shifted what therapy couldn't touch in years."
+                </p>
+                <div className="pt-4 border-t border-accent-gold/20">
+                  <p className="font-serif text-text-heading">James</p>
+                  <p className="text-sm text-text-secondary/70">Family Constellations</p>
+                </div>
+              </div>
+
+              {/* Testimonial 6 */}
+              <div className="bg-warm-cream border-2 border-accent-gold/20 rounded-2xl p-8 space-y-4">
+                <div className="text-accent-gold text-2xl">✦</div>
+                <p className="text-text-secondary leading-relaxed italic">
+                  "The Women's Circle isn't just support—it's alchemy. I've stepped into a version of myself
+                  I didn't know existed. This is sacred sisterhood at its finest."
+                </p>
+                <div className="pt-4 border-t border-accent-gold/20">
+                  <p className="font-serif text-text-heading">Maya</p>
+                  <p className="text-sm text-text-secondary/70">Women's Leadership Circle</p>
+                </div>
               </div>
             </div>
           </div>
