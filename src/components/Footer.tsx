@@ -1,7 +1,28 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 
 export default function Footer() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Smooth scroll to section
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <footer className="bg-warm-cream border-t border-text-primary/5">
       <div className="container mx-auto px-4 py-20">
@@ -20,36 +41,39 @@ export default function Footer() {
             <div className="space-y-4">
               <h4 className="text-sm font-semibold text-text-primary uppercase tracking-wider">Explore</h4>
               <nav className="flex flex-col space-y-2">
-                <Link to="/about" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
+                <button
+                  onClick={() => scrollToSection('about')}
+                  className="text-text-secondary hover:text-accent-gold transition-colors text-sm text-left"
+                >
                   About
-                </Link>
-                <Link to="/services" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
+                </button>
+                <button
+                  onClick={() => scrollToSection('services')}
+                  className="text-text-secondary hover:text-accent-gold transition-colors text-sm text-left"
+                >
                   Services
-                </Link>
-                <Link to="/collaborations" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
-                  Collaborations
-                </Link>
+                </button>
+                <button
+                  onClick={() => scrollToSection('resources')}
+                  className="text-text-secondary hover:text-accent-gold transition-colors text-sm text-left"
+                >
+                  Resources
+                </button>
               </nav>
             </div>
 
             {/* Resources Column */}
             <div className="space-y-4">
-              <h4 className="text-sm font-semibold text-text-primary uppercase tracking-wider">Resources</h4>
+              <h4 className="text-sm font-semibold text-text-primary uppercase tracking-wider">More</h4>
               <nav className="flex flex-col space-y-2">
-                <Link to="/resources" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
-                  Free Downloads
-                </Link>
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="text-text-secondary hover:text-accent-gold transition-colors text-sm text-left"
+                >
+                  Contact
+                </button>
                 <Link to="/links" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
                   Links
-                </Link>
-                <Link to="/contact" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
-                  Contact
-                </Link>
-                <Link to="/support" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
-                  Support
-                </Link>
-                <Link to="/privacy" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
-                  Privacy
                 </Link>
               </nav>
             </div>

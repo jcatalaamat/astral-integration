@@ -1,20 +1,41 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      // Update active section based on scroll position (only on homepage)
+      if (location.pathname === '/') {
+        const sections = ['contact', 'resources', 'services', 'about'];
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= 150 && rect.bottom >= 150) {
+              setActiveSection(section);
+              break;
+            }
+          }
+        }
+        // If at top, no section is active
+        if (window.scrollY < 200) {
+          setActiveSection('');
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   // Close mobile menu on Escape key press
   useEffect(() => {
@@ -33,13 +54,47 @@ export default function Navigation() {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
-  // Helper function to check if link is active
-  const isActiveLink = (path: string) => location.pathname === path;
+  // Smooth scroll to section
+  const scrollToSection = (sectionId: string) => {
+    setMobileMenuOpen(false);
+
+    // If not on homepage, navigate to homepage first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  // Scroll to top
+  const scrollToTop = () => {
+    setMobileMenuOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/');
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  // Helper function to check if section is active
+  const isSectionActive = (sectionId: string) => {
+    return location.pathname === '/' && activeSection === sectionId;
+  };
 
   // Helper function to get link classes with active state
-  const getLinkClasses = (path: string) => {
-    const active = isActiveLink(path);
-    const baseClasses = 'transition-colors text-sm font-medium relative';
+  const getLinkClasses = (sectionId: string) => {
+    const active = isSectionActive(sectionId);
+    const baseClasses = 'transition-colors text-sm font-medium relative cursor-pointer';
     const activeIndicator = active ? 'after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-[2px] after:bg-accent-gold' : '';
     const colorClasses = isScrolled
       ? `text-text-secondary hover:text-accent-gold ${active ? 'text-accent-gold' : ''}`
@@ -50,9 +105,9 @@ export default function Navigation() {
   };
 
   // Helper function for mobile link classes
-  const getMobileLinkClasses = (path: string) => {
-    const active = isActiveLink(path);
-    const baseClasses = 'block py-2 transition-colors';
+  const getMobileLinkClasses = (sectionId: string) => {
+    const active = isSectionActive(sectionId);
+    const baseClasses = 'block py-2 transition-colors cursor-pointer';
     const colorClasses = active ? 'text-accent-gold font-semibold' : 'text-text-secondary hover:text-accent-gold';
     const focusClasses = 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2 rounded-sm px-2 -mx-2';
 
@@ -72,8 +127,8 @@ export default function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link
-            to="/"
+          <button
+            onClick={scrollToTop}
             className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2 rounded-sm"
             aria-label="Astral Integration home"
           >
@@ -84,49 +139,38 @@ export default function Navigation() {
             }`}>
               Astral Integration
             </span>
-          </Link>
+          </button>
 
           {/* Desktop Nav Links */}
           <div className="hidden lg:flex items-center gap-6">
-            <Link
-              to="/about"
-              className={getLinkClasses('/about')}
-              aria-current={isActiveLink('/about') ? 'page' : undefined}
+            <button
+              onClick={() => scrollToSection('about')}
+              className={getLinkClasses('about')}
             >
               About
-            </Link>
-            <Link
-              to="/services"
-              className={getLinkClasses('/services')}
-              aria-current={isActiveLink('/services') ? 'page' : undefined}
+            </button>
+            <button
+              onClick={() => scrollToSection('services')}
+              className={getLinkClasses('services')}
             >
               Services
-            </Link>
-            <Link
-              to="/collaborations"
-              className={getLinkClasses('/collaborations')}
-              aria-current={isActiveLink('/collaborations') ? 'page' : undefined}
-            >
-              Collaborations
-            </Link>
-            <Link
-              to="/resources"
-              className={getLinkClasses('/resources')}
-              aria-current={isActiveLink('/resources') ? 'page' : undefined}
+            </button>
+            <button
+              onClick={() => scrollToSection('resources')}
+              className={getLinkClasses('resources')}
             >
               Resources
-            </Link>
-            <Link
-              to="/contact"
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
               className={`px-6 py-2 rounded-full font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2 ${
                 isScrolled
                   ? 'bg-accent-gold text-white hover:bg-accent-gold/90 hover:shadow-warm'
                   : 'bg-white/20 text-white border border-white/30 hover:bg-white/30 backdrop-blur-sm'
               }`}
-              aria-current={isActiveLink('/contact') ? 'page' : undefined}
             >
               Contact
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -147,50 +191,38 @@ export default function Navigation() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div
-            className="lg:hidden py-4 space-y-3 border-t border-text-primary/5"
+            className="lg:hidden py-4 space-y-3 border-t border-text-primary/5 bg-warm-white"
             role="menu"
             aria-label="Mobile navigation"
           >
-            <Link
-              to="/about"
-              className={getMobileLinkClasses('/about')}
-              aria-current={isActiveLink('/about') ? 'page' : undefined}
+            <button
+              onClick={() => scrollToSection('about')}
+              className={getMobileLinkClasses('about')}
               role="menuitem"
             >
               About
-            </Link>
-            <Link
-              to="/services"
-              className={getMobileLinkClasses('/services')}
-              aria-current={isActiveLink('/services') ? 'page' : undefined}
+            </button>
+            <button
+              onClick={() => scrollToSection('services')}
+              className={getMobileLinkClasses('services')}
               role="menuitem"
             >
               Services
-            </Link>
-            <Link
-              to="/collaborations"
-              className={getMobileLinkClasses('/collaborations')}
-              aria-current={isActiveLink('/collaborations') ? 'page' : undefined}
-              role="menuitem"
-            >
-              Collaborations
-            </Link>
-            <Link
-              to="/resources"
-              className={getMobileLinkClasses('/resources')}
-              aria-current={isActiveLink('/resources') ? 'page' : undefined}
+            </button>
+            <button
+              onClick={() => scrollToSection('resources')}
+              className={getMobileLinkClasses('resources')}
               role="menuitem"
             >
               Resources
-            </Link>
-            <Link
-              to="/contact"
-              className={getMobileLinkClasses('/contact')}
-              aria-current={isActiveLink('/contact') ? 'page' : undefined}
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className={getMobileLinkClasses('contact')}
               role="menuitem"
             >
               Contact
-            </Link>
+            </button>
           </div>
         )}
       </div>
