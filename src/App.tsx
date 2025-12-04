@@ -5,44 +5,53 @@ import { Mail, MapPin, Clock, Instagram, CheckCircle } from 'lucide-react';
 import EventPreview from './components/EventPreview';
 import PlacePreview from './components/PlacePreview';
 import LinksPage from './components/pages/LinksPage';
+import ResourcesPage from './components/pages/ResourcesPage';
 import ScrollToTop from './components/ScrollToTop';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import WarmHero from './components/shared/WarmHero';
 
-// Real testimonials data (abstracted from original)
+// Real testimonials data with work type labels
 const REAL_TESTIMONIALS = [
   {
     quote: "The healings I went through were deep and transformative. Through his practice, he is able to prise issues from the mind and release them through the heart. His compassion and belief allows vulnerability in the unknown, acceptance of ugly realities and enables you to rise above blocks we accumulate along with our lives.",
-    name: "Holly"
+    name: "Holly",
+    workType: "Energy Healing"
   },
   {
     quote: "He helped me shift the vision from the 12 years of marriage I let go of to what I gain by being free. Now there is a beautiful life beyond the separation. A man of great heart specialising in relationships, future readings and much more.",
-    name: "Viktoria"
+    name: "Viktoria",
+    workType: "Relationship Healing"
   },
   {
     quote: "An amazing presence, great compassion and non-judgement. It was really deep, starting with issues around letting go of the past and ultimately in feelings of rejection. He was able to clear the core beliefs which completely shifted my energy and perspective on my life.",
-    name: "Matthew"
+    name: "Matthew",
+    workType: "Core Belief Clearing"
   },
   {
     quote: "I had really deep experiences, both at an emotional and spiritual level. We went to the root of fears about embracing and stepping into my power. I felt secure, held, seen, and fully accepted so I could trust and surrender. I feel so young! Clear and joyful, like a child.",
-    name: "Nina"
+    name: "Nina",
+    workType: "Mentorship"
   },
   {
     quote: "I had a paradigm shift. He helped me unlock and release the family conditioning I have had around my mother for a long time and ultimately the rejection of my inner feminine.",
-    name: "Gabriella"
+    name: "Gabriella",
+    workType: "Family Constellations"
   },
   {
     quote: "He gave me a gift, by healing wounds that had been present in me since I was a child. We cleared issues that were causing me to have weird dynamics with women. He set me free and I'll never be the same. He made me a man.",
-    name: "Jon"
+    name: "Jon",
+    workType: "Men's Work"
   },
   {
     quote: "We worked on some very old mindsets and beliefs. During the session, I felt a lot of energy shifting inside of me. It felt like deep cleansing, getting rid of all unnecessary imprints. A very smooth but very clear change of energy on a very deep level. I feel I'm boosted full of love and energy.",
-    name: "Blanka"
+    name: "Blanka",
+    workType: "Energy Healing"
   },
   {
     quote: "The work was one of the most profound transformations I have ever had. He takes you straight into the subconscious mind so together you find the cause of your limiting beliefs and clear them. This is the healing of the future, in the 5th dimension, working in the quantum field that enables healing to be instantaneous.",
-    name: "Hazel"
+    name: "Hazel",
+    workType: "Deep Transformation"
   }
 ];
 
@@ -80,9 +89,6 @@ const FEATURED_RESOURCES = [
 
 // Main Landing Page Component
 function LandingPage() {
-  const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-
   // Contact form state
   const [formData, setFormData] = useState({
     name: '',
@@ -92,42 +98,6 @@ function LandingPage() {
   });
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newsletterEmail || !newsletterEmail.includes('@')) return;
-
-    setNewsletterStatus('loading');
-
-    try {
-      const convertKitApiKey = (import.meta as any).env.VITE_CONVERTKIT_API_KEY || 'WL4dvqOgWKNB2eq6RLOflQ';
-      const convertKitFormId = (import.meta as any).env.VITE_CONVERTKIT_FORM_ID || '8630317';
-
-      const response = await fetch(`https://api.convertkit.com/v3/forms/${convertKitFormId}/subscribe`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          api_key: convertKitApiKey,
-          email: newsletterEmail,
-          tags: ['astral-integration-newsletter', 'homepage-signup']
-        })
-      });
-
-      if (response.ok) {
-        setNewsletterStatus('success');
-        setNewsletterEmail('');
-        setTimeout(() => setNewsletterStatus('idle'), 5000);
-      } else {
-        throw new Error('Subscription failed');
-      }
-    } catch (error) {
-      console.error('Newsletter subscription error:', error);
-      setNewsletterStatus('error');
-      setTimeout(() => setNewsletterStatus('idle'), 5000);
-    }
-  };
 
   // Contact form validation
   const validateForm = (): boolean => {
@@ -181,78 +151,200 @@ function LandingPage() {
       {/* Hero Section with WarmHero component */}
       <WarmHero
         title="Astral Integration"
-        subtitle="Guiding souls home to themselves"
+        subtitle="Plant Medicine Integration • Energy Healing • Transformational Mentorship"
         height="extra-large"
         image="/images/homepage/hero.jpg"
       >
-        <p className="text-text-secondary/80 font-light italic max-w-2xl mx-auto mb-8">
-          For those who hear the call. For those ready to remember.
+        <p className="text-text-secondary/80 font-light max-w-2xl mx-auto mb-8 text-lg">
+          For those navigating awakening, transition, or the space between who you were and who you're becoming.
         </p>
-        <div className="flex justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
             onClick={() => scrollToSection('contact')}
             className="px-10 py-4 bg-accent-gold text-warm-white rounded-full hover:bg-accent-terracotta transition-colors font-medium text-lg shadow-lg"
           >
-            Start Your Discovery Call
+            Start with Free Discovery Call
+          </button>
+          <button
+            onClick={() => scrollToSection('resources')}
+            className="px-8 py-4 border-2 border-accent-gold/60 text-accent-gold rounded-full hover:bg-accent-gold/10 transition-colors font-medium"
+          >
+            Download Free Integration Guide
           </button>
         </div>
+        <p className="text-text-secondary/60 text-sm mt-8">
+          Based in Barcelona & Mazunte • Facilitating since 2018
+        </p>
       </WarmHero>
 
-      {/* Who This Is For - Wisdom Section */}
+      {/* You Might Be Ready If - Qualification Section */}
       <div className="bg-warm-cream py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-12">
-            <div className="text-3xl text-accent-gold/40">⊛</div>
-            <h2 className="text-3xl md:text-4xl font-serif text-text-heading leading-relaxed">
-              This work is for the ones who can no longer pretend
-            </h2>
-            <div className="space-y-6 text-text-secondary leading-relaxed text-lg max-w-3xl mx-auto">
-              <p>
-                For those who've tried everything else. For the seekers who are tired of seeking.
-                For the ones who know there's something deeper calling.
-              </p>
-              <p className="text-text-secondary/80 italic">
-                You're not broken. You're not lost. You're initiating.
-              </p>
-              <p>
-                This is for the souls ready to stop performing, stop bypassing, and start remembering
-                what they came here to do.
-              </p>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="text-3xl text-accent-gold/40 mb-6">⊛</div>
+              <h2 className="text-3xl md:text-4xl font-serif text-text-heading leading-relaxed">
+                You Might Be Ready If:
+              </h2>
             </div>
+
+            <div className="grid md:grid-cols-2 gap-x-16 gap-y-8 mb-16">
+              {/* Ready If */}
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
+                  <p className="text-text-secondary leading-relaxed">
+                    You've had a powerful medicine experience and don't know how to integrate it into your daily life
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
+                  <p className="text-text-secondary leading-relaxed">
+                    You're navigating a major transition: relationship ending, career shift, loss, or spiritual awakening
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
+                  <p className="text-text-secondary leading-relaxed">
+                    You've done therapy, read the books, tried the practices—and something still feels incomplete
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
+                  <p className="text-text-secondary leading-relaxed">
+                    You're successful on paper but empty inside, and the mask is getting heavier
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
+                  <p className="text-text-secondary leading-relaxed">
+                    You're ready to stop seeking and start embodying
+                  </p>
+                </div>
+              </div>
+
+              {/* Not For You If */}
+              <div className="space-y-6">
+                <h3 className="text-xl font-serif text-text-heading mb-4">This Work Is NOT For You If:</h3>
+                <div className="flex items-start gap-4">
+                  <span className="text-text-secondary/60 text-xl flex-shrink-0">✗</span>
+                  <p className="text-text-secondary/80 leading-relaxed">
+                    You're looking for a quick fix or someone to do the work for you
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-text-secondary/60 text-xl flex-shrink-0">✗</span>
+                  <p className="text-text-secondary/80 leading-relaxed">
+                    You're not ready to face uncomfortable truths
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-text-secondary/60 text-xl flex-shrink-0">✗</span>
+                  <p className="text-text-secondary/80 leading-relaxed">
+                    You want symptom relief without addressing root causes
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-text-secondary/60 text-xl flex-shrink-0">✗</span>
+                  <p className="text-text-secondary/80 leading-relaxed">
+                    You're in acute mental health crisis (I'll help you find appropriate support)
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-center text-text-secondary/80 italic text-lg">
+              You're not broken. You're not lost. You're initiating.
+            </p>
           </div>
         </div>
       </div>
 
-      {/* About Section */}
-      <div id="about" className="min-h-[80vh] flex items-center bg-warm-white">
-        <div className="container mx-auto px-4 py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
-            {/* Large Image */}
-            <div className="aspect-[4/5] relative overflow-hidden rounded-2xl">
-              <img
-                src="/images/homepage/journey-begins.jpg"
-                alt="The journey begins with surrender"
-                className="w-full h-full object-cover"
-              />
-            </div>
+      {/* About Section - My Path to This Work */}
+      <div id="about" className="bg-warm-white py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              {/* Large Image */}
+              <div className="lg:sticky lg:top-24">
+                <div className="aspect-[4/5] relative overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/homepage/journey-begins.jpg"
+                    alt="Jordi - Astral Integration"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
 
-            {/* Story Text */}
-            <div className="space-y-8">
-              <p className="text-4xl md:text-5xl font-serif text-text-heading leading-tight">
-                The journey begins with surrender.
-              </p>
-              <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
-                <p>
-                  For years, I performed. I wore masks. I did what I thought I was supposed to do.
-                  Until my body, my mind, and my soul said: <span className="italic text-accent-gold">NO MORE.</span>
-                </p>
-                <p>
-                  Plant medicine showed me who I was beyond the story. Nothing. And everything.
-                  I found presence. Consciousness. Love that isn't conditional.
-                </p>
-                <p className="text-xl text-accent-gold italic">
-                  Awakening isn't enough. Integration is where the real work happens.
-                </p>
+              {/* Story + Credentials */}
+              <div className="space-y-10">
+                <div>
+                  <h2 className="text-4xl md:text-5xl font-serif text-text-heading leading-tight mb-8">
+                    My Path to This Work
+                  </h2>
+                  <p className="text-xl text-text-secondary mb-6">
+                    I'm Jordi, and I've been guiding transformational journeys since 2018.
+                  </p>
+                </div>
+
+                {/* My Background */}
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-serif text-text-heading">My Background</h3>
+                  <div className="space-y-4 text-text-secondary leading-relaxed">
+                    <p>
+                      My path here wasn't linear. I spent years performing, wearing masks, doing what I thought I was supposed to do. Until my body said: <span className="italic text-accent-gold">no more.</span>
+                    </p>
+                    <p>
+                      Plant medicine showed me who I was beyond the story. The void. Pure presence. Love without conditions. But awakening isn't enough—integration is where the real work happens.
+                    </p>
+                  </div>
+                </div>
+
+                {/* My Training */}
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-serif text-text-heading">My Training</h3>
+                  <ul className="space-y-2 text-text-secondary">
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent-gold">•</span>
+                      <span>500+ hours Kundalini & Yoga Teacher Training</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent-gold">•</span>
+                      <span>Family Constellations Practitioner</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent-gold">•</span>
+                      <span>Access Consciousness Facilitator</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent-gold">•</span>
+                      <span>Psychedelic Integration Specialist</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent-gold">•</span>
+                      <span>Mediumship & energy healing training (Reiki, Theta Healing)</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Medicine Work Lineage */}
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-serif text-text-heading">Medicine Work Lineage</h3>
+                  <p className="text-text-secondary leading-relaxed">
+                    I've been honored to learn Bufo Alvarius ceremony from elders of the Seri tribe in Mexico. Over 50+ ceremonies facilitated. I've also sat in ayahuasca ceremonies and walked through my own initiations with plant medicines.
+                  </p>
+                </div>
+
+                {/* Why I Share This */}
+                <div className="space-y-4 border-l-2 border-accent-gold/40 pl-6">
+                  <h3 className="text-xl font-serif text-text-heading">Why I Share This</h3>
+                  <p className="text-text-secondary leading-relaxed">
+                    The certifications represent thousands of hours learning to hold space safely. But the real training has been my own breakdowns, ego deaths, and the humility of guiding others through theirs.
+                  </p>
+                  <p className="text-text-secondary/80 italic">
+                    I don't lead from above. I walk beside you. Because I know this territory from the inside.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -272,230 +364,357 @@ function LandingPage() {
         </div>
       </div>
 
-      {/* The Approach - Philosophy Section */}
+      {/* How We Actually Work - Methods Section */}
       <div className="bg-warm-white py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-8">
-                How This Work Happens
+                How We Actually Work
               </h2>
               <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-                This isn't therapy. It isn't coaching. It's something older. Something that can't be rushed.
+                I blend ancient wisdom with practical integration. Here's what that looks like:
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-12 mt-16">
-              <div className="space-y-4">
-                <div className="text-accent-gold text-3xl">✧</div>
-                <h3 className="text-xl font-serif text-text-heading">Presence Over Technique</h3>
+            <div className="grid md:grid-cols-2 gap-12 mt-16">
+              <div className="space-y-4 p-8 bg-warm-cream/50 rounded-2xl">
+                <h3 className="text-2xl font-serif text-text-heading">Family Constellations</h3>
                 <p className="text-text-secondary leading-relaxed">
-                  I don't fix you. I hold space for you to remember your own wholeness.
-                  The transformation happens in the field between us.
+                  We map your family system to reveal inherited patterns, ancestral trauma, and blocked energy. This work brings hidden dynamics into awareness so you can finally break free from patterns that aren't even yours.
                 </p>
               </div>
 
-              <div className="space-y-4">
-                <div className="text-accent-gold text-3xl">✧</div>
-                <h3 className="text-xl font-serif text-text-heading">Body. Heart. Soul.</h3>
+              <div className="space-y-4 p-8 bg-warm-cream/50 rounded-2xl">
+                <h3 className="text-2xl font-serif text-text-heading">Energy Healing & Somatic Work</h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Real healing isn't just mental. We work through the body, honor the heart,
-                  and listen to what your soul has been trying to say.
+                  Using Access Consciousness, Kundalini practices, and intuitive energy work, we release what's stuck in your body. Not just talking about trauma—moving it through and out.
                 </p>
               </div>
 
-              <div className="space-y-4">
-                <div className="text-accent-gold text-3xl">✧</div>
-                <h3 className="text-xl font-serif text-text-heading">Integration Is Everything</h3>
+              <div className="space-y-4 p-8 bg-warm-cream/50 rounded-2xl">
+                <h3 className="text-2xl font-serif text-text-heading">Medicine Integration</h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Insight without integration is just spiritual entertainment.
-                  We anchor the work into your daily life, your relationships, your reality.
+                  Whether you've done ayahuasca, Bufo, psilocybin, or other medicines, integration is where insight becomes transformation. We anchor your experiences into your actual life, relationships, and choices.
+                </p>
+              </div>
+
+              <div className="space-y-4 p-8 bg-warm-cream/50 rounded-2xl">
+                <h3 className="text-2xl font-serif text-text-heading">Mentorship & Shadow Work</h3>
+                <p className="text-text-secondary leading-relaxed">
+                  The ongoing container where we work with your patterns, blocks, relationships, and life purpose. This is where the real integration happens—in the day-to-day.
                 </p>
               </div>
             </div>
+
+            <p className="text-center mt-12 text-text-secondary/80 italic">
+              Every session is different because every person arrives with different needs. I follow what wants to emerge, not a script.
+            </p>
           </div>
         </div>
       </div>
 
-      {/* The Initiation Process - 4 Stages */}
+      {/* The Journey - What to Actually Expect */}
       <div className="bg-warm-cream py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             {/* Title */}
-            <div className="text-center mb-20">
+            <div className="text-center mb-16">
               <div className="text-4xl text-accent-gold/40 mb-6">⊹</div>
               <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-4">
-                The Initiation Process
+                The Journey
               </h2>
               <p className="text-lg text-text-secondary font-light">
-                Every transformation follows the same sacred pattern
+                What to actually expect when we work together
               </p>
             </div>
 
-            {/* 4 Stages - Horizontal Flow */}
-            <div className="grid md:grid-cols-4 gap-8 md:gap-6">
-              {/* Stage 1: Dissolution */}
-              <div className="relative">
-                <div className="text-center space-y-4">
-                  <div className="text-4xl text-accent-gold mb-4">⊹</div>
-                  <div className="text-2xl font-serif text-text-heading mb-2">1</div>
-                  <h3 className="text-xl font-serif text-text-heading">Dissolution</h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    Release what no longer serves. Clear ancestral patterns, childhood wounds, and energetic debris.
+            {/* 4 Phases - Vertical Timeline */}
+            <div className="space-y-8">
+              {/* Phase 1 */}
+              <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
+                <div className="md:col-span-1">
+                  <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 1</div>
+                  <h3 className="text-2xl font-serif text-text-heading">Discovery</h3>
+                  <p className="text-sm text-text-secondary/70 mt-1">First 1-2 Sessions</p>
+                </div>
+                <div className="md:col-span-3">
+                  <p className="text-text-secondary leading-relaxed">
+                    We talk honestly about where you are and what you need. I assess if I'm the right guide for your journey. No pressure, no pitch.
                   </p>
                 </div>
-                <div className="hidden md:block absolute top-12 -right-4 text-accent-gold/30 text-2xl">→</div>
               </div>
 
-              {/* Stage 2: Activation */}
-              <div className="relative">
-                <div className="text-center space-y-4">
-                  <div className="text-4xl text-accent-gold mb-4">⊛</div>
-                  <div className="text-2xl font-serif text-text-heading mb-2">2</div>
-                  <h3 className="text-xl font-serif text-text-heading">Activation</h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    Awaken dormant gifts. Open your channel, activate intuition, remember your cosmic blueprint.
+              {/* Phase 2 */}
+              <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
+                <div className="md:col-span-1">
+                  <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 2</div>
+                  <h3 className="text-2xl font-serif text-text-heading">Deep Work</h3>
+                  <p className="text-sm text-text-secondary/70 mt-1">Weeks 2-8</p>
+                </div>
+                <div className="md:col-span-3">
+                  <p className="text-text-secondary leading-relaxed mb-4">
+                    This is where we do the heavy lifting:
+                  </p>
+                  <ul className="space-y-2 text-text-secondary">
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent-gold">•</span>
+                      <span>Clear ancestral patterns and childhood wounds</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent-gold">•</span>
+                      <span>Work with family constellations or energy healing</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent-gold">•</span>
+                      <span>Process medicine experiences if relevant</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent-gold">•</span>
+                      <span>Address what's blocking your expression</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Phase 3 */}
+              <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
+                <div className="md:col-span-1">
+                  <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 3</div>
+                  <h3 className="text-2xl font-serif text-text-heading">Integration</h3>
+                  <p className="text-sm text-text-secondary/70 mt-1">Months 2-6</p>
+                </div>
+                <div className="md:col-span-3">
+                  <p className="text-text-secondary leading-relaxed mb-4">
+                    Insights are just the beginning. We anchor the shifts into your daily life:
+                  </p>
+                  <ul className="space-y-2 text-text-secondary">
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent-gold">•</span>
+                      <span>How you relate to yourself and others</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent-gold">•</span>
+                      <span>How you show up in your work and purpose</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent-gold">•</span>
+                      <span>How you navigate challenges without old patterns</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Phase 4 */}
+              <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
+                <div className="md:col-span-1">
+                  <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 4</div>
+                  <h3 className="text-2xl font-serif text-text-heading">Embodiment</h3>
+                  <p className="text-sm text-text-secondary/70 mt-1">Ongoing</p>
+                </div>
+                <div className="md:col-span-3">
+                  <p className="text-text-secondary leading-relaxed">
+                    You become the medicine. You hold space for your own process. You step into service and leadership in your own way.
                   </p>
                 </div>
-                <div className="hidden md:block absolute top-12 -right-4 text-accent-gold/30 text-2xl">→</div>
-              </div>
-
-              {/* Stage 3: Integration */}
-              <div className="relative">
-                <div className="text-center space-y-4">
-                  <div className="text-4xl text-accent-gold mb-4">⊝</div>
-                  <div className="text-2xl font-serif text-text-heading mb-2">3</div>
-                  <h3 className="text-xl font-serif text-text-heading">Integration</h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    Embody your truth. Anchor new frequencies, align actions with soul purpose, manifest your vision.
-                  </p>
-                </div>
-                <div className="hidden md:block absolute top-12 -right-4 text-accent-gold/30 text-2xl">→</div>
-              </div>
-
-              {/* Stage 4: Mastery */}
-              <div className="text-center space-y-4">
-                <div className="text-4xl text-accent-gold mb-4">✧</div>
-                <div className="text-2xl font-serif text-text-heading mb-2">4</div>
-                <h3 className="text-xl font-serif text-text-heading">Mastery</h3>
-                <p className="text-sm text-text-secondary leading-relaxed">
-                  Become the medicine. Step into service, hold space for others, create ripples of transformation.
-                </p>
               </div>
             </div>
 
-            {/* Closing Wisdom */}
-            <div className="text-center mt-20 max-w-3xl mx-auto">
-              <p className="text-lg text-text-secondary leading-relaxed italic">
-                This isn't a quick fix. This isn't a weekend workshop. This is the work of a lifetime—
-                compressed into the time your soul needs.
+            {/* Timeline Reality */}
+            <div className="text-center mt-16 p-8 border border-accent-gold/20 rounded-2xl">
+              <p className="text-lg text-text-heading font-serif mb-2">
+                Real transformation takes 3-12 months minimum.
+              </p>
+              <p className="text-text-secondary">
+                Anyone promising faster is selling you spiritual entertainment.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Services Section */}
+      {/* Services & Investment Section */}
       <div id="services" className="bg-warm-white py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-serif text-text-heading text-center mb-20">
-              Ways to Walk Together
-            </h2>
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-4">
+                Services & Investment
+              </h2>
+              <p className="text-lg text-text-secondary">
+                Clear offerings with transparent pricing
+              </p>
+            </div>
 
-            <div className="space-y-24">
-              {/* Circle Work */}
-              <div className="grid lg:grid-cols-5 gap-12 items-center">
-                <div className="lg:col-span-3 aspect-[16/10] relative overflow-hidden rounded-2xl">
-                  <img
-                    src="/images/homepage/circles.jpg"
-                    alt="Sacred Circles"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="lg:col-span-2 space-y-6">
-                  <h3 className="text-3xl font-serif text-text-heading">Sacred Circles</h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    Join a container of souls committed to growth. Men's circles, women's leadership,
-                    and creative masterminds for healers and visionaries.
-                  </p>
-                  <p className="text-sm text-accent-gold">€100-200/month • sliding scale available</p>
-                  <button
-                    onClick={() => scrollToSection('contact')}
-                    className="text-accent-gold hover:text-accent-terracotta transition-colors"
-                  >
-                    Get in touch to join →
-                  </button>
-                </div>
-              </div>
-
-              {/* Medicine Work */}
-              <div className="grid lg:grid-cols-5 gap-12 items-center">
-                <div className="lg:col-span-2 space-y-6 order-2 lg:order-1">
-                  <h3 className="text-3xl font-serif text-text-heading">Medicine Journeys</h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    Bufo Alvarius ceremonies held with reverence and deep preparation. A sacred passage
-                    to ego dissolution and divine remembrance.
-                  </p>
-                  <p className="text-sm text-text-secondary/80 leading-relaxed">
-                    All medicine work includes screening, preparation sessions, and integration support.
-                    This is sacred healing work—not recreation.
-                  </p>
-                  <p className="text-sm text-accent-gold">By application • discussed after preparation</p>
-                  <button
-                    onClick={() => scrollToSection('contact')}
-                    className="text-accent-gold hover:text-accent-terracotta transition-colors"
-                  >
-                    Apply for screening →
-                  </button>
-                </div>
-                <div className="lg:col-span-3 aspect-[16/10] relative order-1 lg:order-2 overflow-hidden rounded-2xl">
-                  <img
-                    src="/images/homepage/medicine.jpg"
-                    alt="Medicine Journeys"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* 1:1 Work */}
-              <div className="grid lg:grid-cols-5 gap-12 items-center">
-                <div className="lg:col-span-3 aspect-[16/10] relative overflow-hidden rounded-2xl">
-                  <img
-                    src="/images/homepage/one-to-one.jpg"
-                    alt="One-to-One Journeys"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="lg:col-span-2 space-y-6">
-                  <h3 className="text-3xl font-serif text-text-heading">One-to-One Journeys</h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    Deep transformational work tailored to your unique path. Energy healing, family
-                    constellations, psychic services, and bespoke mentorship.
-                  </p>
-                  <div className="space-y-1">
-                    <p className="text-sm text-accent-gold">Single session: €88-150 • sliding scale</p>
-                    <p className="text-sm text-accent-gold">4-session package: €300-400</p>
-                    <p className="text-sm text-accent-gold">3-month intensive: €1,800-2,500</p>
+            <div className="space-y-8">
+              {/* Free Discovery Call */}
+              <div className="p-8 md:p-10 bg-accent-gold/5 border-2 border-accent-gold/30 rounded-2xl">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                  <div className="space-y-2">
+                    <div className="text-accent-gold text-sm font-medium uppercase tracking-wider">Start Here</div>
+                    <h3 className="text-3xl font-serif text-text-heading">Free Discovery Call</h3>
+                    <p className="text-text-secondary">30 minutes • No cost</p>
                   </div>
                   <button
                     onClick={() => scrollToSection('contact')}
-                    className="text-accent-gold hover:text-accent-terracotta transition-colors"
+                    className="px-8 py-4 bg-accent-gold text-warm-white rounded-full hover:bg-accent-terracotta transition-colors font-medium whitespace-nowrap"
                   >
-                    Book a discovery call →
+                    Book Free Call
                   </button>
+                </div>
+                <p className="mt-6 text-text-secondary leading-relaxed">
+                  Let's talk honestly about where you are and whether this work is right for you. We'll discuss your current situation, my approach, and whether we're energetically aligned. No pressure, no pitch.
+                </p>
+              </div>
+
+              {/* Single Session */}
+              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
+                  <div className="space-y-2">
+                    <h3 className="text-3xl font-serif text-text-heading">Single Integration Session</h3>
+                    <p className="text-xl text-accent-gold font-medium">€180</p>
+                    <p className="text-text-secondary">90 minutes • Online or in-person</p>
+                  </div>
+                  <button
+                    onClick={() => scrollToSection('contact')}
+                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap"
+                  >
+                    Book Session
+                  </button>
+                </div>
+                <div className="space-y-4">
+                  <p className="font-medium text-text-heading">Best For:</p>
+                  <ul className="grid md:grid-cols-2 gap-2 text-text-secondary">
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Integrating a recent medicine journey</li>
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Processing a specific life transition</li>
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Energy healing for a particular block</li>
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Trying out the work before committing</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* 3-Month Mentorship */}
+              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
+                  <div className="space-y-2">
+                    <h3 className="text-3xl font-serif text-text-heading">3-Month Mentorship Container</h3>
+                    <p className="text-xl text-accent-gold font-medium">€1,800 <span className="text-base text-text-secondary font-normal">(€150/session)</span></p>
+                    <p className="text-text-secondary">12 sessions • Payment plans available</p>
+                  </div>
+                  <button
+                    onClick={() => scrollToSection('contact')}
+                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap"
+                  >
+                    Apply for Mentorship
+                  </button>
+                </div>
+                <div className="space-y-4">
+                  <p className="font-medium text-text-heading">Best For:</p>
+                  <ul className="grid md:grid-cols-2 gap-2 text-text-secondary">
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Deep transformational work that requires time</li>
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Ongoing support through major life transition</li>
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Clearing family patterns and ancestral trauma</li>
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Embodying your purpose and authentic expression</li>
+                  </ul>
+                  <p className="font-medium text-text-heading mt-4">What's Included:</p>
+                  <ul className="space-y-2 text-text-secondary">
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>12x 90-minute sessions (weekly or bi-weekly)</li>
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Voice message support between sessions</li>
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Personalized practices and integration tools</li>
+                  </ul>
+                  <p className="text-text-secondary/80 italic mt-4">
+                    This is the container where real change happens. Not just insight—embodiment.
+                  </p>
+                </div>
+              </div>
+
+              {/* Bufo Ceremony */}
+              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl border border-accent-terracotta/20">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
+                  <div className="space-y-2">
+                    <h3 className="text-3xl font-serif text-text-heading">Bufo Alvarius Ceremony</h3>
+                    <p className="text-xl text-accent-gold font-medium">€2,500</p>
+                    <p className="text-text-secondary">Full day + preparation & integration</p>
+                  </div>
+                  <button
+                    onClick={() => scrollToSection('contact')}
+                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap"
+                  >
+                    Apply for Screening
+                  </button>
+                </div>
+                <div className="space-y-4">
+                  <p className="text-text-secondary leading-relaxed">
+                    Sacred 5-MeO-DMT medicine facilitated in the tradition taught to me by Seri tribe elders. This is ego death. Divine remembrance. The void. It's not recreational—it's one of the most powerful medicines on Earth.
+                  </p>
+                  <p className="font-medium text-text-heading">What's Included:</p>
+                  <ul className="space-y-2 text-text-secondary">
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Medical & psychological screening (required)</li>
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>2 preparation sessions (set intention, assess readiness)</li>
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Ceremony in sacred space with full support</li>
+                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>3 integration sessions to anchor the experience</li>
+                  </ul>
+                  <div className="mt-6 p-4 bg-warm-white rounded-xl">
+                    <p className="font-medium text-text-heading mb-2">Who Should NOT Participate:</p>
+                    <ul className="grid md:grid-cols-2 gap-2 text-sm text-text-secondary">
+                      <li className="flex items-start gap-2"><span className="text-text-secondary/60">✗</span>Heart conditions, high blood pressure</li>
+                      <li className="flex items-start gap-2"><span className="text-text-secondary/60">✗</span>Currently on SSRIs, MAOIs, or psychiatric meds</li>
+                      <li className="flex items-start gap-2"><span className="text-text-secondary/60">✗</span>History of psychosis, schizophrenia, bipolar</li>
+                      <li className="flex items-start gap-2"><span className="text-text-secondary/60">✗</span>Pregnancy</li>
+                    </ul>
+                  </div>
+                  <p className="text-sm text-text-secondary/80">
+                    <strong>Location:</strong> Mazunte, Mexico (ceremony must be in-person)<br/>
+                    <strong>Safety Record:</strong> 50+ ceremonies facilitated with full preparation and integration. Every person is screened. No exceptions.
+                  </p>
+                </div>
+              </div>
+
+              {/* Sacred Circles */}
+              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
+                  <div className="space-y-2">
+                    <h3 className="text-3xl font-serif text-text-heading">Sacred Circles</h3>
+                    <p className="text-xl text-accent-gold font-medium">€60-120 <span className="text-base text-text-secondary font-normal">per session</span></p>
+                    <p className="text-text-secondary">Monthly group containers</p>
+                  </div>
+                  <button
+                    onClick={() => scrollToSection('contact')}
+                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap"
+                  >
+                    Join Waiting List
+                  </button>
+                </div>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-text-heading">Men's Circle</h4>
+                    <p className="text-sm text-text-secondary">Barcelona • First Sunday monthly</p>
+                    <p className="text-sm text-text-secondary">Shadow work, vulnerability, healthy masculine</p>
+                    <p className="text-accent-gold font-medium">€60</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-text-heading">Women's Leadership</h4>
+                    <p className="text-sm text-text-secondary">Online • Third Thursday monthly</p>
+                    <p className="text-sm text-text-secondary">Stepping into power and purpose</p>
+                    <p className="text-accent-gold font-medium">€80</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-text-heading">Creative Activators</h4>
+                    <p className="text-sm text-text-secondary">Mazunte • Quarterly intensive</p>
+                    <p className="text-sm text-text-secondary">For healers, artists, visionaries</p>
+                    <p className="text-accent-gold font-medium">€120</p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Investment Philosophy */}
-            <div className="mt-20 max-w-3xl mx-auto text-center space-y-6">
+            <div className="mt-16 max-w-3xl mx-auto text-center space-y-4">
               <p className="text-lg text-text-secondary leading-relaxed">
-                I believe this work should be accessible. All offerings include sliding scale options.
-                If you're genuinely called to this work but cost is a barrier, reach out.
+                I believe this work should be accessible. Sliding scale and payment plans available for those who need it.
               </p>
               <p className="text-text-secondary/80 italic">
-                Money is energy. I trust you to know what's right for you.
+                If you're genuinely called to this work but cost is a barrier, reach out. Let's talk.
               </p>
             </div>
           </div>
@@ -578,7 +797,9 @@ function LandingPage() {
                   <p className="text-2xl md:text-3xl font-serif text-text-heading leading-relaxed mb-6 italic">
                     "{testimonial.quote}"
                   </p>
-                  <p className="text-accent-gold text-lg">— {testimonial.name}</p>
+                  <p className="text-accent-gold text-lg">
+                    — {testimonial.name} <span className="text-text-secondary/70 text-sm font-normal">| {testimonial.workType}</span>
+                  </p>
                 </div>
               ))}
             </div>
@@ -594,8 +815,8 @@ function LandingPage() {
               <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-6">
                 Free Integration Tools
               </h2>
-              <p className="text-xl text-text-secondary leading-relaxed">
-                Resources for your journey
+              <p className="text-xl text-text-secondary leading-relaxed max-w-2xl mx-auto">
+                I believe integration wisdom should be accessible to everyone. These guides are yours—no email required.
               </p>
             </div>
 
@@ -627,19 +848,27 @@ function LandingPage() {
               ))}
             </div>
 
-            <p className="text-center text-text-secondary italic text-sm">
-              All resources are freely available for download. May they serve your journey.
-            </p>
+            <div className="text-center space-y-4">
+              <a
+                href="/resources"
+                className="inline-flex items-center text-accent-gold hover:text-accent-terracotta transition-colors font-medium"
+              >
+                View all 14 free resources →
+              </a>
+              <p className="text-text-secondary/70 italic text-sm">
+                No email required. All guides freely available.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Newsletter Section - Inner Circle */}
+      {/* Ready to Begin CTA Section */}
       <div className="relative py-24">
         <div className="absolute inset-0">
           <img
             src="/images/homepage/inner-circle.jpg"
-            alt="Join the Inner Circle"
+            alt="Ready to begin your journey"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/40 via-warm-peach/50 to-accent-coral/40"></div>
@@ -648,50 +877,20 @@ function LandingPage() {
           <div className="max-w-2xl mx-auto text-center">
             <div className="text-4xl mb-8 text-accent-gold/60 animate-breathe">⊹</div>
             <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-6">
-              Join the Inner Circle
+              Ready to Begin?
             </h2>
-            <p className="text-lg text-text-secondary mb-4 font-light">
-              Receive transmissions, integration practices, and soul medicine
+            <p className="text-lg text-text-secondary mb-8 font-light max-w-xl mx-auto">
+              If something on this page resonated, let's talk. A free discovery call is the first step—no pressure, no pitch.
             </p>
-            <p className="text-sm text-text-secondary/80 mb-12 italic">
-              Sacred transmissions 2x monthly
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="px-10 py-4 bg-accent-gold text-warm-white rounded-full font-medium text-lg hover:bg-accent-terracotta transition-colors shadow-lg"
+            >
+              Book Your Free Discovery Call
+            </button>
+            <p className="text-sm text-text-secondary/70 mt-6 italic">
+              30 minutes • Honest conversation • See if we're aligned
             </p>
-
-            {/* Newsletter Form */}
-            {newsletterStatus === 'success' ? (
-              <div className="max-w-lg mx-auto text-center bg-warm-white/90 backdrop-blur-md border border-accent-gold/30 rounded-2xl p-6">
-                <div className="text-3xl text-accent-gold mb-3">✓</div>
-                <h3 className="text-xl font-serif text-text-heading mb-2">
-                  Welcome to the Circle
-                </h3>
-                <p className="text-sm text-text-secondary">
-                  Check your email to confirm your subscription
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-                <input
-                  type="email"
-                  value={newsletterEmail}
-                  onChange={(e) => setNewsletterEmail(e.target.value)}
-                  placeholder="Your email portal"
-                  required
-                  className="flex-1 px-6 py-4 bg-warm-white/80 border border-text-primary/20 rounded-full text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-gold/50 transition-colors"
-                />
-                <button
-                  type="submit"
-                  disabled={newsletterStatus === 'loading'}
-                  className="px-8 py-4 bg-accent-gold text-warm-white rounded-full font-medium hover:bg-accent-terracotta transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {newsletterStatus === 'loading' ? 'Subscribing...' : 'Enter the Mystery'}
-                </button>
-              </form>
-            )}
-            {newsletterStatus === 'error' && (
-              <p className="text-center text-accent-terracotta text-sm mt-4">
-                Something went wrong. Please try again.
-              </p>
-            )}
           </div>
         </div>
       </div>
@@ -701,7 +900,7 @@ function LandingPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-serif text-text-heading text-center mb-20">
-              Questions You Might Have
+              Questions You Probably Have
             </h2>
 
             <div className="space-y-10">
@@ -710,9 +909,7 @@ function LandingPage() {
                   How is this different from therapy or coaching?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  This work goes deeper—into the soul, the body, the energy field. We're not just healing wounds or
-                  achieving goals. We're remembering who you are beyond all the conditioning. It's more shamanic than
-                  clinical, more mystical than methodical.
+                  Therapy works with your mind and behavior. This work goes deeper—into the body, the energy field, the soul, the family system. We're not just healing wounds or managing symptoms. We're clearing patterns at their root and remembering who you are beyond all conditioning. Think: shamanic meets therapeutic, but grounded in practical integration.
                 </p>
               </div>
 
@@ -721,28 +918,64 @@ function LandingPage() {
                   Do I need experience with plant medicine?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  No. Many people come for energy healing, family constellations, or mentorship without ever touching
-                  medicine. The medicine is just one tool. What matters is your readiness to do deep work.
+                  No. About 60% of my clients have never touched medicine. Many come for family constellations, energy healing, or mentorship work. The medicine ceremonies are just one tool. What matters is your readiness to do deep work.
                 </p>
               </div>
 
               <div className="border-b border-text-primary/10 pb-8">
                 <h3 className="text-2xl font-serif text-text-heading mb-4">
-                  Where are you based?
+                  Is the Bufo ceremony safe?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  I split my time between Barcelona (Spain) and Mazunte (Mexico). I offer both in-person and online sessions.
-                  Medicine ceremonies are always in-person. Energy healing and mentorship work beautifully online.
+                  When properly facilitated with screening and preparation—yes. I've learned from indigenous elders and facilitated 50+ ceremonies safely. Every participant goes through medical screening, psychological assessment, 2 preparation sessions, ceremony with full support, and 3 integration sessions. However, this medicine is contraindicated with certain medications and conditions. I never bypass safety protocols.
+                </p>
+              </div>
+
+              <div className="border-b border-text-primary/10 pb-8">
+                <h3 className="text-2xl font-serif text-text-heading mb-4">
+                  How do I know if you're the right guide?
+                </h3>
+                <p className="text-text-secondary leading-relaxed">
+                  You'll feel it. If you've read this far and something resonates—that's your signal. Book the discovery call. We'll talk openly. There's no pressure, no pitch. If I'm not the right person, I'll tell you honestly and point you toward someone who is. Part of sovereignty is knowing when something isn't your medicine.
+                </p>
+              </div>
+
+              <div className="border-b border-text-primary/10 pb-8">
+                <h3 className="text-2xl font-serif text-text-heading mb-4">
+                  Can you work with people outside Spain/Mexico?
+                </h3>
+                <p className="text-text-secondary leading-relaxed">
+                  Yes. Energy healing, integration sessions, and mentorship work beautifully online. I work with clients globally via video. Medicine ceremonies must be in-person in Mazunte, Mexico.
+                </p>
+              </div>
+
+              <div className="border-b border-text-primary/10 pb-8">
+                <h3 className="text-2xl font-serif text-text-heading mb-4">
+                  What if I'm skeptical about "energy work"?
+                </h3>
+                <p className="text-text-secondary leading-relaxed">
+                  Perfect. You don't need to believe anything. We work with what you can feel in your body—sensation, breath, emotion. Whether you call it "energy" or "nervous system regulation" doesn't matter. The experience is the same. Skepticism is healthy. Blind belief isn't required.
+                </p>
+              </div>
+
+              <div className="border-b border-text-primary/10 pb-8">
+                <h3 className="text-2xl font-serif text-text-heading mb-4">
+                  Do you offer payment plans?
+                </h3>
+                <p className="text-text-secondary leading-relaxed">
+                  Yes, for 3-month mentorship and ceremonies. We can discuss during the discovery call. I believe this work should be accessible—if you're genuinely called but cost is a barrier, reach out.
                 </p>
               </div>
 
               <div className="pb-8">
                 <h3 className="text-2xl font-serif text-text-heading mb-4">
-                  How do I know if this is right for me?
+                  What's your cancellation policy?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  You'll know. If you've read this far and something inside you says "yes"—that's your signal.
-                  Book a discovery call. We'll talk. There's no pressure, no pitch. Just an honest conversation.
+                  <strong>Discovery call:</strong> Cancel anytime, no charge.<br/>
+                  <strong>Single sessions:</strong> 48-hour cancellation notice for full refund.<br/>
+                  <strong>Mentorship containers:</strong> Non-refundable after first session, but sessions can be rescheduled.<br/>
+                  <strong>Medicine ceremonies:</strong> 50% deposit required. Full refund if you don't pass medical screening. Otherwise deposits are non-refundable due to preparation involved.
                 </p>
               </div>
             </div>
@@ -951,6 +1184,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/links" element={<LinksPage />} />
+        <Route path="/resources" element={<ResourcesPage />} />
         <Route path="/event/:id" element={<EventRoute />} />
         <Route path="/place/:id" element={<PlaceRoute />} />
         {/* Catch all other routes and redirect to home */}
