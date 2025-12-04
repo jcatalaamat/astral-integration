@@ -103,13 +103,6 @@ export default function Navigation() {
               Services
             </Link>
             <Link
-              to="/retreats"
-              className={getLinkClasses('/retreats')}
-              aria-current={isActiveLink('/retreats') ? 'page' : undefined}
-            >
-              Retreats
-            </Link>
-            <Link
               to="/collaborations"
               className={getLinkClasses('/collaborations')}
               aria-current={isActiveLink('/collaborations') ? 'page' : undefined}
@@ -173,14 +166,6 @@ export default function Navigation() {
               role="menuitem"
             >
               Services
-            </Link>
-            <Link
-              to="/retreats"
-              className={getMobileLinkClasses('/retreats')}
-              aria-current={isActiveLink('/retreats') ? 'page' : undefined}
-              role="menuitem"
-            >
-              Retreats
             </Link>
             <Link
               to="/collaborations"

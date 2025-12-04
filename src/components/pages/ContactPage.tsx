@@ -374,7 +374,6 @@ export default function ContactPage() {
                       <option value="1:1 Work">1:1 Deep Work</option>
                       <option value="Sacred Circles">Sacred Circles</option>
                       <option value="Medicine Work">Medicine Journeys</option>
-                      <option value="Retreats">Retreats</option>
                       <option value="Trainings">Facilitator Training</option>
                       <option value="Collaborations">Collaborations</option>
                       <option value="Other">Other / Just Connecting</option>

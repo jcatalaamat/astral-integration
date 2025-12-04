@@ -26,9 +26,6 @@ export default function Footer() {
                 <Link to="/services" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
                   Services
                 </Link>
-                <Link to="/retreats" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
-                  Retreats
-                </Link>
                 <Link to="/collaborations" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
                   Collaborations
                 </Link>
