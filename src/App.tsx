@@ -670,41 +670,44 @@ function LandingPage() {
                 </div>
               </div>
 
-              {/* Sacred Circles */}
+              {/* Sacred Circles - Coming Soon */}
               <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
                   <div className="space-y-2">
+                    <div className="text-accent-gold/70 text-sm font-medium uppercase tracking-wider">Coming 2026</div>
                     <h3 className="text-3xl font-serif text-text-heading">Sacred Circles</h3>
-                    <p className="text-xl text-accent-gold font-medium">€60-120 <span className="text-base text-text-secondary font-normal">per session</span></p>
-                    <p className="text-text-secondary">Monthly group containers</p>
+                    <p className="text-text-secondary">Group containers for deeper collective work</p>
                   </div>
                   <button
                     onClick={() => scrollToSection('contact')}
                     className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap"
                   >
-                    Join Waiting List
+                    Express Interest
                   </button>
                 </div>
-                <div className="grid md:grid-cols-3 gap-6">
+                <p className="text-text-secondary leading-relaxed mb-6">
+                  I'm gathering circles in Barcelona, online, and Mazunte for men's work, women's leadership, and creative activation. If you're interested in group containers, let me know.
+                </p>
+                <div className="grid md:grid-cols-3 gap-6 opacity-80">
                   <div className="space-y-2">
                     <h4 className="font-medium text-text-heading">Men's Circle</h4>
-                    <p className="text-sm text-text-secondary">Barcelona • First Sunday monthly</p>
+                    <p className="text-sm text-text-secondary">Barcelona</p>
                     <p className="text-sm text-text-secondary">Shadow work, vulnerability, healthy masculine</p>
-                    <p className="text-accent-gold font-medium">€60</p>
                   </div>
                   <div className="space-y-2">
                     <h4 className="font-medium text-text-heading">Women's Leadership</h4>
-                    <p className="text-sm text-text-secondary">Online • Third Thursday monthly</p>
+                    <p className="text-sm text-text-secondary">Online</p>
                     <p className="text-sm text-text-secondary">Stepping into power and purpose</p>
-                    <p className="text-accent-gold font-medium">€80</p>
                   </div>
                   <div className="space-y-2">
                     <h4 className="font-medium text-text-heading">Creative Activators</h4>
-                    <p className="text-sm text-text-secondary">Mazunte • Quarterly intensive</p>
+                    <p className="text-sm text-text-secondary">Mazunte</p>
                     <p className="text-sm text-text-secondary">For healers, artists, visionaries</p>
-                    <p className="text-accent-gold font-medium">€120</p>
                   </div>
                 </div>
+                <p className="text-sm text-text-secondary/70 italic mt-6">
+                  Mention your interest in the discovery call or contact form—I'll reach out when circles begin.
+                </p>
               </div>
             </div>
 
