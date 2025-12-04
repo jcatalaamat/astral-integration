@@ -32,9 +32,6 @@ export default function Footer() {
                 <Link to="/collaborations" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
                   Collaborations
                 </Link>
-                <Link to="/inner-ascend" className="text-text-secondary hover:text-accent-gold transition-colors text-sm">
-                  Community
-                </Link>
               </nav>
             </div>
 

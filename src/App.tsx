@@ -6,7 +6,6 @@ import SupportPage from './components/SupportPage';
 import PrivacyPage from './components/PrivacyPage';
 import AboutPageNew from './components/pages/AboutPageNew';
 import ServicesPage from './components/pages/ServicesPage';
-import InnerAscendPage from './components/pages/InnerAscendPage';
 import RetreatsPage from './components/pages/RetreatsPage';
 import ResourcesPage from './components/pages/ResourcesPage';
 import ContactPage from './components/pages/ContactPage';
@@ -764,7 +763,6 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<AboutPageNew />} />
         <Route path="/services" element={<ServicesPage />} />
-        <Route path="/inner-ascend" element={<InnerAscendPage />} />
         <Route path="/retreats" element={<RetreatsPage />} />
         <Route path="/collaborations" element={<CollaborationsPage />} />
         <Route path="/resources" element={<ResourcesPage />} />

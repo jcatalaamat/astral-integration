@@ -93,25 +93,6 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 'inner-ascend',
-    name: 'Inner Ascend',
-    category: 'tech',
-    icon: '🔮',
-    tagline: '90-Day Spiritual Transformation App',
-    description: 'Shadow work, meditation, and journaling practices with 16 transformation modules',
-    price: '$17/month',
-    status: 'Coming Soon',
-    features: [],
-    cta: {
-      primary: 'Join Waitlist',
-      url: 'https://inner-ascend.com/'
-    },
-    cta2: {
-      text: 'Learn More',
-      url: 'https://inner-ascend.com/'
-    }
-  },
-  {
     id: 'mazunte-connect',
     name: 'Mazunte Connect',
     category: 'community',

@@ -103,13 +103,6 @@ export default function Navigation() {
               Services
             </Link>
             <Link
-              to="/inner-ascend"
-              className={getLinkClasses('/inner-ascend')}
-              aria-current={isActiveLink('/inner-ascend') ? 'page' : undefined}
-            >
-              Community
-            </Link>
-            <Link
               to="/retreats"
               className={getLinkClasses('/retreats')}
               aria-current={isActiveLink('/retreats') ? 'page' : undefined}
@@ -180,14 +173,6 @@ export default function Navigation() {
               role="menuitem"
             >
               Services
-            </Link>
-            <Link
-              to="/inner-ascend"
-              className={getMobileLinkClasses('/inner-ascend')}
-              aria-current={isActiveLink('/inner-ascend') ? 'page' : undefined}
-              role="menuitem"
-            >
-              Community
             </Link>
             <Link
               to="/retreats"

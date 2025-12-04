@@ -88,15 +88,6 @@ export default function SupportPage() {
                     </p>
                   </div>
 
-                  <div>
-                    <h3 className="text-lg font-medium text-sacred-gold mb-2">
-                      What is Inner Ascend?
-                    </h3>
-                    <p className="text-sacred-moon/70">
-                      Inner Ascend is our community for conscious entrepreneurs, healers, and visionaries.
-                      Learn more on our <Link to="/inner-ascend" className="text-sacred-gold hover:underline">Community page</Link>.
-                    </p>
-                  </div>
                 </div>
               </div>
 

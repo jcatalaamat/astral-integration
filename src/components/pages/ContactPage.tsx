@@ -375,7 +375,6 @@ export default function ContactPage() {
                       <option value="Sacred Circles">Sacred Circles</option>
                       <option value="Medicine Work">Medicine Journeys</option>
                       <option value="Retreats">Retreats</option>
-                      <option value="Inner Ascend">Inner Ascend Community</option>
                       <option value="Trainings">Facilitator Training</option>
                       <option value="Collaborations">Collaborations</option>
                       <option value="Other">Other / Just Connecting</option>
