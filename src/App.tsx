@@ -607,31 +607,6 @@ function LandingPage() {
                 </p>
               </div>
 
-              {/* 3-Month Mentorship */}
-              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
-                  <div className="space-y-1">
-                    <h3 className="text-2xl font-serif text-text-heading">3-Month Mentorship Container</h3>
-                    <p className="text-xl text-accent-gold font-medium">€800-1,200</p>
-                    <p className="text-text-secondary/80">12 sessions • Payment plans available</p>
-                  </div>
-                  <a
-                    href="https://calendly.com/astral-integration/mentorship-intake-call-30-min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
-                  >
-                    Apply
-                  </a>
-                </div>
-                <p className="text-text-secondary leading-relaxed mb-4">
-                  This is the container where real transformation happens.
-                </p>
-                <p className="text-text-secondary/80 text-sm leading-relaxed">
-                  Includes: 12x 60-minute sessions • Voice message support • Personalized practices • Integration tools
-                </p>
-              </div>
-
               {/* Bufo Alvarius Ceremony */}
               <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl border border-accent-terracotta/20">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
