@@ -135,9 +135,12 @@ ${formData.q11_additional}
               <p className="text-xl text-text-secondary mb-4">
                 Your screening has been received.
               </p>
-              <p className="text-text-secondary/80 leading-relaxed mb-8">
+              <p className="text-text-secondary/80 leading-relaxed mb-4">
                 I'll review your answers carefully and get back to you within 48 hours.
                 This is a sacred process, and I take the time to feel into each application with presence and care.
+              </p>
+              <p className="text-text-secondary/70 leading-relaxed mb-8">
+                If we move forward, I'll send you a consent and liability form to complete before we schedule preparation sessions.
               </p>
               <p className="text-text-secondary/60 italic">
                 In the meantime, trust your journey.

@@ -7,6 +7,7 @@ import PlacePreview from './components/PlacePreview';
 import LinksPage from './components/pages/LinksPage';
 import ResourcesPage from './components/pages/ResourcesPage';
 import BufoScreeningPage from './components/pages/BufoScreeningPage';
+import BufoConsentPage from './components/pages/BufoConsentPage';
 import BookingPage from './components/pages/BookingPage';
 import ScrollToTop from './components/ScrollToTop';
 import Navigation from './components/Navigation';
@@ -1092,6 +1093,7 @@ function App() {
         <Route path="/links" element={<LinksPage />} />
         <Route path="/resources" element={<ResourcesPage />} />
         <Route path="/bufo-screening" element={<BufoScreeningPage />} />
+        <Route path="/bufo-consent" element={<BufoConsentPage />} />
         <Route path="/book" element={<BookingPage />} />
         <Route path="/event/:id" element={<EventRoute />} />
         <Route path="/place/:id" element={<PlaceRoute />} />
