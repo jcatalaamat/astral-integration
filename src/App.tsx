@@ -155,8 +155,15 @@ function LandingPage() {
         height="extra-large"
         image="/images/homepage/hero.jpg"
       >
-        <p className="text-text-secondary/80 font-light max-w-2xl mx-auto mb-8 text-lg">
-          For those navigating awakening, transition, or the space between who you were and who you're becoming.
+        <p className="text-xl md:text-2xl text-text-secondary/90 font-serif italic max-w-2xl mx-auto mb-4">
+          For those crossing thresholds —
+        </p>
+        <p className="text-text-secondary/70 font-light max-w-2xl mx-auto mb-4 text-lg leading-relaxed">
+          awakening, dissolving, remembering who they truly are.
+        </p>
+        <p className="text-text-secondary/60 font-light max-w-xl mx-auto mb-8 text-base leading-relaxed">
+          This work is for the moments when life asks you to shed a skin,<br className="hidden md:block" />
+          step into truth, or meet yourself more deeply than ever before.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
@@ -177,85 +184,89 @@ function LandingPage() {
         </p>
       </WarmHero>
 
-      {/* You Might Be Ready If - Qualification Section */}
+      {/* You May Feel Called - Qualification Section */}
       <div className="bg-warm-cream py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <div className="text-3xl text-accent-gold/40 mb-6">⊛</div>
               <h2 className="text-3xl md:text-4xl font-serif text-text-heading leading-relaxed">
-                You Might Be Ready If:
+                You may feel called to this work if...
               </h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-x-16 gap-y-8 mb-16">
-              {/* Ready If */}
+              {/* Called If */}
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
                   <p className="text-text-secondary leading-relaxed">
-                    You've had a powerful medicine experience and don't know how to integrate it into your daily life
+                    A medicine journey opened something you can't integrate alone
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
                   <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
                   <p className="text-text-secondary leading-relaxed">
-                    You're navigating a major transition: relationship ending, career shift, loss, or spiritual awakening
+                    You're navigating a threshold — a breakup, identity shift, awakening, grief
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
                   <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
                   <p className="text-text-secondary leading-relaxed">
-                    You've done therapy, read the books, tried the practices—and something still feels incomplete
+                    Therapy, books, and practices helped, but didn't touch the deeper layers
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
                   <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
                   <p className="text-text-secondary leading-relaxed">
-                    You're successful on paper but empty inside, and the mask is getting heavier
+                    You feel the old version of you dissolving, and the new one hasn't fully arrived
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
                   <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
                   <p className="text-text-secondary leading-relaxed">
-                    You're ready to stop seeking and start embodying
+                    You're tired of seeking and ready to start embodying
                   </p>
                 </div>
               </div>
 
               {/* Not For You If */}
               <div className="space-y-6">
-                <h3 className="text-xl font-serif text-text-heading mb-4">This Work Is NOT For You If:</h3>
+                <h3 className="text-xl font-serif text-text-heading/70 mb-4">This may not be for you if...</h3>
                 <div className="flex items-start gap-4">
-                  <span className="text-text-secondary/60 text-xl flex-shrink-0">✗</span>
-                  <p className="text-text-secondary/80 leading-relaxed">
-                    You're looking for a quick fix or someone to do the work for you
+                  <span className="text-text-secondary/50 text-xl flex-shrink-0">✗</span>
+                  <p className="text-text-secondary/70 leading-relaxed">
+                    You want relief without transformation
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="text-text-secondary/60 text-xl flex-shrink-0">✗</span>
-                  <p className="text-text-secondary/80 leading-relaxed">
-                    You're not ready to face uncomfortable truths
+                  <span className="text-text-secondary/50 text-xl flex-shrink-0">✗</span>
+                  <p className="text-text-secondary/70 leading-relaxed">
+                    You're not ready to meet uncomfortable truths
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="text-text-secondary/60 text-xl flex-shrink-0">✗</span>
-                  <p className="text-text-secondary/80 leading-relaxed">
-                    You want symptom relief without addressing root causes
+                  <span className="text-text-secondary/50 text-xl flex-shrink-0">✗</span>
+                  <p className="text-text-secondary/70 leading-relaxed">
+                    You want someone to "fix" you
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="text-text-secondary/60 text-xl flex-shrink-0">✗</span>
-                  <p className="text-text-secondary/80 leading-relaxed">
-                    You're in acute mental health crisis (I'll help you find appropriate support)
+                  <span className="text-text-secondary/50 text-xl flex-shrink-0">✗</span>
+                  <p className="text-text-secondary/70 leading-relaxed">
+                    You're in acute crisis (I'll help you find appropriate support)
                   </p>
                 </div>
               </div>
             </div>
 
-            <p className="text-center text-text-secondary/80 italic text-lg">
-              You're not broken. You're not lost. You're initiating.
-            </p>
+            <div className="text-center space-y-2">
+              <p className="text-text-heading font-serif text-xl">
+                You're not broken.
+              </p>
+              <p className="text-accent-gold font-serif text-xl italic">
+                You're in initiation.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -270,7 +281,7 @@ function LandingPage() {
                 <div className="aspect-[4/5] relative overflow-hidden rounded-2xl">
                   <img
                     src="/images/homepage/journey-begins.jpg"
-                    alt="Jordi - Astral Integration"
+                    alt="Astral Integration"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -282,68 +293,73 @@ function LandingPage() {
                   <h2 className="text-4xl md:text-5xl font-serif text-text-heading leading-tight mb-8">
                     My Path to This Work
                   </h2>
-                  <p className="text-xl text-text-secondary mb-6">
-                    I'm Jordi, and I've been guiding transformational journeys since 2018.
+                  <p className="text-xl text-text-secondary leading-relaxed">
+                    I'm Astral. I've been guiding transformational journeys since 2018.
                   </p>
                 </div>
 
                 {/* My Background */}
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-serif text-text-heading">My Background</h3>
-                  <div className="space-y-4 text-text-secondary leading-relaxed">
-                    <p>
-                      My path here wasn't linear. I spent years performing, wearing masks, doing what I thought I was supposed to do. Until my body said: <span className="italic text-accent-gold">no more.</span>
-                    </p>
-                    <p>
-                      Plant medicine showed me who I was beyond the story. The void. Pure presence. Love without conditions. But awakening isn't enough—integration is where the real work happens.
-                    </p>
-                  </div>
+                <div className="space-y-4 text-text-secondary leading-relaxed">
+                  <p>
+                    My path wasn't linear. I lived many lives — performer, creator, seeker — until my body finally said <span className="italic text-accent-gold">no more.</span>
+                  </p>
+                  <p>
+                    The unraveling began. And with it came truth.
+                  </p>
+                  <p>
+                    Plant medicine cracked me open. It showed me who I was beyond story, identity, and expectation. But awakening alone isn't enough. Integration is where insight becomes embodiment.
+                  </p>
                 </div>
 
                 {/* My Training */}
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-serif text-text-heading">My Training</h3>
+                  <h3 className="text-lg font-medium text-text-heading/80">My background includes:</h3>
                   <ul className="space-y-2 text-text-secondary">
                     <li className="flex items-start gap-3">
                       <span className="text-accent-gold">•</span>
-                      <span>500+ hours Kundalini & Yoga Teacher Training</span>
+                      <span>500+ hours Kundalini & Yoga teacher training</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent-gold">•</span>
-                      <span>Family Constellations Practitioner</span>
+                      <span>Family Constellations practitioner</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent-gold">•</span>
-                      <span>Access Consciousness Facilitator</span>
+                      <span>Access Consciousness facilitator</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent-gold">•</span>
-                      <span>Psychedelic Integration Specialist</span>
+                      <span>Psychedelic integration specialist</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent-gold">•</span>
-                      <span>Mediumship & energy healing training (Reiki, Theta Healing)</span>
+                      <span>Reiki, Theta Healing & intuitive energy work</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent-gold">•</span>
+                      <span>7+ years guiding deep personal transformation</span>
                     </li>
                   </ul>
                 </div>
 
                 {/* Medicine Work Lineage */}
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-serif text-text-heading">Medicine Work Lineage</h3>
+                  <h3 className="text-lg font-medium text-text-heading/80">Lineage & Medicine Work</h3>
                   <p className="text-text-secondary leading-relaxed">
-                    I've been honored to learn Bufo Alvarius ceremony from elders of the Seri tribe in Mexico. Over 50+ ceremonies facilitated. I've also sat in ayahuasca ceremonies and walked through my own initiations with plant medicines.
+                    I was taught Bufo Alvarius ceremony by Seri tribe elders in Mexico. I've facilitated over 50 ceremonies with deep respect, structure, and devotion.
                   </p>
                 </div>
 
                 {/* Why I Share This */}
                 <div className="space-y-4 border-l-2 border-accent-gold/40 pl-6">
-                  <h3 className="text-xl font-serif text-text-heading">Why I Share This</h3>
+                  <h3 className="text-lg font-medium text-text-heading/80">Why I share this</h3>
                   <p className="text-text-secondary leading-relaxed">
-                    The certifications represent thousands of hours learning to hold space safely. But the real training has been my own breakdowns, ego deaths, and the humility of guiding others through theirs.
+                    The certificates matter — they show training and safety. But the real training came from my own breakdowns, ego deaths, and the humility of walking others through theirs.
                   </p>
-                  <p className="text-text-secondary/80 italic">
-                    I don't lead from above. I walk beside you. Because I know this territory from the inside.
-                  </p>
+                  <div className="space-y-1 mt-4">
+                    <p className="text-text-heading font-serif">I don't lead from above.</p>
+                    <p className="text-accent-gold font-serif italic">I walk beside you.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -364,83 +380,78 @@ function LandingPage() {
         </div>
       </div>
 
-      {/* How We Actually Work - Methods Section */}
+      {/* How This Work Unfolds - Methods Section */}
       <div className="bg-warm-white py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-8">
-                How We Actually Work
+              <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-4">
+                How This Work Actually Unfolds
               </h2>
-              <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-                I blend ancient wisdom with practical integration. Here's what that looks like:
+              <p className="text-lg text-text-secondary/80 max-w-2xl mx-auto leading-relaxed">
+                Each person arrives with different needs. There is no script, no template — only what wants to emerge.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12 mt-16">
-              <div className="space-y-4 p-8 bg-warm-cream/50 rounded-2xl">
-                <h3 className="text-2xl font-serif text-text-heading">Family Constellations</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
+                <h3 className="text-xl font-serif text-text-heading">Family Constellations</h3>
                 <p className="text-text-secondary leading-relaxed">
-                  We map your family system to reveal inherited patterns, ancestral trauma, and blocked energy. This work brings hidden dynamics into awareness so you can finally break free from patterns that aren't even yours.
+                  Revealing hidden dynamics, ancestral wounds, and inherited patterns so you can step into a life that is truly yours.
                 </p>
               </div>
 
-              <div className="space-y-4 p-8 bg-warm-cream/50 rounded-2xl">
-                <h3 className="text-2xl font-serif text-text-heading">Energy Healing & Somatic Work</h3>
+              <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
+                <h3 className="text-xl font-serif text-text-heading">Energy & Somatic Work</h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Using Access Consciousness, Kundalini practices, and intuitive energy work, we release what's stuck in your body. Not just talking about trauma—moving it through and out.
+                  Using Access Consciousness, Kundalini practices, and intuitive energy healing to release what the body is holding.
                 </p>
               </div>
 
-              <div className="space-y-4 p-8 bg-warm-cream/50 rounded-2xl">
-                <h3 className="text-2xl font-serif text-text-heading">Medicine Integration</h3>
+              <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
+                <h3 className="text-xl font-serif text-text-heading">Medicine Integration</h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Whether you've done ayahuasca, Bufo, psilocybin, or other medicines, integration is where insight becomes transformation. We anchor your experiences into your actual life, relationships, and choices.
+                  Ayahuasca, psilocybin, Bufo, LSD, MDMA — insight means nothing without integration. We bridge the ceremonial world into daily life.
                 </p>
               </div>
 
-              <div className="space-y-4 p-8 bg-warm-cream/50 rounded-2xl">
-                <h3 className="text-2xl font-serif text-text-heading">Mentorship & Shadow Work</h3>
+              <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
+                <h3 className="text-xl font-serif text-text-heading">Mentorship & Shadow Work</h3>
                 <p className="text-text-secondary leading-relaxed">
-                  The ongoing container where we work with your patterns, blocks, relationships, and life purpose. This is where the real integration happens—in the day-to-day.
+                  The deeper container where patterns unravel, clarity returns, and new identity forms.
                 </p>
               </div>
             </div>
-
-            <p className="text-center mt-12 text-text-secondary/80 italic">
-              Every session is different because every person arrives with different needs. I follow what wants to emerge, not a script.
-            </p>
           </div>
         </div>
       </div>
 
-      {/* The Journey - What to Actually Expect */}
+      {/* The Journey */}
       <div className="bg-warm-cream py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             {/* Title */}
             <div className="text-center mb-16">
-              <div className="text-4xl text-accent-gold/40 mb-6">⊹</div>
               <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-4">
                 The Journey
               </h2>
-              <p className="text-lg text-text-secondary font-light">
-                What to actually expect when we work together
+              <p className="text-lg text-text-secondary/80 font-light">
+                What transformation actually looks like
               </p>
             </div>
 
-            {/* 4 Phases - Vertical Timeline */}
-            <div className="space-y-8">
+            {/* 4 Phases - Clean Timeline */}
+            <div className="space-y-6">
               {/* Phase 1 */}
               <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
                 <div className="md:col-span-1">
                   <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 1</div>
-                  <h3 className="text-2xl font-serif text-text-heading">Discovery</h3>
-                  <p className="text-sm text-text-secondary/70 mt-1">First 1-2 Sessions</p>
+                  <h3 className="text-xl font-serif text-text-heading">Discovery</h3>
+                  <p className="text-sm text-text-secondary/60 mt-1">1-2 Sessions</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-text-secondary leading-relaxed">
-                    We talk honestly about where you are and what you need. I assess if I'm the right guide for your journey. No pressure, no pitch.
+                    We explore where you are, what's alive in your field, and whether we're aligned. No pressure. No pitch.
                   </p>
                 </div>
               </div>
@@ -449,31 +460,13 @@ function LandingPage() {
               <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
                 <div className="md:col-span-1">
                   <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 2</div>
-                  <h3 className="text-2xl font-serif text-text-heading">Deep Work</h3>
-                  <p className="text-sm text-text-secondary/70 mt-1">Weeks 2-8</p>
+                  <h3 className="text-xl font-serif text-text-heading">Deep Work</h3>
+                  <p className="text-sm text-text-secondary/60 mt-1">Weeks 2-8</p>
                 </div>
                 <div className="md:col-span-3">
-                  <p className="text-text-secondary leading-relaxed mb-4">
-                    This is where we do the heavy lifting:
+                  <p className="text-text-secondary leading-relaxed">
+                    Clearing ancestral and childhood wounds. Constellations or energy work. Processing medicine experiences. Meeting shadow and resistance. Rewriting identity.
                   </p>
-                  <ul className="space-y-2 text-text-secondary">
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent-gold">•</span>
-                      <span>Clear ancestral patterns and childhood wounds</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent-gold">•</span>
-                      <span>Work with family constellations or energy healing</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent-gold">•</span>
-                      <span>Process medicine experiences if relevant</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent-gold">•</span>
-                      <span>Address what's blocking your expression</span>
-                    </li>
-                  </ul>
                 </div>
               </div>
 
@@ -481,27 +474,16 @@ function LandingPage() {
               <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
                 <div className="md:col-span-1">
                   <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 3</div>
-                  <h3 className="text-2xl font-serif text-text-heading">Integration</h3>
-                  <p className="text-sm text-text-secondary/70 mt-1">Months 2-6</p>
+                  <h3 className="text-xl font-serif text-text-heading">Integration</h3>
+                  <p className="text-sm text-text-secondary/60 mt-1">Months 2-6</p>
                 </div>
                 <div className="md:col-span-3">
-                  <p className="text-text-secondary leading-relaxed mb-4">
-                    Insights are just the beginning. We anchor the shifts into your daily life:
+                  <p className="text-text-secondary leading-relaxed mb-2">
+                    Awakening is easy. Integration is the work.
                   </p>
-                  <ul className="space-y-2 text-text-secondary">
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent-gold">•</span>
-                      <span>How you relate to yourself and others</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent-gold">•</span>
-                      <span>How you show up in your work and purpose</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent-gold">•</span>
-                      <span>How you navigate challenges without old patterns</span>
-                    </li>
-                  </ul>
+                  <p className="text-text-secondary/80 leading-relaxed">
+                    This phase anchors your insights into your relationships, purpose, boundaries, and way of being.
+                  </p>
                 </div>
               </div>
 
@@ -509,51 +491,50 @@ function LandingPage() {
               <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
                 <div className="md:col-span-1">
                   <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 4</div>
-                  <h3 className="text-2xl font-serif text-text-heading">Embodiment</h3>
-                  <p className="text-sm text-text-secondary/70 mt-1">Ongoing</p>
+                  <h3 className="text-xl font-serif text-text-heading">Embodiment</h3>
+                  <p className="text-sm text-text-secondary/60 mt-1">Ongoing</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-text-secondary leading-relaxed">
-                    You become the medicine. You hold space for your own process. You step into service and leadership in your own way.
+                    You become the medicine. You hold yourself. Your life begins reflecting your inner work.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Timeline Reality */}
-            <div className="text-center mt-16 p-8 border border-accent-gold/20 rounded-2xl">
-              <p className="text-lg text-text-heading font-serif mb-2">
-                Real transformation takes 3-12 months minimum.
+            <div className="text-center mt-16 space-y-2">
+              <p className="text-text-heading font-serif text-lg">
+                True transformation takes 3-12 months.
               </p>
-              <p className="text-text-secondary">
-                Anyone promising faster is selling you spiritual entertainment.
+              <p className="text-text-secondary/70 italic">
+                Anyone promising faster is selling spiritual entertainment.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Services & Investment Section */}
+      {/* Offerings & Investment Section */}
       <div id="services" className="bg-warm-white py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-20">
+            <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-4">
-                Services & Investment
+                Offerings & Investment
               </h2>
-              <p className="text-lg text-text-secondary">
-                Clear offerings with transparent pricing
+              <p className="text-lg text-text-secondary/80">
+                Clear, honest, transparent.
               </p>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               {/* Free Discovery Call */}
-              <div className="p-8 md:p-10 bg-accent-gold/5 border-2 border-accent-gold/30 rounded-2xl">
+              <div className="p-8 md:p-10 bg-accent-gold/5 border border-accent-gold/20 rounded-2xl">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-                  <div className="space-y-2">
-                    <div className="text-accent-gold text-sm font-medium uppercase tracking-wider">Start Here</div>
-                    <h3 className="text-3xl font-serif text-text-heading">Free Discovery Call</h3>
-                    <p className="text-text-secondary">30 minutes • No cost</p>
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-serif text-text-heading">Free Discovery Call</h3>
+                    <p className="text-text-secondary">30 minutes • €0</p>
                   </div>
                   <button
                     onClick={() => scrollToSection('contact')}
@@ -562,18 +543,18 @@ function LandingPage() {
                     Book Free Call
                   </button>
                 </div>
-                <p className="mt-6 text-text-secondary leading-relaxed">
-                  Let's talk honestly about where you are and whether this work is right for you. We'll discuss your current situation, my approach, and whether we're energetically aligned. No pressure, no pitch.
+                <p className="mt-4 text-text-secondary/80 leading-relaxed">
+                  A gentle space to understand your needs and see if we're a good fit. No convincing. No pushing.
                 </p>
               </div>
 
               {/* Single Session */}
               <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
-                  <div className="space-y-2">
-                    <h3 className="text-3xl font-serif text-text-heading">Single Integration Session</h3>
-                    <p className="text-xl text-accent-gold font-medium">€180</p>
-                    <p className="text-text-secondary">90 minutes • Online or in-person</p>
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-serif text-text-heading">Single Integration Session</h3>
+                    <p className="text-xl text-accent-gold font-medium">€80-150</p>
+                    <p className="text-text-secondary/80">60 minutes • Online or in-person</p>
                   </div>
                   <button
                     onClick={() => scrollToSection('contact')}
@@ -582,59 +563,41 @@ function LandingPage() {
                     Book Session
                   </button>
                 </div>
-                <div className="space-y-4">
-                  <p className="font-medium text-text-heading">Best For:</p>
-                  <ul className="grid md:grid-cols-2 gap-2 text-text-secondary">
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Integrating a recent medicine journey</li>
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Processing a specific life transition</li>
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Energy healing for a particular block</li>
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Trying out the work before committing</li>
-                  </ul>
-                </div>
+                <p className="text-text-secondary/80 leading-relaxed">
+                  Perfect for processing a recent ceremony, navigating a transition, energy clearing, or exploring if deeper work is right for you.
+                </p>
               </div>
 
               {/* 3-Month Mentorship */}
               <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
-                  <div className="space-y-2">
-                    <h3 className="text-3xl font-serif text-text-heading">3-Month Mentorship Container</h3>
-                    <p className="text-xl text-accent-gold font-medium">€1,800 <span className="text-base text-text-secondary font-normal">(€150/session)</span></p>
-                    <p className="text-text-secondary">12 sessions • Payment plans available</p>
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-serif text-text-heading">3-Month Mentorship Container</h3>
+                    <p className="text-xl text-accent-gold font-medium">€800-1,200</p>
+                    <p className="text-text-secondary/80">12 sessions • Payment plans available</p>
                   </div>
                   <button
                     onClick={() => scrollToSection('contact')}
                     className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap"
                   >
-                    Apply for Mentorship
+                    Apply
                   </button>
                 </div>
-                <div className="space-y-4">
-                  <p className="font-medium text-text-heading">Best For:</p>
-                  <ul className="grid md:grid-cols-2 gap-2 text-text-secondary">
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Deep transformational work that requires time</li>
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Ongoing support through major life transition</li>
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Clearing family patterns and ancestral trauma</li>
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Embodying your purpose and authentic expression</li>
-                  </ul>
-                  <p className="font-medium text-text-heading mt-4">What's Included:</p>
-                  <ul className="space-y-2 text-text-secondary">
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>12x 90-minute sessions (weekly or bi-weekly)</li>
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Voice message support between sessions</li>
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Personalized practices and integration tools</li>
-                  </ul>
-                  <p className="text-text-secondary/80 italic mt-4">
-                    This is the container where real change happens. Not just insight—embodiment.
-                  </p>
-                </div>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  This is the container where real transformation happens.
+                </p>
+                <p className="text-text-secondary/80 text-sm leading-relaxed">
+                  Includes: 12x 60-minute sessions • Voice message support • Personalized practices • Integration tools
+                </p>
               </div>
 
-              {/* Bufo Ceremony */}
+              {/* Bufo Alvarius Ceremony */}
               <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl border border-accent-terracotta/20">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
-                  <div className="space-y-2">
-                    <h3 className="text-3xl font-serif text-text-heading">Bufo Alvarius Ceremony</h3>
-                    <p className="text-xl text-accent-gold font-medium">€2,500</p>
-                    <p className="text-text-secondary">Full day + preparation & integration</p>
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-serif text-text-heading">Bufo Alvarius Journey</h3>
+                    <p className="text-xl text-accent-gold font-medium">€550-800</p>
+                    <p className="text-text-secondary/80">Full package • Screening + Prep + Ceremony + Integration</p>
                   </div>
                   <button
                     onClick={() => scrollToSection('contact')}
@@ -645,142 +608,67 @@ function LandingPage() {
                 </div>
                 <div className="space-y-4">
                   <p className="text-text-secondary leading-relaxed">
-                    Sacred 5-MeO-DMT medicine facilitated in the tradition taught to me by Seri tribe elders. This is ego death. Divine remembrance. The void. It's not recreational—it's one of the most powerful medicines on Earth.
+                    Sacred 5-MeO-DMT medicine in the Seri lineage. This is ego dissolution. Divine remembrance. Not recreational. Not casual.
                   </p>
-                  <p className="font-medium text-text-heading">What's Included:</p>
-                  <ul className="space-y-2 text-text-secondary">
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Medical & psychological screening (required)</li>
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>2 preparation sessions (set intention, assess readiness)</li>
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>Ceremony in sacred space with full support</li>
-                    <li className="flex items-start gap-2"><span className="text-accent-gold">•</span>3 integration sessions to anchor the experience</li>
-                  </ul>
-                  <div className="mt-6 p-4 bg-warm-white rounded-xl">
-                    <p className="font-medium text-text-heading mb-2">Who Should NOT Participate:</p>
-                    <ul className="grid md:grid-cols-2 gap-2 text-sm text-text-secondary">
-                      <li className="flex items-start gap-2"><span className="text-text-secondary/60">✗</span>Heart conditions, high blood pressure</li>
-                      <li className="flex items-start gap-2"><span className="text-text-secondary/60">✗</span>Currently on SSRIs, MAOIs, or psychiatric meds</li>
-                      <li className="flex items-start gap-2"><span className="text-text-secondary/60">✗</span>History of psychosis, schizophrenia, bipolar</li>
-                      <li className="flex items-start gap-2"><span className="text-text-secondary/60">✗</span>Pregnancy</li>
-                    </ul>
-                  </div>
-                  <p className="text-sm text-text-secondary/80">
-                    <strong>Location:</strong> Mazunte, Mexico (ceremony must be in-person)<br/>
-                    <strong>Safety Record:</strong> 50+ ceremonies facilitated with full preparation and integration. Every person is screened. No exceptions.
+
+                  <p className="text-text-secondary/80 text-sm leading-relaxed">
+                    Includes: Medical & psychological screening • 1 preparation session • Ceremony in sacred space • 1 integration session
+                  </p>
+
+                  <p className="text-text-secondary/70 text-sm">
+                    <strong>Location:</strong> Barcelona, Madrid, London, Mexico & more — I travel to serve<br/>
+                    <strong>Safety:</strong> 50+ ceremonies with full screening. No exceptions.
+                  </p>
+
+                  <p className="text-text-secondary/60 text-xs">
+                    Contraindications: SSRIs, bipolar, psychosis, pregnancy, heart conditions
                   </p>
                 </div>
               </div>
 
-              {/* Sacred Circles - Coming Soon */}
-              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
-                  <div className="space-y-2">
-                    <div className="text-accent-gold/70 text-sm font-medium uppercase tracking-wider">Coming 2026</div>
-                    <h3 className="text-3xl font-serif text-text-heading">Sacred Circles</h3>
-                    <p className="text-text-secondary">Group containers for deeper collective work</p>
-                  </div>
-                  <button
-                    onClick={() => scrollToSection('contact')}
-                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap"
-                  >
-                    Express Interest
-                  </button>
-                </div>
-                <p className="text-text-secondary leading-relaxed mb-6">
-                  I'm gathering circles in Barcelona, online, and Mazunte for men's work, women's leadership, and creative activation. If you're interested in group containers, let me know.
-                </p>
-                <div className="grid md:grid-cols-3 gap-6 opacity-80">
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-text-heading">Men's Circle</h4>
-                    <p className="text-sm text-text-secondary">Barcelona</p>
-                    <p className="text-sm text-text-secondary">Shadow work, vulnerability, healthy masculine</p>
-                  </div>
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-text-heading">Women's Leadership</h4>
-                    <p className="text-sm text-text-secondary">Online</p>
-                    <p className="text-sm text-text-secondary">Stepping into power and purpose</p>
-                  </div>
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-text-heading">Creative Activators</h4>
-                    <p className="text-sm text-text-secondary">Mazunte</p>
-                    <p className="text-sm text-text-secondary">For healers, artists, visionaries</p>
-                  </div>
-                </div>
-                <p className="text-sm text-text-secondary/70 italic mt-6">
-                  Mention your interest in the discovery call or contact form—I'll reach out when circles begin.
-                </p>
               </div>
-            </div>
 
             {/* Investment Philosophy */}
-            <div className="mt-16 max-w-3xl mx-auto text-center space-y-4">
-              <p className="text-lg text-text-secondary leading-relaxed">
-                I believe this work should be accessible. Sliding scale and payment plans available for those who need it.
-              </p>
-              <p className="text-text-secondary/80 italic">
-                If you're genuinely called to this work but cost is a barrier, reach out. Let's talk.
+            <div className="mt-12 text-center">
+              <p className="text-text-secondary/70 italic">
+                Sliding scale and payment plans available. If cost is a barrier, reach out.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* What People Don't Tell You - Truth Section */}
-      <div className="bg-gradient-to-b from-warm-white via-warm-cream to-warm-white py-24">
+      {/* What Most People Don't Tell You */}
+      <div className="bg-warm-cream py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <div className="text-center">
-              <h2 className="text-3xl md:text-4xl font-serif text-text-heading mb-8">
-                What People Don't Tell You About Transformation
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-serif text-text-heading mb-4">
+                What Most People Don't Tell You About Transformation
               </h2>
-              <p className="text-xl text-text-secondary leading-relaxed mb-12">
-                It's not all light. It's not all love. Sometimes it's messy. Sometimes it's uncomfortable.
-                And that's exactly where the real work begins.
+              <p className="text-text-secondary/80 leading-relaxed">
+                It isn't tidy. It isn't linear. It isn't always comfortable.
               </p>
             </div>
 
-            <div className="space-y-8 text-text-secondary leading-relaxed">
-              <div className="border-l-2 border-accent-gold/40 pl-6">
-                <p className="mb-2">
-                  <span className="font-serif text-text-heading text-lg">You might lose people.</span>
-                </p>
-                <p className="text-sm text-text-secondary/80">
-                  Not everyone can hold space for who you're becoming. And that's okay.
-                </p>
-              </div>
-
-              <div className="border-l-2 border-accent-gold/40 pl-6">
-                <p className="mb-2">
-                  <span className="font-serif text-text-heading text-lg">You might question everything.</span>
-                </p>
-                <p className="text-sm text-text-secondary/80">
-                  Including this work. Including me. That's part of reclaiming your sovereignty.
-                </p>
-              </div>
-
-              <div className="border-l-2 border-accent-gold/40 pl-6">
-                <p className="mb-2">
-                  <span className="font-serif text-text-heading text-lg">You might feel worse before you feel better.</span>
-                </p>
-                <p className="text-sm text-text-secondary/80">
-                  Healing brings things to the surface. That's not a sign it's not working—it's a sign it is.
-                </p>
-              </div>
-
-              <div className="border-l-2 border-accent-gold/40 pl-6">
-                <p className="mb-2">
-                  <span className="font-serif text-text-heading text-lg">You will have to do the work.</span>
-                </p>
-                <p className="text-sm text-text-secondary/80">
-                  I can guide. I can hold. I can witness. But I can't do it for you. No one can.
-                </p>
-              </div>
+            <div className="space-y-6 text-text-secondary leading-relaxed">
+              <p className="font-serif text-text-heading">You may lose people.</p>
+              <p className="font-serif text-text-heading">You may doubt everything.</p>
+              <p className="font-serif text-text-heading">You may feel worse before you feel better.</p>
             </div>
 
-            <div className="text-center mt-16">
-              <p className="text-lg text-text-secondary italic">
-                If you're still reading, if this resonates—you're ready.
+            <div className="text-center mt-12 space-y-2">
+              <p className="text-text-heading font-serif">
+                This is not a sign it isn't working.
+              </p>
+              <p className="text-accent-gold font-serif italic">
+                It's a sign you're shedding a life that no longer fits.
               </p>
             </div>
+
+            <p className="text-center mt-12 text-text-secondary/70 italic">
+              If you're still reading, you're ready.
+            </p>
           </div>
         </div>
       </div>

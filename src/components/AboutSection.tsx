@@ -23,7 +23,7 @@ const AboutSection = ({}: AboutSectionProps) => {
             Beyond Concepts & Limitations
           </h2>
           <p className="text-xl text-mystic-lavender/70 font-serif italic">
-            Meet Jordi
+            Meet Astral
           </p>
         </div>
 
