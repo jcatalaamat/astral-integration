@@ -562,7 +562,7 @@ function LandingPage() {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
                   <div className="space-y-1">
                     <h3 className="text-2xl font-serif text-text-heading">Single Integration Session</h3>
-                    <p className="text-xl text-accent-gold font-medium">€80-150</p>
+                    <p className="text-xl text-accent-gold font-medium">€80-140</p>
                     <p className="text-text-secondary/80">60 minutes • Online or in-person</p>
                   </div>
                   <a
@@ -584,7 +584,7 @@ function LandingPage() {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
                   <div className="space-y-1">
                     <h3 className="text-2xl font-serif text-text-heading">3-Month Mentorship</h3>
-                    <p className="text-xl text-accent-gold font-medium">€280-400</p>
+                    <p className="text-xl text-accent-gold font-medium">€300-500</p>
                     <p className="text-text-secondary/80">4 sessions over 3 months</p>
                   </div>
                   <a
@@ -612,7 +612,7 @@ function LandingPage() {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
                   <div className="space-y-1">
                     <h3 className="text-2xl font-serif text-text-heading">Bufo Alvarius Journey</h3>
-                    <p className="text-xl text-accent-gold font-medium">€550-800</p>
+                    <p className="text-xl text-accent-gold font-medium">€500-800</p>
                     <p className="text-text-secondary/80">Full package • Screening + Prep + Ceremony + Integration</p>
                   </div>
                   <Link
