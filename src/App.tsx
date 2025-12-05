@@ -155,22 +155,22 @@ function LandingPage() {
       {/* Hero Section with WarmHero component */}
       <WarmHero
         title="Astral Integration"
-        subtitle="Plant Medicine Integration • Energy Healing • Transformational Mentorship"
+        subtitle="Deep Transformation • Identity Rebirth • Sacred Medicine"
         height="extra-large"
         image="/images/homepage/hero.jpg"
       >
         <p className="text-xl md:text-2xl text-text-secondary/90 font-serif italic max-w-2xl mx-auto mb-4">
-          For those crossing thresholds —
+          For those ready to change form.
         </p>
         <p className="text-text-secondary/70 font-light max-w-2xl mx-auto mb-4 text-lg leading-relaxed">
-          awakening, dissolving, remembering who they truly are.
+          Not healing. Not coaching. Not therapy.
         </p>
         <p className="text-text-secondary/60 font-light max-w-xl mx-auto mb-4 text-base leading-relaxed">
-          This work is for the moments when everything shifts,<br className="hidden md:block" />
-          when the old life no longer fits, and something deeper calls you forward.
+          This is transformation — identity death, clarity, embodiment,<br className="hidden md:block" />
+          and the creation of your next chapter.
         </p>
         <p className="text-text-secondary/50 font-light max-w-lg mx-auto mb-8 text-sm">
-          If you're standing at the edge of a chapter, unsure of the next step — you're in the right place.
+          If you're standing at the edge of who you've been, ready to become who you're meant to be — you're in the right place.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
@@ -187,7 +187,7 @@ function LandingPage() {
           </button>
         </div>
         <p className="text-text-secondary/60 text-sm mt-8">
-          Facilitating worldwide since 2015
+          Guiding deep transformation since 2015
         </p>
       </WarmHero>
 
@@ -197,7 +197,7 @@ function LandingPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-serif text-text-heading leading-relaxed">
-                You may feel called to this work if...
+                This work is for you if...
               </h2>
             </div>
 
@@ -207,54 +207,54 @@ function LandingPage() {
                 <div className="flex items-start gap-4">
                   <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
                   <p className="text-text-secondary leading-relaxed">
-                    A medicine journey opened something you can't integrate alone
+                    You're ready to let the old identity die — not just heal it, but release it
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
                   <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
                   <p className="text-text-secondary leading-relaxed">
-                    You're navigating a threshold — a breakup, identity shift, awakening, grief
+                    You've done the therapy, the books, the practices — and know there's something deeper
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
                   <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
                   <p className="text-text-secondary leading-relaxed">
-                    Therapy, books, and practices helped, but didn't touch the deeper layers
+                    You're navigating a major threshold — awakening, dissolution, creation of your next chapter
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
                   <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
                   <p className="text-text-secondary leading-relaxed">
-                    You feel the old version of you dissolving, and the new one hasn't fully arrived
+                    You're a creator, leader, or high-capacity person who knows their potential but can't access it
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
                   <span className="text-accent-gold text-xl flex-shrink-0">✓</span>
                   <p className="text-text-secondary leading-relaxed">
-                    You're tired of seeking and ready to start embodying
+                    You want someone who holds all the layers — spiritual, psychological, somatic, energetic
                   </p>
                 </div>
               </div>
 
               {/* Not For You If */}
               <div className="space-y-6">
-                <h3 className="text-xl font-serif text-text-heading/70 mb-4">This may not be for you if...</h3>
+                <h3 className="text-xl font-serif text-text-heading/70 mb-4">This is not for you if...</h3>
                 <div className="flex items-start gap-4">
                   <span className="text-text-secondary/50 text-xl flex-shrink-0">✗</span>
                   <p className="text-text-secondary/70 leading-relaxed">
-                    You want relief without transformation
+                    You want comfort without transformation
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
                   <span className="text-text-secondary/50 text-xl flex-shrink-0">✗</span>
                   <p className="text-text-secondary/70 leading-relaxed">
-                    You're not ready to meet uncomfortable truths
+                    You're looking for someone to "fix" you or tell you what to do
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
                   <span className="text-text-secondary/50 text-xl flex-shrink-0">✗</span>
                   <p className="text-text-secondary/70 leading-relaxed">
-                    You want someone to "fix" you
+                    You're not ready to meet your shadow honestly
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
@@ -268,17 +268,17 @@ function LandingPage() {
 
             <div className="text-center space-y-2">
               <p className="text-text-heading font-serif text-xl">
-                You're not broken.
+                You're not broken. You're not lost.
               </p>
               <p className="text-accent-gold font-serif text-xl italic">
-                You're in initiation.
+                You're being restructured.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* About Section - My Path to This Work */}
+      {/* About Section - Who I Am */}
       <div id="about" className="bg-warm-white py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -298,74 +298,67 @@ function LandingPage() {
               <div className="space-y-10">
                 <div>
                   <h2 className="text-4xl md:text-5xl font-serif text-text-heading leading-tight mb-8">
-                    My Path to This Work
+                    Who I Am
                   </h2>
                   <p className="text-xl text-text-secondary leading-relaxed">
-                    I'm Astral. I've been guiding transformational journeys since 2015.
+                    I'm not a healer. I'm not a coach. I'm not a therapist.
                   </p>
                 </div>
 
-                {/* My Background */}
+                {/* The Truth */}
                 <div className="space-y-4 text-text-secondary leading-relaxed">
                   <p>
-                    My path wasn't linear. I lived many lives — performer, creator, seeker — until my body finally said <span className="italic text-accent-gold">no more.</span>
+                    I'm a <span className="text-accent-gold font-medium">transformational architect</span> — someone who guides high-capacity people through identity death, clarity, and the creation of their next chapter.
                   </p>
                   <p>
-                    The unraveling began. And with it came truth.
+                    My presence opens fields. It shifts consciousness. It dissolves patterns. It reveals what people don't say. This is rare. This is real.
                   </p>
                   <p>
-                    Plant medicine cracked me open. It showed me who I was beyond story, identity, and expectation. But awakening alone isn't enough. Integration is where insight becomes embodiment.
+                    I hold a frequency that reorganizes, softens, and brings coherence. People feel it just by sitting with me. I don't "use" energy — <span className="italic text-accent-gold">I am the energy.</span>
                   </p>
                 </div>
 
-                {/* My Training */}
+                {/* The Path */}
+                <div className="space-y-4 text-text-secondary leading-relaxed">
+                  <p>
+                    My path wasn't linear. I lived many lives — performer, creator, seeker — until my body finally said <span className="italic">no more.</span> The unraveling began. And with it came truth.
+                  </p>
+                  <p>
+                    Plant medicine cracked me open. But awakening isn't enough. Integration is where insight becomes embodiment. That's the work I now guide others through.
+                  </p>
+                </div>
+
+                {/* Training as context, not identity */}
                 <div className="space-y-4">
-                  <h3 className="text-lg font-medium text-text-heading/80">My background includes:</h3>
-                  <ul className="space-y-2 text-text-secondary">
+                  <h3 className="text-lg font-medium text-text-heading/80">Background & Training</h3>
+                  <ul className="space-y-2 text-text-secondary text-sm">
                     <li className="flex items-start gap-3">
                       <span className="text-accent-gold">•</span>
-                      <span>500+ hours Kundalini & Yoga teacher training</span>
+                      <span>500+ hours Kundalini & Yoga • Family Constellations • Access Consciousness</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent-gold">•</span>
-                      <span>Family Constellations practitioner</span>
+                      <span>Reiki, Theta Healing & intuitive energy work • Psychedelic integration</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent-gold">•</span>
-                      <span>Access Consciousness facilitator</span>
+                      <span>Bufo Alvarius ceremony — taught by Seri tribe elders in Mexico</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent-gold">•</span>
-                      <span>Psychedelic integration specialist</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent-gold">•</span>
-                      <span>Reiki, Theta Healing & intuitive energy work</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-accent-gold">•</span>
-                      <span>7+ years guiding deep personal transformation</span>
+                      <span>10+ years of my own breakdowns, ego deaths, and rebuilding</span>
                     </li>
                   </ul>
                 </div>
 
-                {/* Medicine Work Lineage */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-medium text-text-heading/80">Lineage & Medicine Work</h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    I was taught Bufo Alvarius ceremony by Seri tribe elders in Mexico. I've facilitated over 50 ceremonies with deep respect, structure, and devotion.
-                  </p>
-                </div>
-
-                {/* Why I Share This */}
+                {/* The real training */}
                 <div className="space-y-4 border-l-2 border-accent-gold/40 pl-6">
-                  <h3 className="text-lg font-medium text-text-heading/80">Why I share this</h3>
                   <p className="text-text-secondary leading-relaxed">
-                    The certificates matter — they show training and safety. But the real training came from my own breakdowns, ego deaths, and the humility of walking others through theirs.
+                    The certificates show I'm trained and safe. But the real training came from my own dissolution — and the humility of walking others through theirs.
                   </p>
                   <div className="space-y-1 mt-4">
                     <p className="text-text-heading font-serif">I don't lead from above.</p>
-                    <p className="text-accent-gold font-serif italic">I walk beside you.</p>
+                    <p className="text-accent-gold font-serif italic">I walk beside you through the fire.</p>
                   </div>
                 </div>
               </div>
@@ -380,52 +373,69 @@ function LandingPage() {
         <div className="relative z-10 w-full px-4 py-24">
           <blockquote className="max-w-4xl mx-auto text-center">
             <p className="text-3xl md:text-5xl font-serif text-text-heading leading-relaxed mb-8">
-              "This work is not about becoming someone new.<br/>
-              It's about remembering who you've always been."
+              "I don't heal people.<br/>
+              I restructure them."
+            </p>
+            <p className="text-lg text-text-secondary/70 italic">
+              Identity. Purpose. Power. Expression.
             </p>
           </blockquote>
         </div>
       </div>
 
-      {/* How This Work Unfolds - Methods Section */}
+      {/* What I Actually Do - Methods Section */}
       <div className="bg-warm-white py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-4">
-                How This Work Actually Unfolds
+                What I Actually Do
               </h2>
               <p className="text-lg text-text-secondary/80 max-w-2xl mx-auto leading-relaxed">
-                Each person arrives with different needs. There is no script, no template — only what wants to emerge.
+                I hold all the layers — spiritual, psychological, somatic, energetic, creative — so you don't need five different practitioners.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
+                <h3 className="text-xl font-serif text-text-heading">Identity Evolution</h3>
+                <p className="text-text-secondary leading-relaxed">
+                  Dissolving the outdated identity so you can step into the next one. The you that's been waiting to emerge.
+                </p>
+              </div>
+
+              <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
+                <h3 className="text-xl font-serif text-text-heading">Creative & Vision Activation</h3>
+                <p className="text-text-secondary leading-relaxed">
+                  Unlocking genius, flow, and your true gifts. Helping you see the real vision you were born to execute — and bring it into form.
+                </p>
+              </div>
+
+              <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
                 <h3 className="text-xl font-serif text-text-heading">Family Constellations</h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Revealing hidden dynamics, ancestral wounds, and inherited patterns so you can step into a life that is truly yours.
+                  Unraveling invisible dynamics that sabotage leadership, relationships, money flow, creative success, and decision-making.
                 </p>
               </div>
 
               <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
-                <h3 className="text-xl font-serif text-text-heading">Energy & Somatic Work</h3>
+                <h3 className="text-xl font-serif text-text-heading">Energetic & Somatic Work</h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Using Access Consciousness, Kundalini practices, and intuitive energy healing to release what the body is holding.
+                  Opening fields, shifting consciousness, activating intuition, bringing coherence to your internal world.
                 </p>
               </div>
 
               <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
-                <h3 className="text-xl font-serif text-text-heading">Medicine Integration</h3>
+                <h3 className="text-xl font-serif text-text-heading">Shadow & Ego Integration</h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Ayahuasca, psilocybin, Bufo, LSD, MDMA — insight means nothing without integration. We bridge the ceremonial world into daily life.
+                  The part that makes high-performers quantum leap instead of burn out. Meeting what you've avoided, integrating what you've hidden.
                 </p>
               </div>
 
               <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
-                <h3 className="text-xl font-serif text-text-heading">Mentorship & Shadow Work</h3>
+                <h3 className="text-xl font-serif text-text-heading">Sacred Medicine (Optional)</h3>
                 <p className="text-text-secondary leading-relaxed">
-                  The deeper container where patterns unravel, clarity returns, and new identity forms.
+                  Bufo Alvarius as an accelerator — only when truly aligned. A catalytic initiation, not the foundation of the work.
                 </p>
               </div>
             </div>
@@ -433,17 +443,17 @@ function LandingPage() {
         </div>
       </div>
 
-      {/* The Journey */}
+      {/* The Transformation */}
       <div className="bg-warm-cream py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             {/* Title */}
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-4">
-                The Journey
+                The Transformation
               </h2>
               <p className="text-lg text-text-secondary/80 font-light">
-                What transformation actually looks like
+                Identity death → Clarity → Embodiment → Creation
               </p>
             </div>
 
@@ -453,12 +463,12 @@ function LandingPage() {
               <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
                 <div className="md:col-span-1">
                   <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 1</div>
-                  <h3 className="text-xl font-serif text-text-heading">Discovery</h3>
-                  <p className="text-sm text-text-secondary/60 mt-1">1-2 Sessions</p>
+                  <h3 className="text-xl font-serif text-text-heading">Dissolving</h3>
+                  <p className="text-sm text-text-secondary/60 mt-1">Weeks 1-4</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-text-secondary leading-relaxed">
-                    We explore where you are, what's alive in your field, and whether we're aligned. No pressure. No pitch.
+                    We meet the old identity — the patterns, protections, and stories that kept you safe but small. This is identity death. It's uncomfortable. It's necessary.
                   </p>
                 </div>
               </div>
@@ -467,12 +477,12 @@ function LandingPage() {
               <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
                 <div className="md:col-span-1">
                   <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 2</div>
-                  <h3 className="text-xl font-serif text-text-heading">Deep Work</h3>
-                  <p className="text-sm text-text-secondary/60 mt-1">Weeks 2-8</p>
+                  <h3 className="text-xl font-serif text-text-heading">Clarity</h3>
+                  <p className="text-sm text-text-secondary/60 mt-1">Weeks 4-12</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-text-secondary leading-relaxed">
-                    Clearing ancestral and childhood wounds. Constellations or energy work. Processing medicine experiences. Meeting shadow and resistance. Rewriting identity.
+                    Family systems work. Shadow integration. Energetic clearing. The invisible dynamics that sabotaged you become visible. You see who you actually are without the conditioning.
                   </p>
                 </div>
               </div>
@@ -481,15 +491,15 @@ function LandingPage() {
               <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
                 <div className="md:col-span-1">
                   <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 3</div>
-                  <h3 className="text-xl font-serif text-text-heading">Integration</h3>
-                  <p className="text-sm text-text-secondary/60 mt-1">Months 2-6</p>
+                  <h3 className="text-xl font-serif text-text-heading">Embodiment</h3>
+                  <p className="text-sm text-text-secondary/60 mt-1">Months 3-6</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-text-secondary leading-relaxed mb-2">
-                    Awakening is easy. Integration is the work.
+                    Awakening is easy. Embodiment is the work.
                   </p>
                   <p className="text-text-secondary/80 leading-relaxed">
-                    This phase anchors your insights into your relationships, purpose, boundaries, and way of being.
+                    Your new identity anchors into your body, your relationships, your decisions, your presence. You stop performing who you were taught to be.
                   </p>
                 </div>
               </div>
@@ -498,12 +508,12 @@ function LandingPage() {
               <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
                 <div className="md:col-span-1">
                   <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 4</div>
-                  <h3 className="text-xl font-serif text-text-heading">Embodiment</h3>
-                  <p className="text-sm text-text-secondary/60 mt-1">Ongoing</p>
+                  <h3 className="text-xl font-serif text-text-heading">Creation</h3>
+                  <p className="text-sm text-text-secondary/60 mt-1">Months 6+</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-text-secondary leading-relaxed">
-                    You become the medicine. You hold yourself. Your life begins reflecting your inner work.
+                    Now you create from alignment. The next chapter — in work, relationships, purpose, expression — flows from who you've become, not who you were pretending to be.
                   </p>
                 </div>
               </div>
@@ -512,10 +522,10 @@ function LandingPage() {
             {/* Timeline Reality */}
             <div className="text-center mt-16 space-y-2">
               <p className="text-text-heading font-serif text-lg">
-                True transformation takes 3-12 months.
+                Real transformation takes 6-12 months.
               </p>
               <p className="text-text-secondary/70 italic">
-                Anyone promising faster is selling spiritual entertainment.
+                I work with fewer people, going deeper, over longer containers.
               </p>
             </div>
           </div>
@@ -607,13 +617,13 @@ function LandingPage() {
                 </p>
               </div>
 
-              {/* Bufo Alvarius Ceremony */}
+              {/* Bufo Alvarius - Optional Accelerator */}
               <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl border border-accent-terracotta/20">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
                   <div className="space-y-1">
                     <h3 className="text-2xl font-serif text-text-heading">Bufo Alvarius Journey</h3>
                     <p className="text-xl text-accent-gold font-medium">€500-800</p>
-                    <p className="text-text-secondary/80">Full package • Screening + Prep + Ceremony + Integration</p>
+                    <p className="text-text-secondary/80">Optional accelerator • By invitation only</p>
                   </div>
                   <Link
                     to="/bufo-screening"
@@ -624,20 +634,20 @@ function LandingPage() {
                 </div>
                 <div className="space-y-4">
                   <p className="text-text-secondary leading-relaxed">
-                    Sacred 5-MeO-DMT medicine in the Seri lineage. This is ego dissolution. Divine remembrance. Not recreational. Not casual.
+                    I don't sell Bufo. It's not my business. It's not my core offering. It's an <span className="text-accent-gold">accelerator</span> — used only when the person is ready, the context is right, and the process calls for it.
                   </p>
 
                   <p className="text-text-secondary/80 text-sm leading-relaxed">
-                    Includes: Medical & psychological screening • 1 preparation session • Ceremony in sacred space • 1 integration session
+                    Sacred 5-MeO-DMT in the Seri lineage. Ego dissolution. Divine remembrance. This amplifies the transformation I already create naturally — it doesn't replace it.
                   </p>
 
                   <p className="text-text-secondary/70 text-sm">
-                    <strong>Location:</strong> Ceremonies available in Mazunte and select cities worldwide. Travel availability discussed privately after screening.<br/>
-                    <strong>Safety:</strong> 50+ ceremonies with full screening. No exceptions.
+                    <strong>Package:</strong> Full screening • Preparation • Ceremony in sacred space • Integration<br/>
+                    <strong>Safety:</strong> 50+ ceremonies. Taught by Seri elders. No exceptions on screening.
                   </p>
 
                   <p className="text-text-secondary/60 text-xs italic">
-                    This work is rooted in respect for lineage, land, and personal sovereignty.
+                    People who want Bufo come through resonance, not marketing. If you're called, apply.
                   </p>
 
                   <p className="text-text-secondary/50 text-xs">
@@ -743,49 +753,52 @@ function LandingPage() {
         </div>
       </div>
 
-      {/* What Most People Don't Tell You */}
+      {/* The Truth About This Work */}
       <div className="bg-warm-cream py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-serif text-text-heading mb-4">
-                What Most People Don't Tell You About Transformation
+                The Truth About This Work
               </h2>
               <p className="text-text-secondary/80 leading-relaxed">
-                It isn't tidy. It isn't linear. It isn't always comfortable.
+                Identity death is not comfortable. It's not tidy. It's not linear.
               </p>
             </div>
 
             <div className="space-y-6 text-text-secondary leading-relaxed">
-              <p className="font-serif text-text-heading">You may lose people.</p>
-              <p className="font-serif text-text-heading">You may doubt everything.</p>
-              <p className="font-serif text-text-heading">You may feel worse before you feel better.</p>
+              <p className="font-serif text-text-heading">You may lose relationships that were built on the old you.</p>
+              <p className="font-serif text-text-heading">You may doubt your identity, your work, your direction.</p>
+              <p className="font-serif text-text-heading">You may feel like everything is falling apart.</p>
             </div>
 
             <div className="text-center mt-12 space-y-2">
               <p className="text-text-heading font-serif">
-                This is not a sign it isn't working.
+                This is not a sign something is wrong.
               </p>
               <p className="text-accent-gold font-serif italic">
-                It's a sign you're shedding a life that no longer fits.
+                It's a sign you're being restructured.
               </p>
             </div>
 
             <p className="text-center mt-12 text-text-secondary/70 italic">
-              If you're still reading, you're ready.
+              If you're still reading, you already know.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Testimonials - Real Voices */}
+      {/* Testimonials */}
       <div className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-accent-terracotta/15 via-warm-peach to-accent-sage/10"></div>
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-serif text-text-heading text-center mb-20">
-              Voices From The Journey
+            <h2 className="text-4xl md:text-5xl font-serif text-text-heading text-center mb-6">
+              What Transformation Sounds Like
             </h2>
+            <p className="text-center text-text-secondary/70 mb-20">
+              Real words from real people who went through the fire.
+            </p>
 
             <div className="space-y-16">
               {REAL_TESTIMONIALS.slice(0, 4).map((testimonial, index) => (
@@ -902,28 +915,28 @@ function LandingPage() {
             <div className="space-y-10">
               <div className="border-b border-text-primary/10 pb-8">
                 <h3 className="text-2xl font-serif text-text-heading mb-4">
-                  How is this different from therapy or coaching?
+                  What exactly do you do?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Therapy works with your mind and behavior. This work goes deeper—into the body, the energy field, the soul, the family system. We're not just healing wounds or managing symptoms. We're clearing patterns at their root and remembering who you are beyond all conditioning. Think: shamanic meets therapeutic, but grounded in practical integration.
+                  I guide high-capacity people through identity transformation. Not therapy. Not coaching. Not ceremony. I hold all the layers — spiritual, psychological, somatic, energetic, creative — so you don't need five different practitioners. My presence opens fields, dissolves patterns, and restructures people. This is rare. This is real.
                 </p>
               </div>
 
               <div className="border-b border-text-primary/10 pb-8">
                 <h3 className="text-2xl font-serif text-text-heading mb-4">
-                  Do I need experience with plant medicine?
+                  Who is this for?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  No. About 60% of my clients have never touched medicine. Many come for family constellations, energy healing, or mentorship work. The medicine ceremonies are just one tool. What matters is your readiness to do deep work.
+                  Creators, founders, artists, leaders, and high-capacity individuals who have done the work but know there's something deeper. People navigating identity death — awakening, dissolution, creation of their next chapter. Those who are tired of seeking and ready to embody.
                 </p>
               </div>
 
               <div className="border-b border-text-primary/10 pb-8">
                 <h3 className="text-2xl font-serif text-text-heading mb-4">
-                  Is the Bufo ceremony safe?
+                  Do I need to do plant medicine?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  When properly facilitated with screening and preparation—yes. I've learned from indigenous elders and facilitated 50+ ceremonies safely. Every participant goes through medical screening, psychological assessment, 2 preparation sessions, ceremony with full support, and 3 integration sessions. However, this medicine is contraindicated with certain medications and conditions. I never bypass safety protocols.
+                  No. Most of my clients never touch medicine. The transformation happens through my presence, the container, the work. Medicine is an optional accelerator — used only when the person is ready, the context is right, and the process calls for it. It amplifies what I already create naturally.
                 </p>
               </div>
 
@@ -932,16 +945,16 @@ function LandingPage() {
                   How do I know if you're the right guide?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  You'll feel it. If you've read this far and something resonates—that's your signal. Book the discovery call. We'll talk openly. There's no pressure, no pitch. If I'm not the right person, I'll tell you honestly and point you toward someone who is. Part of sovereignty is knowing when something isn't your medicine.
+                  You'll feel it. If you've read this far and something resonates — that's your signal. Book the discovery call. We'll talk openly. There's no pressure, no pitch. If I'm not the right person, I'll tell you honestly. Part of sovereignty is knowing when something isn't your medicine.
                 </p>
               </div>
 
               <div className="border-b border-text-primary/10 pb-8">
                 <h3 className="text-2xl font-serif text-text-heading mb-4">
-                  Can you work with people outside Spain/Mexico?
+                  Can you work with people globally?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Yes. Energy healing, integration sessions, and mentorship work beautifully online. I work with clients globally via video. Medicine ceremonies must be in-person in Mazunte, Mexico.
+                  Yes. Deep transformation work happens online. I work with clients worldwide via video. Medicine ceremonies are in-person in Mazunte, Mexico or select cities by arrangement.
                 </p>
               </div>
 
@@ -950,28 +963,16 @@ function LandingPage() {
                   What if I'm skeptical about "energy work"?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Perfect. You don't need to believe anything. We work with what you can feel in your body—sensation, breath, emotion. Whether you call it "energy" or "nervous system regulation" doesn't matter. The experience is the same. Skepticism is healthy. Blind belief isn't required.
-                </p>
-              </div>
-
-              <div className="border-b border-text-primary/10 pb-8">
-                <h3 className="text-2xl font-serif text-text-heading mb-4">
-                  Do you offer payment plans?
-                </h3>
-                <p className="text-text-secondary leading-relaxed">
-                  Yes, for 3-month mentorship and ceremonies. We can discuss during the discovery call. I believe this work should be accessible—if you're genuinely called but cost is a barrier, reach out.
+                  Perfect. You don't need to believe anything. We work with what you can feel in your body — sensation, breath, emotion. Whether you call it "energy" or "nervous system regulation" doesn't matter. Skepticism is healthy. Blind belief isn't required.
                 </p>
               </div>
 
               <div className="pb-8">
                 <h3 className="text-2xl font-serif text-text-heading mb-4">
-                  What's your cancellation policy?
+                  What's the investment?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  <strong>Discovery call:</strong> Cancel anytime, no charge.<br/>
-                  <strong>Single sessions:</strong> 48-hour cancellation notice for full refund.<br/>
-                  <strong>Mentorship containers:</strong> Non-refundable after first session, but sessions can be rescheduled.<br/>
-                  <strong>Medicine ceremonies:</strong> 50% deposit required. Full refund if you don't pass medical screening. Otherwise deposits are non-refundable due to preparation involved.
+                  Single sessions start at €80. Mentorship containers €300-500 per cycle. Deeper transformation containers by application. I work with fewer people, going deeper, over longer timelines. Payment plans available. If cost is a genuine barrier and you're truly called, reach out.
                 </p>
               </div>
             </div>
