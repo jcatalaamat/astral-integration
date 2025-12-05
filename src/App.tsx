@@ -677,6 +677,33 @@ function LandingPage() {
                 </p>
               </div>
 
+              {/* Astral Integration Training */}
+              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl border border-accent-sage/30">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-serif text-text-heading">Astral Integration Training</h3>
+                    <p className="text-xl text-accent-gold font-medium">By Application</p>
+                    <p className="text-text-secondary/80">Comprehensive integration practitioner program</p>
+                  </div>
+                  <button
+                    onClick={() => scrollToSection('contact')}
+                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
+                  >
+                    Inquire
+                  </button>
+                </div>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  Learn the Astral Integration method — a complete framework for guiding others through transformation.
+                </p>
+                <p className="text-text-secondary/80 text-sm leading-relaxed mb-3">
+                  Energy healing, family constellations, somatic work, shadow integration, and medicine support.
+                  You'll learn not just techniques, but how to see, feel, and hold space at the deepest level.
+                </p>
+                <p className="text-text-secondary/70 text-sm italic">
+                  For therapists, coaches, healers, and seekers ready to serve. Duration and structure tailored to your path.
+                </p>
+              </div>
+
               </div>
 
             {/* Investment Philosophy */}
