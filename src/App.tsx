@@ -649,6 +649,34 @@ function LandingPage() {
                 </div>
               </div>
 
+              {/* Facilitator Training */}
+              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl border border-accent-sage/30">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-serif text-text-heading">Facilitator Training</h3>
+                    <p className="text-xl text-accent-gold font-medium">By Application</p>
+                    <p className="text-text-secondary/80">For those called to hold space for others</p>
+                  </div>
+                  <button
+                    onClick={() => scrollToSection('contact')}
+                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
+                  >
+                    Inquire
+                  </button>
+                </div>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  A deep apprenticeship for those ready to become facilitators, healers, or guides in their own right.
+                </p>
+                <p className="text-text-secondary/80 text-sm leading-relaxed mb-3">
+                  This is not a weekend certification. It's a transmission — a mentorship that takes you from seeker to space-holder.
+                  Integration work, energy healing, or medicine facilitation depending on your path.
+                </p>
+                <p className="text-text-secondary/70 text-sm italic">
+                  Requirements: Prior work with me, readiness assessment, and genuine calling. Not everyone is meant to hold space —
+                  we'll explore this honestly together.
+                </p>
+              </div>
+
               </div>
 
             {/* Investment Philosophy */}
