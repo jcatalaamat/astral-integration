@@ -683,7 +683,7 @@ function LandingPage() {
                   <div className="space-y-1">
                     <h3 className="text-2xl font-serif text-text-heading">Astral Integration Training</h3>
                     <p className="text-xl text-accent-gold font-medium">By Application</p>
-                    <p className="text-text-secondary/80">Comprehensive integration practitioner program</p>
+                    <p className="text-text-secondary/80">8-week online group program</p>
                   </div>
                   <button
                     onClick={() => scrollToSection('contact')}
@@ -693,14 +693,14 @@ function LandingPage() {
                   </button>
                 </div>
                 <p className="text-text-secondary leading-relaxed mb-4">
-                  Learn the Astral Integration method — a complete framework for guiding others through transformation.
+                  A group training for those learning to hold space and guide transformation.
                 </p>
                 <p className="text-text-secondary/80 text-sm leading-relaxed mb-3">
-                  Energy healing, family constellations, somatic work, shadow integration, and medicine support.
-                  You'll learn not just techniques, but how to see, feel, and hold space at the deepest level.
+                  8 weeks of weekly group calls covering: shadow work, energy healing, family systems,
+                  somatic awareness, medicine integration, and the art of presence.
                 </p>
                 <p className="text-text-secondary/70 text-sm italic">
-                  For therapists, coaches, healers, and seekers ready to serve. Duration and structure tailored to your path.
+                  For therapists, coaches, healers, and seekers ready to deepen their practice and serve others.
                 </p>
               </div>
 
