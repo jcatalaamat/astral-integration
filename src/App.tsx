@@ -704,6 +704,33 @@ function LandingPage() {
                 </p>
               </div>
 
+              {/* Retreats */}
+              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl border border-accent-sage/30">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-serif text-text-heading">Retreats</h3>
+                    <p className="text-xl text-accent-gold font-medium">By Invitation</p>
+                    <p className="text-text-secondary/80">Immersive experiences in sacred places</p>
+                  </div>
+                  <button
+                    onClick={() => scrollToSection('contact')}
+                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
+                  >
+                    Join Waitlist
+                  </button>
+                </div>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  Small group retreats in special places around the world — Mazunte, Ibiza, Bali, and beyond.
+                </p>
+                <p className="text-text-secondary/80 text-sm leading-relaxed mb-3">
+                  Deep immersions combining ceremony, integration work, somatic healing, and community.
+                  Limited spaces. Announced to the inner circle first.
+                </p>
+                <p className="text-text-secondary/70 text-sm italic">
+                  Get on the list to hear about upcoming retreats before they're public.
+                </p>
+              </div>
+
               </div>
 
             {/* Investment Philosophy */}
