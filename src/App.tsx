@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useParams, Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { Mail, MapPin, Clock, Instagram, CheckCircle } from 'lucide-react';
 import EventPreview from './components/EventPreview';
 import PlacePreview from './components/PlacePreview';
 import LinksPage from './components/pages/LinksPage';
 import ResourcesPage from './components/pages/ResourcesPage';
+import BufoScreeningPage from './components/pages/BufoScreeningPage';
+import BookingPage from './components/pages/BookingPage';
 import ScrollToTop from './components/ScrollToTop';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
@@ -539,12 +541,14 @@ function LandingPage() {
                     <h3 className="text-2xl font-serif text-text-heading">Free Discovery Call</h3>
                     <p className="text-text-secondary">30 minutes • €0</p>
                   </div>
-                  <button
-                    onClick={() => scrollToSection('contact')}
-                    className="px-8 py-4 bg-accent-gold text-warm-white rounded-full hover:bg-accent-terracotta transition-colors font-medium whitespace-nowrap"
+                  <a
+                    href="https://calendly.com/astral-integration/discovery-call"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-8 py-4 bg-accent-gold text-warm-white rounded-full hover:bg-accent-terracotta transition-colors font-medium whitespace-nowrap inline-block text-center"
                   >
                     Book Free Call
-                  </button>
+                  </a>
                 </div>
                 <p className="mt-4 text-text-secondary/80 leading-relaxed">
                   A gentle space to understand your needs and see if we're a good fit. No convincing. No pushing.
@@ -559,12 +563,14 @@ function LandingPage() {
                     <p className="text-xl text-accent-gold font-medium">€80-150</p>
                     <p className="text-text-secondary/80">60 minutes • Online or in-person</p>
                   </div>
-                  <button
-                    onClick={() => scrollToSection('contact')}
-                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap"
+                  <a
+                    href="https://calendly.com/astral-integration/single-integration-healing-session-60-min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
                   >
                     Book Session
-                  </button>
+                  </a>
                 </div>
                 <p className="text-text-secondary/80 leading-relaxed">
                   Perfect for processing a recent ceremony, navigating a transition, energy clearing, or exploring if deeper work is right for you.
@@ -579,12 +585,14 @@ function LandingPage() {
                     <p className="text-xl text-accent-gold font-medium">€800-1,200</p>
                     <p className="text-text-secondary/80">12 sessions • Payment plans available</p>
                   </div>
-                  <button
-                    onClick={() => scrollToSection('contact')}
-                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap"
+                  <a
+                    href="https://calendly.com/astral-integration/mentorship-intake-call-30-min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
                   >
                     Apply
-                  </button>
+                  </a>
                 </div>
                 <p className="text-text-secondary leading-relaxed mb-4">
                   This is the container where real transformation happens.
@@ -602,12 +610,12 @@ function LandingPage() {
                     <p className="text-xl text-accent-gold font-medium">€550-800</p>
                     <p className="text-text-secondary/80">Full package • Screening + Prep + Ceremony + Integration</p>
                   </div>
-                  <button
-                    onClick={() => scrollToSection('contact')}
-                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap"
+                  <Link
+                    to="/bufo-screening"
+                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
                   >
                     Apply for Screening
-                  </button>
+                  </Link>
                 </div>
                 <div className="space-y-4">
                   <p className="text-text-secondary leading-relaxed">
@@ -1083,6 +1091,8 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/links" element={<LinksPage />} />
         <Route path="/resources" element={<ResourcesPage />} />
+        <Route path="/bufo-screening" element={<BufoScreeningPage />} />
+        <Route path="/book" element={<BookingPage />} />
         <Route path="/event/:id" element={<EventRoute />} />
         <Route path="/place/:id" element={<PlaceRoute />} />
         {/* Catch all other routes and redirect to home */}
