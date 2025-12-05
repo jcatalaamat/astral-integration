@@ -579,13 +579,13 @@ function LandingPage() {
                 </p>
               </div>
 
-              {/* Mentorship Cycle */}
+              {/* Ongoing Mentorship */}
               <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
                   <div className="space-y-1">
-                    <h3 className="text-2xl font-serif text-text-heading">Mentorship Cycle</h3>
-                    <p className="text-xl text-accent-gold font-medium">€300-500</p>
-                    <p className="text-text-secondary/80">4 sessions • Ongoing cycles</p>
+                    <h3 className="text-2xl font-serif text-text-heading">Ongoing Mentorship</h3>
+                    <p className="text-xl text-accent-gold font-medium">€300-500 per cycle</p>
+                    <p className="text-text-secondary/80">4 sessions • ~2 months per cycle</p>
                   </div>
                   <a
                     href="https://calendly.com/astral-integration/mentorship-intake-call-30-min"
