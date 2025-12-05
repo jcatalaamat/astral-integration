@@ -579,6 +579,34 @@ function LandingPage() {
                 </p>
               </div>
 
+              {/* Monthly Mentorship */}
+              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-serif text-text-heading">Monthly Mentorship</h3>
+                    <p className="text-xl text-accent-gold font-medium">€180-280 / month</p>
+                    <p className="text-text-secondary/80">Ongoing support • Cancel anytime</p>
+                  </div>
+                  <a
+                    href="https://calendly.com/astral-integration/monthly-mentorship"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
+                  >
+                    Begin
+                  </a>
+                </div>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  A gentle, steady container for those who need consistent guidance and inner work — without the intensity of a weekly commitment.
+                </p>
+                <p className="text-text-secondary/80 text-sm leading-relaxed mb-3">
+                  Includes: 2x 60-minute sessions per month • Voice message support • Personalized practices • Integration guidance for medicine work
+                </p>
+                <p className="text-text-secondary/70 text-sm italic">
+                  Best for creative souls, sensitives, and seekers navigating transitions who want steady, loving support as they unfold.
+                </p>
+              </div>
+
               {/* 3-Month Mentorship */}
               <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
@@ -638,7 +666,10 @@ function LandingPage() {
                   </p>
 
                   <p className="text-text-secondary/50 text-xs">
-                    Contraindications: SSRIs, bipolar, psychosis, pregnancy, heart conditions
+                    <Link to="/bufo-contraindications" className="text-accent-gold hover:text-accent-terracotta transition-colors underline">
+                      View full contraindications
+                    </Link>
+                    {' '}— SSRIs, bipolar, psychosis, pregnancy, heart conditions
                   </p>
                 </div>
               </div>
