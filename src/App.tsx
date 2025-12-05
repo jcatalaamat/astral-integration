@@ -161,9 +161,12 @@ function LandingPage() {
         <p className="text-text-secondary/70 font-light max-w-2xl mx-auto mb-4 text-lg leading-relaxed">
           awakening, dissolving, remembering who they truly are.
         </p>
-        <p className="text-text-secondary/60 font-light max-w-xl mx-auto mb-8 text-base leading-relaxed">
-          This work is for the moments when life asks you to shed a skin,<br className="hidden md:block" />
-          step into truth, or meet yourself more deeply than ever before.
+        <p className="text-text-secondary/60 font-light max-w-xl mx-auto mb-4 text-base leading-relaxed">
+          This work is for the moments when everything shifts,<br className="hidden md:block" />
+          when the old life no longer fits, and something deeper calls you forward.
+        </p>
+        <p className="text-text-secondary/50 font-light max-w-lg mx-auto mb-8 text-sm">
+          If you're standing at the edge of a chapter, unsure of the next step — you're in the right place.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
@@ -180,7 +183,7 @@ function LandingPage() {
           </button>
         </div>
         <p className="text-text-secondary/60 text-sm mt-8">
-          Based in Barcelona & Mazunte • Facilitating since 2018
+          Facilitating worldwide since 2015
         </p>
       </WarmHero>
 
@@ -294,7 +297,7 @@ function LandingPage() {
                     My Path to This Work
                   </h2>
                   <p className="text-xl text-text-secondary leading-relaxed">
-                    I'm Astral. I've been guiding transformational journeys since 2018.
+                    I'm Astral. I've been guiding transformational journeys since 2015.
                   </p>
                 </div>
 
@@ -616,11 +619,15 @@ function LandingPage() {
                   </p>
 
                   <p className="text-text-secondary/70 text-sm">
-                    <strong>Location:</strong> Barcelona, Madrid, London, Mexico & more — I travel to serve<br/>
+                    <strong>Location:</strong> Ceremonies available in Mazunte and select cities worldwide. Travel availability discussed privately after screening.<br/>
                     <strong>Safety:</strong> 50+ ceremonies with full screening. No exceptions.
                   </p>
 
-                  <p className="text-text-secondary/60 text-xs">
+                  <p className="text-text-secondary/60 text-xs italic">
+                    This work is rooted in respect for lineage, land, and personal sovereignty.
+                  </p>
+
+                  <p className="text-text-secondary/50 text-xs">
                     Contraindications: SSRIs, bipolar, psychosis, pregnancy, heart conditions
                   </p>
                 </div>
