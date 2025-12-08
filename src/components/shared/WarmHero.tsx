@@ -38,7 +38,7 @@ export default function WarmHero({
             className="w-full h-full object-cover"
           />
           {/* Warm overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-warm-white/20 via-transparent to-warm-white/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-warm-white/70 via-warm-white/50 to-warm-white/70" />
         </div>
       ) : gradient ? (
         // Warm gradient background (default)

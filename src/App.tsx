@@ -162,14 +162,11 @@ function LandingPage() {
         <p className="text-xl md:text-2xl text-text-secondary/90 font-serif italic max-w-2xl mx-auto mb-4">
           For those ready to change form.
         </p>
-        <p className="text-text-secondary/70 font-light max-w-2xl mx-auto mb-4 text-lg leading-relaxed">
-          Not healing. Not coaching. Not therapy.
-        </p>
-        <p className="text-text-secondary/60 font-light max-w-xl mx-auto mb-4 text-base leading-relaxed">
-          This is transformation — identity death, clarity, embodiment,<br className="hidden md:block" />
+        <p className="text-text-secondary/70 font-light max-w-xl mx-auto mb-4 text-base leading-relaxed">
+          Deep transformation — identity, clarity, embodiment,<br className="hidden md:block" />
           and the creation of your next chapter.
         </p>
-        <p className="text-text-secondary/50 font-light max-w-lg mx-auto mb-8 text-sm">
+        <p className="text-text-secondary/60 font-light max-w-lg mx-auto mb-8 text-sm">
           If you're standing at the edge of who you've been, ready to become who you're meant to be — you're in the right place.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -301,20 +298,20 @@ function LandingPage() {
                     Who I Am
                   </h2>
                   <p className="text-xl text-text-secondary leading-relaxed">
-                    I'm not a healer. I'm not a coach. I'm not a therapist.
+                    I'm Astral. I guide people through transformation.
                   </p>
                 </div>
 
                 {/* The Truth */}
                 <div className="space-y-4 text-text-secondary leading-relaxed">
                   <p>
-                    I'm a <span className="text-accent-gold font-medium">transformational architect</span> — someone who guides high-capacity people through identity death, clarity, and the creation of their next chapter.
+                    I work with people navigating identity shifts — awakening, dissolution, and the creation of their next chapter.
                   </p>
                   <p>
-                    My presence opens fields. It shifts consciousness. It dissolves patterns. It reveals what people don't say. This is rare. This is real.
+                    I hold space for what most people avoid: shadow, grief, ego death, the messy middle of becoming. My work goes beyond conversation — it moves through the body, the energy field, the family system.
                   </p>
                   <p>
-                    I hold a frequency that reorganizes, softens, and brings coherence. People feel it just by sitting with me. I don't "use" energy — <span className="italic text-accent-gold">I am the energy.</span>
+                    I don't have all the answers. But I know how to sit with you while you find yours.
                   </p>
                 </div>
 
@@ -373,11 +370,8 @@ function LandingPage() {
         <div className="relative z-10 w-full px-4 py-24">
           <blockquote className="max-w-4xl mx-auto text-center">
             <p className="text-3xl md:text-5xl font-serif text-text-heading leading-relaxed mb-8">
-              "I don't heal people.<br/>
-              I restructure them."
-            </p>
-            <p className="text-lg text-text-secondary/70 italic">
-              Identity. Purpose. Power. Expression.
+              "This work is not about becoming someone new.<br/>
+              It's about remembering who you've always been."
             </p>
           </blockquote>
         </div>
@@ -945,7 +939,7 @@ function LandingPage() {
                   What exactly do you do?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  I guide high-capacity people through identity transformation. Not therapy. Not coaching. Not ceremony. I hold all the layers — spiritual, psychological, somatic, energetic, creative — so you don't need five different practitioners. My presence opens fields, dissolves patterns, and restructures people. This is rare. This is real.
+                  I guide people through deep transformation — identity shifts, integration after medicine work, family patterns, creative blocks, and the messy middle of becoming. My approach weaves together energy work, family constellations, somatic awareness, and honest conversation. I hold space for what most people avoid.
                 </p>
               </div>
 
