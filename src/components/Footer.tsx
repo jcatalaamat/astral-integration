@@ -139,7 +139,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-text-tertiary text-sm text-center md:text-left">
               <p className="flex items-center gap-2 justify-center md:justify-start">
-                © {new Date().getFullYear()} Astral Integration
+                © 2026 Astral Integration
                 <span className="text-accent-gold/40">⊹</span>
                 All rights reserved
               </p>
