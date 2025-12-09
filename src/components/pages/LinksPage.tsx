@@ -66,7 +66,7 @@ export default function LinksPage() {
 
             {/* Copyright */}
             <p className="text-xs text-[#1A1A1A]/30">
-              © 2025 Jordi Amat. All rights reserved.
+              © 2026 Jordi Amat. All rights reserved.
             </p>
 
             {/* Blessing */}
