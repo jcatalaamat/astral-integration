@@ -643,7 +643,7 @@ function LandingPage() {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
                   <div className="space-y-1">
                     <h3 className="text-2xl font-serif text-text-heading">Bufo Alvarius Journey</h3>
-                    <p className="text-xl text-accent-gold font-medium">€500-800</p>
+                    <p className="text-xl text-accent-gold font-medium">€300-500</p>
                     <p className="text-text-secondary/80">Optional accelerator • By invitation only</p>
                   </div>
                   <Link
