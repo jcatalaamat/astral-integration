@@ -751,7 +751,7 @@ function LandingPage() {
                   </button>
                 </div>
                 <p className="text-text-secondary leading-relaxed mb-4">
-                  Small group retreats in special places around the world — Mazunte, Ibiza, Bali, and beyond.
+                  Small group retreats in special places around the world — Mazunte, Barcelona, Madrid, London, and beyond.
                 </p>
                 <p className="text-text-secondary/80 text-sm leading-relaxed mb-3">
                   Deep immersions combining ceremony, integration work, somatic healing, and community.
