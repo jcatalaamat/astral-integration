@@ -636,7 +636,7 @@ function LandingPage() {
                   <div className="space-y-1">
                     <div className="text-xs text-accent-gold font-medium uppercase tracking-wider mb-1">Signature Offer</div>
                     <h3 className="text-2xl font-serif text-text-heading">Astral Alignment Session</h3>
-                    <p className="text-xl text-accent-gold font-medium">€300-500</p>
+                    <p className="text-xl text-accent-gold font-medium">€250-400</p>
                     <p className="text-text-secondary/80">60-75 minutes • Online or in-person</p>
                   </div>
                   <a
@@ -946,7 +946,7 @@ function LandingPage() {
                   What's the investment?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Astral Alignment Sessions are €300-500. Follow-Up Sessions €120-180. The Astral Map (psychic reading) €180-250. Payment plans available. If cost is a genuine barrier and you're truly called, reach out.
+                  Astral Alignment Sessions are €250-400. Follow-Up Sessions €120-180. The Astral Map (psychic reading) €180-250. Payment plans available. If cost is a genuine barrier and you're truly called, reach out.
                 </p>
               </div>
             </div>
