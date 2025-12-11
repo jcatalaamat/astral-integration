@@ -377,149 +377,175 @@ function LandingPage() {
         </div>
       </div>
 
-      {/* What I Actually Do - Methods Section */}
+      {/* What Happens in a Session */}
       <div className="bg-warm-white py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-4">
-                What I Actually Do
+                What Happens in a Session
               </h2>
               <p className="text-lg text-text-secondary/80 max-w-2xl mx-auto leading-relaxed">
-                I hold all the layers — spiritual, psychological, somatic, energetic, creative — so you don't need five different practitioners.
+                60-75 minutes of psychic, energetic, and strategic realignment.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
-                <h3 className="text-xl font-serif text-text-heading">Identity Evolution</h3>
-                <p className="text-text-secondary leading-relaxed">
-                  Dissolving the outdated identity so you can step into the next one. The you that's been waiting to emerge.
-                </p>
+            {/* 5-Step Process */}
+            <div className="space-y-6">
+              <div className="flex gap-6 p-6 bg-warm-cream/50 rounded-2xl items-start">
+                <div className="flex-shrink-0 w-12 h-12 bg-accent-gold/20 rounded-full flex items-center justify-center text-accent-gold font-serif text-xl">1</div>
+                <div>
+                  <h3 className="text-xl font-serif text-text-heading mb-2">The Hearing</h3>
+                  <p className="text-text-secondary leading-relaxed">
+                    I listen deeply to your field. I hear the truth underneath your surface story. I reveal what is actually going on. This alone can change your life.
+                  </p>
+                </div>
               </div>
 
-              <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
-                <h3 className="text-xl font-serif text-text-heading">Creative & Vision Activation</h3>
-                <p className="text-text-secondary leading-relaxed">
-                  Unlocking genius, flow, and your true gifts. Helping you see the real vision you were born to execute — and bring it into form.
-                </p>
+              <div className="flex gap-6 p-6 bg-warm-cream/50 rounded-2xl items-start">
+                <div className="flex-shrink-0 w-12 h-12 bg-accent-gold/20 rounded-full flex items-center justify-center text-accent-gold font-serif text-xl">2</div>
+                <div>
+                  <h3 className="text-xl font-serif text-text-heading mb-2">The Seeing</h3>
+                  <p className="text-text-secondary leading-relaxed">
+                    I read your current timeline — where your choices are leading, what will repeat, where your destiny is misaligned, which path is opening, what happens if you don't change.
+                  </p>
+                </div>
               </div>
 
-              <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
-                <h3 className="text-xl font-serif text-text-heading">Family Constellations</h3>
-                <p className="text-text-secondary leading-relaxed">
-                  Unraveling invisible dynamics that sabotage leadership, relationships, money flow, creative success, and decision-making.
-                </p>
+              <div className="flex gap-6 p-6 bg-warm-cream/50 rounded-2xl items-start">
+                <div className="flex-shrink-0 w-12 h-12 bg-accent-gold/20 rounded-full flex items-center justify-center text-accent-gold font-serif text-xl">3</div>
+                <div>
+                  <h3 className="text-xl font-serif text-text-heading mb-2">The Mapping</h3>
+                  <p className="text-text-secondary leading-relaxed">
+                    I scan your system — blocks, fears, leaks, cords, ancestral patterns, ego distortions, unintegrated experiences. I map your energetic architecture and show you why you feel stuck.
+                  </p>
+                </div>
               </div>
 
-              <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
-                <h3 className="text-xl font-serif text-text-heading">Energetic & Somatic Work</h3>
-                <p className="text-text-secondary leading-relaxed">
-                  Opening fields, shifting consciousness, activating intuition, bringing coherence to your internal world.
-                </p>
+              <div className="flex gap-6 p-6 bg-warm-cream/50 rounded-2xl items-start">
+                <div className="flex-shrink-0 w-12 h-12 bg-accent-gold/20 rounded-full flex items-center justify-center text-accent-gold font-serif text-xl">4</div>
+                <div>
+                  <h3 className="text-xl font-serif text-text-heading mb-2">The Alignment</h3>
+                  <p className="text-text-secondary leading-relaxed">
+                    I realign your intentions, relationships, identity, direction, choices, spiritual posture. This is where the shift happens.
+                  </p>
+                </div>
               </div>
 
-              <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
-                <h3 className="text-xl font-serif text-text-heading">Shadow & Ego Integration</h3>
-                <p className="text-text-secondary leading-relaxed">
-                  The part that makes high-performers quantum leap instead of burn out. Meeting what you've avoided, integrating what you've hidden.
-                </p>
+              <div className="flex gap-6 p-6 bg-warm-cream/50 rounded-2xl items-start">
+                <div className="flex-shrink-0 w-12 h-12 bg-accent-gold/20 rounded-full flex items-center justify-center text-accent-gold font-serif text-xl">5</div>
+                <div>
+                  <h3 className="text-xl font-serif text-text-heading mb-2">The Integration</h3>
+                  <p className="text-text-secondary leading-relaxed">
+                    You receive your next 3-5 steps, what to stop doing, what to begin, what to release, how to hold the new alignment. This is what makes the work real and applicable.
+                  </p>
+                </div>
               </div>
+            </div>
 
-              <div className="space-y-3 p-8 bg-warm-cream/50 rounded-2xl">
-                <h3 className="text-xl font-serif text-text-heading">Sacred Medicine (Optional)</h3>
-                <p className="text-text-secondary leading-relaxed">
-                  Bufo Alvarius as an accelerator — only when truly aligned. A catalytic initiation, not the foundation of the work.
-                </p>
-              </div>
+            {/* After Session */}
+            <div className="mt-12 p-8 bg-accent-gold/5 border border-accent-gold/20 rounded-2xl text-center">
+              <h3 className="text-xl font-serif text-text-heading mb-4">After Your Session</h3>
+              <p className="text-text-secondary leading-relaxed">
+                You receive a voice-note summary with your main truths, timeline insights, next steps, energetic recommendations, and integration practices.
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* The Transformation */}
+      {/* The 4 Pillars */}
       <div className="bg-warm-cream py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             {/* Title */}
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-4">
-                The Transformation
+                The 4 Pillars
               </h2>
               <p className="text-lg text-text-secondary/80 font-light">
-                Identity death → Clarity → Embodiment → Creation
+                How I work. What makes this different.
               </p>
             </div>
 
-            {/* 4 Phases - Clean Timeline */}
+            {/* 4 Pillars */}
             <div className="space-y-6">
-              {/* Phase 1 */}
+              {/* Pillar 1 */}
               <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
                 <div className="md:col-span-1">
-                  <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 1</div>
-                  <h3 className="text-xl font-serif text-text-heading">Dissolving</h3>
-                  <p className="text-sm text-text-secondary/60 mt-1">Weeks 1-4</p>
+                  <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Pillar 1</div>
+                  <h3 className="text-xl font-serif text-text-heading">Psychic Truth</h3>
+                  <p className="text-sm text-accent-gold/80 mt-1 italic">The Oracle</p>
                 </div>
                 <div className="md:col-span-3">
-                  <p className="text-text-secondary leading-relaxed">
-                    We meet the old identity — the patterns, protections, and stories that kept you safe but small. This is identity death. It's uncomfortable. It's necessary.
+                  <p className="text-text-secondary leading-relaxed mb-3">
+                    I hear what others can't. Direct truth transmission. Reading the unspoken. Revealing root causes instantly.
+                  </p>
+                  <p className="text-text-secondary/70 text-sm italic">
+                    "I show you what your soul already knows but your mind avoids."
                   </p>
                 </div>
               </div>
 
-              {/* Phase 2 */}
+              {/* Pillar 2 */}
               <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
                 <div className="md:col-span-1">
-                  <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 2</div>
-                  <h3 className="text-xl font-serif text-text-heading">Clarity</h3>
-                  <p className="text-sm text-text-secondary/60 mt-1">Weeks 4-12</p>
+                  <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Pillar 2</div>
+                  <h3 className="text-xl font-serif text-text-heading">Timelines & Alignment</h3>
+                  <p className="text-sm text-accent-gold/80 mt-1 italic">Destiny Mapping</p>
                 </div>
                 <div className="md:col-span-3">
-                  <p className="text-text-secondary leading-relaxed">
-                    Family systems work. Shadow integration. Energetic clearing. The invisible dynamics that sabotaged you become visible. You see who you actually are without the conditioning.
+                  <p className="text-text-secondary leading-relaxed mb-3">
+                    I see consequences before they unfold. Timeline shifts, upcoming openings, collapse points, patterns that will repeat. The path of least suffering. The path of greatest expansion.
+                  </p>
+                  <p className="text-text-secondary/70 text-sm italic">
+                    "I align your choices, relationships, and direction with the life you're meant to live."
                   </p>
                 </div>
               </div>
 
-              {/* Phase 3 */}
+              {/* Pillar 3 */}
               <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
                 <div className="md:col-span-1">
-                  <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 3</div>
-                  <h3 className="text-xl font-serif text-text-heading">Embodiment</h3>
-                  <p className="text-sm text-text-secondary/60 mt-1">Months 3-6</p>
+                  <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Pillar 3</div>
+                  <h3 className="text-xl font-serif text-text-heading">Energetic Diagnostics</h3>
+                  <p className="text-sm text-accent-gold/80 mt-1 italic">The Healing Layer</p>
                 </div>
                 <div className="md:col-span-3">
-                  <p className="text-text-secondary leading-relaxed mb-2">
-                    Awakening is easy. Embodiment is the work.
+                  <p className="text-text-secondary leading-relaxed mb-3">
+                    I scan your system and locate energetic architecture. The block beneath the block. Trauma loops. Relational entanglements. Ancestral imprints. Places where your energy leaks.
                   </p>
-                  <p className="text-text-secondary/80 leading-relaxed">
-                    Your new identity anchors into your body, your relationships, your decisions, your presence. You stop performing who you were taught to be.
+                  <p className="text-text-secondary/70 text-sm italic">
+                    "I help you release the energetic patterns keeping you stuck."
                   </p>
                 </div>
               </div>
 
-              {/* Phase 4 */}
+              {/* Pillar 4 */}
               <div className="grid md:grid-cols-4 gap-6 items-start p-8 bg-warm-white rounded-2xl">
                 <div className="md:col-span-1">
-                  <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Phase 4</div>
-                  <h3 className="text-xl font-serif text-text-heading">Creation</h3>
-                  <p className="text-sm text-text-secondary/60 mt-1">Months 6+</p>
+                  <div className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">Pillar 4</div>
+                  <h3 className="text-xl font-serif text-text-heading">Strategic Clarity</h3>
+                  <p className="text-sm text-accent-gold/80 mt-1 italic">Spirit + Strategy</p>
                 </div>
                 <div className="md:col-span-3">
-                  <p className="text-text-secondary leading-relaxed">
-                    Now you create from alignment. The next chapter — in work, relationships, purpose, expression — flows from who you've become, not who you were pretending to be.
+                  <p className="text-text-secondary leading-relaxed mb-3">
+                    Helping founders see their next move. Identifying misaligned decisions. Showing you which relationships to keep or leave. Guiding creators into their actual purpose.
+                  </p>
+                  <p className="text-text-secondary/70 text-sm italic">
+                    "I translate your spiritual alignment into real-world decisions."
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Timeline Reality */}
+            {/* Bottom message */}
             <div className="text-center mt-16 space-y-2">
               <p className="text-text-heading font-serif text-lg">
-                Real transformation takes 6-12 months.
+                You get the insight AND the practical direction.
               </p>
               <p className="text-text-secondary/70 italic">
-                I work with fewer people, going deeper, over longer containers.
+                Not just guidance. A plan aligned with truth.
               </p>
             </div>
           </div>
@@ -561,25 +587,32 @@ function LandingPage() {
                 </p>
               </div>
 
-              {/* Single Session */}
-              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
+              {/* Astral Alignment Session */}
+              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl border-2 border-accent-gold/30">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
                   <div className="space-y-1">
-                    <h3 className="text-2xl font-serif text-text-heading">Single Integration Session</h3>
-                    <p className="text-xl text-accent-gold font-medium">€80-140</p>
-                    <p className="text-text-secondary/80">60 minutes • Online or in-person</p>
+                    <div className="text-xs text-accent-gold font-medium uppercase tracking-wider mb-1">Signature Offer</div>
+                    <h3 className="text-2xl font-serif text-text-heading">Astral Alignment Session</h3>
+                    <p className="text-xl text-accent-gold font-medium">€250-350</p>
+                    <p className="text-text-secondary/80">60-75 minutes • Online or in-person</p>
                   </div>
                   <a
-                    href="https://calendly.com/astral-integration/single-integration-healing-session-60-min"
+                    href="https://calendly.com/astral-integration/astral-alignment-session"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
+                    className="px-6 py-3 bg-accent-gold text-warm-white rounded-full hover:bg-accent-terracotta transition-colors font-medium whitespace-nowrap inline-block text-center"
                   >
                     Book Session
                   </a>
                 </div>
-                <p className="text-text-secondary/80 leading-relaxed">
-                  Perfect for processing a recent ceremony, navigating a transition, energy clearing, or exploring if deeper work is right for you.
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  A complete psychic, energetic, and strategic realignment. The Hearing, The Seeing, The Mapping, The Alignment, The Integration — all in one session.
+                </p>
+                <p className="text-text-secondary/80 text-sm leading-relaxed mb-3">
+                  Includes: Full session + voice-note summary with your main truths, timeline insights, next steps, and integration practices.
+                </p>
+                <p className="text-text-secondary/70 text-sm italic">
+                  For creators, founders, and high-capacity individuals ready for clarity and direction.
                 </p>
               </div>
 
@@ -993,7 +1026,7 @@ function LandingPage() {
                   What's the investment?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Single sessions start at €80. Mentorship containers €300-500 per cycle. Deeper transformation containers by application. I work with fewer people, going deeper, over longer timelines. Payment plans available. If cost is a genuine barrier and you're truly called, reach out.
+                  Astral Alignment Sessions are €250-350. Mentorship containers €300-500 per cycle. Deeper transformation containers by application. I work with fewer people, going deeper, over longer timelines. Payment plans available. If cost is a genuine barrier and you're truly called, reach out.
                 </p>
               </div>
             </div>
