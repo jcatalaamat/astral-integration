@@ -655,7 +655,55 @@ function LandingPage() {
                   Includes: Full session + voice-note summary with your main truths, timeline insights, next steps, and integration practices.
                 </p>
                 <p className="text-text-secondary/70 text-sm italic">
-                  For creators, founders, and high-capacity individuals ready for clarity and direction.
+                  All paths begin here. All other work is invitation-only.
+                </p>
+              </div>
+
+              {/* Astral Alignment Follow-Up */}
+              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-serif text-text-heading">Astral Alignment Follow-Up</h3>
+                    <p className="text-xl text-accent-gold font-medium">€120-180</p>
+                    <p className="text-text-secondary/80">30-40 minutes • Online or in-person</p>
+                  </div>
+                  <a
+                    href="https://calendly.com/astral-integration/alignment-follow-up"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
+                  >
+                    Book Follow-Up
+                  </a>
+                </div>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  A short psychic recalibration for continued alignment. Perfect for those wanting clarity without the full session.
+                </p>
+                <p className="text-text-secondary/80 text-sm leading-relaxed">
+                  Includes: Brief psychic hearing • Timeline update • Energetic scan • 2-3 key shifts + next steps
+                </p>
+              </div>
+
+              {/* The Astral Map */}
+              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-serif text-text-heading">The Astral Map</h3>
+                    <p className="text-xl text-accent-gold font-medium">€180-250</p>
+                    <p className="text-text-secondary/80">Psychic reading • 7-day delivery</p>
+                  </div>
+                  <button
+                    onClick={() => scrollToSection('contact')}
+                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
+                  >
+                    Order Your Map
+                  </button>
+                </div>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  A deep psychic and energetic reading of your life, path, patterns, and next chapter — delivered as a 15-20 minute voice note.
+                </p>
+                <p className="text-text-secondary/80 text-sm leading-relaxed">
+                  Includes: Your current timeline • Your biggest block • Your energetic architecture • What's ending • What's beginning • Your next 3-5 steps
                 </p>
               </div>
 
@@ -898,7 +946,7 @@ function LandingPage() {
                   What's the investment?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Astral Alignment Sessions are €300-500. Payment plans available. If cost is a genuine barrier and you're truly called, reach out.
+                  Astral Alignment Sessions are €300-500. Follow-Up Sessions €120-180. The Astral Map (psychic reading) €180-250. Payment plans available. If cost is a genuine barrier and you're truly called, reach out.
                 </p>
               </div>
             </div>
