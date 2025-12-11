@@ -155,19 +155,18 @@ function LandingPage() {
       {/* Hero Section with WarmHero component */}
       <WarmHero
         title="Astral Integration"
-        subtitle="Deep Transformation • Identity Rebirth • Sacred Medicine"
+        subtitle="Psychic Alignment • Identity Rebirth • Energetic Transformation"
         height="extra-large"
         image="/images/homepage/hero.jpg"
       >
         <p className="text-xl md:text-2xl text-text-secondary/90 font-serif italic max-w-2xl mx-auto mb-4">
-          For those ready to change form.
+          For those ready to hear the truth, see their path, and step into who they're meant to become.
         </p>
         <p className="text-text-secondary/70 font-light max-w-xl mx-auto mb-4 text-base leading-relaxed">
-          Deep transformation — identity, clarity, embodiment,<br className="hidden md:block" />
-          and the creation of your next chapter.
+          Deep transformation begins when truth enters your life.
         </p>
         <p className="text-text-secondary/60 font-light max-w-lg mx-auto mb-8 text-sm">
-          If you're standing at the edge of who you've been, ready to become who you're meant to be — you're in the right place.
+          If you're standing at the threshold — no longer who you were, not yet who you're becoming — this is the work that carries you across.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
@@ -298,30 +297,27 @@ function LandingPage() {
                     Who I Am
                   </h2>
                   <p className="text-xl text-text-secondary leading-relaxed">
-                    I'm Astral. I guide people through transformation.
+                    I'm Astral. A psychic oracle, a guide through transformation, and a facilitator of alignment.
                   </p>
                 </div>
 
                 {/* The Truth */}
                 <div className="space-y-4 text-text-secondary leading-relaxed">
                   <p>
-                    I work with people navigating identity shifts — awakening, dissolution, and the creation of their next chapter.
+                    I work with people navigating identity shifts — awakening, dissolution, rebirth, and the creation of their next chapter. My work blends psychic truth, energetic diagnostics, somatic awareness, family systems, and sacred medicine when appropriate.
                   </p>
                   <p>
-                    I hold space for what most people avoid: shadow, grief, ego death, the messy middle of becoming. My work goes beyond conversation — it moves through the body, the energy field, the family system.
-                  </p>
-                  <p>
-                    I don't have all the answers. But I know how to sit with you while you find yours.
+                    I hear what others can't. I see timelines, patterns, and trajectories hidden beneath your conscious story. I map the energetic architecture of your system and realign you with the life you are meant to live.
                   </p>
                 </div>
 
                 {/* The Path */}
                 <div className="space-y-4 text-text-secondary leading-relaxed">
                   <p>
-                    My path wasn't linear. I lived many lives — performer, creator, seeker — until my body finally said <span className="italic">no more.</span> The unraveling began. And with it came truth.
+                    My own journey wasn't linear. It was an unraveling — many initiations, ego deaths, and rebirths that stripped me down to what was real.
                   </p>
                   <p>
-                    Plant medicine cracked me open. But awakening isn't enough. Integration is where insight becomes embodiment. That's the work I now guide others through.
+                    Medicine cracked me open. But integration taught me how to live. This is the wisdom I now offer those walking through their own fire.
                   </p>
                 </div>
 
@@ -374,6 +370,53 @@ function LandingPage() {
               It's about remembering who you've always been."
             </p>
           </blockquote>
+        </div>
+      </div>
+
+      {/* What Makes This Work Different */}
+      <div className="bg-warm-white py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-4">
+                What Makes This Work Different
+              </h2>
+              <p className="text-lg text-text-secondary/80">
+                Most healing gives you insight. Most coaching gives you action steps.<br/>
+                <span className="text-accent-gold">This work gives you truth. Alignment. Rebirth.</span>
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-6 bg-warm-cream/50 rounded-2xl">
+                <h3 className="text-lg font-serif text-text-heading mb-2">Psychic Hearing</h3>
+                <p className="text-text-secondary text-sm">Direct truth transmission — what your soul knows but your mind avoids</p>
+              </div>
+              <div className="p-6 bg-warm-cream/50 rounded-2xl">
+                <h3 className="text-lg font-serif text-text-heading mb-2">Timeline Mapping</h3>
+                <p className="text-text-secondary text-sm">Reading consequences and future paths before they unfold</p>
+              </div>
+              <div className="p-6 bg-warm-cream/50 rounded-2xl">
+                <h3 className="text-lg font-serif text-text-heading mb-2">Energetic Diagnostics</h3>
+                <p className="text-text-secondary text-sm">Locating the block beneath the block, the pattern beneath the pattern</p>
+              </div>
+              <div className="p-6 bg-warm-cream/50 rounded-2xl">
+                <h3 className="text-lg font-serif text-text-heading mb-2">Strategic Clarity</h3>
+                <p className="text-text-secondary text-sm">Real-world alignment for your next chapter — decisions, relationships, direction</p>
+              </div>
+              <div className="p-6 bg-warm-cream/50 rounded-2xl md:col-span-2">
+                <h3 className="text-lg font-serif text-text-heading mb-2">Ceremonial Grounding</h3>
+                <p className="text-text-secondary text-sm">Shadow work, ego death, emotional release — when the process calls for it</p>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-text-secondary/70 italic">
+                It's not therapy. It's not coaching. It's not "just" energy work.<br/>
+                <span className="text-text-heading font-serif">It's transformation through alignment.</span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -616,182 +659,11 @@ function LandingPage() {
                 </p>
               </div>
 
-              {/* Ongoing Mentorship */}
-              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
-                  <div className="space-y-1">
-                    <h3 className="text-2xl font-serif text-text-heading">Ongoing Mentorship</h3>
-                    <p className="text-xl text-accent-gold font-medium">€300-500 per cycle</p>
-                    <p className="text-text-secondary/80">4 sessions • ~2 months per cycle</p>
-                  </div>
-                  <a
-                    href="https://calendly.com/astral-integration/mentorship-intake-call-30-min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
-                  >
-                    Apply
-                  </a>
-                </div>
-                <p className="text-text-secondary leading-relaxed mb-4">
-                  A gentle, steady container for those who need consistent guidance and inner work — without the intensity of weekly sessions.
-                </p>
-                <p className="text-text-secondary/80 text-sm leading-relaxed mb-3">
-                  Includes: 4x 60-minute sessions • Voice message support • Personalized practices • Integration guidance for medicine work
-                </p>
-                <p className="text-text-secondary/70 text-sm italic">
-                  Best for creative souls, sensitives, and seekers navigating transitions who want steady, loving support as they unfold.
-                </p>
-              </div>
-
-              {/* Group Ceremonies */}
-              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl border border-accent-sage/30">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
-                  <div className="space-y-1">
-                    <h3 className="text-2xl font-serif text-text-heading">Group Ceremonies</h3>
-                    <p className="text-xl text-accent-gold font-medium">By Application</p>
-                    <p className="text-text-secondary/80">Small group medicine work • Curated containers</p>
-                  </div>
-                  <button
-                    onClick={() => scrollToSection('contact')}
-                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
-                  >
-                    Inquire
-                  </button>
-                </div>
-                <p className="text-text-secondary leading-relaxed mb-4">
-                  Intimate group ceremonies for those ready for collective transformation. Either microdose journeys or individual turns within a held container.
-                </p>
-                <p className="text-text-secondary/80 text-sm leading-relaxed mb-3">
-                  The group field amplifies. What moves in one person ripples through all.
-                  Small circles only — 4-8 people max. Carefully curated for resonance and readiness.
-                </p>
-                <p className="text-text-secondary/70 text-sm italic">
-                  Prior screening required. Announced to the inner circle first.
-                </p>
-              </div>
-
-              {/* Bufo Alvarius - Optional Accelerator */}
-              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl border border-accent-terracotta/20">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
-                  <div className="space-y-1">
-                    <h3 className="text-2xl font-serif text-text-heading">Bufo Alvarius Journey</h3>
-                    <p className="text-xl text-accent-gold font-medium">€300-500</p>
-                    <p className="text-text-secondary/80">Optional accelerator • By invitation only</p>
-                  </div>
-                  <Link
-                    to="/bufo-screening"
-                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
-                  >
-                    Apply for Screening
-                  </Link>
-                </div>
-                <div className="space-y-4">
-                  <p className="text-text-secondary leading-relaxed">
-                    I don't sell Bufo. It's not my business. It's not my core offering. It's an <span className="text-accent-gold">accelerator</span> — used only when the person is ready, the context is right, and the process calls for it.
-                  </p>
-
-                  <p className="text-text-secondary/80 text-sm leading-relaxed">
-                    Sacred 5-MeO-DMT in the Seri lineage. Ego dissolution. Divine remembrance. This amplifies the transformation I already create naturally — it doesn't replace it.
-                  </p>
-
-                  <p className="text-text-secondary/70 text-sm">
-                    <strong>Package:</strong> Full screening • Preparation • Ceremony in sacred space • Integration<br/>
-                    <strong>Safety:</strong> 50+ ceremonies. Taught by Seri elders. No exceptions on screening.
-                  </p>
-
-                  <p className="text-text-secondary/60 text-xs italic">
-                    People who want Bufo come through resonance, not marketing. If you're called, apply.
-                  </p>
-
-                  <p className="text-text-secondary/50 text-xs">
-                    <Link to="/bufo-contraindications" className="text-accent-gold hover:text-accent-terracotta transition-colors underline">
-                      View full contraindications
-                    </Link>
-                    {' '}— SSRIs, bipolar, psychosis, pregnancy, heart conditions
-                  </p>
-                </div>
-              </div>
-
-              {/* Astral Integration Training */}
-              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl border border-accent-sage/30">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
-                  <div className="space-y-1">
-                    <h3 className="text-2xl font-serif text-text-heading">Astral Integration Training</h3>
-                    <p className="text-xl text-accent-gold font-medium">By Application</p>
-                    <p className="text-text-secondary/80">8-week online group program</p>
-                  </div>
-                  <button
-                    onClick={() => scrollToSection('contact')}
-                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
-                  >
-                    Inquire
-                  </button>
-                </div>
-                <p className="text-text-secondary leading-relaxed mb-4">
-                  A group training for those learning to hold space and guide transformation.
-                </p>
-                <p className="text-text-secondary/80 text-sm leading-relaxed mb-3">
-                  8 weeks of weekly group calls covering: shadow work, energy healing, family systems,
-                  somatic awareness, medicine integration, and the art of presence.
-                </p>
-                <p className="text-text-secondary/70 text-sm italic">
-                  For therapists, coaches, healers, and seekers ready to deepen their practice and serve others.
-                </p>
-              </div>
-
-              {/* Facilitator Training */}
-              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl border border-accent-sage/30">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
-                  <div className="space-y-1">
-                    <h3 className="text-2xl font-serif text-text-heading">Facilitator Training</h3>
-                    <p className="text-xl text-accent-gold font-medium">By Application</p>
-                    <p className="text-text-secondary/80">For those called to hold space for others</p>
-                  </div>
-                  <button
-                    onClick={() => scrollToSection('contact')}
-                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
-                  >
-                    Inquire
-                  </button>
-                </div>
-                <p className="text-text-secondary leading-relaxed mb-4">
-                  A deep apprenticeship for those ready to become facilitators, healers, or guides in their own right.
-                </p>
-                <p className="text-text-secondary/80 text-sm leading-relaxed mb-3">
-                  This is not a weekend certification. It's a transmission — a mentorship that takes you from seeker to space-holder.
-                  Integration work, energy healing, or medicine facilitation depending on your path.
-                </p>
-                <p className="text-text-secondary/70 text-sm italic">
-                  Requirements: Prior work with me, readiness assessment, and genuine calling. Not everyone is meant to hold space —
-                  we'll explore this honestly together.
-                </p>
-              </div>
-
-              {/* Retreats */}
-              <div className="p-8 md:p-10 bg-warm-cream/50 rounded-2xl border border-accent-sage/30">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-4">
-                  <div className="space-y-1">
-                    <h3 className="text-2xl font-serif text-text-heading">Retreats</h3>
-                    <p className="text-xl text-accent-gold font-medium">By Invitation</p>
-                    <p className="text-text-secondary/80">Immersive experiences in sacred places</p>
-                  </div>
-                  <button
-                    onClick={() => scrollToSection('contact')}
-                    className="px-6 py-3 border-2 border-accent-gold text-accent-gold rounded-full hover:bg-accent-gold hover:text-warm-white transition-colors font-medium whitespace-nowrap inline-block text-center"
-                  >
-                    Join Waitlist
-                  </button>
-                </div>
-                <p className="text-text-secondary leading-relaxed mb-4">
-                  Small group retreats in special places around the world — Mazunte, Barcelona, Madrid, London, and beyond.
-                </p>
-                <p className="text-text-secondary/80 text-sm leading-relaxed mb-3">
-                  Deep immersions combining ceremony, integration work, somatic healing, and community.
-                  Limited spaces. Announced to the inner circle first.
-                </p>
-                <p className="text-text-secondary/70 text-sm italic">
-                  Get on the list to hear about upcoming retreats before they're public.
+              {/* Private Medicine Work Note */}
+              <div className="p-6 bg-warm-cream/30 rounded-2xl border border-text-primary/5 mt-8">
+                <p className="text-text-secondary/70 text-sm leading-relaxed text-center">
+                  <span className="text-text-heading font-medium">Private medicine work</span> (plant medicine, Bufo Alvarius) is not offered publicly.
+                  These are optional accelerators available only after an Alignment Session — and only when appropriate.
                 </p>
               </div>
 
@@ -800,7 +672,7 @@ function LandingPage() {
             {/* Investment Philosophy */}
             <div className="mt-12 text-center">
               <p className="text-text-secondary/70 italic">
-                Sliding scale and payment plans available. If cost is a barrier, reach out.
+                Payment plans available. If cost is a genuine barrier, reach out.
               </p>
             </div>
           </div>
@@ -972,7 +844,7 @@ function LandingPage() {
                   What exactly do you do?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  I guide people through deep transformation — identity shifts, integration after medicine work, family patterns, creative blocks, and the messy middle of becoming. My approach weaves together energy work, family constellations, somatic awareness, and honest conversation. I hold space for what most people avoid.
+                  I offer psychic alignment sessions — a blend of clairaudient insight, timeline reading, energetic diagnostics, and strategic clarity. I hear what others can't, see where your path is leading, map the invisible architecture beneath your challenges, and give you both the truth and the practical next steps.
                 </p>
               </div>
 
@@ -1008,7 +880,7 @@ function LandingPage() {
                   Can you work with people globally?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Yes. Deep transformation work happens online. I work with clients worldwide via video. Medicine ceremonies are in-person in Mazunte, Mexico or select cities by arrangement.
+                  Yes. Alignment sessions happen online via video. I work with clients worldwide. In-person sessions available in Barcelona and Mazunte.
                 </p>
               </div>
 
@@ -1026,7 +898,7 @@ function LandingPage() {
                   What's the investment?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Astral Alignment Sessions are €250-350. Mentorship containers €300-500 per cycle. Deeper transformation containers by application. I work with fewer people, going deeper, over longer timelines. Payment plans available. If cost is a genuine barrier and you're truly called, reach out.
+                  Astral Alignment Sessions are €250-350. Payment plans available. If cost is a genuine barrier and you're truly called, reach out.
                 </p>
               </div>
             </div>
