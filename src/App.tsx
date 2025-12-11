@@ -183,7 +183,7 @@ function LandingPage() {
           </button>
         </div>
         <p className="text-text-secondary/60 text-sm mt-8">
-          Facilitating deep transformation since 2015
+          Facilitating deep transformation since 2016
         </p>
       </WarmHero>
 
