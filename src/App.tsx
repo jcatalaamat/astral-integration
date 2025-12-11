@@ -163,7 +163,7 @@ function LandingPage() {
           For those ready to hear the truth, see their path, and step into who they're meant to become.
         </p>
         <p className="text-text-secondary/70 font-light max-w-xl mx-auto mb-4 text-base leading-relaxed">
-          This is not gentle guidance. This is alignment.
+          This is not comfort. This is truth.
         </p>
         <p className="text-text-secondary/60 font-light max-w-lg mx-auto mb-8 text-sm">
           If you're standing at the threshold — no longer who you were, not yet who you're becoming — this is the work that carries you across.
@@ -183,7 +183,7 @@ function LandingPage() {
           </button>
         </div>
         <p className="text-text-secondary/60 text-sm mt-8">
-          Guiding deep transformation since 2015
+          Facilitating deep transformation since 2015
         </p>
       </WarmHero>
 
@@ -603,8 +603,11 @@ function LandingPage() {
               <h2 className="text-4xl md:text-5xl font-serif text-text-heading mb-4">
                 Offerings & Investment
               </h2>
-              <p className="text-lg text-text-secondary/80">
+              <p className="text-lg text-text-secondary/80 mb-2">
                 Clear, honest, transparent.
+              </p>
+              <p className="text-accent-gold/80 font-serif italic">
+                Start here. Everything else unfolds after.
               </p>
             </div>
 
@@ -717,6 +720,10 @@ function LandingPage() {
       <div className="bg-gradient-to-b from-warm-cream to-warm-peach/30 py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            {/* Visual Divider */}
+            <div className="flex justify-center mb-16">
+              <div className="w-32 h-px bg-accent-gold/40"></div>
+            </div>
             {/* Header */}
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-serif text-text-heading mb-4">
@@ -793,11 +800,14 @@ function LandingPage() {
 
             {/* Closing CTA */}
             <div className="text-center mt-16">
-              <p className="text-text-heading font-serif text-lg mb-6">
+              <p className="text-text-heading font-serif text-lg mb-4">
                 If any of this calls you, begin with an Alignment Session.
               </p>
-              <p className="text-accent-gold font-serif italic">
+              <p className="text-accent-gold font-serif italic mb-2">
                 All deeper paths open from there.
+              </p>
+              <p className="text-text-secondary/60 text-sm italic mt-6">
+                If you're meant to enter, you'll feel it. And I'll know.
               </p>
               <button
                 onClick={() => scrollToSection('contact')}
