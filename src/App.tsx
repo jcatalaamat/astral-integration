@@ -707,16 +707,105 @@ function LandingPage() {
                 </p>
               </div>
 
-              {/* Private Medicine Work Note */}
-              <div className="p-6 bg-warm-cream/30 rounded-2xl border border-text-primary/5 mt-8">
-                <p className="text-text-secondary/70 text-sm leading-relaxed text-center">
-                  <span className="text-text-heading font-medium">Private medicine work</span> (plant medicine, Bufo Alvarius) is not offered publicly.
-                  These are optional accelerators available only after an Alignment Session — and only when appropriate.
+              </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* Invitation-Only Work */}
+      <div className="bg-gradient-to-b from-warm-cream to-warm-peach/30 py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-serif text-text-heading mb-4">
+                Invitation-Only Work
+              </h2>
+              <p className="text-xl text-accent-gold font-serif italic mb-6">
+                For those called into deeper transformation.
+              </p>
+              <p className="text-text-secondary/80 leading-relaxed max-w-2xl mx-auto">
+                Not all work happens through single sessions. Some processes require a longer field, a deeper container, or a more specific kind of guidance. These offerings are not publicly bookable — they open only through resonance, readiness, and after an Alignment Session.
+              </p>
+            </div>
+
+            {/* Offerings Grid */}
+            <div className="space-y-8">
+              {/* Founder Oracle Consulting */}
+              <div className="p-8 bg-warm-white/60 rounded-2xl border border-accent-gold/10">
+                <h3 className="text-2xl font-serif text-text-heading mb-3">Founder Oracle Consulting</h3>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  High-level strategic and spiritual counsel for founders, creators, and leaders. I read the energetic architecture of your business, partnerships, decisions, and trajectory — and realign you with the path that actually expands you.
+                </p>
+                <p className="text-text-secondary/70 text-sm">
+                  Pattern diagnosis • Leadership alignment • Relationship dynamics • Directional clarity • Vision activation
+                </p>
+                <p className="text-accent-gold/80 text-sm mt-4 italic">By application only.</p>
+              </div>
+
+              {/* Deep Transformation Containers */}
+              <div className="p-8 bg-warm-white/60 rounded-2xl border border-accent-gold/10">
+                <h3 className="text-2xl font-serif text-text-heading mb-3">Deep Transformation Containers</h3>
+                <p className="text-text-secondary/70 text-sm mb-3">1–3 months</p>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  For those in a threshold moment: identity dissolution, rebirth, major life shifts, spiritual awakenings, relationship endings, creative pivots. A private Oracle-style container with ongoing guidance.
+                </p>
+                <p className="text-text-secondary/70 text-sm">
+                  Alignment sessions • Ongoing energetic + strategic guidance • Voice-message support • Structural recalibration
+                </p>
+                <p className="text-accent-gold/80 text-sm mt-4 italic">Opens when the process calls for it.</p>
+              </div>
+
+              {/* Medicine Integration */}
+              <div className="p-8 bg-warm-white/60 rounded-2xl border border-accent-gold/10">
+                <h3 className="text-2xl font-serif text-text-heading mb-3">Medicine Integration</h3>
+                <p className="text-text-secondary/70 text-sm mb-3">Non-drug process</p>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  For people navigating intense spiritual openings, ego dissolution, or after-effects of plant medicine — without needing to take anything new. A spiritual restructuring process.
+                </p>
+                <p className="text-text-secondary/70 text-sm">
+                  Energetic stabilization • Identity reconstruction • Shadow integration • Nervous system coherence • Timeline recalibration
                 </p>
               </div>
 
+              {/* Private Plant Medicine Work */}
+              <div className="p-8 bg-warm-white/60 rounded-2xl border border-accent-gold/10">
+                <h3 className="text-2xl font-serif text-text-heading mb-3">Private Plant Medicine Work</h3>
+                <p className="text-text-secondary/70 text-sm mb-3">By invitation only</p>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  Bufo Alvarius and other sacred modalities are not services. They are accelerators — used only when the alignment is exact. Available only after an Alignment Session, when your system is ready, and when the work calls for it.
+                </p>
+                <p className="text-text-secondary/70 text-sm">
+                  Includes preparation, ceremony, and integration.
+                </p>
               </div>
 
+              {/* Retreats & Immersions */}
+              <div className="p-8 bg-warm-white/60 rounded-2xl border border-accent-gold/10">
+                <h3 className="text-2xl font-serif text-text-heading mb-3">Retreats & Immersions</h3>
+                <p className="text-text-secondary/70 text-sm mb-3">Waitlist only</p>
+                <p className="text-text-secondary leading-relaxed">
+                  Small, curated containers in sacred places. Deep work for groups of 4–8. Announced privately to the inner circle first.
+                </p>
+              </div>
+            </div>
+
+            {/* Closing CTA */}
+            <div className="text-center mt-16">
+              <p className="text-text-heading font-serif text-lg mb-6">
+                If any of this calls you, begin with an Alignment Session.
+              </p>
+              <p className="text-accent-gold font-serif italic">
+                All deeper paths open from there.
+              </p>
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="mt-8 px-8 py-4 bg-accent-gold text-warm-white rounded-full hover:bg-accent-terracotta transition-colors font-medium"
+              >
+                Book Discovery Call
+              </button>
+            </div>
           </div>
         </div>
       </div>
