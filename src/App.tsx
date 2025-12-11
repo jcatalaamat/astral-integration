@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useParams, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { Mail, MapPin, Clock, Instagram, CheckCircle } from 'lucide-react';
 import EventPreview from './components/EventPreview';
@@ -163,7 +163,7 @@ function LandingPage() {
           For those ready to hear the truth, see their path, and step into who they're meant to become.
         </p>
         <p className="text-text-secondary/70 font-light max-w-xl mx-auto mb-4 text-base leading-relaxed">
-          Deep transformation begins when truth enters your life.
+          This is not gentle guidance. This is alignment.
         </p>
         <p className="text-text-secondary/60 font-light max-w-lg mx-auto mb-8 text-sm">
           If you're standing at the threshold — no longer who you were, not yet who you're becoming — this is the work that carries you across.
@@ -317,7 +317,7 @@ function LandingPage() {
                     My own journey wasn't linear. It was an unraveling — many initiations, ego deaths, and rebirths that stripped me down to what was real.
                   </p>
                   <p>
-                    Medicine cracked me open. But integration taught me how to live. This is the wisdom I now offer those walking through their own fire.
+                    Medicine cracked me open. Integration taught me how to live. This is the wisdom I now offer those walking through their own fire.
                   </p>
                 </div>
 
@@ -690,7 +690,7 @@ function LandingPage() {
                   <div className="space-y-1">
                     <h3 className="text-2xl font-serif text-text-heading">The Astral Map</h3>
                     <p className="text-xl text-accent-gold font-medium">€180-250</p>
-                    <p className="text-text-secondary/80">Psychic reading • 7-day delivery</p>
+                    <p className="text-text-secondary/80">Psychic reading • 7-day delivery • No live call required</p>
                   </div>
                   <button
                     onClick={() => scrollToSection('contact')}
@@ -717,12 +717,6 @@ function LandingPage() {
 
               </div>
 
-            {/* Investment Philosophy */}
-            <div className="mt-12 text-center">
-              <p className="text-text-secondary/70 italic">
-                Payment plans available. If cost is a genuine barrier, reach out.
-              </p>
-            </div>
           </div>
         </div>
       </div>
@@ -946,7 +940,7 @@ function LandingPage() {
                   What's the investment?
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
-                  Astral Alignment Sessions are €250-400. Follow-Up Sessions €120-180. The Astral Map (psychic reading) €180-250. Payment plans available. If cost is a genuine barrier and you're truly called, reach out.
+                  Astral Alignment Sessions are €250-400. Follow-Up Sessions €120-180. The Astral Map (psychic reading) €180-250. If you feel deeply called but need an adjustment, reach out. Alignment always finds a way.
                 </p>
               </div>
             </div>

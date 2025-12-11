@@ -33,7 +33,7 @@ export default function Footer() {
             <div className="space-y-4">
               <h3 className="text-xl font-serif text-accent-gold">Astral Integration</h3>
               <p className="text-text-secondary text-sm leading-relaxed">
-                Plant medicine integration, energy healing, and transformational mentorship for those navigating awakening and major life transitions.
+                Psychic Alignment • Identity Rebirth • Energetic Transformation
               </p>
             </div>
 
