@@ -53,90 +53,97 @@ export default function HomePage() {
     <div className="min-h-screen bg-studio-bg font-sans">
       <Navigation />
 
-      {/* HERO — Authority anchor */}
-      <section className="min-h-[90vh] flex items-center">
+      {/* HERO — Authority anchor with agency */}
+      <section className="min-h-[95vh] flex items-center">
         <div className="max-w-content mx-auto px-6 md:px-12 py-32 md:py-40">
           <div className="max-w-3xl">
-            <h1 className="text-display-sm md:text-display text-content-heading mb-6">
+            <h1 className="text-display-sm md:text-display text-content-heading mb-8">
               Astral Integration
             </h1>
-            <p className="text-h3 md:text-h2 text-content-secondary font-normal mb-12">
-              A Living Systems Studio
+
+            {/* Signal line - short, declarative, no explanation */}
+            <p className="text-h2 md:text-h1 text-content-heading font-medium mb-16 max-w-2xl">
+              We redesign systems that no longer hold.
             </p>
 
-            <p className="text-body md:text-lg text-content-primary leading-relaxed mb-6 max-w-prose">
-              We work with founders, leaders, and creators when the way they're operating no longer works.
-            </p>
-            <p className="text-body text-content-secondary leading-relaxed max-w-prose">
-              We step in at moments of growth, transition, or complexity to redesign the underlying human and work systems — so execution becomes clear again.
-            </p>
+            <div className="space-y-6 max-w-prose">
+              <p className="text-body md:text-lg text-content-primary leading-relaxed">
+                When growth breaks the structure that once worked, we step in. We redesign the operating system around people and work — so execution becomes clear again.
+              </p>
+              <p className="text-body text-content-secondary leading-relaxed">
+                For founders, leaders, and creators navigating moments of transition, complexity, or scale.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* THE SITUATION */}
-      <section className="py-section-lg bg-studio-bgAlt">
+      {/* THE SITUATION — Dark section for visual contrast */}
+      <section className="py-28 md:py-36 bg-studio-dark">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-4">
+            <p className="text-meta text-white/50 uppercase tracking-wider mb-6">
               The Situation
             </p>
-            <h2 className="text-h1 md:text-h1 text-content-heading mb-8">
+            <h2 className="text-h1 md:text-display-sm text-white mb-12">
               Why People Come to Us
             </h2>
 
-            <p className="text-body text-content-primary leading-relaxed mb-10">
+            <p className="text-body text-white/80 leading-relaxed mb-14">
               Not because they lack vision, talent, or effort — but because the structure around their work no longer fits the reality they're living inside.
             </p>
 
-            <ul className="space-y-4 mb-12">
+            {/* 3 irreversible truths - condensed */}
+            <ul className="space-y-6 mb-14">
               {[
-                'The structure that once worked no longer fits',
-                'Responsibility has concentrated too heavily in one place',
-                'Decisions are slow or unclear',
-                'Execution feels harder than it should',
-                'Tools exist, but don\'t support reality',
-                'Life and work have become entangled'
+                'The structure that worked no longer fits',
+                'Responsibility has silently collapsed inward',
+                'Execution now costs more energy than it should'
               ].map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-4">
-                  <span className="text-accent mt-1.5 text-sm">—</span>
+                <li key={i} className="text-lg text-white/90 flex items-start gap-4">
+                  <span className="text-accent-gold mt-1">—</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
 
-            <p className="text-body text-content-primary leading-relaxed">
-              At this stage, pushing harder or adding more tools doesn't help. The system itself needs to change.
+            <p className="text-body text-white font-medium">
+              At this stage, pushing harder doesn't help. The system itself needs to change.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHAT WE DO */}
-      <section id="services" className="py-section-lg">
+      {/* WHAT WE DO — Outcome first, then explanation */}
+      <section id="services" className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-2 gap-16 md:gap-24">
             <div>
-              <p className="text-meta text-content-tertiary uppercase tracking-wider mb-4">
+              <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
                 The Work
               </p>
-              <h2 className="text-h1 text-content-heading mb-8">
+              <h2 className="text-h1 md:text-display-sm text-content-heading mb-10">
                 What We Do
               </h2>
 
-              <p className="text-body text-content-primary leading-relaxed mb-6">
+              {/* Outcome first */}
+              <p className="text-lg text-content-heading font-medium mb-8">
+                We restore clarity, momentum, and structural integrity.
+              </p>
+
+              <p className="text-body text-content-secondary leading-relaxed mb-6">
                 We work one level beneath surface problems. Rather than offering advice, coaching, or generic frameworks, we redesign the operating system around people and work.
               </p>
               <p className="text-body text-content-secondary leading-relaxed">
-                The outcome is practical and grounded: clarity, momentum, and a system that holds without constant intervention.
+                The outcome is practical and grounded: a system that holds without constant intervention.
               </p>
             </div>
 
-            <div className="md:pt-12">
-              <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
+            <div className="md:pt-16">
+              <p className="text-meta text-content-tertiary uppercase tracking-wider mb-8">
                 This typically includes
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-0">
                 {[
                   'Roles & ownership',
                   'Decision flow',
@@ -144,7 +151,7 @@ export default function HomePage() {
                   'Tools & systems',
                   'Execution clarity'
                 ].map((item, i) => (
-                  <li key={i} className="text-body text-content-primary py-3 border-b border-studio-divider last:border-b-0">
+                  <li key={i} className="text-body text-content-primary py-4 border-b border-studio-divider last:border-b-0">
                     {item}
                   </li>
                 ))}
@@ -154,32 +161,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHO THIS IS FOR */}
-      <section className="py-section-lg bg-studio-bgAlt">
+      {/* WHO THIS IS FOR — With exclusion */}
+      <section className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
-          <p className="text-meta text-content-tertiary uppercase tracking-wider mb-4">
+          <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
             Who We Work With
           </p>
-          <h2 className="text-h1 text-content-heading mb-4">
-            This Work Is For People Who Already Have Something Real
+          <h2 className="text-h1 md:text-display-sm text-content-heading mb-6">
+            People Who Already Have Something Real
           </h2>
           <p className="text-body text-content-secondary mb-16 max-w-prose">
             Not starting from scratch — restructuring what exists.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
+          <div className="grid md:grid-cols-3 gap-12 md:gap-16 mb-16">
             <div>
-              <h3 className="text-h3 text-content-heading mb-4">Founders</h3>
-              <ul className="space-y-2 text-body-sm text-content-secondary">
+              <h3 className="text-h3 text-content-heading mb-5">Founders</h3>
+              <ul className="space-y-3 text-body-sm text-content-secondary">
                 <li>Founder-led businesses</li>
-                <li>Solo operators</li>
+                <li>Solo operators scaling</li>
                 <li>Small teams in transition</li>
               </ul>
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-heading mb-4">Creators</h3>
-              <ul className="space-y-2 text-body-sm text-content-secondary">
+              <h3 className="text-h3 text-content-heading mb-5">Creators</h3>
+              <ul className="space-y-3 text-body-sm text-content-secondary">
                 <li>Artists with complex practices</li>
                 <li>Creative professionals</li>
                 <li>Independent practitioners</li>
@@ -187,25 +194,30 @@ export default function HomePage() {
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-heading mb-4">Projects</h3>
-              <ul className="space-y-2 text-body-sm text-content-secondary">
+              <h3 className="text-h3 text-content-heading mb-5">Projects</h3>
+              <ul className="space-y-3 text-body-sm text-content-secondary">
                 <li>Outgrown original structure</li>
                 <li>Restructuring, not starting</li>
                 <li>Sustainability over heroics</li>
               </ul>
             </div>
           </div>
+
+          {/* Exclusion line - builds trust */}
+          <p className="text-body text-content-tertiary border-t border-studio-divider pt-10">
+            This is not for early-stage ideation, motivation, or therapy.
+          </p>
         </div>
       </section>
 
-      {/* HOW WE WORK */}
-      <section id="process" className="py-section-lg">
+      {/* HOW WE WORK — Emphasize diagnosis */}
+      <section id="process" className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose mb-16">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-4">
+          <div className="max-w-prose mb-20">
+            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
               The Process
             </p>
-            <h2 className="text-h1 text-content-heading mb-6">
+            <h2 className="text-h1 md:text-display-sm text-content-heading mb-8">
               How We Work
             </h2>
             <p className="text-body text-content-secondary leading-relaxed">
@@ -214,39 +226,59 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-            {[
-              { num: '01', title: 'Diagnosis', desc: 'Understanding where and why the system stopped working' },
-              { num: '02', title: 'Redesign', desc: 'Roles, decision flow, structure, tools' },
-              { num: '03', title: 'Stabilisation', desc: 'So the system holds without constant oversight' }
-            ].map((step, i) => (
-              <div key={i} className="py-8 border-t-2 border-studio-divider">
-                <span className="text-meta text-accent font-medium">{step.num}</span>
-                <h3 className="text-h3 text-content-heading mt-4 mb-3">{step.title}</h3>
-                <p className="text-body-sm text-content-secondary">{step.desc}</p>
-              </div>
-            ))}
+            {/* Diagnosis - emphasized */}
+            <div className="py-10 border-t-2 border-content-heading">
+              <span className="text-meta text-accent font-medium">01</span>
+              <h3 className="text-h2 text-content-heading mt-5 mb-4">Diagnosis</h3>
+              <p className="text-body text-content-secondary leading-relaxed">
+                Understanding where and why the system stopped working. This is where the real value lives.
+              </p>
+            </div>
+
+            {/* Redesign */}
+            <div className="py-10 border-t-2 border-studio-divider">
+              <span className="text-meta text-accent font-medium">02</span>
+              <h3 className="text-h3 text-content-heading mt-5 mb-4">Redesign</h3>
+              <p className="text-body-sm text-content-secondary">
+                Roles, decision flow, structure, tools
+              </p>
+            </div>
+
+            {/* Stabilisation */}
+            <div className="py-10 border-t-2 border-studio-divider">
+              <span className="text-meta text-accent font-medium">03</span>
+              <h3 className="text-h3 text-content-heading mt-5 mb-4">Stabilisation</h3>
+              <p className="text-body-sm text-content-secondary">
+                So the system holds without constant oversight
+              </p>
+            </div>
           </div>
 
-          <p className="text-body text-content-primary mt-16 max-w-prose">
+          <p className="text-lg text-content-heading font-medium mt-20 max-w-prose">
             We step in where it matters, do the work, and step back.
           </p>
         </div>
       </section>
 
-      {/* LIVING SYSTEMS — With diagram */}
-      <section className="py-section-lg bg-studio-bgAlt">
+      {/* LIVING SYSTEMS — With applied example */}
+      <section className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-meta text-content-tertiary uppercase tracking-wider mb-4">
+              <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
                 Philosophy
               </p>
-              <h2 className="text-h1 text-content-heading mb-8">
+              <h2 className="text-h1 md:text-display-sm text-content-heading mb-10">
                 Living Systems
               </h2>
 
-              <p className="text-body text-content-primary leading-relaxed mb-8">
+              <p className="text-body text-content-primary leading-relaxed mb-10">
                 We treat organizations and creative practices as living systems, not machines.
+              </p>
+
+              {/* Applied example - grounds the philosophy */}
+              <p className="text-body text-content-secondary leading-relaxed mb-10 pl-6 border-l-2 border-accent">
+                When authority is unclear, decisions slow. When decisions slow, responsibility collapses inward.
               </p>
 
               <ul className="space-y-4">
@@ -263,7 +295,7 @@ export default function HomePage() {
                 ))}
               </ul>
 
-              <p className="text-body text-content-primary mt-10">
+              <p className="text-lg text-content-heading font-medium mt-12">
                 When structure fits the people inside it, momentum returns naturally.
               </p>
             </div>
@@ -276,22 +308,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ABOUT THE STUDIO */}
-      <section id="about" className="py-section-lg">
+      {/* ABOUT THE STUDIO — With context */}
+      <section id="about" className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-4">
+            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
               The Studio
             </p>
-            <h2 className="text-h1 text-content-heading mb-8">
+            <h2 className="text-h1 md:text-display-sm text-content-heading mb-10">
               About Astral Integration
             </h2>
 
-            <p className="text-body text-content-primary leading-relaxed mb-6">
+            <p className="text-body text-content-primary leading-relaxed mb-8">
               Founded by a systems architect working at the intersection of people, work, and technology.
             </p>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-10">
+            {/* Context line */}
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              The work draws from years designing systems across technology, creative practice, and founder-led organizations.
+            </p>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-12">
               The studio exists to support moments when growth outpaces structure, complexity breaks coherence, responsibility concentrates too heavily, or execution slows despite effort.
             </p>
 
@@ -302,30 +339,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="py-section-lg bg-studio-bgAlt">
+      {/* CONTACT — Better form and button */}
+      <section id="contact" className="py-28 md:py-36 bg-studio-dark">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-4">
+            <p className="text-meta text-white/50 uppercase tracking-wider mb-6">
               Get in Touch
             </p>
-            <h2 className="text-h1 text-content-heading mb-8">
+            <h2 className="text-h1 md:text-display-sm text-white mb-10">
               Working Together
             </h2>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-4">
+            <p className="text-body text-white/70 leading-relaxed mb-6">
               If you're exploring working together, reach out with what you're building or holding, where things feel stuck or brittle, and why this moment matters.
             </p>
 
-            <p className="text-body text-content-primary mb-12">
+            <p className="text-body text-white/90 mb-14">
               If it's a fit, we'll define the next step.
             </p>
 
-            {/* Contact Form */}
+            {/* Contact Form - styled for dark bg */}
             {formStatus !== 'success' ? (
-              <form onSubmit={handleContactSubmit} className="space-y-6">
+              <form onSubmit={handleContactSubmit} className="space-y-8">
                 <div>
-                  <label htmlFor="name" className="block text-body-sm text-content-secondary mb-2">
+                  <label htmlFor="name" className="block text-body-sm text-white/60 mb-3">
                     Name
                   </label>
                   <input
@@ -333,16 +370,16 @@ export default function HomePage() {
                     id="name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className={`w-full px-4 py-3 bg-white border text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent transition-colors ${
-                      formErrors.name ? 'border-red-400' : 'border-studio-divider'
+                    className={`w-full px-5 py-4 bg-studio-darkAlt border text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors ${
+                      formErrors.name ? 'border-red-400' : 'border-studio-darkDivider'
                     }`}
                     placeholder="Your name"
                   />
-                  {formErrors.name && <p className="mt-1 text-body-sm text-red-500">{formErrors.name}</p>}
+                  {formErrors.name && <p className="mt-2 text-body-sm text-red-400">{formErrors.name}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-body-sm text-content-secondary mb-2">
+                  <label htmlFor="email" className="block text-body-sm text-white/60 mb-3">
                     Email
                   </label>
                   <input
@@ -350,16 +387,16 @@ export default function HomePage() {
                     id="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className={`w-full px-4 py-3 bg-white border text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent transition-colors ${
-                      formErrors.email ? 'border-red-400' : 'border-studio-divider'
+                    className={`w-full px-5 py-4 bg-studio-darkAlt border text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors ${
+                      formErrors.email ? 'border-red-400' : 'border-studio-darkDivider'
                     }`}
                     placeholder="your@email.com"
                   />
-                  {formErrors.email && <p className="mt-1 text-body-sm text-red-500">{formErrors.email}</p>}
+                  {formErrors.email && <p className="mt-2 text-body-sm text-red-400">{formErrors.email}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-body-sm text-content-secondary mb-2">
+                  <label htmlFor="message" className="block text-body-sm text-white/60 mb-3">
                     Message
                   </label>
                   <textarea
@@ -367,42 +404,42 @@ export default function HomePage() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={5}
-                    className={`w-full px-4 py-3 bg-white border text-content-primary placeholder-content-tertiary focus:outline-none focus:border-accent transition-colors resize-none ${
-                      formErrors.message ? 'border-red-400' : 'border-studio-divider'
+                    className={`w-full px-5 py-4 bg-studio-darkAlt border text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors resize-none ${
+                      formErrors.message ? 'border-red-400' : 'border-studio-darkDivider'
                     }`}
                     placeholder="What are you building? Where do things feel stuck?"
                   />
-                  {formErrors.message && <p className="mt-1 text-body-sm text-red-500">{formErrors.message}</p>}
+                  {formErrors.message && <p className="mt-2 text-body-sm text-red-400">{formErrors.message}</p>}
                 </div>
 
                 <button
                   type="submit"
                   disabled={formStatus === 'sending'}
-                  className="px-8 py-3 bg-content-primary text-white hover:bg-accent transition-colors text-body-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-10 py-4 bg-white text-studio-dark hover:bg-white/90 transition-colors text-body font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {formStatus === 'sending' ? 'Sending...' : formStatus === 'error' ? 'Error - try again' : 'Send'}
+                  {formStatus === 'sending' ? 'Sending...' : formStatus === 'error' ? 'Error - try again' : 'Start a conversation'}
                 </button>
               </form>
             ) : (
-              <div className="py-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <CheckCircle className="w-5 h-5 text-accent" />
-                  <p className="text-body text-content-primary">Message received</p>
+              <div className="py-10">
+                <div className="flex items-center gap-3 mb-5">
+                  <CheckCircle className="w-5 h-5 text-accent-gold" />
+                  <p className="text-body text-white">Message received</p>
                 </div>
-                <p className="text-body-sm text-content-secondary mb-6">
+                <p className="text-body-sm text-white/60 mb-8">
                   We'll respond within 24-48 hours.
                 </p>
                 <button
                   onClick={() => setFormStatus('idle')}
-                  className="text-body-sm text-accent hover:text-accent-hover transition-colors"
+                  className="text-body-sm text-white/70 hover:text-white transition-colors"
                 >
                   Send another message
                 </button>
               </div>
             )}
 
-            <div className="mt-16 pt-8 border-t border-studio-divider">
-              <p className="text-body-sm text-content-tertiary">
+            <div className="mt-20 pt-10 border-t border-studio-darkDivider">
+              <p className="text-body-sm text-white/40">
                 hello@astralintegration.co
               </p>
             </div>
