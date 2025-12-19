@@ -124,42 +124,39 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu - simple dropdown */}
       {mobileMenuOpen && (
-        <div
-          className="fixed inset-0 z-40 md:hidden"
-          aria-hidden="true"
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
-        </div>
-      )}
+        <>
+          {/* Backdrop - closes menu on tap */}
+          <div
+            className="fixed inset-0 z-40 md:hidden"
+            aria-hidden="true"
+            onClick={() => setMobileMenuOpen(false)}
+          />
 
-      {/* Mobile Menu Panel */}
-      <div
-        className={`fixed top-16 left-0 right-0 z-45 md:hidden transition-all duration-300 ease-out ${
-          mobileMenuOpen
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 -translate-y-4 pointer-events-none'
-        }`}
-        role="menu"
-        aria-label="Mobile navigation"
-      >
-        <div className="bg-studio-bg border-b border-studio-divider shadow-lg">
-          <div className="max-w-content mx-auto px-6 py-6 space-y-1">
-            {navItems.map((item) => (
-              <button
-                key={item.sectionId}
-                onClick={() => scrollToSection(item.sectionId)}
-                className="block w-full text-left py-3 px-2 text-body text-content-primary hover:text-accent hover:bg-studio-bgAlt rounded-lg transition-colors"
-                role="menuitem"
-              >
-                {item.label}
-              </button>
-            ))}
+          {/* Menu Panel */}
+          <div
+            className="fixed top-16 left-0 right-0 z-50 md:hidden"
+            role="menu"
+            aria-label="Mobile navigation"
+          >
+            <div className="bg-studio-bg border-b border-studio-divider shadow-lg">
+              <div className="max-w-content mx-auto px-6 py-4">
+                {navItems.map((item) => (
+                  <button
+                    key={item.sectionId}
+                    onClick={() => scrollToSection(item.sectionId)}
+                    className="block w-full text-left py-4 text-body text-content-primary hover:text-accent transition-colors border-b border-studio-divider last:border-b-0"
+                    role="menuitem"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </>
   );
 }
