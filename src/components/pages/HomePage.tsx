@@ -79,7 +79,7 @@ export default function HomePage() {
       </section>
 
       {/* THE SITUATION — Dark section for visual contrast */}
-      <section className="py-28 md:py-36 bg-studio-dark">
+      <section className="py-28 md:py-36 bg-[#232323]">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-white/50 uppercase tracking-wider mb-6">
@@ -336,8 +336,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CONTACT — Better form and button */}
-      <section id="contact" className="py-28 md:py-36 bg-studio-dark">
+      {/* CONTACT — Dark section */}
+      <section id="contact" className="py-28 md:py-36 bg-[#232323]">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-white/50 uppercase tracking-wider mb-6">
@@ -367,8 +367,8 @@ export default function HomePage() {
                     id="name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className={`w-full px-5 py-4 bg-studio-darkAlt border text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors ${
-                      formErrors.name ? 'border-red-400' : 'border-studio-darkDivider'
+                    className={`w-full px-5 py-4 bg-[#2C2C2C] border text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors ${
+                      formErrors.name ? 'border-red-400' : 'border-[#404040]'
                     }`}
                     placeholder="Your name"
                   />
@@ -384,8 +384,8 @@ export default function HomePage() {
                     id="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className={`w-full px-5 py-4 bg-studio-darkAlt border text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors ${
-                      formErrors.email ? 'border-red-400' : 'border-studio-darkDivider'
+                    className={`w-full px-5 py-4 bg-[#2C2C2C] border text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors ${
+                      formErrors.email ? 'border-red-400' : 'border-[#404040]'
                     }`}
                     placeholder="your@email.com"
                   />
@@ -401,8 +401,8 @@ export default function HomePage() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={5}
-                    className={`w-full px-5 py-4 bg-studio-darkAlt border text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors resize-none ${
-                      formErrors.message ? 'border-red-400' : 'border-studio-darkDivider'
+                    className={`w-full px-5 py-4 bg-[#2C2C2C] border text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors resize-none ${
+                      formErrors.message ? 'border-red-400' : 'border-[#404040]'
                     }`}
                     placeholder="What are you building? Where do things feel stuck?"
                   />
@@ -412,7 +412,7 @@ export default function HomePage() {
                 <button
                   type="submit"
                   disabled={formStatus === 'sending'}
-                  className="px-10 py-4 bg-white text-studio-dark hover:bg-white/90 transition-colors text-body font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-10 py-4 bg-white text-[#232323] hover:bg-white/90 transition-colors text-body font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {formStatus === 'sending' ? 'Sending...' : formStatus === 'error' ? 'Error - try again' : 'Start a conversation'}
                 </button>
@@ -435,7 +435,7 @@ export default function HomePage() {
               </div>
             )}
 
-            <div className="mt-20 pt-10 border-t border-studio-darkDivider">
+            <div className="mt-20 pt-10 border-t border-[#404040]">
               <p className="text-body-sm text-white/40">
                 hello@astralintegration.co
               </p>
