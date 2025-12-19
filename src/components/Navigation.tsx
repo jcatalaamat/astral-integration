@@ -26,6 +26,18 @@ export default function Navigation() {
     return () => window.removeEventListener('keydown', handleEscape);
   }, [mobileMenuOpen]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
@@ -58,76 +70,96 @@ export default function Navigation() {
   };
 
   const navItems = [
+    { label: 'Work', sectionId: 'services' },
+    { label: 'Process', sectionId: 'process' },
     { label: 'About', sectionId: 'about' },
-    { label: 'Approach', sectionId: 'services' },
     { label: 'Contact', sectionId: 'contact' },
   ];
 
   return (
-    <nav
-      role="navigation"
-      aria-label="Main navigation"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-studio-bg/95 backdrop-blur-sm border-b border-studio-divider'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-content mx-auto px-6 md:px-12">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <button
-            onClick={scrollToTop}
-            className="text-content-heading text-body font-medium hover:text-content-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-sm"
-            aria-label="Astral Integration home"
-          >
-            Astral Integration
-          </button>
+    <>
+      <nav
+        role="navigation"
+        aria-label="Main navigation"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled || mobileMenuOpen
+            ? 'bg-studio-bg/98 backdrop-blur-sm border-b border-studio-divider'
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="max-w-content mx-auto px-6 md:px-12">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <button
+              onClick={scrollToTop}
+              className="text-content-heading text-body font-medium hover:text-content-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-sm"
+              aria-label="Astral Integration home"
+            >
+              Astral Integration
+            </button>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <button
-                key={item.sectionId}
-                onClick={() => scrollToSection(item.sectionId)}
-                className="text-body-sm text-content-secondary hover:text-content-primary transition-colors"
-              >
-                {item.label}
-              </button>
-            ))}
+            {/* Desktop Nav Links */}
+            <div className="hidden md:flex items-center gap-8">
+              {navItems.map((item) => (
+                <button
+                  key={item.sectionId}
+                  onClick={() => scrollToSection(item.sectionId)}
+                  className="text-body-sm text-content-secondary hover:text-content-primary transition-colors"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-expanded={mobileMenuOpen}
+              aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              className="md:hidden p-2 -mr-2 text-content-secondary hover:text-content-primary transition-colors"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-expanded={mobileMenuOpen}
-            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            className="md:hidden p-2 text-content-secondary hover:text-content-primary transition-colors"
-          >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
         </div>
+      </nav>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div
-            className="md:hidden py-4 space-y-2 border-t border-studio-divider bg-studio-bg"
-            role="menu"
-            aria-label="Mobile navigation"
-          >
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-40 md:hidden"
+          aria-hidden="true"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
+        </div>
+      )}
+
+      {/* Mobile Menu Panel */}
+      <div
+        className={`fixed top-16 left-0 right-0 z-45 md:hidden transition-all duration-300 ease-out ${
+          mobileMenuOpen
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 -translate-y-4 pointer-events-none'
+        }`}
+        role="menu"
+        aria-label="Mobile navigation"
+      >
+        <div className="bg-studio-bg border-b border-studio-divider shadow-lg">
+          <div className="max-w-content mx-auto px-6 py-6 space-y-1">
             {navItems.map((item) => (
               <button
                 key={item.sectionId}
                 onClick={() => scrollToSection(item.sectionId)}
-                className="block w-full text-left py-2 text-body-sm text-content-secondary hover:text-content-primary transition-colors"
+                className="block w-full text-left py-3 px-2 text-body text-content-primary hover:text-accent hover:bg-studio-bgAlt rounded-lg transition-colors"
                 role="menuitem"
               >
                 {item.label}
               </button>
             ))}
           </div>
-        )}
+        </div>
       </div>
-    </nav>
+    </>
   );
 }

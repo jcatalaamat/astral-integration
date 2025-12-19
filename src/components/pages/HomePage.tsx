@@ -199,7 +199,7 @@ export default function HomePage() {
       </section>
 
       {/* HOW WE WORK */}
-      <section className="py-section-lg">
+      <section id="process" className="py-section-lg">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose mb-16">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-4">
