@@ -92,7 +92,7 @@ export default function Navigation() {
             {/* Logo */}
             <button
               onClick={scrollToTop}
-              className="text-content-heading text-body font-medium hover:text-content-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-sm"
+              className="text-content-primary text-body font-medium hover:text-content-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-sm"
               aria-label="Astral Integration home"
             >
               Astral Integration

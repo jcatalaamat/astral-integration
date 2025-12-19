@@ -57,12 +57,12 @@ export default function HomePage() {
       <section className="min-h-[95vh] flex items-center">
         <div className="max-w-content mx-auto px-6 md:px-12 py-32 md:py-40">
           <div className="max-w-3xl">
-            <h1 className="text-display-sm md:text-display text-content-heading mb-8">
+            <h1 className="text-display-sm md:text-display text-content-primary mb-8">
               Astral Integration
             </h1>
 
             {/* Signal line - stands alone */}
-            <p className="text-h2 md:text-h1 text-content-heading font-medium mb-12 max-w-2xl">
+            <p className="text-h2 md:text-h1 text-content-primary font-medium mb-12 max-w-2xl">
               We redesign systems that no longer hold.
             </p>
 
@@ -122,12 +122,12 @@ export default function HomePage() {
               <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
                 The Work
               </p>
-              <h2 className="text-h1 md:text-display-sm text-content-heading mb-10">
+              <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
                 What We Do
               </h2>
 
               {/* Outcome first */}
-              <p className="text-lg text-content-heading font-medium mb-8">
+              <p className="text-lg text-content-primary font-medium mb-8">
                 We restore clarity, momentum, and structural integrity.
               </p>
 
@@ -164,7 +164,7 @@ export default function HomePage() {
           <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
             Who We Work With
           </p>
-          <h2 className="text-h1 md:text-display-sm text-content-heading mb-6">
+          <h2 className="text-h1 md:text-display-sm text-content-primary mb-6">
             People Who Already Have Something Real
           </h2>
           <p className="text-body text-content-secondary mb-16 max-w-prose">
@@ -173,7 +173,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-12 md:gap-16 mb-16">
             <div>
-              <h3 className="text-h3 text-content-heading mb-5">Founders</h3>
+              <h3 className="text-h3 text-content-primary mb-5">Founders</h3>
               <ul className="space-y-3 text-body-sm text-content-secondary">
                 <li>Founder-led businesses</li>
                 <li>Solo operators scaling</li>
@@ -182,7 +182,7 @@ export default function HomePage() {
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-heading mb-5">Creators</h3>
+              <h3 className="text-h3 text-content-primary mb-5">Creators</h3>
               <ul className="space-y-3 text-body-sm text-content-secondary">
                 <li>Artists with complex practices</li>
                 <li>Creative professionals</li>
@@ -191,7 +191,7 @@ export default function HomePage() {
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-heading mb-5">Projects</h3>
+              <h3 className="text-h3 text-content-primary mb-5">Projects</h3>
               <ul className="space-y-3 text-body-sm text-content-secondary">
                 <li>Outgrown original structure</li>
                 <li>Restructuring, not starting</li>
@@ -214,7 +214,7 @@ export default function HomePage() {
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
               The Process
             </p>
-            <h2 className="text-h1 md:text-display-sm text-content-heading mb-8">
+            <h2 className="text-h1 md:text-display-sm text-content-primary mb-8">
               How We Work
             </h2>
             <p className="text-body text-content-secondary leading-relaxed">
@@ -224,9 +224,9 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {/* Diagnosis - emphasized */}
-            <div className="py-10 border-t-2 border-content-heading">
+            <div className="py-10 border-t-2 border-content-primary">
               <span className="text-meta text-accent font-medium">01</span>
-              <h3 className="text-h2 text-content-heading mt-5 mb-4">Diagnosis</h3>
+              <h3 className="text-h2 text-content-primary mt-5 mb-4">Diagnosis</h3>
               <p className="text-body text-content-secondary leading-relaxed">
                 Understanding where and why the system stopped working. This is where the real value lives.
               </p>
@@ -235,7 +235,7 @@ export default function HomePage() {
             {/* Redesign */}
             <div className="py-10 border-t-2 border-studio-divider">
               <span className="text-meta text-accent font-medium">02</span>
-              <h3 className="text-h3 text-content-heading mt-5 mb-4">Redesign</h3>
+              <h3 className="text-h3 text-content-primary mt-5 mb-4">Redesign</h3>
               <p className="text-body-sm text-content-secondary">
                 Roles, decision flow, structure, tools
               </p>
@@ -244,14 +244,14 @@ export default function HomePage() {
             {/* Stabilisation */}
             <div className="py-10 border-t-2 border-studio-divider">
               <span className="text-meta text-accent font-medium">03</span>
-              <h3 className="text-h3 text-content-heading mt-5 mb-4">Stabilisation</h3>
+              <h3 className="text-h3 text-content-primary mt-5 mb-4">Stabilisation</h3>
               <p className="text-body-sm text-content-secondary">
                 So the system holds without constant oversight
               </p>
             </div>
           </div>
 
-          <p className="text-lg text-content-heading font-medium mt-20 max-w-prose">
+          <p className="text-lg text-content-primary font-medium mt-20 max-w-prose">
             We step in, redesign what's necessary, and step back.
           </p>
         </div>
@@ -265,7 +265,7 @@ export default function HomePage() {
               <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
                 Philosophy
               </p>
-              <h2 className="text-h1 md:text-display-sm text-content-heading mb-10">
+              <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
                 Living Systems
               </h2>
 
@@ -274,7 +274,7 @@ export default function HomePage() {
               </p>
 
               {/* Applied example - emphasized, grounds the philosophy */}
-              <p className="text-lg text-content-primary leading-relaxed mb-12 pl-6 border-l-2 border-content-heading">
+              <p className="text-lg text-content-primary leading-relaxed mb-12 pl-6 border-l-2 border-content-primary">
                 When authority is unclear, decisions slow. When decisions slow, responsibility collapses inward.
               </p>
 
@@ -292,7 +292,7 @@ export default function HomePage() {
                 ))}
               </ul>
 
-              <p className="text-lg text-content-heading font-medium mt-12">
+              <p className="text-lg text-content-primary font-medium mt-12">
                 When structure fits the people inside it, momentum returns naturally.
               </p>
             </div>
@@ -312,7 +312,7 @@ export default function HomePage() {
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
               The Studio
             </p>
-            <h2 className="text-h1 md:text-display-sm text-content-heading mb-10">
+            <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
               About Astral Integration
             </h2>
 
@@ -367,8 +367,8 @@ export default function HomePage() {
                     id="name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className={`w-full px-5 py-4 bg-[#2C2C2C] border text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors ${
-                      formErrors.name ? 'border-red-400' : 'border-[#404040]'
+                    className={`w-full px-5 py-4 bg-[#2C2C2C] border text-white placeholder-white/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors ${
+                      formErrors.name ? 'border-red-400 focus:ring-red-400/20' : 'border-[#404040]'
                     }`}
                     placeholder="Your name"
                   />
@@ -384,8 +384,8 @@ export default function HomePage() {
                     id="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className={`w-full px-5 py-4 bg-[#2C2C2C] border text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors ${
-                      formErrors.email ? 'border-red-400' : 'border-[#404040]'
+                    className={`w-full px-5 py-4 bg-[#2C2C2C] border text-white placeholder-white/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors ${
+                      formErrors.email ? 'border-red-400 focus:ring-red-400/20' : 'border-[#404040]'
                     }`}
                     placeholder="your@email.com"
                   />
@@ -401,8 +401,8 @@ export default function HomePage() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={5}
-                    className={`w-full px-5 py-4 bg-[#2C2C2C] border text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors resize-none ${
-                      formErrors.message ? 'border-red-400' : 'border-[#404040]'
+                    className={`w-full px-5 py-4 bg-[#2C2C2C] border text-white placeholder-white/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors resize-none ${
+                      formErrors.message ? 'border-red-400 focus:ring-red-400/20' : 'border-[#404040]'
                     }`}
                     placeholder="What are you building? Where do things feel stuck?"
                   />
@@ -412,7 +412,7 @@ export default function HomePage() {
                 <button
                   type="submit"
                   disabled={formStatus === 'sending'}
-                  className="px-10 py-4 bg-white text-[#232323] hover:bg-white/90 transition-colors text-body font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-10 py-4 bg-white text-[#232323] hover:bg-white/90 active:bg-white/80 transition-colors text-body font-medium disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[#232323]"
                 >
                   {formStatus === 'sending' ? 'Sending...' : formStatus === 'error' ? 'Error - try again' : 'Start a conversation'}
                 </button>

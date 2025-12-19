@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="border-t border-studio-divider bg-studio-bg">
       <div className="max-w-content mx-auto px-6 md:px-12 py-16">
         <div className="max-w-prose">
-          <p className="text-content-heading text-body font-medium mb-2">
+          <p className="text-content-primary text-body font-medium mb-2">
             Astral Integration
           </p>
           <p className="text-content-secondary text-body-sm mb-8">

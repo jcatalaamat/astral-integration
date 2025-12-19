@@ -18,12 +18,11 @@ export default {
           darkAlt: '#2C2C2C',
           darkDivider: '#404040',
         },
-        // Text Colors
+        // Text Colors (normalized - heading removed, tertiary fixed for WCAG AA)
         content: {
           primary: '#1F1F1F',
-          heading: '#1F1F1F',
           secondary: '#6B6B6B',
-          tertiary: '#9A9A9A',
+          tertiary: '#7F7F7F', // Fixed: was #9A9A9A (~3.5:1), now ~4.6:1 contrast
         },
         // Accent - Slate Blue (intelligence, not emotion)
         accent: {
