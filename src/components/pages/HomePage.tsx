@@ -61,19 +61,19 @@ export default function HomePage() {
               Astral Integration
             </h1>
 
-            {/* Signal line - short, declarative, no explanation */}
-            <p className="text-h2 md:text-h1 text-content-heading font-medium mb-16 max-w-2xl">
+            {/* Signal line - stands alone */}
+            <p className="text-h2 md:text-h1 text-content-heading font-medium mb-12 max-w-2xl">
               We redesign systems that no longer hold.
             </p>
 
-            <div className="space-y-6 max-w-prose">
-              <p className="text-body md:text-lg text-content-primary leading-relaxed">
-                When growth breaks the structure that once worked, we step in. We redesign the operating system around people and work — so execution becomes clear again.
-              </p>
-              <p className="text-body text-content-secondary leading-relaxed">
-                For founders, leaders, and creators navigating moments of transition, complexity, or scale.
-              </p>
-            </div>
+            <p className="text-body md:text-lg text-content-primary leading-relaxed mb-10 max-w-prose">
+              When growth breaks the structure that once worked, we redesign the operating system around people and work — so execution becomes clear again.
+            </p>
+
+            {/* Audience as metadata */}
+            <p className="text-body-sm text-content-tertiary">
+              For founders, leaders, and creators navigating transition, complexity, or scale.
+            </p>
           </div>
         </div>
       </section>
@@ -93,12 +93,12 @@ export default function HomePage() {
               Not because they lack vision, talent, or effort — but because the structure around their work no longer fits the reality they're living inside.
             </p>
 
-            {/* 3 irreversible truths - condensed */}
+            {/* 3 irreversible truths - structural, not emotional */}
             <ul className="space-y-6 mb-14">
               {[
                 'The structure that worked no longer fits',
                 'Responsibility has silently collapsed inward',
-                'Execution now costs more energy than it should'
+                'Execution now depends on heroics instead of structure'
               ].map((item, i) => (
                 <li key={i} className="text-lg text-white/90 flex items-start gap-4">
                   <span className="text-accent-gold mt-1">—</span>
@@ -131,11 +131,8 @@ export default function HomePage() {
                 We restore clarity, momentum, and structural integrity.
               </p>
 
-              <p className="text-body text-content-secondary leading-relaxed mb-6">
-                We work one level beneath surface problems. Rather than offering advice, coaching, or generic frameworks, we redesign the operating system around people and work.
-              </p>
               <p className="text-body text-content-secondary leading-relaxed">
-                The outcome is practical and grounded: a system that holds without constant intervention.
+                We work one level beneath surface problems. Rather than advice, coaching, or frameworks — we redesign the operating system around people and work until it holds without constant intervention.
               </p>
             </div>
 
@@ -203,8 +200,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Exclusion line - builds trust */}
-          <p className="text-body text-content-tertiary border-t border-studio-divider pt-10">
+          {/* Exclusion line - lighter, boundary not pitch */}
+          <p className="text-body-sm text-content-tertiary/70 border-t border-studio-divider pt-8">
             This is not for early-stage ideation, motivation, or therapy.
           </p>
         </div>
@@ -255,7 +252,7 @@ export default function HomePage() {
           </div>
 
           <p className="text-lg text-content-heading font-medium mt-20 max-w-prose">
-            We step in where it matters, do the work, and step back.
+            We step in, redesign what's necessary, and step back.
           </p>
         </div>
       </section>
@@ -276,8 +273,8 @@ export default function HomePage() {
                 We treat organizations and creative practices as living systems, not machines.
               </p>
 
-              {/* Applied example - grounds the philosophy */}
-              <p className="text-body text-content-secondary leading-relaxed mb-10 pl-6 border-l-2 border-accent">
+              {/* Applied example - emphasized, grounds the philosophy */}
+              <p className="text-lg text-content-primary leading-relaxed mb-12 pl-6 border-l-2 border-content-heading">
                 When authority is unclear, decisions slow. When decisions slow, responsibility collapses inward.
               </p>
 
@@ -323,9 +320,9 @@ export default function HomePage() {
               Founded by a systems architect working at the intersection of people, work, and technology.
             </p>
 
-            {/* Context line */}
+            {/* Context line - more active */}
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              The work draws from years designing systems across technology, creative practice, and founder-led organizations.
+              The work comes from years designing systems across technology, creative practice, and founder-led organizations.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-12">

@@ -13,10 +13,10 @@ export default {
           bg: '#FAF9F7',
           bgAlt: '#F5F4F2',
           divider: '#E6E4E1',
-          // Dark section for contrast
-          dark: '#1C1C1C',
-          darkAlt: '#252525',
-          darkDivider: '#3A3A3A',
+          // Dark section for contrast (charcoal, not black)
+          dark: '#232323',
+          darkAlt: '#2C2C2C',
+          darkDivider: '#404040',
         },
         // Text Colors
         content: {
