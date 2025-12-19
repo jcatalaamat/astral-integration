@@ -113,7 +113,7 @@ export default function HomePage() {
       </section>
 
       {/* WHAT WE DO */}
-      <section className="py-section-lg">
+      <section id="services" className="py-section-lg">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-2 gap-16 md:gap-24">
             <div>
@@ -277,7 +277,7 @@ export default function HomePage() {
       </section>
 
       {/* ABOUT THE STUDIO */}
-      <section className="py-section-lg">
+      <section id="about" className="py-section-lg">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-4">
