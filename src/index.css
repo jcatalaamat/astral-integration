@@ -61,8 +61,11 @@
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* Sacred scroll behavior - smooth */
-html {
+/* Prevent dark mode from affecting background and text */
+html, body {
+  background-color: #FAF9F7;
+  color: #1E1E1E;
+  color-scheme: light;
   scroll-behavior: smooth;
 }
 

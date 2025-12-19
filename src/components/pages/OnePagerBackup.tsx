@@ -1061,8 +1061,8 @@ function OnePagerBackup() {
                   </div>
                   <div>
                     <h3 className="text-sm font-medium text-text-primary mb-1">Email</h3>
-                    <a href="mailto:hello@astral-integration.com" className="text-text-secondary hover:text-accent-gold transition-colors">
-                      hello@astral-integration.com
+                    <a href="mailto:hello@astralintegration.co" className="text-text-secondary hover:text-accent-gold transition-colors">
+                      hello@astralintegration.co
                     </a>
                   </div>
                 </div>

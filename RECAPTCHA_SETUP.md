@@ -17,8 +17,8 @@ reCAPTCHA v3 provides invisible spam protection without requiring user interacti
    - **reCAPTCHA type**: Select "reCAPTCHA v3"
    - **Domains**: Add your domains:
      - `localhost` (for development)
-     - `astral-integration.com`
-     - `www.astral-integration.com`
+     - `astralintegration.co`
+     - `www.astralintegration.co`
 4. Accept the terms and click "Submit"
 5. You'll receive:
    - **Site Key** (public key - safe to expose in frontend)

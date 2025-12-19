@@ -31,10 +31,10 @@ export default function SupportPage() {
                   For questions about services, bookings, or your journey with us:
                 </p>
                 <a
-                  href="mailto:hello@astral-integration.com"
+                  href="mailto:hello@astralintegration.co"
                   className="inline-block px-8 py-3 bg-sacred-gold text-cosmic-900 rounded-full font-medium hover:bg-sacred-glow transition-all"
                 >
-                  Email: hello@astral-integration.com
+                  Email: hello@astralintegration.co
                 </a>
               </div>
 

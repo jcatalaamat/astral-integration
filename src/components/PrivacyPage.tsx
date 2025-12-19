@@ -125,7 +125,7 @@ export default function PrivacyPage() {
                     please contact us:
                   </p>
                   <p className="text-indigo-deep/80">
-                    Email: <a href="mailto:hello@astral-integration.com" className="text-sacred-gold hover:underline">hello@astral-integration.com</a>
+                    Email: <a href="mailto:hello@astralintegration.co" className="text-sacred-gold hover:underline">hello@astralintegration.co</a>
                   </p>
                 </section>
 

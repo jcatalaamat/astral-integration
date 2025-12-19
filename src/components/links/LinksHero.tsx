@@ -56,7 +56,7 @@ export default function LinksHero() {
         {/* Single contact icon */}
         <div className="animate-fadeIn" style={{animationDelay: '0.3s'}}>
           <a
-            href="mailto:hello@astralintegration.com"
+            href="mailto:hello@astralintegration.co"
             className="w-10 h-10 flex items-center justify-center rounded-full border border-[#1A1A1A]/10 hover:border-[#1A1A1A]/30 transition-all duration-300 group"
             aria-label="Email"
           >

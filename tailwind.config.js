@@ -7,64 +7,100 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Warm light backgrounds - Flodesk-inspired
-        warm: {
-          white: '#FAFAF8',    // Main background
-          cream: '#FAF0E6',    // Alternating sections
-          peach: '#F4DEC9',    // Hero gradients
-          sand: '#EDE8E2',     // Cards/containers
+        // ASTRAL INTEGRATION DESIGN SYSTEM
+        // Warm Paper Background
+        studio: {
+          bg: '#FAF9F7',
+          bgAlt: '#F5F4F2',
+          divider: '#E6E4E1',
         },
-        // Accent colors - warm and inviting
+        // Text Colors
+        content: {
+          primary: '#1F1F1F',
+          heading: '#1F1F1F',
+          secondary: '#6B6B6B',
+          tertiary: '#9A9A9A',
+        },
+        // Accent - Slate Blue (intelligence, not emotion)
         accent: {
-          gold: '#C9A167',     // Primary CTA, highlights
-          terracotta: '#D4A89F', // Secondary accent
-          coral: '#E8B4A0',    // Hover states
-          sage: '#A8B19C',     // Nature touches
-        },
-        // Text colors - warm neutrals
-        text: {
-          primary: '#1A1A1A',  // Primary text
-          heading: '#0A0A0A',  // Headings
-          secondary: '#4A4A4A', // Secondary text
-          tertiary: '#8A8A8A', // Tertiary/placeholder
+          DEFAULT: '#3F4A5A',
+          hover: '#2F3A4A',
+          // Legacy for other pages
+          gold: '#C9A167',
+          terracotta: '#D4A89F',
+          coral: '#E8B4A0',
+          sage: '#A8B19C',
         },
 
-        // Legacy color names (backwards compatibility - will gradually migrate)
+        // Legacy colors for /private/oracle and other pages
+        warm: {
+          white: '#FAFAF8',
+          cream: '#FAF0E6',
+          peach: '#F4DEC9',
+          sand: '#EDE8E2',
+        },
         cosmic: {
-          900: '#FAFAF8',  // → warm-white
-          800: '#FAF0E6',  // → warm-cream
-          700: '#EDE8E2',  // → warm-sand
-          600: '#E0DAD2',  // Lighter sand
+          900: '#FAFAF8',
+          800: '#FAF0E6',
+          700: '#EDE8E2',
+          600: '#E0DAD2',
         },
         mystic: {
-          purple: '#C9A167',   // → accent-gold
-          indigo: '#B8905C',   // Darker gold
-          violet: '#D4A89F',   // → accent-terracotta
-          lavender: '#E8B4A0', // → accent-coral
+          purple: '#C9A167',
+          indigo: '#B8905C',
+          violet: '#D4A89F',
+          lavender: '#E8B4A0',
         },
         sacred: {
-          gold: '#C9A167',     // Keep as primary accent
-          moon: '#FAFAF8',     // → warm-white
-          glow: '#F4DEC9',     // → warm-peach
-          green: '#A8B19C',    // → accent-sage
-          cream: '#FAF0E6',    // → warm-cream
-          sand: '#EDE8E2',     // → warm-sand
+          gold: '#C9A167',
+          moon: '#FAFAF8',
+          glow: '#F4DEC9',
+          green: '#A8B19C',
+          cream: '#FAF0E6',
+          sand: '#EDE8E2',
         },
         indigo: {
-          deep: '#1A1A1A',     // → text-primary
-          DEFAULT: '#4A4A4A',  // → text-secondary
-          light: '#8A8A8A',    // → text-tertiary
+          deep: '#1A1A1A',
+          DEFAULT: '#4A4A4A',
+          light: '#8A8A8A',
+        },
+        // Legacy text colors
+        text: {
+          primary: '#1F1F1F',
+          secondary: '#6B6B6B',
+          heading: '#1F1F1F',
         }
       },
       fontSize: {
+        // Strict typographic hierarchy
+        'display': ['3.5rem', { lineHeight: '1.1', fontWeight: '500', letterSpacing: '-0.02em' }],
+        'display-sm': ['2.5rem', { lineHeight: '1.15', fontWeight: '500', letterSpacing: '-0.01em' }],
+        'h1': ['2rem', { lineHeight: '1.2', fontWeight: '500' }],
+        'h2': ['1.75rem', { lineHeight: '1.25', fontWeight: '500' }],
+        'h3': ['1.25rem', { lineHeight: '1.4', fontWeight: '500' }],
+        'body': ['1.0625rem', { lineHeight: '1.6' }],
+        'body-sm': ['0.9375rem', { lineHeight: '1.6' }],
+        'meta': ['0.8125rem', { lineHeight: '1.5' }],
+        // Legacy sizes
         '8xl': ['6rem', { lineHeight: '1' }],
         '9xl': ['8rem', { lineHeight: '1' }],
         '10xl': ['10rem', { lineHeight: '1' }],
       },
       fontFamily: {
-        serif: ['Cormorant Garamond', 'Georgia', 'Cambria', 'serif'],
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         body: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['Cormorant Garamond', 'Georgia', 'Cambria', 'serif'],
+      },
+      maxWidth: {
+        'content': '1120px',
+        'prose': '640px',
+      },
+      spacing: {
+        // Consistent spacing scale
+        'section': '7rem',
+        'section-lg': '10rem',
+        '18': '4.5rem',
+        '22': '5.5rem',
       },
       animation: {
         'breathe': 'breathe 6s ease-in-out infinite',
