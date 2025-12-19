@@ -1,20 +1,9 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { Mail, MapPin, Clock, Instagram, CheckCircle } from 'lucide-react';
-import EventPreview from './components/EventPreview';
-import PlacePreview from './components/PlacePreview';
-import LinksPage from './components/pages/LinksPage';
-import ResourcesPage from './components/pages/ResourcesPage';
-import BufoScreeningPage from './components/pages/BufoScreeningPage';
-import BufoConsentPage from './components/pages/BufoConsentPage';
-import BufoContraindicationsPage from './components/pages/BufoContraindicationsPage';
-import BookingPage from './components/pages/BookingPage';
-import OnePagerBackup from './components/pages/OnePagerBackup';
-import ScrollToTop from './components/ScrollToTop';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import WarmHero from './components/shared/WarmHero';
+import Navigation from '../Navigation';
+import Footer from '../Footer';
+import WarmHero from '../shared/WarmHero';
 
 // Real testimonials data with work type labels
 const REAL_TESTIMONIALS = [
@@ -92,8 +81,8 @@ const FEATURED_RESOURCES = [
   }
 ];
 
-// Main Landing Page Component
-function LandingPage() {
+// One-Pager Backup Page Component
+function OnePagerBackup() {
   // Contact form state
   const [formData, setFormData] = useState({
     name: '',
@@ -1225,43 +1214,4 @@ function LandingPage() {
   );
 }
 
-// Event Route Component
-function EventRoute() {
-  const { id } = useParams<{ id: string }>();
-  const [language] = useState<'en' | 'es'>('en');
-
-  return <EventPreview eventId={id || ''} language={language} />;
-}
-
-// Place Route Component
-function PlaceRoute() {
-  const { id } = useParams<{ id: string }>();
-  const [language] = useState<'en' | 'es'>('en');
-
-  return <PlacePreview placeId={id || ''} language={language} />;
-}
-
-// Main App with Routing
-function App() {
-  return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/about" element={<OnePagerBackup />} />
-        <Route path="/links" element={<LinksPage />} />
-        <Route path="/resources" element={<ResourcesPage />} />
-        <Route path="/bufo-screening" element={<BufoScreeningPage />} />
-        <Route path="/bufo-consent" element={<BufoConsentPage />} />
-        <Route path="/bufo-contraindications" element={<BufoContraindicationsPage />} />
-        <Route path="/book" element={<BookingPage />} />
-        <Route path="/event/:id" element={<EventRoute />} />
-        <Route path="/place/:id" element={<PlaceRoute />} />
-        {/* Catch all other routes and redirect to home */}
-        <Route path="*" element={<LandingPage />} />
-      </Routes>
-    </Router>
-  );
-}
-
-export default App;
+export default OnePagerBackup;

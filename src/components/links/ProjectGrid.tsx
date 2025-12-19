@@ -1,35 +1,49 @@
-import { projects } from '../../data/projects';
+import { getProjectsBySection } from '../../data/projects';
 import ProjectCard from './ProjectCard';
+
+const sections = [
+  { key: 'work' as const, title: 'Work With Me' },
+  { key: 'professional' as const, title: 'Professional & Tech' },
+  { key: 'projects' as const, title: 'Projects', subtitle: '(Context Only)' },
+  { key: 'writing' as const, title: 'Writing & Notes' },
+  { key: 'contact' as const, title: 'Contact' },
+];
 
 export default function ProjectGrid() {
   return (
-    <div className="bg-[#FAFAF8] pb-10">
+    <div className="bg-[#FAFAF8] pb-12">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          {/* Section Header - minimal, no top margin */}
-          <div className="mb-6 text-center pt-6">
-            <h2 className="text-[10px] uppercase tracking-widest text-[#1A1A1A]/40" style={{letterSpacing: '0.18em'}}>
-              My Work
-            </h2>
-          </div>
+        <div className="max-w-lg mx-auto space-y-8">
+          {sections.map(section => {
+            const sectionProjects = getProjectsBySection(section.key);
+            if (sectionProjects.length === 0) return null;
 
-          {/* Projects List - tighter container */}
-          <div className="bg-white rounded-lg shadow-sm border border-[#1A1A1A]/5 px-6 md:px-8">
-            {projects.map((project, index) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                index={index}
-              />
-            ))}
-          </div>
+            return (
+              <div key={section.key}>
+                {/* Section Header */}
+                <div className="mb-3 flex items-baseline gap-2">
+                  <h2 className="text-[10px] uppercase tracking-widest text-[#1A1A1A]/40 font-medium" style={{letterSpacing: '0.15em'}}>
+                    {section.title}
+                  </h2>
+                  {section.subtitle && (
+                    <span className="text-[9px] text-[#1A1A1A]/30 font-light">
+                      {section.subtitle}
+                    </span>
+                  )}
+                </div>
 
-          {/* Bottom note - smaller */}
-          <div className="mt-8 text-center">
-            <p className="text-[11px] text-[#1A1A1A]/30 italic">
-              More projects & collaborations coming soon
-            </p>
-          </div>
+                {/* Links */}
+                <div className="bg-white rounded-lg border border-[#1A1A1A]/5 px-4">
+                  {sectionProjects.map(project => (
+                    <ProjectCard
+                      key={project.id}
+                      project={project}
+                    />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

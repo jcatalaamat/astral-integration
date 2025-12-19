@@ -1,137 +1,107 @@
 export interface Project {
   id: string;
   name: string;
-  category: 'soul-work' | 'tech' | 'community';
-  icon: string;
+  section: 'work' | 'professional' | 'projects' | 'writing' | 'contact';
   tagline: string;
-  description: string;
-  price?: string;
-  status?: string; // "Live", "Coming Soon", "Investment Open", etc.
-  features: string[];
   cta: {
     primary: string;
-    url: string;
-  };
-  cta2?: {
-    text: string;
     url: string;
   };
 }
 
 export const projects: Project[] = [
+  // WORK WITH ME
   {
-    id: 'astral-integration',
+    id: 'astral-integration-main',
     name: 'Astral Integration',
-    category: 'soul-work',
-    icon: '💫',
-    tagline: '1:1 Soul Work & Integration Coaching',
-    description: 'Deep transformational mentorship, ancestral healing, and timeline shifting sessions',
-    status: 'Booking Open',
-    features: [],
-    cta2: {
-      text: 'Schedule Free Call',
-      url: 'https://calendly.com/astral-integration/discovery-call'
-    },
+    section: 'work',
+    tagline: 'Systems redesign for people, work, and tools',
     cta: {
-      primary: 'Explore Services',
+      primary: 'Main Site',
       url: '/'
     }
   },
   {
-    id: 'spirit-awakening-medicine',
-    name: 'Spirit Awakening Medicine',
-    category: 'soul-work',
-    icon: '🔥',
-    tagline: 'Bufo Alvarius Ceremonies & Integration',
-    description: 'Sacred medicine journeys with comprehensive preparation, ceremony, and integration',
-    status: 'By Application',
-    features: [],
+    id: 'founder-support',
+    name: 'Founder / Creator Systems Support',
+    section: 'work',
+    tagline: 'Hands-on help untangling structure, execution, and tools',
     cta: {
-      primary: 'Apply for Ceremony',
-      url: 'https://spiritawakeningmedicine.com/'
-    },
-    cta2: {
-      text: 'Learn More',
-      url: '/services'
+      primary: 'Learn More',
+      url: '/support'
+    }
+  },
+
+  // PROFESSIONAL & TECH
+  {
+    id: 'fractional-cto',
+    name: 'Fractional CTO & Systems Architecture',
+    section: 'professional',
+    tagline: 'Founder-side technical and operating work during rebuilds',
+    cta: {
+      primary: 'View Services',
+      url: '/collaborations'
     }
   },
   {
-    id: 'nina-moore',
-    name: 'Nina Moore',
-    category: 'soul-work',
-    icon: '💞',
-    tagline: 'Sacred Union & Couples Healing',
-    description: 'Transformative programs for sacred union, kundalini activation, and relationship healing',
-    price: '$444',
-    status: 'Booking Open',
-    features: [],
+    id: 'selected-projects',
+    name: 'Selected Projects & Collaborations',
+    section: 'professional',
+    tagline: 'Platforms, products, and systems I\'ve helped design',
     cta: {
-      primary: 'Book Session',
-      url: 'https://nina-moore.com/'
-    },
-    cta2: {
-      text: 'Explore Programs',
-      url: 'https://nina-moore.com/'
+      primary: 'View Work',
+      url: '/collaborations'
     }
   },
+
+  // PROJECTS (Context Only)
   {
-    id: 'astralamat',
-    name: 'Jordi Amat',
-    category: 'tech',
-    icon: '💼',
-    tagline: 'CTO Services & Technical Leadership',
-    description: 'Conscious product development, blockchain integration, and technical strategy',
-    status: 'Partnership Available',
-    features: [],
+    id: 'proyecto-salvaje',
+    name: 'Proyecto Salvaje',
+    section: 'projects',
+    tagline: 'Land-based regenerative village project (Oaxaca)',
     cta: {
-      primary: 'View Portfolio',
-      url: 'https://jordiamat.com'
-    },
-    cta2: {
-      text: "Let's Connect",
-      url: 'mailto:hello@jordiamat.com'
+      primary: 'Learn More',
+      url: 'https://proyectosalvaje.com'
     }
   },
   {
     id: 'mazunte-connect',
     name: 'Mazunte Connect',
-    category: 'community',
-    icon: '🏝️',
-    tagline: 'Community Platform for Mazunte',
-    description: 'Events, places, and services connecting locals and travelers in Mazunte, Mexico',
-    status: 'Live App',
-    features: [],
+    section: 'projects',
+    tagline: 'Local community platform (Mazunte, MX)',
     cta: {
-      primary: 'Download App',
-      url: 'https://mazunteconnect.com'
-    },
-    cta2: {
-      text: 'Visit Website',
+      primary: 'Visit',
       url: 'https://mazunteconnect.com'
     }
   },
+
+  // WRITING & NOTES
   {
-    id: 'proyecto-salvaje',
-    name: 'Proyecto Salvaje',
-    category: 'community',
-    icon: '🌱',
-    tagline: 'Regenerative Village & DAO in Oaxaca',
-    description: '12-acre regenerative living school with blockchain governance and NFT memberships',
-    status: 'Investment Open',
-    features: [],
+    id: 'notes',
+    name: 'Notes on Systems, Work & Transition',
+    section: 'writing',
+    tagline: 'Short reflections on structure, execution, and coherence',
     cta: {
-      primary: 'Invest/Join',
-      url: 'https://proyectosalvaje.com'
-    },
-    cta2: {
-      text: 'Explore Vision',
-      url: 'https://proyectosalvaje.com'
+      primary: 'Read',
+      url: '/resources'
+    }
+  },
+
+  // CONTACT
+  {
+    id: 'contact',
+    name: 'Get in Touch',
+    section: 'contact',
+    tagline: 'By referral or direct message',
+    cta: {
+      primary: 'Contact',
+      url: '/contact'
     }
   }
 ];
 
-// Helper function to filter projects by category
-export const getProjectsByCategory = (category: 'soul-work' | 'tech' | 'community' | 'all') => {
-  if (category === 'all') return projects;
-  return projects.filter(p => p.category === category);
+// Helper function to filter projects by section
+export const getProjectsBySection = (section: Project['section']) => {
+  return projects.filter(p => p.section === section);
 };

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import LinksHero from '../links/LinksHero';
 import ProjectGrid from '../links/ProjectGrid';
-import LinksNewsletter from '../links/LinksNewsletter';
 
 export default function LinksPage() {
   return (
@@ -9,14 +8,13 @@ export default function LinksPage() {
       {/* Minimal Top Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#FAFAF8]/90 border-b border-[#1A1A1A]/5">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <Link to="/" className="text-sm font-serif text-[#1A1A1A] hover:text-[#C9A167] transition-colors">
+          <div className="flex items-center justify-between h-14">
+            <Link to="/" className="text-xs font-medium text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors uppercase tracking-wider" style={{letterSpacing: '0.1em'}}>
               Astral Integration
             </Link>
             <Link
               to="/"
-              className="text-xs uppercase tracking-wider text-[#1A1A1A]/50 hover:text-[#C9A167] transition-colors"
-              style={{letterSpacing: '0.1em'}}
+              className="text-xs text-[#1A1A1A]/40 hover:text-[#1A1A1A]/70 transition-colors"
             >
               Back to Main Site
             </Link>
@@ -27,51 +25,26 @@ export default function LinksPage() {
       {/* Hero Section */}
       <LinksHero />
 
-      {/* Projects List */}
+      {/* Links Grid */}
       <ProjectGrid />
 
-      {/* Newsletter Section */}
-      <LinksNewsletter />
-
-      {/* Footer */}
-      <footer className="bg-white border-t border-[#1A1A1A]/5 py-16">
+      {/* Footer - Clean, minimal */}
+      <footer className="bg-[#FAFAF8] border-t border-[#1A1A1A]/5 py-10">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            {/* Logo/Name */}
-            <div>
-              <Link to="/" className="text-lg font-serif text-[#1A1A1A] hover:text-[#C9A167] transition-colors">
-                Astral Integration
-              </Link>
-            </div>
+          <div className="max-w-lg mx-auto text-center space-y-4">
+            {/* Brand */}
+            <p className="text-xs text-[#1A1A1A]/50 font-medium uppercase tracking-wider" style={{letterSpacing: '0.12em'}}>
+              Astral Integration
+            </p>
 
             {/* Tagline */}
-            <p className="text-sm text-[#1A1A1A]/50 font-light max-w-2xl mx-auto leading-relaxed">
-              Building conscious technology & holding space for human transformation
+            <p className="text-[11px] text-[#1A1A1A]/35 font-light">
+              Founder-led systems work · Limited engagements · By trust & referral
             </p>
-
-            {/* Links */}
-            <div className="flex items-center justify-center gap-6 text-xs uppercase tracking-wider" style={{letterSpacing: '0.1em'}}>
-              <Link to="/support" className="text-[#1A1A1A]/40 hover:text-[#C9A167] transition-colors">
-                Support
-              </Link>
-              <span className="text-[#1A1A1A]/20">•</span>
-              <Link to="/privacy" className="text-[#1A1A1A]/40 hover:text-[#C9A167] transition-colors">
-                Privacy
-              </Link>
-              <span className="text-[#1A1A1A]/20">•</span>
-              <Link to="/contact" className="text-[#1A1A1A]/40 hover:text-[#C9A167] transition-colors">
-                Contact
-              </Link>
-            </div>
 
             {/* Copyright */}
-            <p className="text-xs text-[#1A1A1A]/30">
-              © 2026 Jordi Amat. All rights reserved.
-            </p>
-
-            {/* Blessing */}
-            <p className="text-xs text-[#1A1A1A]/40 italic">
-              Made with consciousness • Powered by love
+            <p className="text-[10px] text-[#1A1A1A]/25 pt-2">
+              © {new Date().getFullYear()} Jordi Amat
             </p>
           </div>
         </div>

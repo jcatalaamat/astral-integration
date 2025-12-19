@@ -3,67 +3,34 @@ import type { Project } from '../../data/projects';
 
 interface ProjectCardProps {
   project: Project;
-  index: number;
 }
 
-export default function ProjectCard({ project, index }: ProjectCardProps) {
-  const number = String(index + 1).padStart(2, '0');
-
+export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <a
       href={project.cta.url}
       target={project.cta.url.startsWith('http') ? '_blank' : undefined}
       rel={project.cta.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-      className="group block py-4 -mx-6 md:-mx-8 px-6 md:px-8 border-b border-[#1A1A1A]/5 last:border-b-0 hover:bg-[#F5F3EF]/40 transition-all duration-200"
+      className="group flex items-center justify-between py-4 border-b border-[#1A1A1A]/5 last:border-b-0 hover:bg-[#F5F3EF]/30 transition-all duration-200 -mx-4 px-4"
     >
-      <div className="flex items-center gap-4 md:gap-6">
-        {/* Number - smaller, more subtle */}
-        <div className="flex-shrink-0 w-8 md:w-10 text-right">
-          <span className="text-[10px] font-mono text-[#C9A167]/70 tracking-wider">
-            {number}
-          </span>
-        </div>
-
-        {/* Content - takes full width on mobile */}
-        <div className="flex-1 min-w-0">
-          {/* Title */}
-          <h3 className="text-sm md:text-base font-serif text-[#1A1A1A] group-hover:text-[#C9A167] transition-colors">
+      <div className="flex-1 min-w-0">
+        {/* Title with arrow */}
+        <div className="flex items-center gap-2">
+          <span className="text-[#1A1A1A]/30 text-sm">→</span>
+          <h3 className="text-sm text-[#1A1A1A] group-hover:text-[#1A1A1A]/70 transition-colors font-medium">
             {project.name}
           </h3>
-
-          {/* Tagline - on new line */}
-          <p className="text-xs text-[#1A1A1A]/40 font-sans mb-1">
-            {project.tagline}
-          </p>
-
-          {/* Description */}
-          <p className="text-xs text-[#1A1A1A]/50 leading-relaxed mb-2 md:mb-0">
-            {project.description}
-          </p>
-
-          {/* Status - shown below description on mobile, inline on desktop */}
-          {project.status && (
-            <div className="flex items-center justify-center gap-2 mt-2 md:hidden">
-              <span className="text-[9px] uppercase tracking-wide text-[#C9A167] font-medium px-2.5 py-1 bg-[#C9A167]/8 border border-[#C9A167]/25 rounded-full">
-                {project.status}
-              </span>
-            </div>
-          )}
         </div>
 
-        {/* Status - desktop only, right side */}
-        {project.status && (
-          <div className="hidden md:flex flex-shrink-0 items-center gap-2">
-            <span className="text-[9px] uppercase tracking-wide text-[#C9A167] font-medium px-2.5 py-1 bg-[#C9A167]/8 border border-[#C9A167]/25 rounded-full">
-              {project.status}
-            </span>
-          </div>
-        )}
+        {/* Tagline */}
+        <p className="text-xs text-[#1A1A1A]/50 mt-0.5 ml-5 font-light">
+          {project.tagline}
+        </p>
+      </div>
 
-        {/* Arrow - always visible */}
-        <div className="flex-shrink-0 group-hover:translate-x-0.5 transition-all duration-200">
-          <ArrowRight className="w-4 h-4 text-[#C9A167]/60" />
-        </div>
+      {/* Arrow on hover */}
+      <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        <ArrowRight className="w-3.5 h-3.5 text-[#1A1A1A]/40" />
       </div>
     </a>
   );
