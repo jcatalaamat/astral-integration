@@ -3,7 +3,6 @@ import emailjs from '@emailjs/browser';
 import { CheckCircle } from 'lucide-react';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
-import SystemsDiagram from '../SystemsDiagram';
 
 export default function HomePage() {
   const [formData, setFormData] = useState({
@@ -263,47 +262,40 @@ export default function HomePage() {
       {/* LIVING SYSTEMS — With applied example */}
       <section className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-                Philosophy
-              </p>
-              <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
-                Living Systems
-              </h2>
+          <div className="max-w-prose">
+            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
+              Philosophy
+            </p>
+            <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
+              Living Systems
+            </h2>
 
-              <p className="text-body text-content-primary leading-relaxed mb-10">
-                We treat organizations and creative practices as living systems, not machines.
-              </p>
+            <p className="text-body text-content-primary leading-relaxed mb-10">
+              We treat organizations and creative practices as living systems, not machines.
+            </p>
 
-              {/* Applied example - emphasized, grounds the philosophy */}
-              <p className="text-lg text-content-primary leading-relaxed mb-12 pl-6 border-l-2 border-content-primary">
-                When authority is unclear, decisions slow. When decisions slow, responsibility collapses inward.
-              </p>
+            {/* Applied example - emphasized, grounds the philosophy */}
+            <p className="text-lg text-content-primary leading-relaxed mb-12 pl-6 border-l-2 border-content-primary">
+              When authority is unclear, decisions slow. When decisions slow, responsibility collapses inward.
+            </p>
 
-              <ul className="space-y-4">
-                {[
-                  'Structure must reflect reality, not theory',
-                  'Authority must be explicit to reduce friction',
-                  'Systems should lower cognitive load, not increase it',
-                  'Good design removes the need for constant firefighting'
-                ].map((item, i) => (
-                  <li key={i} className="text-body text-content-secondary flex items-start gap-4">
-                    <span className="text-accent mt-1.5 text-sm">·</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <ul className="space-y-4">
+              {[
+                'Structure must reflect reality, not theory',
+                'Authority must be explicit to reduce friction',
+                'Systems should lower cognitive load, not increase it',
+                'Good design removes the need for constant firefighting'
+              ].map((item, i) => (
+                <li key={i} className="text-body text-content-secondary flex items-start gap-4">
+                  <span className="text-accent mt-1.5 text-sm">·</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
 
-              <p className="text-lg text-content-primary font-medium mt-12">
-                When structure fits the people inside it, momentum returns naturally.
-              </p>
-            </div>
-
-            {/* Systems Diagram */}
-            <div className="flex justify-center">
-              <SystemsDiagram className="w-full max-w-md text-content-secondary opacity-60" />
-            </div>
+            <p className="text-lg text-content-primary font-medium mt-12">
+              When structure fits the people inside it, momentum returns naturally.
+            </p>
           </div>
         </div>
       </section>
