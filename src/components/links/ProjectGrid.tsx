@@ -12,8 +12,8 @@ function LinkItem({ project }: { project: Project }) {
   return (
     <a
       href={project.url}
-      target={project.external ? '_blank' : undefined}
-      rel={project.external ? 'noopener noreferrer' : undefined}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group flex items-center justify-between py-3 border-b border-[#1A1A1A]/5 last:border-b-0"
     >
       <div className="min-w-0">
