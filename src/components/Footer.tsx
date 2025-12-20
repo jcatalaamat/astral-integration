@@ -20,10 +20,18 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-studio-divider">
+        <div className="mt-16 pt-8 border-t border-studio-divider flex items-center justify-between">
           <p className="text-content-tertiary text-body-sm">
             © 2025 Astral Integration
           </p>
+          <a
+            href="https://instagram.com/astralintegration"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-content-tertiary text-body-sm hover:text-content-primary transition-colors"
+          >
+            @astralintegration
+          </a>
         </div>
       </div>
     </footer>
