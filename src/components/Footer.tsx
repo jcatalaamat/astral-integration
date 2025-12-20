@@ -22,7 +22,7 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-studio-divider flex items-center justify-between">
           <p className="text-content-tertiary text-body-sm">
-            © 2025 Astral Integration
+            © 2026 Astral Integration
           </p>
           <a
             href="https://instagram.com/astralintegration"

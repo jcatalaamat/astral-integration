@@ -1,50 +1,59 @@
-import { getProjectsBySection } from '../../data/projects';
-import ProjectCard from './ProjectCard';
+import { ArrowUpRight } from 'lucide-react';
+import { getProjectsBySection, type Project } from '../../data/projects';
 
 const sections = [
-  { key: 'work' as const, title: 'Work With Me' },
-  { key: 'professional' as const, title: 'Professional & Tech' },
-  { key: 'projects' as const, title: 'Projects', subtitle: '(Context Only)' },
-  { key: 'writing' as const, title: 'Writing & Notes' },
-  { key: 'contact' as const, title: 'Contact' },
+  { key: 'studio' as const, title: 'Studio' },
+  { key: 'context' as const, title: 'Context' },
+  { key: 'writing' as const, title: 'Writing' },
+  { key: 'connect' as const, title: 'Connect' },
 ];
+
+function LinkItem({ project }: { project: Project }) {
+  return (
+    <a
+      href={project.url}
+      target={project.external ? '_blank' : undefined}
+      rel={project.external ? 'noopener noreferrer' : undefined}
+      className="group flex items-center justify-between py-3 border-b border-[#1A1A1A]/5 last:border-b-0"
+    >
+      <div className="min-w-0">
+        <span className="text-sm text-[#1A1A1A] group-hover:text-[#1A1A1A]/70 transition-colors">
+          {project.name}
+        </span>
+        {project.tagline && (
+          <span className="text-xs text-[#1A1A1A]/40 ml-2">
+            {project.tagline}
+          </span>
+        )}
+      </div>
+      {project.external && (
+        <ArrowUpRight className="w-3.5 h-3.5 text-[#1A1A1A]/30 flex-shrink-0 ml-2" />
+      )}
+    </a>
+  );
+}
 
 export default function ProjectGrid() {
   return (
-    <div className="bg-[#FAFAF8] pb-12">
-      <div className="container mx-auto px-4">
-        <div className="max-w-lg mx-auto space-y-8">
-          {sections.map(section => {
-            const sectionProjects = getProjectsBySection(section.key);
-            if (sectionProjects.length === 0) return null;
+    <div className="pb-16 px-4">
+      <div className="max-w-md mx-auto space-y-8">
+        {sections.map(section => {
+          const sectionProjects = getProjectsBySection(section.key);
+          if (sectionProjects.length === 0) return null;
 
-            return (
-              <div key={section.key}>
-                {/* Section Header */}
-                <div className="mb-3 flex items-baseline gap-2">
-                  <h2 className="text-[10px] uppercase tracking-widest text-[#1A1A1A]/40 font-medium" style={{letterSpacing: '0.15em'}}>
-                    {section.title}
-                  </h2>
-                  {section.subtitle && (
-                    <span className="text-[9px] text-[#1A1A1A]/30 font-light">
-                      {section.subtitle}
-                    </span>
-                  )}
-                </div>
-
-                {/* Links */}
-                <div className="bg-white rounded-lg border border-[#1A1A1A]/5 px-4">
-                  {sectionProjects.map(project => (
-                    <ProjectCard
-                      key={project.id}
-                      project={project}
-                    />
-                  ))}
-                </div>
+          return (
+            <div key={section.key}>
+              <h2 className="text-[10px] uppercase tracking-widest text-[#1A1A1A]/35 font-medium mb-2" style={{letterSpacing: '0.12em'}}>
+                {section.title}
+              </h2>
+              <div className="bg-white rounded-lg border border-[#1A1A1A]/5 px-4">
+                {sectionProjects.map(project => (
+                  <LinkItem key={project.id} project={project} />
+                ))}
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

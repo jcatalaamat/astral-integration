@@ -1,103 +1,63 @@
 export interface Project {
   id: string;
   name: string;
-  section: 'work' | 'professional' | 'projects' | 'writing' | 'contact';
-  tagline: string;
-  cta: {
-    primary: string;
-    url: string;
-  };
+  section: 'studio' | 'context' | 'writing' | 'connect';
+  tagline?: string;
+  url: string;
+  external?: boolean;
 }
 
 export const projects: Project[] = [
-  // WORK WITH ME
+  // STUDIO - The main work
   {
-    id: 'astral-integration-main',
+    id: 'main-site',
     name: 'Astral Integration',
-    section: 'work',
-    tagline: 'Systems redesign for people, work, and tools',
-    cta: {
-      primary: 'Main Site',
-      url: '/'
-    }
-  },
-  {
-    id: 'founder-support',
-    name: 'Founder / Creator Systems Support',
-    section: 'work',
-    tagline: 'Hands-on help untangling structure, execution, and tools',
-    cta: {
-      primary: 'Learn More',
-      url: '/support'
-    }
+    section: 'studio',
+    tagline: 'Systems redesign for founders and small teams',
+    url: '/'
   },
 
-  // PROFESSIONAL & TECH
-  {
-    id: 'fractional-cto',
-    name: 'Fractional CTO & Systems Architecture',
-    section: 'professional',
-    tagline: 'Founder-side technical and operating work during rebuilds',
-    cta: {
-      primary: 'View Services',
-      url: '/collaborations'
-    }
-  },
-  {
-    id: 'selected-projects',
-    name: 'Selected Projects & Collaborations',
-    section: 'professional',
-    tagline: 'Platforms, products, and systems I\'ve helped design',
-    cta: {
-      primary: 'View Work',
-      url: '/collaborations'
-    }
-  },
-
-  // PROJECTS (Context Only)
+  // CONTEXT - Projects that show the world I operate in
   {
     id: 'proyecto-salvaje',
     name: 'Proyecto Salvaje',
-    section: 'projects',
-    tagline: 'Land-based regenerative village project (Oaxaca)',
-    cta: {
-      primary: 'Learn More',
-      url: 'https://proyectosalvaje.com'
-    }
+    section: 'context',
+    tagline: 'Land-based regenerative project in Oaxaca',
+    url: 'https://proyectosalvaje.com',
+    external: true
   },
   {
     id: 'mazunte-connect',
     name: 'Mazunte Connect',
-    section: 'projects',
-    tagline: 'Local community platform (Mazunte, MX)',
-    cta: {
-      primary: 'Visit',
-      url: 'https://mazunteconnect.com'
-    }
+    section: 'context',
+    tagline: 'Local community platform',
+    url: 'https://mazunteconnect.com',
+    external: true
   },
 
-  // WRITING & NOTES
-  {
-    id: 'notes',
-    name: 'Notes on Systems, Work & Transition',
-    section: 'writing',
-    tagline: 'Short reflections on structure, execution, and coherence',
-    cta: {
-      primary: 'Read',
-      url: '/resources'
-    }
-  },
+  // WRITING - If you have notes/essays
+  // Uncomment when ready:
+  // {
+  //   id: 'notes',
+  //   name: 'Notes',
+  //   section: 'writing',
+  //   tagline: 'On systems, work, and transition',
+  //   url: '/notes'
+  // },
 
-  // CONTACT
+  // CONNECT
   {
-    id: 'contact',
-    name: 'Get in Touch',
-    section: 'contact',
-    tagline: 'By referral or direct message',
-    cta: {
-      primary: 'Contact',
-      url: '/contact'
-    }
+    id: 'email',
+    name: 'Email',
+    section: 'connect',
+    url: 'mailto:hello@astralintegration.co'
+  },
+  {
+    id: 'instagram',
+    name: 'Instagram',
+    section: 'connect',
+    url: 'https://instagram.com/astralintegration',
+    external: true
   }
 ];
 
