@@ -3,8 +3,7 @@ import { getProjectsBySection, type Project } from '../../data/projects';
 
 const sections = [
   { key: 'studio' as const, title: 'Studio' },
-  { key: 'context' as const, title: 'Context' },
-  { key: 'writing' as const, title: 'Writing' },
+  { key: 'founder' as const, title: 'Founder' },
   { key: 'connect' as const, title: 'Connect' },
 ];
 

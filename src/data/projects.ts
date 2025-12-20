@@ -1,14 +1,14 @@
 export interface Project {
   id: string;
   name: string;
-  section: 'studio' | 'context' | 'writing' | 'connect';
+  section: 'studio' | 'founder' | 'connect';
   tagline?: string;
   url: string;
   external?: boolean;
 }
 
 export const projects: Project[] = [
-  // STUDIO - The main work
+  // STUDIO
   {
     id: 'main-site',
     name: 'Astral Integration',
@@ -17,33 +17,15 @@ export const projects: Project[] = [
     url: '/'
   },
 
-  // CONTEXT - Projects that show the world I operate in
+  // FOUNDER
   {
-    id: 'proyecto-salvaje',
-    name: 'Proyecto Salvaje',
-    section: 'context',
-    tagline: 'Land-based regenerative project in Oaxaca',
-    url: 'https://proyectosalvaje.com',
+    id: 'founder',
+    name: 'Jordi Amat',
+    section: 'founder',
+    tagline: 'Systems Architect · Founder',
+    url: 'https://jordiamat.com',
     external: true
   },
-  {
-    id: 'mazunte-connect',
-    name: 'Mazunte Connect',
-    section: 'context',
-    tagline: 'Local community platform',
-    url: 'https://mazunteconnect.com',
-    external: true
-  },
-
-  // WRITING - If you have notes/essays
-  // Uncomment when ready:
-  // {
-  //   id: 'notes',
-  //   name: 'Notes',
-  //   section: 'writing',
-  //   tagline: 'On systems, work, and transition',
-  //   url: '/notes'
-  // },
 
   // CONNECT
   {
