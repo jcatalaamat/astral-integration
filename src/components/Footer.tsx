@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="w-12 h-px bg-studio-divider mb-8"></div>
 
           <p className="text-content-tertiary text-body-sm leading-relaxed mb-2">
-            Founder-led systems work
+            Founded by <a href="https://jordiamat.com" target="_blank" rel="noopener noreferrer" className="hover:text-content-primary transition-colors">Jordi Amat</a>
           </p>
           <p className="text-content-tertiary text-body-sm">
             Limited engagements · By trust & referral
