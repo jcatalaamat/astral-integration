@@ -67,7 +67,7 @@ export default function HomePage() {
             </p>
 
             <p className="text-body md:text-lg text-content-primary leading-relaxed mb-10 max-w-prose">
-              When growth breaks the structure that once worked, we redesign the operating system around people and work — so execution becomes clear again.
+              When growth breaks the structure that once worked, we redesign the operating system around people and work — until execution becomes clear again.
             </p>
 
             {/* Audience as metadata */}
@@ -98,7 +98,7 @@ export default function HomePage() {
               {[
                 'The structure that worked no longer fits',
                 'Responsibility has silently collapsed inward',
-                'Execution now depends on heroics instead of structure'
+                'Execution now requires heroics instead of structure'
               ].map((item, i) => (
                 <li key={i} className="text-lg text-white/90 flex items-start gap-4">
                   <span className="text-accent-gold mt-1">—</span>
@@ -132,7 +132,7 @@ export default function HomePage() {
               </p>
 
               <p className="text-body text-content-secondary leading-relaxed">
-                Rather than advice, coaching, or frameworks — we redesign the operating system around people and work until it holds without constant intervention.
+                Rather than advice, coaching, or frameworks, we redesign the operating system around people and work until it holds without constant intervention.
               </p>
             </div>
 
@@ -227,8 +227,11 @@ export default function HomePage() {
             <div className="py-10 border-t-2 border-content-primary">
               <span className="text-meta text-accent font-medium">01</span>
               <h3 className="text-h2 text-content-primary mt-5 mb-4">Diagnosis</h3>
-              <p className="text-body text-content-secondary leading-relaxed">
-                Understanding where and why the system stopped working. This is where the real value lives.
+              <p className="text-body text-content-secondary leading-relaxed mb-6">
+                Understanding where and why the system stopped working.
+              </p>
+              <p className="text-body-sm text-content-primary">
+                This is where the real value lives.
               </p>
             </div>
 
@@ -322,7 +325,7 @@ export default function HomePage() {
 
             {/* Context line - more active */}
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              The work comes from years designing systems across technology, creative practice, and founder-led organizations.
+              The work is shaped by years designing systems across technology, creative practice, and founder-led organizations.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-12">
