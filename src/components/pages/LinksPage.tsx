@@ -4,16 +4,16 @@ import ProjectGrid from '../links/ProjectGrid';
 
 export default function LinksPage() {
   return (
-    <div className="min-h-screen bg-[#FAFAF8]">
+    <div className="min-h-screen bg-studio-bg">
       {/* Minimal Top Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FAFAF8]/95 backdrop-blur-sm border-b border-[#1A1A1A]/5">
-        <div className="max-w-md mx-auto px-4">
-          <div className="flex items-center justify-end h-12">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-studio-bg/95 backdrop-blur-sm border-b border-studio-divider">
+        <div className="max-w-[680px] mx-auto px-6">
+          <div className="flex items-center justify-end h-14">
             <Link
               to="/"
-              className="text-xs text-[#1A1A1A]/40 hover:text-[#1A1A1A]/60 transition-colors"
+              className="text-meta text-content-tertiary hover:text-content-secondary transition-colors"
             >
-              Main Site
+              Visit studio
             </Link>
           </div>
         </div>
@@ -25,10 +25,10 @@ export default function LinksPage() {
       {/* Links */}
       <ProjectGrid />
 
-      {/* Footer - Minimal */}
-      <footer className="border-t border-[#1A1A1A]/5 py-8">
-        <div className="max-w-md mx-auto px-4 text-center">
-          <p className="text-[10px] text-[#1A1A1A]/30">
+      {/* Footer */}
+      <footer className="border-t border-studio-divider py-10">
+        <div className="max-w-[680px] mx-auto px-6 text-center">
+          <p className="text-meta text-content-tertiary">
             © 2026 Astral Integration
           </p>
         </div>
