@@ -61,8 +61,8 @@ export default function HomePage() {
               Astral Integration
             </h1>
 
-            {/* Signal line - stands alone */}
-            <p className="text-h2 md:text-h1 text-content-primary font-medium mb-12 max-w-2xl">
+            {/* Signal line - stands alone, carries the emotional peak */}
+            <p className="text-h1 md:text-display-sm text-content-primary font-medium mb-16 max-w-2xl">
               We redesign systems that no longer hold.
             </p>
 
@@ -78,8 +78,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* THE SITUATION — Dark section for visual contrast */}
-      <section className="py-28 md:py-36 bg-[#232323]">
+      {/* THE SITUATION — Dark section for visual contrast (pause, not chapter) */}
+      <section className="py-24 md:py-28 bg-[#232323]">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-white/50 uppercase tracking-wider mb-6">
@@ -132,7 +132,7 @@ export default function HomePage() {
               </p>
 
               <p className="text-body text-content-secondary leading-relaxed">
-                We work one level beneath surface problems. Rather than advice, coaching, or frameworks — we redesign the operating system around people and work until it holds without constant intervention.
+                Rather than advice, coaching, or frameworks — we redesign the operating system around people and work until it holds without constant intervention.
               </p>
             </div>
 
