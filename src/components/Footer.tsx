@@ -22,7 +22,7 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-studio-divider">
           <p className="text-content-tertiary text-body-sm">
-            © {new Date().getFullYear()} Astral Integration
+            © 2025 Astral Integration
           </p>
         </div>
       </div>
