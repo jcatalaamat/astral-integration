@@ -207,38 +207,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHAT THIS IS NOT */}
-      <section className="py-28 md:py-36">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Boundaries
-            </p>
-            <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
-              What This Is Not
-            </h2>
-
-            <ul className="space-y-4">
-              {[
-                'Not coaching',
-                'Not generic consulting',
-                'Not an agency selling packages',
-                'Not early-stage ideation'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-4">
-                  <span className="text-content-tertiary mt-1.5 text-sm">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-lg text-content-primary font-medium mt-12">
-              This is system-level intervention for businesses that have already moved beyond "just start".
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ABOUT */}
       <section id="about" className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
