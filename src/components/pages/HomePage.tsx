@@ -52,32 +52,29 @@ export default function HomePage() {
     <div className="min-h-screen bg-studio-bg font-sans">
       <Navigation />
 
-      {/* HERO — Authority anchor with agency */}
+      {/* HERO */}
       <section className="min-h-[95vh] flex items-center">
         <div className="max-w-content mx-auto px-6 md:px-12 py-32 md:py-40">
           <div className="max-w-3xl">
             <h1 className="text-display-sm md:text-display text-content-primary mb-8">
               Astral Integration
             </h1>
+            <p className="text-body text-content-secondary mb-8">
+              A Living Systems Studio
+            </p>
 
-            {/* Signal line - stands alone, carries the emotional peak */}
             <p className="text-h1 md:text-display-sm text-content-primary font-medium mb-16 max-w-2xl">
-              We redesign systems that no longer hold.
+              We redesign systems that no longer hold — and help them take form in the world.
             </p>
 
-            <p className="text-body md:text-lg text-content-primary leading-relaxed mb-10 max-w-prose">
-              When growth breaks the structure that once worked, we redesign the operating system around people and work — until execution becomes clear again.
-            </p>
-
-            {/* Audience as metadata */}
             <p className="text-body-sm text-content-tertiary">
-              For founders, leaders, and creators navigating transition, complexity, or scale.
+              For founders, creators, and real-world practices whose work has outgrown the structure, tools, or digital layer that once supported it.
             </p>
           </div>
         </div>
       </section>
 
-      {/* THE SITUATION — Dark section for visual contrast (pause, not chapter) */}
+      {/* THE SITUATION */}
       <section className="py-24 md:py-28 bg-[#232323]">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
@@ -85,19 +82,27 @@ export default function HomePage() {
               The Situation
             </p>
             <h2 className="text-h1 md:text-display-sm text-white mb-12">
-              Why People Come to Us
+              When the Work Is Real — but the System Isn't Holding
             </h2>
 
             <p className="text-body text-white/80 leading-relaxed mb-14">
-              Not because they lack vision, talent, or effort — but because the structure around their work no longer fits the reality they're living inside.
+              People don't come here because they lack vision, talent, or effort.
             </p>
 
-            {/* 3 irreversible truths - structural, not emotional */}
+            <p className="text-body text-white/80 leading-relaxed mb-14">
+              They come because something real already exists — a business, a creative practice, a restaurant, a body of work — and the structure around it no longer fits the reality it has grown into.
+            </p>
+
+            <p className="text-body text-white/70 leading-relaxed mb-6">
+              Often this shows up as:
+            </p>
+
             <ul className="space-y-6 mb-14">
               {[
-                'The structure that worked no longer fits',
-                'Responsibility has silently collapsed inward',
-                'Execution now requires heroics instead of structure'
+                'Responsibility silently collapsing into one person',
+                'Decisions slowing or becoming emotionally loaded',
+                'Digital tools, websites, or systems feeling brittle or misaligned',
+                'Execution requiring constant heroics instead of flow'
               ].map((item, i) => (
                 <li key={i} className="text-lg text-white/90 flex items-start gap-4">
                   <span className="text-accent-gold mt-1">—</span>
@@ -113,51 +118,51 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHAT WE DO — Outcome first, then explanation */}
+      {/* WHAT WE DO */}
       <section id="services" className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="grid md:grid-cols-2 gap-16 md:gap-24">
-            <div>
-              <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-                The Work
-              </p>
-              <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
-                What We Do
-              </h2>
+          <div className="max-w-prose mb-16">
+            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
+              The Work
+            </p>
+            <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
+              What We Do
+            </h2>
 
-              {/* Outcome first */}
-              <p className="text-lg text-content-primary font-medium mb-8">
-                We restore clarity, momentum, and structural integrity.
-              </p>
+            <p className="text-lg text-content-primary font-medium mb-8">
+              Astral Integration steps in to restore clarity, coherence, and structural integrity.
+            </p>
 
-              <p className="text-body text-content-secondary leading-relaxed">
-                Rather than advice, coaching, or frameworks, we redesign the operating system around people and work until it holds without constant intervention.
-              </p>
-            </div>
+            <p className="text-body text-content-secondary leading-relaxed mb-10">
+              We don't offer advice, coaching, or generic frameworks. We redesign the operating system around people and work — until it holds without constant intervention.
+            </p>
 
-            <div className="md:pt-16">
-              <p className="text-meta text-content-tertiary uppercase tracking-wider mb-8">
-                This typically includes
-              </p>
-              <ul className="space-y-0">
-                {[
-                  'Roles & ownership',
-                  'Decision flow',
-                  'Priorities & rhythms',
-                  'Tools & systems',
-                  'Execution clarity'
-                ].map((item, i) => (
-                  <li key={i} className="text-body text-content-primary py-4 border-b border-studio-divider last:border-b-0">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <p className="text-body text-content-secondary leading-relaxed mb-6">
+              In practice, this often includes:
+            </p>
+
+            <ul className="space-y-0 mb-12">
+              {[
+                'Clarifying roles, ownership, and authority',
+                'Redesigning decision flow and execution rhythms',
+                'Simplifying tools and reducing cognitive load',
+                'Designing and assembling the digital layer when it is structurally relevant — websites, apps, tools, content systems',
+                'Coordinating the right collaborators (designers, developers, photographers, specialists) when needed'
+              ].map((item, i) => (
+                <li key={i} className="text-body text-content-primary py-4 border-b border-studio-divider last:border-b-0">
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <p className="text-lg text-content-primary font-medium">
+              The goal is not polish or optimisation. The goal is a system that fits reality and can carry the work forward.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* WHO THIS IS FOR — With exclusion */}
+      {/* WHO THIS IS FOR */}
       <section className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
@@ -167,46 +172,54 @@ export default function HomePage() {
             People Who Already Have Something Real
           </h2>
           <p className="text-body text-content-secondary mb-16 max-w-prose">
-            Not starting from scratch — restructuring what exists.
+            This is not for early-stage ideation, motivation, or therapy.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-12 md:gap-16 mb-16">
+          <p className="text-body text-content-secondary mb-12 max-w-prose">
+            We work with people and practices that already exist — and need to be restructured, not invented.
+          </p>
+
+          <p className="text-body text-content-secondary mb-10 max-w-prose">
+            This often includes:
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 mb-12">
             <div>
-              <h3 className="text-h3 text-content-primary mb-5">Founders</h3>
-              <ul className="space-y-3 text-body-sm text-content-secondary">
-                <li>Founder-led businesses</li>
-                <li>Solo operators scaling</li>
-                <li>Small teams in transition</li>
-              </ul>
+              <h3 className="text-h3 text-content-primary mb-5">Founders & founder-led businesses</h3>
+              <p className="text-body-sm text-content-secondary">
+                When growth, complexity, or responsibility has outpaced structure.
+              </p>
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-primary mb-5">Creators</h3>
-              <ul className="space-y-3 text-body-sm text-content-secondary">
-                <li>Artists with complex practices</li>
-                <li>Creative professionals</li>
-                <li>Independent practitioners</li>
-              </ul>
+              <h3 className="text-h3 text-content-primary mb-5">Creators & artists</h3>
+              <p className="text-body-sm text-content-secondary">
+                Whose work is strong, but whose digital presence, systems, or presentation no longer reflects its quality.
+              </p>
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-primary mb-5">Projects</h3>
-              <ul className="space-y-3 text-body-sm text-content-secondary">
-                <li>Outgrown original structure</li>
-                <li>Restructuring, not starting</li>
-                <li>Sustainability over heroics</li>
-              </ul>
+              <h3 className="text-h3 text-content-primary mb-5">Independent operators & small teams</h3>
+              <p className="text-body-sm text-content-secondary">
+                In transition, scale, or redefinition.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-h3 text-content-primary mb-5">Real-world practices</h3>
+              <p className="text-body-sm text-content-secondary">
+                Such as studios, restaurants, or spaces where the lived experience is strong, but the digital layer is weak, fragmented, or misaligned.
+              </p>
             </div>
           </div>
 
-          {/* Exclusion line - lighter, boundary not pitch */}
-          <p className="text-body-sm text-content-tertiary/70 border-t border-studio-divider pt-8">
-            This is not for early-stage ideation, motivation, or therapy.
+          <p className="text-body text-content-primary font-medium max-w-prose">
+            The common thread is not industry — it's that the work is alive, but the system around it is no longer supporting it.
           </p>
         </div>
       </section>
 
-      {/* HOW WE WORK — Emphasize diagnosis */}
+      {/* HOW WE WORK */}
       <section id="process" className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose mb-20">
@@ -222,15 +235,15 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-            {/* Diagnosis - emphasized */}
+            {/* Diagnosis */}
             <div className="py-10 border-t-2 border-content-primary">
               <span className="text-meta text-accent font-medium">01</span>
               <h3 className="text-h2 text-content-primary mt-5 mb-4">Diagnosis</h3>
               <p className="text-body text-content-secondary leading-relaxed mb-6">
-                Understanding where and why the system stopped working.
+                We understand where and why the system stopped working.
               </p>
               <p className="text-body-sm text-content-primary">
-                This is where the real value lives.
+                This is where most of the value lives.
               </p>
             </div>
 
@@ -239,7 +252,7 @@ export default function HomePage() {
               <span className="text-meta text-accent font-medium">02</span>
               <h3 className="text-h3 text-content-primary mt-5 mb-4">Redesign</h3>
               <p className="text-body-sm text-content-secondary">
-                Roles, decision flow, structure, tools
+                Roles, authority, decision flow, tools, and — when needed — digital infrastructure.
               </p>
             </div>
 
@@ -248,7 +261,7 @@ export default function HomePage() {
               <span className="text-meta text-accent font-medium">03</span>
               <h3 className="text-h3 text-content-primary mt-5 mb-4">Stabilisation</h3>
               <p className="text-body-sm text-content-secondary">
-                So the system holds without constant oversight
+                So the system holds without constant oversight.
               </p>
             </div>
           </div>
@@ -259,7 +272,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* LIVING SYSTEMS — With applied example */}
+      {/* LIVING SYSTEMS */}
       <section className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
@@ -267,19 +280,23 @@ export default function HomePage() {
               Philosophy
             </p>
             <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
-              Living Systems
+              Living Systems, Not Machines
             </h2>
 
             <p className="text-body text-content-primary leading-relaxed mb-10">
-              We treat organizations and creative practices as living systems, not machines.
+              We treat organizations and creative practices as living systems of people, authority, decisions, and tools.
             </p>
 
-            {/* Applied example - emphasized, grounds the philosophy */}
+            {/* Applied example */}
             <p className="text-lg text-content-primary leading-relaxed mb-12 pl-6 border-l-2 border-content-primary">
-              When authority is unclear, decisions slow. When decisions slow, responsibility collapses inward.
+              When authority is unclear, decisions slow. When decisions slow, responsibility collapses inward. When structure doesn't reflect reality, friction multiplies.
             </p>
 
-            <ul className="space-y-4">
+            <p className="text-body text-content-secondary mb-6">
+              We work by a few simple principles:
+            </p>
+
+            <ul className="space-y-4 mb-12">
               {[
                 'Structure must reflect reality, not theory',
                 'Authority must be explicit to reduce friction',
@@ -293,35 +310,34 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <p className="text-lg text-content-primary font-medium mt-12">
+            <p className="text-lg text-content-primary font-medium">
               When structure fits the people inside it, momentum returns naturally.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ABOUT THE STUDIO — With context */}
+      {/* ABOUT THE STUDIO */}
       <section id="about" className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              The Studio
+              About the Studio
             </p>
             <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
-              About Astral Integration
+              Astral Integration
             </h2>
 
             <p className="text-body text-content-primary leading-relaxed mb-8">
-              Founded by a systems architect working at the intersection of people, work, and technology.
+              Astral Integration was founded by a systems architect working at the intersection of people, work, and technology.
             </p>
 
-            {/* Context line - more active */}
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              The work is shaped by years designing systems across technology, creative practice, and founder-led organizations.
+              The work is shaped by years designing systems across founder-led organizations, creative practices, and technology — and by stepping into moments where growth, change, or complexity broke coherence.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-12">
-              The studio exists to support moments when growth outpaces structure, complexity breaks coherence, responsibility concentrates too heavily, or execution slows despite effort.
+              The studio exists to support inflection points — moments when something real needs to be reorganized so it can continue evolving.
             </p>
 
             <p className="text-body-sm text-content-tertiary">
@@ -331,7 +347,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CONTACT — Dark section */}
+      {/* CONTACT */}
       <section id="contact" className="py-28 md:py-36 bg-[#232323]">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
@@ -342,15 +358,28 @@ export default function HomePage() {
               Working Together
             </h2>
 
-            <p className="text-body text-white/70 leading-relaxed mb-6">
-              If you're exploring working together, reach out with what you're building or holding, where things feel stuck or brittle, and why this moment matters.
+            <p className="text-body text-white/70 leading-relaxed mb-3">
+              If you're exploring working together, reach out with:
             </p>
+
+            <ul className="space-y-3 mb-10">
+              {[
+                "what you're building or holding",
+                'where things feel stuck, brittle, or overloaded',
+                'why this moment matters now'
+              ].map((item, i) => (
+                <li key={i} className="text-body text-white/70 flex items-start gap-3">
+                  <span className="text-white/40">·</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
 
             <p className="text-body text-white/90 mb-14">
               If it's a fit, we'll define the next step.
             </p>
 
-            {/* Contact Form - styled for dark bg */}
+            {/* Contact Form */}
             {formStatus !== 'success' ? (
               <form onSubmit={handleContactSubmit} className="space-y-8">
                 <div>
