@@ -64,7 +64,7 @@ export default function HomePage() {
             </p>
 
             <p className="text-h1 md:text-display-sm text-content-primary font-medium mb-16 max-w-2xl">
-              We help founders, creators, and real-world businesses redesign and implement systems when what once worked no longer does.
+              We help founders, creators, and real-world businesses design, build, and integrate systems when what once worked no longer does.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed max-w-prose">
@@ -85,20 +85,25 @@ export default function HomePage() {
               Systems Work at Moments of Structural Change
             </h2>
 
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              Astral Integration works at moments where a business or practice has outgrown its existing setup.
+            </p>
+
             <p className="text-body text-content-secondary leading-relaxed mb-12">
-              Astral Integration works at moments where businesses and practices have outgrown their existing systems.
+              Not at the idea stage. Not for motivation. But when something real already exists — and execution is breaking.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-6">
-              This includes:
+              Our work typically includes:
             </p>
 
             <ul className="space-y-0 mb-12">
               {[
                 'Diagnosing where execution, decisions, or responsibility are breaking down',
                 'Redesigning roles, ownership, and operating structure',
-                'Designing and building the digital layer when needed: websites, apps, internal tools, chatbots, booking/ordering/content systems',
-                'Coordinating specialists (developers, designers, photographers, etc.) to ensure proper execution'
+                'Designing and building the digital layer when needed: websites, apps, internal tools, booking systems, ordering flows, content platforms, AI/chat systems',
+                'Coordinating and directing specialists (developers, designers, photographers, marketers, etc.)',
+                'Ensuring everything connects into one coherent system'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-primary py-4 border-b border-studio-divider last:border-b-0">
                   {item}
@@ -124,35 +129,35 @@ export default function HomePage() {
           </h2>
 
           <p className="text-body text-content-secondary mb-16 max-w-prose">
-            We work with people who already have something real.
+            We work with people who already have traction, activity, or demand — but whose systems haven't caught up.
           </p>
 
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 mb-12">
             <div>
               <h3 className="text-h3 text-content-primary mb-5">Founders & founder-led companies</h3>
               <p className="text-body-sm text-content-secondary">
-                When growth or complexity has outpaced existing structure.
+                When growth, users, or operations have outpaced structure.
               </p>
             </div>
 
             <div>
               <h3 className="text-h3 text-content-primary mb-5">Creators & artists</h3>
               <p className="text-body-sm text-content-secondary">
-                With growing practices that need proper systems and digital presence.
+                With growing practices that need real systems, platforms, and distribution — not hacks.
               </p>
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-primary mb-5">Restaurants, wineries, and physical businesses</h3>
+              <h3 className="text-h3 text-content-primary mb-5">Restaurants, wineries & physical businesses</h3>
               <p className="text-body-sm text-content-secondary">
-                Where the experience is strong but systems and digital infrastructure are weak.
+                Where the product and experience are strong, but systems and digital infrastructure are weak or fragmented.
               </p>
             </div>
 
             <div>
               <h3 className="text-h3 text-content-primary mb-5">Small teams in transition or scale</h3>
               <p className="text-body-sm text-content-secondary">
-                Navigating structural change or growth inflection points.
+                Navigating a shift in size, complexity, or direction.
               </p>
             </div>
           </div>
@@ -173,6 +178,9 @@ export default function HomePage() {
             <h2 className="text-h1 md:text-display-sm text-content-primary mb-8">
               System-Level Intervention
             </h2>
+            <p className="text-body text-content-secondary leading-relaxed">
+              We step in at the system level — not as a single service, but as an integrative role.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-16">
@@ -180,7 +188,7 @@ export default function HomePage() {
               <span className="text-meta text-accent font-medium">01</span>
               <h3 className="text-h2 text-content-primary mt-5 mb-4">Diagnosis</h3>
               <p className="text-body-sm text-content-secondary">
-                We identify where the current system no longer matches reality.
+                We identify where the current system no longer matches reality — structurally, operationally, or digitally.
               </p>
             </div>
 
@@ -188,7 +196,7 @@ export default function HomePage() {
               <span className="text-meta text-accent font-medium">02</span>
               <h3 className="text-h3 text-content-primary mt-5 mb-4">System Redesign</h3>
               <p className="text-body-sm text-content-secondary">
-                Structure, roles, decisions, tools, and digital architecture.
+                We redesign structure, roles, decisions, tools, and digital architecture so they actually support the work.
               </p>
             </div>
 
@@ -196,7 +204,7 @@ export default function HomePage() {
               <span className="text-meta text-accent font-medium">03</span>
               <h3 className="text-h3 text-content-primary mt-5 mb-4">Implementation & Stabilisation</h3>
               <p className="text-body-sm text-content-secondary">
-                We build, integrate, and coordinate until execution is clear and stable.
+                We build, integrate, and coordinate execution until the system is clear, functional, and stable.
               </p>
             </div>
           </div>
@@ -208,7 +216,7 @@ export default function HomePage() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-28 md:py-36 bg-studio-bgAlt">
+      <section id="about" className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
@@ -219,11 +227,29 @@ export default function HomePage() {
             </h2>
 
             <p className="text-body text-content-primary leading-relaxed mb-8">
-              Founded by a systems architect working at the intersection of people, work, and technology.
+              Astral Integration was founded by a systems architect working at the intersection of people, work, and technology.
             </p>
 
+            <p className="text-body text-content-secondary leading-relaxed mb-6">
+              The work is shaped by years designing and implementing systems across:
+            </p>
+
+            <ul className="space-y-3 mb-12">
+              {[
+                'Founder-led organizations',
+                'Creative and cultural projects',
+                'Digital products, platforms, and tools',
+                'Physical businesses with real-world operations'
+              ].map((item, i) => (
+                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
+                  <span className="text-accent mt-1.5 text-sm">·</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
             <p className="text-body text-content-secondary leading-relaxed mb-12">
-              The work is shaped by years designing and implementing systems across founder-led organizations, creative practices, and technology — stepping in at moments where growth, change, or complexity broke coherence.
+              The studio exists for moments when growth, change, or complexity breaks coherence — and someone needs to see the whole system and make it work again.
             </p>
 
             <p className="text-body-sm text-content-tertiary">
@@ -250,9 +276,9 @@ export default function HomePage() {
 
             <ul className="space-y-3 mb-10">
               {[
-                "what you're building or holding",
-                'where things feel stuck, brittle, or overloaded',
-                'why this moment matters now'
+                "What you're building or running",
+                'Where execution feels stuck, brittle, or overloaded',
+                'Why this moment matters now'
               ].map((item, i) => (
                 <li key={i} className="text-body text-white/70 flex items-start gap-3">
                   <span className="text-white/40">·</span>
@@ -261,8 +287,12 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <p className="text-body text-white/90 mb-14">
+            <p className="text-body text-white/90 mb-3">
               If it's a fit, we'll define the next step.
+            </p>
+
+            <p className="text-body-sm text-white/60 mb-14">
+              No pitches. No funnels. Just context.
             </p>
 
             {/* Contact Form */}
