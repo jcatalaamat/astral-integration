@@ -107,7 +107,7 @@ export default function HomePage() {
             </ul>
 
             <p className="text-lg text-content-primary font-medium">
-              We don't just advise. We design and implement until the system holds.
+              We design and implement until the system holds.
             </p>
           </div>
         </div>
