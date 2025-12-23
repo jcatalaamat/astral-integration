@@ -60,50 +60,48 @@ export default function HomePage() {
               Astral Integration
             </h1>
             <p className="text-body text-content-secondary mb-12">
-              Systems Architecture & Digital Integration Studio
+              Systems & Digital Studio
             </p>
 
             <p className="text-h1 md:text-display-sm text-content-primary font-medium mb-16 max-w-2xl">
-              We help founders, creators, and real-world businesses design, build, and integrate systems when what once worked no longer does.
+              We turn real-world practices into digital systems that sell.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed max-w-prose">
-              When growth, complexity, or change breaks execution, we step in to realign structure, decisions, and digital infrastructure — and make the system actually work again.
+              Astral Integration helps studios, founders, and cultural businesses turn what they already do into clear, bookable, sellable digital experiences.
+            </p>
+
+            <p className="text-body text-content-primary leading-relaxed max-w-prose mt-8">
+              If people love your work in person — we help you package it, platform it, and scale it without losing its soul.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHAT WE DO */}
+      {/* WHAT WE BUILD */}
       <section id="services" className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose mb-16">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              What We Do
+              What We Build
             </p>
             <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
-              Systems Work at Moments of Structural Change
+              Digital systems for studios and brands with something real
             </h2>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              Astral Integration works at moments where a business or practice has outgrown its existing setup.
-            </p>
-
             <p className="text-body text-content-secondary leading-relaxed mb-12">
-              Not at the idea stage. Not for motivation. But when something real already exists — and execution is breaking.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-6">
-              Our work typically includes:
+              We design and build:
             </p>
 
             <ul className="space-y-0 mb-12">
               {[
-                'Diagnosing where execution, decisions, or responsibility are breaking down',
-                'Redesigning roles, ownership, and operating structure',
-                'Designing and building the digital layer when needed: websites, apps, internal tools, booking systems, ordering flows, content platforms, AI/chat systems',
-                'Coordinating and directing specialists (developers, designers, photographers, marketers, etc.)',
-                'Ensuring everything connects into one coherent system'
+                'Booking & payment systems',
+                'Studio websites that actually convert',
+                'Digital programs, memberships & courses',
+                'Apps and client portals',
+                'Ordering systems and digital menus',
+                'Content & education platforms',
+                'Internal tools that reduce admin and chaos'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-primary py-4 border-b border-studio-divider last:border-b-0">
                   {item}
@@ -111,59 +109,63 @@ export default function HomePage() {
               ))}
             </ul>
 
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              Everything is custom, but never overbuilt.
+            </p>
+
             <p className="text-lg text-content-primary font-medium">
-              We design and implement until the system holds.
+              One system. One flow. Clear outcomes.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHO WE WORK WITH */}
+      {/* WHO THIS IS FOR */}
       <section className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-            Who We Work With
+            Who This Is For
           </p>
           <h2 className="text-h1 md:text-display-sm text-content-primary mb-6">
-            People Who Already Have Something Real
+            Studios, creators, and brands ready to grow
           </h2>
 
           <p className="text-body text-content-secondary mb-16 max-w-prose">
-            We work with people who already have traction, activity, or demand — but whose systems haven't caught up.
+            We work with:
           </p>
 
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 mb-12">
             <div>
-              <h3 className="text-h3 text-content-primary mb-5">Founders & founder-led companies</h3>
+              <h3 className="text-h3 text-content-primary mb-5">Yoga & wellness studios</h3>
               <p className="text-body-sm text-content-secondary">
-                When growth, users, or operations have outpaced structure.
+                Turning classes, trainings, and retreats into platforms.
               </p>
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-primary mb-5">Creators & artists</h3>
+              <h3 className="text-h3 text-content-primary mb-5">Founders & creative brands</h3>
               <p className="text-body-sm text-content-secondary">
-                With growing practices that need real systems, platforms, and distribution — not hacks.
+                Packaging practices into products and experiences.
               </p>
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-primary mb-5">Restaurants, wineries & physical businesses</h3>
+              <h3 className="text-h3 text-content-primary mb-5">Restaurants, cafés & physical spaces</h3>
               <p className="text-body-sm text-content-secondary">
-                Where the product and experience are strong, but systems and digital infrastructure are weak or fragmented.
+                Translating real-world experience into digital flows.
               </p>
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-primary mb-5">Small teams in transition or scale</h3>
+              <h3 className="text-h3 text-content-primary mb-5">Small teams with demand</h3>
               <p className="text-body-sm text-content-secondary">
-                Navigating a shift in size, complexity, or direction.
+                Who need systems, not more effort.
               </p>
             </div>
           </div>
 
           <p className="text-body text-content-primary font-medium max-w-prose">
-            The common thread is simple: the business works — but the system around it doesn't anymore.
+            If people already want what you do — we help you build the system that carries it further.
           </p>
         </div>
       </section>
@@ -176,70 +178,65 @@ export default function HomePage() {
               How We Work
             </p>
             <h2 className="text-h1 md:text-display-sm text-content-primary mb-8">
-              System-Level Intervention
+              From practice to platform
             </h2>
-            <p className="text-body text-content-secondary leading-relaxed">
-              We step in at the system level — not as a single service, but as an integrative role.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-16">
             <div className="py-10 border-t-2 border-content-primary">
               <span className="text-meta text-accent font-medium">01</span>
-              <h3 className="text-h2 text-content-primary mt-5 mb-4">Diagnosis</h3>
+              <h3 className="text-h2 text-content-primary mt-5 mb-4">Understand the practice</h3>
               <p className="text-body-sm text-content-secondary">
-                We identify where the current system no longer matches reality — structurally, operationally, or digitally.
+                We learn what actually works, not what sounds good.
               </p>
             </div>
 
             <div className="py-10 border-t-2 border-studio-divider">
               <span className="text-meta text-accent font-medium">02</span>
-              <h3 className="text-h3 text-content-primary mt-5 mb-4">System Redesign</h3>
+              <h3 className="text-h3 text-content-primary mt-5 mb-4">Design the system</h3>
               <p className="text-body-sm text-content-secondary">
-                We redesign structure, roles, decisions, tools, and digital architecture so they actually support the work.
+                Flows, structure, experience, and digital architecture.
               </p>
             </div>
 
             <div className="py-10 border-t-2 border-studio-divider">
               <span className="text-meta text-accent font-medium">03</span>
-              <h3 className="text-h3 text-content-primary mt-5 mb-4">Implementation & Stabilisation</h3>
+              <h3 className="text-h3 text-content-primary mt-5 mb-4">Build & launch</h3>
               <p className="text-body-sm text-content-secondary">
-                We build, integrate, and coordinate execution until the system is clear, functional, and stable.
+                We design, build, integrate, and ship — fast and clean.
               </p>
             </div>
           </div>
 
+          <p className="text-body text-content-secondary leading-relaxed max-w-prose mb-3">
+            No endless strategy decks. No bloated tech.
+          </p>
           <p className="text-lg text-content-primary font-medium max-w-prose">
-            Then we step back.
+            Just things that go live and work.
           </p>
         </div>
       </section>
 
-      {/* ABOUT */}
+      {/* WHY ASTRAL INTEGRATION */}
       <section id="about" className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              About the Studio
+              Why Astral Integration
             </p>
             <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
-              Astral Integration
+              Most studios and brands don't need "more marketing"
             </h2>
 
-            <p className="text-body text-content-primary leading-relaxed mb-8">
-              Astral Integration was founded by a systems architect working at the intersection of people, work, and technology.
-            </p>
-
             <p className="text-body text-content-secondary leading-relaxed mb-6">
-              The work is shaped by years designing and implementing systems across:
+              They need:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                'Founder-led organizations',
-                'Creative and cultural projects',
-                'Digital products, platforms, and tools',
-                'Physical businesses with real-world operations'
+                'clarity',
+                'structure',
+                'a system that sells while they work'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -248,8 +245,25 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              The studio exists for moments when growth, change, or complexity breaks coherence — and someone needs to see the whole system and make it work again.
+            <p className="text-body text-content-secondary leading-relaxed mb-6">
+              We sit between:
+            </p>
+
+            <ul className="space-y-3 mb-12">
+              {[
+                'vision and execution',
+                'space and screen',
+                'practice and product'
+              ].map((item, i) => (
+                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
+                  <span className="text-accent mt-1.5 text-sm">·</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p className="text-lg text-content-primary font-medium mb-12">
+              That's the gap we close.
             </p>
 
             <p className="text-body-sm text-content-tertiary">
@@ -271,14 +285,18 @@ export default function HomePage() {
             </h2>
 
             <p className="text-body text-white/70 leading-relaxed mb-3">
-              If you're exploring working together, reach out with:
+              If you run a studio, brand, or practice — and you know it could reach more people with the right system — let's talk.
+            </p>
+
+            <p className="text-body text-white/70 leading-relaxed mb-3">
+              Tell us:
             </p>
 
             <ul className="space-y-3 mb-10">
               {[
-                "What you're building or running",
-                'Where execution feels stuck, brittle, or overloaded',
-                'Why this moment matters now'
+                'what you do',
+                'what people already love',
+                'where things break when you try to scale'
               ].map((item, i) => (
                 <li key={i} className="text-body text-white/70 flex items-start gap-3">
                   <span className="text-white/40">·</span>
@@ -288,7 +306,7 @@ export default function HomePage() {
             </ul>
 
             <p className="text-body text-white/90 mb-3">
-              If it's a fit, we'll define the next step.
+              If it's a fit, we'll build it.
             </p>
 
             <p className="text-body-sm text-white/60 mb-14">
