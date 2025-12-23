@@ -59,95 +59,46 @@ export default function HomePage() {
             <h1 className="text-display-sm md:text-display text-content-primary mb-8">
               Astral Integration
             </h1>
-            <p className="text-body text-content-secondary mb-8">
-              A Living Systems Studio
+            <p className="text-body text-content-secondary mb-12">
+              Systems Architecture & Digital Integration Studio
             </p>
 
             <p className="text-h1 md:text-display-sm text-content-primary font-medium mb-16 max-w-2xl">
-              We redesign systems that no longer hold — and help them take form in the world.
+              We help founders, creators, and real-world businesses redesign and implement systems when what once worked no longer does.
             </p>
 
-            <p className="text-body-sm text-content-tertiary">
-              For founders, creators, and real-world practices whose work has outgrown the structure, tools, or digital layer that once supported it.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* THE SITUATION */}
-      <section className="py-24 md:py-28 bg-[#232323]">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-white/50 uppercase tracking-wider mb-6">
-              The Situation
-            </p>
-            <h2 className="text-h1 md:text-display-sm text-white mb-12">
-              When the Work Is Real — but the System Isn't Holding
-            </h2>
-
-            <p className="text-body text-white/80 leading-relaxed mb-14">
-              People don't come here because they lack vision, talent, or effort.
-            </p>
-
-            <p className="text-body text-white/80 leading-relaxed mb-14">
-              They come because something real already exists — a business, a creative practice, a restaurant, a body of work — and the structure around it no longer fits the reality it has grown into.
-            </p>
-
-            <p className="text-body text-white/70 leading-relaxed mb-6">
-              Often this shows up as:
-            </p>
-
-            <ul className="space-y-6 mb-14">
-              {[
-                'Responsibility silently collapsing into one person',
-                'Decisions slowing or becoming emotionally loaded',
-                'Digital tools, websites, or systems feeling brittle or misaligned',
-                'Execution requiring constant heroics instead of flow'
-              ].map((item, i) => (
-                <li key={i} className="text-lg text-white/90 flex items-start gap-4">
-                  <span className="text-accent-gold mt-1">—</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-body text-white font-medium">
-              At this stage, pushing harder doesn't help. The system itself needs to change.
+            <p className="text-body text-content-secondary leading-relaxed max-w-prose">
+              When growth, complexity, or change breaks execution, we step in to realign structure, decisions, and digital infrastructure — and make the system actually work again.
             </p>
           </div>
         </div>
       </section>
 
       {/* WHAT WE DO */}
-      <section id="services" className="py-28 md:py-36">
+      <section id="services" className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose mb-16">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              The Work
+              What We Do
             </p>
             <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
-              What We Do
+              Systems Work at Moments of Structural Change
             </h2>
 
-            <p className="text-lg text-content-primary font-medium mb-8">
-              Astral Integration steps in to restore clarity, coherence, and structural integrity.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-10">
-              We don't offer advice, coaching, or generic frameworks. We redesign the operating system around people and work — until it holds without constant intervention.
+            <p className="text-body text-content-secondary leading-relaxed mb-12">
+              Astral Integration works at moments where businesses and practices have outgrown their existing systems.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-6">
-              In practice, this often includes:
+              This includes:
             </p>
 
             <ul className="space-y-0 mb-12">
               {[
-                'Clarifying roles, ownership, and authority',
-                'Redesigning decision flow and execution rhythms',
-                'Simplifying tools and reducing cognitive load',
-                'Designing and assembling the digital layer when it is structurally relevant — websites, apps, tools, content systems',
-                'Coordinating the right collaborators (designers, developers, photographers, specialists) when needed'
+                'Diagnosing where execution, decisions, or responsibility are breaking down',
+                'Redesigning roles, ownership, and operating structure',
+                'Designing and building the digital layer when needed: websites, apps, internal tools, chatbots, booking/ordering/content systems',
+                'Coordinating specialists (developers, designers, photographers, etc.) to ensure proper execution'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-primary py-4 border-b border-studio-divider last:border-b-0">
                   {item}
@@ -156,14 +107,14 @@ export default function HomePage() {
             </ul>
 
             <p className="text-lg text-content-primary font-medium">
-              The goal is not polish or optimisation. The goal is a system that fits reality and can carry the work forward.
+              We don't just advise. We design and implement until the system holds.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHO THIS IS FOR */}
-      <section className="py-28 md:py-36 bg-studio-bgAlt">
+      {/* WHO WE WORK WITH */}
+      <section className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
             Who We Work With
@@ -171,154 +122,125 @@ export default function HomePage() {
           <h2 className="text-h1 md:text-display-sm text-content-primary mb-6">
             People Who Already Have Something Real
           </h2>
+
           <p className="text-body text-content-secondary mb-16 max-w-prose">
-            This is not for early-stage ideation, motivation, or therapy.
-          </p>
-
-          <p className="text-body text-content-secondary mb-12 max-w-prose">
-            We work with people and practices that already exist — and need to be restructured, not invented.
-          </p>
-
-          <p className="text-body text-content-secondary mb-10 max-w-prose">
-            This often includes:
+            We work with people who already have something real.
           </p>
 
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 mb-12">
             <div>
-              <h3 className="text-h3 text-content-primary mb-5">Founders & founder-led businesses</h3>
+              <h3 className="text-h3 text-content-primary mb-5">Founders & founder-led companies</h3>
               <p className="text-body-sm text-content-secondary">
-                When growth, complexity, or responsibility has outpaced structure.
+                When growth or complexity has outpaced existing structure.
               </p>
             </div>
 
             <div>
               <h3 className="text-h3 text-content-primary mb-5">Creators & artists</h3>
               <p className="text-body-sm text-content-secondary">
-                Whose work is strong, but whose digital presence, systems, or presentation no longer reflects its quality.
+                With growing practices that need proper systems and digital presence.
               </p>
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-primary mb-5">Independent operators & small teams</h3>
+              <h3 className="text-h3 text-content-primary mb-5">Restaurants, wineries, and physical businesses</h3>
               <p className="text-body-sm text-content-secondary">
-                In transition, scale, or redefinition.
+                Where the experience is strong but systems and digital infrastructure are weak.
               </p>
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-primary mb-5">Real-world practices</h3>
+              <h3 className="text-h3 text-content-primary mb-5">Small teams in transition or scale</h3>
               <p className="text-body-sm text-content-secondary">
-                Such as studios, restaurants, or spaces where the lived experience is strong, but the digital layer is weak, fragmented, or misaligned.
+                Navigating structural change or growth inflection points.
               </p>
             </div>
           </div>
 
           <p className="text-body text-content-primary font-medium max-w-prose">
-            The common thread is not industry — it's that the work is alive, but the system around it is no longer supporting it.
+            The common thread is simple: the business works — but the system around it doesn't anymore.
           </p>
         </div>
       </section>
 
       {/* HOW WE WORK */}
-      <section id="process" className="py-28 md:py-36">
+      <section id="process" className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose mb-20">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              The Process
+              How We Work
             </p>
             <h2 className="text-h1 md:text-display-sm text-content-primary mb-8">
-              How We Work
+              System-Level Intervention
             </h2>
-            <p className="text-body text-content-secondary leading-relaxed">
-              Engagements are focused, relational, and hands-on. There are no public programs, funnels, or fixed packages.
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-            {/* Diagnosis */}
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-16">
             <div className="py-10 border-t-2 border-content-primary">
               <span className="text-meta text-accent font-medium">01</span>
               <h3 className="text-h2 text-content-primary mt-5 mb-4">Diagnosis</h3>
-              <p className="text-body text-content-secondary leading-relaxed mb-6">
-                We understand where and why the system stopped working.
-              </p>
-              <p className="text-body-sm text-content-primary">
-                This is where most of the value lives.
+              <p className="text-body-sm text-content-secondary">
+                We identify where the current system no longer matches reality.
               </p>
             </div>
 
-            {/* Redesign */}
             <div className="py-10 border-t-2 border-studio-divider">
               <span className="text-meta text-accent font-medium">02</span>
-              <h3 className="text-h3 text-content-primary mt-5 mb-4">Redesign</h3>
+              <h3 className="text-h3 text-content-primary mt-5 mb-4">System Redesign</h3>
               <p className="text-body-sm text-content-secondary">
-                Roles, authority, decision flow, tools, and — when needed — digital infrastructure.
+                Structure, roles, decisions, tools, and digital architecture.
               </p>
             </div>
 
-            {/* Stabilisation */}
             <div className="py-10 border-t-2 border-studio-divider">
               <span className="text-meta text-accent font-medium">03</span>
-              <h3 className="text-h3 text-content-primary mt-5 mb-4">Stabilisation</h3>
+              <h3 className="text-h3 text-content-primary mt-5 mb-4">Implementation & Stabilisation</h3>
               <p className="text-body-sm text-content-secondary">
-                So the system holds without constant oversight.
+                We build, integrate, and coordinate until execution is clear and stable.
               </p>
             </div>
           </div>
 
-          <p className="text-lg text-content-primary font-medium mt-20 max-w-prose">
-            We step in, redesign what's necessary, and step back.
+          <p className="text-lg text-content-primary font-medium max-w-prose">
+            Then we step back.
           </p>
         </div>
       </section>
 
-      {/* LIVING SYSTEMS */}
-      <section className="py-28 md:py-36 bg-studio-bgAlt">
+      {/* WHAT THIS IS NOT */}
+      <section className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Philosophy
+              Boundaries
             </p>
             <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
-              Living Systems, Not Machines
+              What This Is Not
             </h2>
 
-            <p className="text-body text-content-primary leading-relaxed mb-10">
-              We treat organizations and creative practices as living systems of people, authority, decisions, and tools.
-            </p>
-
-            {/* Applied example */}
-            <p className="text-lg text-content-primary leading-relaxed mb-12 pl-6 border-l-2 border-content-primary">
-              When authority is unclear, decisions slow. When decisions slow, responsibility collapses inward. When structure doesn't reflect reality, friction multiplies.
-            </p>
-
-            <p className="text-body text-content-secondary mb-6">
-              We work by a few simple principles:
-            </p>
-
-            <ul className="space-y-4 mb-12">
+            <ul className="space-y-4">
               {[
-                'Structure must reflect reality, not theory',
-                'Authority must be explicit to reduce friction',
-                'Systems should lower cognitive load, not increase it',
-                'Good design removes the need for constant firefighting'
+                'Not coaching',
+                'Not generic consulting',
+                'Not an agency selling packages',
+                'Not early-stage ideation'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-4">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
+                  <span className="text-content-tertiary mt-1.5 text-sm">·</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
 
-            <p className="text-lg text-content-primary font-medium">
-              When structure fits the people inside it, momentum returns naturally.
+            <p className="text-lg text-content-primary font-medium mt-12">
+              This is system-level intervention for businesses that have already moved beyond "just start".
             </p>
           </div>
         </div>
       </section>
 
-      {/* ABOUT THE STUDIO */}
-      <section id="about" className="py-28 md:py-36">
+      {/* ABOUT */}
+      <section id="about" className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
@@ -329,15 +251,11 @@ export default function HomePage() {
             </h2>
 
             <p className="text-body text-content-primary leading-relaxed mb-8">
-              Astral Integration was founded by a systems architect working at the intersection of people, work, and technology.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              The work is shaped by years designing systems across founder-led organizations, creative practices, and technology — and by stepping into moments where growth, change, or complexity broke coherence.
+              Founded by a systems architect working at the intersection of people, work, and technology.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-12">
-              The studio exists to support inflection points — moments when something real needs to be reorganized so it can continue evolving.
+              The work is shaped by years designing and implementing systems across founder-led organizations, creative practices, and technology — stepping in at moments where growth, change, or complexity broke coherence.
             </p>
 
             <p className="text-body-sm text-content-tertiary">
