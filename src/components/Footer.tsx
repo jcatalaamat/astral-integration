@@ -16,7 +16,7 @@ export default function Footer() {
             Founded by <a href="https://jordiamat.com" target="_blank" rel="noopener noreferrer" className="hover:text-content-primary transition-colors">Jordi Amat</a>
           </p>
           <p className="text-content-tertiary text-body-sm">
-            Limited engagements · Built to scale
+            Built to ship · Built to scale
           </p>
         </div>
 
