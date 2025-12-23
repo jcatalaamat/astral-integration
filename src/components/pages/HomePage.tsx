@@ -60,19 +60,15 @@ export default function HomePage() {
               Astral Integration
             </h1>
             <p className="text-body text-content-secondary mb-12">
-              Systems & Digital Studio
+              Digital Systems Studio
             </p>
 
             <p className="text-h1 md:text-display-sm text-content-primary font-medium mb-16 max-w-2xl">
-              We turn real-world practices into digital systems that sell.
+              We build digital platforms for studios and brands that already have real-world demand.
             </p>
 
-            <p className="text-body text-content-secondary leading-relaxed max-w-prose">
-              Astral Integration helps studios, founders, and cultural businesses turn what they already do into clear, bookable, sellable digital experiences.
-            </p>
-
-            <p className="text-body text-content-primary leading-relaxed max-w-prose mt-8">
-              If people love your work in person — we help you package it, platform it, and scale it without losing its soul.
+            <p className="text-body text-content-primary leading-relaxed max-w-prose">
+              If people already want what you do, we help you turn it into a clear, bookable, sellable system — fast.
             </p>
           </div>
         </div>
@@ -85,9 +81,6 @@ export default function HomePage() {
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
               What We Build
             </p>
-            <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
-              Digital systems for studios and brands with something real
-            </h2>
 
             <p className="text-body text-content-secondary leading-relaxed mb-12">
               We design and build:
@@ -95,13 +88,11 @@ export default function HomePage() {
 
             <ul className="space-y-0 mb-12">
               {[
+                'Websites that convert',
                 'Booking & payment systems',
-                'Studio websites that actually convert',
-                'Digital programs, memberships & courses',
-                'Apps and client portals',
-                'Ordering systems and digital menus',
-                'Content & education platforms',
-                'Internal tools that reduce admin and chaos'
+                'Programs, memberships, and courses',
+                'Apps, portals, and internal tools',
+                'Automations that remove manual work'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-primary py-4 border-b border-studio-divider last:border-b-0">
                   {item}
@@ -109,12 +100,8 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              Everything is custom, but never overbuilt.
-            </p>
-
             <p className="text-lg text-content-primary font-medium">
-              One system. One flow. Clear outcomes.
+              One system. One flow. Built to ship.
             </p>
           </div>
         </div>
@@ -126,46 +113,42 @@ export default function HomePage() {
           <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
             Who This Is For
           </p>
-          <h2 className="text-h1 md:text-display-sm text-content-primary mb-6">
-            Studios, creators, and brands ready to grow
+          <h2 className="text-h1 md:text-display-sm text-content-primary mb-16">
+            Studios and brands that already have demand
           </h2>
-
-          <p className="text-body text-content-secondary mb-16 max-w-prose">
-            We work with:
-          </p>
 
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 mb-12">
             <div>
               <h3 className="text-h3 text-content-primary mb-5">Yoga & wellness studios</h3>
               <p className="text-body-sm text-content-secondary">
-                Turning classes, trainings, and retreats into platforms.
+                Turn classes, trainings, and retreats into digital platforms.
               </p>
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-primary mb-5">Founders & creative brands</h3>
+              <h3 className="text-h3 text-content-primary mb-5">Creative practices & brands</h3>
               <p className="text-body-sm text-content-secondary">
-                Packaging practices into products and experiences.
+                Package services into scalable products.
               </p>
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-primary mb-5">Restaurants, cafés & physical spaces</h3>
+              <h3 className="text-h3 text-content-primary mb-5">Physical businesses</h3>
               <p className="text-body-sm text-content-secondary">
-                Translating real-world experience into digital flows.
+                Build digital systems for restaurants, cafés, and retail.
               </p>
             </div>
 
             <div>
-              <h3 className="text-h3 text-content-primary mb-5">Small teams with demand</h3>
+              <h3 className="text-h3 text-content-primary mb-5">Founder-led teams</h3>
               <p className="text-body-sm text-content-secondary">
-                Who need systems, not more effort.
+                Scale without breaking execution.
               </p>
             </div>
           </div>
 
           <p className="text-body text-content-primary font-medium max-w-prose">
-            If people already want what you do — we help you build the system that carries it further.
+            If people already want what you do — we build the system that scales it.
           </p>
         </div>
       </section>
@@ -224,36 +207,21 @@ export default function HomePage() {
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
               Why Astral Integration
             </p>
-            <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
-              Most studios and brands don't need "more marketing"
-            </h2>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-6">
-              They need:
+            <p className="text-body text-content-secondary leading-relaxed mb-12 max-w-prose">
+              Most studios and brands don't need more marketing. They need a system that works while they do.
+            </p>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-6 max-w-prose">
+              We build platforms that:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                'clarity',
-                'structure',
-                'a system that sells while they work'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-6">
-              We sit between:
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {[
-                'vision and execution',
-                'space and screen',
-                'practice and product'
+                'Book and sell automatically',
+                'Remove manual admin work',
+                'Scale without adding complexity',
+                'Ship fast and stay stable'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -263,11 +231,11 @@ export default function HomePage() {
             </ul>
 
             <p className="text-lg text-content-primary font-medium mb-12">
-              That's the gap we close.
+              One brain that sees the whole system. Built and shipped.
             </p>
 
             <p className="text-body-sm text-content-tertiary">
-              The work is intentionally limited in scope and scale, and happens primarily by trust and referral.
+              Limited engagements. Selective by design.
             </p>
           </div>
         </div>
@@ -284,33 +252,16 @@ export default function HomePage() {
               Working Together
             </h2>
 
-            <p className="text-body text-white/70 leading-relaxed mb-3">
-              If you run a studio, brand, or practice — and you know it could reach more people with the right system — let's talk.
+            <p className="text-body text-white/70 leading-relaxed mb-10">
+              If you already have demand and need a system that scales it — reach out.
             </p>
-
-            <p className="text-body text-white/70 leading-relaxed mb-3">
-              Tell us:
-            </p>
-
-            <ul className="space-y-3 mb-10">
-              {[
-                'what you do',
-                'what people already love',
-                'where things break when you try to scale'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-white/70 flex items-start gap-3">
-                  <span className="text-white/40">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
 
             <p className="text-body text-white/90 mb-3">
-              If it's a fit, we'll build it.
+              We'll tell you if it's a fit.
             </p>
 
             <p className="text-body-sm text-white/60 mb-14">
-              No pitches. No funnels. Just context.
+              No pitches. No funnels.
             </p>
 
             {/* Contact Form */}
