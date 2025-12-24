@@ -60,40 +60,43 @@ export default function HomePage() {
               Astral Integration
             </h1>
             <p className="text-body text-content-secondary mb-12">
-              Apps and digital systems for real businesses
+              Apps and digital systems for work that already exists
             </p>
 
             <p className="text-h1 md:text-display-sm text-content-primary font-medium mb-16 max-w-2xl">
-              We design and build apps, websites, and digital systems for businesses that already have customers — and need their technology to actually work.
+              I help people turn their work into clear, usable digital products — apps, platforms, and systems that people actually use.
             </p>
 
             <p className="text-body text-content-primary leading-relaxed max-w-prose">
-              If people already want what you do, we help you turn that into a clear, usable, scalable digital setup.
+              If you already have clients, students, or customers, I help you package what you do into something that works reliably in the real world.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHAT WE DO */}
+      {/* WHAT I DO */}
       <section id="services" className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose mb-16">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              What We Do
+              What I Do
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-12">
-              We build:
+              I design and build apps and digital systems for people whose work has outgrown scattered tools, folders, and half-working platforms.
+            </p>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              That often includes:
             </p>
 
             <ul className="space-y-0 mb-12">
               {[
                 'Mobile apps (iOS & Android)',
-                'Websites and conversion flows',
-                'Booking and payment systems',
-                'Memberships, programs, and subscriptions',
-                'Internal tools and client portals',
-                'Automations that remove manual work'
+                'Web apps and dashboards',
+                'Training and course platforms',
+                'Client portals and internal tools',
+                'Simple automations that remove manual work'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-primary py-4 border-b border-studio-divider last:border-b-0">
                   {item}
@@ -101,36 +104,47 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              Sometimes that's one app. Sometimes it's web + mobile. Often it's an evolving system built over time.
+            <p className="text-body text-content-secondary leading-relaxed mb-3">
+              Sometimes it's one app. Sometimes it's web + mobile.
             </p>
-
             <p className="text-lg text-content-primary font-medium">
-              We don't sell isolated features. We build systems that hold the business together.
+              Always built to be used, not just launched.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHEN PEOPLE HIRE US */}
+      {/* A SIMPLE WAY TO START */}
       <section className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              When People Hire Us
+              A Simple Way to Start
+            </p>
+
+            <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
+              Training App MVP
+            </h2>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              If you already have a course, program, or training method, I offer a focused build to turn it into a real app.
+            </p>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-12">
+              This is a fixed, contained project — not an open-ended platform build.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              People usually come to us when:
+              What this looks like:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                "They've outgrown basic tools",
-                'Their setup feels fragmented',
-                "They're doing too much manually",
-                "They want an app but don't want a dead, transactional one",
-                'They want someone who can think beyond "just build this screen"'
+                'A branded training app (web + mobile)',
+                'Program → phases → exercises',
+                'Video, audio, PDF, and text content',
+                'Progress tracking and resume',
+                'Admin access to manage your content'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -140,87 +154,34 @@ export default function HomePage() {
             </ul>
 
             <p className="text-body text-content-secondary leading-relaxed mb-3">
-              They don't want more tech.
+              The goal is simple:
             </p>
             <p className="text-lg text-content-primary font-medium">
-              They want the right tech, built properly.
+              one place where your program actually lives and works.
             </p>
           </div>
         </div>
       </section>
 
-      {/* HOW OUR APPS ARE DIFFERENT */}
+      {/* WHEN PEOPLE COME TO ME */}
       <section className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              How Our Apps Are Different
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-6">
-              Most apps are:
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {[
-                'Built once',
-                'Shipped',
-                'Forgotten'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-6">
-              We design apps to:
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {[
-                'Be opened repeatedly',
-                'Support real operations',
-                'Communicate with users',
-                'Grow as the business grows'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-3">
-              An app isn't the goal.
-            </p>
-            <p className="text-lg text-content-primary font-medium">
-              A working digital system is.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* WHO THIS IS FOR */}
-      <section className="py-28 md:py-36">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Who This Is For
+              When People Come to Me
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              We work with:
+              People usually reach out when:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                'Studios (yoga, wellness, movement)',
-                'Coaches and educators',
-                'Restaurants and physical businesses',
-                'Curated brands and service businesses',
-                'Founder-led teams with real traction'
+                'Their work is real, but the tech around it is messy',
+                "They're tired of duct-taped tools and platforms",
+                'They want an app, not a bloated "platform"',
+                "They don't want to manage developers or infrastructure",
+                'They want something that holds up over time'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -230,82 +191,73 @@ export default function HomePage() {
             </ul>
 
             <p className="text-body text-content-secondary leading-relaxed mb-3">
-              Industry doesn't matter. Having real customers does.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-3">
-              If you're still validating an idea, we're not a fit.
+              They don't need more features.
             </p>
             <p className="text-lg text-content-primary font-medium">
-              If you're already operating and things feel messy — we are.
+              They need something that works.
             </p>
           </div>
         </div>
       </section>
 
-      {/* HOW WE WORK */}
-      <section id="process" className="py-28 md:py-36 bg-studio-bgAlt">
+      {/* HOW I WORK */}
+      <section id="process" className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose mb-20">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              How We Work
+              How I Work
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-16">
             <div className="py-10 border-t-2 border-content-primary">
               <span className="text-meta text-accent font-medium">01</span>
-              <h3 className="text-h2 text-content-primary mt-5 mb-4">Understand the business</h3>
+              <h3 className="text-h2 text-content-primary mt-5 mb-4">Understand the work</h3>
               <p className="text-body-sm text-content-secondary">
-                We look at what's already working and where things break.
+                We start with what already exists — not ideas, not hypotheticals.
               </p>
             </div>
 
             <div className="py-10 border-t-2 border-studio-divider">
               <span className="text-meta text-accent font-medium">02</span>
-              <h3 className="text-h3 text-content-primary mt-5 mb-4">Design the system</h3>
+              <h3 className="text-h3 text-content-primary mt-5 mb-4">Define the right scope</h3>
               <p className="text-body-sm text-content-secondary">
-                We define what you need now, and what can come later.
+                What's needed now, and what can come later.
               </p>
             </div>
 
             <div className="py-10 border-t-2 border-studio-divider">
               <span className="text-meta text-accent font-medium">03</span>
-              <h3 className="text-h3 text-content-primary mt-5 mb-4">Build and evolve</h3>
+              <h3 className="text-h3 text-content-primary mt-5 mb-4">Build and deliver</h3>
               <p className="text-body-sm text-content-secondary">
-                We ship clean, stable software and stay involved as it grows.
+                Clean, stable software that can be used immediately.
               </p>
             </div>
           </div>
 
           <p className="text-body text-content-secondary leading-relaxed max-w-prose mb-3">
-            No overengineering.
+            No overengineering. No endless builds.
           </p>
           <p className="text-lg text-content-primary font-medium max-w-prose">
-            No one-off builds that die after launch.
+            No tech for tech's sake.
           </p>
         </div>
       </section>
 
-      {/* WAYS TO WORK TOGETHER */}
-      <section className="py-28 md:py-36">
+      {/* WHO I WORK WITH */}
+      <section id="about" className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Ways to Work Together
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              Depending on the situation, we work through:
+              Who I Work With
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                'Fixed-scope builds',
-                'Tiered systems (web → app → platform)',
-                'Monthly retainers',
-                'Long-term partnerships',
-                'Revenue share / percentage models (when aligned)'
+                'Coaches and educators',
+                'Movement, wellness, and training professionals',
+                'Studios and small teams',
+                'Founder-led businesses with real traction'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -314,35 +266,42 @@ export default function HomePage() {
               ))}
             </ul>
 
+            <p className="text-body text-content-secondary leading-relaxed mb-3">
+              Industry doesn't matter. Having real users does.
+            </p>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-3">
+              If you're still validating an idea, I'm not a fit.
+            </p>
             <p className="text-lg text-content-primary font-medium">
-              We choose the structure that makes sense — technically and commercially.
+              If your work already exists and needs structure, I am.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHY ASTRAL INTEGRATION */}
-      <section id="about" className="py-28 md:py-36 bg-studio-bgAlt">
+      {/* BEYOND THE MVP */}
+      <section className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Why Astral Integration
+              Beyond the MVP
             </p>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-12 max-w-prose">
-              Most people don't fail because of bad ideas.
+            <p className="text-body text-content-secondary leading-relaxed mb-12">
+              For some clients, the first app is just the start.
             </p>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-6 max-w-prose">
-              They fail because their systems:
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              I also work on:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                "Don't scale",
-                "Don't connect",
-                "Don't adapt",
-                "Don't reflect how they actually work"
+                'Evolving systems over time',
+                'Adding new tools and integrations',
+                'Long-term product partnerships',
+                'Fixed projects or ongoing support'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -352,7 +311,7 @@ export default function HomePage() {
             </ul>
 
             <p className="text-lg text-content-primary font-medium">
-              We fix that.
+              We choose the structure that fits the work — not the other way around.
             </p>
           </div>
         </div>
@@ -366,16 +325,19 @@ export default function HomePage() {
               Get in Touch
             </p>
 
+            <p className="text-body text-white/70 leading-relaxed mb-10">
+              If you want help turning your work into a clear, usable digital product, reach out.
+            </p>
+
             <p className="text-body text-white/70 leading-relaxed mb-8">
-              If you want someone who can:
+              Tell me:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                'Build the app',
-                'Design the system',
-                'Think long-term',
-                'And stay involved'
+                "what you're doing",
+                'what already works',
+                'where things feel messy or limiting'
               ].map((item, i) => (
                 <li key={i} className="text-body text-white/70 flex items-start gap-3">
                   <span className="text-white/40">·</span>
@@ -384,12 +346,8 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <p className="text-body text-white/90 mb-3">
-              Reach out.
-            </p>
-
             <p className="text-body text-white/90 mb-14">
-              We'll tell you quickly if it's a fit.
+              I'll tell you quickly if it's a fit.
             </p>
 
             {/* Contact Form */}
@@ -461,7 +419,7 @@ export default function HomePage() {
                   <p className="text-body text-white">Message received</p>
                 </div>
                 <p className="text-body-sm text-white/60 mb-8">
-                  We'll respond within 24-48 hours.
+                  I'll respond within 24-48 hours.
                 </p>
                 <button
                   onClick={() => setFormStatus('idle')}
