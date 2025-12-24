@@ -60,34 +60,34 @@ export default function HomePage() {
               Astral Integration
             </h1>
             <p className="text-body text-content-secondary mb-12">
-              Apps and digital systems for work that already exists
+              Apps and digital systems, built properly
             </p>
 
             <p className="text-h1 md:text-display-sm text-content-primary font-medium mb-16 max-w-2xl">
-              I help people turn their work into clear, usable digital products — apps, platforms, and systems that people actually use.
+              I build apps and digital systems for people whose work already exists and needs a product that can hold it.
             </p>
 
             <p className="text-body text-content-primary leading-relaxed max-w-prose">
-              If you already have clients, students, or customers, I help you package what you do into something that works reliably in the real world.
+              If you already teach, train, run programs, or serve clients, I help you turn that work into something clear, usable, and reliable — an app or system people return to.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHAT I DO */}
+      {/* WHAT I BUILD */}
       <section id="services" className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose mb-16">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              What I Do
+              What I Build
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-12">
-              I design and build apps and digital systems for people whose work has outgrown scattered tools, folders, and half-working platforms.
+              I design and build digital products that sit behind real work.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              That often includes:
+              That usually means:
             </p>
 
             <ul className="space-y-0 mb-12">
@@ -96,7 +96,7 @@ export default function HomePage() {
                 'Web apps and dashboards',
                 'Training and course platforms',
                 'Client portals and internal tools',
-                'Simple automations that remove manual work'
+                'Lightweight systems that remove manual work'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-primary py-4 border-b border-studio-divider last:border-b-0">
                   {item}
@@ -105,21 +105,21 @@ export default function HomePage() {
             </ul>
 
             <p className="text-body text-content-secondary leading-relaxed mb-3">
-              Sometimes it's one app. Sometimes it's web + mobile.
+              Delivered as a coherent product people can use across devices.
             </p>
             <p className="text-lg text-content-primary font-medium">
-              Always built to be used, not just launched.
+              The goal is simple: a product that works without constant attention.
             </p>
           </div>
         </div>
       </section>
 
-      {/* A SIMPLE WAY TO START */}
+      {/* A SIMPLE ENTRY POINT */}
       <section className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              A Simple Way to Start
+              A Simple Entry Point
             </p>
 
             <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
@@ -131,20 +131,20 @@ export default function HomePage() {
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-12">
-              This is a fixed, contained project — not an open-ended platform build.
+              This is a contained project with a clear beginning and end.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              What this looks like:
+              You get:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
                 'A branded training app (web + mobile)',
-                'Program → phases → exercises',
+                'Clear structure (program → phases → exercises)',
                 'Video, audio, PDF, and text content',
                 'Progress tracking and resume',
-                'Admin access to manage your content'
+                'Admin access to manage everything'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -153,22 +153,26 @@ export default function HomePage() {
               ))}
             </ul>
 
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              Built over a few weeks.
+            </p>
+
             <p className="text-body text-content-secondary leading-relaxed mb-3">
-              The goal is simple:
+              The outcome is simple:
             </p>
             <p className="text-lg text-content-primary font-medium">
-              one place where your program actually lives and works.
+              one place where your program actually lives.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHEN PEOPLE COME TO ME */}
+      {/* WHY PEOPLE COME TO ME */}
       <section className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              When People Come to Me
+              Why People Come to Me
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
@@ -177,11 +181,11 @@ export default function HomePage() {
 
             <ul className="space-y-3 mb-12">
               {[
-                'Their work is real, but the tech around it is messy',
-                "They're tired of duct-taped tools and platforms",
-                'They want an app, not a bloated "platform"',
-                "They don't want to manage developers or infrastructure",
-                'They want something that holds up over time'
+                'The work is established and ready to be delivered digitally',
+                'Delivery feels scattered or heavy',
+                'Manual effort keeps accumulating',
+                'Existing tools limit how the work is shared',
+                'They want something that can support growth'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -190,66 +194,66 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-3">
-              They don't need more features.
-            </p>
             <p className="text-lg text-content-primary font-medium">
-              They need something that works.
+              They are looking for something that holds.
             </p>
           </div>
         </div>
       </section>
 
-      {/* HOW I WORK */}
+      {/* HOW THE WORK MOVES */}
       <section id="process" className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose mb-20">
+          <div className="max-w-prose mb-12">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              How I Work
+              How the Work Moves
+            </p>
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              The work moves in a direct loop.
+            </p>
+            <p className="text-lg text-content-primary font-medium">
+              Build. Ship. Support the sell.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-16">
             <div className="py-10 border-t-2 border-content-primary">
               <span className="text-meta text-accent font-medium">01</span>
-              <h3 className="text-h2 text-content-primary mt-5 mb-4">Understand the work</h3>
+              <h3 className="text-h2 text-content-primary mt-5 mb-4">Build</h3>
               <p className="text-body-sm text-content-secondary">
-                We start with what already exists — not ideas, not hypotheticals.
+                We shape what already exists into a clear product.
               </p>
             </div>
 
             <div className="py-10 border-t-2 border-studio-divider">
               <span className="text-meta text-accent font-medium">02</span>
-              <h3 className="text-h3 text-content-primary mt-5 mb-4">Define the right scope</h3>
+              <h3 className="text-h3 text-content-primary mt-5 mb-4">Ship</h3>
               <p className="text-body-sm text-content-secondary">
-                What's needed now, and what can come later.
+                A working app or platform goes live and is used immediately.
               </p>
             </div>
 
             <div className="py-10 border-t-2 border-studio-divider">
               <span className="text-meta text-accent font-medium">03</span>
-              <h3 className="text-h3 text-content-primary mt-5 mb-4">Build and deliver</h3>
+              <h3 className="text-h3 text-content-primary mt-5 mb-4">Support the sell</h3>
               <p className="text-body-sm text-content-secondary">
-                Clean, stable software that can be used immediately.
+                Once the product exists, it becomes easier to explain, deliver, and grow. The product carries the work forward.
               </p>
             </div>
           </div>
-
-          <p className="text-body text-content-secondary leading-relaxed max-w-prose mb-3">
-            No overengineering. No endless builds.
-          </p>
-          <p className="text-lg text-content-primary font-medium max-w-prose">
-            No tech for tech's sake.
-          </p>
         </div>
       </section>
 
-      {/* WHO I WORK WITH */}
+      {/* WHO THIS IS FOR */}
       <section id="about" className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Who I Work With
+              Who This Is For
+            </p>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              I work with:
             </p>
 
             <ul className="space-y-3 mb-12">
@@ -267,41 +271,37 @@ export default function HomePage() {
             </ul>
 
             <p className="text-body text-content-secondary leading-relaxed mb-3">
-              Industry doesn't matter. Having real users does.
+              Industry matters less than having real users.
             </p>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-3">
-              If you're still validating an idea, I'm not a fit.
-            </p>
             <p className="text-lg text-content-primary font-medium">
-              If your work already exists and needs structure, I am.
+              If your work already exists and needs structure, this fits.
             </p>
           </div>
         </div>
       </section>
 
-      {/* BEYOND THE MVP */}
+      {/* BEYOND THE FIRST BUILD */}
       <section className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Beyond the MVP
+              Beyond the First Build
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-12">
-              For some clients, the first app is just the start.
+              For some people, the first app is the complete solution.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              I also work on:
+              For others, the system evolves over time through:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                'Evolving systems over time',
-                'Adding new tools and integrations',
-                'Long-term product partnerships',
-                'Fixed projects or ongoing support'
+                'additional tools',
+                'deeper integrations',
+                'long-term product collaboration'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -311,7 +311,7 @@ export default function HomePage() {
             </ul>
 
             <p className="text-lg text-content-primary font-medium">
-              We choose the structure that fits the work — not the other way around.
+              Those decisions come after something real is in use.
             </p>
           </div>
         </div>
@@ -337,7 +337,7 @@ export default function HomePage() {
               {[
                 "what you're doing",
                 'what already works',
-                'where things feel messy or limiting'
+                'where things feel heavy or fragile'
               ].map((item, i) => (
                 <li key={i} className="text-body text-white/70 flex items-start gap-3">
                   <span className="text-white/40">·</span>
@@ -347,7 +347,7 @@ export default function HomePage() {
             </ul>
 
             <p className="text-body text-white/90 mb-14">
-              I'll tell you quickly if it's a fit.
+              I'll tell you directly whether this makes sense.
             </p>
 
             {/* Contact Form */}
