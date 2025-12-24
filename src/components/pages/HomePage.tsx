@@ -64,11 +64,11 @@ export default function HomePage() {
             </p>
 
             <p className="text-h1 md:text-display-sm text-content-primary font-medium mb-16 max-w-2xl">
-              I build apps and digital systems for people whose work already exists and needs a product that can hold it.
+              I build apps and digital systems for people whose work already exists and needs a product that can hold it reliably.
             </p>
 
             <p className="text-body text-content-primary leading-relaxed max-w-prose">
-              If you already teach, train, run programs, or serve clients, I help you turn that work into something clear, usable, and reliable — an app or system people return to.
+              If you already teach, train, run programs, or serve clients, I help you turn that work into something clear, usable, and reliable — an app or system people actually use and return to.
             </p>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function HomePage() {
             </ul>
 
             <p className="text-body text-content-secondary leading-relaxed mb-3">
-              Delivered as a coherent product people can use across devices.
+              Delivered as a single, coherent product that works across devices.
             </p>
             <p className="text-lg text-content-primary font-medium">
               The goal is simple: a product that works without constant attention.
@@ -195,7 +195,7 @@ export default function HomePage() {
             </ul>
 
             <p className="text-lg text-content-primary font-medium">
-              They are looking for something that holds.
+              They are looking for a product that can actually hold the work.
             </p>
           </div>
         </div>
