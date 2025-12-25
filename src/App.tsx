@@ -4,6 +4,7 @@ import EventPreview from './components/EventPreview';
 import PlacePreview from './components/PlacePreview';
 import HomePage from './components/pages/HomePage';
 import ReviewPage from './components/pages/ReviewPage';
+import BlueprintPage from './components/pages/BlueprintPage';
 import LinksPage from './components/pages/LinksPage';
 import ResourcesPage from './components/pages/ResourcesPage';
 import BufoScreeningPage from './components/pages/BufoScreeningPage';
@@ -37,6 +38,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/review" element={<ReviewPage />} />
+        <Route path="/blueprint" element={<BlueprintPage />} />
         {/* Oracle content moved to private route - not linked publicly */}
         <Route path="/private/oracle" element={<OnePagerBackup />} />
         <Route path="/links" element={<LinksPage />} />
