@@ -34,7 +34,7 @@ export default function HomePage() {
         {
           from_name: formData.name,
           from_email: formData.email,
-          subject: 'Website Inquiry',
+          subject: 'Digital Realignment Review Request',
           message: formData.message,
         },
         'v57Ta98pwBDWpoe8o'
@@ -60,43 +60,48 @@ export default function HomePage() {
               Astral Integration
             </h1>
             <p className="text-body text-content-secondary mb-12">
-              Apps and digital systems, built properly
+              Digital realignment for work that already exists
             </p>
 
             <p className="text-h1 md:text-display-sm text-content-primary font-medium mb-16 max-w-2xl">
-              I build apps and digital systems for people whose work already exists and needs a product that can hold it reliably.
+              We help people and organizations bring their work into clear, functional digital form.
             </p>
 
             <p className="text-body text-content-primary leading-relaxed max-w-prose">
-              If you already teach, train, run programs, or serve clients, I help you turn that work into something clear, usable, and reliable — an app or system people actually use and return to.
+              That includes clarifying what the work actually is, how it wants to be offered, and how it should be supported digitally — without distortion, pressure, or unnecessary complexity.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHAT I BUILD */}
+      {/* WHAT THIS IS */}
       <section id="services" className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose mb-16">
+          <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              What I Build
+              What This Is
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-12">
-              I design and build digital products that sit behind real work.
+              Many projects reach a point where effort is no longer the issue.
             </p>
 
+            <div className="mb-12">
+              <p className="text-body text-content-primary leading-relaxed mb-2">The work exists.</p>
+              <p className="text-body text-content-primary leading-relaxed mb-2">The value is real.</p>
+              <p className="text-body text-content-primary leading-relaxed">But the digital expression is fragmented, unclear, or out of sync.</p>
+            </div>
+
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              That usually means:
+              This creates friction:
             </p>
 
             <ul className="space-y-0 mb-12">
               {[
-                'Mobile apps (iOS & Android)',
-                'Web apps and dashboards',
-                'Training and course platforms',
-                'Client portals and internal tools',
-                'Lightweight systems that remove manual work'
+                'people don't understand how to engage',
+                'offerings feel misnamed or misplaced',
+                'systems don't support the actual work',
+                'energy is lost maintaining things that no longer fit'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-primary py-4 border-b border-studio-divider last:border-b-0">
                   {item}
@@ -104,47 +109,41 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-3">
-              Delivered as a single, coherent product that works across devices.
-            </p>
             <p className="text-lg text-content-primary font-medium">
-              The goal is simple: a product that works without constant attention.
+              Our role is to realign meaning, structure, and execution into a coherent whole.
             </p>
           </div>
         </div>
       </section>
 
-      {/* A SIMPLE ENTRY POINT */}
+      {/* OUR ROLE */}
       <section className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              A Simple Entry Point
+              Our Role
             </p>
 
             <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
-              Training App MVP
+              We step in as a clarifying layer.
             </h2>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              If you already have a course, program, or training method, I offer a focused build to turn it into a real app.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              This is a contained project with a clear beginning and end.
-            </p>
+            <div className="mb-12">
+              <p className="text-body text-content-secondary leading-relaxed mb-2">Not to add noise.</p>
+              <p className="text-body text-content-secondary leading-relaxed mb-2">Not to impose formulas.</p>
+              <p className="text-body text-content-secondary leading-relaxed">But to read what already exists and help it take a form that makes sense.</p>
+            </div>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              You get:
+              We help you answer:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                'A branded training app (web + mobile)',
-                'Clear structure (program → phases → exercises)',
-                'Video, audio, PDF, and text content',
-                'Progress tracking and resume',
-                'Admin access to manage everything'
+                'What is the work now — not historically, not aspirationally, but actually?',
+                'What is the right way for others to encounter it?',
+                'What is the simplest, most honest way to offer it?',
+                'What needs to be built, and what needs to be removed?'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -153,99 +152,251 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              Built over a few weeks.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-3">
-              The outcome is simple:
-            </p>
             <p className="text-lg text-content-primary font-medium">
-              one place where your program actually lives.
+              Only after this is clear does building become useful.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHY PEOPLE COME TO ME */}
+      {/* OUR PROCESS */}
+      <section id="process" className="py-28 md:py-36 bg-studio-bgAlt">
+        <div className="max-w-content mx-auto px-6 md:px-12">
+          <div className="max-w-prose mb-16">
+            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
+              Our Process
+            </p>
+          </div>
+
+          {/* Step 1: Digital Realignment Review */}
+          <div className="max-w-prose mb-20">
+            <div className="py-10 border-t-2 border-content-primary mb-8">
+              <span className="text-meta text-accent font-medium">01</span>
+              <h3 className="text-h2 text-content-primary mt-5 mb-2">Digital Realignment Review</h3>
+              <p className="text-body-sm text-content-tertiary italic">Orientation before action</p>
+            </div>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              We review your existing digital presence: your website, offerings, tools, structure, language, and flow.
+            </p>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              You receive a grounded diagnosis that clarifies:
+            </p>
+
+            <ul className="space-y-3 mb-12">
+              {[
+                'what your work is currently communicating',
+                'where meaning or value is unclear',
+                'what people likely misunderstand or miss',
+                'where structure does not support intention',
+                'what the work is actually ready to become'
+              ].map((item, i) => (
+                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
+                  <span className="text-accent mt-1.5 text-sm">·</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p className="text-lg text-content-primary font-medium">
+              This creates clarity before decisions are made.
+            </p>
+          </div>
+
+          {/* Step 2: Offering & Realignment Blueprint */}
+          <div className="max-w-prose mb-20">
+            <div className="py-10 border-t-2 border-studio-divider mb-8">
+              <span className="text-meta text-accent font-medium">02</span>
+              <h3 className="text-h3 text-content-primary mt-5 mb-2">Offering & Realignment Blueprint</h3>
+              <p className="text-body-sm text-content-tertiary italic">From essence to form</p>
+            </div>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              For projects that move forward, we create a clear blueprint that defines:
+            </p>
+
+            <ul className="space-y-3 mb-12">
+              {[
+                'the core offering or set of offerings',
+                'the central value people connect with',
+                'language that accurately reflects the work',
+                'the appropriate format (service, product, program, platform)',
+                'how people enter, engage, and deepen',
+                'a realistic sequence for building and delivery'
+              ].map((item, i) => (
+                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
+                  <span className="text-accent mt-1.5 text-sm">·</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mb-8">
+              <p className="text-body text-content-secondary leading-relaxed mb-2">This is not branding.</p>
+              <p className="text-body text-content-secondary leading-relaxed">It is articulation and structure.</p>
+            </div>
+
+            <p className="text-lg text-content-primary font-medium">
+              The blueprint stands on its own.
+            </p>
+          </div>
+
+          {/* Step 3: Selective Build & Implementation */}
+          <div className="max-w-prose">
+            <div className="py-10 border-t-2 border-studio-divider mb-8">
+              <span className="text-meta text-accent font-medium">03</span>
+              <h3 className="text-h3 text-content-primary mt-5 mb-2">Selective Build & Implementation</h3>
+              <p className="text-body-sm text-content-tertiary italic">Only what serves</p>
+            </div>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              When clarity is present, we selectively design and build digital systems that support the work cleanly.
+            </p>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              This may include:
+            </p>
+
+            <ul className="space-y-3 mb-12">
+              {[
+                'websites and digital homes',
+                'offering and access flows',
+                'booking, payment, and onboarding systems',
+                'content, program, or membership platforms',
+                'client or user portals',
+                'internal tools and dashboards',
+                'custom digital products or applications',
+                'automation that reduces friction and maintenance'
+              ].map((item, i) => (
+                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
+                  <span className="text-accent mt-1.5 text-sm">·</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p className="text-lg text-content-primary font-medium">
+              We build what is necessary — and stop there.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT WE BUILD */}
+      <section className="py-28 md:py-36">
+        <div className="max-w-content mx-auto px-6 md:px-12">
+          <div className="max-w-prose mb-16">
+            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
+              What We Build
+            </p>
+
+            <p className="text-lg text-content-primary font-medium">
+              The form varies. The principle stays the same.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+            {/* Digital Homes */}
+            <div>
+              <h3 className="text-h3 text-content-primary mb-6">Digital Homes</h3>
+              <ul className="space-y-3">
+                {[
+                  'clear, grounded websites',
+                  'thoughtful content hierarchy',
+                  'simple navigation and flows',
+                  'design that supports understanding, not distraction'
+                ].map((item, i) => (
+                  <li key={i} className="text-body text-content-secondary flex items-start gap-3">
+                    <span className="text-accent mt-1.5 text-sm">·</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Offer Structures */}
+            <div>
+              <h3 className="text-h3 text-content-primary mb-6">Offer Structures</h3>
+              <ul className="space-y-3">
+                {[
+                  'single-offer or layered offerings',
+                  'clear entry points and natural progression',
+                  'formats that match the work, not trends',
+                  'systems that let people engage without pressure'
+                ].map((item, i) => (
+                  <li key={i} className="text-body text-content-secondary flex items-start gap-3">
+                    <span className="text-accent mt-1.5 text-sm">·</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Platforms & Products */}
+            <div>
+              <h3 className="text-h3 text-content-primary mb-6">Platforms & Products</h3>
+              <ul className="space-y-3">
+                {[
+                  'programs and learning environments',
+                  'memberships and libraries',
+                  'applications and tools',
+                  'scalable systems built with intention'
+                ].map((item, i) => (
+                  <li key={i} className="text-body text-content-secondary flex items-start gap-3">
+                    <span className="text-accent mt-1.5 text-sm">·</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Operational Systems */}
+            <div>
+              <h3 className="text-h3 text-content-primary mb-6">Operational Systems</h3>
+              <ul className="space-y-3">
+                {[
+                  'booking and scheduling',
+                  'payments and subscriptions',
+                  'onboarding and follow-up',
+                  'integrations and automation'
+                ].map((item, i) => (
+                  <li key={i} className="text-body text-content-secondary flex items-start gap-3">
+                    <span className="text-accent mt-1.5 text-sm">·</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* INCUBATION & COLLABORATION */}
       <section className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Why People Come to Me
+              Incubation & Collaboration
             </p>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              People usually reach out when:
+            <p className="text-body text-content-secondary leading-relaxed mb-12">
+              Some projects extend beyond defined client work.
             </p>
 
-            <ul className="space-y-3 mb-12">
-              {[
-                'The work is established and ready to be delivered digitally',
-                'Delivery feels scattered or heavy',
-                'Manual effort keeps accumulating',
-                'Existing tools limit how the work is shared',
-                'They want something that can support growth'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="text-body text-content-secondary leading-relaxed mb-12">
+              When alignment is strong, we occasionally support early-stage work through deeper collaboration — combining offering clarity, system design, and selective execution over time.
+            </p>
 
             <p className="text-lg text-content-primary font-medium">
-              They are looking for a product that can actually hold the work.
+              These engagements are rare, intentional, and built on shared direction.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* HOW THE WORK MOVES */}
-      <section id="process" className="py-28 md:py-36">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose mb-12">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              How the Work Moves
-            </p>
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              The work moves in a direct loop.
-            </p>
-            <p className="text-lg text-content-primary font-medium">
-              Build. Ship. Support the sell.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-16">
-            <div className="py-10 border-t-2 border-content-primary">
-              <span className="text-meta text-accent font-medium">01</span>
-              <h3 className="text-h2 text-content-primary mt-5 mb-4">Build</h3>
-              <p className="text-body-sm text-content-secondary">
-                We shape what already exists into a clear product.
-              </p>
-            </div>
-
-            <div className="py-10 border-t-2 border-studio-divider">
-              <span className="text-meta text-accent font-medium">02</span>
-              <h3 className="text-h3 text-content-primary mt-5 mb-4">Ship</h3>
-              <p className="text-body-sm text-content-secondary">
-                A working app or platform goes live and is used immediately.
-              </p>
-            </div>
-
-            <div className="py-10 border-t-2 border-studio-divider">
-              <span className="text-meta text-accent font-medium">03</span>
-              <h3 className="text-h3 text-content-primary mt-5 mb-4">Support the sell</h3>
-              <p className="text-body-sm text-content-secondary">
-                Once the product exists, it becomes easier to explain, deliver, and grow. The product carries the work forward.
-              </p>
-            </div>
           </div>
         </div>
       </section>
 
       {/* WHO THIS IS FOR */}
-      <section id="about" className="py-28 md:py-36 bg-studio-bgAlt">
+      <section id="about" className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
@@ -253,15 +404,16 @@ export default function HomePage() {
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              I work with:
+              This work is for people and teams who:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                'Coaches and educators',
-                'Movement, wellness, and training professionals',
-                'Studios and small teams',
-                'Founder-led businesses with real traction'
+                'already have something real in motion',
+                'feel unclear about how to present or offer it',
+                'want their digital presence to reflect substance',
+                'value clarity over constant iteration',
+                'are willing to make deliberate decisions'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -270,38 +422,31 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-3">
-              Industry matters less than having real users.
-            </p>
-
             <p className="text-lg text-content-primary font-medium">
-              If your work already exists and needs structure, this fits.
+              This is not for speculative ideas or fast experimentation without direction.
             </p>
           </div>
         </div>
       </section>
 
-      {/* BEYOND THE FIRST BUILD */}
-      <section className="py-28 md:py-36">
+      {/* HOW PEOPLE FIND US */}
+      <section className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Beyond the First Build
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              For some people, the first app is the complete solution.
+              How People Find Us
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              For others, the system evolves over time through:
+              Most work arrives through:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                'additional tools',
-                'deeper integrations',
-                'long-term product collaboration'
+                'referrals',
+                'introductions',
+                'shared projects',
+                'trusted connections'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -311,7 +456,74 @@ export default function HomePage() {
             </ul>
 
             <p className="text-lg text-content-primary font-medium">
-              Those decisions come after something real is in use.
+              If someone pointed you here, that context matters.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* START HERE */}
+      <section className="py-28 md:py-36">
+        <div className="max-w-content mx-auto px-6 md:px-12">
+          <div className="max-w-prose">
+            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
+              Start Here
+            </p>
+
+            <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
+              Digital Realignment Review
+            </h2>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-12">
+              If you're unsure what your offering truly is — or how it should be expressed and supported — this is the place to begin.
+            </p>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              You'll receive:
+            </p>
+
+            <ul className="space-y-3 mb-12">
+              {[
+                'honest articulation',
+                'clear direction',
+                'a practical next step'
+              ].map((item, i) => (
+                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
+                  <span className="text-accent mt-1.5 text-sm">·</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="#contact"
+              className="inline-block px-10 py-4 bg-content-primary text-studio-bg hover:bg-content-primary/90 active:bg-content-primary/80 transition-colors text-body font-medium"
+            >
+              Request a Digital Realignment Review
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CLOSING */}
+      <section className="py-28 md:py-36 bg-studio-bgAlt">
+        <div className="max-w-content mx-auto px-6 md:px-12">
+          <div className="max-w-prose">
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              Digital systems are extensions of thought, intention, and structure.
+            </p>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-12">
+              When they are aligned, work becomes easier — for the people building it and the people engaging with it.
+            </p>
+
+            <div className="mb-12">
+              <p className="text-body text-content-primary leading-relaxed mb-2">The website is not the work.</p>
+              <p className="text-body text-content-primary leading-relaxed">It is simply the place where the door is made visible.</p>
+            </div>
+
+            <p className="text-lg text-content-primary font-medium">
+              If this resonates, we can work together.
             </p>
           </div>
         </div>
@@ -326,18 +538,18 @@ export default function HomePage() {
             </p>
 
             <p className="text-body text-white/70 leading-relaxed mb-10">
-              If you want help turning your work into a clear, usable digital product, reach out.
+              Request a Digital Realignment Review or reach out to start a conversation.
             </p>
 
             <p className="text-body text-white/70 leading-relaxed mb-8">
-              Tell me:
+              Tell us:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                "what you're doing",
-                'what already works',
-                'where things feel heavy or fragile'
+                'what your work is',
+                'where clarity feels missing',
+                'what you're hoping to resolve'
               ].map((item, i) => (
                 <li key={i} className="text-body text-white/70 flex items-start gap-3">
                   <span className="text-white/40">·</span>
@@ -347,7 +559,7 @@ export default function HomePage() {
             </ul>
 
             <p className="text-body text-white/90 mb-14">
-              I'll tell you directly whether this makes sense.
+              We'll respond directly and honestly.
             </p>
 
             {/* Contact Form */}
@@ -399,7 +611,7 @@ export default function HomePage() {
                     className={`w-full px-5 py-4 bg-[#2C2C2C] border text-white placeholder-white/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors resize-none ${
                       formErrors.message ? 'border-red-400 focus:ring-red-400/20' : 'border-[#404040]'
                     }`}
-                    placeholder="What are you building? Where do things feel stuck?"
+                    placeholder="What is your work? Where does clarity feel missing?"
                   />
                   {formErrors.message && <p className="mt-2 text-body-sm text-red-400">{formErrors.message}</p>}
                 </div>
@@ -409,7 +621,7 @@ export default function HomePage() {
                   disabled={formStatus === 'sending'}
                   className="px-10 py-4 bg-white text-[#232323] hover:bg-white/90 active:bg-white/80 transition-colors text-body font-medium disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[#232323]"
                 >
-                  {formStatus === 'sending' ? 'Sending...' : formStatus === 'error' ? 'Error - try again' : 'Start a conversation'}
+                  {formStatus === 'sending' ? 'Sending...' : formStatus === 'error' ? 'Error - try again' : 'Request a Review'}
                 </button>
               </form>
             ) : (
@@ -419,7 +631,7 @@ export default function HomePage() {
                   <p className="text-body text-white">Message received</p>
                 </div>
                 <p className="text-body-sm text-white/60 mb-8">
-                  I'll respond within 24-48 hours.
+                  We'll respond within 24-48 hours.
                 </p>
                 <button
                   onClick={() => setFormStatus('idle')}
