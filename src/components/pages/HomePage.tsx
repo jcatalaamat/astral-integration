@@ -101,9 +101,9 @@ export default function HomePage() {
 
             <ul className="space-y-0 mb-12">
               {[
-                'people don't understand how to engage',
+                "people don't understand how to engage",
                 'offerings feel misnamed or misplaced',
-                'systems don't support the actual work',
+                "systems don't support the actual work",
                 'energy is lost maintaining things that no longer fit'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-primary py-4 border-b border-studio-divider last:border-b-0">
@@ -552,7 +552,7 @@ export default function HomePage() {
               {[
                 'what your work is',
                 'where clarity feels missing',
-                'what you're hoping to resolve'
+                "what you're hoping to resolve"
               ].map((item, i) => (
                 <li key={i} className="text-body text-white/70 flex items-start gap-3">
                   <span className="text-white/40">·</span>

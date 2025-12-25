@@ -386,9 +386,9 @@ export default function BlueprintPage() {
             <ul className="space-y-3 mb-12">
               {[
                 'the Review surfaced real potential',
-                'you're tired of guessing what to build',
+                "you're tired of guessing what to build",
                 'you want your offering to feel accurate',
-                'you're ready to commit to clarity'
+                "you're ready to commit to clarity"
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
