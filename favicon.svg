@@ -1,0 +1,6 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Warm paper background -->
+  <rect width="32" height="32" rx="6" fill="#FAF9F7"/>
+  <!-- Simple "A" mark in primary color -->
+  <text x="16" y="22" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="500" fill="#1F1F1F">A</text>
+</svg>
