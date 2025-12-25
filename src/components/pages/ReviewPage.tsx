@@ -108,17 +108,12 @@ ${formData.whyNow || '(not answered)'}
               Digital Realignment Review
             </h1>
             <p className="text-body text-content-secondary mb-12">
-              Clarity before you build anything else
+              Clarity, before further decisions
             </p>
 
-            <p className="text-h2 md:text-h1 text-content-primary font-medium mb-12 max-w-2xl">
-              If your work already exists but your digital presence feels unclear, fragmented, or out of sync, this review helps you understand what is actually going on — and what to do next.
+            <p className="text-h2 md:text-h1 text-content-primary font-medium max-w-2xl">
+              If your work already exists but your digital presence feels unclear or out of sync, this review helps you see what is actually happening and where coherence can be restored.
             </p>
-
-            <div>
-              <p className="text-body text-content-primary leading-relaxed mb-2">This is not consulting.</p>
-              <p className="text-body text-content-primary leading-relaxed">It's orientation.</p>
-            </div>
           </div>
         </div>
       </section>
@@ -145,7 +140,7 @@ ${formData.whyNow || '(not answered)'}
                 'how your work is described',
                 'how people are invited to engage',
                 'the structure of your offerings',
-                'the systems supporting (or constraining) the work'
+                'the systems supporting the work'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -155,7 +150,7 @@ ${formData.whyNow || '(not answered)'}
             </ul>
 
             <p className="text-lg text-content-primary font-medium">
-              Then I reflect back what I see — clearly and honestly.
+              I reflect back what I see, highlighting patterns, gaps, and points of friction.
             </p>
           </div>
         </div>
@@ -170,17 +165,17 @@ ${formData.whyNow || '(not answered)'}
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              You'll receive a concise diagnosis that clarifies:
+              A concise diagnosis that clarifies:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                'what your work is communicating now',
-                'where meaning or value is unclear',
-                'what people likely misunderstand or miss',
-                'what feels misaligned or unnecessary',
-                'what the work seems ready to become',
-                'what the most coherent next step is'
+                'how the work is currently coming across',
+                'where meaning or value is diluted',
+                'how people are likely engaging or disengaging',
+                'what feels unnecessary or unresolved',
+                'what the work appears ready to become',
+                'what decision would restore coherence'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -192,39 +187,23 @@ ${formData.whyNow || '(not answered)'}
             <p className="text-body text-content-secondary leading-relaxed mb-3">
               Delivered as:
             </p>
-            <p className="text-body text-content-primary leading-relaxed mb-2">
-              a written review or a short Loom walkthrough
-            </p>
-            <p className="text-body-sm text-content-tertiary italic">
-              (depending on what fits the project)
+            <p className="text-body text-content-primary leading-relaxed">
+              a written review, or a short Loom walkthrough
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHAT THIS IS NOT */}
+      {/* SCOPE */}
       <section className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
             <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              What This Is Not
+              Scope
             </p>
 
-            <ul className="space-y-0 mb-12">
-              {[
-                'Not ongoing consulting',
-                'Not execution or building',
-                'Not a sales call',
-                'Not a commitment to work together'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-primary py-4 border-b border-studio-divider last:border-b-0">
-                  {item}
-                </li>
-              ))}
-            </ul>
-
             <p className="text-lg text-content-primary font-medium">
-              You leave with clarity either way.
+              A contained review designed to create orientation and direction.
             </p>
           </div>
         </div>
@@ -239,15 +218,15 @@ ${formData.whyNow || '(not answered)'}
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              This review is useful if:
+              Useful if:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                'your work already exists',
-                'you feel unclear about how to offer or present it',
-                'your digital systems no longer reflect the depth of the work',
-                'you want direction without pressure'
+                'the work already exists',
+                'you feel unsure how to present or offer it',
+                'your systems no longer match the work',
+                'you want to decide your next move with clarity'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -269,9 +248,9 @@ ${formData.whyNow || '(not answered)'}
 
             <ul className="space-y-0 mb-12">
               {[
-                'Asynchronous (no call required)',
+                'Asynchronous',
                 'Turnaround: 5–7 days',
-                'You provide links and context through the intake form below'
+                'Context provided via intake form'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-primary py-4 border-b border-studio-divider last:border-b-0">
                   {item}
@@ -281,9 +260,6 @@ ${formData.whyNow || '(not answered)'}
 
             <p className="text-h2 text-content-primary font-medium">
               €450
-            </p>
-            <p className="text-body-sm text-content-tertiary">
-              Paid upfront. One-time.
             </p>
           </div>
         </div>
@@ -298,7 +274,7 @@ ${formData.whyNow || '(not answered)'}
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-12">
-              Complete the intake form below. I'll respond within 48 hours to confirm and share payment details.
+              Complete the intake form below. I'll confirm fit and next steps by email.
             </p>
 
             {formStatus !== 'success' ? (
@@ -499,8 +475,11 @@ ${formData.whyNow || '(not answered)'}
       <section className="py-28 md:py-36 bg-studio-bgAlt">
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="max-w-prose">
-            <p className="text-body text-content-secondary leading-relaxed">
-              If we decide to work together later, it's because clarity made that path obvious — not because this review was designed to sell you something.
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              Clarity changes what decisions feel possible.
+            </p>
+            <p className="text-lg text-content-primary font-medium">
+              This review is designed to restore that clarity.
             </p>
           </div>
         </div>
