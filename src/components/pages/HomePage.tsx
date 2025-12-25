@@ -6,7 +6,7 @@ import Footer from '../Footer';
 
 export default function HomePage() {
   useEffect(() => {
-    document.title = 'Astral Integration — Digital realignment for work that already exists';
+    document.title = 'Astral Integration — Digital realignment for work already in motion';
   }, []);
   const [formData, setFormData] = useState({
     name: '',
@@ -63,15 +63,15 @@ export default function HomePage() {
               Astral Integration
             </h1>
             <p className="text-body text-content-secondary mb-12">
-              Digital realignment for work that already exists
+              Digital realignment for work already in motion
             </p>
 
             <p className="text-h1 md:text-display-sm text-content-primary font-medium mb-16 max-w-2xl">
-              We help people and organizations bring their work into clear, functional digital form.
+              We help people and organizations translate existing work into clear, functional digital systems.
             </p>
 
             <p className="text-body text-content-primary leading-relaxed max-w-prose">
-              That includes clarifying what the work actually is, how it wants to be offered, and how it should be supported digitally — without distortion, pressure, or unnecessary complexity.
+              That means clarifying what the work is today, how people encounter it, and how it is best supported digitally — so the systems around it feel coherent, usable, and true to its substance.
             </p>
           </div>
         </div>
@@ -86,34 +86,21 @@ export default function HomePage() {
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-12">
-              Many projects reach a point where effort is no longer the issue.
+              Many projects reach a point where effort is no longer the constraint.
             </p>
 
             <div className="mb-12">
               <p className="text-body text-content-primary leading-relaxed mb-2">The work exists.</p>
               <p className="text-body text-content-primary leading-relaxed mb-2">The value is real.</p>
-              <p className="text-body text-content-primary leading-relaxed">But the digital expression is fragmented, unclear, or out of sync.</p>
+              <p className="text-body text-content-primary leading-relaxed">But the digital expression no longer matches it.</p>
             </div>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              This creates friction:
+            <p className="text-body text-content-secondary leading-relaxed mb-12">
+              When this happens, people struggle to understand how to engage, offerings feel misaligned, and systems require constant attention to maintain.
             </p>
 
-            <ul className="space-y-0 mb-12">
-              {[
-                "people don't understand how to engage",
-                'offerings feel misnamed or misplaced',
-                "systems don't support the actual work",
-                'energy is lost maintaining things that no longer fit'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-primary py-4 border-b border-studio-divider last:border-b-0">
-                  {item}
-                </li>
-              ))}
-            </ul>
-
             <p className="text-lg text-content-primary font-medium">
-              Our role is to realign meaning, structure, and execution into a coherent whole.
+              Our role is to bring clarity, structure, and execution back into alignment — so the digital form supports the work instead of distorting it.
             </p>
           </div>
         </div>
@@ -131,22 +118,20 @@ export default function HomePage() {
               We step in as a clarifying layer.
             </h2>
 
-            <div className="mb-12">
-              <p className="text-body text-content-secondary leading-relaxed mb-2">Not to add noise.</p>
-              <p className="text-body text-content-secondary leading-relaxed mb-2">Not to impose formulas.</p>
-              <p className="text-body text-content-secondary leading-relaxed">But to read what already exists and help it take a form that makes sense.</p>
-            </div>
+            <p className="text-body text-content-secondary leading-relaxed mb-12">
+              We read what already exists, identify what matters now, and help it take a form that makes sense to others.
+            </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              We help you answer:
+              This work focuses on answering a small set of essential questions:
             </p>
 
             <ul className="space-y-3 mb-12">
               {[
-                'What is the work now — not historically, not aspirationally, but actually?',
-                'What is the right way for others to encounter it?',
-                'What is the simplest, most honest way to offer it?',
-                'What needs to be built, and what needs to be removed?'
+                'What is the work now?',
+                'How should people encounter it?',
+                'What is the simplest, most accurate way to offer it?',
+                'What needs to be built, and what can be removed?'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -156,7 +141,7 @@ export default function HomePage() {
             </ul>
 
             <p className="text-lg text-content-primary font-medium">
-              Only after this is clear does building become useful.
+              Once these questions are clear, building becomes straightforward.
             </p>
           </div>
         </div>
@@ -180,7 +165,7 @@ export default function HomePage() {
             </div>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              We review your existing digital presence: your website, offerings, tools, structure, language, and flow.
+              We review your existing digital presence: website, offerings, tools, structure, language, and flow.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
@@ -189,11 +174,11 @@ export default function HomePage() {
 
             <ul className="space-y-3 mb-12">
               {[
-                'what your work is currently communicating',
+                'what the work is currently communicating',
                 'where meaning or value is unclear',
-                'what people likely misunderstand or miss',
+                'how people are likely interpreting or missing it',
                 'where structure does not support intention',
-                'what the work is actually ready to become'
+                'what the work is ready to become next'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -223,7 +208,7 @@ export default function HomePage() {
               {[
                 'the core offering or set of offerings',
                 'the central value people connect with',
-                'language that accurately reflects the work',
+                'language that reflects the work accurately',
                 'the appropriate format (service, product, program, platform)',
                 'how people enter, engage, and deepen',
                 'a realistic sequence for building and delivery'
@@ -235,13 +220,8 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <div className="mb-8">
-              <p className="text-body text-content-secondary leading-relaxed mb-2">This is not branding.</p>
-              <p className="text-body text-content-secondary leading-relaxed">It is articulation and structure.</p>
-            </div>
-
             <p className="text-lg text-content-primary font-medium">
-              The blueprint stands on its own.
+              This blueprint stands on its own and can be used independently.
             </p>
           </div>
 
@@ -254,7 +234,7 @@ export default function HomePage() {
             </div>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
-              When clarity is present, we selectively design and build digital systems that support the work cleanly.
+              With clarity in place, we selectively design and build the digital systems that support the work cleanly.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
@@ -266,7 +246,7 @@ export default function HomePage() {
                 'websites and digital homes',
                 'offering and access flows',
                 'booking, payment, and onboarding systems',
-                'content, program, or membership platforms',
+                'program, content, or membership platforms',
                 'client or user portals',
                 'internal tools and dashboards',
                 'custom digital products or applications',
@@ -280,7 +260,7 @@ export default function HomePage() {
             </ul>
 
             <p className="text-lg text-content-primary font-medium">
-              We build what is necessary — and stop there.
+              We build what is necessary and keep the system simple.
             </p>
           </div>
         </div>
@@ -295,7 +275,7 @@ export default function HomePage() {
             </p>
 
             <p className="text-lg text-content-primary font-medium">
-              The form varies. The principle stays the same.
+              The form varies. The principle remains the same.
             </p>
           </div>
 
@@ -308,7 +288,7 @@ export default function HomePage() {
                   'clear, grounded websites',
                   'thoughtful content hierarchy',
                   'simple navigation and flows',
-                  'design that supports understanding, not distraction'
+                  'design that supports understanding'
                 ].map((item, i) => (
                   <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                     <span className="text-accent mt-1.5 text-sm">·</span>
@@ -323,10 +303,10 @@ export default function HomePage() {
               <h3 className="text-h3 text-content-primary mb-6">Offer Structures</h3>
               <ul className="space-y-3">
                 {[
-                  'single-offer or layered offerings',
+                  'single or layered offerings',
                   'clear entry points and natural progression',
-                  'formats that match the work, not trends',
-                  'systems that let people engage without pressure'
+                  'formats that match the work',
+                  'systems that allow engagement without pressure'
                 ].map((item, i) => (
                   <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                     <span className="text-accent mt-1.5 text-sm">·</span>
@@ -392,7 +372,7 @@ export default function HomePage() {
             </p>
 
             <p className="text-lg text-content-primary font-medium">
-              These engagements are rare, intentional, and built on shared direction.
+              These engagements are intentional and built on shared direction.
             </p>
           </div>
         </div>
@@ -425,9 +405,6 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <p className="text-lg text-content-primary font-medium">
-              This is not for speculative ideas or fast experimentation without direction.
-            </p>
           </div>
         </div>
       </section>
@@ -487,8 +464,8 @@ export default function HomePage() {
 
             <ul className="space-y-3 mb-12">
               {[
-                'honest articulation',
-                'clear direction',
+                'clear articulation',
+                'grounded direction',
                 'a practical next step'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
@@ -522,7 +499,7 @@ export default function HomePage() {
 
             <div className="mb-12">
               <p className="text-body text-content-primary leading-relaxed mb-2">The website is not the work.</p>
-              <p className="text-body text-content-primary leading-relaxed">It is simply the place where the door is made visible.</p>
+              <p className="text-body text-content-primary leading-relaxed">It is where the work becomes accessible.</p>
             </div>
 
             <p className="text-lg text-content-primary font-medium">
@@ -562,7 +539,7 @@ export default function HomePage() {
             </ul>
 
             <p className="text-body text-white/90 mb-14">
-              We'll respond directly and honestly.
+              We'll respond directly and thoughtfully.
             </p>
 
             {/* Contact Form */}
