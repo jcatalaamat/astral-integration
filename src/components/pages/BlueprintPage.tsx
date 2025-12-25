@@ -1,8 +1,13 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
 
 export default function BlueprintPage() {
+  useEffect(() => {
+    document.title = 'Realignment Blueprint — Astral Integration';
+  }, []);
+
   return (
     <div className="min-h-screen bg-studio-bg font-sans">
       <Navigation />

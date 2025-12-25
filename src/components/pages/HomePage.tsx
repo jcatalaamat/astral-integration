@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { CheckCircle } from 'lucide-react';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
 
 export default function HomePage() {
+  useEffect(() => {
+    document.title = 'Astral Integration — Digital realignment for work that already exists';
+  }, []);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -625,20 +628,15 @@ export default function HomePage() {
                 </button>
               </form>
             ) : (
-              <div className="py-10">
-                <div className="flex items-center gap-3 mb-5">
-                  <CheckCircle className="w-5 h-5 text-accent-gold" />
-                  <p className="text-body text-white">Message received</p>
-                </div>
-                <p className="text-body-sm text-white/60 mb-8">
+              <div className="py-16 text-center">
+                <CheckCircle className="w-8 h-8 text-white mx-auto mb-6" />
+                <h3 className="text-h2 text-white mb-4">Message received</h3>
+                <p className="text-body text-white/70 mb-3">
                   We'll respond within 24-48 hours.
                 </p>
-                <button
-                  onClick={() => setFormStatus('idle')}
-                  className="text-body-sm text-white/70 hover:text-white transition-colors"
-                >
-                  Send another message
-                </button>
+                <p className="text-body-sm text-white/50">
+                  Check your inbox for a reply from hello@astralintegration.co
+                </p>
               </div>
             )}
 

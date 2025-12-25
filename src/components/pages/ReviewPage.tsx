@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { CheckCircle } from 'lucide-react';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
 
 export default function ReviewPage() {
+  useEffect(() => {
+    document.title = 'Digital Realignment Review — Astral Integration';
+  }, []);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -477,20 +480,15 @@ ${formData.whyNow || '(not answered)'}
                 </button>
               </form>
             ) : (
-              <div className="py-10 px-8 bg-studio-bgAlt border border-studio-divider">
-                <div className="flex items-center gap-3 mb-5">
-                  <CheckCircle className="w-5 h-5 text-accent" />
-                  <p className="text-body text-content-primary">Request received</p>
-                </div>
-                <p className="text-body text-content-secondary mb-8">
+              <div className="py-16 px-8 bg-studio-bgAlt border border-studio-divider text-center">
+                <CheckCircle className="w-8 h-8 text-accent mx-auto mb-6" />
+                <h3 className="text-h2 text-content-primary mb-4">Request received</h3>
+                <p className="text-body text-content-secondary mb-3">
                   I'll respond within 48 hours to confirm and share payment details.
                 </p>
-                <button
-                  onClick={() => setFormStatus('idle')}
-                  className="text-body-sm text-content-tertiary hover:text-content-primary transition-colors"
-                >
-                  Submit another request
-                </button>
+                <p className="text-body-sm text-content-tertiary">
+                  Check your inbox (and spam folder) for a reply from hello@astralintegration.co
+                </p>
               </div>
             )}
           </div>
