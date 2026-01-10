@@ -95,15 +95,33 @@ export default function HomePage() {
             <div className="mb-12">
               <p className="text-body text-content-primary leading-relaxed mb-2">The work exists.</p>
               <p className="text-body text-content-primary leading-relaxed mb-2">The value is real.</p>
-              <p className="text-body text-content-primary leading-relaxed">But the digital expression no longer matches it.</p>
+              <p className="text-body text-content-primary leading-relaxed">But the digital expression no longer matches the work — or the work is being pushed into a form it isn't ready for.</p>
             </div>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              When this happens, people struggle to understand how to engage, offerings feel misaligned, and systems require constant attention to maintain.
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              Today, it is easy to build quickly. Platforms, products, and systems can be engineered before clarity is established.
             </p>
 
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              When this happens, digital form begins to lead the work instead of supporting it.
+            </p>
+
+            <ul className="space-y-3 mb-12">
+              {[
+                'Offerings become inflated or unclear',
+                'Platforms are built to solve problems that don\'t yet exist',
+                'Systems add complexity instead of reducing it',
+                'Energy goes into maintaining structure rather than doing the work itself'
+              ].map((item, i) => (
+                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
+                  <span className="text-accent mt-1.5 text-sm">·</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
             <p className="text-lg text-content-primary font-medium">
-              Our role is to bring clarity, structure, and execution back into alignment — so the digital form supports the work instead of distorting it.
+              Our role is to bring clarity, restraint, and structure back into alignment — so the digital form supports the work without overextending it or distorting it.
             </p>
           </div>
         </div>
@@ -125,6 +143,10 @@ export default function HomePage() {
               We read what already exists, identify what matters now, and help it take a form that makes sense to others.
             </p>
 
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
+              We also help projects resist unnecessary productization. Not every body of work needs a platform, an application, or a system simply because it is now possible to build one.
+            </p>
+
             <p className="text-body text-content-secondary leading-relaxed mb-12">
               In some cases, this work continues beyond realignment — evolving into a longer-term studio partnership where we remain involved in building, operating, or shaping the system over time.
             </p>
@@ -138,7 +160,7 @@ export default function HomePage() {
                 'What is the work now?',
                 'How should people encounter it?',
                 'What is the simplest, most accurate way to offer it?',
-                'What needs to be built, and what can be removed?'
+                'What needs to be built — and what should not be built yet?'
               ].map((item, i) => (
                 <li key={i} className="text-body text-content-secondary flex items-start gap-3">
                   <span className="text-accent mt-1.5 text-sm">·</span>
@@ -195,7 +217,7 @@ export default function HomePage() {
             </ul>
 
             <p className="text-lg text-content-primary font-medium">
-              This creates clarity before decisions are made.
+              This creates clarity before decisions are made — and often prevents unnecessary platforms, products, or systems from being built prematurely.
             </p>
           </div>
 
@@ -267,7 +289,7 @@ export default function HomePage() {
             </ul>
 
             <p className="text-lg text-content-primary font-medium">
-              We build what is necessary and keep the system simple.
+              We build what is necessary — and often decide not to build at all until the work is ready.
             </p>
           </div>
         </div>
