@@ -62,8 +62,11 @@ export default function HomePage() {
             <h1 className="text-display-sm md:text-display text-content-primary mb-8">
               Astral Integration
             </h1>
-            <p className="text-body text-content-secondary mb-12">
+            <p className="text-body text-content-secondary mb-6">
               Digital realignment for work already in motion
+            </p>
+            <p className="text-body text-content-tertiary mb-12">
+              and selective studio collaboration when alignment is strong
             </p>
 
             <p className="text-h1 md:text-display-sm text-content-primary font-medium mb-16 max-w-2xl">
@@ -118,8 +121,12 @@ export default function HomePage() {
               We step in as a clarifying layer.
             </h2>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
+            <p className="text-body text-content-secondary leading-relaxed mb-8">
               We read what already exists, identify what matters now, and help it take a form that makes sense to others.
+            </p>
+
+            <p className="text-body text-content-secondary leading-relaxed mb-12">
+              In some cases, this work continues beyond realignment — evolving into a longer-term studio partnership where we remain involved in building, operating, or shaping the system over time.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8">
@@ -368,7 +375,7 @@ export default function HomePage() {
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-12">
-              When alignment is strong, we occasionally support early-stage work through deeper collaboration — combining offering clarity, system design, and selective execution over time.
+              When alignment is strong and the work has long-term potential, we occasionally engage as a studio partner — contributing clarity, system design, and execution over time, sometimes through shared ownership or ongoing collaboration.
             </p>
 
             <p className="text-lg text-content-primary font-medium">
