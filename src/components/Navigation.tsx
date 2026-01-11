@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +25,6 @@ export default function Navigation() {
     return () => window.removeEventListener('keydown', handleEscape);
   }, [mobileMenuOpen]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -42,39 +40,14 @@ export default function Navigation() {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
-  const scrollToSection = (sectionId: string) => {
-    setMobileMenuOpen(false);
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
-  const scrollToTop = () => {
-    setMobileMenuOpen(false);
-    if (location.pathname !== '/') {
-      navigate('/');
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
   const navItems = [
-    { label: 'Work', sectionId: 'services' },
-    { label: 'Process', sectionId: 'process' },
-    { label: 'About', sectionId: 'about' },
-    { label: 'Contact', sectionId: 'contact' },
+    { label: 'Work', path: '/work' },
+    { label: 'Process', path: '/process' },
+    { label: 'About', path: '/about' },
+    { label: 'Start Here', path: '/start-here' },
   ];
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <>
@@ -90,25 +63,39 @@ export default function Navigation() {
         <div className="max-w-content mx-auto px-6 md:px-12">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <button
-              onClick={scrollToTop}
+            <Link
+              to="/"
               className="text-content-primary text-body font-medium hover:text-content-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-sm"
               aria-label="Astral Integration home"
             >
               Astral Integration
-            </button>
+            </Link>
 
             {/* Desktop Nav Links */}
             <div className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
-                <button
-                  key={item.sectionId}
-                  onClick={() => scrollToSection(item.sectionId)}
-                  className="text-body-sm text-content-secondary hover:text-content-primary transition-colors"
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`text-body-sm transition-colors ${
+                    isActive(item.path)
+                      ? 'text-content-primary font-medium'
+                      : 'text-content-secondary hover:text-content-primary'
+                  }`}
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
+              <Link
+                to="/contact"
+                className={`text-body-sm transition-colors ${
+                  isActive('/contact')
+                    ? 'text-content-primary font-medium'
+                    : 'text-content-secondary hover:text-content-primary'
+                }`}
+              >
+                Contact
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -124,17 +111,15 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* Mobile Menu - simple dropdown */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <>
-          {/* Backdrop - closes menu on tap */}
           <div
             className="fixed inset-0 z-40 md:hidden"
             aria-hidden="true"
             onClick={() => setMobileMenuOpen(false)}
           />
 
-          {/* Menu Panel */}
           <div
             className="fixed top-16 left-0 right-0 z-50 md:hidden"
             role="menu"
@@ -143,15 +128,26 @@ export default function Navigation() {
             <div className="bg-studio-bg border-b border-studio-divider shadow-lg">
               <div className="max-w-content mx-auto px-6 py-4">
                 {navItems.map((item) => (
-                  <button
-                    key={item.sectionId}
-                    onClick={() => scrollToSection(item.sectionId)}
-                    className="block w-full text-left py-4 text-body text-content-primary hover:text-accent transition-colors border-b border-studio-divider last:border-b-0"
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`block w-full text-left py-4 text-body transition-colors border-b border-studio-divider ${
+                      isActive(item.path)
+                        ? 'text-content-primary font-medium'
+                        : 'text-content-primary hover:text-accent'
+                    }`}
                     role="menuitem"
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 ))}
+                <Link
+                  to="/contact"
+                  className="block w-full text-left py-4 text-body text-content-primary hover:text-accent transition-colors"
+                  role="menuitem"
+                >
+                  Contact
+                </Link>
               </div>
             </div>
           </div>
