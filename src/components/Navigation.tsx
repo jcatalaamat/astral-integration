@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-const CALENDLY_URL = 'https://calendly.com/astral-integration/free-discovery-call';
+const CALENDLY_URL = 'https://calendly.com/astral-integration/free-strategy-call';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

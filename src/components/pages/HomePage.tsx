@@ -4,7 +4,7 @@ import { CheckCircle } from 'lucide-react';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
 
-const CALENDLY_URL = 'https://calendly.com/astral-integration/free-discovery-call';
+const CALENDLY_URL = 'https://calendly.com/astral-integration/free-strategy-call';
 
 // Data
 const clientTypes = [
