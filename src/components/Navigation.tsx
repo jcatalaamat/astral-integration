@@ -41,6 +41,8 @@ export default function Navigation() {
     { label: 'Process', href: '#process' },
     { label: 'Pricing', href: '#pricing' },
     { label: 'Work', href: '#work' },
+    { label: 'About', href: '#about' },
+    { label: 'FAQ', href: '#faq' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

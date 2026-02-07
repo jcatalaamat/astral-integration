@@ -33,6 +33,17 @@ const processSteps = [
   { num: '04', title: 'Grow Together', desc: "Post-launch support, optimizations, and ongoing partnership. As your business evolves, your systems evolve with it. We're in this with you." },
 ];
 
+const faqItems = [
+  { q: 'How much does this actually cost?', a: "Quick wins and audits start at $1,500. Full system builds (website + platform + automation) range from $8K-$20K. Ongoing partnerships run $3-5K/month. Every project starts with a free strategy call where we scope exactly what you need — no surprises." },
+  { q: 'How long does a project take?', a: "Quick wins and audits: 1-2 weeks. Website builds: 3-4 weeks. Full system builds (website + platform + automation): 4-8 weeks. You'll see progress every week and give feedback throughout — it's collaborative, not a black box." },
+  { q: 'Do I need to be technical?', a: "Not at all. That's the entire point. If you can use Instagram, you can use what we build. Everything is designed to be intuitive and low-maintenance. We handle all the technical complexity so you never have to think about it." },
+  { q: 'I already have a Wix / Squarespace / Kajabi site. Can you work with it?', a: "We can optimize what you have (that's the Spark tier), or we can migrate you to a custom-built platform that's faster, ranks higher on Google, and actually converts visitors into clients. Most of our clients see a 2-3x improvement in bookings after migrating off template builders." },
+  { q: "Will it feel like my brand — not like a tech product?", a: "That's non-negotiable for us. Everything we build reflects your voice, your energy, and your values. We don't do cookie-cutter templates or corporate design. Your clients should feel like they're in your space — not on a software platform." },
+  { q: 'What happens after launch?', a: "Every Growth project includes 60 days of post-launch support. After that, you can continue with a monthly Scale partnership for ongoing optimization, new features, and strategy — or fly solo with everything fully documented and handed over. Nothing is locked behind us." },
+  { q: 'Can you build me a mobile app?', a: "Yes — and it's not as expensive as you think. We use a cross-platform framework that builds iOS, Android, and web from a single codebase, which means you get a native app experience at a fraction of the cost of traditional app development. This is typically part of our Scale tier." },
+  { q: "I'm not sure what I need. Can I just talk to someone?", a: "That's exactly what the free strategy call is for. We'll look at your current setup, understand your goals, and tell you — honestly — what will have the biggest impact. Sometimes the answer is \"you don't need us yet.\" We'd rather earn your trust than your money." },
+];
+
 const pricingTiers = [
   {
     name: 'Spark',
@@ -86,6 +97,9 @@ export default function HomePage() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [leadEmail, setLeadEmail] = useState('');
+  const [leadStatus, setLeadStatus] = useState<'idle' | 'success'>('idle');
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
@@ -388,6 +402,99 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ABOUT */}
+      <section id="about" className="py-section px-6 md:px-12 bg-gradient-to-b from-[#0d0d14] to-dark-bg">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            About
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-12">The person behind the systems</h2>
+
+          <div className="grid md:grid-cols-[280px_1fr] gap-16 items-start">
+            <div className="w-full md:w-[280px] h-[340px] rounded-2xl border border-border relative overflow-hidden">
+              <img
+                src="/founder.jpeg"
+                alt="Founder"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/60 to-transparent" />
+            </div>
+
+            <div>
+              <h3 className="font-serif text-h2 font-light mb-6">I didn't start in tech. I started in the work.</h3>
+              <p className="text-body text-content-secondary leading-relaxed mb-4">
+                Before I wrote a line of code for this space, I was <em className="text-content-primary">in</em> it — sitting in ceremony, working with plant medicine, navigating the messy and beautiful process of integration. That's how I know the difference between a booking form and a <strong className="text-content-primary font-medium">sacred container</strong>.
+              </p>
+              <p className="text-body text-content-secondary leading-relaxed mb-4">
+                I saw healers, facilitators, and coaches doing genuinely life-changing work — and then losing clients because their website was broken, their intake process was a mess, and they were drowning in manual admin. The gap between the quality of their work and the quality of their systems was massive.
+              </p>
+              <p className="text-body text-content-secondary leading-relaxed mb-4">
+                So I built the bridge. <strong className="text-content-primary font-medium">Astral Integration</strong> exists to give soul-led businesses the same caliber of technology that venture-backed startups have — without the corporate energy, without the jargon, and without losing what makes your work sacred.
+              </p>
+              <p className="text-body text-content-secondary leading-relaxed mb-8">
+                I build with modern tools — AI, cross-platform frameworks, custom automation — but the approach is deeply human. Every system I create starts with one question: <strong className="text-content-primary font-medium">how does this serve your clients better?</strong>
+              </p>
+
+              <div className="flex flex-col md:flex-row gap-8 pt-8 border-t border-border">
+                <div className="flex-1">
+                  <h5 className="text-meta uppercase text-accent mb-2">Stack</h5>
+                  <p className="text-body-sm text-content-secondary">Next.js, React Native, Tamagui, Supabase, AI/LLMs, Stripe</p>
+                </div>
+                <div className="flex-1">
+                  <h5 className="text-meta uppercase text-accent mb-2">Approach</h5>
+                  <p className="text-body-sm text-content-secondary">Strategy first. Build fast. Iterate with you. Never generic.</p>
+                </div>
+                <div className="flex-1">
+                  <h5 className="text-meta uppercase text-accent mb-2">Vibe</h5>
+                  <p className="text-body-sm text-content-secondary">Your fractional CTO — not a freelancer, not an agency.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            Questions
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">Before you ask</h2>
+          <p className="text-body text-content-secondary max-w-prose mb-12">
+            The questions we hear most often from healers, coaches, and creators.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {faqItems.map((item, i) => (
+              <div
+                key={i}
+                className={`border rounded-xl overflow-hidden transition-colors ${
+                  openFaq === i ? 'border-accent' : 'border-border hover:border-border-hover'
+                }`}
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex justify-between items-center p-6 bg-dark-card hover:bg-dark-cardHover transition-colors text-left"
+                >
+                  <h4 className="font-serif text-h4 pr-4">{item.q}</h4>
+                  <span className={`w-7 h-7 rounded-full border border-border flex items-center justify-center text-accent flex-shrink-0 transition-transform ${openFaq === i ? 'rotate-45 bg-accent-glow' : ''}`}>
+                    +
+                  </span>
+                </button>
+                <div className={`overflow-hidden transition-all duration-300 ${openFaq === i ? 'max-h-[300px]' : 'max-h-0'}`}>
+                  <p className="px-6 pb-6 text-body-sm text-content-secondary leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* TESTIMONIAL */}
       <section className="py-section px-6 md:px-12 text-center">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
@@ -402,6 +509,45 @@ export default function HomePage() {
           </blockquote>
           <p className="text-body-sm text-content-muted tracking-wider">
             <strong className="text-content-secondary font-medium">— Retreat Facilitator</strong> · Valle de Bravo, Mexico
+          </p>
+        </div>
+      </section>
+
+      {/* LEAD MAGNET */}
+      <section className="py-section px-6 md:px-12 bg-gradient-to-br from-accent-glow/50 to-gold-soft/30 border-y border-border text-center">
+        <div className="max-w-[600px] mx-auto reveal" ref={addRevealRef}>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            Free: The Soul-Led<br />Business Tech Checklist
+          </h2>
+          <p className="text-body text-content-secondary mb-8">
+            21 things to audit in your website, booking system, and client experience — with specific fixes you can make this week. No fluff, no upsell pitch.
+          </p>
+
+          <div className="flex flex-col md:flex-row gap-3 max-w-[480px] mx-auto">
+            <input
+              type="email"
+              value={leadEmail}
+              onChange={(e) => setLeadEmail(e.target.value)}
+              placeholder="Your best email"
+              className="flex-1 px-6 py-4 bg-dark-card border border-border rounded-full text-content-primary placeholder-content-muted focus:outline-none focus:border-accent transition-colors"
+            />
+            <button
+              onClick={() => {
+                if (leadEmail && leadEmail.includes('@')) {
+                  setLeadStatus('success');
+                  setLeadEmail('');
+                  setTimeout(() => setLeadStatus('idle'), 3000);
+                }
+              }}
+              className={`px-8 py-4 rounded-full text-body-sm font-medium whitespace-nowrap transition-all btn-glow ${
+                leadStatus === 'success' ? 'bg-green-600 text-white' : 'bg-accent text-white'
+              }`}
+            >
+              {leadStatus === 'success' ? 'Check your inbox ✦' : 'Send It'}
+            </button>
+          </div>
+          <p className="text-meta text-content-muted mt-4">
+            No spam. Unsubscribe anytime. Just one useful thing in your inbox.
           </p>
         </div>
       </section>
