@@ -98,7 +98,7 @@ export default function HomePage() {
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [leadEmail, setLeadEmail] = useState('');
-  const [leadStatus, setLeadStatus] = useState<'idle' | 'success'>('idle');
+  const [leadStatus, setLeadStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
 
@@ -164,6 +164,29 @@ export default function HomePage() {
     } catch (error) {
       setFormStatus('error');
       setTimeout(() => setFormStatus('idle'), 5000);
+    }
+  };
+
+  const handleLeadSubmit = async () => {
+    if (!leadEmail || !leadEmail.includes('@')) return;
+    setLeadStatus('sending');
+    try {
+      await emailjs.send(
+        'service_larviog',
+        'template_7iyu04b',
+        {
+          from_name: 'Lead Magnet Signup',
+          from_email: leadEmail,
+          subject: 'New Lead: Tech Checklist Download',
+          message: `New lead signed up for the Soul-Led Business Tech Checklist.\n\nEmail: ${leadEmail}`,
+        },
+        'v57Ta98pwBDWpoe8o'
+      );
+      setLeadStatus('success');
+      setLeadEmail('');
+    } catch (error) {
+      setLeadStatus('error');
+      setTimeout(() => setLeadStatus('idle'), 5000);
     }
   };
 
@@ -532,18 +555,18 @@ export default function HomePage() {
               className="flex-1 px-6 py-4 bg-dark-card border border-border rounded-full text-content-primary placeholder-content-muted focus:outline-none focus:border-accent transition-colors"
             />
             <button
-              onClick={() => {
-                if (leadEmail && leadEmail.includes('@')) {
-                  setLeadStatus('success');
-                  setLeadEmail('');
-                  setTimeout(() => setLeadStatus('idle'), 3000);
-                }
-              }}
+              onClick={handleLeadSubmit}
+              disabled={leadStatus === 'sending'}
               className={`px-8 py-4 rounded-full text-body-sm font-medium whitespace-nowrap transition-all btn-glow ${
-                leadStatus === 'success' ? 'bg-green-600 text-white' : 'bg-accent text-white'
+                leadStatus === 'success' ? 'bg-green-600 text-white' :
+                leadStatus === 'error' ? 'bg-red-600 text-white' :
+                leadStatus === 'sending' ? 'bg-accent/70 text-white cursor-wait' :
+                'bg-accent text-white'
               }`}
             >
-              {leadStatus === 'success' ? 'Check your inbox ✦' : 'Send It'}
+              {leadStatus === 'success' ? 'Check your inbox ✦' :
+               leadStatus === 'sending' ? 'Sending...' :
+               leadStatus === 'error' ? 'Try again' : 'Send It'}
             </button>
           </div>
           <p className="text-meta text-content-muted mt-4">

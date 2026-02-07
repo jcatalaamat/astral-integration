@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astral Integration — Growth Systems for Soul-Led Businesses</title>
+<meta name="description" content="AI-powered platforms, websites, and automations for healers, coaches, retreat centers, and creators who are ready to scale without losing their soul.">
+<meta property="og:title" content="Astral Integration — The Tech Behind Transformation">
+<meta property="og:description" content="Growth systems for soul-led businesses. We build AI-powered platforms, websites, and automations for healers, coaches, and creators.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://astralintegration.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Astral Integration — The Tech Behind Transformation">
+<meta name="twitter:description" content="Growth systems for soul-led businesses.">
+<link rel="canonical" href="https://astralintegration.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #0a0a0f;
+    --bg-card: #111118;
+    --bg-card-hover: #16161f;
+    --accent: #7B68EE;
+    --accent-soft: #6C5CE7;
+    --accent-glow: rgba(123, 104, 238, 0.15);
+    --accent-glow-strong: rgba(123, 104, 238, 0.3);
+    --text-primary: #E8E6F0;
+    --text-secondary: #9895A8;
+    --text-muted: #6B6880;
+    --border: rgba(123, 104, 238, 0.12);
+    --border-hover: rgba(123, 104, 238, 0.3);
+    --gold: #C9A96E;
+    --gold-soft: rgba(201, 169, 110, 0.15);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', -apple-system, sans-serif;
+    --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: var(--grain);
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  ::selection { background: var(--accent); color: white; }
+
+  /* ===== NAVIGATION ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    background: rgba(10, 10, 15, 0.7);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.4s ease;
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--text-primary);
+    text-decoration: none;
+    z-index: 102;
+  }
+  .nav-logo em { font-style: italic; color: var(--accent); }
+
+  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+  .nav-links a {
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-cta {
+    padding: 0.65rem 1.8rem !important;
+    border: 1px solid var(--accent) !important;
+    border-radius: 100px !important;
+    color: var(--accent) !important;
+    transition: all 0.3s ease !important;
+  }
+  .nav-cta:hover {
+    background: var(--accent) !important;
+    color: white !important;
+    box-shadow: 0 0 30px var(--accent-glow-strong);
+  }
+
+  /* Mobile menu */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 102;
+    width: 32px;
+    height: 24px;
+    position: relative;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--text-primary);
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+  }
+  .menu-toggle span:nth-child(1) { top: 0; }
+  .menu-toggle span:nth-child(2) { top: 11px; }
+  .menu-toggle span:nth-child(3) { top: 22px; }
+  .menu-toggle.active span:nth-child(1) { top: 11px; transform: rotate(45deg); }
+  .menu-toggle.active span:nth-child(2) { opacity: 0; }
+  .menu-toggle.active span:nth-child(3) { top: 11px; transform: rotate(-45deg); }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+    animation: float 20s ease-in-out infinite;
+  }
+  .hero-orb-1 { width: 600px; height: 600px; background: var(--accent); top: -200px; right: -100px; }
+  .hero-orb-2 { width: 400px; height: 400px; background: #4A3AE0; bottom: -100px; left: -100px; animation-delay: -7s; }
+  .hero-orb-3 { width: 300px; height: 300px; background: var(--gold); top: 30%; left: 10%; opacity: 0.15; animation-delay: -14s; }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.05); }
+    66% { transform: translate(-20px, 20px) scale(0.95); }
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.5s forwards;
+  }
+  .hero h1 em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 540px;
+    margin-top: 2rem;
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.7s forwards;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.9s forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .btn-primary {
+    padding: 1rem 2.5rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 0 40px var(--accent-glow);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 60px var(--accent-glow-strong), 0 10px 40px rgba(0,0,0,0.3);
+  }
+
+  .btn-ghost {
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  .btn-ghost:hover {
+    border-color: var(--border-hover);
+    color: var(--text-primary);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: fadeUp 1s ease 1.2s forwards;
+    opacity: 0;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.3); }
+  }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 8rem 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .section-label::before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 600px;
+    font-weight: 300;
+  }
+
+  /* ===== SERVICES ===== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .service-card:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-card-hover);
+    transform: translateY(-4px);
+  }
+  .service-card:hover::before { opacity: 1; }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--accent-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-card h3 { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; margin-bottom: 0.8rem; }
+  .service-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; font-weight: 300; }
+
+  .service-tag {
+    display: inline-block;
+    margin-top: 1.2rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.35rem 0.8rem;
+    background: var(--gold-soft);
+    border-radius: 100px;
+  }
+
+  /* ===== WHO WE SERVE ===== */
+  .serve-section { background: linear-gradient(180deg, var(--bg-deep) 0%, #0d0d14 100%); }
+
+  .serve-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    margin-top: 4rem;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .serve-item { background: var(--bg-card); padding: 2.5rem 2rem; text-align: center; transition: all 0.3s; }
+  .serve-item:hover { background: var(--bg-card-hover); }
+  .serve-item .icon { font-size: 2rem; margin-bottom: 1rem; }
+  .serve-item h4 { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; margin-bottom: 0.4rem; }
+  .serve-item p { font-size: 0.8rem; color: var(--text-muted); font-weight: 300; }
+
+  /* ===== PROCESS ===== */
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+  .step-num { font-family: var(--serif); font-size: 4rem; font-weight: 300; color: var(--accent); opacity: 0.3; line-height: 1; margin-bottom: 1rem; }
+  .step h4 { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; margin-bottom: 0.6rem; }
+  .step p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; font-weight: 300; }
+
+  /* ===== PRICING ===== */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .price-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    transition: all 0.4s;
+    display: flex;
+    flex-direction: column;
+  }
+  .price-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+  .price-card.featured {
+    border-color: var(--accent);
+    background: linear-gradient(180deg, rgba(123, 104, 238, 0.08) 0%, var(--bg-card) 100%);
+    position: relative;
+  }
+  .price-card.featured::before {
+    content: 'MOST POPULAR';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    padding: 0.3rem 1rem;
+    background: var(--accent);
+    color: white;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+
+  .price-card h3 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; margin-bottom: 0.3rem; }
+  .price-card .price-subtitle { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 300; }
+
+  .price-range {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .price-range span { font-size: 0.85rem; color: var(--text-muted); font-family: var(--sans); }
+
+  .price-features { list-style: none; flex: 1; margin-bottom: 2rem; }
+  .price-features li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    font-weight: 300;
+  }
+  .price-features li::before { content: '\2726'; position: absolute; left: 0; color: var(--accent); font-size: 0.6rem; top: 0.65rem; }
+
+  .price-card .btn-primary, .price-card .btn-ghost { width: 100%; text-align: center; display: block; }
+
+  /* ===== CASE STUDY ===== */
+  .case-study-banner {
+    background: linear-gradient(135deg, rgba(123, 104, 238, 0.08), rgba(201, 169, 110, 0.06));
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 4rem;
+  }
+  .case-study-content { flex: 1; }
+  .case-study-content h3 { font-family: var(--serif); font-size: 2rem; font-weight: 300; margin-bottom: 1rem; }
+  .case-study-content p { color: var(--text-secondary); line-height: 1.7; font-weight: 300; font-size: 0.95rem; }
+  .case-study-stats { display: flex; gap: 3rem; }
+  .case-stat { text-align: center; }
+  .case-stat .num { font-family: var(--serif); font-size: 2.5rem; font-weight: 300; color: var(--accent); }
+  .case-stat .label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.3rem; }
+
+  /* ===== ABOUT ===== */
+  .about-section { background: linear-gradient(180deg, #0d0d14, var(--bg-deep)); }
+
+  .about-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+
+  .about-photo {
+    width: 280px;
+    height: 340px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--accent-glow), var(--gold-soft));
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-photo-placeholder {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    position: relative;
+    z-index: 2;
+  }
+  .about-photo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(10, 10, 15, 0.8));
+  }
+
+  .about-text h3 { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; margin-bottom: 1.2rem; }
+  .about-text p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; font-weight: 300; margin-bottom: 1rem; }
+  .about-text p strong { color: var(--text-primary); font-weight: 500; }
+  .about-text em { color: var(--text-primary); }
+
+  .about-values {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .about-value { flex: 1; }
+  .about-value h5 { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+  .about-value p { font-size: 0.82rem; margin-bottom: 0; line-height: 1.5; }
+
+  /* ===== FAQ ===== */
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 1rem;
+    margin-top: 4rem;
+  }
+
+  .faq-item {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .faq-item:hover { border-color: var(--border-hover); }
+  .faq-item.active { border-color: var(--accent); }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    background: var(--bg-card);
+    transition: background 0.3s;
+    user-select: none;
+  }
+  .faq-question:hover { background: var(--bg-card-hover); }
+  .faq-question h4 { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; flex: 1; padding-right: 1rem; }
+
+  .faq-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--accent);
+    flex-shrink: 0;
+    transition: all 0.3s;
+  }
+  .faq-item.active .faq-icon { transform: rotate(45deg); background: var(--accent-glow); }
+
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .faq-item.active .faq-answer { max-height: 300px; }
+  .faq-answer-inner { padding: 0 2rem 1.5rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
+
+  /* ===== LEAD MAGNET ===== */
+  .lead-section {
+    background: linear-gradient(135deg, rgba(123, 104, 238, 0.06), rgba(201, 169, 110, 0.04));
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  .lead-inner { max-width: 600px; margin: 0 auto; }
+  .lead-inner h2 { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 300; margin-bottom: 1rem; }
+  .lead-inner p { font-size: 1rem; color: var(--text-secondary); line-height: 1.7; font-weight: 300; margin-bottom: 2rem; }
+
+  .lead-form { display: flex; gap: 0.8rem; max-width: 480px; margin: 0 auto; }
+  .lead-form input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    color: var(--text-primary);
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .lead-form input::placeholder { color: var(--text-muted); }
+  .lead-form input:focus { border-color: var(--accent); }
+  .lead-form button {
+    padding: 1rem 2rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+    box-shadow: 0 0 30px var(--accent-glow);
+  }
+  .lead-form button:hover { transform: translateY(-2px); box-shadow: 0 0 50px var(--accent-glow-strong); }
+  .lead-note { font-size: 0.75rem; color: var(--text-muted); margin-top: 1rem; font-weight: 300; }
+
+  /* ===== TESTIMONIAL ===== */
+  .testimonial-section { text-align: center; }
+  .testimonial-quote {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    max-width: 750px;
+    margin: 3rem auto 2rem;
+    position: relative;
+  }
+  .testimonial-quote::before {
+    content: '\201C';
+    font-size: 8rem;
+    position: absolute;
+    top: -3rem;
+    left: -2rem;
+    color: var(--accent);
+    opacity: 0.2;
+    font-family: var(--serif);
+  }
+  .testimonial-author { font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.1em; }
+  .testimonial-author strong { color: var(--text-secondary); font-weight: 500; }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    text-align: center;
+    padding: 10rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section .cta-orb {
+    position: absolute;
+    width: 500px; height: 500px;
+    background: var(--accent);
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.15;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .cta-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 1.5rem;
+  }
+  .cta-section h2 em { font-style: italic; color: var(--accent); }
+  .cta-section p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+    font-weight: 300;
+    position: relative;
+    z-index: 2;
+  }
+  .cta-section .btn-primary { position: relative; z-index: 2; font-size: 1rem; padding: 1.2rem 3rem; }
+
+  /* ===== FOOTER ===== */
+  footer { padding: 4rem 2rem 2rem; border-top: 1px solid var(--border); }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: var(--serif); font-size: 1.2rem; font-weight: 300; letter-spacing: 0.1em; color: var(--text-muted); }
+  .footer-logo em { font-style: italic; color: var(--accent); opacity: 0.6; }
+  .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.78rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); max-width: 1100px; margin-left: auto; margin-right: auto; }
+  .footer-copy p { font-size: 0.75rem; color: var(--text-muted); font-weight: 300; }
+
+  /* ===== REVEAL ===== */
+  .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .menu-toggle { display: block; }
+    .nav-links {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 15, 0.98);
+      backdrop-filter: blur(30px);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 101;
+    }
+    .nav-links.open { opacity: 1; pointer-events: all; }
+    .nav-links a { font-size: 1.1rem; letter-spacing: 0.15em; }
+    section { padding: 5rem 1.5rem; }
+    .case-study-banner { flex-direction: column; padding: 2.5rem; gap: 2rem; }
+    .case-study-stats { gap: 2rem; }
+    .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .hero-cta-group { flex-direction: column; align-items: center; }
+    .about-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .about-photo { width: 100%; height: 240px; }
+    .about-values { flex-direction: column; gap: 1.5rem; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .lead-form { flex-direction: column; }
+    .lead-form button { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Astral <em>Integration</em></a>
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#process" onclick="closeMenu()">Process</a>
+    <a href="#pricing" onclick="closeMenu()">Pricing</a>
+    <a href="#work" onclick="closeMenu()">Work</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#faq" onclick="closeMenu()">FAQ</a>
+    <a href="#contact" class="nav-cta" onclick="closeMenu()">Book a Call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+  <div class="hero-eyebrow">Growth Systems for Soul-Led Businesses</div>
+  <h1>You change lives.<br>We build the <em>systems.</em></h1>
+  <p class="hero-sub">AI-powered platforms, websites, and automations for healers, coaches, retreat centers, and creators who are ready to scale without losing their soul.</p>
+  <div class="hero-cta-group">
+    <a href="#contact" class="btn-primary">Book a Free Strategy Call</a>
+    <a href="#work" class="btn-ghost">See Our Work</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="serve-section" id="clients">
+  <div class="section-inner reveal">
+    <div class="section-label">Who We Serve</div>
+    <div class="section-title">Built for people who are<br>great at their craft</div>
+    <p class="section-desc">You shouldn't have to choose between doing meaningful work and having a business that runs smoothly. We build the bridge.</p>
+    <div class="serve-grid">
+      <div class="serve-item"><div class="icon">🌿</div><h4>Retreat Centers</h4><p>Psychedelic, yoga, wellness</p></div>
+      <div class="serve-item"><div class="icon">🔮</div><h4>Coaches & Therapists</h4><p>Integration, somatic, spiritual</p></div>
+      <div class="serve-item"><div class="icon">✦</div><h4>Astrologers & Readers</h4><p>Birth charts, tarot, channeling</p></div>
+      <div class="serve-item"><div class="icon">🎙</div><h4>Influencers & Creators</h4><p>Wellness, consciousness, lifestyle</p></div>
+      <div class="serve-item"><div class="icon">📖</div><h4>Course Creators</h4><p>Digital programs, communities</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner reveal">
+    <div class="section-label">What We Build</div>
+    <div class="section-title">Technology that feels like<br>an extension of your care</div>
+    <p class="section-desc">Every system we build is designed around your clients' journey — not around software features.</p>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon">⚡</div><h3>Client Journey Platforms</h3><p>Custom portals that guide your clients from first inquiry through onboarding, delivery, and follow-up. Smart intake forms, automated prep sequences, and progress tracking — all in one place.</p><span class="service-tag">Replaces 5+ Tools</span></div>
+      <div class="service-card"><div class="service-icon">🤖</div><h3>AI Assistants & Chatbots</h3><p>24/7 AI companions trained on your voice and methodology. Answer FAQs, guide journaling, recommend resources, and triage to human support when needed. Works on web or WhatsApp.</p><span class="service-tag">New Revenue Stream</span></div>
+      <div class="service-card"><div class="service-icon">🌐</div><h3>Websites That Convert</h3><p>Lightning-fast, SEO-optimized sites that feel premium and aligned. Not template websites — custom-built to reflect your unique energy and convert visitors into clients.</p><span class="service-tag">2-3x More Bookings</span></div>
+      <div class="service-card"><div class="service-icon">✉️</div><h3>Email & Automation</h3><p>Intelligent email sequences that nurture leads, prepare clients, and re-engage alumni. Set it once, let it run. From lead magnet to booking — fully automated.</p><span class="service-tag">Runs While You Sleep</span></div>
+      <div class="service-card"><div class="service-icon">🔑</div><h3>Membership Sites</h3><p>Gated communities, tiered content libraries, courses, and subscriber-only spaces — all under your brand. Recurring revenue that grows while you sleep. Replaces Patreon, Kajabi, and Circle.</p><span class="service-tag">Recurring Revenue</span></div>
+      <div class="service-card"><div class="service-icon">🎓</div><h3>Digital Course Platforms</h3><p>Transform your knowledge into a scalable digital product. Video lessons, worksheets, guided practices, progress tracking, and community — all branded to you.</p><span class="service-tag">Passive Income</span></div>
+      <div class="service-card"><div class="service-icon">📱</div><h3>Cross-Platform Apps</h3><p>Your platform, available everywhere. Clients access their membership, journal, book sessions, and track their journey — all from their phone. iOS, Android, and web from a single build.</p><span class="service-tag">Premium Offering</span></div>
+      <div class="service-card"><div class="service-icon">📊</div><h3>AI Content Systems</h3><p>Content creation pipelines trained on your voice. Blog posts, social media, newsletters, SEO strategy — all consistent, all on-brand, all requiring minimal effort from you.</p><span class="service-tag">10x Your Output</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" style="background: linear-gradient(180deg, var(--bg-deep), #0d0d14);">
+  <div class="section-inner reveal">
+    <div class="section-label">How It Works</div>
+    <div class="section-title">Simple. Aligned. <em style="font-family: var(--serif); color: var(--accent); font-style: italic;">Effective.</em></div>
+    <div class="process-steps">
+      <div class="step"><div class="step-num">01</div><h4>Discovery Call</h4><p>We learn your world — your mission, your clients, your pain points. We audit your current systems and identify where the biggest impact lies.</p></div>
+      <div class="step"><div class="step-num">02</div><h4>Strategy & Blueprint</h4><p>We design a custom roadmap tailored to your business. No cookie-cutter solutions. You'll see exactly what we'll build, why it matters, and when it ships.</p></div>
+      <div class="step"><div class="step-num">03</div><h4>Build & Launch</h4><p>We build fast and iterate with you. You'll see progress weekly, give feedback, and watch your vision come to life. Most projects launch in 2-6 weeks.</p></div>
+      <div class="step"><div class="step-num">04</div><h4>Grow Together</h4><p>Post-launch support, optimizations, and ongoing partnership. As your business evolves, your systems evolve with it. We're in this with you.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner reveal">
+    <div class="section-label">Investment</div>
+    <div class="section-title">Choose your level</div>
+    <p class="section-desc">Every engagement starts with a free strategy call. No pressure, no contracts — just clarity on what will move the needle for your business.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Spark</h3>
+        <p class="price-subtitle">Quick wins that make an immediate difference</p>
+        <div class="price-range">$1,500 – $3K <span>/ project</span></div>
+        <ul class="price-features">
+          <li>Full website & systems audit</li>
+          <li>Critical fixes & optimizations</li>
+          <li>FAQ page & directory listings</li>
+          <li>Scheduling & booking setup</li>
+          <li>Email sequence templates</li>
+        </ul>
+        <a href="#contact" class="btn-ghost">Get Started</a>
+      </div>
+      <div class="price-card featured">
+        <h3>Growth</h3>
+        <p class="price-subtitle">The full system build for scaling up</p>
+        <div class="price-range">$8K – $20K <span>/ project</span></div>
+        <ul class="price-features">
+          <li>Custom website (design + development)</li>
+          <li>Client journey platform</li>
+          <li>Full email automation system</li>
+          <li>AI chatbot or assistant</li>
+          <li>Membership site or course platform</li>
+          <li>SEO & content strategy</li>
+          <li>60 days post-launch support</li>
+        </ul>
+        <a href="#contact" class="btn-primary">Book a Call</a>
+      </div>
+      <div class="price-card">
+        <h3>Scale</h3>
+        <p class="price-subtitle">Ongoing partnership for sustained growth</p>
+        <div class="price-range">$3 – 5K <span>/ month</span></div>
+        <ul class="price-features">
+          <li>Everything in Growth</li>
+          <li>Digital course platform</li>
+          <li>Cross-platform mobile app</li>
+          <li>AI content pipeline</li>
+          <li>Continuous optimization</li>
+          <li>Priority support & strategy calls</li>
+          <li>New features built monthly</li>
+        </ul>
+        <a href="#contact" class="btn-ghost">Let's Talk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section id="work">
+  <div class="section-inner reveal">
+    <div class="section-label">Our Work</div>
+    <div class="section-title">Real audits. Real results.</div>
+    <div class="case-study-banner">
+      <div class="case-study-content">
+        <h3>Psychedelic Retreat Center — Full Business Audit</h3>
+        <p>Deep-scanned an established retreat center's entire digital presence, identified 12+ operational pain points, and designed a complete AI-powered growth roadmap — from client journey platform to integration chatbot to custom website rebuild.</p>
+        <a href="#contact" class="btn-primary" style="display: inline-block; margin-top: 1.5rem;">Request the Full Case Study</a>
+      </div>
+      <div class="case-study-stats">
+        <div class="case-stat"><div class="num">15+</div><div class="label">Hours / Week<br>Saved</div></div>
+        <div class="case-stat"><div class="num">2-3x</div><div class="label">Booking<br>Potential</div></div>
+        <div class="case-stat"><div class="num">$36K</div><div class="label">New Recurring<br>Revenue</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-inner reveal">
+    <div class="section-label">About</div>
+    <div class="section-title">The person behind the systems</div>
+    <div class="about-layout">
+      <div class="about-photo">
+        <div class="about-photo-placeholder">Your photo here</div>
+      </div>
+      <div class="about-text">
+        <h3>I didn't start in tech. I started in the work.</h3>
+        <p>Before I wrote a line of code for this space, I was <em>in</em> it — sitting in ceremony, working with plant medicine, navigating the messy and beautiful process of integration. That's how I know the difference between a booking form and a <strong>sacred container</strong>.</p>
+        <p>I saw healers, facilitators, and coaches doing genuinely life-changing work — and then losing clients because their website was broken, their intake process was a mess, and they were drowning in manual admin. The gap between the quality of their work and the quality of their systems was massive.</p>
+        <p>So I built the bridge. <strong>Astral Integration</strong> exists to give soul-led businesses the same caliber of technology that venture-backed startups have — without the corporate energy, without the jargon, and without losing what makes your work sacred.</p>
+        <p>I build with modern tools — AI, cross-platform frameworks, custom automation — but the approach is deeply human. Every system I create starts with one question: <strong>how does this serve your clients better?</strong></p>
+        <div class="about-values">
+          <div class="about-value"><h5>Stack</h5><p>Next.js, React Native, Tamagui, Supabase, AI/LLMs, Stripe</p></div>
+          <div class="about-value"><h5>Approach</h5><p>Strategy first. Build fast. Iterate with you. Never generic.</p></div>
+          <div class="about-value"><h5>Vibe</h5><p>Your fractional CTO — not a freelancer, not an agency.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner reveal">
+    <div class="section-label">Questions</div>
+    <div class="section-title">Before you ask</div>
+    <p class="section-desc">The questions we hear most often from healers, coaches, and creators.</p>
+    <div class="faq-grid">
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h4>How much does this actually cost?</h4><div class="faq-icon">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Quick wins and audits start at $1,500. Full system builds (website + platform + automation) range from $8K-$20K. Ongoing partnerships run $3-5K/month. Every project starts with a free strategy call where we scope exactly what you need — no surprises.</div></div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h4>How long does a project take?</h4><div class="faq-icon">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Quick wins and audits: 1-2 weeks. Website builds: 3-4 weeks. Full system builds (website + platform + automation): 4-8 weeks. You'll see progress every week and give feedback throughout — it's collaborative, not a black box.</div></div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h4>Do I need to be technical?</h4><div class="faq-icon">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Not at all. That's the entire point. If you can use Instagram, you can use what we build. Everything is designed to be intuitive and low-maintenance. We handle all the technical complexity so you never have to think about it.</div></div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h4>I already have a Wix / Squarespace / Kajabi site. Can you work with it?</h4><div class="faq-icon">+</div></div><div class="faq-answer"><div class="faq-answer-inner">We can optimize what you have (that's the Spark tier), or we can migrate you to a custom-built platform that's faster, ranks higher on Google, and actually converts visitors into clients. Most of our clients see a 2-3x improvement in bookings after migrating off template builders.</div></div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h4>Will it feel like my brand — not like a tech product?</h4><div class="faq-icon">+</div></div><div class="faq-answer"><div class="faq-answer-inner">That's non-negotiable for us. Everything we build reflects your voice, your energy, and your values. We don't do cookie-cutter templates or corporate design. Your clients should feel like they're in your space — not on a software platform.</div></div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h4>What happens after launch?</h4><div class="faq-icon">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Every Growth project includes 60 days of post-launch support. After that, you can continue with a monthly Scale partnership for ongoing optimization, new features, and strategy — or fly solo with everything fully documented and handed over. Nothing is locked behind us.</div></div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h4>Can you build me a mobile app?</h4><div class="faq-icon">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Yes — and it's not as expensive as you think. We use a cross-platform framework that builds iOS, Android, and web from a single codebase, which means you get a native app experience at a fraction of the cost of traditional app development. This is typically part of our Scale tier.</div></div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><h4>I'm not sure what I need. Can I just talk to someone?</h4><div class="faq-icon">+</div></div><div class="faq-answer"><div class="faq-answer-inner">That's exactly what the free strategy call is for. We'll look at your current setup, understand your goals, and tell you — honestly — what will have the biggest impact. Sometimes the answer is "you don't need us yet." We'd rather earn your trust than your money.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section reveal">
+  <div class="section-inner">
+    <div class="section-label" style="justify-content: center;">Kind Words</div>
+    <div class="testimonial-quote">They understood our world before we even had to explain it. The systems they built feel like a natural extension of the care we provide to our clients.</div>
+    <p class="testimonial-author"><strong>— Retreat Facilitator</strong> · Valle de Bravo, Mexico</p>
+  </div>
+</section>
+
+<!-- LEAD MAGNET -->
+<section class="lead-section reveal">
+  <div class="lead-inner">
+    <h2>Free: The Soul-Led<br>Business Tech Checklist</h2>
+    <p>21 things to audit in your website, booking system, and client experience — with specific fixes you can make this week. No fluff, no upsell pitch.</p>
+    <div class="lead-form">
+      <input type="email" placeholder="Your best email" aria-label="Email address">
+      <button type="button" onclick="handleEmailSubmit()">Send It</button>
+    </div>
+    <p class="lead-note">No spam. Unsubscribe anytime. Just one useful thing in your inbox.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-orb"></div>
+  <h2>Ready to scale<br>with <em>soul?</em></h2>
+  <p>Book a free 30-minute strategy call. We'll audit your current setup, identify your biggest opportunities, and map out exactly what to build first.</p>
+  <a href="https://calendly.com/YOUR-LINK" target="_blank" rel="noopener" class="btn-primary">Book Your Free Call →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Astral <em>Integration</em></div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    <p>&copy; 2026 Astral Integration. The tech behind transformation.</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Nav background
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.background = window.scrollY > 100 ? 'rgba(10, 10, 15, 0.95)' : 'rgba(10, 10, 15, 0.7)';
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+    document.querySelector('.menu-toggle').classList.toggle('active');
+  }
+  function closeMenu() {
+    document.getElementById('navLinks').classList.remove('open');
+    document.querySelector('.menu-toggle').classList.remove('active');
+  }
+
+  // FAQ accordion
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const wasActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+    if (!wasActive) item.classList.add('active');
+  }
+
+  // Email capture placeholder
+  function handleEmailSubmit() {
+    const input = document.querySelector('.lead-form input');
+    const email = input.value.trim();
+    if (email && email.includes('@')) {
+      input.value = '';
+      const btn = document.querySelector('.lead-form button');
+      btn.textContent = 'Check your inbox \u2726';
+      btn.style.background = '#2a9d6a';
+      setTimeout(() => { btn.textContent = 'Send It'; btn.style.background = ''; }, 3000);
+    }
+  }
+</script>
+
+</body>
+</html>
