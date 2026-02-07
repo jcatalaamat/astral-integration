@@ -2,93 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes gradient {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Softer breathe animation - warm and gentle */
-@keyframes breathe {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.4;
-  }
-  50% {
-    transform: scale(1.02);
-    opacity: 0.6;
-  }
-}
-
-/* Softer float animation - slow and calm */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  33% {
-    transform: translateY(-8px) rotate(1deg);
-  }
-  66% {
-    transform: translateY(-4px) rotate(-1deg);
-  }
-}
-
-/* Softer glow - warm gold accent */
-@keyframes glow {
-  0%, 100% {
-    filter: brightness(1) drop-shadow(0 0 8px rgba(201, 161, 103, 0.2));
-  }
-  50% {
-    filter: brightness(1.1) drop-shadow(0 0 16px rgba(201, 161, 103, 0.4));
-  }
-}
-
-/* Softer shimmer - warm gold shimmer */
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-/* Prevent dark mode from affecting background and text */
+/* Dark theme base */
 html, body {
-  background-color: #FAF9F7;
-  color: #1E1E1E;
-  color-scheme: light;
+  background-color: #0a0a0f;
+  color: #E8E6F0;
+  color-scheme: dark;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* Warm selection color */
+/* Grain texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Selection color */
 ::selection {
-  background-color: rgba(201, 161, 103, 0.25);
-  color: #1A1A1A;
+  background-color: #7B68EE;
+  color: white;
 }
 
-/* Custom scrollbar - warm theme */
+/* Custom scrollbar - dark theme */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF0E6;
+  background: #111118;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C9A167;
-  border-radius: 5px;
+  background: #7B68EE;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B8905C;
+  background: #6C5CE7;
+}
+
+/* Animation utilities */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animate-delay-700 {
+  animation-delay: 0.7s;
+}
+
+.animate-delay-900 {
+  animation-delay: 0.9s;
+}
+
+.animate-delay-1200 {
+  animation-delay: 1.2s;
+}
+
+/* Reveal animation for scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #7B68EE, #C9A96E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+  backdrop-filter: blur(20px);
+  background: rgba(10, 10, 15, 0.7);
+}
+
+/* Glow button effect */
+.btn-glow {
+  box-shadow: 0 0 40px rgba(123, 104, 238, 0.15);
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 60px rgba(123, 104, 238, 0.3), 0 10px 40px rgba(0, 0, 0, 0.3);
 }

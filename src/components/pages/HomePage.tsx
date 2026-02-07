@@ -1,20 +1,122 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { CheckCircle } from 'lucide-react';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
 
+const CALENDLY_URL = 'https://calendly.com/astral-integration/free-discovery-call';
+
+// Data
+const clientTypes = [
+  { icon: '🌿', title: 'Retreat Centers', desc: 'Psychedelic, yoga, wellness' },
+  { icon: '🔮', title: 'Coaches & Therapists', desc: 'Integration, somatic, spiritual' },
+  { icon: '✦', title: 'Astrologers & Readers', desc: 'Birth charts, tarot, channeling' },
+  { icon: '🎙', title: 'Influencers & Creators', desc: 'Wellness, consciousness, lifestyle' },
+  { icon: '📖', title: 'Course Creators', desc: 'Digital programs, communities' },
+];
+
+const services = [
+  { icon: '⚡', title: 'Client Journey Platforms', desc: 'Custom portals that guide your clients from first inquiry through onboarding, delivery, and follow-up. Smart intake forms, automated prep sequences, and progress tracking — all in one place.', tag: 'Replaces 5+ Tools' },
+  { icon: '🤖', title: 'AI Assistants & Chatbots', desc: '24/7 AI companions trained on your voice and methodology. Answer FAQs, guide journaling, recommend resources, and triage to human support when needed. Works on web or WhatsApp.', tag: 'New Revenue Stream' },
+  { icon: '🌐', title: 'Websites That Convert', desc: 'Lightning-fast, SEO-optimized sites that feel premium and aligned. Not template websites — custom-built to reflect your unique energy and convert visitors into clients.', tag: '2-3x More Bookings' },
+  { icon: '✉️', title: 'Email & Automation', desc: 'Intelligent email sequences that nurture leads, prepare clients, and re-engage alumni. Set it once, let it run. From lead magnet to booking — fully automated.', tag: 'Runs While You Sleep' },
+  { icon: '🔑', title: 'Membership Sites', desc: 'Gated communities, tiered content libraries, courses, and subscriber-only spaces — all under your brand. Recurring revenue that grows while you sleep. Replaces Patreon, Kajabi, and Circle.', tag: 'Recurring Revenue' },
+  { icon: '🎓', title: 'Digital Course Platforms', desc: 'Transform your knowledge into a scalable digital product. Video lessons, worksheets, guided practices, progress tracking, and community — all branded to you.', tag: 'Passive Income' },
+  { icon: '📱', title: 'Cross-Platform Apps', desc: 'Your platform, available everywhere. Clients access their membership, journal, book sessions, and track their journey — all from their phone. iOS, Android, and web from a single build.', tag: 'Premium Offering' },
+  { icon: '📊', title: 'AI Content Systems', desc: 'Content creation pipelines trained on your voice. Blog posts, social media, newsletters, SEO strategy — all consistent, all on-brand, all requiring minimal effort from you.', tag: '10x Your Output' },
+];
+
+const processSteps = [
+  { num: '01', title: 'Discovery Call', desc: 'We learn your world — your mission, your clients, your pain points. We audit your current systems and identify where the biggest impact lies.' },
+  { num: '02', title: 'Strategy & Blueprint', desc: "We design a custom roadmap tailored to your business. No cookie-cutter solutions. You'll see exactly what we'll build, why it matters, and when it ships." },
+  { num: '03', title: 'Build & Launch', desc: "We build fast and iterate with you. You'll see progress weekly, give feedback, and watch your vision come to life. Most projects launch in 2-6 weeks." },
+  { num: '04', title: 'Grow Together', desc: "Post-launch support, optimizations, and ongoing partnership. As your business evolves, your systems evolve with it. We're in this with you." },
+];
+
+const pricingTiers = [
+  {
+    name: 'Spark',
+    subtitle: 'Quick wins that make an immediate difference',
+    price: '$1,500 – $3K',
+    period: '/ project',
+    features: [
+      'Full website & systems audit',
+      'Critical fixes & optimizations',
+      'FAQ page & directory listings',
+      'Scheduling & booking setup',
+      'Email sequence templates',
+    ],
+    featured: false,
+  },
+  {
+    name: 'Growth',
+    subtitle: 'The full system build for scaling up',
+    price: '$8K – $20K',
+    period: '/ project',
+    features: [
+      'Custom website (design + development)',
+      'Client journey platform',
+      'Full email automation system',
+      'AI chatbot or assistant',
+      'Membership site or course platform',
+      'SEO & content strategy',
+      '60 days post-launch support',
+    ],
+    featured: true,
+  },
+  {
+    name: 'Scale',
+    subtitle: 'Ongoing partnership for sustained growth',
+    price: '$3 – 5K',
+    period: '/ month',
+    features: [
+      'Everything in Growth',
+      'Digital course platform',
+      'Cross-platform mobile app',
+      'AI content pipeline',
+      'Continuous optimization',
+      'Priority support & strategy calls',
+      'New features built monthly',
+    ],
+    featured: false,
+  },
+];
+
 export default function HomePage() {
-  useEffect(() => {
-    document.title = 'Astral Integration — Digital realignment for work already in motion';
-  }, []);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const revealRefs = useRef<(HTMLElement | null)[]>([]);
+
+  useEffect(() => {
+    document.title = 'Astral Integration — Growth Systems for Soul-Led Businesses';
+  }, []);
+
+  // Scroll reveal observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    revealRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const addRevealRef = (el: HTMLElement | null) => {
+    if (el && !revealRefs.current.includes(el)) {
+      revealRefs.current.push(el);
+    }
+  };
 
   const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {};
@@ -37,7 +139,7 @@ export default function HomePage() {
         {
           from_name: formData.name,
           from_email: formData.email,
-          subject: 'Digital Realignment Review Request',
+          subject: 'New Inquiry from Website',
           message: formData.message,
         },
         'v57Ta98pwBDWpoe8o'
@@ -52,543 +154,295 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-studio-bg font-sans">
+    <div className="min-h-screen bg-dark-bg font-sans">
       <Navigation />
 
       {/* HERO */}
-      <section className="min-h-[95vh] flex items-center">
-        <div className="max-w-content mx-auto px-6 md:px-12 py-32 md:py-40">
-          <div className="max-w-3xl">
-            <h1 className="text-display-sm md:text-display text-content-primary mb-8">
-              Astral Integration
-            </h1>
-            <p className="text-body text-content-secondary mb-6">
-              Digital realignment for work already in motion
-            </p>
-            <p className="text-body text-content-tertiary mb-12">
-              Selective studio collaboration when alignment is strong
-            </p>
+      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 md:px-12 pt-32 pb-16 relative overflow-hidden">
+        {/* Animated orbs */}
+        <div className="absolute w-[600px] h-[600px] bg-accent rounded-full blur-[100px] opacity-40 -top-[200px] -right-[100px] animate-float" />
+        <div className="absolute w-[400px] h-[400px] bg-[#4A3AE0] rounded-full blur-[100px] opacity-40 -bottom-[100px] -left-[100px] animate-float" style={{ animationDelay: '-7s' }} />
+        <div className="absolute w-[300px] h-[300px] bg-gold rounded-full blur-[100px] opacity-15 top-[30%] left-[10%] animate-float" style={{ animationDelay: '-14s' }} />
 
-            <p className="text-h1 md:text-display-sm text-content-primary font-medium mb-12 max-w-2xl">
-              Astral Integration is a studio that helps people and organizations translate existing work into clear, functional digital systems.
-            </p>
+        <p className="text-meta uppercase text-accent mb-8 relative z-10 animate-fadeUp animate-delay-300">
+          Growth Systems for Soul-Led Businesses
+        </p>
 
-            <p className="text-body text-content-secondary leading-relaxed mb-8 max-w-prose">
-              We work with projects that already exist — communities, practitioners, programs, spaces, initiatives — and support them in clarifying how their work is expressed, accessed, and sustained digitally.
-            </p>
+        <h1 className="font-serif text-display font-light max-w-[900px] relative z-10 animate-fadeUp animate-delay-500">
+          You change lives.<br />We build the <em className="italic gradient-text">systems.</em>
+        </h1>
 
-            <div className="max-w-prose">
-              <p className="text-body text-content-primary leading-relaxed mb-2">Our role is not to invent the work.</p>
-              <p className="text-body text-content-primary leading-relaxed">It is to support what is already real with structure that fits.</p>
+        <p className="text-body text-content-secondary max-w-[540px] mt-8 relative z-10 animate-fadeUp animate-delay-700">
+          AI-powered platforms, websites, and automations for healers, coaches, retreat centers, and creators who are ready to scale without losing their soul.
+        </p>
+
+        <div className="flex flex-col md:flex-row gap-4 mt-12 relative z-10 animate-fadeUp animate-delay-900">
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+          >
+            Book a Free Strategy Call
+          </a>
+          <a
+            href="#work"
+            className="px-10 py-4 bg-transparent text-content-secondary border border-border rounded-full text-body-sm font-medium hover:border-border-hover hover:text-content-primary transition-all"
+          >
+            See Our Work
+          </a>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-content-muted animate-fadeUp animate-delay-1200">
+          <div className="w-px h-10 bg-gradient-to-b from-accent to-transparent animate-scrollPulse" />
+          <span className="text-meta uppercase">Scroll</span>
+        </div>
+      </section>
+
+      {/* WHO WE SERVE */}
+      <section id="clients" className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            Who We Serve
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            Built for people who are<br />great at their craft
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-16">
+            You shouldn't have to choose between doing meaningful work and having a business that runs smoothly. We build the bridge.
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 border border-border rounded-2xl overflow-hidden">
+            {clientTypes.map((client, i) => (
+              <div key={i} className="bg-dark-card p-8 text-center hover:bg-dark-cardHover transition-colors border-r border-b border-border last:border-r-0 md:[&:nth-child(5)]:border-r-0 [&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:border-r [&:nth-child(4)]:border-r-0 md:[&:nth-child(4)]:border-r">
+                <div className="text-3xl mb-4">{client.icon}</div>
+                <h4 className="font-serif text-h4 mb-1">{client.title}</h4>
+                <p className="text-body-sm text-content-muted">{client.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            What We Build
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            Technology that feels like<br />an extension of your care
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-16">
+            Every system we build is designed around your clients' journey — not around software features.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, i) => (
+              <div
+                key={i}
+                className="bg-dark-card border border-border rounded-2xl p-8 hover:border-border-hover hover:bg-dark-cardHover hover:-translate-y-1 transition-all relative overflow-hidden group"
+              >
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="w-12 h-12 rounded-xl bg-accent-glow flex items-center justify-center text-xl mb-6">
+                  {service.icon}
+                </div>
+                <h3 className="font-serif text-h3 mb-3">{service.title}</h3>
+                <p className="text-body-sm text-content-secondary mb-4">{service.desc}</p>
+                <span className="inline-block text-meta uppercase text-gold bg-gold-soft px-3 py-1 rounded-full">
+                  {service.tag}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section id="process" className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            How It Works
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-16">
+            Simple. Aligned. <em className="italic text-accent">Effective.</em>
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, i) => (
+              <div key={i}>
+                <div className="font-serif text-[4rem] font-light text-accent opacity-30 leading-none mb-4">
+                  {step.num}
+                </div>
+                <h4 className="font-serif text-h4 mb-3">{step.title}</h4>
+                <p className="text-body-sm text-content-secondary">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing" className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            Investment
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">Choose your level</h2>
+          <p className="text-body text-content-secondary max-w-prose mb-16">
+            Every engagement starts with a free strategy call. No pressure, no contracts — just clarity on what will move the needle for your business.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {pricingTiers.map((tier, i) => (
+              <div
+                key={i}
+                className={`bg-dark-card border rounded-2xl p-10 flex flex-col transition-all hover:-translate-y-1 relative ${
+                  tier.featured
+                    ? 'border-accent bg-gradient-to-b from-accent-glow to-dark-card'
+                    : 'border-border hover:border-border-hover'
+                }`}
+              >
+                {tier.featured && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-meta uppercase px-4 py-1 bg-accent text-white rounded-full font-semibold">
+                    Most Popular
+                  </span>
+                )}
+                <h3 className="font-serif text-h2 mb-1">{tier.name}</h3>
+                <p className="text-body-sm text-content-muted mb-6">{tier.subtitle}</p>
+                <div className="font-serif text-[2rem] font-light text-accent mb-8 pb-8 border-b border-border">
+                  {tier.price} <span className="text-body-sm text-content-muted font-sans">{tier.period}</span>
+                </div>
+                <ul className="flex-1 mb-8 space-y-3">
+                  {tier.features.map((feature, j) => (
+                    <li key={j} className="text-body-sm text-content-secondary pl-6 relative">
+                      <span className="absolute left-0 top-1.5 text-accent text-[0.6rem]">✦</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block text-center py-4 rounded-full text-body-sm font-medium transition-all ${
+                    tier.featured
+                      ? 'bg-accent text-white btn-glow'
+                      : 'bg-transparent border border-border text-content-secondary hover:border-border-hover hover:text-content-primary'
+                  }`}
+                >
+                  {tier.featured ? 'Book a Call' : 'Get Started'}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CASE STUDY */}
+      <section id="work" className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            Our Work
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-16">Real audits. Real results.</h2>
+
+          <div className="bg-gradient-to-br from-accent-glow to-gold-soft border border-border rounded-3xl p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12">
+            <div className="flex-1">
+              <h3 className="font-serif text-h2 font-light mb-4">
+                Psychedelic Retreat Center — Full Business Audit
+              </h3>
+              <p className="text-body text-content-secondary mb-6">
+                Deep-scanned an established retreat center's entire digital presence, identified 12+ operational pain points, and designed a complete AI-powered growth roadmap — from client journey platform to integration chatbot to custom website rebuild.
+              </p>
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-3 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+              >
+                Request the Full Case Study
+              </a>
+            </div>
+            <div className="flex gap-8 md:gap-12">
+              <div className="text-center">
+                <div className="font-serif text-[2.5rem] font-light text-accent">15+</div>
+                <div className="text-meta uppercase text-content-muted mt-1">Hours / Week<br />Saved</div>
+              </div>
+              <div className="text-center">
+                <div className="font-serif text-[2.5rem] font-light text-accent">2-3x</div>
+                <div className="text-meta uppercase text-content-muted mt-1">Booking<br />Potential</div>
+              </div>
+              <div className="text-center">
+                <div className="font-serif text-[2.5rem] font-light text-accent">$36K</div>
+                <div className="text-meta uppercase text-content-muted mt-1">New Recurring<br />Revenue</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* WHAT THIS IS */}
-      <section id="services" className="py-28 md:py-36 bg-studio-bgAlt">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              What This Is
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              Many projects reach a point where effort is no longer the constraint.
-            </p>
-
-            <div className="mb-12">
-              <p className="text-body text-content-primary leading-relaxed mb-2">The work exists.</p>
-              <p className="text-body text-content-primary leading-relaxed mb-2">The value is real.</p>
-              <p className="text-body text-content-primary leading-relaxed">People are engaged.</p>
-            </div>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              But the digital expression no longer matches the work — or the work is being pushed into forms it is not ready for.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              Today, it is easy to build quickly. Platforms, products, and systems can be created before clarity is established.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              When this happens, digital form begins to lead the work instead of supporting it.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              Common signs:
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {[
-                'offerings become unclear or inflated',
-                "platforms are built to solve problems that don't yet exist",
-                'systems add complexity instead of reducing it',
-                'energy goes into maintaining structure rather than doing the work'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-lg text-content-primary font-medium">
-              Our role is to bring clarity, restraint, and structure back into alignment — so the digital layer supports the work without distorting it.
-            </p>
-          </div>
+      {/* TESTIMONIAL */}
+      <section className="py-section px-6 md:px-12 text-center">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center justify-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            Kind Words
+            <span className="w-8 h-px bg-accent" />
+          </p>
+          <blockquote className="font-serif text-display-sm font-light italic max-w-[750px] mx-auto mt-12 mb-8 relative">
+            <span className="absolute -top-12 -left-8 font-serif text-[8rem] text-accent opacity-20">"</span>
+            They understood our world before we even had to explain it. The systems they built feel like a natural extension of the care we provide to our clients.
+          </blockquote>
+          <p className="text-body-sm text-content-muted tracking-wider">
+            <strong className="text-content-secondary font-medium">— Retreat Facilitator</strong> · Valle de Bravo, Mexico
+          </p>
         </div>
       </section>
 
-      {/* OUR ROLE */}
-      <section className="py-28 md:py-36">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Our Role
-            </p>
-
-            <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
-              We step in as a clarifying and structuring layer.
-            </h2>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              We read what already exists, identify what matters now, and help it take a form that others can understand and engage with.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              Just as importantly, we help projects resist unnecessary productization.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              Not every body of work needs a platform, an application, a membership, or a system. In many cases, the most valuable work is deciding what not to build yet.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              When alignment is strong, this work may continue into a longer-term studio collaboration — where we remain involved in building, operating, or shaping the system over time.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              Our work focuses on a small set of essential questions:
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {[
-                'What is the work now?',
-                'How should people encounter it?',
-                'What is the simplest and most accurate way to offer it?',
-                'What needs to be built — and what should not be built yet?'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-lg text-content-primary font-medium">
-              Once these questions are clear, building becomes straightforward.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* OUR PROCESS */}
-      <section id="process" className="py-28 md:py-36 bg-studio-bgAlt">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose mb-16">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Our Process
-            </p>
-          </div>
-
-          {/* Step 1: Digital Realignment Review */}
-          <div className="max-w-prose mb-20">
-            <div className="py-10 border-t-2 border-content-primary mb-8">
-              <span className="text-meta text-accent font-medium">01</span>
-              <h3 className="text-h2 text-content-primary mt-5 mb-2">Digital Realignment Review</h3>
-              <p className="text-body-sm text-content-tertiary italic">Orientation before action</p>
-            </div>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              We review your existing digital landscape: website, offerings, tools, structure, language, and flow.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              You receive a grounded assessment that clarifies:
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {[
-                'what the work is currently communicating',
-                'where meaning or value is unclear',
-                'how people are likely interpreting it',
-                'where structure does not support intention',
-                'what the work is ready for next'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-lg text-content-primary font-medium">
-              This stage creates clarity before decisions are made — and often prevents unnecessary systems or platforms from being built prematurely.
-            </p>
-          </div>
-
-          {/* Step 2: Offering & Realignment Blueprint */}
-          <div className="max-w-prose mb-20">
-            <div className="py-10 border-t-2 border-studio-divider mb-8">
-              <span className="text-meta text-accent font-medium">02</span>
-              <h3 className="text-h3 text-content-primary mt-5 mb-2">Offering & Realignment Blueprint</h3>
-              <p className="text-body-sm text-content-tertiary italic">From substance to form</p>
-            </div>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              For projects that move forward, we create a clear blueprint that defines:
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {[
-                'the core offering (or set of offerings)',
-                'the central value people connect with',
-                'language that reflects the work accurately',
-                'the appropriate format (service, program, platform, system)',
-                'how people enter, engage, and deepen',
-                'a realistic sequence for building and delivery'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-lg text-content-primary font-medium">
-              This blueprint stands on its own and can be implemented independently.
-            </p>
-          </div>
-
-          {/* Step 3: Selective Build & Implementation */}
-          <div className="max-w-prose">
-            <div className="py-10 border-t-2 border-studio-divider mb-8">
-              <span className="text-meta text-accent font-medium">03</span>
-              <h3 className="text-h3 text-content-primary mt-5 mb-2">Selective Build & Implementation</h3>
-              <p className="text-body-sm text-content-tertiary italic">Only what serves</p>
-            </div>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              With clarity in place, we selectively design and build the systems that support the work cleanly.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              This may include:
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {[
-                'digital homes and websites',
-                'offering and access flows',
-                'booking, payment, and onboarding systems',
-                'program, content, or membership platforms',
-                'client or participant portals',
-                'internal tools and dashboards',
-                'custom digital products or applications',
-                'automation that reduces friction and maintenance'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-lg text-content-primary font-medium">
-              We build what is necessary — and often choose to wait until the work is ready.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* WHAT WE BUILD */}
-      <section className="py-28 md:py-36">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose mb-16">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              What We Build
-            </p>
-
-            <p className="text-lg text-content-primary font-medium">
-              The form varies. The principle remains the same.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16">
-            {/* Digital Homes */}
-            <div>
-              <h3 className="text-h3 text-content-primary mb-6">Digital Homes</h3>
-              <ul className="space-y-3">
-                {[
-                  'clear, grounded websites',
-                  'thoughtful content hierarchy',
-                  'simple navigation and flows',
-                  'design that supports understanding'
-                ].map((item, i) => (
-                  <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                    <span className="text-accent mt-1.5 text-sm">·</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Offer Structures */}
-            <div>
-              <h3 className="text-h3 text-content-primary mb-6">Offer Structures</h3>
-              <ul className="space-y-3">
-                {[
-                  'single or layered offerings',
-                  'clear entry points and progression',
-                  'formats that match the work',
-                  'systems that allow engagement without pressure'
-                ].map((item, i) => (
-                  <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                    <span className="text-accent mt-1.5 text-sm">·</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Platforms & Products */}
-            <div>
-              <h3 className="text-h3 text-content-primary mb-6">Platforms & Products</h3>
-              <ul className="space-y-3">
-                {[
-                  'programs and learning environments',
-                  'memberships and libraries',
-                  'applications and tools',
-                  'scalable systems built with intention'
-                ].map((item, i) => (
-                  <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                    <span className="text-accent mt-1.5 text-sm">·</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Operational Systems */}
-            <div>
-              <h3 className="text-h3 text-content-primary mb-6">Operational Systems</h3>
-              <ul className="space-y-3">
-                {[
-                  'booking and scheduling',
-                  'payments and subscriptions',
-                  'onboarding and follow-up',
-                  'integrations and automation'
-                ].map((item, i) => (
-                  <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                    <span className="text-accent mt-1.5 text-sm">·</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* INCUBATION & COLLABORATION */}
-      <section className="py-28 md:py-36 bg-studio-bgAlt">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Incubation & Studio Collaboration
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              Some projects extend beyond defined client work.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              When alignment is strong and long-term potential is clear, we occasionally engage as a studio partner — contributing clarity, system design, and execution over time, sometimes through shared ownership or ongoing collaboration.
-            </p>
-
-            <p className="text-lg text-content-primary font-medium">
-              These engagements are selective and built on shared direction.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* WHO THIS IS FOR */}
-      <section id="about" className="py-28 md:py-36">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Who This Is For
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              This work is for people and teams who:
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {[
-                'already have something real in motion',
-                'feel unclear about how to present or offer it',
-                'want their digital presence to reflect substance',
-                'value clarity over constant iteration',
-                'are willing to make deliberate decisions'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-          </div>
-        </div>
-      </section>
-
-      {/* HOW PEOPLE FIND US */}
-      <section className="py-28 md:py-36 bg-studio-bgAlt">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              How People Find Us
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              Most work comes through:
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {[
-                'referrals',
-                'introductions',
-                'shared projects',
-                'trusted connections'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-lg text-content-primary font-medium">
-              If someone pointed you here, that context matters.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* START HERE */}
-      <section className="py-28 md:py-36">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Start Here
-            </p>
-
-            <h2 className="text-h1 md:text-display-sm text-content-primary mb-10">
-              Digital Realignment Review
-            </h2>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              If you're unsure what your work truly is — or how it should be expressed and supported digitally — this is the place to begin.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              You'll receive:
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {[
-                'clear articulation',
-                'grounded direction',
-                'a practical next step'
-              ].map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <a
-              href="/review"
-              className="inline-block px-10 py-4 bg-content-primary text-studio-bg hover:bg-content-primary/90 active:bg-content-primary/80 transition-colors text-body font-medium"
-            >
-              Request a Digital Realignment Review
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* CLOSING */}
-      <section className="py-28 md:py-36 bg-studio-bgAlt">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              Digital systems are extensions of thought, intention, and structure.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              When they are aligned, work becomes easier — for the people building it and the people engaging with it.
-            </p>
-
-            <div>
-              <p className="text-body text-content-primary leading-relaxed mb-2">The website is not the work.</p>
-              <p className="text-body text-content-primary leading-relaxed">It is where the work becomes accessible.</p>
-            </div>
-          </div>
+      {/* CTA */}
+      <section className="py-section-lg px-6 md:px-12 text-center relative overflow-hidden">
+        <div className="absolute w-[500px] h-[500px] bg-accent rounded-full blur-[150px] opacity-15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+        <div className="max-w-content mx-auto relative z-10 reveal" ref={addRevealRef}>
+          <h2 className="font-serif text-display font-light mb-6">
+            Ready to scale<br />with <em className="italic text-accent">soul?</em>
+          </h2>
+          <p className="text-body text-content-secondary max-w-[500px] mx-auto mb-12">
+            Book a free 30-minute strategy call. We'll audit your current setup, identify your biggest opportunities, and map out exactly what to build first.
+          </p>
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-12 py-5 bg-accent text-white rounded-full text-body font-medium btn-glow"
+          >
+            Book Your Free Call →
+          </a>
         </div>
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-28 md:py-36 bg-[#232323]">
-        <div className="max-w-content mx-auto px-6 md:px-12">
+      <section id="contact" className="py-section px-6 md:px-12 bg-dark-card">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <div className="max-w-prose">
-            <p className="text-meta text-white/50 uppercase tracking-wider mb-6">
+            <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+              <span className="w-8 h-px bg-accent" />
               Get in Touch
             </p>
-
-            <p className="text-body text-white/70 leading-relaxed mb-10">
-              Request a Digital Realignment Review or start a conversation.
+            <p className="text-body text-content-secondary mb-10">
+              Prefer email? Send us a message and we'll get back to you within 24-48 hours.
             </p>
 
-            <p className="text-body text-white/70 leading-relaxed mb-8">
-              Tell us:
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {[
-                'what your work is',
-                'where clarity feels missing',
-                "what you're hoping to resolve"
-              ].map((item, i) => (
-                <li key={i} className="text-body text-white/70 flex items-start gap-3">
-                  <span className="text-white/40">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-body text-white/90 mb-14">
-              We respond directly and thoughtfully.
-            </p>
-
-            {/* Contact Form */}
             {formStatus !== 'success' ? (
-              <form onSubmit={handleContactSubmit} className="space-y-8">
+              <form onSubmit={handleContactSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-body-sm text-white/60 mb-3">
+                  <label htmlFor="name" className="block text-body-sm text-content-muted mb-3">
                     Name
                   </label>
                   <input
@@ -596,8 +450,8 @@ export default function HomePage() {
                     id="name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className={`w-full px-5 py-4 bg-[#2C2C2C] border text-white placeholder-white/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors ${
-                      formErrors.name ? 'border-red-400 focus:ring-red-400/20' : 'border-[#404040]'
+                    className={`w-full px-5 py-4 bg-dark-bg border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors ${
+                      formErrors.name ? 'border-red-400 focus:ring-red-400/20' : 'border-border'
                     }`}
                     placeholder="Your name"
                   />
@@ -605,7 +459,7 @@ export default function HomePage() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-body-sm text-white/60 mb-3">
+                  <label htmlFor="email" className="block text-body-sm text-content-muted mb-3">
                     Email
                   </label>
                   <input
@@ -613,8 +467,8 @@ export default function HomePage() {
                     id="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className={`w-full px-5 py-4 bg-[#2C2C2C] border text-white placeholder-white/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors ${
-                      formErrors.email ? 'border-red-400 focus:ring-red-400/20' : 'border-[#404040]'
+                    className={`w-full px-5 py-4 bg-dark-bg border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors ${
+                      formErrors.email ? 'border-red-400 focus:ring-red-400/20' : 'border-border'
                     }`}
                     placeholder="your@email.com"
                   />
@@ -622,7 +476,7 @@ export default function HomePage() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-body-sm text-white/60 mb-3">
+                  <label htmlFor="message" className="block text-body-sm text-content-muted mb-3">
                     Message
                   </label>
                   <textarea
@@ -630,10 +484,10 @@ export default function HomePage() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={5}
-                    className={`w-full px-5 py-4 bg-[#2C2C2C] border text-white placeholder-white/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors resize-none ${
-                      formErrors.message ? 'border-red-400 focus:ring-red-400/20' : 'border-[#404040]'
+                    className={`w-full px-5 py-4 bg-dark-bg border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors resize-none ${
+                      formErrors.message ? 'border-red-400 focus:ring-red-400/20' : 'border-border'
                     }`}
-                    placeholder="What is your work? Where does clarity feel missing?"
+                    placeholder="Tell us about your project..."
                   />
                   {formErrors.message && <p className="mt-2 text-body-sm text-red-400">{formErrors.message}</p>}
                 </div>
@@ -641,26 +495,26 @@ export default function HomePage() {
                 <button
                   type="submit"
                   disabled={formStatus === 'sending'}
-                  className="px-10 py-4 bg-white text-[#232323] hover:bg-white/90 active:bg-white/80 transition-colors text-body font-medium disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[#232323]"
+                  className="px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {formStatus === 'sending' ? 'Sending...' : formStatus === 'error' ? 'Error - try again' : 'Request a Review'}
+                  {formStatus === 'sending' ? 'Sending...' : formStatus === 'error' ? 'Error - try again' : 'Send Message'}
                 </button>
               </form>
             ) : (
               <div className="py-16 text-center">
-                <CheckCircle className="w-8 h-8 text-white mx-auto mb-6" />
-                <h3 className="text-h2 text-white mb-4">Message received</h3>
-                <p className="text-body text-white/70 mb-3">
+                <CheckCircle className="w-12 h-12 text-accent mx-auto mb-6" />
+                <h3 className="font-serif text-h2 mb-4">Message received</h3>
+                <p className="text-body text-content-secondary mb-3">
                   We'll respond within 24-48 hours.
                 </p>
-                <p className="text-body-sm text-white/50">
+                <p className="text-body-sm text-content-muted">
                   Check your inbox for a reply from hello@astralintegration.co
                 </p>
               </div>
             )}
 
-            <div className="mt-20 pt-10 border-t border-[#404040]">
-              <p className="text-body-sm text-white/40">
+            <div className="mt-16 pt-8 border-t border-border">
+              <p className="text-body-sm text-content-muted">
                 hello@astralintegration.co
               </p>
             </div>

@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+
+const CALENDLY_URL = 'https://calendly.com/astral-integration/free-discovery-call';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 100);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -36,78 +36,79 @@ export default function Navigation() {
     };
   }, [mobileMenuOpen]);
 
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [location.pathname]);
-
   const navItems = [
-    { label: 'Work', path: '/work' },
-    { label: 'Process', path: '/process' },
-    { label: 'About', path: '/about' },
-    { label: 'Start Here', path: '/start-here' },
+    { label: 'Services', href: '#services' },
+    { label: 'Process', href: '#process' },
+    { label: 'Pricing', href: '#pricing' },
+    { label: 'Work', href: '#work' },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      setMobileMenuOpen(false);
+    }
+  };
 
   return (
     <>
       <nav
         role="navigation"
         aria-label="Main navigation"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-12 py-6 ${
           isScrolled || mobileMenuOpen
-            ? 'bg-studio-bg/98 backdrop-blur-sm border-b border-studio-divider'
+            ? 'glass border-b border-border'
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <Link
-              to="/"
-              className="text-content-primary text-body font-medium hover:text-content-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-sm"
-              aria-label="Astral Integration home"
-            >
-              Astral Integration
-            </Link>
+        <div className="max-w-content mx-auto flex items-center justify-between">
+          {/* Logo */}
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="font-serif text-2xl font-light tracking-wide text-content-primary"
+          >
+            Astral <em className="italic text-accent">Integration</em>
+          </a>
 
-            {/* Desktop Nav Links */}
-            <div className="hidden md:flex items-center gap-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`text-body-sm transition-colors ${
-                    isActive(item.path)
-                      ? 'text-content-primary font-medium'
-                      : 'text-content-secondary hover:text-content-primary'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <Link
-                to="/contact"
-                className={`text-body-sm transition-colors ${
-                  isActive('/contact')
-                    ? 'text-content-primary font-medium'
-                    : 'text-content-secondary hover:text-content-primary'
-                }`}
+          {/* Desktop Nav Links */}
+          <div className="hidden md:flex items-center gap-10">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
+                className="text-nav uppercase text-content-secondary hover:text-accent transition-colors"
               >
-                Contact
-              </Link>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-expanded={mobileMenuOpen}
-              aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              className="md:hidden p-2 -mr-2 text-content-secondary hover:text-content-primary transition-colors"
+                {item.label}
+              </a>
+            ))}
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-nav uppercase px-6 py-2.5 border border-accent rounded-full text-accent hover:bg-accent hover:text-white transition-all hover:shadow-glow"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+              Book a Call
+            </a>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            className="md:hidden p-2 -mr-2 text-content-secondary hover:text-content-primary transition-colors"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </nav>
 
@@ -115,39 +116,38 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 z-40 md:hidden"
+            className="fixed inset-0 z-40 bg-dark-bg/80 backdrop-blur-sm md:hidden"
             aria-hidden="true"
             onClick={() => setMobileMenuOpen(false)}
           />
 
           <div
-            className="fixed top-16 left-0 right-0 z-50 md:hidden"
+            className="fixed top-[72px] left-0 right-0 z-50 md:hidden"
             role="menu"
             aria-label="Mobile navigation"
           >
-            <div className="bg-studio-bg border-b border-studio-divider shadow-lg">
-              <div className="max-w-content mx-auto px-6 py-4">
+            <div className="bg-dark-card border-b border-border">
+              <div className="max-w-content mx-auto px-6 py-6 flex flex-col gap-2">
                 {navItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    className={`block w-full text-left py-4 text-body transition-colors border-b border-studio-divider ${
-                      isActive(item.path)
-                        ? 'text-content-primary font-medium'
-                        : 'text-content-primary hover:text-accent'
-                    }`}
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className="block py-4 text-body text-content-primary hover:text-accent transition-colors border-b border-border"
                     role="menuitem"
                   >
                     {item.label}
-                  </Link>
+                  </a>
                 ))}
-                <Link
-                  to="/contact"
-                  className="block w-full text-left py-4 text-body text-content-primary hover:text-accent transition-colors"
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block py-4 text-body text-accent font-medium"
                   role="menuitem"
                 >
-                  Contact
-                </Link>
+                  Book a Call
+                </a>
               </div>
             </div>
           </div>
