@@ -19,13 +19,19 @@ body::after {
   inset: 0;
   background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
-  z-index: 9999;
+  z-index: 100;
 }
 
 /* Selection color */
 ::selection {
-  background-color: #7B68EE;
+  background-color: #c4956a;
   color: white;
+}
+
+/* Focus visible — global accessibility */
+:focus-visible {
+  outline: 2px solid rgba(196, 149, 106, 0.50);
+  outline-offset: 2px;
 }
 
 /* Custom scrollbar - dark theme */
@@ -38,12 +44,12 @@ body::after {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #7B68EE;
+  background: #c4956a;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6C5CE7;
+  background: #d4a57a;
 }
 
 /* Animation utilities */
@@ -105,7 +111,7 @@ body::after {
 
 /* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, #7B68EE, #C9A96E);
+  background: linear-gradient(135deg, #d4a57a, #c4956a, #a67b52);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -119,32 +125,32 @@ body::after {
 
 /* Glow button effect */
 .btn-glow {
-  box-shadow: 0 0 40px rgba(123, 104, 238, 0.15);
+  box-shadow: 0 0 40px rgba(196, 149, 106, 0.15);
   transition: all 0.3s ease;
 }
 
 .btn-glow:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 60px rgba(123, 104, 238, 0.3), 0 10px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 60px rgba(196, 149, 106, 0.3), 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* Tool theme CSS variables */
 :root {
-  --tool-primary: #7B68EE;
-  --tool-primary-glow: rgba(123, 104, 238, 0.15);
+  --tool-primary: #c4956a;
+  --tool-primary-glow: rgba(196, 149, 106, 0.15);
   --tool-accent: #2A9D6A;
 }
 
 [data-tool="life-os"] {
-  --tool-primary: #7B68EE;
-  --tool-primary-glow: rgba(123, 104, 238, 0.15);
+  --tool-primary: #c4956a;
+  --tool-primary-glow: rgba(196, 149, 106, 0.15);
   --tool-accent: #2A9D6A;
 }
 
 [data-tool="content-studio"] {
   --tool-primary: #C9A96E;
   --tool-primary-glow: rgba(201, 169, 110, 0.15);
-  --tool-accent: #7B68EE;
+  --tool-accent: #c4956a;
 }
 
 /* Tool-specific gradient text */
@@ -170,14 +176,14 @@ body::after {
 .blueprint-terminal {
   position: relative;
   background: #0c0c12;
-  border: 1px solid rgba(123, 104, 238, 0.15);
+  border: 1px solid rgba(196, 149, 106, 0.15);
   border-radius: 12px;
   padding: 1.5rem;
   padding-top: 2.5rem;
   overflow-x: auto;
   font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
   color: #9895A8;
-  box-shadow: 0 0 60px rgba(123, 104, 238, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 60px rgba(196, 149, 106, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 /* Terminal chrome dots */
@@ -188,7 +194,7 @@ body::after {
   left: 1.25rem;
   font-size: 0.5rem;
   letter-spacing: 0.35em;
-  color: rgba(123, 104, 238, 0.35);
+  color: rgba(196, 149, 106, 0.35);
 }
 
 /* Scrollbar for terminal */
@@ -201,10 +207,10 @@ body::after {
 }
 
 .blueprint-terminal::-webkit-scrollbar-thumb {
-  background: rgba(123, 104, 238, 0.2);
+  background: rgba(196, 149, 106, 0.2);
   border-radius: 3px;
 }
 
 .blueprint-terminal::-webkit-scrollbar-thumb:hover {
-  background: rgba(123, 104, 238, 0.4);
+  background: rgba(196, 149, 106, 0.4);
 }

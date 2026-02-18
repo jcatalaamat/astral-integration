@@ -34,10 +34,10 @@ export const TOOLS: Record<string, Tool> = {
     description: 'A minimalist task system for people who think differently. Capture thoughts, organize priorities, and move through your day with clarity.',
     icon: '◉',
     theme: {
-      primary: '#7B68EE',
-      primaryGlow: 'rgba(123, 104, 238, 0.15)',
+      primary: '#c4956a',
+      primaryGlow: 'rgba(196, 149, 106, 0.15)',
       accent: '#2A9D6A',
-      gradient: 'linear-gradient(135deg, #7B68EE, #2A9D6A)',
+      gradient: 'linear-gradient(135deg, #c4956a, #2A9D6A)',
     },
     features: {
       free: [
@@ -89,8 +89,8 @@ export const TOOLS: Record<string, Tool> = {
     theme: {
       primary: '#C9A96E',
       primaryGlow: 'rgba(201, 169, 110, 0.15)',
-      accent: '#7B68EE',
-      gradient: 'linear-gradient(135deg, #C9A96E, #7B68EE)',
+      accent: '#c4956a',
+      gradient: 'linear-gradient(135deg, #C9A96E, #c4956a)',
     },
     features: {
       free: [

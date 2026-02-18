@@ -18,7 +18,7 @@ function useIsMobile() {
 }
 
 const CATEGORIES = [
-  { id: "inbox", label: "Inbox", icon: "⚡", color: "#7B68EE", desc: "Quick capture — dump it here, sort later" },
+  { id: "inbox", label: "Inbox", icon: "⚡", color: "#c4956a", desc: "Quick capture — dump it here, sort later" },
   { id: "today", label: "Today", icon: "◉", color: "#E8E6F0", desc: "What matters right now" },
   { id: "followup", label: "Follow Up", icon: "↩", color: "#C9A96E", desc: "People, emails, threads to close" },
   { id: "ideas", label: "Ideas", icon: "✦", color: "#4A9EE0", desc: "Things to build, try, explore" },
@@ -216,7 +216,7 @@ export default function LifeOSApp() {
       <div
         style={{
           padding: isMobile ? "16px" : "20px 24px",
-          borderBottom: "1px solid rgba(123,104,238,0.08)",
+          borderBottom: "1px solid rgba(196,149,106,0.08)",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -229,8 +229,8 @@ export default function LifeOSApp() {
             onClick={() => setShowSidebar(!showSidebar)}
             style={{
               background: "transparent",
-              border: "1px solid rgba(123,104,238,0.15)",
-              color: "#7B68EE",
+              border: "1px solid rgba(196,149,106,0.15)",
+              color: "#c4956a",
               width: "40px",
               height: "40px",
               borderRadius: "10px",
@@ -285,7 +285,7 @@ export default function LifeOSApp() {
             setInputCategory("inbox");
           }}
           style={{
-            background: showCapture ? "rgba(123,104,238,0.2)" : "#7B68EE",
+            background: showCapture ? "rgba(196,149,106,0.2)" : "#c4956a",
             border: "none",
             color: "white",
             width: "40px",
@@ -298,7 +298,7 @@ export default function LifeOSApp() {
             justifyContent: "center",
             transition: "all 0.2s",
             transform: showCapture ? "rotate(45deg)" : "none",
-            boxShadow: showCapture ? "none" : "0 0 20px rgba(123,104,238,0.2)",
+            boxShadow: showCapture ? "none" : "0 0 20px rgba(196,149,106,0.2)",
             flexShrink: 0,
           }}
         >
@@ -312,7 +312,7 @@ export default function LifeOSApp() {
           style={{
             padding: "16px 24px",
             background: "#0d0d14",
-            borderBottom: "1px solid rgba(123,104,238,0.12)",
+            borderBottom: "1px solid rgba(196,149,106,0.12)",
           }}
         >
           <div style={{ display: "flex", gap: "8px", marginBottom: "12px" }}>
@@ -328,7 +328,7 @@ export default function LifeOSApp() {
               style={{
                 flex: 1,
                 background: "#111118",
-                border: "1px solid rgba(123,104,238,0.15)",
+                border: "1px solid rgba(196,149,106,0.15)",
                 borderRadius: "10px",
                 color: "#E8E6F0",
                 padding: "12px 16px",
@@ -341,7 +341,7 @@ export default function LifeOSApp() {
               onClick={addItem}
               disabled={!inputValue.trim()}
               style={{
-                background: inputValue.trim() ? "#7B68EE" : "#1a1a24",
+                background: inputValue.trim() ? "#c4956a" : "#1a1a24",
                 border: "none",
                 color: "white",
                 padding: "12px 20px",
@@ -364,7 +364,7 @@ export default function LifeOSApp() {
                 onClick={() => setInputCategory(cat.id)}
                 style={{
                   background: inputCategory === cat.id ? `${cat.color}18` : "transparent",
-                  border: `1px solid ${inputCategory === cat.id ? cat.color + "50" : "rgba(123,104,238,0.08)"}`,
+                  border: `1px solid ${inputCategory === cat.id ? cat.color + "50" : "rgba(196,149,106,0.08)"}`,
                   color: inputCategory === cat.id ? cat.color : "#6B6880",
                   padding: "5px 12px",
                   borderRadius: "100px",
@@ -399,7 +399,7 @@ export default function LifeOSApp() {
         <div
           style={{
             width: isMobile ? "280px" : "220px",
-            borderRight: "1px solid rgba(123,104,238,0.08)",
+            borderRight: "1px solid rgba(196,149,106,0.08)",
             padding: "16px 0",
             display: isMobile && !showSidebar ? "none" : "flex",
             flexDirection: "column",
@@ -431,7 +431,7 @@ export default function LifeOSApp() {
                 alignItems: "center",
                 gap: "10px",
                 padding: "10px 20px",
-                background: activeCategory === cat.id ? "rgba(123,104,238,0.06)" : "transparent",
+                background: activeCategory === cat.id ? "rgba(196,149,106,0.06)" : "transparent",
                 border: "none",
                 borderRight: activeCategory === cat.id ? `2px solid ${cat.color}` : "2px solid transparent",
                 color: activeCategory === cat.id ? "#E8E6F0" : "#6B6880",
@@ -466,15 +466,15 @@ export default function LifeOSApp() {
 
           <div style={{ flex: 1 }} />
 
-          <div style={{ padding: "16px 20px", borderTop: "1px solid rgba(123,104,238,0.06)" }}>
+          <div style={{ padding: "16px 20px", borderTop: "1px solid rgba(196,149,106,0.06)" }}>
             <div style={{ fontSize: "11px", color: "#4a4860", marginBottom: "4px" }}>Total active</div>
-            <div style={{ fontSize: "24px", fontWeight: 300, color: "#7B68EE" }}>
+            <div style={{ fontSize: "24px", fontWeight: 300, color: "#c4956a" }}>
               {items.filter((i) => !i.done).length}
             </div>
           </div>
 
           {/* Branding at bottom */}
-          <div style={{ padding: "12px 20px", borderTop: "1px solid rgba(123,104,238,0.06)" }}>
+          <div style={{ padding: "12px 20px", borderTop: "1px solid rgba(196,149,106,0.06)" }}>
             <AstralBranding variant="compact" />
           </div>
         </div>
@@ -522,7 +522,7 @@ export default function LifeOSApp() {
               }}
               style={{
                 background: "#111118",
-                border: "1px dashed rgba(123,104,238,0.15)",
+                border: "1px dashed rgba(196,149,106,0.15)",
                 color: "#6B6880",
                 padding: "8px 14px",
                 borderRadius: "8px",
@@ -540,7 +540,7 @@ export default function LifeOSApp() {
                   onClick={() => setShowCompleted(!showCompleted)}
                   style={{
                     background: "transparent",
-                    border: "1px solid rgba(123,104,238,0.08)",
+                    border: "1px solid rgba(196,149,106,0.08)",
                     color: "#6B6880",
                     padding: "8px 14px",
                     borderRadius: "8px",
@@ -595,7 +595,7 @@ export default function LifeOSApp() {
                   padding: "12px 14px",
                   background: item.done ? "transparent" : item.priority ? "rgba(201,169,110,0.04)" : "#111118",
                   border: `1px solid ${
-                    item.priority && !item.done ? "rgba(201,169,110,0.15)" : "rgba(123,104,238,0.06)"
+                    item.priority && !item.done ? "rgba(201,169,110,0.15)" : "rgba(196,149,106,0.06)"
                   }`,
                   borderRadius: "10px",
                   opacity: item.done ? 0.4 : 1,
@@ -609,7 +609,7 @@ export default function LifeOSApp() {
                     width: "20px",
                     height: "20px",
                     borderRadius: "6px",
-                    border: `1.5px solid ${item.done ? "#2A9D6A" : "rgba(123,104,238,0.25)"}`,
+                    border: `1.5px solid ${item.done ? "#2A9D6A" : "rgba(196,149,106,0.25)"}`,
                     background: item.done ? "rgba(42,157,106,0.15)" : "transparent",
                     cursor: "pointer",
                     display: "flex",
@@ -641,7 +641,7 @@ export default function LifeOSApp() {
                         width: "100%",
                         background: "transparent",
                         border: "none",
-                        borderBottom: "1px solid rgba(123,104,238,0.3)",
+                        borderBottom: "1px solid rgba(196,149,106,0.3)",
                         color: "#E8E6F0",
                         fontSize: "14px",
                         fontFamily: "inherit",

@@ -14,16 +14,31 @@ export default {
           card: '#111118',
           cardHover: '#16161f',
         },
-        // Accent colors
+        // Accent colors — copper/gold
         accent: {
-          DEFAULT: '#7B68EE',
-          soft: '#6C5CE7',
-          glow: 'rgba(123, 104, 238, 0.15)',
-          glowStrong: 'rgba(123, 104, 238, 0.3)',
+          DEFAULT: '#c4956a',
+          hover: '#d4a57a',
+          glow: 'rgba(196, 149, 106, 0.15)',
+          glowStrong: 'rgba(196, 149, 106, 0.3)',
+          subtle: 'rgba(196, 149, 106, 0.08)',
+          border: 'rgba(196, 149, 106, 0.25)',
         },
         gold: {
           DEFAULT: '#C9A96E',
           soft: 'rgba(201, 169, 110, 0.15)',
+        },
+        // Semantic state colors
+        success: {
+          DEFAULT: '#7fb885',
+          bg: 'rgba(127, 184, 133, 0.08)',
+        },
+        error: {
+          DEFAULT: '#e05c5c',
+          bg: 'rgba(224, 92, 92, 0.08)',
+        },
+        warning: {
+          DEFAULT: '#d4a24e',
+          bg: 'rgba(212, 162, 78, 0.08)',
         },
         // Text colors
         content: {
@@ -33,13 +48,13 @@ export default {
         },
         // Border colors
         border: {
-          DEFAULT: 'rgba(123, 104, 238, 0.12)',
-          hover: 'rgba(123, 104, 238, 0.3)',
+          DEFAULT: 'rgba(196, 149, 106, 0.12)',
+          hover: 'rgba(196, 149, 106, 0.3)',
         },
         // Tool-specific theme colors (via CSS variables)
         tool: {
-          primary: 'var(--tool-primary, #7B68EE)',
-          primaryGlow: 'var(--tool-primary-glow, rgba(123, 104, 238, 0.15))',
+          primary: 'var(--tool-primary, #c4956a)',
+          primaryGlow: 'var(--tool-primary-glow, rgba(196, 149, 106, 0.15))',
           accent: 'var(--tool-accent, #2A9D6A)',
         },
       },
@@ -58,7 +73,7 @@ export default {
       },
       fontFamily: {
         sans: ['DM Sans', 'system-ui', '-apple-system', 'sans-serif'],
-        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+        serif: ['Instrument Serif', 'Georgia', 'serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'SF Mono', 'monospace'],
       },
       maxWidth: {
@@ -97,13 +112,16 @@ export default {
         },
       },
       borderRadius: {
-        'xl': '12px',
+        'sm': '6px',
+        'md': '10px',
+        'lg': '14px',
+        'xl': '16px',
         '2xl': '16px',
         '3xl': '24px',
       },
       boxShadow: {
-        'glow': '0 0 40px rgba(123, 104, 238, 0.15)',
-        'glow-lg': '0 0 60px rgba(123, 104, 238, 0.3), 0 10px 40px rgba(0,0,0,0.3)',
+        'glow': '0 0 40px rgba(196, 149, 106, 0.15)',
+        'glow-lg': '0 0 60px rgba(196, 149, 106, 0.3), 0 10px 40px rgba(0,0,0,0.3)',
         'card': '0 4px 20px rgba(0, 0, 0, 0.3)',
       },
     },

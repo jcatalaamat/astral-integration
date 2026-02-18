@@ -49,7 +49,7 @@ const CONTENT_TYPES = [
 ];
 
 const PILLARS = [
-  { id: "audit", label: "Audit Breakdown", color: "#7B68EE" },
+  { id: "audit", label: "Audit Breakdown", color: "#c4956a" },
   { id: "build", label: "Behind the Build", color: "#C9A96E" },
   { id: "insight", label: "Industry Insight", color: "#4A9EE0" },
   { id: "tips", label: "Tech for Healers", color: "#2A9D6A" },

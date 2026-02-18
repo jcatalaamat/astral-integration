@@ -115,7 +115,7 @@ export default function LifeOSLanding() {
                       className="flex items-center gap-3 p-3 rounded-lg border"
                       style={{
                         background: item.priority ? 'rgba(201,169,110,0.04)' : '#111118',
-                        borderColor: item.priority ? 'rgba(201,169,110,0.15)' : 'rgba(123,104,238,0.06)',
+                        borderColor: item.priority ? 'rgba(201,169,110,0.15)' : 'rgba(196,149,106,0.06)',
                       }}
                     >
                       <div className="w-5 h-5 rounded border border-border" />

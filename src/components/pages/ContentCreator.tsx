@@ -42,7 +42,7 @@ const CONTENT_TYPES = [
 ];
 
 const PILLARS = [
-  { id: "audit", label: "Audit Breakdown", color: "#7B68EE" },
+  { id: "audit", label: "Audit Breakdown", color: "#c4956a" },
   { id: "build", label: "Behind the Build", color: "#C9A96E" },
   { id: "insight", label: "Industry Insight", color: "#4A9EE0" },
   { id: "tips", label: "Tech for Healers", color: "#2A9D6A" },
@@ -148,7 +148,7 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
     }}>
       {/* Header */}
       <div style={{
-        borderBottom: "1px solid rgba(123,104,238,0.12)",
+        borderBottom: "1px solid rgba(196,149,106,0.12)",
         padding: isMobile ? "16px" : "20px 24px",
         display: "flex",
         justifyContent: "space-between",
@@ -158,7 +158,7 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
       }}>
         <div style={{ flex: 1, minWidth: isMobile ? "100%" : "auto" }}>
           <div style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: isMobile ? "18px" : "22px", fontWeight: 300, letterSpacing: "0.1em" }}>
-            Astral <span style={{ fontStyle: "italic", color: "#7B68EE" }}>Content Studio</span>
+            Astral <span style={{ fontStyle: "italic", color: "#c4956a" }}>Content Studio</span>
           </div>
           <div style={{ fontSize: "11px", color: "#6B6880", letterSpacing: "0.2em", textTransform: "uppercase", marginTop: "4px" }}>
             AI-Powered Content for Soul-Led Businesses
@@ -167,8 +167,8 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
         <button
           onClick={() => setShowHistory(!showHistory)}
           style={{
-            background: showHistory ? "rgba(123,104,238,0.15)" : "transparent",
-            border: "1px solid rgba(123,104,238,0.2)",
+            background: showHistory ? "rgba(196,149,106,0.15)" : "transparent",
+            border: "1px solid rgba(196,149,106,0.2)",
             color: "#9895A8",
             padding: "8px 16px",
             borderRadius: "100px",
@@ -187,7 +187,7 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
 
           {/* Content Type Selector */}
           <div style={{ marginBottom: "28px" }}>
-            <label style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#7B68EE", display: "block", marginBottom: "12px" }}>
+            <label style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#c4956a", display: "block", marginBottom: "12px" }}>
               Content Type
             </label>
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
@@ -196,8 +196,8 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
                   key={type.id}
                   onClick={() => setContentType(type.id)}
                   style={{
-                    background: contentType === type.id ? "rgba(123,104,238,0.15)" : "#111118",
-                    border: `1px solid ${contentType === type.id ? "#7B68EE" : "rgba(123,104,238,0.12)"}`,
+                    background: contentType === type.id ? "rgba(196,149,106,0.15)" : "#111118",
+                    border: `1px solid ${contentType === type.id ? "#c4956a" : "rgba(196,149,106,0.12)"}`,
                     color: contentType === type.id ? "#E8E6F0" : "#9895A8",
                     padding: "10px 16px",
                     borderRadius: "10px",
@@ -218,7 +218,7 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
 
           {/* Pillar Selector */}
           <div style={{ marginBottom: "28px" }}>
-            <label style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#7B68EE", display: "block", marginBottom: "12px" }}>
+            <label style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#c4956a", display: "block", marginBottom: "12px" }}>
               Content Pillar
             </label>
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
@@ -228,7 +228,7 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
                   onClick={() => setPillar(p.id)}
                   style={{
                     background: pillar === p.id ? `${p.color}20` : "#111118",
-                    border: `1px solid ${pillar === p.id ? p.color : "rgba(123,104,238,0.12)"}`,
+                    border: `1px solid ${pillar === p.id ? p.color : "rgba(196,149,106,0.12)"}`,
                     color: pillar === p.id ? "#E8E6F0" : "#9895A8",
                     padding: "10px 16px",
                     borderRadius: "10px",
@@ -246,7 +246,7 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
 
           {/* Topic Input */}
           <div style={{ marginBottom: "16px" }}>
-            <label style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#7B68EE", display: "block", marginBottom: "12px" }}>
+            <label style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#c4956a", display: "block", marginBottom: "12px" }}>
               Topic / Seed Idea
             </label>
             <div style={{ position: "relative" }}>
@@ -258,7 +258,7 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
                 style={{
                   width: "100%",
                   background: "#111118",
-                  border: "1px solid rgba(123,104,238,0.12)",
+                  border: "1px solid rgba(196,149,106,0.12)",
                   borderRadius: "12px",
                   color: "#E8E6F0",
                   padding: "16px",
@@ -269,8 +269,8 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
                   lineHeight: "1.6",
                   boxSizing: "border-box",
                 }}
-                onFocus={e => e.target.style.borderColor = "#7B68EE"}
-                onBlur={e => e.target.style.borderColor = "rgba(123,104,238,0.12)"}
+                onFocus={e => e.target.style.borderColor = "#c4956a"}
+                onBlur={e => e.target.style.borderColor = "rgba(196,149,106,0.12)"}
               />
             </div>
           </div>
@@ -285,7 +285,7 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
                   onClick={() => useExample(prompt)}
                   style={{
                     background: "transparent",
-                    border: "1px solid rgba(123,104,238,0.08)",
+                    border: "1px solid rgba(196,149,106,0.08)",
                     color: "#6B6880",
                     padding: "6px 12px",
                     borderRadius: "100px",
@@ -308,7 +308,7 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
             style={{
               width: "100%",
               padding: "16px",
-              background: loading ? "#4A3AE0" : "#7B68EE",
+              background: loading ? "#a67b52" : "#c4956a",
               color: "white",
               border: "none",
               borderRadius: "12px",
@@ -317,7 +317,7 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
               cursor: loading || !topic.trim() ? "default" : "pointer",
               opacity: !topic.trim() ? 0.4 : 1,
               transition: "all 0.3s",
-              boxShadow: topic.trim() ? "0 0 40px rgba(123,104,238,0.15)" : "none",
+              boxShadow: topic.trim() ? "0 0 40px rgba(196,149,106,0.15)" : "none",
               letterSpacing: "0.03em",
               fontFamily: "inherit",
             }}
@@ -344,14 +344,14 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
           {output && (
             <div style={{ marginTop: "32px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
-                <div style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#7B68EE" }}>
+                <div style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#c4956a" }}>
                   Generated Content
                 </div>
                 <button
                   onClick={copyToClipboard}
                   style={{
-                    background: copied ? "rgba(42,157,106,0.15)" : "rgba(123,104,238,0.1)",
-                    border: `1px solid ${copied ? "#2A9D6A" : "rgba(123,104,238,0.2)"}`,
+                    background: copied ? "rgba(42,157,106,0.15)" : "rgba(196,149,106,0.1)",
+                    border: `1px solid ${copied ? "#2A9D6A" : "rgba(196,149,106,0.2)"}`,
                     color: copied ? "#2A9D6A" : "#9895A8",
                     padding: "8px 16px",
                     borderRadius: "100px",
@@ -365,7 +365,7 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
               </div>
               <div style={{
                 background: "#111118",
-                border: "1px solid rgba(123,104,238,0.12)",
+                border: "1px solid rgba(196,149,106,0.12)",
                 borderRadius: "14px",
                 padding: "24px",
                 whiteSpace: "pre-wrap",
@@ -386,14 +386,14 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
         {showHistory && (
           <div style={{
             width: isMobile ? "100%" : "350px",
-            borderLeft: isMobile ? "none" : "1px solid rgba(123,104,238,0.12)",
-            borderTop: isMobile ? "1px solid rgba(123,104,238,0.12)" : "none",
+            borderLeft: isMobile ? "none" : "1px solid rgba(196,149,106,0.12)",
+            borderTop: isMobile ? "1px solid rgba(196,149,106,0.12)" : "none",
             padding: isMobile ? "20px 16px" : "24px",
             overflowY: "auto",
             background: "#08080d",
             maxHeight: isMobile ? "50vh" : "none",
           }}>
-            <div style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#7B68EE", marginBottom: "16px" }}>
+            <div style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#c4956a", marginBottom: "16px" }}>
               Recent Generations
             </div>
             {history.length === 0 && (
@@ -405,7 +405,7 @@ ${FORMAT_INSTRUCTIONS[contentType]}`;
                 onClick={() => { setOutput(item.output); setShowHistory(false); }}
                 style={{
                   background: "#111118",
-                  border: "1px solid rgba(123,104,238,0.08)",
+                  border: "1px solid rgba(196,149,106,0.08)",
                   borderRadius: "10px",
                   padding: "14px",
                   marginBottom: "8px",
