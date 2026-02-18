@@ -165,3 +165,46 @@ body::after {
   transform: translateY(-2px);
   box-shadow: 0 0 60px var(--tool-primary-glow), 0 10px 40px rgba(0, 0, 0, 0.3);
 }
+
+/* Blueprint terminal */
+.blueprint-terminal {
+  position: relative;
+  background: #0c0c12;
+  border: 1px solid rgba(123, 104, 238, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  padding-top: 2.5rem;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+  color: #9895A8;
+  box-shadow: 0 0 60px rgba(123, 104, 238, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* Terminal chrome dots */
+.blueprint-terminal::before {
+  content: '● ● ●';
+  position: absolute;
+  top: 0.75rem;
+  left: 1.25rem;
+  font-size: 0.5rem;
+  letter-spacing: 0.35em;
+  color: rgba(123, 104, 238, 0.35);
+}
+
+/* Scrollbar for terminal */
+.blueprint-terminal::-webkit-scrollbar {
+  height: 6px;
+}
+
+.blueprint-terminal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.blueprint-terminal::-webkit-scrollbar-thumb {
+  background: rgba(123, 104, 238, 0.2);
+  border-radius: 3px;
+}
+
+.blueprint-terminal::-webkit-scrollbar-thumb:hover {
+  background: rgba(123, 104, 238, 0.4);
+}

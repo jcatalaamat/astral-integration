@@ -4,6 +4,7 @@ import { CheckCircle } from 'lucide-react';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
+import PlatformBuilder from '../platform-builder/PlatformBuilder';
 
 // Data
 const clientTypes = [
@@ -77,13 +78,15 @@ const monthlyPlans = [
 ];
 
 const faqItems = [
-  { q: 'How much does this actually cost?', a: "Most projects land between $3,000–$5,000 for the core platform, plus add-on modules if you need them. You'll know the exact number before we start. No surprises." },
-  { q: 'How long does a project take?', a: "Most platforms launch in 2–3 weeks. Complex builds with multiple add-ons might take 4–5 weeks. I'll give you a timeline upfront and I stick to it." },
+  { q: 'How much does this actually cost?', a: "Platform builds are valued at $3,000–$5,000. School and certification platforms at $5,000–$10,000. Most clients choose the Partnership model — little to no upfront cost, and I take 8–12% of revenue processed through the platform. You'll know the exact terms before we start." },
+  { q: 'How long does a project take?', a: "Most platforms launch in 2–3 weeks. School platforms with certification systems take 4–6 weeks. I'll give you a timeline upfront and I stick to it." },
   { q: 'Do I need to be technical?', a: "Not at all. I handle everything — design, development, deployment. You focus on your work. I build the systems around it." },
   { q: 'I already have a Wix / Squarespace / Kajabi site. Can you work with it?', a: "I build custom. That means we'll likely replace your current setup with something purpose-built for your business. Your content migrates over, but the platform is new and yours." },
   { q: "Will it feel like my brand — not like a tech product?", a: "That's the entire point. Every build starts with deep research into your world. The result looks and feels like you — not like software." },
   { q: "What about AI — how does that fit into my business?", a: "AI isn't a gimmick here. It's practical. An AI assistant trained on your methodology can support your clients between sessions, answer common questions, guide intake — and free up your time for the work only you can do." },
   { q: 'Can you build me a mobile app?', a: "Yes. I build cross-platform — one codebase that works on iOS, Android, and web. It's an add-on module that makes sense once your core platform is solid." },
+  { q: "What makes the School platform different from Kajabi or Teachable?", a: "Kajabi and Teachable are course platforms. They handle video lessons and payments. They don't handle certification levels with prerequisites, practice hour tracking, peer matching, cohort management, or a public directory of your certified practitioners. If you're running a real training program — not just selling a course — you need different infrastructure." },
+  { q: "How does the Partnership model work exactly?", a: "I build your platform at reduced or zero upfront cost. In return, I take 8–12% of revenue that's processed through the platform — enrollments, bookings, memberships, purchases. Only transactions on the platform I built. Your other revenue streams, in-person work, and existing channels are 100% yours. There's a 12-month minimum term, and you can buy out the rev share at any time by paying the full project value." },
   { q: "I'm not sure what I need. Can I just talk to someone?", a: "That's what the first call is for. No pitch, no pressure. I'll listen to where you are, what's working, what's not — and tell you honestly what I'd build and whether I'm the right person for it." },
 ];
 
@@ -208,6 +211,17 @@ export default function HomePage() {
           </a>
         </div>
 
+        {/* Stats bar */}
+        <div className="relative z-10 mt-12 flex flex-wrap justify-center gap-x-8 gap-y-3 text-body-sm text-content-muted animate-fadeUp animate-delay-900">
+          <span>10+ years building software</span>
+          <span className="hidden md:inline text-border">·</span>
+          <span>4 platforms live</span>
+          <span className="hidden md:inline text-border">·</span>
+          <span>300+ students on one build</span>
+          <span className="hidden md:inline text-border">·</span>
+          <span>60+ venues on another</span>
+        </div>
+
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-content-muted animate-fadeUp animate-delay-1200">
           <div className="w-px h-10 bg-gradient-to-b from-accent to-transparent animate-scrollPulse" />
@@ -300,6 +314,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* HOW IT WORKS */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            How It Works
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-16">Three steps. No mystery.</h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                step: '01',
+                title: 'Discovery',
+                desc: "We get on a call. I learn your world — your mission, your clients, what's working, what's broken. I audit your current setup and tell you honestly what I'd build and why.",
+              },
+              {
+                step: '02',
+                title: 'Design & Build',
+                desc: "I design a custom blueprint, you approve it, I build it. You see progress weekly and give feedback as we go. No disappearing for months. Real code, not templates.",
+              },
+              {
+                step: '03',
+                title: 'Launch & Grow',
+                desc: "Your platform goes live. I stick around for post-launch support, fix what needs fixing, and optimize as your business evolves. You own everything — code, data, domain.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="relative">
+                <div className="font-serif text-[4rem] font-light text-accent/20 mb-4 leading-none">{item.step}</div>
+                <h3 className="font-serif text-h3 mb-3">{item.title}</h3>
+                <p className="text-body-sm text-content-secondary leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PRICING */}
       <section id="pricing" className="py-section px-6 md:px-12">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
@@ -307,64 +358,176 @@ export default function HomePage() {
             <span className="w-8 h-px bg-accent" />
             Pricing
           </p>
-          <h2 className="font-serif text-display-sm font-light mb-4">Simple and transparent.</h2>
+          <h2 className="font-serif text-display-sm font-light mb-4">Built for partnership, not invoices.</h2>
           <p className="text-body text-content-secondary max-w-prose mb-16">
-            One offer. I research your business, design the whole thing, build it, and launch it. You own everything.
+            I don't just build your platform and disappear. I build it, maintain it, and grow with you — because I only win when you do.
           </p>
 
-          {/* Core Offer */}
-          <div className="bg-dark-card border border-accent rounded-2xl p-10 md:p-12 mb-16 relative bg-gradient-to-b from-accent-glow to-dark-card">
-            <span className="absolute -top-3 left-8 text-meta uppercase px-4 py-1 bg-accent text-white rounded-full font-semibold">
-              Core Offer
-            </span>
-            <div className="grid md:grid-cols-[1fr_auto] gap-8 items-start">
+          {/* Two Tiers */}
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
+            {/* Platform Build */}
+            <div className="bg-dark-card border border-accent rounded-2xl p-10 relative bg-gradient-to-b from-accent-glow to-dark-card">
+              <span className="absolute -top-3 left-8 text-meta uppercase px-4 py-1 bg-accent text-white rounded-full font-semibold">
+                Platform Build
+              </span>
+              <p className="text-body-sm text-content-muted mb-4 mt-2">For practitioners, retreat centers & creators</p>
+              <h3 className="font-serif text-h2 font-light mb-4">Platform Build</h3>
+              <p className="text-body-sm text-content-secondary mb-6">
+                Your scattered online presence becomes one custom-built platform. Bookings, events, services, content — everything your people need, in one place that's yours.
+              </p>
+              <div className="font-serif text-[2rem] font-light text-accent mb-6">$3,000 – $5,000</div>
+              <ul className="space-y-2 mb-8">
+                {[
+                  'Deep business research & audit',
+                  'Brand direction & visual identity',
+                  'Custom-built platform (real code, not templates)',
+                  'Booking & scheduling system',
+                  'Services, events & offerings pages',
+                  'Email capture & contact flows',
+                  'Mobile-optimized & SEO-ready',
+                  'You own the code, the data, the domain',
+                  'Delivered in 2–3 weeks',
+                ].map((feature, j) => (
+                  <li key={j} className="text-body-sm text-content-secondary pl-6 relative">
+                    <span className="absolute left-0 top-1.5 text-accent text-[0.6rem]">✦</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-body-sm text-content-muted mb-6">
+                <strong className="text-content-primary">How it works:</strong> Pay the full project fee upfront, or choose the Partnership model — reduced upfront cost in exchange for 8–12% of revenue that flows through the platform.
+              </p>
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-block px-8 py-3 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+              >
+                Get Started
+              </a>
+            </div>
+
+            {/* School & Certification */}
+            <div className="bg-dark-card border border-gold/40 rounded-2xl p-10 relative bg-gradient-to-b from-gold/5 to-dark-card">
+              <span className="absolute -top-3 left-8 text-meta uppercase px-4 py-1 bg-gold text-dark-bg rounded-full font-semibold">
+                School Platform
+              </span>
+              <p className="text-body-sm text-content-muted mb-4 mt-2">For teachers running training programs at scale</p>
+              <h3 className="font-serif text-h2 font-light mb-4">School & Certification</h3>
+              <p className="text-body-sm text-content-secondary mb-6">
+                The full infrastructure for multi-level certification programs — not a course platform, a real school. Student progression, AI support, community, credentialing.
+              </p>
+              <div className="font-serif text-[2rem] font-light text-gold mb-6">$5,000 – $10,000</div>
+              <ul className="space-y-2 mb-8">
+                {[
+                  'Everything in Platform Build',
+                  'Multi-level certification pathways with prerequisites',
+                  'Student lifecycle & progression tracking',
+                  'Cohort management & scheduling',
+                  'Practice hour logging & peer matching',
+                  'Assessment & credentialing system',
+                  'Certified practitioner directory',
+                  'AI assistant trained on your methodology',
+                  'Community spaces per cohort',
+                  'Payment plans & tiered enrollment',
+                  '60 days post-launch support',
+                  'Delivered in 4–6 weeks',
+                ].map((feature, j) => (
+                  <li key={j} className="text-body-sm text-content-secondary pl-6 relative">
+                    <span className="absolute left-0 top-1.5 text-gold text-[0.6rem]">✦</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-body-sm text-content-muted mb-6">
+                <strong className="text-content-primary">How it works:</strong> Pay the full project fee upfront, or choose the Partnership model — I build your school at a fraction of the cost (or free for the right project) in exchange for 8–12% of enrollments.
+              </p>
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-block px-8 py-3 bg-gold text-dark-bg rounded-full text-body-sm font-medium hover:opacity-90 transition-opacity"
+              >
+                Book a Call
+              </a>
+            </div>
+          </div>
+
+          {/* Partnership Model */}
+          <div className="bg-dark-card border border-border rounded-2xl p-10 md:p-12 mb-16">
+            <h3 className="font-serif text-h2 font-light mb-2">The Partnership Model</h3>
+            <p className="text-body text-content-secondary mb-10">Most of my clients choose this. Here's why it works:</p>
+
+            <div className="grid md:grid-cols-2 gap-10 mb-10">
               <div>
-                <h3 className="font-serif text-h2 font-light mb-2">Rebrand & Platform Build</h3>
-                <p className="text-body text-content-secondary mb-6">
-                  I take your scattered online presence and turn it into one custom-built platform. Bookings, events, services, content, contact — everything your people need, in one place that's yours.
-                </p>
-                <ul className="space-y-3 mb-6">
+                <h4 className="font-serif text-h4 text-accent mb-4">For you:</h4>
+                <ul className="space-y-3">
                   {[
-                    'Deep business research & audit',
-                    'Brand direction & visual identity',
-                    'Custom-built platform (real code, not templates)',
-                    'Booking & scheduling system',
-                    'Services, events & offerings pages',
-                    'Email capture & contact flows',
-                    'Mobile-optimized & SEO-ready',
-                    '2 weeks post-launch support',
-                    'You own the code, the data, the domain',
-                    'Delivered in 2–3 weeks',
-                  ].map((feature, j) => (
-                    <li key={j} className="text-body-sm text-content-secondary pl-6 relative">
+                    'Little to no upfront cost — the barrier is almost zero',
+                    'Platform built to the same standard as a $10K project',
+                    "I'm financially invested in your success — I only earn when you earn",
+                    'Ongoing development, support, and improvements included',
+                    'You own your content, your brand, your students',
+                  ].map((item, i) => (
+                    <li key={i} className="text-body-sm text-content-secondary pl-6 relative">
                       <span className="absolute left-0 top-1.5 text-accent text-[0.6rem]">✦</span>
-                      {feature}
+                      {item}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="text-center md:text-right md:min-w-[200px]">
-                <div className="font-serif text-[2.5rem] font-light text-accent leading-tight">
-                  $3,000 – $5,000
-                </div>
-                <a
-                  href="#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="inline-block mt-6 px-8 py-3 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
-                >
-                  Get in Touch
-                </a>
+              <div>
+                <h4 className="font-serif text-h4 text-accent mb-4">For me:</h4>
+                <ul className="space-y-3">
+                  {[
+                    'I build platforms I believe in',
+                    '8–12% of revenue processed through the platform',
+                    'Long-term partnership, not a one-time invoice',
+                    "I'm incentivized to make your platform convert, retain, and grow",
+                  ].map((item, i) => (
+                    <li key={i} className="text-body-sm text-content-secondary pl-6 relative">
+                      <span className="absolute left-0 top-1.5 text-accent text-[0.6rem]">✦</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
+
+            <div className="bg-dark-bg rounded-xl p-8 mb-8">
+              <h4 className="font-serif text-h4 mb-4">What 10% actually looks like:</h4>
+              <div className="space-y-3 text-body-sm text-content-secondary">
+                <p>A $3,000 certification with 20 students = $60K revenue → <strong className="text-content-primary">$6,000 to me</strong></p>
+                <p>A $200/mo membership with 50 members = $10K/mo → <strong className="text-content-primary">$1,000/mo to me</strong></p>
+                <p>A $50 workshop with 100 signups = $5K → <strong className="text-content-primary">$500 to me</strong></p>
+              </div>
+              <p className="text-body-sm text-content-muted mt-4">Transparent. Simple. Aligned.</p>
+            </div>
+
+            <p className="text-body-sm text-content-muted">
+              The percentage applies only to transactions processed through the platform I build. Revenue from other channels, in-person work, or existing systems is yours entirely.
+            </p>
+
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-block mt-8 px-8 py-3 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+            >
+              Let's Talk About Partnership
+            </a>
           </div>
 
           {/* Add-On Modules */}
           <div className="mb-16">
             <h3 className="font-serif text-h2 font-light mb-2">Add-On Modules</h3>
-            <p className="text-body-sm text-content-secondary mb-8">Start with the core. Expand as you grow.</p>
+            <p className="text-body-sm text-content-secondary mb-8">Start with the core. Expand as you grow. Add-ons follow the same model — built into the project scope or added for a small upfront fee.</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {addOnModules.map((mod, i) => (
                 <div
@@ -382,7 +545,7 @@ export default function HomePage() {
           {/* Monthly Support */}
           <div>
             <h3 className="font-serif text-h2 font-light mb-2">Monthly Support</h3>
-            <p className="text-body-sm text-content-secondary mb-8">Stay supported after launch.</p>
+            <p className="text-body-sm text-content-secondary mb-8">Stay supported after launch. Included in Partnership model. Available separately for upfront projects.</p>
             <div className="grid md:grid-cols-3 gap-6">
               {monthlyPlans.map((plan, i) => (
                 <div
@@ -397,6 +560,45 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* KIND WORDS */}
+      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            Kind Words
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-16">What they say.</h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <blockquote className="bg-dark-card border border-border rounded-2xl p-8">
+              <p className="text-body text-content-secondary leading-relaxed italic mb-6">
+                "Jordi understood my world before I had to explain it. He took my academy from scattered across 5 platforms to one place where my 300+ students can find everything — courses, bookings, community, their practitioner path. It finally feels like my school, not a patchwork of tools."
+              </p>
+              <footer className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif">S</div>
+                <div>
+                  <p className="text-body-sm text-content-primary font-medium">ShivEnergetics</p>
+                  <p className="text-body-sm text-content-muted">Reiki Academy — Granada</p>
+                </div>
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-dark-card border border-border rounded-2xl p-8">
+              <p className="text-body text-content-secondary leading-relaxed italic mb-6">
+                "He centralized 8 ticket platforms into one hub and built a membership portal for my community. I went from spending hours on admin to focusing on my work."
+              </p>
+              <footer className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif">U</div>
+                <div>
+                  <p className="text-body-sm text-content-primary font-medium">Uria Tsur</p>
+                  <p className="text-body-sm text-content-muted">Vocal Facilitator — 18+ Cities</p>
+                </div>
+              </footer>
+            </blockquote>
           </div>
         </div>
       </section>
@@ -462,7 +664,7 @@ export default function HomePage() {
                 Senior full-stack engineer, 10+ years building production applications. Former CTO. Based in Mazunte, Oaxaca — deep in the world of holistic practice, conscious community, and intentional living.
               </p>
               <p className="text-body text-content-secondary leading-relaxed mb-4">
-                I didn't start in tech for this space. I started in the work — sitting in ceremony, training in polarity and embodiment, facilitating integration, building community on the land. That's how I know the difference between a booking form and a <strong className="text-content-primary font-medium">sacred container</strong>.
+                I didn't start in tech for this space. I started in the work — sitting in ceremony, training in polarity and embodiment with teachers like John Wineland, facilitating integration, building community on the land. That's how I know the difference between a booking form and a <strong className="text-content-primary font-medium">sacred container</strong>.
               </p>
               <p className="text-body text-content-secondary leading-relaxed mb-4">
                 I saw teachers and healers doing genuinely life-changing work — and then losing students because their systems were held together with WhatsApp groups and spreadsheets. The gap between the quality of their work and the quality of their infrastructure was massive.
@@ -484,6 +686,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* PLATFORM BUILDER */}
+      <PlatformBuilder />
+
       {/* CONTACT */}
       <section id="contact" className="py-section px-6 md:px-12 bg-dark-card">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
@@ -493,8 +698,22 @@ export default function HomePage() {
               Contact
             </p>
             <h2 className="font-serif text-display-sm font-light mb-4">Tell me about your work.</h2>
-            <p className="text-body text-content-secondary mb-10">
+            <p className="text-body text-content-secondary mb-4">
               No pitch. No pressure. Just a conversation about what you need and whether I can help.
+            </p>
+            <p className="text-body-sm text-content-muted mb-10">
+              Or try the{' '}
+              <a
+                href="#builder"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#builder')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="text-accent hover:underline"
+              >
+                Platform Builder
+              </a>{' '}
+              above to design your blueprint first.
             </p>
 
             {formStatus !== 'success' ? (
