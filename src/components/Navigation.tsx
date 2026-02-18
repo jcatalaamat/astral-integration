@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-
-const CALENDLY_URL = 'https://calendly.com/astral-integration/free-strategy-call';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -37,12 +36,9 @@ export default function Navigation() {
   }, [mobileMenuOpen]);
 
   const navItems = [
-    { label: 'Services', href: '#services' },
-    { label: 'Process', href: '#process' },
-    { label: 'Pricing', href: '#pricing' },
     { label: 'Work', href: '#work' },
+    { label: 'Pricing', href: '#pricing' },
     { label: 'About', href: '#about' },
-    { label: 'FAQ', href: '#faq' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -92,13 +88,18 @@ export default function Navigation() {
                 {item.label}
               </a>
             ))}
+            <Link
+              to="/tools"
+              className="text-nav uppercase text-gold hover:text-gold/80 transition-colors"
+            >
+              Free Tools
+            </Link>
             <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
+              onClick={(e) => handleNavClick(e, '#contact')}
               className="text-nav uppercase px-6 py-2.5 border border-accent rounded-full text-accent hover:bg-accent hover:text-white transition-all hover:shadow-glow"
             >
-              Book a Call
+              Get in Touch
             </a>
           </div>
 
@@ -141,14 +142,21 @@ export default function Navigation() {
                     {item.label}
                   </a>
                 ))}
+                <Link
+                  to="/tools"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block py-4 text-body text-gold font-medium border-b border-border"
+                  role="menuitem"
+                >
+                  Free Tools
+                </Link>
                 <a
-                  href={CALENDLY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contact"
+                  onClick={(e) => handleNavClick(e, '#contact')}
                   className="block py-4 text-body text-accent font-medium"
                   role="menuitem"
                 >
-                  Book a Call
+                  Get in Touch
                 </a>
               </div>
             </div>

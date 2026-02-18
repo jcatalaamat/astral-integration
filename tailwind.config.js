@@ -36,6 +36,12 @@ export default {
           DEFAULT: 'rgba(123, 104, 238, 0.12)',
           hover: 'rgba(123, 104, 238, 0.3)',
         },
+        // Tool-specific theme colors (via CSS variables)
+        tool: {
+          primary: 'var(--tool-primary, #7B68EE)',
+          primaryGlow: 'var(--tool-primary-glow, rgba(123, 104, 238, 0.15))',
+          accent: 'var(--tool-accent, #2A9D6A)',
+        },
       },
       fontSize: {
         // Typography scale

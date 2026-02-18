@@ -127,3 +127,41 @@ body::after {
   transform: translateY(-2px);
   box-shadow: 0 0 60px rgba(123, 104, 238, 0.3), 0 10px 40px rgba(0, 0, 0, 0.3);
 }
+
+/* Tool theme CSS variables */
+:root {
+  --tool-primary: #7B68EE;
+  --tool-primary-glow: rgba(123, 104, 238, 0.15);
+  --tool-accent: #2A9D6A;
+}
+
+[data-tool="life-os"] {
+  --tool-primary: #7B68EE;
+  --tool-primary-glow: rgba(123, 104, 238, 0.15);
+  --tool-accent: #2A9D6A;
+}
+
+[data-tool="content-studio"] {
+  --tool-primary: #C9A96E;
+  --tool-primary-glow: rgba(201, 169, 110, 0.15);
+  --tool-accent: #7B68EE;
+}
+
+/* Tool-specific gradient text */
+.tool-gradient-text {
+  background: linear-gradient(135deg, var(--tool-primary), var(--tool-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Tool-specific button glow */
+.btn-tool-glow {
+  box-shadow: 0 0 40px var(--tool-primary-glow);
+  transition: all 0.3s ease;
+}
+
+.btn-tool-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 60px var(--tool-primary-glow), 0 10px 40px rgba(0, 0, 0, 0.3);
+}

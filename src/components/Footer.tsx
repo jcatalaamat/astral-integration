@@ -1,11 +1,8 @@
 export default function Footer() {
   const navLinks = [
-    { label: 'Services', href: '#services' },
-    { label: 'Process', href: '#process' },
-    { label: 'Pricing', href: '#pricing' },
     { label: 'Work', href: '#work' },
+    { label: 'Pricing', href: '#pricing' },
     { label: 'About', href: '#about' },
-    { label: 'FAQ', href: '#faq' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -53,7 +50,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-border text-center">
           <p className="text-body-sm text-content-muted">
-            © 2026 Astral Integration. The tech behind transformation.
+            © 2026 Astral Integration. Jordi Amat.
           </p>
         </div>
       </div>
