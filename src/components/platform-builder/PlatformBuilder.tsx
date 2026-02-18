@@ -122,30 +122,34 @@ export default function PlatformBuilder() {
   ];
 
   return (
-    <section id="builder" className="py-section px-6 md:px-12 bg-gradient-to-b from-[#0d0d14] to-dark-bg" ref={sectionRef}>
+    <section id="builder" className="py-section px-6 md:px-12" ref={sectionRef}>
       <div className="max-w-content mx-auto">
-        <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
-          <span className="w-8 h-px bg-accent" />
-          Platform Builder
-        </p>
+        <div className="bg-dark-card border border-border rounded-xl p-8 md:p-12 relative overflow-hidden">
+          {/* Subtle accent line at top */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
 
-        {/* Intro state */}
-        {state.currentStep === -1 && (
-          <div className="max-w-2xl">
-            <h2 className="font-serif text-display-sm font-light mb-4">
-              Let's design your platform.
-            </h2>
-            <p className="text-body text-content-secondary mb-8">
-              Answer a few questions about your work, and I'll generate a custom platform blueprint — architecture, features, pricing estimate, everything. Takes about 2 minutes.
-            </p>
-            <button
-              onClick={start}
-              className="px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
-            >
-              Start Building
-            </button>
-          </div>
-        )}
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            Platform Builder
+          </p>
+
+          {/* Intro state */}
+          {state.currentStep === -1 && (
+            <div className="max-w-2xl">
+              <h2 className="font-serif text-display-sm font-light mb-4">
+                Let's design your platform.
+              </h2>
+              <p className="text-body text-content-secondary mb-8">
+                Answer a few questions about your work, and I'll generate a custom platform blueprint — architecture, features, pricing estimate, everything. Takes about 2 minutes.
+              </p>
+              <button
+                onClick={start}
+                className="px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+              >
+                Start Building
+              </button>
+            </div>
+          )}
 
         {/* Wizard steps */}
         {state.currentStep >= 0 && state.currentStep < TOTAL_STEPS && (
@@ -217,6 +221,7 @@ export default function PlatformBuilder() {
             onReset={() => dispatch({ type: 'RESET' })}
           />
         )}
+        </div>
       </div>
     </section>
   );
