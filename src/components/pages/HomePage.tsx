@@ -282,6 +282,112 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* DEEP CASE STUDY — SHIVENERGETICS */}
+      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-[#0d0d14] to-dark-bg">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            Case Study
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">From 5 platforms to one.</h2>
+          <p className="text-body text-content-secondary max-w-prose mb-12">
+            How a Reiki Master Teacher in Granada went from scattered tools to a unified academy — and scaled to 300+ students.
+          </p>
+
+          {/* Story arc */}
+          <div className="bg-dark-card border border-border rounded-2xl overflow-hidden mb-10">
+            {/* Header with journey */}
+            <div className="p-8 md:p-10 border-b border-border">
+              <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+                <h3 className="font-serif text-h2 font-light">ShivEnergetics</h3>
+                <span className="text-meta uppercase text-gold bg-gold/10 px-3 py-1 rounded-full w-fit">Reiki Academy — Granada, Spain</span>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div>
+                  <p className="text-meta uppercase text-content-muted mb-1">Before</p>
+                  <p className="text-body-sm text-content-secondary">Courses on Teachable. Bookings on Calendly. Payments on Stripe. Community on WhatsApp. Student records in Google Sheets.</p>
+                </div>
+                <div>
+                  <p className="text-meta uppercase text-content-muted mb-1">The Ask</p>
+                  <p className="text-body-sm text-content-secondary">"I need one place where my students can find everything — courses, their certification path, bookings, community. It needs to feel like my school, not like software."</p>
+                </div>
+                <div>
+                  <p className="text-meta uppercase text-content-muted mb-1">After</p>
+                  <p className="text-body-sm text-content-secondary">A unified academy platform. 300+ students onboarded. Course paths, retreat bookings, practitioner directory, AI assistant — all under one brand.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Systems breakdown */}
+            <div className="p-8 md:p-10">
+              <h4 className="font-serif text-h4 mb-6 text-content-muted">What's running in production</h4>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  {
+                    title: 'Learning & Certification',
+                    items: ['Multi-level Reiki pathways', 'Video course library', 'Student progression tracking', 'Practice hour logging', 'Certificate generation'],
+                  },
+                  {
+                    title: 'Booking & Commerce',
+                    items: ['Retreat scheduling & payments', 'Session booking calendar', 'Payment plans & installments', 'Automated invoicing', 'Multi-currency support'],
+                  },
+                  {
+                    title: 'Community & Directory',
+                    items: ['Student community hub', 'Cohort discussion spaces', 'Certified practitioner directory', 'Peer matching system', 'Event announcements'],
+                  },
+                  {
+                    title: 'Operations',
+                    items: ['AI assistant (methodology-trained)', 'Email sequences & onboarding', 'Admin dashboard', 'Analytics & reporting', 'SEO & bilingual content'],
+                  },
+                ].map((group, i) => (
+                  <div key={i}>
+                    <h5 className="text-body-sm text-accent font-medium mb-3">{group.title}</h5>
+                    <ul className="space-y-1.5">
+                      {group.items.map((item, j) => (
+                        <li key={j} className="text-body-sm text-content-muted pl-4 relative">
+                          <span className="absolute left-0 top-2 w-1 h-1 rounded-full bg-accent/40" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Stats bar */}
+            <div className="border-t border-border px-8 md:px-10 py-6 flex flex-wrap gap-x-10 gap-y-3">
+              {[
+                { value: '300+', label: 'Students' },
+                { value: '5→1', label: 'Platforms consolidated' },
+                { value: '20+', label: 'Systems integrated' },
+                { value: '3 weeks', label: 'To launch' },
+              ].map((stat, i) => (
+                <div key={i} className="flex items-baseline gap-2">
+                  <span className="font-serif text-h3 font-light text-accent">{stat.value}</span>
+                  <span className="text-body-sm text-content-muted">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Testimonial */}
+          <blockquote className="bg-dark-card border border-accent/20 rounded-2xl p-8 md:p-10 relative">
+            <div className="absolute top-6 left-8 font-serif text-[4rem] text-accent/15 leading-none">"</div>
+            <p className="text-body text-content-secondary leading-relaxed italic mb-6 relative z-10 max-w-prose">
+              Jordi understood my world before I had to explain it. He took my academy from scattered across 5 platforms to one place where my 300+ students can find everything — courses, bookings, community, their practitioner path. It finally feels like my school, not a patchwork of tools.
+            </p>
+            <footer className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif">S</div>
+              <div>
+                <p className="text-body-sm text-content-primary font-medium">ShivEnergetics</p>
+                <p className="text-body-sm text-content-muted">Reiki Academy — Granada</p>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </section>
+
       {/* WHAT I BUILD */}
       <section id="services" className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
@@ -308,6 +414,98 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-serif text-h3 mb-3">{service.title}</h3>
                 <p className="text-body-sm text-content-secondary">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHY NOT JUST USE... */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            Why Custom
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">Why not just use Kajabi?</h2>
+          <p className="text-body text-content-secondary max-w-prose mb-16">
+            Template platforms work until they don't. Here's what changes when your infrastructure is built around your business — not the other way around.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
+            {/* Column headers */}
+            <div className="bg-dark-bg p-8">
+              <div className="h-12 flex items-center">
+                <h4 className="text-body-sm text-content-muted font-medium uppercase tracking-wider">Template Platforms</h4>
+              </div>
+              <p className="text-meta text-content-muted mt-2">Kajabi, Squarespace, Wix, Teachable</p>
+            </div>
+            <div className="bg-dark-bg p-8">
+              <div className="h-12 flex items-center">
+                <h4 className="text-body-sm text-content-muted font-medium uppercase tracking-wider">Agencies</h4>
+              </div>
+              <p className="text-meta text-content-muted mt-2">Traditional dev shops & freelancers</p>
+            </div>
+            <div className="bg-dark-card p-8 relative">
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-accent" />
+              <div className="h-12 flex items-center">
+                <h4 className="text-body-sm text-accent font-medium uppercase tracking-wider">Astral Integration</h4>
+              </div>
+              <p className="text-meta text-content-muted mt-2">Custom platform, partnership model</p>
+            </div>
+
+            {/* Rows */}
+            {[
+              {
+                template: 'Your brand squeezed into their templates',
+                agency: 'Custom design, but generic tech stack',
+                custom: 'Built around your methodology and client journey',
+              },
+              {
+                template: '$200–$400/mo in recurring SaaS fees',
+                agency: '$15K–$50K+ upfront, then you\'re on your own',
+                custom: 'Partnership model — I earn when you earn',
+              },
+              {
+                template: 'You stitch together 5+ tools yourself',
+                agency: 'Delivered and gone. You maintain it.',
+                custom: 'One platform, one partner, ongoing support',
+              },
+              {
+                template: 'Same features as everyone else in your niche',
+                agency: 'Custom features, but no domain expertise',
+                custom: 'AI, certification, community — built for your world',
+              },
+              {
+                template: 'Your data lives in their ecosystem',
+                agency: 'You own the code but often can\'t maintain it',
+                custom: 'You own everything. Code, data, domain.',
+              },
+              {
+                template: 'Months of DIY setup and configuration',
+                agency: '3–6 months typical timeline',
+                custom: '2–3 weeks to launch',
+              },
+            ].map((row, i) => (
+              <div key={`row-${i}`} className="contents">
+                <div className="bg-dark-bg p-6 flex items-start">
+                  <p className="text-body-sm text-content-muted">
+                    <span className="text-content-muted/60 mr-2">—</span>
+                    {row.template}
+                  </p>
+                </div>
+                <div className="bg-dark-bg p-6 flex items-start">
+                  <p className="text-body-sm text-content-muted">
+                    <span className="text-content-muted/60 mr-2">—</span>
+                    {row.agency}
+                  </p>
+                </div>
+                <div className="bg-dark-card p-6 flex items-start">
+                  <p className="text-body-sm text-content-secondary">
+                    <span className="text-accent mr-2">+</span>
+                    {row.custom}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -347,6 +545,88 @@ export default function HomePage() {
                 <p className="text-body-sm text-content-secondary leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW PARTNERSHIPS BEGIN */}
+      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            The Journey
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">How partnerships begin.</h2>
+          <p className="text-body text-content-secondary max-w-prose mb-16">
+            Most clients don't start with a $10K project. They start with a conversation — and the relationship grows from there.
+          </p>
+
+          {/* Journey steps */}
+          <div className="relative">
+            {/* Connecting line */}
+            <div className="hidden md:block absolute top-[60px] left-0 right-0 h-px bg-gradient-to-r from-border via-accent/30 to-accent" />
+
+            <div className="grid md:grid-cols-4 gap-6 md:gap-4">
+              {[
+                {
+                  step: 'Start',
+                  title: 'Platform Builder',
+                  desc: 'Use the interactive wizard above to map out what you need. No signup, no pressure. You get a blueprint in 2 minutes.',
+                  state: 'Free',
+                },
+                {
+                  step: 'Explore',
+                  title: 'Discovery Call',
+                  desc: 'We talk. I learn your world, your people, your pain points. I tell you honestly what I\'d build and whether I\'m the right fit.',
+                  state: 'Free',
+                },
+                {
+                  step: 'Build',
+                  title: 'Platform Launch',
+                  desc: 'Your custom platform, built in 2–3 weeks. You see progress weekly. Real code, not templates. Launched and running.',
+                  state: '2–3 weeks',
+                },
+                {
+                  step: 'Grow',
+                  title: 'Ongoing Partnership',
+                  desc: 'I stay. New features, maintenance, strategy. Your platform evolves as your business does. I earn when you earn.',
+                  state: 'Long-term',
+                },
+              ].map((item, i) => (
+                <div key={i} className="relative">
+                  {/* Step indicator */}
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-body-sm font-medium ${
+                      i === 3 ? 'bg-accent text-white' : 'bg-dark-card border border-border text-content-muted'
+                    }`}>
+                      {String(i + 1).padStart(2, '0')}
+                    </div>
+                    <span className={`text-meta uppercase ${i === 3 ? 'text-accent' : 'text-content-muted'}`}>{item.state}</span>
+                  </div>
+
+                  <div className={`bg-dark-card border rounded-xl p-6 h-full ${
+                    i === 3 ? 'border-accent/30' : 'border-border'
+                  }`}>
+                    <p className="text-meta uppercase text-content-muted mb-2">{item.step}</p>
+                    <h4 className="font-serif text-h4 mb-3">{item.title}</h4>
+                    <p className="text-body-sm text-content-secondary">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <a
+              href="#builder"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#builder')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-block px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+            >
+              Start With the Platform Builder
+            </a>
           </div>
         </div>
       </section>
@@ -576,19 +856,6 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-8">
             <blockquote className="bg-dark-card border border-border rounded-2xl p-8">
               <p className="text-body text-content-secondary leading-relaxed italic mb-6">
-                "Jordi understood my world before I had to explain it. He took my academy from scattered across 5 platforms to one place where my 300+ students can find everything — courses, bookings, community, their practitioner path. It finally feels like my school, not a patchwork of tools."
-              </p>
-              <footer className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif">S</div>
-                <div>
-                  <p className="text-body-sm text-content-primary font-medium">ShivEnergetics</p>
-                  <p className="text-body-sm text-content-muted">Reiki Academy — Granada</p>
-                </div>
-              </footer>
-            </blockquote>
-
-            <blockquote className="bg-dark-card border border-border rounded-2xl p-8">
-              <p className="text-body text-content-secondary leading-relaxed italic mb-6">
                 "He centralized 8 ticket platforms into one hub and built a membership portal for my community. I went from spending hours on admin to focusing on my work."
               </p>
               <footer className="flex items-center gap-3">
@@ -596,6 +863,19 @@ export default function HomePage() {
                 <div>
                   <p className="text-body-sm text-content-primary font-medium">Uria Tsur</p>
                   <p className="text-body-sm text-content-muted">Vocal Facilitator — 18+ Cities</p>
+                </div>
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-dark-card border border-border rounded-2xl p-8">
+              <p className="text-body text-content-secondary leading-relaxed italic mb-6">
+                "We needed a booking system that could handle tours across 4 European cities, multiple languages, and dozens of art historians. Jordi built it in weeks — and now he runs our entire tech operation."
+              </p>
+              <footer className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif">O</div>
+                <div>
+                  <p className="text-body-sm text-content-primary font-medium">Ozina Camp</p>
+                  <p className="text-body-sm text-content-muted">Farm Stay & Residency — Mallorca</p>
                 </div>
               </footer>
             </blockquote>
