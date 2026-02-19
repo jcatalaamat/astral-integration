@@ -19,23 +19,59 @@ const clientTypes = [
 const portfolio = [
   {
     client: 'ShivEnergetics',
-    type: 'Reiki Academy — Granada, Spain',
-    desc: 'Full academy platform for a Reiki Master Teacher with 300+ students. Course paths, retreat bookings, student portal, practitioner directory, community hub.',
+    type: 'IPHM-Accredited Reiki Academy — Granada, Spain',
+    desc: 'Full academy platform for an internationally accredited Reiki school. Levels 1–9 certification paths, retreat programs in rural Andalusia, student portal, practitioner directory, community hub — replacing a fragmented Wix setup with a unified school.',
+    url: null as string | null,
+    status: 'Private client',
   },
   {
     client: 'Ozina Camp',
     type: 'Farm Stay & Residency — Mallorca',
     desc: 'Custom platform for a farm stay and artist residency. Stays, land story, residency applications, booking — replacing a fragmented online presence.',
+    url: null as string | null,
+    status: 'In development',
   },
   {
     client: 'Uria Tsur',
-    type: 'Vocal Facilitator — 18+ Cities',
-    desc: 'Event booking hub for a facilitator touring across Europe and the Americas. Centralized 8 ticket platforms into one. Membership portal for 300+ subscribers.',
+    type: 'Vocal Freedom Facilitator — 18+ Cities',
+    desc: 'Touring hub for a vocal facilitator and frontman of Orot Band (33K+ Spotify listeners). Centralized 8 ticket platforms into one event system across Europe and the Americas. Membership portal with 300+ subscribers at €5/mo. Bilingual EN/HE.',
+    url: 'https://uriatsur.live',
+    status: null as string | null,
   },
   {
     client: 'Mazunte Today',
-    type: 'Community — Oaxaca, Mexico',
-    desc: 'Live events board for a coastal town. 60+ venues, event submission, admin approval, bilingual, SEO-optimized. Used daily by locals and visitors.',
+    type: 'AI-Powered Community Platform — Oaxaca, Mexico',
+    desc: 'Live events and community directory for a coastal town. AI-powered event submission (Claude), practitioner directory, classifieds, weekly digest, Stripe-boosted listings. Bilingual EN/ES, SEO-optimized. Used daily by locals and visitors.',
+    url: 'https://mazunte.today',
+    status: null as string | null,
+  },
+  {
+    client: 'Sacred Counsel',
+    type: 'Retreat & Integration — Valle de Bravo, Mexico',
+    desc: 'Full platform for a psychedelic retreat center and integration therapy practice. Ayahuasca retreats, private homestays, integration therapy sessions, 21-day metabolic detox — serving facilitators with 20+ years of ceremony experience.',
+    url: 'https://sacredcounsel.space',
+    status: null as string | null,
+  },
+  {
+    client: 'Proyecto Salvaje',
+    type: 'Regenerative Neighborhood — Oaxaca, Mexico',
+    desc: 'Platform for a regenerative land community. 10 household lots with natural building requirements, community coordination, land sales from $35K USD. Bioconstruction, permaculture, and off-grid living — rooted in the mountains of Oaxaca.',
+    url: 'https://proyectosalvaje.com',
+    status: null as string | null,
+  },
+  {
+    client: 'Inner Ascend',
+    type: 'Healing Membership & Facilitator School',
+    desc: 'Trauma-informed healing membership (€22/mo) with a 12-month curriculum of 97 healing practices, AI healing assistant, guided sessions, and progress tracking. Feeds into a facilitator training pipeline for practitioners ready to lead.',
+    url: 'https://inner-ascend.com',
+    status: null as string | null,
+  },
+  {
+    client: 'Amakura',
+    type: 'Regenerative Living Center — Mazunte, Oaxaca',
+    desc: 'Platform for a centro de vida regenerativa. Bioconstruction school, restaurant, natural pool, workshops, and community events. A living laboratory for regenerative culture — not just a storefront, a whole world.',
+    url: 'https://amakura.store',
+    status: 'In development',
   },
 ];
 
@@ -184,6 +220,14 @@ export default function HomePage() {
         <div className="absolute w-[400px] h-[400px] bg-[#a67b52] rounded-full blur-[100px] opacity-40 -bottom-[100px] -left-[100px] animate-float" style={{ animationDelay: '-7s' }} />
         <div className="absolute w-[300px] h-[300px] bg-gold rounded-full blur-[100px] opacity-15 top-[30%] left-[10%] animate-float" style={{ animationDelay: '-14s' }} />
 
+        {/* Availability badge */}
+        <div className="relative z-10 mb-8 animate-fadeUp animate-delay-100">
+          <span className="inline-flex items-center gap-2 text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">
+            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            Taking on 2 new projects
+          </span>
+        </div>
+
         <h1 className="font-serif text-display font-light max-w-[900px] relative z-10 animate-fadeUp animate-delay-300">
           Your whole world,<br />one <em className="italic gradient-text">platform.</em>
         </h1>
@@ -212,14 +256,18 @@ export default function HomePage() {
         </div>
 
         {/* Stats bar */}
-        <div className="relative z-10 mt-12 flex flex-wrap justify-center gap-x-8 gap-y-3 text-body-sm text-content-muted animate-fadeUp animate-delay-900">
-          <span>10+ years building software</span>
-          <span className="hidden md:inline text-border">·</span>
-          <span>4 platforms live</span>
-          <span className="hidden md:inline text-border">·</span>
-          <span>300+ students on one build</span>
-          <span className="hidden md:inline text-border">·</span>
-          <span>60+ venues on another</span>
+        <div className="relative z-10 mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 animate-fadeUp animate-delay-900">
+          {[
+            { value: '10+', label: 'Years shipping software' },
+            { value: '10+', label: 'Platforms built' },
+            { value: '500+', label: 'Users served' },
+            { value: '2–3 wk', label: 'Average delivery' },
+          ].map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="font-serif text-h2 font-light text-accent mb-1">{stat.value}</div>
+              <p className="text-meta uppercase text-content-muted">{stat.label}</p>
+            </div>
+          ))}
         </div>
 
         {/* Scroll indicator */}
@@ -271,11 +319,43 @@ export default function HomePage() {
             {portfolio.map((item, i) => (
               <div
                 key={i}
-                className="bg-dark-card border border-border rounded-2xl p-8 hover:border-border-hover hover:-translate-y-1 transition-all"
+                className="bg-dark-card border border-border rounded-2xl overflow-hidden hover:border-border-hover hover:-translate-y-1 transition-all group"
               >
-                <p className="text-meta uppercase text-gold mb-4">{item.type}</p>
-                <h3 className="font-serif text-h2 font-light mb-4">{item.client}</h3>
-                <p className="text-body-sm text-content-secondary leading-relaxed">{item.desc}</p>
+                {/* Site preview */}
+                {item.url ? (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block relative w-full h-[200px] overflow-hidden bg-dark-bg border-b border-border cursor-pointer"
+                  >
+                    <iframe
+                      src={item.url}
+                      title={`${item.client} preview`}
+                      className="absolute top-0 left-0 w-[1280px] h-[800px] origin-top-left pointer-events-none"
+                      style={{ transform: 'scale(0.25)' }}
+                      loading="lazy"
+                      sandbox="allow-same-origin"
+                      tabIndex={-1}
+                      aria-hidden="true"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark-card/80 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 right-3 text-meta uppercase text-accent bg-dark-card/80 backdrop-blur-sm border border-border rounded-full px-3 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                      Visit ↗
+                    </div>
+                  </a>
+                ) : (
+                  <div className="w-full h-[200px] bg-dark-bg border-b border-border flex items-center justify-center">
+                    <span className="text-meta uppercase text-content-muted tracking-wider">{item.status || 'Coming soon'}</span>
+                  </div>
+                )}
+
+                {/* Card content */}
+                <div className="p-8">
+                  <p className="text-meta uppercase text-gold mb-4">{item.type}</p>
+                  <h3 className="font-serif text-h2 font-light mb-4">{item.client}</h3>
+                  <p className="text-body-sm text-content-secondary leading-relaxed">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -388,6 +468,57 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ABOUT — moved up for trust */}
+      <section id="about" className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            About
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-12">Jordi Amat.</h2>
+
+          <div className="grid md:grid-cols-[280px_1fr] gap-16 items-start">
+            <div className="w-full md:w-[280px] h-[340px] rounded-2xl border border-border relative overflow-hidden">
+              <img
+                src="/founder.jpeg"
+                alt="Jordi Amat"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/60 to-transparent" />
+            </div>
+
+            <div>
+              <p className="text-body text-content-secondary leading-relaxed mb-4">
+                Senior full-stack engineer, 10+ years building production applications. Former CTO. Based in Mazunte, Oaxaca — deep in the world of holistic practice, conscious community, and intentional living.
+              </p>
+              <p className="text-body text-content-secondary leading-relaxed mb-4">
+                I didn't start in tech for this space. I started in the work — sitting in ceremony, training in polarity and embodiment with teachers like John Wineland, facilitating integration, building community on the land. That's how I know the difference between a booking form and a <strong className="text-content-primary font-medium">sacred container</strong>.
+              </p>
+              <p className="text-body text-content-secondary leading-relaxed mb-4">
+                I saw teachers and healers doing genuinely life-changing work — and then losing students because their systems were held together with WhatsApp groups and spreadsheets. The gap between the quality of their work and the quality of their infrastructure was massive.
+              </p>
+              <p className="text-body text-content-secondary leading-relaxed mb-4">
+                So I built the bridge. I build with AI-powered tools, which means I ship in weeks what agencies quote months for. I understand your world because I live in it.
+              </p>
+              <p className="text-body text-content-secondary leading-relaxed mb-8">
+                I also build{' '}
+                <a href="/tools" className="text-gold hover:underline">free tools</a>
+                {' '}for this community — because the people doing this work deserve better infrastructure, even before they're ready for a full platform.
+              </p>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-8 border-t border-border">
+                {aboutStats.map((stat, i) => (
+                  <div key={i}>
+                    <div className="font-serif text-h2 font-light text-accent mb-1">{stat.value}</div>
+                    <p className="text-body-sm text-content-muted">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* WHAT I BUILD */}
       <section id="services" className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
@@ -432,79 +563,61 @@ export default function HomePage() {
             Template platforms work until they don't. Here's what changes when your infrastructure is built around your business — not the other way around.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
+          {/* Desktop comparison grid */}
+          <div className="hidden md:grid md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
             {/* Column headers */}
             <div className="bg-dark-bg p-8">
-              <div className="h-12 flex items-center">
-                <h4 className="text-body-sm text-content-muted font-medium uppercase tracking-wider">Template Platforms</h4>
-              </div>
-              <p className="text-meta text-content-muted mt-2">Kajabi, Squarespace, Wix, Teachable</p>
+              <h4 className="text-body-sm text-content-muted font-medium uppercase tracking-wider mb-2">Template Platforms</h4>
+              <p className="text-meta text-content-muted">Kajabi, Squarespace, Wix, Teachable</p>
             </div>
             <div className="bg-dark-bg p-8">
-              <div className="h-12 flex items-center">
-                <h4 className="text-body-sm text-content-muted font-medium uppercase tracking-wider">Agencies</h4>
-              </div>
-              <p className="text-meta text-content-muted mt-2">Traditional dev shops & freelancers</p>
+              <h4 className="text-body-sm text-content-muted font-medium uppercase tracking-wider mb-2">Agencies</h4>
+              <p className="text-meta text-content-muted">Traditional dev shops & freelancers</p>
             </div>
             <div className="bg-dark-card p-8 relative">
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-accent" />
-              <div className="h-12 flex items-center">
-                <h4 className="text-body-sm text-accent font-medium uppercase tracking-wider">Astral Integration</h4>
-              </div>
-              <p className="text-meta text-content-muted mt-2">Custom platform, partnership model</p>
+              <h4 className="text-body-sm text-accent font-medium uppercase tracking-wider mb-2">Astral Integration</h4>
+              <p className="text-meta text-content-muted">Custom platform, partnership model</p>
             </div>
 
-            {/* Rows */}
             {[
-              {
-                template: 'Your brand squeezed into their templates',
-                agency: 'Custom design, but generic tech stack',
-                custom: 'Built around your methodology and client journey',
-              },
-              {
-                template: '$200–$400/mo in recurring SaaS fees',
-                agency: '$15K–$50K+ upfront, then you\'re on your own',
-                custom: 'Partnership model — I earn when you earn',
-              },
-              {
-                template: 'You stitch together 5+ tools yourself',
-                agency: 'Delivered and gone. You maintain it.',
-                custom: 'One platform, one partner, ongoing support',
-              },
-              {
-                template: 'Same features as everyone else in your niche',
-                agency: 'Custom features, but no domain expertise',
-                custom: 'AI, certification, community — built for your world',
-              },
-              {
-                template: 'Your data lives in their ecosystem',
-                agency: 'You own the code but often can\'t maintain it',
-                custom: 'You own everything. Code, data, domain.',
-              },
-              {
-                template: 'Months of DIY setup and configuration',
-                agency: '3–6 months typical timeline',
-                custom: '2–3 weeks to launch',
-              },
+              { template: 'Your brand squeezed into their templates', agency: 'Custom design, but generic tech stack', custom: 'Built around your methodology and client journey' },
+              { template: '$200–$400/mo in recurring SaaS fees', agency: '$15K–$50K+ upfront, then you\'re on your own', custom: 'Partnership model — I earn when you earn' },
+              { template: 'You stitch together 5+ tools yourself', agency: 'Delivered and gone. You maintain it.', custom: 'One platform, one partner, ongoing support' },
+              { template: 'Same features as everyone else in your niche', agency: 'Custom features, but no domain expertise', custom: 'AI, certification, community — built for your world' },
+              { template: 'Your data lives in their ecosystem', agency: 'You own the code but often can\'t maintain it', custom: 'You own everything. Code, data, domain.' },
+              { template: 'Months of DIY setup and configuration', agency: '3–6 months typical timeline', custom: '2–3 weeks to launch' },
             ].map((row, i) => (
               <div key={`row-${i}`} className="contents">
-                <div className="bg-dark-bg p-6 flex items-start">
-                  <p className="text-body-sm text-content-muted">
-                    <span className="text-content-muted/60 mr-2">—</span>
-                    {row.template}
-                  </p>
+                <div className="bg-dark-bg p-6"><p className="text-body-sm text-content-muted"><span className="text-content-muted/60 mr-2">—</span>{row.template}</p></div>
+                <div className="bg-dark-bg p-6"><p className="text-body-sm text-content-muted"><span className="text-content-muted/60 mr-2">—</span>{row.agency}</p></div>
+                <div className="bg-dark-card p-6"><p className="text-body-sm text-content-secondary"><span className="text-accent mr-2">+</span>{row.custom}</p></div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile comparison — stacked cards */}
+          <div className="md:hidden space-y-4">
+            {[
+              { template: 'Your brand squeezed into their templates', agency: 'Custom design, but generic tech stack', custom: 'Built around your methodology and client journey' },
+              { template: '$200–$400/mo in recurring SaaS fees', agency: '$15K–$50K+ upfront, then you\'re on your own', custom: 'Partnership model — I earn when you earn' },
+              { template: 'You stitch together 5+ tools yourself', agency: 'Delivered and gone. You maintain it.', custom: 'One platform, one partner, ongoing support' },
+              { template: 'Same features as everyone else in your niche', agency: 'Custom features, but no domain expertise', custom: 'AI, certification, community — built for your world' },
+              { template: 'Your data lives in their ecosystem', agency: 'You own the code but often can\'t maintain it', custom: 'You own everything. Code, data, domain.' },
+              { template: 'Months of DIY setup and configuration', agency: '3–6 months typical timeline', custom: '2–3 weeks to launch' },
+            ].map((row, i) => (
+              <div key={`mobile-row-${i}`} className="bg-dark-card border border-border rounded-xl p-5 space-y-3">
+                <div>
+                  <p className="text-meta uppercase text-content-muted mb-1">Templates</p>
+                  <p className="text-body-sm text-content-muted"><span className="text-content-muted/60 mr-1">—</span> {row.template}</p>
                 </div>
-                <div className="bg-dark-bg p-6 flex items-start">
-                  <p className="text-body-sm text-content-muted">
-                    <span className="text-content-muted/60 mr-2">—</span>
-                    {row.agency}
-                  </p>
+                <div>
+                  <p className="text-meta uppercase text-content-muted mb-1">Agencies</p>
+                  <p className="text-body-sm text-content-muted"><span className="text-content-muted/60 mr-1">—</span> {row.agency}</p>
                 </div>
-                <div className="bg-dark-card p-6 flex items-start">
-                  <p className="text-body-sm text-content-secondary">
-                    <span className="text-accent mr-2">+</span>
-                    {row.custom}
-                  </p>
+                <div className="pt-2 border-t border-border">
+                  <p className="text-meta uppercase text-accent mb-1">Astral Integration</p>
+                  <p className="text-body-sm text-content-secondary"><span className="text-accent mr-1">+</span> {row.custom}</p>
                 </div>
               </div>
             ))}
@@ -519,101 +632,57 @@ export default function HomePage() {
             <span className="w-8 h-px bg-accent" />
             How It Works
           </p>
-          <h2 className="font-serif text-display-sm font-light mb-16">Three steps. No mystery.</h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                step: '01',
-                title: 'Discovery',
-                desc: "We get on a call. I learn your world — your mission, your clients, what's working, what's broken. I audit your current setup and tell you honestly what I'd build and why.",
-              },
-              {
-                step: '02',
-                title: 'Design & Build',
-                desc: "I design a custom blueprint, you approve it, I build it. You see progress weekly and give feedback as we go. No disappearing for months. Real code, not templates.",
-              },
-              {
-                step: '03',
-                title: 'Launch & Grow',
-                desc: "Your platform goes live. I stick around for post-launch support, fix what needs fixing, and optimize as your business evolves. You own everything — code, data, domain.",
-              },
-            ].map((item, i) => (
-              <div key={i} className="relative">
-                <div className="font-serif text-[4rem] font-light text-accent/20 mb-4 leading-none">{item.step}</div>
-                <h3 className="font-serif text-h3 mb-3">{item.title}</h3>
-                <p className="text-body-sm text-content-secondary leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* HOW PARTNERSHIPS BEGIN */}
-      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
-        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
-          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
-            <span className="w-8 h-px bg-accent" />
-            The Journey
-          </p>
-          <h2 className="font-serif text-display-sm font-light mb-4">How partnerships begin.</h2>
+          <h2 className="font-serif text-display-sm font-light mb-4">No mystery. No disappearing act.</h2>
           <p className="text-body text-content-secondary max-w-prose mb-16">
             Most clients don't start with a $10K project. They start with a conversation — and the relationship grows from there.
           </p>
 
-          {/* Journey steps */}
-          <div className="relative">
-            {/* Connecting line */}
-            <div className="hidden md:block absolute top-[60px] left-0 right-0 h-px bg-gradient-to-r from-border via-accent/30 to-accent" />
-
-            <div className="grid md:grid-cols-4 gap-6 md:gap-4">
-              {[
-                {
-                  step: 'Start',
-                  title: 'Platform Builder',
-                  desc: 'Use the interactive wizard above to map out what you need. No signup, no pressure. You get a blueprint in 2 minutes.',
-                  state: 'Free',
-                },
-                {
-                  step: 'Explore',
-                  title: 'Discovery Call',
-                  desc: 'We talk. I learn your world, your people, your pain points. I tell you honestly what I\'d build and whether I\'m the right fit.',
-                  state: 'Free',
-                },
-                {
-                  step: 'Build',
-                  title: 'Platform Launch',
-                  desc: 'Your custom platform, built in 2–3 weeks. You see progress weekly. Real code, not templates. Launched and running.',
-                  state: '2–3 weeks',
-                },
-                {
-                  step: 'Grow',
-                  title: 'Ongoing Partnership',
-                  desc: 'I stay. New features, maintenance, strategy. Your platform evolves as your business does. I earn when you earn.',
-                  state: 'Long-term',
-                },
-              ].map((item, i) => (
-                <div key={i} className="relative">
-                  {/* Step indicator */}
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-body-sm font-medium ${
-                      i === 3 ? 'bg-accent text-white' : 'bg-dark-card border border-border text-content-muted'
-                    }`}>
-                      {String(i + 1).padStart(2, '0')}
-                    </div>
-                    <span className={`text-meta uppercase ${i === 3 ? 'text-accent' : 'text-content-muted'}`}>{item.state}</span>
-                  </div>
-
-                  <div className={`bg-dark-card border rounded-xl p-6 h-full ${
-                    i === 3 ? 'border-accent/30' : 'border-border'
+          <div className="grid md:grid-cols-4 gap-6 md:gap-4">
+            {[
+              {
+                step: '01',
+                title: 'Platform Builder',
+                desc: 'Use the interactive wizard to map out what you need. No signup, no pressure. You get a blueprint in 2 minutes.',
+                state: 'Free',
+              },
+              {
+                step: '02',
+                title: 'Discovery Call',
+                desc: "We talk. I learn your world, audit your current setup, and tell you honestly what I'd build and whether I'm the right fit.",
+                state: 'Free',
+              },
+              {
+                step: '03',
+                title: 'Design & Build',
+                desc: 'Custom blueprint, weekly progress, real code. You see it come together. Launched and running in 2–3 weeks.',
+                state: '2–3 weeks',
+              },
+              {
+                step: '04',
+                title: 'Grow Together',
+                desc: 'I stay. New features, maintenance, strategy. Your platform evolves as your business does. I earn when you earn.',
+                state: 'Long-term',
+              },
+            ].map((item, i) => (
+              <div key={i}>
+                {/* Step indicator */}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center text-body-sm font-medium flex-shrink-0 ${
+                    i === 3 ? 'bg-accent text-white' : 'bg-dark-card border border-border text-content-muted'
                   }`}>
-                    <p className="text-meta uppercase text-content-muted mb-2">{item.step}</p>
-                    <h4 className="font-serif text-h4 mb-3">{item.title}</h4>
-                    <p className="text-body-sm text-content-secondary">{item.desc}</p>
+                    {item.step}
                   </div>
+                  <span className={`text-meta uppercase ${i === 3 ? 'text-accent' : 'text-content-muted'}`}>{item.state}</span>
                 </div>
-              ))}
-            </div>
+
+                <div className={`bg-dark-card border rounded-xl p-6 ${
+                  i === 3 ? 'border-accent/30' : 'border-border'
+                }`}>
+                  <h4 className="font-serif text-h4 mb-3">{item.title}</h4>
+                  <p className="text-body-sm text-content-secondary">{item.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="text-center mt-12">
@@ -916,52 +985,6 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ABOUT */}
-      <section id="about" className="py-section px-6 md:px-12">
-        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
-          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
-            <span className="w-8 h-px bg-accent" />
-            About
-          </p>
-          <h2 className="font-serif text-display-sm font-light mb-12">Jordi Amat.</h2>
-
-          <div className="grid md:grid-cols-[280px_1fr] gap-16 items-start">
-            <div className="w-full md:w-[280px] h-[340px] rounded-2xl border border-border relative overflow-hidden">
-              <img
-                src="/founder.jpeg"
-                alt="Jordi Amat"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/60 to-transparent" />
-            </div>
-
-            <div>
-              <p className="text-body text-content-secondary leading-relaxed mb-4">
-                Senior full-stack engineer, 10+ years building production applications. Former CTO. Based in Mazunte, Oaxaca — deep in the world of holistic practice, conscious community, and intentional living.
-              </p>
-              <p className="text-body text-content-secondary leading-relaxed mb-4">
-                I didn't start in tech for this space. I started in the work — sitting in ceremony, training in polarity and embodiment with teachers like John Wineland, facilitating integration, building community on the land. That's how I know the difference between a booking form and a <strong className="text-content-primary font-medium">sacred container</strong>.
-              </p>
-              <p className="text-body text-content-secondary leading-relaxed mb-4">
-                I saw teachers and healers doing genuinely life-changing work — and then losing students because their systems were held together with WhatsApp groups and spreadsheets. The gap between the quality of their work and the quality of their infrastructure was massive.
-              </p>
-              <p className="text-body text-content-secondary leading-relaxed mb-8">
-                So I built the bridge. I build with AI-powered tools, which means I ship in weeks what agencies quote months for. I understand your world because I live in it.
-              </p>
-
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-8 border-t border-border">
-                {aboutStats.map((stat, i) => (
-                  <div key={i}>
-                    <div className="font-serif text-h2 font-light text-accent mb-1">{stat.value}</div>
-                    <p className="text-body-sm text-content-muted">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
