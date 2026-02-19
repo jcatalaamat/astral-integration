@@ -16,33 +16,13 @@ const clientTypes = [
   { icon: '✦', title: 'Healers & Readers', desc: 'Astrology, energy work, channeling' },
 ];
 
+// ShivEnergetics removed — covered by case study. Ozina Camp removed — in development.
 const portfolio = [
-  {
-    client: 'ShivEnergetics',
-    type: 'IPHM-Accredited Reiki Academy — Granada, Spain',
-    desc: 'Full academy platform for an internationally accredited Reiki school. Levels 1–9 certification paths, retreat programs in rural Andalusia, student portal, practitioner directory, community hub — replacing a fragmented Wix setup with a unified school.',
-    url: null as string | null,
-    status: 'Private client',
-  },
-  {
-    client: 'Ozina Camp',
-    type: 'Farm Stay & Residency — Mallorca',
-    desc: 'Custom platform for a farm stay and artist residency. Stays, land story, residency applications, booking — replacing a fragmented online presence.',
-    url: null as string | null,
-    status: 'In development',
-  },
   {
     client: 'Uria Tsur',
     type: 'Vocal Freedom Facilitator — 18+ Cities',
     desc: 'Touring hub for a vocal facilitator and frontman of Orot Band (33K+ Spotify listeners). Centralized 8 ticket platforms into one event system across Europe and the Americas. Membership portal with 300+ subscribers at €5/mo. Bilingual EN/HE.',
     url: 'https://uriatsur.live',
-    status: null as string | null,
-  },
-  {
-    client: 'Mazunte Today',
-    type: 'AI-Powered Community Platform — Oaxaca, Mexico',
-    desc: 'Live events and community directory for a coastal town. AI-powered event submission (Claude), practitioner directory, classifieds, weekly digest, Stripe-boosted listings. Bilingual EN/ES, SEO-optimized. Used daily by locals and visitors.',
-    url: 'https://mazunte.today',
     status: null as string | null,
   },
   {
@@ -53,10 +33,10 @@ const portfolio = [
     status: null as string | null,
   },
   {
-    client: 'Proyecto Salvaje',
-    type: 'Regenerative Neighborhood — Oaxaca, Mexico',
-    desc: 'Platform for a regenerative land community. 10 household lots with natural building requirements, community coordination, land sales from $35K USD. Bioconstruction, permaculture, and off-grid living — rooted in the mountains of Oaxaca.',
-    url: 'https://proyectosalvaje.com',
+    client: 'Mazunte Today',
+    type: 'AI-Powered Community Platform — Oaxaca, Mexico',
+    desc: 'Live events and community directory for a coastal town. AI-powered event submission (Claude), practitioner directory, classifieds, weekly digest, Stripe-boosted listings. Bilingual EN/ES, SEO-optimized. Used daily by locals and visitors.',
+    url: 'https://mazunte.today',
     status: null as string | null,
   },
   {
@@ -67,11 +47,18 @@ const portfolio = [
     status: null as string | null,
   },
   {
+    client: 'Proyecto Salvaje',
+    type: 'Regenerative Neighborhood — Oaxaca, Mexico',
+    desc: 'Platform for a regenerative land community. 10 household lots with natural building requirements, community coordination, land sales from $35K USD. Bioconstruction, permaculture, and off-grid living — rooted in the mountains of Oaxaca.',
+    url: 'https://proyectosalvaje.com',
+    status: null as string | null,
+  },
+  {
     client: 'Amakura',
     type: 'Regenerative Living Center — Mazunte, Oaxaca',
     desc: 'Platform for a centro de vida regenerativa. Bioconstruction school, restaurant, natural pool, workshops, and community events. A living laboratory for regenerative culture — not just a storefront, a whole world.',
     url: 'https://amakura.store',
-    status: 'In development',
+    status: 'Coming soon',
   },
 ];
 
@@ -135,6 +122,16 @@ const aboutStats = [
   { value: '📍', label: 'Mazunte, Oaxaca' },
 ];
 
+// Comparison data — single source of truth for desktop & mobile
+const comparisonRows = [
+  { template: 'Your brand squeezed into their templates', agency: 'Custom design, but generic tech stack', custom: 'Built around your methodology and client journey' },
+  { template: '$200–$400/mo in recurring SaaS fees', agency: '$15K–$50K+ upfront, then you\'re on your own', custom: 'Partnership model — I earn when you earn' },
+  { template: 'You stitch together 5+ tools yourself', agency: 'Delivered and gone. You maintain it.', custom: 'One platform, one partner, ongoing support' },
+  { template: 'Same features as everyone else in your niche', agency: 'Custom features, but no domain expertise', custom: 'AI, certification, community — built for your world' },
+  { template: 'Your data lives in their ecosystem', agency: 'You own the code but often can\'t maintain it', custom: 'You own everything. Code, data, domain.' },
+  { template: 'Months of DIY setup and configuration', agency: '3–6 months typical timeline', custom: '2–3 weeks to launch' },
+];
+
 export default function HomePage() {
   useDocumentMeta({
     title: 'Astral Integration — Your whole world, one platform.',
@@ -146,6 +143,7 @@ export default function HomePage() {
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [addOnsExpanded, setAddOnsExpanded] = useState(false);
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
 
   // Scroll reveal observer
@@ -233,7 +231,7 @@ export default function HomePage() {
         </h1>
 
         <p className="text-body text-content-secondary max-w-[600px] mt-8 relative z-10 animate-fadeUp animate-delay-500">
-          Custom AI-powered platforms for practitioners, facilitators, healing schools, and conscious businesses. Bookings, content, community, certification tracking, payments — designed and built in weeks, not months.
+          I build the platform behind your practice. Bookings, community, courses, payments — one place, your brand, live in weeks.
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 mt-12 relative z-10 animate-fadeUp animate-delay-700">
@@ -260,7 +258,7 @@ export default function HomePage() {
           {[
             { value: '10+', label: 'Years shipping software' },
             { value: '10+', label: 'Platforms built' },
-            { value: '500+', label: 'Users served' },
+            { value: '1,000+', label: 'Users served' },
             { value: '2–3 wk', label: 'Average delivery' },
           ].map((stat, i) => (
             <div key={i} className="text-center">
@@ -288,12 +286,12 @@ export default function HomePage() {
             Built for people who are<br />great at their craft.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mb-16">
-            You shouldn't have to choose between doing transformational work and having a business that runs smoothly.
+            You changed someone's life last week. Then spent the weekend fighting Calendly and Canva.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 border border-border rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
             {clientTypes.map((client, i) => (
-              <div key={i} className="bg-dark-card p-8 text-center hover:bg-dark-cardHover transition-colors border-r border-b border-border last:border-r-0 [&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:border-r [&:nth-child(4)]:border-r-0 md:[&:nth-child(4)]:border-r md:[&:nth-child(3)]:border-r-0 md:[&:nth-child(6)]:border-r-0">
+              <div key={i} className="bg-dark-card p-8 text-center hover:bg-dark-cardHover transition-colors">
                 <div className="text-3xl mb-4">{client.icon}</div>
                 <h4 className="font-serif text-h4 mb-1">{client.title}</h4>
                 <p className="text-body-sm text-content-muted">{client.desc}</p>
@@ -316,48 +314,57 @@ export default function HomePage() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {portfolio.map((item, i) => (
-              <div
-                key={i}
-                className="bg-dark-card border border-border rounded-2xl overflow-hidden hover:border-border-hover hover:-translate-y-1 transition-all group"
-              >
-                {/* Site preview */}
-                {item.url ? (
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block relative w-full h-[200px] overflow-hidden bg-dark-bg border-b border-border cursor-pointer"
-                  >
-                    <iframe
-                      src={item.url}
-                      title={`${item.client} preview`}
-                      className="absolute top-0 left-0 w-[1280px] h-[800px] origin-top-left pointer-events-none"
-                      style={{ transform: 'scale(0.25)' }}
-                      loading="lazy"
-                      sandbox="allow-same-origin"
-                      tabIndex={-1}
-                      aria-hidden="true"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark-card/80 via-transparent to-transparent" />
-                    <div className="absolute bottom-3 right-3 text-meta uppercase text-accent bg-dark-card/80 backdrop-blur-sm border border-border rounded-full px-3 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                      Visit ↗
-                    </div>
-                  </a>
-                ) : (
-                  <div className="w-full h-[200px] bg-dark-bg border-b border-border flex items-center justify-center">
-                    <span className="text-meta uppercase text-content-muted tracking-wider">{item.status || 'Coming soon'}</span>
-                  </div>
-                )}
+            {portfolio.map((item, i) => {
+              const gradients = [
+                'from-amber-900/25 via-amber-900/5 to-transparent',
+                'from-violet-900/25 via-violet-900/5 to-transparent',
+                'from-sky-900/25 via-sky-900/5 to-transparent',
+                'from-rose-900/25 via-rose-900/5 to-transparent',
+                'from-lime-900/25 via-lime-900/5 to-transparent',
+                'from-orange-900/25 via-orange-900/5 to-transparent',
+              ];
 
-                {/* Card content */}
-                <div className="p-8">
-                  <p className="text-meta uppercase text-gold mb-4">{item.type}</p>
-                  <h3 className="font-serif text-h2 font-light mb-4">{item.client}</h3>
-                  <p className="text-body-sm text-content-secondary leading-relaxed">{item.desc}</p>
+              const PreviewContent = () => (
+                <div className={`relative w-full h-[180px] border-b border-border bg-gradient-to-br ${gradients[i % gradients.length]} flex items-end p-6`}>
+                  <div className="absolute top-4 right-4 flex items-center gap-2">
+                    {item.url && (
+                      <span className="text-meta uppercase text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+                        View Live ↗
+                      </span>
+                    )}
+                    {item.status && (
+                      <span className="text-meta uppercase text-content-muted bg-dark-bg/60 backdrop-blur-sm border border-border rounded-full px-3 py-1">
+                        {item.status}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="font-serif text-[2rem] md:text-[2.5rem] font-light leading-tight text-content-primary/20 group-hover:text-content-primary/30 transition-colors select-none">
+                    {item.client}
+                  </h3>
                 </div>
-              </div>
-            ))}
+              );
+
+              return (
+                <div
+                  key={i}
+                  className="bg-dark-card border border-border rounded-2xl overflow-hidden hover:border-border-hover hover:-translate-y-1 transition-all group"
+                >
+                  {item.url ? (
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="block">
+                      <PreviewContent />
+                    </a>
+                  ) : (
+                    <PreviewContent />
+                  )}
+
+                  <div className="p-8">
+                    <p className="text-meta uppercase text-gold mb-4">{item.type}</p>
+                    <h3 className="font-serif text-h2 font-light mb-4">{item.client}</h3>
+                    <p className="text-body-sm text-content-secondary leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -400,7 +407,7 @@ export default function HomePage() {
 
             {/* Systems breakdown */}
             <div className="p-8 md:p-10">
-              <h4 className="font-serif text-h4 mb-6 text-content-muted">What's running in production</h4>
+              <h4 className="font-serif text-h4 mb-6 text-content-muted">What's live now</h4>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
                   {
@@ -483,6 +490,7 @@ export default function HomePage() {
                 src="/founder.jpeg"
                 alt="Jordi Amat"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/60 to-transparent" />
             </div>
@@ -495,7 +503,7 @@ export default function HomePage() {
                 I didn't start in tech for this space. I started in the work — sitting in ceremony, training in polarity and embodiment with teachers like John Wineland, facilitating integration, building community on the land. That's how I know the difference between a booking form and a <strong className="text-content-primary font-medium">sacred container</strong>.
               </p>
               <p className="text-body text-content-secondary leading-relaxed mb-4">
-                I saw teachers and healers doing genuinely life-changing work — and then losing students because their systems were held together with WhatsApp groups and spreadsheets. The gap between the quality of their work and the quality of their infrastructure was massive.
+                I kept watching incredible teachers lose students — not because the work wasn't profound, but because their "system" was a WhatsApp group, a Google Sheet, and a prayer.
               </p>
               <p className="text-body text-content-secondary leading-relaxed mb-4">
                 So I built the bridge. I build with AI-powered tools, which means I ship in weeks what agencies quote months for. I understand your world because I live in it.
@@ -576,18 +584,11 @@ export default function HomePage() {
             </div>
             <div className="bg-dark-card p-8 relative">
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-accent" />
-              <h4 className="text-body-sm text-accent font-medium uppercase tracking-wider mb-2">Astral Integration</h4>
+              <h4 className="text-body-sm text-accent font-medium uppercase tracking-wider mb-2">Working With Me</h4>
               <p className="text-meta text-content-muted">Custom platform, partnership model</p>
             </div>
 
-            {[
-              { template: 'Your brand squeezed into their templates', agency: 'Custom design, but generic tech stack', custom: 'Built around your methodology and client journey' },
-              { template: '$200–$400/mo in recurring SaaS fees', agency: '$15K–$50K+ upfront, then you\'re on your own', custom: 'Partnership model — I earn when you earn' },
-              { template: 'You stitch together 5+ tools yourself', agency: 'Delivered and gone. You maintain it.', custom: 'One platform, one partner, ongoing support' },
-              { template: 'Same features as everyone else in your niche', agency: 'Custom features, but no domain expertise', custom: 'AI, certification, community — built for your world' },
-              { template: 'Your data lives in their ecosystem', agency: 'You own the code but often can\'t maintain it', custom: 'You own everything. Code, data, domain.' },
-              { template: 'Months of DIY setup and configuration', agency: '3–6 months typical timeline', custom: '2–3 weeks to launch' },
-            ].map((row, i) => (
+            {comparisonRows.map((row, i) => (
               <div key={`row-${i}`} className="contents">
                 <div className="bg-dark-bg p-6"><p className="text-body-sm text-content-muted"><span className="text-content-muted/60 mr-2">—</span>{row.template}</p></div>
                 <div className="bg-dark-bg p-6"><p className="text-body-sm text-content-muted"><span className="text-content-muted/60 mr-2">—</span>{row.agency}</p></div>
@@ -598,14 +599,7 @@ export default function HomePage() {
 
           {/* Mobile comparison — stacked cards */}
           <div className="md:hidden space-y-4">
-            {[
-              { template: 'Your brand squeezed into their templates', agency: 'Custom design, but generic tech stack', custom: 'Built around your methodology and client journey' },
-              { template: '$200–$400/mo in recurring SaaS fees', agency: '$15K–$50K+ upfront, then you\'re on your own', custom: 'Partnership model — I earn when you earn' },
-              { template: 'You stitch together 5+ tools yourself', agency: 'Delivered and gone. You maintain it.', custom: 'One platform, one partner, ongoing support' },
-              { template: 'Same features as everyone else in your niche', agency: 'Custom features, but no domain expertise', custom: 'AI, certification, community — built for your world' },
-              { template: 'Your data lives in their ecosystem', agency: 'You own the code but often can\'t maintain it', custom: 'You own everything. Code, data, domain.' },
-              { template: 'Months of DIY setup and configuration', agency: '3–6 months typical timeline', custom: '2–3 weeks to launch' },
-            ].map((row, i) => (
+            {comparisonRows.map((row, i) => (
               <div key={`mobile-row-${i}`} className="bg-dark-card border border-border rounded-xl p-5 space-y-3">
                 <div>
                   <p className="text-meta uppercase text-content-muted mb-1">Templates</p>
@@ -616,7 +610,7 @@ export default function HomePage() {
                   <p className="text-body-sm text-content-muted"><span className="text-content-muted/60 mr-1">—</span> {row.agency}</p>
                 </div>
                 <div className="pt-2 border-t border-border">
-                  <p className="text-meta uppercase text-accent mb-1">Astral Integration</p>
+                  <p className="text-meta uppercase text-accent mb-1">Working With Me</p>
                   <p className="text-body-sm text-content-secondary"><span className="text-accent mr-1">+</span> {row.custom}</p>
                 </div>
               </div>
@@ -699,6 +693,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* PLATFORM BUILDER — moved before Pricing for better funnel */}
+      <PlatformBuilder />
 
       {/* PRICING */}
       <section id="pricing" className="py-section px-6 md:px-12">
@@ -857,6 +854,9 @@ export default function HomePage() {
               <p className="text-body-sm text-content-muted mt-4">Transparent. Simple. Aligned.</p>
             </div>
 
+            <p className="text-body-sm text-content-muted mb-4">
+              Most partnership projects start with <strong className="text-content-primary">$0–$1,500 upfront</strong>, depending on scope.
+            </p>
             <p className="text-body-sm text-content-muted">
               The percentage applies only to transactions processed through the platform I build. Revenue from other channels, in-person work, or existing systems is yours entirely.
             </p>
@@ -873,39 +873,53 @@ export default function HomePage() {
             </a>
           </div>
 
-          {/* Add-On Modules */}
+          {/* Add-On Modules — collapsible */}
           <div className="mb-16">
-            <h3 className="font-serif text-h2 font-light mb-2">Add-On Modules</h3>
-            <p className="text-body-sm text-content-secondary mb-8">Start with the core. Expand as you grow. Add-ons follow the same model — built into the project scope or added for a small upfront fee.</p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {addOnModules.map((mod, i) => (
-                <div
-                  key={i}
-                  className="bg-dark-card border border-border rounded-xl p-6 hover:border-border-hover transition-colors"
-                >
-                  <h4 className="font-serif text-h4 mb-2">{mod.title}</h4>
-                  <p className="text-body-sm text-content-muted mb-3">{mod.desc}</p>
-                  <p className="text-body-sm text-gold font-medium">{mod.price}</p>
-                </div>
-              ))}
+            <button
+              onClick={() => setAddOnsExpanded(!addOnsExpanded)}
+              className="w-full flex items-center justify-between mb-4 group"
+            >
+              <div>
+                <h3 className="font-serif text-h2 font-light text-left">Add-On Modules</h3>
+                <p className="text-body-sm text-content-secondary text-left mt-1">Start with the core. Expand as you grow.</p>
+              </div>
+              <span className={`w-8 h-8 rounded-full border border-border flex items-center justify-center text-accent transition-transform ${addOnsExpanded ? 'rotate-45' : ''}`}>
+                +
+              </span>
+            </button>
+            <div className={`overflow-hidden transition-all duration-500 ${addOnsExpanded ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
+                {addOnModules.map((mod, i) => (
+                  <div
+                    key={i}
+                    className="bg-dark-card border border-border rounded-xl p-6 hover:border-border-hover transition-colors"
+                  >
+                    <h4 className="font-serif text-h4 mb-2">{mod.title}</h4>
+                    <p className="text-body-sm text-content-muted mb-3">{mod.desc}</p>
+                    <p className="text-body-sm text-gold font-medium">{mod.price}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Monthly Support */}
+          {/* Monthly Support — compact single row */}
           <div>
             <h3 className="font-serif text-h2 font-light mb-2">Monthly Support</h3>
-            <p className="text-body-sm text-content-secondary mb-8">Stay supported after launch. Included in Partnership model. Available separately for upfront projects.</p>
-            <div className="grid md:grid-cols-3 gap-6">
+            <p className="text-body-sm text-content-secondary mb-6">Included in Partnership model. Available separately for upfront projects.</p>
+            <div className="flex flex-col md:flex-row gap-4">
               {monthlyPlans.map((plan, i) => (
                 <div
                   key={i}
-                  className="bg-dark-card border border-border rounded-2xl p-8 hover:border-border-hover transition-colors"
+                  className="flex-1 bg-dark-card border border-border rounded-xl px-6 py-5 flex items-center justify-between hover:border-border-hover transition-colors"
                 >
-                  <h4 className="font-serif text-h3 mb-1">{plan.name}</h4>
-                  <div className="font-serif text-[2rem] font-light text-accent mb-4">
+                  <div>
+                    <h4 className="font-serif text-h4">{plan.name}</h4>
+                    <p className="text-body-sm text-content-muted">{plan.desc}</p>
+                  </div>
+                  <div className="font-serif text-h3 font-light text-accent ml-6 flex-shrink-0">
                     {plan.price}<span className="text-body-sm text-content-muted font-sans">/mo</span>
                   </div>
-                  <p className="text-body-sm text-content-secondary">{plan.desc}</p>
                 </div>
               ))}
             </div>
@@ -922,7 +936,7 @@ export default function HomePage() {
           </p>
           <h2 className="font-serif text-display-sm font-light mb-16">What they say.</h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <blockquote className="bg-dark-card border border-border rounded-2xl p-8">
               <p className="text-body text-content-secondary leading-relaxed italic mb-6">
                 "He centralized 8 ticket platforms into one hub and built a membership portal for my community. I went from spending hours on admin to focusing on my work."
@@ -938,7 +952,20 @@ export default function HomePage() {
 
             <blockquote className="bg-dark-card border border-border rounded-2xl p-8">
               <p className="text-body text-content-secondary leading-relaxed italic mb-6">
-                "We needed a booking system that could handle tours across 4 European cities, multiple languages, and dozens of art historians. Jordi built it in weeks — and now he runs our entire tech operation."
+                "It finally feels like my school, not a patchwork of tools. My 300+ students can find everything — courses, bookings, community, their practitioner path — in one place."
+              </p>
+              <footer className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif">S</div>
+                <div>
+                  <p className="text-body-sm text-content-primary font-medium">Sera Shivnan</p>
+                  <p className="text-body-sm text-content-muted">ShivEnergetics — Granada</p>
+                </div>
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-dark-card border border-border rounded-2xl p-8">
+              <p className="text-body text-content-secondary leading-relaxed italic mb-6">
+                "Jordi built us a full eco-farm stay platform — bookings, the land story, artist residency applications — all in one place. It finally feels like us, not like a template with our logo on it."
               </p>
               <footer className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif">O</div>
@@ -978,7 +1005,7 @@ export default function HomePage() {
                     +
                   </span>
                 </button>
-                <div className={`overflow-hidden transition-all duration-300 ${openFaq === i ? 'max-h-[300px]' : 'max-h-0'}`}>
+                <div className={`overflow-hidden transition-all duration-300 ${openFaq === i ? 'max-h-[500px]' : 'max-h-0'}`}>
                   <p className="px-6 pb-6 text-body-sm text-content-secondary leading-relaxed">
                     {item.a}
                   </p>
@@ -988,9 +1015,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* PLATFORM BUILDER */}
-      <PlatformBuilder />
 
       {/* CONTACT */}
       <section id="contact" className="py-section px-6 md:px-12 bg-dark-card">
@@ -1087,9 +1111,15 @@ export default function HomePage() {
                 <p className="text-body text-content-secondary mb-3">
                   I'll respond within 24-48 hours.
                 </p>
-                <p className="text-body-sm text-content-muted">
+                <p className="text-body-sm text-content-muted mb-8">
                   Check your inbox for a reply from hello@astralintegration.co
                 </p>
+                <button
+                  onClick={() => setFormStatus('idle')}
+                  className="text-body-sm text-accent hover:underline"
+                >
+                  Send another message
+                </button>
               </div>
             )}
 
