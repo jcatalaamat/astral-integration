@@ -219,10 +219,13 @@ export default function HomePage() {
               <a
                 key={door.label}
                 href={door.href}
-                className="group bg-dark-card border border-border rounded-2xl p-6 hover:border-accent/40 transition-all"
+                className="group bg-dark-card border border-border rounded-2xl p-6 hover:border-accent/40 hover:bg-dark-cardHover transition-all"
               >
                 <p className="font-serif text-h4 group-hover:text-accent transition-colors mb-2">{door.label}</p>
-                <p className="text-meta text-content-muted leading-relaxed">{door.desc}</p>
+                <p className="text-meta text-content-muted leading-relaxed mb-3">{door.desc}</p>
+                <span className="text-meta text-accent opacity-0 group-hover:opacity-100 transition-opacity inline-flex items-center gap-1">
+                  Explore <span aria-hidden="true">&rarr;</span>
+                </span>
               </a>
             ))}
           </div>
