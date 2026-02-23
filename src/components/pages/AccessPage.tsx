@@ -1,4 +1,7 @@
 import { useState, type ReactNode } from "react";
+import Navigation from '../Navigation';
+import Footer from '../Footer';
+import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 
 // ─── DATA ───────────────────────────────────────────────────────────────────
 const CERTS = [
@@ -594,8 +597,8 @@ const JourneyTab = () => {
   </div>;
 };
 
-// ─── MAIN APP ───────────────────────────────────────────────────────────────
-export default function App() {
+// ─── PROTOTYPE ──────────────────────────────────────────────────────────────
+function AccessPrototype() {
   const [tab,setTab]=useState<TabId>("home");
   const [q,setQ]=useState<string>("");const [cQ,setCQ]=useState<string>("");
   const [region,setRegion]=useState<string | null>(null);const [cert,setCert]=useState<string | null>(null);const [lang,setLang]=useState<string | null>(null);
@@ -724,4 +727,84 @@ export default function App() {
     {pM&&<ProfileModal f={pM} onClose={()=>setPM(null)} loc={loc} />}
     {bM&&<BookModal f={bM} onClose={()=>setBM(null)} />}
   </div>;
+}
+
+// ─── FRAMED PAGE ────────────────────────────────────────────────────────────
+export default function AccessPage() {
+  useDocumentMeta({
+    title: 'Access Consciousness — Platform Prototype — Astral Integration',
+    description: 'An unsolicited prototype: what a unified facilitator directory, class discovery, and student journey platform could look like for Access Consciousness. Built by Jordi Amat.',
+    ogUrl: 'https://astralintegration.co/access',
+  });
+
+  return (
+    <div className="min-h-screen bg-dark-bg font-sans">
+      <Navigation />
+
+      {/* Framing intro */}
+      <section className="pt-40 pb-16 px-6 md:px-12">
+        <div className="max-w-content mx-auto">
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            Unsolicited Prototype
+          </p>
+          <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
+            What Access Consciousness<br />could look like <em className="italic gradient-text">unified.</em>
+          </h1>
+          <p className="text-body text-content-secondary max-w-prose mb-6">
+            13,000+ facilitators across 176 countries. Hundreds of class types. Millions of sessions delivered. And the digital infrastructure holding it all together is scattered across directories that don't talk to each other, booking systems that vary by facilitator, and no single place a student can track their journey.
+          </p>
+          <p className="text-body text-content-secondary max-w-prose mb-6">
+            This is what it could look like if someone built the platform from the ground up — a unified facilitator directory with real search, class discovery across formats and geographies, a student journey tracker, and a facilitator dashboard. One system. One experience.
+          </p>
+          <p className="text-body-sm text-content-muted max-w-prose mb-4">
+            Built by Jordi Amat — Bars Facilitator in training, Foundation ×2, senior engineer, former CTO. This isn't a pitch deck. It's a working prototype.
+          </p>
+
+          <div className="flex flex-wrap gap-3 mt-8">
+            <span className="text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">Facilitator Directory</span>
+            <span className="text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">Class Discovery</span>
+            <span className="text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">Student Journey</span>
+            <span className="text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">Facilitator Dashboard</span>
+            <span className="text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">52 Facilitators · 5 Tabs</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Prototype embed */}
+      <section className="pb-8 px-4 md:px-8">
+        <div className="max-w-[880px] mx-auto rounded-2xl overflow-hidden border border-border shadow-2xl">
+          <AccessPrototype />
+        </div>
+      </section>
+
+      {/* CTA below prototype */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto text-center">
+          <h2 className="font-serif text-display-sm font-light mb-6">
+            This is what I build.
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mx-auto mb-10">
+            If your organization has outgrown its digital infrastructure — or never had the right one to begin with — I'd like to hear about it. I build platforms like this as long-term partnerships.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/#contact"
+              className="inline-block px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+            >
+              Start a Conversation
+            </a>
+            <a
+              href="/work"
+              className="inline-block px-10 py-4 bg-transparent text-content-secondary border border-border rounded-full text-body-sm font-medium hover:border-border-hover hover:text-content-primary transition-all"
+            >
+              See All Case Studies
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
 }

@@ -10,10 +10,20 @@ const DIST = join(__dirname, '..', 'dist');
 const ROUTES = [
   '/',
   '/work',
+  '/work/sacred-counsel',
+  '/work/uria-tsur',
+  '/work/shivenergetics',
+  '/work/mazunte-today',
+  '/work/amakura',
+  '/work/inner-ascend',
+  '/work/ozina-camp',
+  '/work/proyecto-salvaje',
   '/tools',
   '/tools/life-os',
   '/tools/content-studio',
   '/access',
+  '/practitioners',
+  '/how-it-works',
 ];
 
 // Simple static file server for the dist folder

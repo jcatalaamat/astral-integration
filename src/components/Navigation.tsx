@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 export default function Navigation() {
@@ -34,11 +35,22 @@ export default function Navigation() {
     };
   }, [mobileMenuOpen]);
 
-  const navItems = [
-    { label: 'Work', href: '#work' },
-    { label: 'How It Works', href: '#how' },
-    { label: 'About', href: '#about' },
-  ];
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  const navItems = isHome
+    ? [
+        { label: 'Work', href: '#work' },
+        { label: 'How It Works', href: '#how' },
+        { label: 'About', href: '#about' },
+      ]
+    : [
+        { label: 'Work', href: '/work' },
+        { label: 'How It Works', href: '/how-it-works' },
+        { label: 'About', href: '/#about' },
+      ];
+
+  const contactHref = isHome ? '#contact' : '/#contact';
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
@@ -65,10 +77,12 @@ export default function Navigation() {
         <div className="max-w-content mx-auto flex items-center justify-between">
           {/* Logo */}
           <a
-            href="#"
+            href="/"
             onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              if (isHome) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
             }}
             className="font-serif text-2xl font-light tracking-wide text-content-primary"
           >
@@ -88,8 +102,8 @@ export default function Navigation() {
               </a>
             ))}
             <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, '#contact')}
+              href={contactHref}
+              onClick={(e) => handleNavClick(e, contactHref)}
               className="text-nav uppercase px-6 py-2.5 border border-accent rounded-full text-accent hover:bg-accent hover:text-white transition-all hover:shadow-glow"
             >
               Get in Touch
@@ -136,8 +150,8 @@ export default function Navigation() {
                   </a>
                 ))}
                 <a
-                  href="#contact"
-                  onClick={(e) => handleNavClick(e, '#contact')}
+                  href={contactHref}
+                  onClick={(e) => handleNavClick(e, contactHref)}
                   className="block py-4 text-body text-accent font-medium"
                   role="menuitem"
                 >

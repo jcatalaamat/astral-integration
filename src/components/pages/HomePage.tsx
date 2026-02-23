@@ -193,6 +193,43 @@ export default function HomePage() {
       </section>
 
       {/* ════════════════════════════════════════════════
+          1b. QUICK ROUTES — for visitors who already know what they need
+          ════════════════════════════════════════════════ */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            I Build For
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            Find your starting point.
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-12">
+            Different work, different architecture. If you already know what you need, start here.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[
+              { label: 'Practitioners', href: '/practitioners', desc: 'Healers, coaches, facilitators running on scattered tools' },
+              { label: 'Schools', href: '/work/shivenergetics', desc: 'Certification programs and structured learning paths' },
+              { label: 'Retreats', href: '/work/sacred-counsel', desc: 'Booking, intake, and multi-stream revenue' },
+              { label: 'Communities', href: '/work/mazunte-today', desc: 'Directories, events, and local platforms' },
+              { label: 'Organizations', href: '/#contact', desc: 'Networks and facilitator infrastructure at scale' },
+            ].map((door) => (
+              <a
+                key={door.label}
+                href={door.href}
+                className="group bg-dark-card border border-border rounded-2xl p-6 hover:border-accent/40 transition-all"
+              >
+                <p className="font-serif text-h4 group-hover:text-accent transition-colors mb-2">{door.label}</p>
+                <p className="text-meta text-content-muted leading-relaxed">{door.desc}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════
           2. THE REALITY
           ════════════════════════════════════════════════ */}
       <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
@@ -465,6 +502,15 @@ export default function HomePage() {
                 The goal is alignment, not transactions.
               </p>
             </div>
+          </div>
+
+          <div className="mt-8">
+            <a
+              href="/how-it-works"
+              className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
+            >
+              Full pricing, tiers & FAQ <span aria-hidden="true">&rarr;</span>
+            </a>
           </div>
         </div>
       </section>

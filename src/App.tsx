@@ -3,6 +3,9 @@ import { FreemiumProvider } from './context/FreemiumContext';
 import HomePage from './components/pages/HomePage';
 import WorkPage from './components/pages/WorkPage';
 import AccessPage from './components/pages/AccessPage';
+import PractitionersPage from './components/pages/PractitionersPage';
+import CaseStudyPage from './components/pages/CaseStudyPage';
+import HowItWorksPage from './components/pages/HowItWorksPage';
 import ToolsHub from './components/pages/ToolsHub';
 import { LifeOSLanding, LifeOSApp } from './components/pages/life-os';
 import { ContentStudioLanding, ContentStudioApp } from './components/pages/content-studio';
@@ -17,7 +20,10 @@ function App() {
           {/* Agency site */}
           <Route path="/" element={<HomePage />} />
           <Route path="/work" element={<WorkPage />} />
+          <Route path="/work/:slug" element={<CaseStudyPage />} />
           <Route path="/access" element={<AccessPage />} />
+          <Route path="/practitioners" element={<PractitionersPage />} />
+          <Route path="/how-it-works" element={<HowItWorksPage />} />
 
           {/* Tools Hub */}
           <Route path="/tools" element={<ToolsHub />} />
