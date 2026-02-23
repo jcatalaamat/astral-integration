@@ -13,6 +13,7 @@ const ROUTES = [
   '/tools',
   '/tools/life-os',
   '/tools/content-studio',
+  '/access',
 ];
 
 // Simple static file server for the dist folder

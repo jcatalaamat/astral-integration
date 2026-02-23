@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { FreemiumProvider } from './context/FreemiumContext';
 import HomePage from './components/pages/HomePage';
 import WorkPage from './components/pages/WorkPage';
+import AccessPage from './components/pages/AccessPage';
 import ToolsHub from './components/pages/ToolsHub';
 import { LifeOSLanding, LifeOSApp } from './components/pages/life-os';
 import { ContentStudioLanding, ContentStudioApp } from './components/pages/content-studio';
@@ -16,6 +17,7 @@ function App() {
           {/* Agency site */}
           <Route path="/" element={<HomePage />} />
           <Route path="/work" element={<WorkPage />} />
+          <Route path="/access" element={<AccessPage />} />
 
           {/* Tools Hub */}
           <Route path="/tools" element={<ToolsHub />} />
