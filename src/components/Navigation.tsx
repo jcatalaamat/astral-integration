@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 export default function Navigation() {
@@ -37,7 +36,7 @@ export default function Navigation() {
 
   const navItems = [
     { label: 'Work', href: '#work' },
-    { label: 'Pricing', href: '#pricing' },
+    { label: 'How It Works', href: '#how' },
     { label: 'About', href: '#about' },
   ];
 
@@ -88,12 +87,6 @@ export default function Navigation() {
                 {item.label}
               </a>
             ))}
-            <Link
-              to="/tools"
-              className="text-nav uppercase text-gold hover:text-gold/80 transition-colors"
-            >
-              Free Tools
-            </Link>
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
@@ -142,14 +135,6 @@ export default function Navigation() {
                     {item.label}
                   </a>
                 ))}
-                <Link
-                  to="/tools"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-4 text-body text-gold font-medium border-b border-border"
-                  role="menuitem"
-                >
-                  Free Tools
-                </Link>
                 <a
                   href="#contact"
                   onClick={(e) => handleNavClick(e, '#contact')}

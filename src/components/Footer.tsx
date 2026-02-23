@@ -1,7 +1,7 @@
 export default function Footer() {
   const navLinks = [
     { label: 'Work', href: '#work' },
-    { label: 'Pricing', href: '#pricing' },
+    { label: 'How It Works', href: '#how' },
     { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -38,7 +38,7 @@ export default function Footer() {
               Astral <em className="italic text-accent/60">Integration</em>
             </a>
             <p className="text-body-sm text-content-muted mt-4 max-w-[280px]">
-              Custom AI-powered platforms for healers, coaches, retreat centers, and conscious businesses.
+              Custom digital infrastructure for schools, practices, retreat centers, and original work.
             </p>
             <p className="text-body-sm text-content-muted mt-4">
               hello@astralintegration.co
@@ -59,12 +59,6 @@ export default function Footer() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="/tools"
-                className="text-body-sm text-gold hover:text-gold/80 transition-colors w-fit"
-              >
-                Free Tools
-              </a>
             </div>
           </div>
 

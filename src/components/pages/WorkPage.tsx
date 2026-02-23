@@ -1,239 +1,216 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
-import { buildCategories } from '../../content';
+import { useDocumentMeta } from '../../hooks/useDocumentMeta';
+
+const caseStudies = [
+  {
+    client: 'Sacred Counsel',
+    type: 'Retreat Center & Integration Practice — Valle de Bravo, Mexico',
+    url: 'https://sacredcounsel.space',
+    status: null as string | null,
+    challenge: 'A center with 20+ years of ceremony experience running ayahuasca retreats, integration therapy, private homestays, and a 21-day metabolic detox — each with its own intake process, pricing, and client journey. Five distinct revenue streams, each requiring different booking logic, preparation materials, and follow-up sequences. The platform needed to honor the depth of the work without reducing it to a booking page.',
+    decisions: 'The core architectural challenge was modeling five fundamentally different client journeys within a single platform identity. A retreat booking requires screening, preparation guidelines, and capacity management. A homestay is availability-based with seasonal pricing. Integration therapy needs recurring session scheduling with progress notes. The detox program has a fixed 21-day structure with daily check-ins. Each stream needed its own intake flow, payment logic, and communication sequence — while sharing a unified brand experience and client database.',
+    built: 'A unified platform with stream-specific intake flows, automated preparation sequences, capacity management per offering type, and a shared client relationship layer. Revenue from retreats, homestays, therapy, and detox programs all flow through one system with offering-specific logic underneath.',
+    gradient: 'from-amber-900/25 via-amber-900/5 to-transparent',
+  },
+  {
+    client: 'Uria Tsur',
+    type: 'Vocal Freedom Facilitator — Touring 18+ Cities',
+    url: 'https://uriatsur.live',
+    status: null as string | null,
+    challenge: 'A touring vocal facilitator and frontman of Orot Band (33K+ Spotify listeners) was managing events across 8 ticketing platforms — Eventbrite, Universe, Fienta, and five others — losing control of audience data, paying platform fees on every transaction, and spending hours weekly on admin. He also needed a membership portal for 300+ subscribers and a training program for singing circle leaders across multiple countries.',
+    decisions: 'The key decision was whether to aggregate the existing platforms or replace them entirely. We chose replacement: a centralized event system that handles ticketing, capacity, and attendee data across all 18+ cities. The membership layer needed to support recurring access, gated video content, and community features without the overhead of a separate platform. The Singing Circle Leaders Course required cohort management, application screening, and multilingual support (English/Hebrew) — essentially a certification pipeline built into the same ecosystem.',
+    built: 'A centralized event hub replacing all 8 platforms with unified ticketing, audience data ownership, and zero per-transaction platform fees. A membership portal with 300+ subscribers, gated content, and community features. A Singing Circle Leaders Course with application flow, cohort management, and bilingual delivery. All under one roof, one login, one brand.',
+    gradient: 'from-violet-900/25 via-violet-900/5 to-transparent',
+  },
+  {
+    client: 'ShivEnergetics',
+    type: 'Reiki Academy — Granada, Spain',
+    url: null,
+    status: 'In progress',
+    challenge: 'A Reiki Master Teacher with 300+ students across 9 certification levels was running her school across five disconnected platforms — Teachable for courses, Calendly for bookings, Stripe for payments, WhatsApp for communication, and Google Sheets for student records. There was no single place a student could see their path from first course to practitioner certification. Booking confirmations were manual. Student progression was tracked in spreadsheets.',
+    decisions: 'The challenge wasn\'t just consolidating five platforms — it was designing a student journey architecture that could handle 9 certification levels with prerequisite dependencies, where a student\'s progression through Level 3 unlocks Level 4, practice hours accumulate toward certification, and completed certifications automatically populate a public practitioner directory. The system needed to work for a student on day one and a practitioner three years in. We also built an AI assistant trained on the Reiki methodology — not a generic chatbot, but one that understands energy work terminology, can guide students through practice questions, and triages complex inquiries to the teacher.',
+    built: 'A unified academy platform — course delivery with prerequisite-gated progression, student tracking across 9 certification levels, practice hour logging, automatic practitioner directory population upon certification, retreat bookings, and an AI assistant trained on the methodology. Five platforms replaced with one.',
+    gradient: 'from-sky-900/25 via-sky-900/5 to-transparent',
+  },
+  {
+    client: 'Mazunte Today',
+    type: 'Community Platform — Oaxaca, Mexico',
+    url: 'https://mazunte.today',
+    status: null as string | null,
+    challenge: 'A small coastal town in Oaxaca with dozens of practitioners, venues, and events happening every night — and no central place to find any of it. Visitors relied on word of mouth. Locals posted on scattered WhatsApp groups. Business owners had no affordable way to maintain an online presence. Event information was fragmented across Instagram stories, Facebook groups, and handwritten signs.',
+    decisions: 'The platform needed to serve three distinct user types simultaneously: visitors looking for what\'s happening tonight, practitioners and businesses needing affordable digital presence, and community members wanting a local marketplace. The architectural choice was a directory-first model with event listings layered on top — not a social network, not a marketplace, but a community utility. Bilingual from day one (English/Spanish) because the town is roughly split. Daily content updates rather than user-generated content to maintain quality and accuracy.',
+    built: 'A bilingual community platform: event listings updated daily, practitioner and business directory, classifieds, and a weekly digest — in English and Spanish. Used by locals and visitors as the go-to source for what\'s happening in town.',
+    gradient: 'from-rose-900/25 via-rose-900/5 to-transparent',
+  },
+  {
+    client: 'Amakura',
+    type: 'Centro de Vida Regenerativa — Mazunte, Oaxaca',
+    url: 'https://amakura.store',
+    status: 'In progress',
+    challenge: 'A regenerative living center running a bioconstruction school, restaurant, natural pool, workshops, and community events — all under one roof but with no unified digital layer. Each offering was promoted separately through social media and word of mouth. There was no way for someone discovering the restaurant to learn about the bioconstruction school, or for a workshop participant to see what else was available.',
+    decisions: 'The challenge was creating a single digital home for fundamentally different offering types — educational programs (the school), hospitality (the restaurant and pool), events (workshops and community gatherings), and retail — without forcing them into a generic template. Each needed its own presentation logic while sharing a unified identity and cross-promoting the others. The brand needed to feel like the place itself: warm, grounded, and alive.',
+    built: 'A unified platform bringing together all offerings — workshop enrollment, restaurant presence, event listings, and the bioconstruction school — into a single digital home that reflects the center\'s identity and makes everything discoverable from any entry point.',
+    gradient: 'from-emerald-900/25 via-emerald-900/5 to-transparent',
+  },
+  {
+    client: 'Inner Ascend',
+    type: 'Healing Membership & Facilitator Pipeline',
+    url: 'https://inner-ascend.com',
+    status: null as string | null,
+    challenge: 'A trauma-informed healing practice with a loyal following from in-person sessions — but no way to stay with people between ceremonies, and no structured path for experienced participants who wanted to become facilitators themselves. The knowledge existed as a coherent methodology with 97 distinct practices. The container didn\'t exist.',
+    decisions: 'The core architectural question was how to model a non-linear healing journey. This isn\'t a course with modules — it\'s a methodology where different practices are appropriate at different stages of someone\'s process, and the facilitator needs to be able to customize pathways. We built a curriculum engine that delivers practices based on progression markers, not just sequential completion. The AI assistant was critical here: trained on the methodology\'s language and framework, it provides guidance between sessions using the same terminology and approach the practitioner uses in person. The facilitator pipeline adds another layer — tracking who among the membership has the experience and readiness to train as facilitators.',
+    built: 'A membership platform delivering a 12-month curriculum of 97 practices with progression-based (not sequential) delivery, a personalized healing assistant that speaks in the methodology\'s language, progress tracking across the full journey, and a pipeline into facilitator training — turning a practice into a school.',
+    gradient: 'from-lime-900/25 via-lime-900/5 to-transparent',
+  },
+  {
+    client: 'Ozina Camp',
+    type: 'Eco Farm Stay & Artist Residency — Mallorca',
+    url: null,
+    status: 'In progress',
+    challenge: 'An eco-farm, artist residency, and natural building school on the land in Mallorca. Off-the-shelf booking sites (Airbnb, Booking.com) couldn\'t represent what the place actually is — and took significant commissions on every stay. The residency program required an application process, not a booking widget. The natural building school needed enrollment, not tickets.',
+    decisions: 'Three distinct booking/application models under one brand: farm stays (availability-based with seasonal pricing), artist residencies (application-based with portfolio review), and natural building courses (enrollment-based with prerequisites). Each needed its own flow while sharing availability data — a residency occupies the same physical space as a farm stay. The platform needed to tell the land story first and handle transactions second.',
+    built: 'Direct bookings replacing platform commissions, the land story told properly, and residency applications with portfolio review — in a platform that feels like walking onto the farm.',
+    gradient: 'from-orange-900/25 via-orange-900/5 to-transparent',
+  },
+  {
+    client: 'Proyecto Salvaje',
+    type: 'Regenerative Land Community — Sierra Sur, Oaxaca',
+    url: 'https://proyectosalvaje.com',
+    status: null as string | null,
+    challenge: 'A regenerative land project in the mountains of Oaxaca offering 10 household lots with natural building requirements, shared infrastructure, and community governance. The challenge was communicating the vision and requirements to attract aligned families — without looking like a real estate listing or an eco-village marketing page. The project has specific natural building requirements, community agreements, and a governance model that needed to be understood before anyone inquired.',
+    decisions: 'The platform needed to filter before it attracted. Most land community sites try to sell the dream — this one needed to present the reality: natural building requirements, community governance expectations, shared infrastructure responsibilities, and the ecological framework. We structured the information architecture to lead with the land and the values, present the practical requirements clearly, and make lot availability transparent — so that by the time someone reaches the inquiry form, they\'re already self-selected.',
+    built: 'A platform that tells the land story, presents lot availability, explains the natural building requirements and community agreements, and handles inquiries — grounded in the ecology of the project, not sales language.',
+    gradient: 'from-teal-900/25 via-teal-900/5 to-transparent',
+  },
+];
 
 export default function WorkPage() {
+  useDocumentMeta({
+    title: 'Case Studies — Astral Integration',
+    description: 'Detailed case studies: the challenges, architectural decisions, and infrastructure behind each platform. From certification academies to community platforms.',
+    ogUrl: 'https://astralintegration.co/work',
+  });
+
+  const revealRefs = useRef<(HTMLElement | null)[]>([]);
+
   useEffect(() => {
-    document.title = 'Work — Astral Integration';
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    revealRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
+  const addRevealRef = (el: HTMLElement | null) => {
+    if (el && !revealRefs.current.includes(el)) {
+      revealRefs.current.push(el);
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-studio-bg font-sans">
+    <div className="min-h-screen bg-dark-bg font-sans">
       <Navigation />
 
-      {/* HERO */}
-      <section className="min-h-[70vh] flex items-center">
-        <div className="max-w-content mx-auto px-6 md:px-12 py-32 md:py-40">
-          <div className="max-w-3xl">
-            <h1 className="text-display-sm md:text-display text-content-primary mb-8">
-              What We Build
-            </h1>
-
-            <p className="text-h2 md:text-h1 text-content-primary font-medium mb-12 max-w-2xl">
-              The form varies. The principle remains the same.
-            </p>
-
-            <p className="text-body text-content-primary leading-relaxed max-w-prose">
-              Every project we undertake is built on the same foundation: clarity, restraint, and structural integrity.
-            </p>
-          </div>
+      {/* Hero */}
+      <section className="pt-40 pb-20 px-6 md:px-12">
+        <div className="max-w-content mx-auto">
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            Case Studies
+          </p>
+          <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
+            The decisions behind the builds.
+          </h1>
+          <p className="text-body text-content-secondary max-w-prose">
+            Each project below includes the challenge, the key architectural decisions, and what was built. This is how I think about infrastructure — not as a list of features, but as a set of structural choices shaped by the work itself.
+          </p>
         </div>
       </section>
 
-      {/* BUILD CATEGORIES */}
-      <section className="py-28 md:py-36 bg-studio-bgAlt">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16">
-            {buildCategories.map((category, index) => (
-              <div key={index}>
-                <h3 className="text-h3 text-content-primary mb-6">{category.title}</h3>
-                <ul className="space-y-3">
-                  {category.items.map((item, i) => (
-                    <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                      <span className="text-accent mt-1.5 text-sm">·</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PRINCIPLES */}
-      <section className="py-28 md:py-36">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              How We Build
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              Regardless of the format, our work is guided by the same principles:
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {[
-                'Build what is necessary, not what is possible',
-                'Resist premature productization',
-                'Favor clarity over complexity',
-                'Design for long-term sustainability',
-                'Create systems that support the work without distorting it'
-              ].map((principle, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{principle}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-lg text-content-primary font-medium">
-              The best system is often the one that doesn't need to be built yet.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* DECISION FRAMEWORK */}
-      <section className="py-28 md:py-36 bg-studio-bgAlt">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              What We Actually Build
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              Before building anything, we ask:
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {[
-                'Does this serve the work as it exists now?',
-                'Will this reduce friction or create it?',
-                'Is this the simplest way to achieve the goal?',
-                "Can this wait until there's more clarity?",
-                "What happens if we don't build this?"
-              ].map((question, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{question}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              These questions filter out most unnecessary systems.
-            </p>
-
-            <p className="text-lg text-content-primary font-medium">
-              What remains is what actually needs to exist.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* EXAMPLES */}
-      <section className="py-28 md:py-36">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Real Examples
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              The work varies. Here are some patterns we've built:
-            </p>
-
-            <div className="space-y-8 mb-12">
-              <div className="py-6 border-t border-studio-divider">
-                <p className="text-body text-content-primary font-medium mb-3">
-                  A practitioner with a website that no longer reflects their work
-                </p>
-                <p className="text-body text-content-secondary mb-3">
-                  We clarified their core offering, rebuilt their digital home, and created a simple booking system.
-                </p>
-                <p className="text-body-sm text-content-tertiary italic">
-                  Result: Clear positioning, easier client flow, less maintenance.
-                </p>
-              </div>
-
-              <div className="py-6 border-t border-studio-divider">
-                <p className="text-body text-content-primary font-medium mb-3">
-                  A community considering building a membership platform
-                </p>
-                <p className="text-body text-content-secondary mb-3">
-                  We reviewed their work and recommended waiting. They restructured their offerings instead.
-                </p>
-                <p className="text-body-sm text-content-tertiary italic">
-                  Result: Avoided building an unnecessary platform. Saved time and money.
-                </p>
-              </div>
-
-              <div className="py-6 border-t border-studio-divider">
-                <p className="text-body text-content-primary font-medium mb-3">
-                  An educator with a clear program ready to scale
-                </p>
-                <p className="text-body text-content-secondary mb-3">
-                  We designed and built a custom learning platform with enrollment, content delivery, and participant tracking.
-                </p>
-                <p className="text-body-sm text-content-tertiary italic">
-                  Result: The work scaled without losing coherence.
-                </p>
-              </div>
-
-              <div className="py-6 border-t border-studio-divider border-b">
-                <p className="text-body text-content-primary font-medium mb-3">
-                  A studio with multiple offerings and unclear structure
-                </p>
-                <p className="text-body text-content-secondary mb-3">
-                  We consolidated their work into three clear pathways, redesigned their website, and built intake automation.
-                </p>
-                <p className="text-body-sm text-content-tertiary italic">
-                  Result: Less confusion, better client fit, more focused work.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CASE STUDIES */}
-      <section className="py-28 md:py-36 bg-studio-bgAlt">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              Portfolio & Case Studies
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              Most of our work is private and built for long-term use, not public showcasing.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              We share detailed case studies and examples upon request for aligned projects.
-            </p>
-
-            <a
-              href="/contact"
-              className="inline-block px-10 py-4 bg-content-primary text-studio-bg hover:bg-content-primary/90 active:bg-content-primary/80 transition-colors text-body font-medium"
+      {/* Case Studies */}
+      <section className="pb-section px-6 md:px-12">
+        <div className="max-w-content mx-auto space-y-12">
+          {caseStudies.map((study, i) => (
+            <article
+              key={i}
+              className="bg-dark-card border border-border rounded-2xl overflow-hidden reveal"
+              ref={addRevealRef}
             >
-              Request Examples
-            </a>
-          </div>
+              {/* Header */}
+              <div className={`relative w-full border-b border-border bg-gradient-to-br ${study.gradient} p-6 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4`}>
+                <div>
+                  <h2 className="font-serif text-h1 font-light">{study.client}</h2>
+                  <p className="text-meta uppercase text-gold mt-1">{study.type}</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  {study.url && (
+                    <a
+                      href={study.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-meta uppercase text-accent hover:text-content-primary transition-colors"
+                    >
+                      View Live
+                    </a>
+                  )}
+                  {study.status && (
+                    <span className="text-meta uppercase text-content-muted bg-dark-bg/60 backdrop-blur-sm border border-border rounded-full px-3 py-1">
+                      {study.status}
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Body */}
+              <div className="p-6 md:p-10 space-y-8">
+                <div>
+                  <p className="text-meta uppercase text-accent mb-3">The Challenge</p>
+                  <p className="text-body-sm text-content-secondary leading-relaxed">{study.challenge}</p>
+                </div>
+
+                <div>
+                  <p className="text-meta uppercase text-accent mb-3">Key Decisions</p>
+                  <p className="text-body-sm text-content-secondary leading-relaxed">{study.decisions}</p>
+                </div>
+
+                <div className="pt-6 border-t border-border">
+                  <p className="text-meta uppercase text-content-muted mb-3">What Was Built</p>
+                  <p className="text-body-sm text-content-primary leading-relaxed">{study.built}</p>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* START */}
-      <section className="py-28 md:py-36">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              The work we build is shaped by the clarity that comes before it.
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              If you're not sure what needs to be built, start with a Review.
-            </p>
-
-            <a
-              href="/review"
-              className="inline-block px-10 py-4 bg-content-primary text-studio-bg hover:bg-content-primary/90 active:bg-content-primary/80 transition-colors text-body font-medium"
-            >
-              Request a Review
-            </a>
-          </div>
+      {/* CTA */}
+      <section className="py-section px-6 md:px-12 bg-dark-card">
+        <div className="max-w-content mx-auto text-center reveal" ref={addRevealRef}>
+          <h2 className="font-serif text-display-sm font-light mb-6">
+            Your work is next.
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mx-auto mb-10">
+            If you've created something original and need a technical partner who thinks in systems — not features — I'd like to hear about it.
+          </p>
+          <a
+            href="/#contact"
+            className="inline-block px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+          >
+            Start a Conversation
+          </a>
         </div>
       </section>
 

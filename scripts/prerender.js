@@ -9,6 +9,7 @@ const DIST = join(__dirname, '..', 'dist');
 
 const ROUTES = [
   '/',
+  '/work',
   '/tools',
   '/tools/life-os',
   '/tools/content-studio',
