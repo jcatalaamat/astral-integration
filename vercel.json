@@ -1,5 +1,12 @@
 {
-  "buildCommand": "yarn run build:vercel",
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "gh-pages": false
+    }
+  },
+  "buildCommand": "npx tsc && npx vite build",
+  "installCommand": "yarn install",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
