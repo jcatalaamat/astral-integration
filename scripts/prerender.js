@@ -23,6 +23,10 @@ const ROUTES = [
   '/tools/content-studio',
   '/access',
   '/practitioners',
+  '/schools',
+  '/retreats',
+  '/communities',
+  '/organizations',
   '/how-it-works',
 ];
 

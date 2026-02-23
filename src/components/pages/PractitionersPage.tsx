@@ -7,42 +7,20 @@ import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 
 const diagnosticItems = [
   'You use Linktree because your site can\'t do what you need',
-  'Your course page has no way to enroll',
-  'Payment and scheduling are two separate steps',
-  'You\'re copy-pasting between 4+ tools every week',
+  'Your course page has no way to enroll — just a Stripe link',
+  'Payment and scheduling are two separate tools',
   'Your students ask "where do I sign up?" and you send 3 links',
-  'You know your site doesn\'t reflect your work',
+  'You\'re copy-pasting between Calendly, Mailchimp, and a spreadsheet every week',
+  'You know your site doesn\'t reflect the depth of your work',
 ];
 
-const whatIBuild = [
-  { title: 'One site that IS your platform', desc: 'Not a brochure with a Calendly link. A site where people book, pay, enroll, and access everything — without leaving.' },
-  { title: 'Booking + payment in one step', desc: 'No more "click here to book, then go here to pay." One flow, one confirmation, done.' },
-  { title: 'Course enrollment that works', desc: 'Your program has a landing page, an enroll button, and a student experience. Not a PDF and a Stripe link.' },
-  { title: 'Email capture built in', desc: 'Every visitor who lands on your site has a path to stay connected. No third-party pop-up plugin.' },
-  { title: 'Everything under your brand', desc: 'Your domain. Your colors. Your voice. Not Teachable\'s logo. Not Calendly\'s booking page. Yours.' },
-];
-
-const relevantWork = [
-  {
-    client: 'Uria Tsur',
-    type: 'Vocal Freedom Facilitator — Touring 18+ Cities',
-    desc: 'Was managing events across 8 ticketing platforms, losing audience data, spending hours on admin. Now has one platform: ticketing, membership (300+ subscribers), and a facilitator training course. Bilingual.',
-    url: '/work#uria-tsur',
-    gradient: 'from-violet-900/25 via-violet-900/5 to-transparent',
-    testimonial: {
-      quote: 'I was managing tickets on 8 platforms, WhatsApp groups for everything, total chaos. Jordi put it all in one place. Now I just focus on my workshops and the community runs itself.',
-      name: 'Uria Tsur',
-      role: 'Vocal Facilitator & Musician',
-    },
-  },
-  {
-    client: 'Inner Ascend',
-    type: 'Healing Membership & Facilitator Pipeline',
-    desc: 'A trauma-informed healing practice with a loyal following — but no way to stay with people between ceremonies. Now has a 12-month curriculum of 97 practices, a personalized AI healing assistant, and a pipeline into facilitator training.',
-    url: '/work#inner-ascend',
-    gradient: 'from-lime-900/25 via-lime-900/5 to-transparent',
-    testimonial: null,
-  },
+const beforeAfter = [
+  { before: 'Booking on Calendly', after: 'Booking on your site' },
+  { before: 'Payments on Stripe', after: 'Payment in the same step' },
+  { before: 'Courses on Teachable', after: 'Courses on your platform' },
+  { before: 'Email list on Mailchimp', after: 'Email capture built in' },
+  { before: 'Links on Linktree', after: 'One site that does it all' },
+  { before: 'Brand on Squarespace', after: 'Brand that\'s actually yours' },
 ];
 
 export default function PractitionersPage() {
@@ -145,7 +123,7 @@ export default function PractitionersPage() {
             You have the audience.<br />You deserve the <em className="italic gradient-text">infrastructure.</em>
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            You're running your practice on Wix + Stripe + Calendly + Linktree + a prayer. I replace all of it with one platform — your brand, your domain, everything connected.
+            You're running your practice on Wix + Stripe + Calendly + Linktree + a prayer. I replace all of it with one platform — your brand, your domain, everything connected. Most practitioners launch in 2–3 weeks.
           </p>
         </div>
       </section>
@@ -202,32 +180,33 @@ export default function PractitionersPage() {
         </div>
       </section>
 
-      {/* What I Build */}
+      {/* Before / After — unique to Practitioners */}
       <section className="py-section px-6 md:px-12">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
-            What I Build
+            The Shift
           </p>
           <h2 className="font-serif text-display-sm font-light mb-4">
-            One platform. Everything connected.
+            6 tools become 1 platform.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mb-16">
-            I don't add more tools to the pile. I replace the pile with one thing that actually works for what you do.
+            Every practitioner I've worked with was running some version of this patchwork. Here's what changes.
           </p>
 
-          <div className="space-y-6 max-w-prose">
-            {whatIBuild.map((item, i) => (
-              <div key={i} className="flex gap-5">
-                <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-1">
-                  <div className="w-2 h-2 rounded-full bg-accent" />
+          <div className="max-w-prose">
+            <div className="grid grid-cols-[1fr_auto_1fr] gap-x-6 gap-y-4 items-center">
+              <p className="text-meta uppercase text-content-muted text-right">Before</p>
+              <div />
+              <p className="text-meta uppercase text-accent">After</p>
+              {beforeAfter.map((item, i) => (
+                <div key={i} className="contents">
+                  <p className="text-body-sm text-content-muted text-right line-through decoration-content-muted/40">{item.before}</p>
+                  <span className="text-accent text-body-sm" aria-hidden="true">&rarr;</span>
+                  <p className="text-body-sm text-content-primary font-medium">{item.after}</p>
                 </div>
-                <div>
-                  <h3 className="text-body text-content-primary font-medium mb-1">{item.title}</h3>
-                  <p className="text-body-sm text-content-secondary">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -244,48 +223,110 @@ export default function PractitionersPage() {
           </h2>
 
           <div className="space-y-8">
-            {relevantWork.map((item, i) => (
-              <div key={i} className="bg-dark-card border border-border rounded-2xl overflow-hidden">
-                <div className={`relative w-full border-b border-border bg-gradient-to-br ${item.gradient} p-6 md:p-8`}>
-                  <h3 className="font-serif text-h2 font-light">{item.client}</h3>
-                  <p className="text-meta uppercase text-gold mt-1">{item.type}</p>
+            <div className="bg-dark-card border border-border rounded-2xl overflow-hidden">
+              <div className="relative w-full border-b border-border bg-gradient-to-br from-violet-900/25 via-violet-900/5 to-transparent p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                  <h3 className="font-serif text-h2 font-light">Uria Tsur</h3>
+                  <p className="text-meta uppercase text-gold mt-1">Vocal Freedom Facilitator — 18+ Cities</p>
                 </div>
-                <div className="p-6 md:p-8">
-                  <p className="text-body-sm text-content-secondary leading-relaxed mb-4">{item.desc}</p>
-                  {item.testimonial && (
-                    <blockquote className="mt-6 pt-6 border-t border-border">
-                      <p className="text-body-sm text-content-secondary italic leading-relaxed mb-3">
-                        "{item.testimonial.quote}"
-                      </p>
-                      <footer className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif text-xs">
-                          {item.testimonial.name[0]}
-                        </div>
-                        <div>
-                          <span className="text-meta text-content-primary">{item.testimonial.name}</span>
-                          <span className="text-meta text-content-muted ml-2">{item.testimonial.role}</span>
-                        </div>
-                      </footer>
-                    </blockquote>
-                  )}
+                <div className="flex items-center gap-3 text-meta">
+                  <span className="text-content-muted">300+ subscribers</span>
+                  <span className="text-content-muted">&middot;</span>
+                  <span className="text-content-muted">8 platforms → 1</span>
                 </div>
               </div>
-            ))}
+              <div className="p-6 md:p-8">
+                <p className="text-body-sm text-content-secondary leading-relaxed mb-4">
+                  Was managing events across 8 ticketing platforms, losing audience data, spending hours on admin. Now has one platform: ticketing, membership (300+ subscribers), and a facilitator training course. Bilingual English/Hebrew.
+                </p>
+                <blockquote className="mt-6 pt-6 border-t border-border">
+                  <p className="text-body-sm text-content-secondary italic leading-relaxed mb-3">
+                    "I was managing tickets on 8 platforms, WhatsApp groups for everything, total chaos. Jordi put it all in one place. Now I just focus on my workshops and the community runs itself."
+                  </p>
+                  <footer className="flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif text-xs">U</div>
+                    <div>
+                      <span className="text-meta text-content-primary">Uria Tsur</span>
+                      <span className="text-meta text-content-muted ml-2">Vocal Facilitator & Musician</span>
+                    </div>
+                  </footer>
+                </blockquote>
+                <a href="/work/uria-tsur" className="mt-6 text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
+                  Full case study <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-dark-card border border-border rounded-2xl overflow-hidden">
+              <div className="relative w-full border-b border-border bg-gradient-to-br from-lime-900/25 via-lime-900/5 to-transparent p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                  <h3 className="font-serif text-h2 font-light">Inner Ascend</h3>
+                  <p className="text-meta uppercase text-gold mt-1">Healing Membership & Facilitator Pipeline</p>
+                </div>
+                <div className="flex items-center gap-3 text-meta">
+                  <span className="text-content-muted">97 practices</span>
+                  <span className="text-content-muted">&middot;</span>
+                  <span className="text-content-muted">AI assistant</span>
+                </div>
+              </div>
+              <div className="p-6 md:p-8">
+                <p className="text-body-sm text-content-secondary leading-relaxed">
+                  A trauma-informed healing practice with a loyal following — but no way to stay with people between ceremonies. Now has a 12-month curriculum of 97 practices, a personalized AI healing assistant, and a pipeline into facilitator training.
+                </p>
+                <a href="/work/inner-ascend" className="mt-6 text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
+                  Full case study <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="mt-8">
-            <a
-              href="/work"
-              className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
-            >
+            <a href="/work" className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
               All 8 case studies <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* Why not just hire a developer? */}
       <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            The Honest Question
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            "Why not just hire a web developer?"
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-8">
+            You can. But here's what that looks like:
+          </p>
+          <div className="max-w-prose space-y-4">
+            <div className="flex gap-4 items-start">
+              <span className="text-content-muted text-body-sm mt-0.5 flex-shrink-0">1.</span>
+              <p className="text-body-sm text-content-secondary">You write a spec (which means you need to already know what you need).</p>
+            </div>
+            <div className="flex gap-4 items-start">
+              <span className="text-content-muted text-body-sm mt-0.5 flex-shrink-0">2.</span>
+              <p className="text-body-sm text-content-secondary">They build what you spec'd. You realize it doesn't quite work the way you imagined.</p>
+            </div>
+            <div className="flex gap-4 items-start">
+              <span className="text-content-muted text-body-sm mt-0.5 flex-shrink-0">3.</span>
+              <p className="text-body-sm text-content-secondary">You pay for revisions. Three rounds later, the budget's gone and the booking flow still doesn't make sense.</p>
+            </div>
+            <div className="flex gap-4 items-start">
+              <span className="text-content-muted text-body-sm mt-0.5 flex-shrink-0">4.</span>
+              <p className="text-body-sm text-content-secondary">They leave. Something breaks six months later and you're either paying emergency rates or starting over.</p>
+            </div>
+          </div>
+          <p className="text-body text-content-primary font-medium mt-8 max-w-prose">
+            I don't build what you spec. I learn your work, make architectural decisions, and stay as your technical partner. When your practice grows — new offerings, new audiences, new revenue streams — the platform grows with it.
+          </p>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
@@ -298,7 +339,10 @@ export default function PractitionersPage() {
             A small upfront investment covers the build — and for the right projects, I start at zero. Then I take a percentage of revenue processed through the platform. I grow when you grow.
           </p>
 
-          <div className="bg-dark-card border border-border rounded-2xl p-8 md:p-10 max-w-prose">
+          <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
+            <h3 className="font-serif text-h3 mb-2">Solo Practitioner</h3>
+            <p className="text-body-sm text-content-muted mb-6">Healers, coaches, facilitators with an audience and no real platform</p>
+
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
                 { label: 'Upfront', value: '$0 – 1.5K', detail: 'Covers build and research' },
@@ -315,7 +359,7 @@ export default function PractitionersPage() {
 
             <div className="pt-6 border-t border-border space-y-2">
               <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">Your in-person revenue</strong> — sessions, retreats, anything off-platform — is 100% yours. Always.
+                <strong className="text-content-secondary">Your in-person revenue</strong> — sessions, workshops, anything off-platform — is 100% yours. Always.
               </p>
               <p className="text-body-sm text-content-muted">
                 <strong className="text-content-secondary">You own everything.</strong> Code, data, domain, content. From day one.
@@ -324,6 +368,12 @@ export default function PractitionersPage() {
                 <strong className="text-content-secondary">Buyout option.</strong> You can buy out the revenue share at any time.
               </p>
             </div>
+          </div>
+
+          <div className="mt-8">
+            <a href="/how-it-works" className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
+              Full pricing, tiers & FAQ <span aria-hidden="true">&rarr;</span>
+            </a>
           </div>
         </div>
       </section>
@@ -351,63 +401,24 @@ export default function PractitionersPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="prac-name" className="block text-body-sm text-content-muted mb-3">Name</label>
-                    <input
-                      type="text"
-                      id="prac-name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className={`w-full px-5 py-4 bg-dark-bg border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors ${
-                        formErrors.name ? 'border-red-400 focus:ring-red-400/20' : 'border-border'
-                      }`}
-                      placeholder="Your name"
-                    />
+                    <input type="text" id="prac-name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className={`w-full px-5 py-4 bg-dark-bg border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors ${formErrors.name ? 'border-red-400 focus:ring-red-400/20' : 'border-border'}`} placeholder="Your name" />
                     {formErrors.name && <p className="mt-2 text-body-sm text-red-400">{formErrors.name}</p>}
                   </div>
                   <div>
                     <label htmlFor="prac-email" className="block text-body-sm text-content-muted mb-3">Email</label>
-                    <input
-                      type="email"
-                      id="prac-email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className={`w-full px-5 py-4 bg-dark-bg border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors ${
-                        formErrors.email ? 'border-red-400 focus:ring-red-400/20' : 'border-border'
-                      }`}
-                      placeholder="your@email.com"
-                    />
+                    <input type="email" id="prac-email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className={`w-full px-5 py-4 bg-dark-bg border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors ${formErrors.email ? 'border-red-400 focus:ring-red-400/20' : 'border-border'}`} placeholder="your@email.com" />
                     {formErrors.email && <p className="mt-2 text-body-sm text-red-400">{formErrors.email}</p>}
                   </div>
                 </div>
-
                 <div>
                   <label htmlFor="prac-site" className="block text-body-sm text-content-muted mb-3">Your current site (optional)</label>
-                  <input
-                    type="text"
-                    id="prac-site"
-                    value={formData.site}
-                    onChange={(e) => setFormData({ ...formData, site: e.target.value })}
-                    className="w-full px-5 py-4 bg-dark-bg border border-border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors"
-                    placeholder="yoursite.com or Instagram handle"
-                  />
+                  <input type="text" id="prac-site" value={formData.site} onChange={(e) => setFormData({ ...formData, site: e.target.value })} className="w-full px-5 py-4 bg-dark-bg border border-border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors" placeholder="yoursite.com or Instagram handle" />
                 </div>
-
                 <div>
                   <label htmlFor="prac-message" className="block text-body-sm text-content-muted mb-3">What are you working on?</label>
-                  <textarea
-                    id="prac-message"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={4}
-                    className="w-full px-5 py-4 bg-dark-bg border border-border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors resize-none"
-                    placeholder="Tell me about your work, your people, and where your current setup is falling short..."
-                  />
+                  <textarea id="prac-message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} rows={4} className="w-full px-5 py-4 bg-dark-bg border border-border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors resize-none" placeholder="Tell me about your work, your people, and where your current setup is falling short..." />
                 </div>
-
-                <button
-                  type="submit"
-                  disabled={formStatus === 'sending'}
-                  className="px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow disabled:opacity-50 disabled:cursor-not-allowed"
-                >
+                <button type="submit" disabled={formStatus === 'sending'} className="px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow disabled:opacity-50 disabled:cursor-not-allowed">
                   {formStatus === 'sending' ? 'Sending...' : formStatus === 'error' ? 'Error - try again' : 'Send Message'}
                 </button>
               </form>
@@ -415,18 +426,9 @@ export default function PractitionersPage() {
               <div className="py-16 text-center">
                 <CheckCircle className="w-12 h-12 text-accent mx-auto mb-6" />
                 <h3 className="font-serif text-h2 mb-4">Message received.</h3>
-                <p className="text-body text-content-secondary mb-3">
-                  I'll look at your setup and get back to you within 24–48 hours.
-                </p>
-                <p className="text-body-sm text-content-muted mb-8">
-                  Check your inbox for a reply from hello@astralintegration.co
-                </p>
-                <button
-                  onClick={() => setFormStatus('idle')}
-                  className="text-body-sm text-accent hover:underline"
-                >
-                  Send another message
-                </button>
+                <p className="text-body text-content-secondary mb-3">I'll look at your setup and get back to you within 24–48 hours.</p>
+                <p className="text-body-sm text-content-muted mb-8">Check your inbox for a reply from hello@astralintegration.co</p>
+                <button onClick={() => setFormStatus('idle')} className="text-body-sm text-accent hover:underline">Send another message</button>
               </div>
             )}
           </div>

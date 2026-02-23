@@ -211,10 +211,10 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
               { label: 'Practitioners', href: '/practitioners', desc: 'Healers, coaches, facilitators running on scattered tools' },
-              { label: 'Schools', href: '/work/shivenergetics', desc: 'Certification programs and structured learning paths' },
-              { label: 'Retreats', href: '/work/sacred-counsel', desc: 'Booking, intake, and multi-stream revenue' },
-              { label: 'Communities', href: '/work/mazunte-today', desc: 'Directories, events, and local platforms' },
-              { label: 'Organizations', href: '/#contact', desc: 'Networks and facilitator infrastructure at scale' },
+              { label: 'Schools', href: '/schools', desc: 'Certification programs and structured learning paths' },
+              { label: 'Retreats', href: '/retreats', desc: 'Booking, intake, and multi-stream revenue' },
+              { label: 'Communities', href: '/communities', desc: 'Directories, events, and local platforms' },
+              { label: 'Organizations', href: '/organizations', desc: 'Networks and facilitator infrastructure at scale' },
             ].map((door) => (
               <a
                 key={door.label}

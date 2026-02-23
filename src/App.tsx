@@ -4,6 +4,10 @@ import HomePage from './components/pages/HomePage';
 import WorkPage from './components/pages/WorkPage';
 import AccessPage from './components/pages/AccessPage';
 import PractitionersPage from './components/pages/PractitionersPage';
+import SchoolsPage from './components/pages/SchoolsPage';
+import RetreatsPage from './components/pages/RetreatsPage';
+import CommunitiesPage from './components/pages/CommunitiesPage';
+import OrganizationsPage from './components/pages/OrganizationsPage';
 import CaseStudyPage from './components/pages/CaseStudyPage';
 import HowItWorksPage from './components/pages/HowItWorksPage';
 import ToolsHub from './components/pages/ToolsHub';
@@ -23,6 +27,10 @@ function App() {
           <Route path="/work/:slug" element={<CaseStudyPage />} />
           <Route path="/access" element={<AccessPage />} />
           <Route path="/practitioners" element={<PractitionersPage />} />
+          <Route path="/schools" element={<SchoolsPage />} />
+          <Route path="/retreats" element={<RetreatsPage />} />
+          <Route path="/communities" element={<CommunitiesPage />} />
+          <Route path="/organizations" element={<OrganizationsPage />} />
           <Route path="/how-it-works" element={<HowItWorksPage />} />
 
           {/* Tools Hub */}
