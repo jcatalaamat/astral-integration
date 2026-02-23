@@ -1,8 +1,17 @@
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
-import { caseStudies } from '../../data/caseStudies';
+import { caseStudies, CaseStudyCategory } from '../../data/caseStudies';
+
+const filters: Array<{ label: string; value: CaseStudyCategory | 'All' }> = [
+  { label: 'All', value: 'All' },
+  { label: 'Practitioners', value: 'Practitioners' },
+  { label: 'Schools', value: 'Schools' },
+  { label: 'Retreats', value: 'Retreats' },
+  { label: 'Communities', value: 'Communities' },
+  { label: 'Organizations', value: 'Organizations' },
+];
 
 export default function WorkPage() {
   useDocumentMeta({
@@ -11,6 +20,7 @@ export default function WorkPage() {
     ogUrl: 'https://astralintegration.co/work',
   });
 
+  const [activeFilter, setActiveFilter] = useState<CaseStudyCategory | 'All'>('All');
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
@@ -38,6 +48,10 @@ export default function WorkPage() {
     }
   };
 
+  const filtered = activeFilter === 'All'
+    ? caseStudies
+    : caseStudies.filter((s) => s.category === activeFilter);
+
   return (
     <div className="min-h-screen bg-dark-bg font-sans">
       <Navigation />
@@ -52,18 +66,35 @@ export default function WorkPage() {
           <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
             The decisions behind the builds.
           </h1>
-          <p className="text-body text-content-secondary max-w-prose">
+          <p className="text-body text-content-secondary max-w-prose mb-12">
             Each project below includes the challenge, the key architectural decisions, and what was built. This is how I think about infrastructure — not as a list of features, but as a set of structural choices shaped by the work itself.
           </p>
+
+          {/* Filter Pills */}
+          <div className="flex flex-wrap gap-2">
+            {filters.map((f) => (
+              <button
+                key={f.value}
+                onClick={() => setActiveFilter(f.value)}
+                className={`px-5 py-2 rounded-full text-body-sm font-medium transition-all ${
+                  activeFilter === f.value
+                    ? 'bg-accent text-white'
+                    : 'bg-dark-card border border-border text-content-muted hover:border-border-hover hover:text-content-secondary'
+                }`}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Case Studies */}
       <section className="pb-section px-6 md:px-12">
         <div className="max-w-content mx-auto space-y-12">
-          {caseStudies.map((study, i) => (
+          {filtered.map((study) => (
             <article
-              key={i}
+              key={study.slug}
               id={study.slug}
               className="bg-dark-card border border-border rounded-2xl overflow-hidden reveal"
               ref={addRevealRef}
@@ -75,6 +106,9 @@ export default function WorkPage() {
                   <p className="text-meta uppercase text-gold mt-1">{study.type}</p>
                 </div>
                 <div className="flex items-center gap-3">
+                  <span className="text-meta uppercase text-content-muted bg-dark-bg/40 border border-border rounded-full px-3 py-1">
+                    {study.category}
+                  </span>
                   {study.url && (
                     <a
                       href={study.url}
@@ -119,6 +153,12 @@ export default function WorkPage() {
               </div>
             </article>
           ))}
+
+          {filtered.length === 0 && (
+            <div className="text-center py-16">
+              <p className="text-body text-content-muted">No case studies in this category yet.</p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -132,7 +172,7 @@ export default function WorkPage() {
             If you've created something original and need a technical partner who thinks in systems — not features — I'd like to hear about it.
           </p>
           <a
-            href="/#contact"
+            href="/contact"
             className="inline-block px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
           >
             Start a Conversation

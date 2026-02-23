@@ -1,7 +1,10 @@
+export type CaseStudyCategory = 'Retreats' | 'Practitioners' | 'Schools' | 'Communities' | 'Organizations';
+
 export interface CaseStudy {
   slug: string;
   client: string;
   type: string;
+  category: CaseStudyCategory;
   url: string | null;
   status: string | null;
   challenge: string;
@@ -15,6 +18,7 @@ export const caseStudies: CaseStudy[] = [
     slug: 'sacred-counsel',
     client: 'Sacred Counsel',
     type: 'Retreat Center & Integration Practice — Valle de Bravo, Mexico',
+    category: 'Retreats',
     url: 'https://sacredcounsel.space',
     status: null,
     challenge: 'A center with 20+ years of ceremony experience running ayahuasca retreats, integration therapy, private homestays, and a 21-day metabolic detox — each with its own intake process, pricing, and client journey. Five distinct revenue streams, each requiring different booking logic, preparation materials, and follow-up sequences. The platform needed to honor the depth of the work without reducing it to a booking page.',
@@ -26,6 +30,7 @@ export const caseStudies: CaseStudy[] = [
     slug: 'uria-tsur',
     client: 'Uria Tsur',
     type: 'Vocal Freedom Facilitator — Touring 18+ Cities',
+    category: 'Practitioners',
     url: 'https://uriatsur.live',
     status: null,
     challenge: 'A touring vocal facilitator and frontman of Orot Band (33K+ Spotify listeners) was managing events across 8 ticketing platforms — Eventbrite, Universe, Fienta, and five others — losing control of audience data, paying platform fees on every transaction, and spending hours weekly on admin. He also needed a membership portal for 300+ subscribers and a training program for singing circle leaders across multiple countries.',
@@ -37,6 +42,7 @@ export const caseStudies: CaseStudy[] = [
     slug: 'shivenergetics',
     client: 'ShivEnergetics',
     type: 'Reiki Academy — Granada, Spain',
+    category: 'Schools',
     url: null,
     status: 'In progress',
     challenge: 'A Reiki Master Teacher with 300+ students across 9 certification levels was running her school across five disconnected platforms — Teachable for courses, Calendly for bookings, Stripe for payments, WhatsApp for communication, and Google Sheets for student records. There was no single place a student could see their path from first course to practitioner certification. Booking confirmations were manual. Student progression was tracked in spreadsheets.',
@@ -48,6 +54,7 @@ export const caseStudies: CaseStudy[] = [
     slug: 'mazunte-today',
     client: 'Mazunte Today',
     type: 'Community Platform — Oaxaca, Mexico',
+    category: 'Communities',
     url: 'https://mazunte.today',
     status: null,
     challenge: 'A small coastal town in Oaxaca with dozens of practitioners, venues, and events happening every night — and no central place to find any of it. Visitors relied on word of mouth. Locals posted on scattered WhatsApp groups. Business owners had no affordable way to maintain an online presence. Event information was fragmented across Instagram stories, Facebook groups, and handwritten signs.',
@@ -59,6 +66,7 @@ export const caseStudies: CaseStudy[] = [
     slug: 'amakura',
     client: 'Amakura',
     type: 'Centro de Vida Regenerativa — Mazunte, Oaxaca',
+    category: 'Organizations',
     url: 'https://amakura.store',
     status: 'In progress',
     challenge: 'A regenerative living center running a bioconstruction school, restaurant, natural pool, workshops, and community events — all under one roof but with no unified digital layer. Each offering was promoted separately through social media and word of mouth. There was no way for someone discovering the restaurant to learn about the bioconstruction school, or for a workshop participant to see what else was available.',
@@ -70,6 +78,7 @@ export const caseStudies: CaseStudy[] = [
     slug: 'inner-ascend',
     client: 'Inner Ascend',
     type: 'Healing Membership & Facilitator Pipeline',
+    category: 'Practitioners',
     url: 'https://inner-ascend.com',
     status: null,
     challenge: 'A trauma-informed healing practice with a loyal following from in-person sessions — but no way to stay with people between ceremonies, and no structured path for experienced participants who wanted to become facilitators themselves. The knowledge existed as a coherent methodology with 97 distinct practices. The container didn\'t exist.',
@@ -81,6 +90,7 @@ export const caseStudies: CaseStudy[] = [
     slug: 'ozina-camp',
     client: 'Ozina Camp',
     type: 'Eco Farm Stay & Artist Residency — Mallorca',
+    category: 'Retreats',
     url: null,
     status: 'In progress',
     challenge: 'An eco-farm, artist residency, and natural building school on the land in Mallorca. Off-the-shelf booking sites (Airbnb, Booking.com) couldn\'t represent what the place actually is — and took significant commissions on every stay. The residency program required an application process, not a booking widget. The natural building school needed enrollment, not tickets.',
@@ -92,6 +102,7 @@ export const caseStudies: CaseStudy[] = [
     slug: 'proyecto-salvaje',
     client: 'Proyecto Salvaje',
     type: 'Regenerative Land Community — Sierra Sur, Oaxaca',
+    category: 'Communities',
     url: 'https://proyectosalvaje.com',
     status: null,
     challenge: 'A regenerative land project in the mountains of Oaxaca offering 10 household lots with natural building requirements, shared infrastructure, and community governance. The challenge was communicating the vision and requirements to attract aligned families — without looking like a real estate listing or an eco-village marketing page. The project has specific natural building requirements, community agreements, and a governance model that needed to be understood before anyone inquired.',

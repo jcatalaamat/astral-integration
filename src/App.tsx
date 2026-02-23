@@ -2,6 +2,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { FreemiumProvider } from './context/FreemiumContext';
 import HomePage from './components/pages/HomePage';
 import WorkPage from './components/pages/WorkPage';
+import AboutPage from './components/pages/AboutPage';
+import ContactPage from './components/pages/ContactPage';
+import InsightsPage from './components/pages/InsightsPage';
+import BlogPostPage from './components/pages/BlogPostPage';
 import AccessPage from './components/pages/AccessPage';
 import PractitionersPage from './components/pages/PractitionersPage';
 import SchoolsPage from './components/pages/SchoolsPage';
@@ -25,6 +29,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/work" element={<WorkPage />} />
           <Route path="/work/:slug" element={<CaseStudyPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/insights" element={<InsightsPage />} />
+          <Route path="/insights/:slug" element={<BlogPostPage />} />
           <Route path="/access" element={<AccessPage />} />
           <Route path="/practitioners" element={<PractitionersPage />} />
           <Route path="/schools" element={<SchoolsPage />} />

@@ -8,6 +8,7 @@
     "dev": "vite",
     "optimize:images": "node scripts/optimize-images.js",
     "build": "tsc && vite build && node scripts/preserve-cname.js && node scripts/prerender.js",
+    "build:vercel": "tsc && vite build",
     "build:with-images": "node scripts/optimize-images.js && tsc && vite build && node scripts/preserve-cname.js && node scripts/prerender.js",
     "preview": "vite preview",
     "predeploy": "npm run build",

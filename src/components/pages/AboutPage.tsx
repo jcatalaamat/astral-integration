@@ -1,151 +1,272 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
-import { aboutContent } from '../../content';
+import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 
 export default function AboutPage() {
+  useDocumentMeta({
+    title: 'About Jordi Amat — Astral Integration',
+    description: 'Senior engineer, former CTO, Access Bars practitioner. From leading engineering teams to building custom digital infrastructure for schools, practices, and original work — from Mazunte, Oaxaca.',
+    ogUrl: 'https://astralintegration.co/about',
+  });
+
+  const revealRefs = useRef<(HTMLElement | null)[]>([]);
+
   useEffect(() => {
-    document.title = 'About — Astral Integration';
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    revealRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+    return () => observer.disconnect();
   }, []);
 
+  const addRevealRef = (el: HTMLElement | null) => {
+    if (el && !revealRefs.current.includes(el)) {
+      revealRefs.current.push(el);
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-studio-bg font-sans">
+    <div className="min-h-screen bg-dark-bg font-sans">
       <Navigation />
 
-      {/* HERO */}
-      <section className="min-h-[70vh] flex items-center">
-        <div className="max-w-content mx-auto px-6 md:px-12 py-32 md:py-40">
-          <div className="max-w-3xl">
-            <h1 className="text-display-sm md:text-display text-content-primary mb-8">
-              About
-            </h1>
+      {/* Hero */}
+      <section className="pt-40 pb-20 px-6 md:px-12">
+        <div className="max-w-content mx-auto">
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            About
+          </p>
+          <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
+            Jordi Amat.
+          </h1>
+          <p className="text-body text-content-secondary max-w-prose">
+            Senior full-stack engineer. Former CTO. Access Bars practitioner. Based in Mazunte, a small town on the coast of Oaxaca, Mexico.
+          </p>
+        </div>
+      </section>
 
-            <p className="text-h2 md:text-h1 text-content-primary font-medium mb-12 max-w-2xl">
-              {aboutContent.intro.headline}
-            </p>
+      {/* Photo + Short Bio */}
+      <section className="pb-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <div className="grid md:grid-cols-[320px_1fr] gap-12 md:gap-16 items-start">
+            <div className="w-full md:w-[320px] h-[400px] rounded-2xl border border-border relative overflow-hidden">
+              <img
+                src="/founder.jpeg"
+                alt="Jordi Amat"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/60 to-transparent" />
+            </div>
 
-            <p className="text-body text-content-primary leading-relaxed max-w-prose">
-              {aboutContent.intro.description}
-            </p>
+            <div className="space-y-5">
+              <p className="text-body text-content-secondary leading-relaxed">
+                I spent over a decade leading engineering teams, making architecture decisions, and shipping platforms from zero to scale. Then I stepped into a different world — ceremony spaces, healing practices, teaching lineages, land-based communities. Not as a visitor. As a participant.
+              </p>
+              <p className="text-body text-content-secondary leading-relaxed">
+                What I found is that the people doing the most serious work in education, wellness, and community are either running their digital lives on tools that were never designed for them — or they have no digital infrastructure at all. A certification program crammed into Teachable. A facilitator with a global following and no system to hold it. A retreat center whose online presence doesn't begin to reflect what happens in the room.
+              </p>
+              <p className="text-body text-content-primary leading-relaxed font-medium">
+                I understand this world because I live in it. I build from the inside.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ROLE */}
-      <section className="py-28 md:py-36 bg-studio-bgAlt">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <h2 className="text-h2 md:text-h1 text-content-primary mb-8">
-              {aboutContent.role.headline}
-            </h2>
+      {/* The Journey */}
+      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            The Journey
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-12">
+            From CTO to ceremony to Mazunte.
+          </h2>
 
-            <p className="text-lg text-content-primary font-medium mb-12">
-              {aboutContent.role.subheadline}
-            </p>
-
+          <div className="max-w-prose space-y-5">
             <p className="text-body text-content-secondary leading-relaxed">
-              {aboutContent.role.description}
+              I started in Barcelona, building fintech platforms, leading engineering teams, and scaling startups. I spent years as CTO — hiring engineers, designing systems, shipping product. I was good at it. But the work I was doing didn't match the life I was building.
+            </p>
+            <p className="text-body text-content-secondary leading-relaxed">
+              I left the startup world and moved to Mexico. First Mexico City. Then a ceremony in the mountains changed the trajectory. I started sitting with medicine, working with facilitators, attending trainings, spending time in communities that were doing the real work — holding space for people to heal, grow, and transform.
+            </p>
+            <p className="text-body text-content-secondary leading-relaxed">
+              I ended up in Mazunte — a small village on the Oaxacan coast where half the town is practitioners, facilitators, artists, and builders of alternative schools and projects. And I saw the same pattern everywhere: brilliant people running powerful work on scattered tools that were never built for them.
+            </p>
+            <p className="text-body text-content-secondary leading-relaxed">
+              A Reiki Master Teacher with 300 students tracking everything in Google Sheets. A retreat center with five revenue streams managed on WhatsApp. A community with no digital home except Facebook groups. A touring facilitator juggling eight different ticketing platforms.
+            </p>
+            <p className="text-body text-content-secondary leading-relaxed">
+              I knew how to build the systems these people needed. And I understood — from the inside — why generic platforms would never work for them. A certification isn't a Udemy course. A retreat isn't a hotel booking. A healing practice isn't a SaaS business. The architecture has to reflect the work.
+            </p>
+            <p className="text-body text-content-primary leading-relaxed font-medium">
+              Astral Integration is what happened when a decade of engineering met a life lived inside the work it serves.
             </p>
           </div>
         </div>
       </section>
 
-      {/* TEAM */}
-      <section className="py-28 md:py-36">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              {aboutContent.team.headline}
-            </p>
+      {/* Practitioner Side */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            The Practitioner Side
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-12">
+            I don't just build for this world. I practice in it.
+          </h2>
 
-            {aboutContent.team.members.map((member, index) => (
-              <div key={index} className="mb-8">
-                <h3 className="text-h3 text-content-primary mb-2">{member.name}</h3>
-                <p className="text-body-sm text-content-tertiary mb-4">{member.role}</p>
-                <p className="text-body text-content-secondary leading-relaxed mb-4">
-                  {member.description}
-                </p>
-                <a
-                  href={member.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-body text-accent hover:text-accent-hover underline"
-                >
-                  {member.url.replace('https://', '')} →
-                </a>
+          <div className="grid md:grid-cols-[1fr_1fr] gap-12 items-start">
+            <div className="space-y-5">
+              <p className="text-body text-content-secondary leading-relaxed">
+                I'm a certified Access Bars practitioner — a hands-on energy healing modality that works with 32 points on the head to release stored limitations. I trained in it because the work resonated, not because I planned to build platforms for practitioners.
+              </p>
+              <p className="text-body text-content-secondary leading-relaxed">
+                But it changed how I understand what practitioners actually need. When I build a booking flow for a healer, I know why the intake matters. When I design a certification system, I understand what progression feels like from the student's side. When I build a community platform, I know what containers are — not just "forums with premium access."
+              </p>
+              <p className="text-body text-content-secondary leading-relaxed">
+                This isn't marketing positioning. I sit in circles. I run sessions. I know the difference between a modality and a product because I've experienced both.
+              </p>
+            </div>
+
+            <div className="bg-dark-card border border-border rounded-2xl p-8">
+              <h3 className="font-serif text-h3 mb-6">Why it matters for your platform</h3>
+              <ul className="space-y-4">
+                {[
+                  'I understand practitioner-client relationships, not just user-customer funnels',
+                  'I know why a retreat booking is not a hotel reservation',
+                  'I build certification systems that reflect how learning actually happens in embodied work',
+                  'I design intake flows that honor the gravity of the offering',
+                  'I won\'t reduce your methodology to a "content library"',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-body-sm text-content-secondary">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Credentials */}
+      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            Technical Background
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-12">
+            The engineering behind the partnership.
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-dark-card border border-border rounded-2xl p-8">
+              <h3 className="font-serif text-h3 mb-4">Experience</h3>
+              <ul className="space-y-3">
+                {[
+                  'Former CTO — built and led engineering teams from founding to scale',
+                  '10+ years shipping production software across fintech, SaaS, and now practitioner platforms',
+                  'Full-stack: React, TypeScript, Node.js, PostgreSQL, cloud infrastructure',
+                  'AI-augmented development — I deliver at the speed of a team with the consistency of a single technical vision',
+                  'Architecture-first approach: every decision is structural, not decorative',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-body-sm text-content-secondary">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-dark-card border border-border rounded-2xl p-8">
+              <h3 className="font-serif text-h3 mb-4">What I build</h3>
+              <ul className="space-y-3">
+                {[
+                  'Custom platforms — not templates, not WordPress, not page builders',
+                  'Certification & progression systems with prerequisite logic',
+                  'Multi-stream booking and intake infrastructure',
+                  'Membership portals with gated content and community',
+                  'AI assistants trained on your specific methodology',
+                  'Multi-language, multi-region platforms for global organizations',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-body-sm text-content-secondary">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-border">
+            {[
+              { value: '10+', label: 'Years shipping software' },
+              { value: '8', label: 'Platforms built' },
+              { value: '2–6 wk', label: 'Average delivery' },
+              { value: 'Mazunte', label: 'Oaxaca, Mexico' },
+            ].map((stat, i) => (
+              <div key={i}>
+                <div className="font-serif text-h2 font-light text-accent mb-1">{stat.value}</div>
+                <p className="text-body-sm text-content-muted">{stat.label}</p>
               </div>
             ))}
-
-            <p className="text-body-sm text-content-tertiary italic mt-8">
-              {aboutContent.team.note}
-            </p>
           </div>
-        </div>
-      </section>
 
-      {/* VALUES */}
-      <section className="py-28 md:py-36 bg-studio-bgAlt">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              {aboutContent.values.headline}
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {aboutContent.values.items.map((value, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{value}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* HOW PEOPLE FIND US */}
-      <section className="py-28 md:py-36">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-meta text-content-tertiary uppercase tracking-wider mb-6">
-              {aboutContent.findUs.headline}
-            </p>
-
-            <p className="text-body text-content-secondary leading-relaxed mb-8">
-              {aboutContent.findUs.description}
-            </p>
-
-            <ul className="space-y-3 mb-12">
-              {aboutContent.findUs.items.map((item, i) => (
-                <li key={i} className="text-body text-content-secondary flex items-start gap-3">
-                  <span className="text-accent mt-1.5 text-sm">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-lg text-content-primary font-medium">
-              {aboutContent.findUs.note}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* START HERE */}
-      <section className="py-28 md:py-36 bg-studio-bgAlt">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="max-w-prose">
-            <p className="text-body text-content-secondary leading-relaxed mb-12">
-              If your work already exists but your digital presence feels unclear, a Digital Realignment Review is the right place to start.
-            </p>
-
+          {/* Links */}
+          <div className="flex gap-6 mt-10">
             <a
-              href="/review"
-              className="inline-block px-10 py-4 bg-content-primary text-studio-bg hover:bg-content-primary/90 active:bg-content-primary/80 transition-colors text-body font-medium"
+              href="https://www.linkedin.com/in/jcamat/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-body-sm text-content-muted hover:text-accent transition-colors"
             >
-              Request a Review
+              <span className="w-7 h-7 rounded border border-border flex items-center justify-center text-[0.6rem] font-mono uppercase">in</span>
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/jcatalaamat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-body-sm text-content-muted hover:text-accent transition-colors"
+            >
+              <span className="w-7 h-7 rounded border border-border flex items-center justify-center text-[0.6rem] font-mono uppercase">gh</span>
+              GitHub
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-section px-6 md:px-12 bg-dark-card">
+        <div className="max-w-content mx-auto text-center reveal" ref={addRevealRef}>
+          <h2 className="font-serif text-display-sm font-light mb-6">
+            Let's talk about your work.
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mx-auto mb-10">
+            I take on a small number of partnerships at a time. If you've created something original and need a technical partner who builds with you for the long haul, I'd like to hear about it.
+          </p>
+          <a
+            href="/contact"
+            className="inline-block px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+          >
+            Start a Conversation
+          </a>
         </div>
       </section>
 

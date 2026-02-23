@@ -1,10 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+
+const whoIHelpLinks = [
+  { label: 'Practitioners', href: '/practitioners' },
+  { label: 'Schools', href: '/schools' },
+  { label: 'Retreats', href: '/retreats' },
+  { label: 'Communities', href: '/communities' },
+  { label: 'Organizations', href: '/organizations' },
+];
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,13 +26,24 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && mobileMenuOpen) {
+      if (e.key === 'Escape') {
         setMobileMenuOpen(false);
+        setDropdownOpen(false);
       }
     };
     window.addEventListener('keydown', handleEscape);
     return () => window.removeEventListener('keydown', handleEscape);
-  }, [mobileMenuOpen]);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -38,20 +59,6 @@ export default function Navigation() {
   const location = useLocation();
   const isHome = location.pathname === '/';
 
-  const navItems = isHome
-    ? [
-        { label: 'Work', href: '#work' },
-        { label: 'How It Works', href: '#how' },
-        { label: 'About', href: '#about' },
-      ]
-    : [
-        { label: 'Work', href: '/work' },
-        { label: 'How It Works', href: '/how-it-works' },
-        { label: 'About', href: '/#about' },
-      ];
-
-  const contactHref = isHome ? '#contact' : '/#contact';
-
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
       e.preventDefault();
@@ -62,6 +69,10 @@ export default function Navigation() {
       setMobileMenuOpen(false);
     }
   };
+
+  const workHref = isHome ? '#work' : '/work';
+  const howHref = isHome ? '#how' : '/how-it-works';
+  const contactHref = isHome ? '#contact' : '/contact';
 
   return (
     <>
@@ -89,18 +100,64 @@ export default function Navigation() {
             Astral <em className="italic text-accent">Integration</em>
           </a>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-10">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="text-nav uppercase text-content-secondary hover:text-accent transition-colors"
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8">
+            {/* Who I Help dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="text-nav uppercase text-content-secondary hover:text-accent transition-colors inline-flex items-center gap-1"
               >
-                {item.label}
-              </a>
-            ))}
+                Who I Help
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {dropdownOpen && (
+                <div className="absolute top-full left-0 mt-3 w-52 bg-dark-card border border-border rounded-xl shadow-xl overflow-hidden">
+                  {whoIHelpLinks.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setDropdownOpen(false)}
+                      className="block px-5 py-3 text-body-sm text-content-secondary hover:text-accent hover:bg-dark-bg/50 transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <a
+              href={workHref}
+              onClick={(e) => handleNavClick(e, workHref)}
+              className="text-nav uppercase text-content-secondary hover:text-accent transition-colors"
+            >
+              Work
+            </a>
+
+            <a
+              href={howHref}
+              onClick={(e) => handleNavClick(e, howHref)}
+              className="text-nav uppercase text-content-secondary hover:text-accent transition-colors"
+            >
+              How It Works
+            </a>
+
+            <a
+              href="/about"
+              className="text-nav uppercase text-content-secondary hover:text-accent transition-colors"
+            >
+              About
+            </a>
+
+            <a
+              href="/insights"
+              className="text-nav uppercase text-content-secondary hover:text-accent transition-colors"
+            >
+              Insights
+            </a>
+
             <a
               href={contactHref}
               onClick={(e) => handleNavClick(e, contactHref)}
@@ -132,31 +189,68 @@ export default function Navigation() {
           />
 
           <div
-            className="fixed top-[72px] left-0 right-0 z-50 md:hidden"
+            className="fixed top-[72px] left-0 right-0 z-50 md:hidden max-h-[calc(100vh-72px)] overflow-y-auto"
             role="menu"
             aria-label="Mobile navigation"
           >
             <div className="bg-dark-card border-b border-border">
-              <div className="max-w-content mx-auto px-6 py-6 flex flex-col gap-2">
-                {navItems.map((item) => (
+              <div className="max-w-content mx-auto px-6 py-4">
+                {/* Who I Help section */}
+                <p className="text-meta uppercase text-content-muted py-3">Who I Help</p>
+                {whoIHelpLinks.map((link) => (
                   <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
-                    className="block py-4 text-body text-content-primary hover:text-accent transition-colors border-b border-border"
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block py-3 pl-4 text-body-sm text-content-secondary hover:text-accent transition-colors"
                     role="menuitem"
                   >
-                    {item.label}
+                    {link.label}
                   </a>
                 ))}
-                <a
-                  href={contactHref}
-                  onClick={(e) => handleNavClick(e, contactHref)}
-                  className="block py-4 text-body text-accent font-medium"
-                  role="menuitem"
-                >
-                  Get in Touch
-                </a>
+
+                <div className="border-t border-border mt-2 pt-2">
+                  <a
+                    href={workHref}
+                    onClick={(e) => { handleNavClick(e, workHref); setMobileMenuOpen(false); }}
+                    className="block py-4 text-body text-content-primary hover:text-accent transition-colors"
+                    role="menuitem"
+                  >
+                    Work
+                  </a>
+                  <a
+                    href={howHref}
+                    onClick={(e) => { handleNavClick(e, howHref); setMobileMenuOpen(false); }}
+                    className="block py-4 text-body text-content-primary hover:text-accent transition-colors"
+                    role="menuitem"
+                  >
+                    How It Works
+                  </a>
+                  <a
+                    href="/about"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block py-4 text-body text-content-primary hover:text-accent transition-colors"
+                    role="menuitem"
+                  >
+                    About
+                  </a>
+                  <a
+                    href="/insights"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block py-4 text-body text-content-primary hover:text-accent transition-colors"
+                    role="menuitem"
+                  >
+                    Insights
+                  </a>
+                  <a
+                    href={contactHref}
+                    onClick={(e) => { handleNavClick(e, contactHref); setMobileMenuOpen(false); }}
+                    className="block py-4 text-body text-accent font-medium"
+                    role="menuitem"
+                  >
+                    Get in Touch
+                  </a>
+                </div>
               </div>
             </div>
           </div>
