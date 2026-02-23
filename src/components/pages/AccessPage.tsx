@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 // ─── DATA ───────────────────────────────────────────────────────────────────
 const CERTS = [
@@ -124,26 +124,92 @@ const JOURNEY = [
   {id:"advanced",name:"Advanced Facilitator",desc:"Highest level of Access certification.",status:"locked",date:null,cert:"ACAF"},
 ];
 
+type TabId = "home" | "facilitators" | "classes" | "journey" | "dashboard";
+
+type Facilitator = typeof F[number];
+type ClassItem = typeof CL[number];
+type Location = { lat: number; lng: number };
+type LocStatus = "idle" | "req" | "ok" | "no";
+
+type PillProps = {
+  label: string;
+  active: boolean;
+  onClick: () => void;
+  count?: number;
+};
+
+type StatProps = {
+  val: string;
+  label: string;
+  color?: string;
+};
+
+type LocBtnProps = {
+  locSt: LocStatus;
+  reqLoc: () => void;
+};
+
+type SearchBarProps = {
+  val: string;
+  set: (value: string) => void;
+  placeholder: string;
+  locSt: LocStatus;
+  reqLoc: () => void;
+};
+
+type ModalProps = {
+  onClose: () => void;
+  children: ReactNode;
+};
+
+type ProfileModalProps = {
+  f: Facilitator;
+  onClose: () => void;
+  loc: Location | null;
+};
+
+type BookModalProps = {
+  f: Facilitator;
+  onClose: () => void;
+};
+
+type FCardProps = {
+  f: Facilitator;
+  loc: Location | null;
+  onP: (f: Facilitator) => void;
+  onB: (f: Facilitator) => void;
+};
+
+type CCardProps = {
+  cl: ClassItem;
+  loc: Location | null;
+};
+
+type HomeTabProps = {
+  loc: Location | null;
+  setTab: (tabId: TabId) => void;
+  setProfileModal: (f: Facilitator) => void;
+};
+
 // ─── UTILS ──────────────────────────────────────────────────────────────────
-const ini = n => n.split(" ").map(w => w[0]).join("").slice(0,2);
-const cc = id => CERTS.find(c=>c.id===id)?.color||"#666";
-const cn = id => CERTS.find(c=>c.id===id)?.name||id;
-const ca = id => CERTS.find(c=>c.id===id)?.abbr||id;
-const hav = (a,b,c,d) => {const R=6371,p=Math.PI/180,dl=(c-a)*p,dn=(d-b)*p;const x=Math.sin(dl/2)**2+Math.cos(a*p)*Math.cos(c*p)*Math.sin(dn/2)**2;return R*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x))};
-const fd = d => d<100?`${Math.round(d)} km`:`${Math.round(d)} km`;
+const ini = (n: string) => n.split(" ").map((w: string) => w[0]).join("").slice(0,2);
+const cc = (id: string) => CERTS.find(c=>c.id===id)?.color||"#666";
+const ca = (id: string) => CERTS.find(c=>c.id===id)?.abbr||id;
+const hav = (a: number,b: number,c: number,d: number) => {const R=6371,p=Math.PI/180,dl=(c-a)*p,dn=(d-b)*p;const x=Math.sin(dl/2)**2+Math.cos(a*p)*Math.cos(c*p)*Math.sin(dn/2)**2;return R*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x))};
+const fd = (d: number) => d<100?`${Math.round(d)} km`:`${Math.round(d)} km`;
 const ft = "'DM Sans',system-ui,sans-serif";
 const mn = "'DM Mono',monospace";
 const sf = "'Source Serif 4',Georgia,serif";
 
 // ─── PILL ───────────────────────────────────────────────────────────────────
-const Pill = ({label,active,onClick,count}) => (
+const Pill = ({label,active,onClick,count}: PillProps) => (
   <button onClick={onClick} style={{display:"inline-flex",alignItems:"center",gap:6,padding:"8px 16px",borderRadius:100,border:active?"1.5px solid #1a3a4a":"1px solid #dde0de",background:active?"#1a3a4a":"#fff",color:active?"#fff":"#4a5a5a",fontSize:13,fontWeight:500,cursor:"pointer",fontFamily:ft,transition:"all 0.2s",whiteSpace:"nowrap"}}>
     {label}{count!==undefined&&<span style={{fontSize:11,opacity:0.7}}>{count}</span>}
   </button>
 );
 
 // ─── STAT BOX ───────────────────────────────────────────────────────────────
-const Stat = ({val,label,color}) => (
+const Stat = ({val,label,color}: StatProps) => (
   <div style={{background:"#fff",borderRadius:14,padding:"18px 20px",flex:1,minWidth:100,border:"1px solid #e8ebe9"}}>
     <div style={{fontSize:24,fontWeight:700,color:color||"#1a3a4a",fontFamily:mn,lineHeight:1}}>{val}</div>
     <div style={{fontSize:10,color:"#8a9a9a",marginTop:6,fontFamily:mn,textTransform:"uppercase",letterSpacing:"0.06em"}}>{label}</div>
@@ -151,10 +217,10 @@ const Stat = ({val,label,color}) => (
 );
 
 // ─── LOC BUTTON ─────────────────────────────────────────────────────────────
-const LocBtn = ({locSt,reqLoc}) => locSt==="idle"?<button onClick={reqLoc} style={{display:"flex",alignItems:"center",gap:6,padding:"10px 18px",borderRadius:12,border:"none",background:"#f0f7f4",color:"#1a3a4a",fontSize:13,fontWeight:600,cursor:"pointer",fontFamily:ft,whiteSpace:"nowrap"}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>Near me</button>:locSt==="ok"?<div style={{display:"flex",alignItems:"center",gap:6,padding:"10px 18px",borderRadius:12,background:"#e8f5ee",fontSize:13,color:"#2a6a4a"}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>Located</div>:<button onClick={reqLoc} style={{padding:"10px 18px",borderRadius:12,border:"none",background:"#f0f2f1",color:"#8a9a9a",fontSize:13,cursor:"pointer"}}>Retry</button>;
+const LocBtn = ({locSt,reqLoc}: LocBtnProps) => locSt==="idle"?<button onClick={reqLoc} style={{display:"flex",alignItems:"center",gap:6,padding:"10px 18px",borderRadius:12,border:"none",background:"#f0f7f4",color:"#1a3a4a",fontSize:13,fontWeight:600,cursor:"pointer",fontFamily:ft,whiteSpace:"nowrap"}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>Near me</button>:locSt==="ok"?<div style={{display:"flex",alignItems:"center",gap:6,padding:"10px 18px",borderRadius:12,background:"#e8f5ee",fontSize:13,color:"#2a6a4a"}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>Located</div>:<button onClick={reqLoc} style={{padding:"10px 18px",borderRadius:12,border:"none",background:"#f0f2f1",color:"#8a9a9a",fontSize:13,cursor:"pointer"}}>Retry</button>;
 
 // ─── SEARCH BAR ─────────────────────────────────────────────────────────────
-const SearchBar = ({val,set,placeholder,locSt,reqLoc}) => (
+const SearchBar = ({val,set,placeholder,locSt,reqLoc}: SearchBarProps) => (
   <div style={{background:"#fff",borderRadius:16,padding:"6px 6px 6px 20px",display:"flex",alignItems:"center",gap:12,boxShadow:"0 8px 32px rgba(0,0,0,0.12)",maxWidth:640,margin:"0 auto"}}>
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8a9a9a" strokeWidth="2.5" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     <input type="text" value={val} onChange={e=>set(e.target.value)} placeholder={placeholder} style={{flex:1,border:"none",outline:"none",fontSize:15,color:"#1a2a2a",fontFamily:ft,padding:"12px 0",background:"transparent"}} />
@@ -164,7 +230,7 @@ const SearchBar = ({val,set,placeholder,locSt,reqLoc}) => (
 );
 
 // ─── MODALS ─────────────────────────────────────────────────────────────────
-const Modal = ({onClose,children}) => (
+const Modal = ({onClose,children}: ModalProps) => (
   <div onClick={onClose} style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.5)",zIndex:1000,display:"flex",alignItems:"center",justifyContent:"center",padding:20,backdropFilter:"blur(4px)"}}>
     <div onClick={e=>e.stopPropagation()} style={{background:"#fff",borderRadius:20,maxWidth:560,width:"100%",maxHeight:"90vh",overflow:"auto",position:"relative"}}>
       <button onClick={onClose} style={{position:"absolute",top:16,right:16,background:"rgba(0,0,0,0.06)",border:"none",color:"#5a6a6a",width:32,height:32,borderRadius:8,cursor:"pointer",fontSize:16,display:"flex",alignItems:"center",justifyContent:"center",zIndex:2}}>×</button>
@@ -173,7 +239,7 @@ const Modal = ({onClose,children}) => (
   </div>
 );
 
-const ProfileModal = ({f,onClose,loc}) => {
+const ProfileModal = ({f,onClose,loc}: ProfileModalProps) => {
   const d=loc?hav(loc.lat,loc.lng,f.lat,f.lng):null;
   return <Modal onClose={onClose}>
     <div style={{background:`linear-gradient(135deg,${cc(f.certs[0])},${cc(f.certs[Math.min(2,f.certs.length-1)])})`,padding:"32px 28px 24px",borderRadius:"20px 20px 0 0"}}>
@@ -194,7 +260,7 @@ const ProfileModal = ({f,onClose,loc}) => {
   </Modal>;
 };
 
-const BookModal = ({f,onClose}) => {
+const BookModal = ({f,onClose}: BookModalProps) => {
   const [sent,setSent]=useState(false);
   return <Modal onClose={onClose}>
     <div style={{padding:"32px 28px"}}>
@@ -226,7 +292,7 @@ const BookModal = ({f,onClose}) => {
 };
 
 // ─── FACILITATOR CARD ───────────────────────────────────────────────────────
-const FCard = ({f,loc,onP,onB}) => {
+const FCard = ({f,loc,onP,onB}: FCardProps) => {
   const [o,setO]=useState(false);
   const d=loc?hav(loc.lat,loc.lng,f.lat,f.lng):null;
   return <div onClick={()=>setO(!o)} style={{background:"#fff",borderRadius:16,padding:"24px 28px",cursor:"pointer",transition:"all 0.3s",border:f.featured?"1.5px solid #1a3a4a":"1px solid #e8ebe9",boxShadow:o?"0 12px 40px rgba(26,58,74,0.12)":"0 1px 3px rgba(0,0,0,0.04)",position:"relative"}}>
@@ -254,9 +320,10 @@ const FCard = ({f,loc,onP,onB}) => {
 };
 
 // ─── CLASS CARD ─────────────────────────────────────────────────────────────
-const CCard = ({cl,loc}) => {
+const CCard = ({cl,loc}: CCardProps) => {
   const [o,setO]=useState(false);
   const ct=CLASS_TYPES.find(t=>t.id===cl.type);
+  if (!ct) return null;
   const d=loc&&cl.lat?hav(loc.lat,loc.lng,cl.lat,cl.lng):null;
   return <div onClick={()=>setO(!o)} style={{background:"#fff",borderRadius:16,padding:"20px 24px",cursor:"pointer",transition:"all 0.3s",border:"1px solid #e8ebe9",boxShadow:o?"0 12px 40px rgba(26,58,74,0.12)":"0 1px 3px rgba(0,0,0,0.04)"}}>
     <div style={{display:"flex",gap:16,alignItems:"flex-start"}}>
@@ -286,7 +353,7 @@ const CCard = ({cl,loc}) => {
 };
 
 // ─── HOME TAB ───────────────────────────────────────────────────────────────
-const HomeTab = ({loc,setTab,setProfileModal}) => {
+const HomeTab = ({loc,setTab,setProfileModal}: HomeTabProps) => {
   const nearbyClasses = loc ? [...CL].filter(c=>c.lat).sort((a,b)=>hav(loc.lat,loc.lng,a.lat,a.lng)-hav(loc.lat,loc.lng,b.lat,b.lng)).slice(0,3) : CL.slice(0,3);
   const nearbyFacs = loc ? [...F].sort((a,b)=>hav(loc.lat,loc.lng,a.lat,a.lng)-hav(loc.lat,loc.lng,b.lat,b.lng)).slice(0,4) : F.filter(f=>f.featured).slice(0,4);
   const activeStep = JOURNEY.find(s=>s.status==="active");
@@ -529,13 +596,13 @@ const JourneyTab = () => {
 
 // ─── MAIN APP ───────────────────────────────────────────────────────────────
 export default function App() {
-  const [tab,setTab]=useState("home");
-  const [q,setQ]=useState("");const [cQ,setCQ]=useState("");
-  const [region,setRegion]=useState(null);const [cert,setCert]=useState(null);const [lang,setLang]=useState(null);
-  const [loc,setLoc]=useState(null);const [sort,setSort]=useState("relevance");
-  const [filters,setFilters]=useState(false);const [locSt,setLocSt]=useState("idle");const [show,setShow]=useState(20);
-  const [pM,setPM]=useState(null);const [bM,setBM]=useState(null);
-  const [cType,setCType]=useState(null);const [cFmt,setCFmt]=useState(null);
+  const [tab,setTab]=useState<TabId>("home");
+  const [q,setQ]=useState<string>("");const [cQ,setCQ]=useState<string>("");
+  const [region,setRegion]=useState<string | null>(null);const [cert,setCert]=useState<string | null>(null);const [lang,setLang]=useState<string | null>(null);
+  const [loc,setLoc]=useState<Location | null>(null);const [sort,setSort]=useState<"relevance" | "distance" | "classes">("relevance");
+  const [filters,setFilters]=useState<boolean>(false);const [locSt,setLocSt]=useState<LocStatus>("idle");const [show,setShow]=useState<number>(20);
+  const [pM,setPM]=useState<Facilitator | null>(null);const [bM,setBM]=useState<Facilitator | null>(null);
+  const [cType,setCType]=useState<string | null>(null);const [cFmt,setCFmt]=useState<"person" | "online" | null>(null);
 
   const reqLoc=()=>{setLocSt("req");navigator.geolocation?.getCurrentPosition(p=>{setLoc({lat:p.coords.latitude,lng:p.coords.longitude});setLocSt("ok");setSort("distance")},()=>setLocSt("no"))};
 
@@ -548,7 +615,13 @@ export default function App() {
   const langs=[...new Set(F.flatMap(f=>f.languages))].sort();
   const af=(region?1:0)+(cert?1:0)+(lang?1:0);
 
-  const tabs=[{id:"home",label:"Home"},{id:"facilitators",label:"Facilitators"},{id:"classes",label:"Classes"},{id:"journey",label:"Your Journey"},{id:"dashboard",label:"Dashboard"}];
+  const tabs: { id: TabId; label: string }[] = [
+    {id:"home",label:"Home"},
+    {id:"facilitators",label:"Facilitators"},
+    {id:"classes",label:"Classes"},
+    {id:"journey",label:"Your Journey"},
+    {id:"dashboard",label:"Dashboard"},
+  ];
 
   return <div style={{minHeight:"100vh",background:"#f6f7f6",fontFamily:ft}}>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -585,14 +658,22 @@ export default function App() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 6h16M7 12h10M10 18h4"/></svg>Filters
               {af>0&&<span style={{background:filters?"#7ac0a0":"#1a3a4a",color:"#fff",width:18,height:18,borderRadius:"50%",display:"inline-flex",alignItems:"center",justifyContent:"center",fontSize:10,fontWeight:700}}>{af}</span>}
             </button>
-            {region&&<Pill label={REGIONS.find(r=>r.id===region)?.name} active onClick={()=>setRegion(null)} />}
+            {region&&<Pill label={REGIONS.find(r=>r.id===region)?.name ?? region} active onClick={()=>setRegion(null)} />}
             {cert&&<Pill label={ca(cert)} active onClick={()=>setCert(null)} />}
             {lang&&<Pill label={lang} active onClick={()=>setLang(null)} />}
             {af>1&&<button onClick={()=>{setRegion(null);setCert(null);setLang(null)}} style={{fontSize:12,color:"#8a9a9a",background:"none",border:"none",cursor:"pointer",textDecoration:"underline"}}>Clear all</button>}
           </div>
           <div style={{display:"flex",alignItems:"center",gap:8}}>
             <span style={{fontSize:11,color:"#8a9a9a",fontFamily:mn,textTransform:"uppercase"}}>Sort</span>
-            <select value={sort} onChange={e=>setSort(e.target.value)} style={{padding:"6px 12px",borderRadius:8,border:"1px solid #dde0de",background:"#fff",fontSize:13,cursor:"pointer",fontFamily:ft}}><option value="relevance">Relevance</option>{loc&&<option value="distance">Nearest</option>}<option value="classes">Most Active</option></select>
+            <select
+              value={sort}
+              onChange={e=>setSort(e.target.value as "relevance" | "distance" | "classes")}
+              style={{padding:"6px 12px",borderRadius:8,border:"1px solid #dde0de",background:"#fff",fontSize:13,cursor:"pointer",fontFamily:ft}}
+            >
+              <option value="relevance">Relevance</option>
+              {loc&&<option value="distance">Nearest</option>}
+              <option value="classes">Most Active</option>
+            </select>
           </div>
         </div>
         {filters&&<div style={{background:"#fff",borderRadius:16,padding:24,marginBottom:20,border:"1px solid #e8ebe9"}}>
