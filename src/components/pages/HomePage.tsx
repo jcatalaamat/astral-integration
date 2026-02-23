@@ -16,70 +16,61 @@ const clientTypes = [
   { icon: '✦', title: 'Healers & Readers', desc: 'Astrology, energy work, channeling' },
 ];
 
-// ShivEnergetics removed — covered by case study. Ozina Camp removed — in development.
 const portfolio = [
   {
     client: 'Uria Tsur',
-    type: 'Vocal Freedom Facilitator — 18+ Cities',
-    desc: 'Touring hub for a vocal facilitator and frontman of Orot Band (33K+ Spotify listeners). Centralized 8 ticket platforms into one event system across Europe and the Americas. Membership portal with 300+ subscribers at €5/mo. Bilingual EN/HE.',
+    type: 'Vocal Facilitator & Musician — 18+ Cities',
+    desc: 'A vocal facilitator touring 18+ cities was selling tickets across 8 different platforms and losing track of his community. Now everything lives in one place — events, membership, 300+ subscribers — and he focuses on the work.',
     url: 'https://uriatsur.live',
     status: null as string | null,
   },
   {
     client: 'Sacred Counsel',
     type: 'Retreat & Integration — Valle de Bravo, Mexico',
-    desc: 'Full platform for a psychedelic retreat center and integration therapy practice. Ayahuasca retreats, private homestays, integration therapy sessions, 21-day metabolic detox — serving facilitators with 20+ years of ceremony experience.',
+    desc: 'A psychedelic retreat center with 20+ years of ceremony experience needed a digital presence that honored the depth of the work. Retreats, integration therapy, homestays, and metabolic detox — all held in one container.',
     url: 'https://sacredcounsel.space',
     status: null as string | null,
   },
   {
     client: 'Mazunte Today',
-    type: 'AI-Powered Community Platform — Oaxaca, Mexico',
-    desc: 'Live events and community directory for a coastal town. AI-powered event submission (Claude), practitioner directory, classifieds, weekly digest, Stripe-boosted listings. Bilingual EN/ES, SEO-optimized. Used daily by locals and visitors.',
+    type: 'Community Platform — Oaxaca, Mexico',
+    desc: 'A beach town needed a way to know what\'s happening tonight. Now locals and visitors check one place — events, practitioner directory, classifieds — updated daily in English and Spanish.',
     url: 'https://mazunte.today',
     status: null as string | null,
   },
   {
     client: 'Inner Ascend',
     type: 'Healing Membership & Facilitator School',
-    desc: 'Trauma-informed healing membership (€22/mo) with a 12-month curriculum of 97 healing practices, AI healing assistant, guided sessions, and progress tracking. Feeds into a facilitator training pipeline for practitioners ready to lead.',
+    desc: 'A trauma-informed healing practice wanted to reach people between sessions. 97 guided practices, an intelligent support system, and a full facilitator training pipeline — all under one roof at €22/mo.',
     url: 'https://inner-ascend.com',
     status: null as string | null,
   },
   {
     client: 'Proyecto Salvaje',
     type: 'Regenerative Neighborhood — Oaxaca, Mexico',
-    desc: 'Platform for a regenerative land community. 10 household lots with natural building requirements, community coordination, land sales from $35K USD. Bioconstruction, permaculture, and off-grid living — rooted in the mountains of Oaxaca.',
+    desc: 'A regenerative neighborhood in the Oaxacan mountains needed more than a real estate page. Land sales, bioconstruction requirements, community coordination — a platform that reflects the vision, not just the lots.',
     url: 'https://proyectosalvaje.com',
     status: null as string | null,
   },
   {
     client: 'Amakura',
     type: 'Regenerative Living Center — Mazunte, Oaxaca',
-    desc: 'Platform for a centro de vida regenerativa. Bioconstruction school, restaurant, natural pool, workshops, and community events. A living laboratory for regenerative culture — not just a storefront, a whole world.',
+    desc: 'A regenerative living center — bioconstruction school, restaurant, natural pool, workshops — deserved more than a storefront. A whole world, coming to life.',
     url: 'https://amakura.store',
     status: 'Coming soon',
   },
 ];
 
-const services = [
-  { icon: '⚡', title: 'Custom Platforms', desc: 'Your entire business in one place. Bookings, content, community, payments, client journey — all under your brand. Replaces the 5+ tools you\'re duct-taping together.' },
-  { icon: '🤖', title: 'AI Assistants & Tools', desc: 'AI trained on your voice and methodology. Answer FAQs, guide clients between sessions, recommend resources, triage to human support. Works on web or WhatsApp. A new revenue stream that serves people when you\'re not available.' },
-  { icon: '🎓', title: 'Certification & School Platforms', desc: 'Multi-level training programs with student progression, prerequisites, practice hour logging, peer matching, cohort management, and credentialing. The infrastructure that ThetaHealing, IFS, and yoga teacher trainings all need — built for your modality.' },
-  { icon: '🔑', title: 'Membership & Course Platforms', desc: 'Gated communities, tiered content, video lessons, guided practices, progress tracking — all branded to you. Recurring revenue that replaces Patreon, Kajabi, and Circle.' },
-  { icon: '🌐', title: 'Websites That Convert', desc: 'Lightning-fast, SEO-optimized, custom-built. Not templates. Designed to reflect your energy and convert visitors into clients.' },
-  { icon: '📱', title: 'Cross-Platform Apps', desc: 'Your platform on every device. Clients access their membership, book sessions, journal, and track their journey from their phone. iOS, Android, and web from a single build.' },
-];
 
 const addOnModules = [
   { title: 'Shop', desc: 'Products, downloads, merch. Stripe payments.', price: 'From $800' },
   { title: 'Stays & Booking', desc: 'Accommodation calendar, availability, payments.', price: 'From $1,200' },
   { title: 'Courses & Membership', desc: 'Video, progress tracking, gated content, subscriptions.', price: 'From $1,000' },
   { title: 'Community', desc: 'Forums, directory, circles, discussions.', price: 'From $800' },
-  { title: 'AI Assistant', desc: 'Trained on your methodology. Web + WhatsApp.', price: 'From $1,000' },
+  { title: 'Intelligent Assistant', desc: 'Trained on your methodology. Web + WhatsApp.', price: 'From $1,000' },
   { title: 'Certification System', desc: 'Student levels, prerequisites, practice tracking, credentialing.', price: 'From $1,500' },
   { title: 'Email & CRM', desc: 'Newsletter, sequences, onboarding, contacts.', price: 'From $600' },
-  { title: 'Custom', desc: 'Directory, ticketing, AI tools — whatever you need.', price: "Let's talk" },
+  { title: 'Custom', desc: 'Directory, ticketing, intelligent tools — whatever you need.', price: "Let's talk" },
 ];
 
 const monthlyPlans = [
@@ -106,7 +97,7 @@ const faqItems = [
   { q: 'Do I need to be technical?', a: "Not at all. I handle everything — design, development, deployment. You focus on your work. I build the systems around it." },
   { q: 'I already have a Wix / Squarespace / Kajabi site. Can you work with it?', a: "I build custom. That means we'll likely replace your current setup with something purpose-built for your business. Your content migrates over, but the platform is new and yours." },
   { q: "Will it feel like my brand — not like a tech product?", a: "That's the entire point. Every build starts with deep research into your world. The result looks and feels like you — not like software." },
-  { q: "What about AI — how does that fit into my business?", a: "AI isn't a gimmick here. It's practical. An AI assistant trained on your methodology can support your clients between sessions, answer common questions, guide intake — and free up your time for the work only you can do." },
+  { q: "What about AI — how does that fit into my practice?", a: "It's practical, not trendy. An intelligent assistant trained on your methodology can support clients between sessions, answer common questions, and guide intake — freeing your time for the work only you can do. It's infrastructure, not a gimmick." },
   { q: 'Can you build me a mobile app?', a: "Yes. I build cross-platform — one codebase that works on iOS, Android, and web. It's an add-on module that makes sense once your core platform is solid." },
   { q: "What makes the School platform different from Kajabi or Teachable?", a: "Kajabi and Teachable are course platforms. They handle video lessons and payments. They don't handle certification levels with prerequisites, practice hour tracking, peer matching, cohort management, or a public directory of your certified practitioners. If you're running a real training program — not just selling a course — you need different infrastructure." },
   { q: "How does the Partnership model work exactly?", a: "I build your platform at reduced or zero upfront cost. In return, I take 8–12% of revenue that's processed through the platform — enrollments, bookings, memberships, purchases. Only transactions on the platform I built. Your other revenue streams, in-person work, and existing channels are 100% yours. There's a 12-month minimum term, and you can buy out the rev share at any time by paying the full project value." },
@@ -114,11 +105,9 @@ const faqItems = [
 ];
 
 const aboutStats = [
-  { value: '10+', label: 'Years building software' },
-  { value: '2–3', label: 'Weeks to launch' },
+  { value: '10+', label: 'Years in software' },
   { value: 'CTO', label: 'Former technical lead' },
-  { value: '🧠', label: 'Neurodivergent builder' },
-  { value: '👨‍👧‍👦', label: 'Father of 2' },
+  { value: '2–3 wk', label: 'Typical launch' },
   { value: '📍', label: 'Mazunte, Oaxaca' },
 ];
 
@@ -134,8 +123,8 @@ const comparisonRows = [
 
 export default function HomePage() {
   useDocumentMeta({
-    title: 'Astral Integration — Your whole world, one platform.',
-    description: 'AI-powered platforms, websites, and tools for healers, coaches, retreat centers, and creators. Built by Jordi Amat.',
+    title: 'Astral Integration — Digital Architecture for Conscious Movements',
+    description: 'Custom platforms, websites, and intelligent systems for schools, retreats, and practices in the consciousness space. Independent technical partner. Built by Jordi Amat.',
     ogUrl: 'https://astralintegration.co/',
   });
 
@@ -222,16 +211,16 @@ export default function HomePage() {
         <div className="relative z-10 mb-8 animate-fadeUp animate-delay-100">
           <span className="inline-flex items-center gap-2 text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            Taking on 2 new projects
+            Accepting 1–2 aligned projects
           </span>
         </div>
 
         <h1 className="font-serif text-display font-light max-w-[900px] relative z-10 animate-fadeUp animate-delay-300">
-          Your whole world,<br />one <em className="italic gradient-text">platform.</em>
+          Digital architecture for<br /><em className="italic gradient-text">conscious movements.</em>
         </h1>
 
         <p className="text-body text-content-secondary max-w-[600px] mt-8 relative z-10 animate-fadeUp animate-delay-500">
-          I build the platform behind your practice. Bookings, community, courses, payments — one place, your brand, live in weeks.
+          I design and build the digital systems behind serious schools, retreats, and practices — from touring artists to global education communities.
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 mt-12 relative z-10 animate-fadeUp animate-delay-700">
@@ -243,7 +232,7 @@ export default function HomePage() {
             }}
             className="px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
           >
-            Get in Touch
+            Start a Conversation
           </a>
           <a
             href="#work"
@@ -251,21 +240,6 @@ export default function HomePage() {
           >
             See the Work
           </a>
-        </div>
-
-        {/* Stats bar */}
-        <div className="relative z-10 mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 animate-fadeUp animate-delay-900">
-          {[
-            { value: '10+', label: 'Years shipping software' },
-            { value: '10+', label: 'Platforms built' },
-            { value: '1,000+', label: 'Users served' },
-            { value: '2–3 wk', label: 'Average delivery' },
-          ].map((stat, i) => (
-            <div key={i} className="text-center">
-              <div className="font-serif text-h2 font-light text-accent mb-1">{stat.value}</div>
-              <p className="text-meta uppercase text-content-muted">{stat.label}</p>
-            </div>
-          ))}
         </div>
 
         {/* Scroll indicator */}
@@ -283,10 +257,10 @@ export default function HomePage() {
             Who This Is For
           </p>
           <h2 className="font-serif text-display-sm font-light mb-4">
-            Built for people who are<br />great at their craft.
+            Teachers, healers, and<br />builders of living systems.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mb-16">
-            You changed someone's life last week. Then spent the weekend fighting Calendly and Canva.
+            You changed someone's life last week. Then spent the weekend fighting Calendly and Canva. Your work deserves better infrastructure.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
@@ -308,9 +282,9 @@ export default function HomePage() {
             <span className="w-8 h-px bg-accent" />
             Work
           </p>
-          <h2 className="font-serif text-display-sm font-light mb-4">Recent builds.</h2>
+          <h2 className="font-serif text-display-sm font-light mb-4">Selected work.</h2>
           <p className="text-body text-content-secondary max-w-prose mb-16">
-            Every project starts with deep research. I learn the business before I write a line of code.
+            Every project starts with deep research into the world it serves — the teaching, the community, the people.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -369,6 +343,52 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* KIND WORDS — moved up for trust after seeing the work */}
+      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <div className="grid md:grid-cols-3 gap-8">
+            <blockquote className="bg-dark-card border border-border rounded-2xl p-8">
+              <p className="text-body text-content-secondary leading-relaxed italic mb-6">
+                "I was managing tickets on 8 platforms, WhatsApp groups for everything, total chaos. Jordi put it all in one place. Now I just focus on my workshops and the community runs itself."
+              </p>
+              <footer className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif">U</div>
+                <div>
+                  <p className="text-body-sm text-content-primary font-medium">Uria Tsur</p>
+                  <p className="text-body-sm text-content-muted">Vocal Facilitator — 18+ Cities</p>
+                </div>
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-dark-card border border-border rounded-2xl p-8">
+              <p className="text-body text-content-secondary leading-relaxed italic mb-6">
+                "My students used to get lost between Teachable and Google Sheets and WhatsApp. Now they log in, see their path, book a retreat, join their cohort — it's actually a school now."
+              </p>
+              <footer className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif">S</div>
+                <div>
+                  <p className="text-body-sm text-content-primary font-medium">Sera Shivnan</p>
+                  <p className="text-body-sm text-content-muted">ShivEnergetics — Granada</p>
+                </div>
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-dark-card border border-border rounded-2xl p-8">
+              <p className="text-body text-content-secondary leading-relaxed italic mb-6">
+                "We wanted something that felt like us — the land, the story, the residency — not some template. Jordi got it. It feels like walking onto the farm."
+              </p>
+              <footer className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif">O</div>
+                <div>
+                  <p className="text-body-sm text-content-primary font-medium">Ozina Camp</p>
+                  <p className="text-body-sm text-content-muted">Farm Stay & Residency — Mallorca</p>
+                </div>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
       {/* DEEP CASE STUDY — SHIVENERGETICS */}
       <section className="py-section px-6 md:px-12 bg-gradient-to-b from-[#0d0d14] to-dark-bg">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
@@ -400,7 +420,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <p className="text-meta uppercase text-content-muted mb-1">After</p>
-                  <p className="text-body-sm text-content-secondary">A unified academy platform. 300+ students onboarded. Course paths, retreat bookings, practitioner directory, AI assistant — all under one brand.</p>
+                  <p className="text-body-sm text-content-secondary">A unified academy platform. 300+ students onboarded. Course paths, retreat bookings, practitioner directory, methodology-trained assistant — all under one brand.</p>
                 </div>
               </div>
             </div>
@@ -497,7 +517,7 @@ export default function HomePage() {
 
             <div>
               <p className="text-body text-content-secondary leading-relaxed mb-4">
-                Senior full-stack engineer, 10+ years building production applications. Former CTO. Based in Mazunte, Oaxaca — deep in the world of holistic practice, conscious community, and intentional living.
+                Senior full-stack architect. 10+ years building production systems. Former CTO. Based in Mazunte, Oaxaca — deep in the world of holistic practice, conscious community, and intentional living.
               </p>
               <p className="text-body text-content-secondary leading-relaxed mb-4">
                 I didn't start in tech for this space. I started in the work — sitting in ceremony, training in polarity and embodiment with teachers like John Wineland, facilitating integration, building community on the land. That's how I know the difference between a booking form and a <strong className="text-content-primary font-medium">sacred container</strong>.
@@ -506,7 +526,7 @@ export default function HomePage() {
                 I kept watching incredible teachers lose students — not because the work wasn't profound, but because their "system" was a WhatsApp group, a Google Sheet, and a prayer.
               </p>
               <p className="text-body text-content-secondary leading-relaxed mb-4">
-                So I built the bridge. I build with AI-powered tools, which means I ship in weeks what agencies quote months for. I understand your world because I live in it.
+                I'm as interested in protecting transmission as I am in scaling reach. Digital architecture should deepen a teaching — not flatten it.
               </p>
               <p className="text-body text-content-secondary leading-relaxed mb-8">
                 I also build{' '}
@@ -514,7 +534,7 @@ export default function HomePage() {
                 {' '}for this community — because the people doing this work deserve better infrastructure, even before they're ready for a full platform.
               </p>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-8 border-t border-border">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-border">
                 {aboutStats.map((stat, i) => (
                   <div key={i}>
                     <div className="font-serif text-h2 font-light text-accent mb-1">{stat.value}</div>
@@ -523,38 +543,6 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WHAT I BUILD */}
-      <section id="services" className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
-        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
-          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
-            <span className="w-8 h-px bg-accent" />
-            What I Build
-          </p>
-          <h2 className="font-serif text-display-sm font-light mb-4">
-            Technology that feels like<br />an extension of your care.
-          </h2>
-          <p className="text-body text-content-secondary max-w-prose mb-16">
-            Every system is designed around your clients' journey — not around software features.
-          </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => (
-              <div
-                key={i}
-                className="bg-dark-card border border-border rounded-2xl p-8 hover:border-border-hover hover:bg-dark-cardHover hover:-translate-y-1 transition-all relative overflow-hidden group"
-              >
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="w-12 h-12 rounded-xl bg-accent-glow flex items-center justify-center text-xl mb-6">
-                  {service.icon}
-                </div>
-                <h3 className="font-serif text-h3 mb-3">{service.title}</h3>
-                <p className="text-body-sm text-content-secondary">{service.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -585,7 +573,7 @@ export default function HomePage() {
             <div className="bg-dark-card p-8 relative">
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-accent" />
               <h4 className="text-body-sm text-accent font-medium uppercase tracking-wider mb-2">Working With Me</h4>
-              <p className="text-meta text-content-muted">Custom platform, partnership model</p>
+              <p className="text-meta text-content-muted">Custom architecture, long-term partnership</p>
             </div>
 
             {comparisonRows.map((row, i) => (
@@ -704,9 +692,9 @@ export default function HomePage() {
             <span className="w-8 h-px bg-accent" />
             Pricing
           </p>
-          <h2 className="font-serif text-display-sm font-light mb-4">Built for partnership, not invoices.</h2>
+          <h2 className="font-serif text-display-sm font-light mb-4">Partnership over transactions.</h2>
           <p className="text-body text-content-secondary max-w-prose mb-16">
-            I don't just build your platform and disappear. I build it, maintain it, and grow with you — because I only win when you do.
+            I don't build and disappear. I stay, maintain, and evolve the system with you — because the work isn't done at launch.
           </p>
 
           {/* Two Tiers */}
@@ -763,7 +751,7 @@ export default function HomePage() {
               <p className="text-body-sm text-content-muted mb-4 mt-2">For teachers running training programs at scale</p>
               <h3 className="font-serif text-h2 font-light mb-4">School & Certification</h3>
               <p className="text-body-sm text-content-secondary mb-6">
-                The full infrastructure for multi-level certification programs — not a course platform, a real school. Student progression, AI support, community, credentialing.
+                The full infrastructure for multi-level certification programs — not a course platform, a real school. Student progression, intelligent support, community, credentialing.
               </p>
               <div className="font-serif text-[2rem] font-light text-gold mb-6">$5,000 – $10,000</div>
               <ul className="space-y-2 mb-8">
@@ -775,7 +763,7 @@ export default function HomePage() {
                   'Practice hour logging & peer matching',
                   'Assessment & credentialing system',
                   'Certified practitioner directory',
-                  'AI assistant trained on your methodology',
+                  'Intelligent assistant trained on your methodology',
                   'Community spaces per cohort',
                   'Payment plans & tiered enrollment',
                   '60 days post-launch support',
@@ -803,73 +791,24 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Partnership Model */}
-          <div className="bg-dark-card border border-border rounded-2xl p-10 md:p-12 mb-16">
-            <h3 className="font-serif text-h2 font-light mb-2">The Partnership Model</h3>
-            <p className="text-body text-content-secondary mb-10">Most of my clients choose this. Here's why it works:</p>
-
-            <div className="grid md:grid-cols-2 gap-10 mb-10">
-              <div>
-                <h4 className="font-serif text-h4 text-accent mb-4">For you:</h4>
-                <ul className="space-y-3">
-                  {[
-                    'Little to no upfront cost — the barrier is almost zero',
-                    'Platform built to the same standard as a $10K project',
-                    "I'm financially invested in your success — I only earn when you earn",
-                    'Ongoing development, support, and improvements included',
-                    'You own your content, your brand, your students',
-                  ].map((item, i) => (
-                    <li key={i} className="text-body-sm text-content-secondary pl-6 relative">
-                      <span className="absolute left-0 top-1.5 text-accent text-[0.6rem]">✦</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-serif text-h4 text-accent mb-4">For me:</h4>
-                <ul className="space-y-3">
-                  {[
-                    'I build platforms I believe in',
-                    '8–12% of revenue processed through the platform',
-                    'Long-term partnership, not a one-time invoice',
-                    "I'm incentivized to make your platform convert, retain, and grow",
-                  ].map((item, i) => (
-                    <li key={i} className="text-body-sm text-content-secondary pl-6 relative">
-                      <span className="absolute left-0 top-1.5 text-accent text-[0.6rem]">✦</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="bg-dark-bg rounded-xl p-8 mb-8">
-              <h4 className="font-serif text-h4 mb-4">What 10% actually looks like:</h4>
-              <div className="space-y-3 text-body-sm text-content-secondary">
-                <p>A $3,000 certification with 20 students = $60K revenue → <strong className="text-content-primary">$6,000 to me</strong></p>
-                <p>A $200/mo membership with 50 members = $10K/mo → <strong className="text-content-primary">$1,000/mo to me</strong></p>
-                <p>A $50 workshop with 100 signups = $5K → <strong className="text-content-primary">$500 to me</strong></p>
-              </div>
-              <p className="text-body-sm text-content-muted mt-4">Transparent. Simple. Aligned.</p>
-            </div>
-
-            <p className="text-body-sm text-content-muted mb-4">
-              Most partnership projects start with <strong className="text-content-primary">$0–$1,500 upfront</strong>, depending on scope.
+          {/* Partnership Model — compact */}
+          <div className="bg-dark-card border border-border rounded-2xl p-8 md:p-10 mb-16">
+            <h3 className="font-serif text-h3 font-light mb-4">The Partnership Model</h3>
+            <p className="text-body-sm text-content-secondary leading-relaxed mb-4">
+              Most projects start with <strong className="text-content-primary">$0–$1,500 upfront</strong>. I take 8–12% of revenue processed through the platform — enrollments, bookings, memberships. I'm financially invested in making your platform work, not in sending an invoice and disappearing.
             </p>
-            <p className="text-body-sm text-content-muted">
-              The percentage applies only to transactions processed through the platform I build. Revenue from other channels, in-person work, or existing systems is yours entirely.
+            <p className="text-body-sm text-content-muted mb-6">
+              The percentage applies only to transactions on the platform I build. Your other revenue, in-person work, and existing channels are entirely yours. 12-month minimum term. You can buy out the rev share at any time.
             </p>
-
             <a
               href="#contact"
               onClick={(e) => {
                 e.preventDefault();
                 document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-block mt-8 px-8 py-3 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+              className="inline-block px-8 py-3 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
             >
-              Let's Talk About Partnership
+              Talk About Partnership
             </a>
           </div>
 
@@ -927,58 +866,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* KIND WORDS */}
-      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
-        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
-          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
-            <span className="w-8 h-px bg-accent" />
-            Kind Words
-          </p>
-          <h2 className="font-serif text-display-sm font-light mb-16">What they say.</h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <blockquote className="bg-dark-card border border-border rounded-2xl p-8">
-              <p className="text-body text-content-secondary leading-relaxed italic mb-6">
-                "He centralized 8 ticket platforms into one hub and built a membership portal for my community. I went from spending hours on admin to focusing on my work."
-              </p>
-              <footer className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif">U</div>
-                <div>
-                  <p className="text-body-sm text-content-primary font-medium">Uria Tsur</p>
-                  <p className="text-body-sm text-content-muted">Vocal Facilitator — 18+ Cities</p>
-                </div>
-              </footer>
-            </blockquote>
-
-            <blockquote className="bg-dark-card border border-border rounded-2xl p-8">
-              <p className="text-body text-content-secondary leading-relaxed italic mb-6">
-                "It finally feels like my school, not a patchwork of tools. My 300+ students can find everything — courses, bookings, community, their practitioner path — in one place."
-              </p>
-              <footer className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif">S</div>
-                <div>
-                  <p className="text-body-sm text-content-primary font-medium">Sera Shivnan</p>
-                  <p className="text-body-sm text-content-muted">ShivEnergetics — Granada</p>
-                </div>
-              </footer>
-            </blockquote>
-
-            <blockquote className="bg-dark-card border border-border rounded-2xl p-8">
-              <p className="text-body text-content-secondary leading-relaxed italic mb-6">
-                "Jordi built us a full eco-farm stay platform — bookings, the land story, artist residency applications — all in one place. It finally feels like us, not like a template with our logo on it."
-              </p>
-              <footer className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif">O</div>
-                <div>
-                  <p className="text-body-sm text-content-primary font-medium">Ozina Camp</p>
-                  <p className="text-body-sm text-content-muted">Farm Stay & Residency — Mallorca</p>
-                </div>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section id="faq" className="py-section px-6 md:px-12 bg-gradient-to-b from-[#0d0d14] to-dark-bg">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
@@ -1026,7 +913,7 @@ export default function HomePage() {
             </p>
             <h2 className="font-serif text-display-sm font-light mb-4">Tell me about your work.</h2>
             <p className="text-body text-content-secondary mb-4">
-              No pitch. No pressure. Just a conversation about what you need and whether I can help.
+              I read every message myself. If you're not sure what you need yet, that's fine — just tell me what you're working on and we'll figure it out together.
             </p>
             <p className="text-body-sm text-content-muted mb-10">
               Or try the{' '}
