@@ -6,7 +6,7 @@ import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 export default function AboutPage() {
   useDocumentMeta({
     title: 'About Jordi Amat — Astral Integration',
-    description: 'Senior engineer, former CTO, Access Bars practitioner. From leading engineering teams to building custom digital infrastructure for schools, practices, and original work — from Mazunte, Oaxaca.',
+    description: 'Senior engineer, former CTO, practitioner. From leading engineering teams to building custom digital infrastructure for schools, practices, and original work — from Mazunte, Oaxaca.',
     ogUrl: 'https://astralintegration.co/about',
   });
 
@@ -50,7 +50,7 @@ export default function AboutPage() {
             Jordi Amat.
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            Senior full-stack engineer. Former CTO. Access Bars practitioner. Based in Mazunte, a small town on the coast of Oaxaca, Mexico.
+            Senior full-stack engineer. Former CTO. Practitioner. Based in Mazunte, a small town on the coast of Oaxaca, Mexico.
           </p>
         </div>
       </section>
@@ -132,13 +132,13 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-[1fr_1fr] gap-12 items-start">
             <div className="space-y-5">
               <p className="text-body text-content-secondary leading-relaxed">
-                I'm a certified Access Bars practitioner — a hands-on energy healing modality that works with 32 points on the head to release stored limitations. I trained in it because the work resonated, not because I planned to build platforms for practitioners.
+                I've trained in multiple modalities — Access Bars, Theta Healing, Reiki, Ashtanga, Vinyasa, Yin, Kundalini, transpersonal work, psychedelic integration, ceremony, holding space — not because I planned to build platforms for practitioners, but because the work called. Each training changed how I understand what practitioners actually need from their infrastructure.
               </p>
               <p className="text-body text-content-secondary leading-relaxed">
-                But it changed how I understand what practitioners actually need. When I build a booking flow for a healer, I know why the intake matters. When I design a certification system, I understand what progression feels like from the student's side. When I build a community platform, I know what containers are — not just "forums with premium access."
+                When I build a booking flow for a healer, I know why the intake matters. When I design a certification system, I understand what progression feels like from the student's side. When I build a community platform, I know what containers are — not just "forums with premium access."
               </p>
               <p className="text-body text-content-secondary leading-relaxed">
-                This isn't marketing positioning. I sit in circles. I run sessions. I know the difference between a modality and a product because I've experienced both.
+                This isn't marketing positioning. I sit in circles. I attend trainings. I run sessions. I know the difference between a modality and a product because I've experienced both.
               </p>
             </div>
 
