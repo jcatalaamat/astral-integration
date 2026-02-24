@@ -355,8 +355,8 @@ export default function RetreatsPage() {
           </div>
 
           <div className="mt-8">
-            <a href="/how-it-works" className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
-              How it works & FAQ <span aria-hidden="true">&rarr;</span>
+            <a href="/pricing" className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
+              Full pricing & FAQ <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </div>

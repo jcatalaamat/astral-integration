@@ -14,6 +14,7 @@ import CommunitiesPage from './components/pages/CommunitiesPage';
 import OrganizationsPage from './components/pages/OrganizationsPage';
 import CaseStudyPage from './components/pages/CaseStudyPage';
 import HowItWorksPage from './components/pages/HowItWorksPage';
+import PricingPage from './components/pages/PricingPage';
 import ToolsHub from './components/pages/ToolsHub';
 import { LifeOSLanding, LifeOSApp } from './components/pages/life-os';
 import { ContentStudioLanding, ContentStudioApp } from './components/pages/content-studio';
@@ -40,6 +41,7 @@ function App() {
           <Route path="/communities" element={<CommunitiesPage />} />
           <Route path="/organizations" element={<OrganizationsPage />} />
           <Route path="/how-it-works" element={<HowItWorksPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
 
           {/* Tools Hub */}
           <Route path="/tools" element={<ToolsHub />} />

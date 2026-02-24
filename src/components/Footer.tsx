@@ -10,6 +10,7 @@ export default function Footer() {
   const workLinks = [
     { label: 'Case Studies', href: '/work' },
     { label: 'How It Works', href: '/how-it-works' },
+    { label: 'Pricing', href: '/pricing' },
     { label: 'Insights', href: '/insights' },
   ];
 
