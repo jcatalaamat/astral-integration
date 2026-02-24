@@ -98,7 +98,7 @@ export default function HomePage() {
         </p>
 
         <p className="text-body-sm text-content-muted mt-6 relative z-10 animate-fadeUp animate-delay-700">
-          Senior engineer. Former CTO. Long-term technical partner.
+          Former CTO. Senior engineer. Your long-term technical partner.
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 mt-12 relative z-10 animate-fadeUp animate-delay-900">
@@ -256,7 +256,8 @@ export default function HomePage() {
             ))}
           </div>
 
-          <p className="text-body-sm text-content-muted mb-6">You own everything. Code, data, domain. From day one.</p>
+          <p className="text-body-sm text-content-muted mb-2">You own everything. Code, data, domain. From day one.</p>
+          <p className="text-body-sm text-content-muted mb-6">I stay on as your technical partner. My success is tied to yours.</p>
 
           <a
             href="/how-it-works"
