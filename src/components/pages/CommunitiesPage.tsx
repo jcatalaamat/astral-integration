@@ -263,18 +263,15 @@ export default function CommunitiesPage() {
             Community-owned. Sustainably built.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mb-16">
-            Community platforms have different economics. The model is adapted — revenue comes from directory listings, premium placements, and platform transactions, not individual bookings.
+            Community platforms have different economics. I scope and price based on what the project actually requires — the model adapts to your community's needs.
           </p>
 
           <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
-            <h3 className="font-serif text-h3 mb-2">Community Platform</h3>
-            <p className="text-body-sm text-content-muted mb-6">Towns, neighborhoods, and networks that need digital infrastructure</p>
-
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
-                { label: 'Upfront', value: '$1K – 3K', detail: 'Scoped per project' },
-                { label: 'Revenue share', value: 'Negotiated', detail: 'Listings, transactions' },
-                { label: 'Timeline', value: '3 – 5 weeks', detail: 'To launch' },
+                { label: 'Platform build', value: 'From $1,500', detail: 'Scoped to your needs' },
+                { label: 'Ongoing partnership', value: 'From $150/mo', detail: 'Maintenance & evolution' },
+                { label: 'Timeline', value: '2 – 6 weeks', detail: 'To launch' },
               ].map((item, i) => (
                 <div key={i}>
                   <p className="text-meta uppercase text-content-muted mb-1">{item.label}</p>
@@ -289,17 +286,14 @@ export default function CommunitiesPage() {
                 <strong className="text-content-secondary">The community owns the platform.</strong> Code, data, domain — your community's, from day one.
               </p>
               <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">Sustainable by design.</strong> The revenue model covers ongoing maintenance so the platform grows with the community.
-              </p>
-              <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">Buyout option.</strong> You can buy out the revenue share at any time.
+                <strong className="text-content-secondary">Sustainable by design.</strong> The partnership model covers ongoing maintenance so the platform grows with the community.
               </p>
             </div>
           </div>
 
           <div className="mt-8">
             <a href="/how-it-works" className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
-              Full pricing, tiers & FAQ <span aria-hidden="true">&rarr;</span>
+              How it works & FAQ <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </div>

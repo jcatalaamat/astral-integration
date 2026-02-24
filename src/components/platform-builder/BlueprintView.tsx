@@ -217,7 +217,7 @@ export default function BlueprintView({ state, onReset }: Props) {
 
           <div className="mt-6 pt-6 border-t border-border">
             <p className="text-body-sm text-content-secondary">
-              <span className="text-accent font-medium">Partnership model available</span> — I build your platform at a fraction of the cost (or free for the right project) in exchange for 8–12% of revenue processed through the platform. Most of my clients choose this.
+              <span className="text-accent font-medium">Long-term partnership</span> — I build, maintain, and evolve your platform over years. My pricing is structured so my success is tied to yours. You own everything from day one.
             </p>
           </div>
         </div>

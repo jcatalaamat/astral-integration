@@ -323,18 +323,15 @@ export default function RetreatsPage() {
             Scoped to your center's complexity.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mb-16">
-            A single-offering retreat space is a different build than a center with five revenue streams. The partnership is scoped after an initial conversation — but here's the range.
+            A single-offering retreat space is a different build than a center with five revenue streams. I scope and price based on what the work actually requires.
           </p>
 
           <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
-            <h3 className="font-serif text-h3 mb-2">Retreat Center</h3>
-            <p className="text-body-sm text-content-muted mb-6">Multi-offering centers, ceremony spaces, retreat programs with custom intake</p>
-
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
-                { label: 'Upfront', value: '$1.5K+', detail: 'Scoped per project' },
-                { label: 'Revenue share', value: '8 – 12%', detail: 'Platform transactions only' },
-                { label: 'Timeline', value: '4 – 8 weeks', detail: 'Depends on offerings' },
+                { label: 'Platform build', value: 'From $1,500', detail: 'Scoped to your needs' },
+                { label: 'Ongoing partnership', value: 'From $150/mo', detail: 'Maintenance & evolution' },
+                { label: 'Timeline', value: '2 – 6 weeks', detail: 'To launch' },
               ].map((item, i) => (
                 <div key={i}>
                   <p className="text-meta uppercase text-content-muted mb-1">{item.label}</p>
@@ -346,20 +343,20 @@ export default function RetreatsPage() {
 
             <div className="pt-6 border-t border-border space-y-2">
               <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">In-person revenue</strong> — walk-ins, referrals, off-platform bookings — is 100% yours.
-              </p>
-              <p className="text-body-sm text-content-muted">
                 <strong className="text-content-secondary">You own everything.</strong> Code, data, domain, client records. From day one.
               </p>
               <p className="text-body-sm text-content-muted">
                 <strong className="text-content-secondary">No platform commissions.</strong> Unlike Airbnb's 15-20%, your direct bookings cost zero in platform fees.
+              </p>
+              <p className="text-body-sm text-content-muted">
+                <strong className="text-content-secondary">Long-term partner.</strong> My pricing is structured so my success is tied to yours.
               </p>
             </div>
           </div>
 
           <div className="mt-8">
             <a href="/how-it-works" className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
-              Full pricing, tiers & FAQ <span aria-hidden="true">&rarr;</span>
+              How it works & FAQ <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </div>

@@ -314,18 +314,15 @@ export default function SchoolsPage() {
             Built for schools that are growing.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mb-16">
-            The upfront covers the build. The revenue share means I stay invested in your school's growth — maintaining, evolving, and scaling the platform as your student body grows.
+            Every school is different — a practitioner launching her first certification needs different architecture than an academy with 300 students across 9 levels. I scope and price based on what the work actually requires.
           </p>
 
           <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
-            <h3 className="font-serif text-h3 mb-2">School & Academy</h3>
-            <p className="text-body-sm text-content-muted mb-6">Multi-level certification programs, training schools, structured educational pathways</p>
-
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
-                { label: 'Upfront', value: '$1K – 3K', detail: 'Covers build and research' },
-                { label: 'Revenue share', value: '8 – 12%', detail: 'Platform transactions only' },
-                { label: 'Timeline', value: '3 – 5 weeks', detail: 'To launch' },
+                { label: 'Platform build', value: 'From $1,500', detail: 'Scoped to your needs' },
+                { label: 'Ongoing partnership', value: 'From $150/mo', detail: 'Maintenance & evolution' },
+                { label: 'Timeline', value: '2 – 6 weeks', detail: 'To launch' },
               ].map((item, i) => (
                 <div key={i}>
                   <p className="text-meta uppercase text-content-muted mb-1">{item.label}</p>
@@ -337,20 +334,17 @@ export default function SchoolsPage() {
 
             <div className="pt-6 border-t border-border space-y-2">
               <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">In-person revenue</strong> — workshops, sessions, anything off-platform — is 100% yours.
-              </p>
-              <p className="text-body-sm text-content-muted">
                 <strong className="text-content-secondary">You own everything.</strong> Code, data, domain, student records. From day one.
               </p>
               <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">Buyout option.</strong> You can buy out the revenue share at any time.
+                <strong className="text-content-secondary">Long-term partner.</strong> My pricing is structured so my success is tied to yours — I stay invested in your school's growth.
               </p>
             </div>
           </div>
 
           <div className="mt-8">
             <a href="/how-it-works" className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
-              Full pricing, tiers & FAQ <span aria-hidden="true">&rarr;</span>
+              How it works & FAQ <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </div>

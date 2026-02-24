@@ -288,7 +288,7 @@ function recommendationBlock(state: WizardState): string[] {
     boxTop('RECOMMENDED'),
     boxLine(`Tier:      ${rec.tier} (${rec.price})`),
     boxLine(`Timeline:  ${rec.timeline}`),
-    boxLine(`Model:     Partnership available (8–12% rev share)`),
+    boxLine(`Model:     Long-term partnership (ongoing maintenance)`),
     boxBottom(),
     '',
     '  ─── end of blueprint ───',

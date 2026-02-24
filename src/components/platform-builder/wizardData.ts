@@ -165,14 +165,14 @@ export function recommendTier(businessType: BusinessType | null, features: Featu
   if (isSchool) {
     return {
       tier: 'School & Certification',
-      price: '$5,000 – $10,000',
+      price: 'From $1,500 (scoped to your needs)',
       timeline: '4–6 weeks',
     };
   }
 
   return {
     tier: 'Platform Build',
-    price: '$3,000 – $5,000',
-    timeline: '2–3 weeks',
+    price: 'From $1,500 (scoped to your needs)',
+    timeline: '2–6 weeks',
   };
 }

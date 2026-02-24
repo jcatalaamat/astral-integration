@@ -218,7 +218,7 @@ export default function HomePage() {
             Long-term partnership. Aligned from day one.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mb-12">
-            I don't build and disappear. I build, maintain, and evolve your platform over years — because I'm financially invested in its success.
+            I don't build and disappear. I build, maintain, and evolve your platform over years — because my success is tied to yours.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -245,8 +245,8 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {[
-              { label: 'Upfront', value: '$0 – 1.5K' },
-              { label: 'Revenue share', value: '8 – 12%' },
+              { label: 'Platform build', value: 'From $1,500' },
+              { label: 'Ongoing partnership', value: 'From $150/mo' },
               { label: 'Timeline', value: '2 – 6 weeks' },
             ].map((item, i) => (
               <div key={i} className="text-center md:text-left">
@@ -256,11 +256,13 @@ export default function HomePage() {
             ))}
           </div>
 
+          <p className="text-body-sm text-content-muted mb-6">You own everything. Code, data, domain. From day one.</p>
+
           <a
             href="/how-it-works"
             className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
           >
-            Full pricing, tiers & FAQ <span aria-hidden="true">&rarr;</span>
+            How it works & FAQ <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </section>

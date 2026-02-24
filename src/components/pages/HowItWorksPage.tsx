@@ -33,74 +33,27 @@ const process = [
     details: [
       'Ongoing maintenance, updates, and feature development',
       'New offerings, new revenue streams, new stages of growth — the infrastructure adapts',
-      'I\'m financially invested in the platform\'s success through revenue share',
+      'My pricing is structured so my success is tied to yours',
       'You always have a senior engineer who knows your system inside and out',
     ],
   },
 ];
 
-const tiers = [
-  {
-    name: 'Solo Practitioner',
-    who: 'Healers, coaches, facilitators, artists with an audience and no real platform',
-    upfront: '$0 – 1.5K',
-    share: '8 – 12%',
-    timeline: '2 – 3 weeks',
-    includes: [
-      'Custom website with your brand',
-      'Booking + payment in one flow',
-      'Course or program enrollment',
-      'Email capture and client management',
-      'Mobile responsive',
-    ],
-    highlight: false,
-  },
-  {
-    name: 'School or Academy',
-    who: 'Multi-level certification programs, training schools, structured educational pathways',
-    upfront: '$1K – 3K',
-    share: '8 – 12%',
-    timeline: '3 – 5 weeks',
-    includes: [
-      'Everything in Solo Practitioner',
-      'Multi-level certification system with prerequisites',
-      'Student progression tracking',
-      'Practice hour logging',
-      'Practitioner directory',
-      'AI assistant trained on your methodology',
-    ],
-    highlight: true,
-  },
-  {
-    name: 'Organization',
-    who: 'Retreat centers, multi-offering ecosystems, networks with complex infrastructure needs',
-    upfront: 'Scoped per project',
-    share: 'Negotiated',
-    timeline: '4 – 8 weeks',
-    includes: [
-      'Everything in School or Academy',
-      'Multi-stream revenue management',
-      'Regional coordination and multi-language support',
-      'Facilitator networks and directory infrastructure',
-      'Custom intake flows per offering type',
-      'Enterprise-level architecture',
-    ],
-    highlight: false,
-  },
+const investment = [
+  { label: 'Platform build', value: 'From $1,500', note: 'Scoped to your needs' },
+  { label: 'Ongoing partnership', value: 'From $150/month', note: 'Maintenance, updates, evolution' },
+  { label: 'Timeline', value: '2–6 weeks', note: 'To launch' },
+  { label: 'Ownership', value: 'Yours. All of it.', note: 'Code, data, domain. From day one.' },
 ];
 
 const faqs = [
   {
-    q: 'What does "revenue share on platform transactions" mean?',
-    a: 'If someone books, enrolls, or pays through your platform, I take a percentage of that transaction. Revenue from your in-person work, existing channels, or anything that doesn\'t flow through the platform is 100% yours. Always.',
+    q: 'How is pricing determined?',
+    a: 'Every project is different — a practitioner launching her first platform needs different architecture than a school with 300 students across 9 certification levels. I scope and price based on what the work actually requires, not a menu. After our first conversation, I send a clear proposal with no surprises.',
   },
   {
-    q: 'Can I buy out the revenue share?',
-    a: 'Yes. At any time after the minimum 12-month term, you can buy out the revenue share by paying the agreed platform value. You then own everything outright with no ongoing percentage.',
-  },
-  {
-    q: 'What if I\'m just starting and don\'t have revenue yet?',
-    a: 'That\'s exactly who the $0 upfront option is for. If I believe in the work and the person, I\'ll build the platform at zero upfront cost. The revenue share kicks in when you start processing transactions. I\'m betting on you.',
+    q: 'What does the ongoing partnership include?',
+    a: 'Maintenance, updates, feature development, and scaling. When your work grows — new offerings, new markets, new needs — the infrastructure grows with it. You always have a senior engineer who knows your system inside and out.',
   },
   {
     q: 'Do I own the code and data?',
@@ -112,11 +65,11 @@ const faqs = [
   },
   {
     q: 'How long does a project take?',
-    a: 'Most platforms launch in 2–6 weeks. Solo practitioner sites are typically 2–3 weeks. Schools and academies run 3–5 weeks. Complex multi-offering ecosystems can take 4–8 weeks. You see progress weekly throughout.',
+    a: 'Most platforms launch in 2–6 weeks depending on scope. You see progress weekly throughout — your platform taking shape in real time.',
   },
   {
     q: 'What happens after launch?',
-    a: 'I stay. The revenue share model means I\'m invested in your platform\'s long-term success. I handle maintenance, feature development, and scaling. When your work grows — new offerings, new markets, new needs — the infrastructure grows with it.',
+    a: 'I stay. My pricing is structured so my success is tied to yours. I handle maintenance, feature development, and scaling as a long-term partner — not a contractor who delivers and disappears.',
   },
   {
     q: 'How is this different from hiring a web developer?',
@@ -127,7 +80,7 @@ const faqs = [
 export default function HowItWorksPage() {
   useDocumentMeta({
     title: 'How It Works — Astral Integration',
-    description: 'The partnership model: how I build, what it costs, and how the long-term relationship works. Revenue-share pricing, project tiers, and frequently asked questions.',
+    description: 'The partnership model: how I build, what it costs, and how the long-term relationship works. Pricing, process, and frequently asked questions.',
     ogUrl: 'https://astralintegration.co/how-it-works',
   });
 
@@ -172,7 +125,7 @@ export default function HowItWorksPage() {
             Long-term partnership.<br />Aligned from <em className="italic gradient-text">day one.</em>
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            I don't build and disappear. I build, maintain, and evolve your platform over years — because I'm financially invested in its success and structurally committed to its growth.
+            I don't build and disappear. I build, maintain, and evolve your platform over years — because I'm invested in its success and structurally committed to its growth.
           </p>
         </div>
       </section>
@@ -216,80 +169,37 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* Pricing Tiers */}
+      {/* The Investment */}
       <section className="py-section px-6 md:px-12">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
-            Pricing
+            The Investment
           </p>
           <h2 className="font-serif text-display-sm font-light mb-4">
             The model.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mb-16">
-            A small upfront investment covers initial research and build — and for the right projects, I start at zero. From there, I take a percentage of revenue processed through the platform. My success is directly tied to yours.
+            Every project is different — a practitioner launching her first platform needs different architecture than a school with 300 students across 9 certification levels. I scope and price based on what the work actually requires, not a menu.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {tiers.map((tier, i) => (
-              <div
-                key={i}
-                className={`bg-dark-card border rounded-2xl p-8 flex flex-col ${
-                  tier.highlight ? 'border-accent/40 ring-1 ring-accent/20' : 'border-border'
-                }`}
-              >
-                <h3 className="font-serif text-h3 mb-2">{tier.name}</h3>
-                <p className="text-body-sm text-content-muted mb-6">{tier.who}</p>
-
-                <div className="space-y-4 mb-8">
-                  <div>
-                    <p className="text-meta uppercase text-content-muted mb-1">Upfront</p>
-                    <p className="font-serif text-h3 font-light text-accent">{tier.upfront}</p>
-                  </div>
-                  <div>
-                    <p className="text-meta uppercase text-content-muted mb-1">Revenue Share</p>
-                    <p className="font-serif text-h3 font-light text-accent">{tier.share}</p>
-                  </div>
-                  <div>
-                    <p className="text-meta uppercase text-content-muted mb-1">Timeline</p>
-                    <p className="text-body-sm text-content-secondary">{tier.timeline}</p>
-                  </div>
-                </div>
-
-                <div className="pt-6 border-t border-border flex-1">
-                  <p className="text-meta uppercase text-content-muted mb-4">Includes</p>
-                  <ul className="space-y-2">
-                    {tier.includes.map((item, j) => (
-                      <li key={j} className="flex items-start gap-2 text-body-sm text-content-secondary">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-3xl">
+            {investment.map((item, i) => (
+              <div key={i} className="bg-dark-card border border-border rounded-2xl p-8">
+                <p className="text-meta uppercase text-content-muted mb-2">{item.label}</p>
+                <p className="font-serif text-h2 font-light text-accent mb-2">{item.value}</p>
+                <p className="text-body-sm text-content-muted">{item.note}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-dark-card border border-border rounded-2xl p-8 md:p-10 max-w-prose">
-            <h3 className="font-serif text-h3 mb-4">The fine print (it's short)</h3>
-            <div className="space-y-3">
-              <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">Your other revenue</strong> — in-person work, existing channels, anything off-platform — is 100% yours. Always.
-              </p>
-              <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">You own everything.</strong> Code, data, domain, content. From day one.
-              </p>
-              <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">Buyout option.</strong> You can buy out the revenue share at any time by paying the agreed platform value.
-              </p>
-              <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">Minimum term:</strong> 12 months. After that, continue or buy out.
-              </p>
-              <p className="text-body-sm text-content-muted mt-4">
-                The goal is alignment, not transactions.
-              </p>
-            </div>
+          <div className="max-w-prose">
+            <p className="text-body text-content-secondary leading-relaxed mb-4">
+              My pricing is structured so my success is tied to yours. I don't build and disappear — I remain your technical partner, maintaining and evolving the platform as your work grows.
+            </p>
+            <p className="text-body-sm text-content-muted">
+              Start with a conversation — I'll learn about your work and send a clear proposal with no surprises.
+            </p>
           </div>
         </div>
       </section>

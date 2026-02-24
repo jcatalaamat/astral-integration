@@ -333,21 +333,18 @@ export default function PractitionersPage() {
             The Model
           </p>
           <h2 className="font-serif text-display-sm font-light mb-4">
-            I start building before you hit the big time.
+            Built for practitioners who are ready.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mb-16">
-            A small upfront investment covers the build — and for the right projects, I start at zero. Then I take a percentage of revenue processed through the platform. I grow when you grow.
+            Every project is scoped to what the work actually requires. My pricing is structured so my success is tied to yours — I don't build and disappear.
           </p>
 
           <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
-            <h3 className="font-serif text-h3 mb-2">Solo Practitioner</h3>
-            <p className="text-body-sm text-content-muted mb-6">Healers, coaches, facilitators with an audience and no real platform</p>
-
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
-                { label: 'Upfront', value: '$0 – 1.5K', detail: 'Covers build and research' },
-                { label: 'Revenue share', value: '8 – 12%', detail: 'Platform transactions only' },
-                { label: 'Timeline', value: '2 – 3 weeks', detail: 'To launch' },
+                { label: 'Platform build', value: 'From $1,500', detail: 'Scoped to your needs' },
+                { label: 'Ongoing partnership', value: 'From $150/mo', detail: 'Maintenance & evolution' },
+                { label: 'Timeline', value: '2 – 6 weeks', detail: 'To launch' },
               ].map((item, i) => (
                 <div key={i}>
                   <p className="text-meta uppercase text-content-muted mb-1">{item.label}</p>
@@ -359,20 +356,17 @@ export default function PractitionersPage() {
 
             <div className="pt-6 border-t border-border space-y-2">
               <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">Your in-person revenue</strong> — sessions, workshops, anything off-platform — is 100% yours. Always.
-              </p>
-              <p className="text-body-sm text-content-muted">
                 <strong className="text-content-secondary">You own everything.</strong> Code, data, domain, content. From day one.
               </p>
               <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">Buyout option.</strong> You can buy out the revenue share at any time.
+                <strong className="text-content-secondary">Long-term partner.</strong> I stay as your technical partner — maintaining and evolving the platform as your work grows.
               </p>
             </div>
           </div>
 
           <div className="mt-8">
             <a href="/how-it-works" className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
-              Full pricing, tiers & FAQ <span aria-hidden="true">&rarr;</span>
+              How it works & FAQ <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </div>

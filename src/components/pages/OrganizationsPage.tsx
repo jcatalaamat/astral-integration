@@ -280,14 +280,11 @@ export default function OrganizationsPage() {
           </p>
 
           <div className="bg-dark-card border border-border rounded-2xl p-8 md:p-10 max-w-prose">
-            <h3 className="font-serif text-h3 mb-2">Organization</h3>
-            <p className="text-body-sm text-content-muted mb-6">Global facilitator networks, multi-offering ecosystems, enterprise-scale infrastructure</p>
-
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
-                { label: 'Upfront', value: 'Scoped', detail: 'Per engagement' },
-                { label: 'Revenue share', value: 'Negotiated', detail: 'Based on model' },
-                { label: 'Timeline', value: '6 – 12 weeks', detail: 'Phased delivery' },
+                { label: 'Platform build', value: 'Scoped', detail: 'Per engagement' },
+                { label: 'Ongoing partnership', value: 'From $150/mo', detail: 'Maintenance & evolution' },
+                { label: 'Timeline', value: '4 – 8 weeks', detail: 'Phased delivery' },
               ].map((item, i) => (
                 <div key={i}>
                   <p className="text-meta uppercase text-content-muted mb-1">{item.label}</p>
@@ -305,14 +302,14 @@ export default function OrganizationsPage() {
                 <strong className="text-content-secondary">Phased delivery.</strong> First module ships in weeks. Proves the architecture. Then we expand.
               </p>
               <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">Long-term partnership.</strong> I stay as your technical partner. When the organization grows into new countries, new languages, new offerings — the infrastructure grows with it.
+                <strong className="text-content-secondary">Long-term partnership.</strong> I stay as your technical partner. My pricing is structured so my success is tied to yours.
               </p>
             </div>
           </div>
 
           <div className="mt-8">
             <a href="/how-it-works" className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
-              Full pricing, tiers & FAQ <span aria-hidden="true">&rarr;</span>
+              How it works & FAQ <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </div>
