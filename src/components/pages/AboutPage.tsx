@@ -92,15 +92,18 @@ export default function AboutPage() {
             The Journey
           </p>
           <h2 className="font-serif text-display-sm font-light mb-12">
-            Barcelona. London. Mexico City. Ceremony. Mazunte.
+            London. Barcelona. Mexico City. Mazunte.
           </h2>
 
           <div className="max-w-prose space-y-5">
             <p className="text-body text-content-secondary leading-relaxed">
-              I started in Barcelona, then London — building fintech platforms, leading engineering teams, scaling startups. I spent years as CTO — hiring engineers, designing systems, shipping product. I was good at it. But the work I was doing didn't match the life I was building.
+              I started in London, then Barcelona — building fintech platforms, leading engineering teams, scaling startups. I spent years as CTO — hiring engineers, designing systems, shipping product. I was good at it. But the work I was doing didn't match the life I was building.
             </p>
             <p className="text-body text-content-secondary leading-relaxed">
-              Mexico City came next. Then a ceremony in the mountains changed the trajectory. I started sitting with medicine, working with facilitators, attending trainings, spending time in communities that were doing the real work — holding space for people to heal, grow, and transform.
+              Somewhere along the way, ceremony found me. That changed the trajectory. I started sitting with medicine, working with facilitators, attending trainings — spending time in communities doing the real work of holding space for people to heal, grow, and transform.
+            </p>
+            <p className="text-body text-content-secondary leading-relaxed">
+              Mexico City came next — a bridge between the tech world I knew and the practitioner world I was becoming part of.
             </p>
             <p className="text-body text-content-secondary leading-relaxed">
               I ended up in Mazunte — a small village on the Oaxacan coast where half the town is practitioners, facilitators, artists, and builders of alternative schools and projects. And I saw the same pattern everywhere: brilliant people running powerful work on scattered tools that were never built for them.
