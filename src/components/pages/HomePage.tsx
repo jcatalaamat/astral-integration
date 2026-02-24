@@ -141,11 +141,8 @@ export default function HomePage() {
               Payments somewhere else.<br />
               Community split across WhatsApp and email.
             </p>
-            <p className="text-body text-content-secondary leading-relaxed">
-              The deeper your work gets, the more fragile your infrastructure becomes.
-            </p>
             <p className="text-body text-content-primary leading-relaxed font-medium">
-              Your mastery deserves better.
+              Your mastery deserves better. That's when infrastructure becomes strategy.
             </p>
           </div>
         </div>
