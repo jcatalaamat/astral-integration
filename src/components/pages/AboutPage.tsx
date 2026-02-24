@@ -92,15 +92,15 @@ export default function AboutPage() {
             The Journey
           </p>
           <h2 className="font-serif text-display-sm font-light mb-12">
-            From CTO to ceremony to Mazunte.
+            Barcelona. London. Mexico City. Ceremony. Mazunte.
           </h2>
 
           <div className="max-w-prose space-y-5">
             <p className="text-body text-content-secondary leading-relaxed">
-              I started in Barcelona, building fintech platforms, leading engineering teams, and scaling startups. I spent years as CTO — hiring engineers, designing systems, shipping product. I was good at it. But the work I was doing didn't match the life I was building.
+              I started in Barcelona, then London — building fintech platforms, leading engineering teams, scaling startups. I spent years as CTO — hiring engineers, designing systems, shipping product. I was good at it. But the work I was doing didn't match the life I was building.
             </p>
             <p className="text-body text-content-secondary leading-relaxed">
-              I left the startup world and moved to Mexico. First Mexico City. Then a ceremony in the mountains changed the trajectory. I started sitting with medicine, working with facilitators, attending trainings, spending time in communities that were doing the real work — holding space for people to heal, grow, and transform.
+              Mexico City came next. Then a ceremony in the mountains changed the trajectory. I started sitting with medicine, working with facilitators, attending trainings, spending time in communities that were doing the real work — holding space for people to heal, grow, and transform.
             </p>
             <p className="text-body text-content-secondary leading-relaxed">
               I ended up in Mazunte — a small village on the Oaxacan coast where half the town is practitioners, facilitators, artists, and builders of alternative schools and projects. And I saw the same pattern everywhere: brilliant people running powerful work on scattered tools that were never built for them.
