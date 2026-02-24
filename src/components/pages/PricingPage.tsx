@@ -354,10 +354,12 @@ export default function PricingPage() {
             I take on 3–5 partnerships at a time. If your work is ready for real infrastructure, let's have a conversation.
           </p>
           <a
-            href="/contact"
+            href="https://calendly.com/astralamat/let-s-talk-about-your-work"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
           >
-            Start a Conversation
+            Book a Call
           </a>
         </div>
       </section>

@@ -103,14 +103,12 @@ export default function HomePage() {
 
         <div className="flex flex-col md:flex-row gap-4 mt-12 relative z-10 animate-fadeUp animate-delay-900">
           <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-            }}
+            href="https://calendly.com/astralamat/let-s-talk-about-your-work"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
           >
-            Start a Conversation
+            Book a Call
           </a>
           <a
             href="#work"
@@ -282,12 +280,23 @@ export default function HomePage() {
           <p className="text-body-sm text-content-muted mb-2">You own everything. Code, data, domain. From day one.</p>
           <p className="text-body-sm text-content-muted mb-6">I stay on as your technical partner. My success is tied to yours.</p>
 
-          <a
-            href="/pricing"
-            className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
-          >
-            Full pricing & FAQ <span aria-hidden="true">&rarr;</span>
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
+            <a
+              href="/pricing"
+              className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
+            >
+              Full pricing & FAQ <span aria-hidden="true">&rarr;</span>
+            </a>
+            <span className="hidden sm:inline text-content-muted">·</span>
+            <a
+              href="https://calendly.com/astralamat/let-s-talk-about-your-work"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
+            >
+              Book a call <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -376,13 +385,24 @@ export default function HomePage() {
                   {formErrors.message && <p className="mt-2 text-body-sm text-red-400">{formErrors.message}</p>}
                 </div>
 
-                <button
-                  type="submit"
-                  disabled={formStatus === 'sending'}
-                  className="px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {formStatus === 'sending' ? 'Sending...' : formStatus === 'error' ? 'Error - try again' : 'Send Message'}
-                </button>
+                <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
+                  <button
+                    type="submit"
+                    disabled={formStatus === 'sending'}
+                    className="px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {formStatus === 'sending' ? 'Sending...' : formStatus === 'error' ? 'Error - try again' : 'Send Message'}
+                  </button>
+                  <span className="text-content-muted text-body-sm">or</span>
+                  <a
+                    href="https://calendly.com/astralamat/let-s-talk-about-your-work"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
+                  >
+                    Book a call directly <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
               </form>
             ) : (
               <div className="py-16 text-center">
