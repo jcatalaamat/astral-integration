@@ -283,7 +283,7 @@ export default function OrganizationsPage() {
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
                 { label: 'Platform build', value: 'Scoped', detail: 'Per engagement' },
-                { label: 'Ongoing partnership', value: 'From $150/mo', detail: 'Maintenance & evolution' },
+                { label: 'Ongoing partnership', value: 'Custom', detail: 'Monthly or rev share' },
                 { label: 'Timeline', value: '4 – 8 weeks', detail: 'Phased delivery' },
               ].map((item, i) => (
                 <div key={i}>

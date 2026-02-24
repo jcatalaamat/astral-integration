@@ -320,8 +320,8 @@ export default function SchoolsPage() {
           <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
-                { label: 'Platform build', value: 'From $1,500', detail: 'Scoped to your needs' },
-                { label: 'Ongoing partnership', value: 'From $150/mo', detail: 'Maintenance & evolution' },
+                { label: 'Platform build', value: '$5,000 – $10,000', detail: 'Scoped to your needs' },
+                { label: 'Ongoing partnership', value: '$1,000 – $2,000/mo', detail: 'Maintenance & evolution' },
                 { label: 'Timeline', value: '2 – 6 weeks', detail: 'To launch' },
               ].map((item, i) => (
                 <div key={i}>

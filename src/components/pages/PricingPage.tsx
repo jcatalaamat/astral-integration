@@ -5,8 +5,8 @@ import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 
 const tiers = [
   {
-    name: 'Start',
-    who: 'For practitioners, coaches, and teachers ready for their first real platform.',
+    name: 'Launch',
+    who: 'For solo practitioners.',
     desc: 'You\'re running your practice on WhatsApp, Calendly, and a website that doesn\'t do what you need. You need a clean, professional digital home that actually works — and a technical partner who grows with you.',
     build: '$1,500 – $3,000',
     monthly: '$250 – $500/mo',
@@ -24,14 +24,14 @@ const tiers = [
     highlight: false,
   },
   {
-    name: 'Scale',
-    who: 'For established teachers, schools, and centers who\'ve outgrown their tools.',
+    name: 'Systems',
+    who: 'For schools & structured programs.',
     desc: 'You have students, clients, or guests — certifications, multiple revenue streams, a real following. You don\'t just need a website. You need a platform and a technical partner who owns it.',
-    build: '$4,000 – $8,000',
-    monthly: '$1,000 – $2,500/mo',
+    build: '$5,000 – $10,000',
+    monthly: '$1,000 – $2,000/mo',
     timeline: '3–6 weeks',
     includes: [
-      'Everything in Start',
+      'Everything in Launch',
       'Multi-offering platform (retreats + courses + membership, etc.)',
       'Custom booking flows with intake questionnaires',
       'Course or content delivery system',
@@ -50,14 +50,14 @@ const tiers = [
     highlight: true,
   },
   {
-    name: 'Enterprise',
-    who: 'For networks, multi-region organizations, and large-scale facilitator systems.',
+    name: 'Ecosystem',
+    who: 'For centers, multi-program, and network operations.',
     desc: 'Your methodology is taught by hundreds of facilitators across countries and languages. The infrastructure needs to match.',
     build: '$10,000+',
-    monthly: '$3,000+/mo',
+    monthly: 'Custom monthly / rev share',
     timeline: '6–12 weeks',
     includes: [
-      'Everything in Scale',
+      'Everything in Systems',
       'Multi-region facilitator management',
       'Cross-timezone scheduling and coordination',
       'Credential verification systems',
@@ -83,11 +83,11 @@ const universals = [
 const faqs = [
   {
     q: 'What if I\'m just starting out and don\'t have much revenue yet?',
-    a: 'The Start tier is designed exactly for this. A solid foundation doesn\'t require a complex platform. We build what you need now and expand as you grow.',
+    a: 'The Launch tier is designed exactly for this. A solid foundation doesn\'t require a complex platform. We build what you need now and expand as you grow.',
   },
   {
     q: 'Can I upgrade tiers later?',
-    a: 'Yes. Most partnerships start at one level and grow. A practitioner who launches a retreat series might move from Start to Scale. A school that expands internationally might move from Scale to Enterprise. The platform evolves with you.',
+    a: 'Yes. Most partnerships start at one level and grow. A practitioner who launches a retreat series might move from Launch to Systems. A school that expands internationally might move from Systems to Ecosystem. The platform evolves with you.',
   },
   {
     q: 'What\'s the difference between a monthly retainer and hiring a developer?',
@@ -118,7 +118,7 @@ const faqs = [
 export default function PricingPage() {
   useDocumentMeta({
     title: 'Pricing — Astral Integration',
-    description: 'Clear pricing for custom digital platforms. Three tiers: Start, Scale, and Enterprise. Foundation build + monthly partnership. You own everything from day one.',
+    description: 'Clear pricing for custom digital platforms. Three tiers: Launch, Systems, and Ecosystem. Foundation build + monthly partnership. You own everything from day one.',
     ogUrl: 'https://astralintegration.co/pricing',
   });
 
@@ -286,7 +286,7 @@ export default function PricingPage() {
               <span className="w-8 h-px bg-accent" />
               Revenue-Aligned Option
             </p>
-            <h3 className="font-serif text-h3 mb-4">For Scale and Enterprise partnerships.</h3>
+            <h3 className="font-serif text-h3 mb-4">For Systems and Ecosystem partnerships.</h3>
             <p className="text-body-sm text-content-secondary leading-relaxed mb-6">
               I also offer an option where part of my compensation is tied to the revenue processed through your platform.
             </p>

@@ -94,7 +94,7 @@ export default function HomePage() {
         </h1>
 
         <p className="text-body text-content-secondary max-w-[640px] mt-8 relative z-10 animate-fadeUp animate-delay-500">
-          I build custom digital platforms for schools, practices, retreats, and original work — from first platform to global networks of facilitators and communities.
+          Unify your programs, retreats, community, and operations into one cohesive platform you fully own — built to evolve as your work grows.
         </p>
 
         <p className="text-body-sm text-content-muted mt-6 relative z-10 animate-fadeUp animate-delay-700">
@@ -125,8 +125,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════ 5 DOORS ═══════ */}
+      {/* ═══════ EMOTIONAL BRIDGE ═══════ */}
       <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <h2 className="font-serif text-display-sm font-light mb-8 max-w-[700px]">
+            You changed someone's life this week.
+          </h2>
+          <div className="max-w-prose space-y-5">
+            <p className="text-body text-content-secondary leading-relaxed">
+              And then spent the weekend fighting five disconnected tools.
+            </p>
+            <p className="text-body text-content-muted leading-relaxed">
+              Courses in one place.<br />
+              Bookings in another.<br />
+              Payments somewhere else.<br />
+              Community split across WhatsApp and email.
+            </p>
+            <p className="text-body text-content-secondary leading-relaxed">
+              The deeper your work gets, the more fragile your infrastructure becomes.
+            </p>
+            <p className="text-body text-content-primary leading-relaxed font-medium">
+              Your mastery deserves better.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════ 5 DOORS ═══════ */}
+      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
@@ -245,8 +271,8 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {[
-              { label: 'Platform build', value: 'From $1,500' },
-              { label: 'Ongoing partnership', value: 'From $150/mo' },
+              { label: 'Platform build', value: '$1,500 – $10,000+' },
+              { label: 'Ongoing partnership', value: 'From $250/mo' },
               { label: 'Timeline', value: '2 – 6 weeks' },
             ].map((item, i) => (
               <div key={i} className="text-center md:text-left">
@@ -260,10 +286,10 @@ export default function HomePage() {
           <p className="text-body-sm text-content-muted mb-6">I stay on as your technical partner. My success is tied to yours.</p>
 
           <a
-            href="/how-it-works"
+            href="/pricing"
             className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
           >
-            How it works & FAQ <span aria-hidden="true">&rarr;</span>
+            Full pricing & FAQ <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </section>
