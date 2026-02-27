@@ -127,7 +127,39 @@ const JOURNEY = [
   {id:"advanced",name:"Advanced Facilitator",desc:"Highest level of Access certification.",status:"locked",date:null,cert:"ACAF"},
 ];
 
-type TabId = "home" | "facilitators" | "classes" | "journey" | "dashboard";
+type TabId = "home" | "facilitators" | "classes" | "journey" | "dashboard" | "resources";
+
+const CORE_TOOLS = [
+  {id:"clearing",name:"The Clearing Statement",icon:"◎",color:"#1a3a4a",short:"The foundational tool of Access.",detail:"Right and wrong, good and bad, POD and POC, all 9, shorts, boys and beyonds.® It bypasses the logical mind and goes directly to you, the being. You don't have to understand it for it to work."},
+  {id:"wdtbt",name:"Who Does This Belong To?",icon:"◇",color:"#2d6a7a",short:"The awareness tool for empaths.",detail:"For every thought, feeling, and emotion you have, ask: who does this belong to? If it lightens up, it's not yours. Return it to sender. 98% of your thoughts, feelings, and emotions don't belong to you."},
+  {id:"fourq",name:"The Four Questions",icon:"□",color:"#3d8a7a",short:"Four questions to make your life work.",detail:"What is this? What can I do with it? Can I change it? If so, how can I change it? Being aware of something doesn't mean you can change it — you've got to be in the question."},
+  {id:"qcpc",name:"Question, Choice, Possibility, Contribution",icon:"△",color:"#5aaa8a",short:"The four sources of creation.",detail:"A question gives you awareness. A choice starts you on the road. Possibilities are all the choices available. Contribution is an awareness of what you can be and receive at all times — not a doing."},
+];
+
+const CLASS_PATH = [
+  {id:"bars",name:"Access Bars",sub:"1 day · No prerequisites",color:"#3d8a7a"},
+  {id:"foundation",name:"The Foundation",sub:"4 days · Bars required",color:"#2d6a7a"},
+  {id:"choice",name:"Choice for Possibilities",sub:"3 days",color:"#4a8a6a"},
+  {id:"being",name:"Being You, Changing the World",sub:"3 days",color:"#7ac0a0"},
+  {id:"cf",name:"Certified Facilitator",sub:"Intensive training",color:"#1a3a4a"},
+];
+
+const KEY_CONCEPTS = [
+  {id:"consciousness",name:"Consciousness",short:"Includes everything and judges nothing.",detail:"Consciousness is where you're actually present and engaged with everything going on around you. You have no judgment about it and there's no limitation in it. Totally present means you have no point of view — you're just there."},
+  {id:"pkbr",name:"Perceiving, Knowing, Being & Receiving",short:"The four elements of you as an infinite being.",detail:"Thoughts are the lower harmonic of knowing. Feelings are the lower harmonic of perceiving. Emotions are the lower harmonic of being. Bodies feel; beings sense. Any time you're doing thoughts, feelings, emotions as your functional point of view, you're being less than you could choose to be."},
+  {id:"humanoids",name:"Humanoids, Humans & Techies",short:"Three species on this planet.",detail:"Humanoids always judge themselves — they always know they're wrong. Humans always judge everybody else — they know they're right and you're wrong. As a humanoid, you need at least 10 things going on in your life at all times to be happy. Humanoids don't fail. They just quit before they get to success."},
+  {id:"intimacy",name:"Five Elements of Intimacy",short:"Honoring, Trust, Allowance, Vulnerability, Gratitude.",detail:"These five elements create true intimacy — not the romantic version this reality sells you, but the willingness to be present with someone without walls, without barriers, and without judgment."},
+  {id:"implants",name:"Distractor Implants",short:"The autopilot programs that run your life.",detail:"Anger, rage, fury, hate. Blame, shame, regret, guilt. These are implanted distractions designed to keep you from being present and conscious. When you recognize them as implants rather than truth, they begin to lose their hold."},
+  {id:"money",name:"Money & Abundance",short:"The universe is an abundance universe.",detail:"Your point of view creates your reality — reality does not create your point of view. It's about being money, not having it. Money is a space of being you can choose. When you be it, it's no longer an issue. You don't have to be smart to make money — you just have to be willing to have it and ask for it."},
+];
+
+const DAILY_QUESTIONS = [
+  "Who am I today and what grand and glorious adventure am I going to have?",
+  "What else is possible?",
+  "How does it get any better than this?",
+  "What can I add to my life today that would make everything fun for me?",
+  "What energy, space, and consciousness can my body and I be today?",
+];
 
 type Facilitator = typeof F[number];
 type ClassItem = typeof CL[number];
@@ -432,6 +464,18 @@ const HomeTab = ({loc,setTab,setProfileModal}: HomeTabProps) => {
       </div>
     </div>
 
+    {/* Daily question */}
+    <div style={{marginBottom:20}}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
+        <div style={{fontSize:11,color:"#8a9a9a",textTransform:"uppercase",letterSpacing:"0.08em",fontFamily:mn}}>Daily Question</div>
+        <button onClick={()=>setTab("resources")} style={{fontSize:12,color:"#1a3a4a",background:"none",border:"none",cursor:"pointer",fontWeight:600,fontFamily:ft}}>All resources →</button>
+      </div>
+      <div style={{background:"#fff",borderRadius:16,padding:"22px 24px",border:"1px solid #e8ebe9"}}>
+        <p style={{margin:0,fontSize:16,color:"#1a3a4a",fontFamily:sf,fontStyle:"italic",lineHeight:1.6}}>Who am I today and what grand and glorious adventure am I going to have?</p>
+        <p style={{margin:"10px 0 0",fontSize:12,color:"#8a9a9a"}}>Ask this every morning — your life becomes the adventure of living.</p>
+      </div>
+    </div>
+
     {/* Quick stats */}
     <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
       <Stat val="52" label="Facilitators" />
@@ -598,6 +642,122 @@ const JourneyTab = () => {
   </div>;
 };
 
+// ─── RESOURCES TAB ─────────────────────────────────────────────────────────
+const ResourcesTab = () => {
+  const [openTool,setOpenTool]=useState<string|null>(null);
+  const [openConcept,setOpenConcept]=useState<string|null>(null);
+  const [cat,setCat]=useState<"all"|"tools"|"concepts"|"path"|"questions">("all");
+
+  return <div style={{maxWidth:800,margin:"0 auto",padding:"0 24px 60px"}}>
+    {/* Header */}
+    <div style={{marginBottom:24}}>
+      <h2 style={{margin:"0 0 4px",fontSize:24,fontWeight:700,color:"#1a2a2a",fontFamily:sf}}>Resources</h2>
+      <p style={{margin:0,fontSize:14,color:"#5a6a6a"}}>Tools, concepts, and questions from The Foundation and beyond.</p>
+    </div>
+
+    {/* Category pills */}
+    <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:24}}>
+      <Pill label="All" active={cat==="all"} onClick={()=>setCat("all")} />
+      <Pill label="Core Tools" active={cat==="tools"} onClick={()=>setCat("tools")} />
+      <Pill label="Class Path" active={cat==="path"} onClick={()=>setCat("path")} />
+      <Pill label="Key Concepts" active={cat==="concepts"} onClick={()=>setCat("concepts")} />
+      <Pill label="Daily Questions" active={cat==="questions"} onClick={()=>setCat("questions")} />
+    </div>
+
+    {/* Core Tools */}
+    {(cat==="all"||cat==="tools")&&<div style={{marginBottom:28}}>
+      <div style={{fontSize:11,color:"#8a9a9a",textTransform:"uppercase",letterSpacing:"0.08em",marginBottom:12,fontFamily:mn}}>Core Tools</div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(240px,1fr))",gap:12}}>
+        {CORE_TOOLS.map(t=>{
+          const open=openTool===t.id;
+          return <div key={t.id} onClick={()=>setOpenTool(open?null:t.id)} style={{background:"#fff",borderRadius:16,padding:"20px 22px",cursor:"pointer",transition:"all 0.3s",border:open?`1.5px solid ${t.color}`:"1px solid #e8ebe9",boxShadow:open?"0 8px 28px rgba(26,58,74,0.1)":"0 1px 3px rgba(0,0,0,0.04)"}}>
+            <div style={{display:"flex",gap:14,alignItems:"flex-start"}}>
+              <div style={{width:40,height:40,borderRadius:10,background:t.color+"12",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18,color:t.color,flexShrink:0}}>{t.icon}</div>
+              <div style={{flex:1,minWidth:0}}>
+                <h4 style={{margin:"0 0 4px",fontSize:15,fontWeight:600,color:"#1a2a2a",fontFamily:sf}}>{t.name}</h4>
+                <p style={{margin:0,fontSize:13,color:"#6a7a7a",lineHeight:1.5}}>{t.short}</p>
+              </div>
+            </div>
+            {open&&<div style={{marginTop:14,paddingTop:14,borderTop:"1px solid #f0f2f1"}}>
+              <p style={{margin:0,fontSize:13,color:"#3a4a4a",lineHeight:1.7,fontStyle:t.id==="clearing"?"italic":"normal"}}>{t.detail}</p>
+            </div>}
+          </div>;
+        })}
+      </div>
+    </div>}
+
+    {/* Class Path */}
+    {(cat==="all"||cat==="path")&&<div style={{marginBottom:28}}>
+      <div style={{fontSize:11,color:"#8a9a9a",textTransform:"uppercase",letterSpacing:"0.08em",marginBottom:12,fontFamily:mn}}>Class Path</div>
+      <div style={{background:"#fff",borderRadius:16,padding:"24px",border:"1px solid #e8ebe9"}}>
+        <p style={{margin:"0 0 20px",fontSize:13,color:"#6a7a7a"}}>How classes connect — each choice opens the next.</p>
+        <div style={{display:"flex",flexDirection:"column",gap:0}}>
+          {CLASS_PATH.map((step,i)=>(
+            <div key={step.id} style={{display:"flex",alignItems:"flex-start",gap:16}}>
+              <div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0}}>
+                <div style={{width:14,height:14,borderRadius:7,background:step.color,flexShrink:0}} />
+                {i<CLASS_PATH.length-1&&<div style={{width:2,height:40,background:"#e8ebe9"}} />}
+              </div>
+              <div style={{paddingBottom:i<CLASS_PATH.length-1?16:0}}>
+                <div style={{fontSize:15,fontWeight:600,color:"#1a2a2a",fontFamily:sf}}>{step.name}</div>
+                <div style={{fontSize:12,color:"#8a9a9a",marginTop:2,fontFamily:mn}}>{step.sub}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{marginTop:20,padding:"14px 16px",background:"#f6f7f6",borderRadius:10}}>
+          <div style={{fontSize:12,color:"#5a6a6a",lineHeight:1.6}}>
+            <strong style={{color:"#1a3a4a"}}>Beyond CF:</strong> Specialty certifications (Body Process, Facelift, Being You, Joy of Business, Right Riches for You) and Advanced Facilitator training.
+          </div>
+        </div>
+      </div>
+    </div>}
+
+    {/* Key Concepts */}
+    {(cat==="all"||cat==="concepts")&&<div style={{marginBottom:28}}>
+      <div style={{fontSize:11,color:"#8a9a9a",textTransform:"uppercase",letterSpacing:"0.08em",marginBottom:12,fontFamily:mn}}>Key Concepts</div>
+      <div style={{display:"flex",flexDirection:"column",gap:8}}>
+        {KEY_CONCEPTS.map(c=>{
+          const open=openConcept===c.id;
+          return <div key={c.id} onClick={()=>setOpenConcept(open?null:c.id)} style={{background:"#fff",borderRadius:14,padding:"18px 22px",cursor:"pointer",transition:"all 0.3s",border:"1px solid #e8ebe9",boxShadow:open?"0 8px 28px rgba(26,58,74,0.1)":"none"}}>
+            <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:12}}>
+              <div>
+                <h4 style={{margin:"0 0 4px",fontSize:15,fontWeight:600,color:"#1a2a2a",fontFamily:sf}}>{c.name}</h4>
+                <p style={{margin:0,fontSize:13,color:"#6a7a7a"}}>{c.short}</p>
+              </div>
+              <div style={{fontSize:18,color:"#aababa",flexShrink:0,transition:"transform 0.2s",transform:open?"rotate(45deg)":"rotate(0)"}}>+</div>
+            </div>
+            {open&&<div style={{marginTop:14,paddingTop:14,borderTop:"1px solid #f0f2f1"}}>
+              <p style={{margin:0,fontSize:13,color:"#3a4a4a",lineHeight:1.7}}>{c.detail}</p>
+            </div>}
+          </div>;
+        })}
+      </div>
+    </div>}
+
+    {/* Daily Questions */}
+    {(cat==="all"||cat==="questions")&&<div style={{marginBottom:20}}>
+      <div style={{fontSize:11,color:"#8a9a9a",textTransform:"uppercase",letterSpacing:"0.08em",marginBottom:12,fontFamily:mn}}>Daily Questions</div>
+      <div style={{background:"#fff",borderRadius:16,padding:"24px",border:"1px solid #e8ebe9"}}>
+        <p style={{margin:"0 0 16px",fontSize:13,color:"#6a7a7a"}}>Ask these every morning. A question empowers — it opens awareness, not answers.</p>
+        <div style={{display:"flex",flexDirection:"column",gap:10}}>
+          {DAILY_QUESTIONS.map((q,i)=>(
+            <div key={i} style={{display:"flex",gap:12,alignItems:"flex-start"}}>
+              <div style={{width:24,height:24,borderRadius:6,background:"#1a3a4a12",display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,color:"#1a3a4a",fontFamily:mn,fontWeight:600,flexShrink:0}}>{i+1}</div>
+              <p style={{margin:0,fontSize:14,color:"#2a3a3a",lineHeight:1.6,fontFamily:sf,fontStyle:"italic"}}>{q}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>}
+
+    {/* Source attribution */}
+    <div style={{textAlign:"center",padding:"20px 0"}}>
+      <p style={{margin:0,fontSize:11,color:"#aababa",fontFamily:mn}}>Content drawn from The Foundation by Gary Douglas & Dr. Dain Heer</p>
+    </div>
+  </div>;
+};
+
 // ─── PROTOTYPE ──────────────────────────────────────────────────────────────
 function AccessPrototype() {
   const [tab,setTab]=useState<TabId>("home");
@@ -625,6 +785,7 @@ function AccessPrototype() {
     {id:"classes",label:"Classes"},
     {id:"journey",label:"Your Journey"},
     {id:"dashboard",label:"Dashboard"},
+    {id:"resources",label:"Resources"},
   ];
 
   return <div style={{minHeight:"100vh",background:"#f6f7f6",fontFamily:ft}}>
@@ -722,6 +883,9 @@ function AccessPrototype() {
     {/* DASHBOARD */}
     {tab==="dashboard"&&<div style={{padding:"28px 0 0"}}><DashTab /></div>}
 
+    {/* RESOURCES */}
+    {tab==="resources"&&<div style={{padding:"28px 0 0"}}><ResourcesTab /></div>}
+
     {/* Footer */}
     <div style={{maxWidth:800,margin:"0 auto",padding:"0 24px 40px"}}><div style={{padding:"32px 0",borderTop:"1px solid #e8ebe9",textAlign:"center"}}><div style={{fontSize:11,color:"#aababa",fontFamily:mn,letterSpacing:"0.08em",textTransform:"uppercase",marginBottom:6}}>Prototype built by</div><div style={{fontSize:16,color:"#1a3a4a",fontWeight:700,fontFamily:sf,marginBottom:4}}>Astral Integration</div><div style={{fontSize:13,color:"#8a9a9a"}}>Custom infrastructure for organizations changing the world</div><div style={{fontSize:12,color:"#aababa",fontFamily:mn,marginTop:2}}>astralintegration.co</div></div></div>
 
@@ -780,7 +944,7 @@ export default function AccessPage() {
             <span className="text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">Class Discovery</span>
             <span className="text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">Student Journey</span>
             <span className="text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">Facilitator Dashboard</span>
-            <span className="text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">52 Facilitators · 5 Tabs</span>
+            <span className="text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">52 Facilitators · 6 Tabs</span>
           </div>
         </div>
       </section>
