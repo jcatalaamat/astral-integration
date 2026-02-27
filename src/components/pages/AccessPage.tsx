@@ -282,7 +282,7 @@ const BookModal = ({f,onClose}: BookModalProps) => {
               {f.certs.includes("jcf")&&<option>Joy of Business</option>}
               <option>Other / Not sure</option>
             </select></div>
-          <button onClick={()=>setSent(true)} style={{padding:"14px",borderRadius:12,border:"none",background:"#1a3a4a",color:"#fff",fontSize:14,fontWeight:600,cursor:"pointer",fontFamily:ft,marginTop:4}}>Send Request</button>
+          <button onClick={()=>setSent(true)} style={{padding:"14px",borderRadius:12,border:"none",background:"#1a3a4a",color:"#fff",fontSize:14,fontWeight:600,cursor:"pointer",fontFamily:ft,marginTop:4}}>Request a Session</button>
         </div>
       </>:<div style={{textAlign:"center",padding:"20px 0"}}>
         <div style={{width:56,height:56,borderRadius:14,background:"#e8f5ee",display:"inline-flex",alignItems:"center",justifyContent:"center",marginBottom:16}}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2a6a4a" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>
@@ -298,7 +298,7 @@ const BookModal = ({f,onClose}: BookModalProps) => {
 const FCard = ({f,loc,onP,onB}: FCardProps) => {
   const [o,setO]=useState(false);
   const d=loc?hav(loc.lat,loc.lng,f.lat,f.lng):null;
-  return <div onClick={()=>setO(!o)} style={{background:"#fff",borderRadius:16,padding:"24px 28px",cursor:"pointer",transition:"all 0.3s",border:f.featured?"1.5px solid #1a3a4a":"1px solid #e8ebe9",boxShadow:o?"0 12px 40px rgba(26,58,74,0.12)":"0 1px 3px rgba(0,0,0,0.04)",position:"relative"}}>
+  return <div onClick={()=>setO(!o)} onMouseEnter={e=>{if(!o)(e.currentTarget.style.transform="translateY(-1px)");e.currentTarget.style.boxShadow="0 6px 24px rgba(26,58,74,0.1)"}} onMouseLeave={e=>{if(!o)(e.currentTarget.style.transform="translateY(0)");if(!o)e.currentTarget.style.boxShadow="0 1px 3px rgba(0,0,0,0.04)"}} style={{background:"#fff",borderRadius:16,padding:"24px 28px",cursor:"pointer",transition:"all 0.3s",border:f.featured?"1.5px solid #1a3a4a":"1px solid #e8ebe9",boxShadow:o?"0 12px 40px rgba(26,58,74,0.12)":"0 1px 3px rgba(0,0,0,0.04)",position:"relative"}}>
     {f.featured&&<div style={{position:"absolute",top:12,right:16,fontSize:10,fontFamily:mn,color:"#1a3a4a",letterSpacing:"0.1em",textTransform:"uppercase",opacity:0.6}}>Featured</div>}
     <div style={{display:"flex",gap:18,alignItems:"flex-start"}}>
       <div style={{width:56,height:56,borderRadius:14,background:`linear-gradient(135deg,${cc(f.certs[0])},${cc(f.certs[Math.min(1,f.certs.length-1)])})`,display:"flex",alignItems:"center",justifyContent:"center",color:"#fff",fontFamily:mn,fontSize:16,fontWeight:500,flexShrink:0}}>{ini(f.name)}</div>
@@ -328,7 +328,7 @@ const CCard = ({cl,loc}: CCardProps) => {
   const ct=CLASS_TYPES.find(t=>t.id===cl.type);
   if (!ct) return null;
   const d=loc&&cl.lat?hav(loc.lat,loc.lng,cl.lat,cl.lng):null;
-  return <div onClick={()=>setO(!o)} style={{background:"#fff",borderRadius:16,padding:"20px 24px",cursor:"pointer",transition:"all 0.3s",border:"1px solid #e8ebe9",boxShadow:o?"0 12px 40px rgba(26,58,74,0.12)":"0 1px 3px rgba(0,0,0,0.04)"}}>
+  return <div onClick={()=>setO(!o)} onMouseEnter={e=>{if(!o)(e.currentTarget.style.transform="translateY(-1px)");e.currentTarget.style.boxShadow="0 6px 24px rgba(26,58,74,0.1)"}} onMouseLeave={e=>{if(!o)(e.currentTarget.style.transform="translateY(0)");if(!o)e.currentTarget.style.boxShadow="0 1px 3px rgba(0,0,0,0.04)"}} style={{background:"#fff",borderRadius:16,padding:"20px 24px",cursor:"pointer",transition:"all 0.3s",border:"1px solid #e8ebe9",boxShadow:o?"0 12px 40px rgba(26,58,74,0.12)":"0 1px 3px rgba(0,0,0,0.04)"}}>
     <div style={{display:"flex",gap:16,alignItems:"flex-start"}}>
       <div style={{width:48,height:48,borderRadius:12,background:ct.color+"15",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,flexShrink:0,color:ct.color}}>{ct.icon}</div>
       <div style={{flex:1,minWidth:0}}>
@@ -394,7 +394,7 @@ const HomeTab = ({loc,setTab,setProfileModal}: HomeTabProps) => {
           <div style={{flex:1,background:"#e8f5ee",borderRadius:6,height:6}}><div style={{width:"65%",height:"100%",background:"#5aaa8a",borderRadius:6}} /></div>
           <span style={{fontSize:12,color:"#5aaa8a",fontFamily:mn,fontWeight:600}}>65%</span>
         </div>
-        <div style={{fontSize:12,color:"#5a7a6a",marginTop:6}}>2 supervised sessions remaining</div>
+        <div style={{fontSize:12,color:"#5a7a6a",marginTop:6}}>2 sessions to go — what else is possible?</div>
         <div style={{display:"flex",gap:8,marginTop:14}}>
           {nextSteps.slice(0,2).map(s=><span key={s.id} style={{fontSize:12,color:"#8a9a9a",background:"#f6f7f6",padding:"6px 12px",borderRadius:8}}>Next → {s.name}</span>)}
         </div>
@@ -436,8 +436,8 @@ const HomeTab = ({loc,setTab,setProfileModal}: HomeTabProps) => {
     <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
       <Stat val="52" label="Facilitators" />
       <Stat val="24" label="Classes This Month" />
-      <Stat val="35+" label="Countries" />
-      <Stat val="176" label="Countries Worldwide" color="#5aaa8a" />
+      <Stat val="176" label="Countries" />
+      <Stat val="10" label="Class Types" color="#5aaa8a" />
     </div>
   </div>;
 };
@@ -466,6 +466,7 @@ const DashTab = () => {
         <div>
           <h2 style={{margin:"0 0 4px",fontSize:24,fontWeight:700,color:"#1a2a2a",fontFamily:sf}}>Facilitator Dashboard</h2>
           <div style={{fontSize:14,color:"#5a6a6a"}}>Jordi Amat · Bars Facilitator · Mazunte, Oaxaca</div>
+          <div style={{fontSize:12,color:"#5aaa8a",marginTop:4,fontStyle:"italic"}}>Your facilitation is creating change in the world.</div>
         </div>
         <button style={{padding:"10px 18px",borderRadius:10,border:"none",background:"#1a3a4a",color:"#fff",fontSize:13,fontWeight:600,cursor:"pointer",fontFamily:ft}}>+ Create Class</button>
       </div>
@@ -586,9 +587,9 @@ const JourneyTab = () => {
                 <div><h4 style={{margin:"0 0 4px",fontSize:15,fontWeight:600,color:"#1a2a2a",fontFamily:sf}}>{s.name}</h4><p style={{margin:0,fontSize:13,color:"#6a7a7a",lineHeight:1.5}}>{s.desc}</p></div>
                 <div style={{textAlign:"right",flexShrink:0}}>{s.date&&<div style={{fontSize:12,color:"#8a9a9a",fontFamily:mn}}>{s.date}</div>}{s.cert&&<div style={{marginTop:4,display:"inline-block",padding:"3px 8px",borderRadius:6,fontSize:10,fontWeight:600,fontFamily:mn,background:d||a?"#1a3a4a12":"#f0f2f1",color:d||a?"#1a3a4a":"#aaa"}}>{s.cert}</div>}</div>
               </div>
-              {a&&<div style={{marginTop:12,paddingTop:12,borderTop:"1px solid #e8f5ee"}}><div style={{display:"flex",gap:10,alignItems:"center"}}><div style={{flex:1,background:"#e8f5ee",borderRadius:6,height:4}}><div style={{width:"65%",height:"100%",background:"#5aaa8a",borderRadius:6}}/></div><span style={{fontSize:11,color:"#5aaa8a",fontFamily:mn,fontWeight:600}}>65%</span></div><div style={{fontSize:12,color:"#5a7a6a",marginTop:6}}>2 supervised sessions remaining</div></div>}
+              {a&&<div style={{marginTop:12,paddingTop:12,borderTop:"1px solid #e8f5ee"}}><div style={{display:"flex",gap:10,alignItems:"center"}}><div style={{flex:1,background:"#e8f5ee",borderRadius:6,height:4}}><div style={{width:"65%",height:"100%",background:"#5aaa8a",borderRadius:6}}/></div><span style={{fontSize:11,color:"#5aaa8a",fontFamily:mn,fontWeight:600}}>65%</span></div><div style={{fontSize:12,color:"#5a7a6a",marginTop:6}}>2 sessions to go — how does it get even better?</div></div>}
               {n&&<button style={{marginTop:12,padding:"10px 16px",borderRadius:10,border:"1.5px solid #1a3a4a",background:"transparent",color:"#1a3a4a",fontSize:12,fontWeight:600,cursor:"pointer",fontFamily:ft}}>Find a Class</button>}
-              {l&&<div style={{marginTop:8,fontSize:11,color:"#aababa",fontFamily:mn}}>{s.id==="certified"?"Requires: Foundation ×2 + Choice for Possibilities":s.id==="advanced"?"Requires: CF + extensive facilitation":"Complete previous steps"}</div>}
+              {l&&<div style={{marginTop:8,fontSize:11,color:"#aababa",fontFamily:mn}}>{s.id==="certified"?"Requires: Foundation ×2 + Choice for Possibilities":s.id==="advanced"?"Requires: CF + extensive facilitation":"Each choice opens the next"}</div>}
             </div>
           </div>;
         })}
@@ -650,7 +651,7 @@ function AccessPrototype() {
       <div style={{background:"linear-gradient(180deg,#1a3a4a 0%,#1a3a4a 55%,#f6f7f6 100%)",padding:"36px 24px 76px"}}>
         <div style={{maxWidth:800,margin:"0 auto",textAlign:"center"}}>
           <h1 style={{margin:"0 0 8px",fontSize:30,fontWeight:700,color:"#fff",fontFamily:sf}}>Find Your Facilitator</h1>
-          <p style={{margin:"0 auto 28px",fontSize:14,color:"rgba(255,255,255,0.55)",maxWidth:460}}>13,000+ certified facilitators across 176 countries.</p>
+          <p style={{margin:"0 auto 28px",fontSize:14,color:"rgba(255,255,255,0.55)",maxWidth:460}}>13,000+ certified facilitators across 176 countries. Every one of them chose something different.</p>
           <SearchBar val={q} set={v=>{setQ(v);setShow(20)}} placeholder="Search by name, city, or country..." locSt={locSt} reqLoc={reqLoc} />
         </div>
       </div>
@@ -687,7 +688,7 @@ function AccessPrototype() {
         <div style={{marginBottom:16}}><span style={{fontSize:13,color:"#8a9a9a",fontFamily:mn}}>{fRes.length} facilitator{fRes.length!==1?"s":""}{q&&` matching "${q}"`}</span></div>
         <div style={{display:"flex",flexDirection:"column",gap:12}}>{fRes.slice(0,show).map(f=><FCard key={f.id} f={f} loc={loc} onP={setPM} onB={setBM} />)}</div>
         {show<fRes.length&&<div style={{textAlign:"center",marginTop:24}}><button onClick={()=>setShow(v=>v+20)} style={{padding:"14px 32px",borderRadius:12,border:"1.5px solid #1a3a4a",background:"#fff",color:"#1a3a4a",fontSize:14,fontWeight:600,cursor:"pointer",fontFamily:ft}}>Show more</button></div>}
-        {fRes.length===0&&<div style={{textAlign:"center",padding:"60px 20px"}}><div style={{fontSize:16,color:"#5a6a6a",fontFamily:sf}}>No facilitators found</div><button onClick={()=>{setQ("");setRegion(null);setCert(null);setLang(null)}} style={{fontSize:13,color:"#1a3a4a",background:"none",border:"none",cursor:"pointer",textDecoration:"underline",marginTop:8}}>Clear filters</button></div>}
+        {fRes.length===0&&<div style={{textAlign:"center",padding:"60px 20px"}}><div style={{fontSize:16,color:"#5a6a6a",fontFamily:sf}}>No matches yet — what if you expanded your search?</div><button onClick={()=>{setQ("");setRegion(null);setCert(null);setLang(null)}} style={{fontSize:13,color:"#1a3a4a",background:"none",border:"none",cursor:"pointer",textDecoration:"underline",marginTop:8}}>Clear filters</button></div>}
       </div>
     </>}
 
@@ -696,7 +697,7 @@ function AccessPrototype() {
       <div style={{background:"linear-gradient(180deg,#1a3a4a 0%,#1a3a4a 55%,#f6f7f6 100%)",padding:"36px 24px 76px"}}>
         <div style={{maxWidth:800,margin:"0 auto",textAlign:"center"}}>
           <h1 style={{margin:"0 0 8px",fontSize:30,fontWeight:700,color:"#fff",fontFamily:sf}}>Find a Class</h1>
-          <p style={{margin:"0 auto 28px",fontSize:14,color:"rgba(255,255,255,0.55)",maxWidth:460}}>Thousands of classes weekly across 176 countries.</p>
+          <p style={{margin:"0 auto 28px",fontSize:14,color:"rgba(255,255,255,0.55)",maxWidth:460}}>Thousands of classes weekly across 176 countries. What would change everything for you?</p>
           <SearchBar val={cQ} set={setCQ} placeholder="Search by facilitator, city, country..." locSt={locSt} reqLoc={reqLoc} />
         </div>
       </div>
@@ -711,7 +712,7 @@ function AccessPrototype() {
         </div>
         <div style={{marginBottom:16}}><span style={{fontSize:13,color:"#8a9a9a",fontFamily:mn}}>{cRes.length} class{cRes.length!==1?"es":""}</span></div>
         <div style={{display:"flex",flexDirection:"column",gap:12}}>{cRes.map(cl=><CCard key={cl.id} cl={cl} loc={loc} />)}</div>
-        {cRes.length===0&&<div style={{textAlign:"center",padding:"60px 20px"}}><div style={{fontSize:16,color:"#5a6a6a",fontFamily:sf}}>No classes found</div><button onClick={()=>{setCQ("");setCType(null);setCFmt(null)}} style={{fontSize:13,color:"#1a3a4a",background:"none",border:"none",cursor:"pointer",textDecoration:"underline",marginTop:8}}>Clear filters</button></div>}
+        {cRes.length===0&&<div style={{textAlign:"center",padding:"60px 20px"}}><div style={{fontSize:16,color:"#5a6a6a",fontFamily:sf}}>No classes yet — what else is possible?</div><button onClick={()=>{setCQ("");setCType(null);setCFmt(null)}} style={{fontSize:13,color:"#1a3a4a",background:"none",border:"none",cursor:"pointer",textDecoration:"underline",marginTop:8}}>Clear filters</button></div>}
       </div>
     </>}
 
@@ -722,7 +723,7 @@ function AccessPrototype() {
     {tab==="dashboard"&&<div style={{padding:"28px 0 0"}}><DashTab /></div>}
 
     {/* Footer */}
-    <div style={{maxWidth:800,margin:"0 auto",padding:"0 24px 40px"}}><div style={{padding:"32px 0",borderTop:"1px solid #e8ebe9",textAlign:"center"}}><div style={{fontSize:11,color:"#aababa",fontFamily:mn,letterSpacing:"0.08em",textTransform:"uppercase",marginBottom:6}}>Prototype built by</div><div style={{fontSize:16,color:"#1a3a4a",fontWeight:700,fontFamily:sf,marginBottom:4}}>Astral Integration</div><div style={{fontSize:13,color:"#8a9a9a"}}>Custom digital infrastructure for education organizations</div><div style={{fontSize:12,color:"#aababa",fontFamily:mn,marginTop:2}}>astralintegration.co</div></div></div>
+    <div style={{maxWidth:800,margin:"0 auto",padding:"0 24px 40px"}}><div style={{padding:"32px 0",borderTop:"1px solid #e8ebe9",textAlign:"center"}}><div style={{fontSize:11,color:"#aababa",fontFamily:mn,letterSpacing:"0.08em",textTransform:"uppercase",marginBottom:6}}>Prototype built by</div><div style={{fontSize:16,color:"#1a3a4a",fontWeight:700,fontFamily:sf,marginBottom:4}}>Astral Integration</div><div style={{fontSize:13,color:"#8a9a9a"}}>Custom infrastructure for organizations changing the world</div><div style={{fontSize:12,color:"#aababa",fontFamily:mn,marginTop:2}}>astralintegration.co</div></div></div>
 
     {pM&&<ProfileModal f={pM} onClose={()=>setPM(null)} loc={loc} />}
     {bM&&<BookModal f={bM} onClose={()=>setBM(null)} />}
@@ -733,7 +734,7 @@ function AccessPrototype() {
 export default function AccessPage() {
   useDocumentMeta({
     title: 'Access Consciousness — Platform Prototype — Astral Integration',
-    description: 'An unsolicited prototype: what a unified facilitator directory, class discovery, and student journey platform could look like for Access Consciousness. Built by Jordi Amat.',
+    description: 'What else is possible when 13,000 facilitators share one platform? An unsolicited prototype for Access Consciousness — facilitator directory, class discovery, student journey, and facilitator dashboard. Built by Jordi Amat.',
     ogUrl: 'https://astralintegration.co/access',
   });
 
@@ -744,24 +745,24 @@ export default function AccessPage() {
       {/* Framing intro */}
       <section className="pt-40 pb-16 px-6 md:px-12">
         <div className="max-w-content mx-auto">
-          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4 reveal">
             <span className="w-8 h-px bg-accent" />
             Unsolicited Prototype
           </p>
-          <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
-            What Access Consciousness<br />could look like <em className="italic gradient-text">unified.</em>
+          <h1 className="font-serif text-display font-light mb-8 max-w-[800px] reveal">
+            What else is possible when<br />13,000 facilitators share <em className="italic gradient-text">one platform?</em>
           </h1>
-          <p className="text-body text-content-secondary max-w-prose mb-6">
-            13,000+ facilitators across 176 countries. Hundreds of class types. Millions of sessions delivered. And the digital infrastructure holding it all together is scattered across directories that don't talk to each other, booking systems that vary by facilitator, and no single place a student can track their journey.
+          <p className="text-body text-content-secondary max-w-prose mb-6 reveal">
+            Access Consciousness empowers people across 176 countries to know what they know — and the facilitators delivering that awareness deserve infrastructure that matches it. Right now, directories don't connect, booking varies by facilitator, and there's no single place for a student to perceive their whole journey.
           </p>
-          <p className="text-body text-content-secondary max-w-prose mb-6">
-            This is what it could look like if someone built the platform from the ground up — a unified facilitator directory with real search, class discovery across formats and geographies, a student journey tracker, and a facilitator dashboard. One system. One experience.
+          <p className="text-body text-content-secondary max-w-prose mb-6 reveal">
+            This is what it could look like built from question, not assumption — a unified facilitator directory, class discovery across formats and geographies, a student journey tracker, and a facilitator dashboard. One system. Every choice opening the next.
           </p>
-          <p className="text-body-sm text-content-muted max-w-prose mb-4">
-            Built by Jordi Amat — Bars Facilitator in training, Foundation ×2, senior engineer, former CTO. This isn't a pitch deck. It's a working prototype.
+          <p className="text-body-sm text-content-muted max-w-prose mb-4 reveal">
+            Built by Jordi Amat — Bars Facilitator in training, Foundation ×2, and the kind of engineer who builds with you, not just for you. This isn't a pitch deck. It's a working prototype.
           </p>
 
-          <div className="flex flex-wrap gap-3 mt-8">
+          <div className="flex flex-wrap gap-3 mt-8 reveal">
             <span className="text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">Facilitator Directory</span>
             <span className="text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">Class Discovery</span>
             <span className="text-meta uppercase text-content-muted bg-dark-card border border-border rounded-full px-4 py-2">Student Journey</span>
@@ -780,12 +781,12 @@ export default function AccessPage() {
 
       {/* CTA below prototype */}
       <section className="py-section px-6 md:px-12">
-        <div className="max-w-content mx-auto text-center">
+        <div className="max-w-content mx-auto text-center reveal">
           <h2 className="font-serif text-display-sm font-light mb-6">
-            This is what I build.
+            What would you like to <em className="italic gradient-text">create?</em>
           </h2>
           <p className="text-body text-content-secondary max-w-prose mx-auto mb-10">
-            If your organization has outgrown its digital infrastructure — or never had the right one to begin with — I'd like to hear about it. I build platforms like this as long-term partnerships.
+            If your organization's awareness has outgrown its infrastructure, I'd like to hear about it. I build platforms like this as long-term contribution — not a project, a partnership.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -798,7 +799,7 @@ export default function AccessPage() {
               href="/work"
               className="inline-block px-10 py-4 bg-transparent text-content-secondary border border-border rounded-full text-body-sm font-medium hover:border-border-hover hover:text-content-primary transition-all"
             >
-              See All Case Studies
+              See the Work
             </a>
           </div>
         </div>
