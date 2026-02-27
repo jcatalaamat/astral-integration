@@ -121,6 +121,47 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Family */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            Roots
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-12">
+            Family is the reason I build the way I do.
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
+            <div className="rounded-2xl border border-border overflow-hidden">
+              <img
+                src="/family-01.jpg"
+                alt="Jordi with his family in Mazunte"
+                className="w-full h-[400px] object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="rounded-2xl border border-border overflow-hidden">
+              <img
+                src="/family-02.jpg"
+                alt="Jordi and family in the jungle"
+                className="w-full h-[400px] object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div className="max-w-prose space-y-5">
+            <p className="text-body text-content-secondary leading-relaxed">
+              I live in Mazunte with Nina and our two kids. This isn't a digital nomad chapter — it's home. We chose this place because of the community, the land, and the kind of life we want our children to grow up in.
+            </p>
+            <p className="text-body text-content-secondary leading-relaxed">
+              Building from here means I understand what it takes to create real work in a real place — not from a WeWork, but from the same world my clients inhabit. The pace, the values, the priorities. It shapes everything I build.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Practitioner Side */}
       <section className="py-section px-6 md:px-12">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
