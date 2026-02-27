@@ -198,22 +198,37 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {featured.map((study) => (
-              <a
+              <div
                 key={study.slug}
-                href={`/work/${study.slug}`}
-                className="block bg-dark-card border border-border rounded-2xl overflow-hidden hover:border-accent/40 transition-all group"
+                className="bg-dark-card border border-border rounded-2xl overflow-hidden hover:border-accent/40 transition-all group"
               >
-                <div className={`w-full border-b border-border bg-gradient-to-br ${study.gradient} p-6`}>
-                  <h3 className="font-serif text-h3 font-light group-hover:text-accent transition-colors">{study.client}</h3>
-                  <p className="text-meta uppercase text-gold mt-1">{study.type}</p>
+                <a href={`/work/${study.slug}`} className="block">
+                  <div className={`w-full border-b border-border bg-gradient-to-br ${study.gradient} p-6`}>
+                    <h3 className="font-serif text-h3 font-light group-hover:text-accent transition-colors">{study.client}</h3>
+                    <p className="text-meta uppercase text-gold mt-1">{study.type}</p>
+                  </div>
+                  <div className="p-6 pb-3">
+                    <p className="text-body-sm text-content-secondary leading-relaxed line-clamp-3">{study.challenge}</p>
+                  </div>
+                </a>
+                <div className="px-6 pb-5 flex items-center gap-4">
+                  <a href={`/work/${study.slug}`} className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-1">
+                    Case study <span aria-hidden="true">&rarr;</span>
+                  </a>
+                  {study.url ? (
+                    <a
+                      href={study.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-body-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1"
+                    >
+                      Visit site <span aria-hidden="true">&rarr;</span>
+                    </a>
+                  ) : study.status === 'In progress' ? (
+                    <span className="text-meta uppercase text-content-muted">Private portal</span>
+                  ) : null}
                 </div>
-                <div className="p-6">
-                  <p className="text-body-sm text-content-secondary leading-relaxed line-clamp-3">{study.challenge}</p>
-                  <span className="inline-flex items-center gap-1 text-body-sm text-accent mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                    Read case study <span aria-hidden="true">&rarr;</span>
-                  </span>
-                </div>
-              </a>
+              </div>
             ))}
           </div>
 

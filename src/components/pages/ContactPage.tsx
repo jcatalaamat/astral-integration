@@ -215,7 +215,7 @@ export default function ContactPage() {
                   Book a free 30-minute strategy call. No pitch — just a conversation about your work and what the right infrastructure might look like.
                 </p>
                 <a
-                  href="https://calendly.com/astral-integration/free-strategy-call"
+                  href="https://calendly.com/astralamat/let-s-talk-about-your-work"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-8 py-3 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
@@ -233,6 +233,31 @@ export default function ContactPage() {
                 >
                   hello@astralintegration.co
                 </a>
+              </div>
+
+              {/* Links */}
+              <div className="bg-dark-card border border-border rounded-2xl p-8">
+                <h3 className="font-serif text-h3 mb-4">Find me</h3>
+                <div className="flex gap-6">
+                  <a
+                    href="https://www.linkedin.com/in/jcamat/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-body-sm text-content-muted hover:text-accent transition-colors"
+                  >
+                    <span className="w-7 h-7 rounded border border-border flex items-center justify-center text-[0.6rem] font-mono uppercase">in</span>
+                    LinkedIn
+                  </a>
+                  <a
+                    href="https://github.com/jcatalaamat"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-body-sm text-content-muted hover:text-accent transition-colors"
+                  >
+                    <span className="w-7 h-7 rounded border border-border flex items-center justify-center text-[0.6rem] font-mono uppercase">gh</span>
+                    GitHub
+                  </a>
+                </div>
               </div>
 
               {/* Note */}
