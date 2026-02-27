@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 import Navigation from '../Navigation';
 import Footer from '../Footer';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
@@ -737,6 +737,19 @@ export default function AccessPage() {
     description: 'What else is possible when 13,000 facilitators share one platform? An unsolicited prototype for Access Consciousness — facilitator directory, class discovery, student journey, and facilitator dashboard. Built by Jordi Amat.',
     ogUrl: 'https://astralintegration.co/access',
   });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="min-h-screen bg-dark-bg font-sans">
