@@ -11,7 +11,7 @@ const featured = caseStudies.slice(0, 4);
 
 export default function HomePage() {
   useDocumentMeta({
-    title: 'Astral Integration — Your mastery deserves infrastructure that matches it.',
+    title: 'Astral Integration — Your practice deserves infrastructure that matches it.',
     description: 'Senior engineer and former CTO building custom digital infrastructure for schools, practices, and original work — from first platform to global scale. Long-term technical partnership.',
     ogUrl: 'https://astralintegration.co/',
   });
@@ -90,7 +90,7 @@ export default function HomePage() {
         <div className="absolute w-[300px] h-[300px] bg-gold rounded-full blur-[100px] opacity-15 top-[30%] left-[10%] animate-float" style={{ animationDelay: '-14s' }} />
 
         <h1 className="font-serif text-display font-light max-w-[900px] relative z-10 animate-fadeUp animate-delay-300">
-          Your mastery deserves<br />infrastructure that <em className="italic gradient-text">matches it.</em>
+          Your practice deserves<br />infrastructure that <em className="italic gradient-text">matches it.</em>
         </h1>
 
         <p className="text-body text-content-secondary max-w-[640px] mt-8 relative z-10 animate-fadeUp animate-delay-500">
@@ -140,7 +140,7 @@ export default function HomePage() {
               Community split across WhatsApp and email.
             </p>
             <p className="text-body text-content-primary leading-relaxed font-medium">
-              Your mastery deserves better. That's when infrastructure becomes strategy.
+              Your practice deserves better. That's when infrastructure becomes strategy.
             </p>
           </div>
         </div>
