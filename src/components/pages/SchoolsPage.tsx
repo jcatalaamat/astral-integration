@@ -237,7 +237,7 @@ export default function SchoolsPage() {
         </div>
       </section>
 
-      {/* Case Study: ShivEnergetics — featured deeply */}
+      {/* Case Study: Inner Ascend — featured deeply */}
       <section className="py-section px-6 md:px-12">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
@@ -245,21 +245,21 @@ export default function SchoolsPage() {
             Proof
           </p>
           <h2 className="font-serif text-display-sm font-light mb-16">
-            300+ students. 9 levels. One platform.
+            97 practices. A facilitator pipeline. One platform.
           </h2>
 
           <div className="bg-dark-card border border-border rounded-2xl overflow-hidden">
-            <div className="relative w-full border-b border-border bg-gradient-to-br from-sky-900/25 via-sky-900/5 to-transparent p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div className="relative w-full border-b border-border bg-gradient-to-br from-lime-900/25 via-lime-900/5 to-transparent p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
-                <h3 className="font-serif text-h2 font-light">ShivEnergetics</h3>
-                <p className="text-meta uppercase text-gold mt-1">Reiki Academy — Granada, Spain</p>
+                <h3 className="font-serif text-h2 font-light">Inner Ascend</h3>
+                <p className="text-meta uppercase text-gold mt-1">Healing Membership & Facilitator Pipeline</p>
               </div>
               <div className="flex items-center gap-3 text-meta flex-wrap">
-                <span className="text-content-muted">300+ students</span>
+                <span className="text-content-muted">97 practices</span>
                 <span className="text-content-muted">&middot;</span>
-                <span className="text-content-muted">9 certification levels</span>
+                <span className="text-content-muted">12-month curriculum</span>
                 <span className="text-content-muted">&middot;</span>
-                <span className="text-content-muted">5 platforms → 1</span>
+                <span className="text-content-muted">AI assistant</span>
               </div>
             </div>
             <div className="p-6 md:p-8">
@@ -267,29 +267,17 @@ export default function SchoolsPage() {
                 <div>
                   <p className="text-meta uppercase text-content-muted mb-3">The Problem</p>
                   <p className="text-body-sm text-content-secondary leading-relaxed">
-                    Teachable for courses. Calendly for bookings. Stripe for payments. WhatsApp for communication. Google Sheets for student records. No single place a student could see their path from first course to practitioner certification.
+                    A trauma-informed healing practice with a loyal following — but no way to stay with people between ceremonies, and no structured path for experienced participants who wanted to become facilitators. The methodology existed; the container didn't.
                   </p>
                 </div>
                 <div>
                   <p className="text-meta uppercase text-content-muted mb-3">What Was Built</p>
                   <p className="text-body-sm text-content-secondary leading-relaxed">
-                    Prerequisite-gated progression across 9 levels. Practice hour logging. Automatic practitioner directory population. Retreat bookings. An AI assistant trained on the Reiki methodology. One platform.
+                    A 12-month curriculum of 97 practices delivered progression-based, not sequential. A personalized AI healing assistant trained on the methodology. Progress tracking, and a pipeline turning members into certified facilitators.
                   </p>
                 </div>
               </div>
-              <blockquote className="mt-8 pt-8 border-t border-border">
-                <p className="text-body text-content-secondary italic leading-relaxed mb-4">
-                  "It finally feels like my school, not a patchwork of tools."
-                </p>
-                <footer className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif text-xs">S</div>
-                  <div>
-                    <span className="text-meta text-content-primary">Sera Shivnan</span>
-                    <span className="text-meta text-content-muted ml-2">Reiki Master Teacher</span>
-                  </div>
-                </footer>
-              </blockquote>
-              <a href="/work/shivenergetics" className="mt-6 text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
+              <a href="/work/inner-ascend" className="mt-8 text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
                 Full case study <span aria-hidden="true">&rarr;</span>
               </a>
             </div>

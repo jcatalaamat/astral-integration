@@ -224,40 +224,6 @@ export default function PractitionersPage() {
 
           <div className="space-y-8">
             <div className="bg-dark-card border border-border rounded-2xl overflow-hidden">
-              <div className="relative w-full border-b border-border bg-gradient-to-br from-violet-900/25 via-violet-900/5 to-transparent p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div>
-                  <h3 className="font-serif text-h2 font-light">Uria Tsur</h3>
-                  <p className="text-meta uppercase text-gold mt-1">Vocal Freedom Facilitator — 18+ Cities</p>
-                </div>
-                <div className="flex items-center gap-3 text-meta">
-                  <span className="text-content-muted">300+ subscribers</span>
-                  <span className="text-content-muted">&middot;</span>
-                  <span className="text-content-muted">8 platforms → 1</span>
-                </div>
-              </div>
-              <div className="p-6 md:p-8">
-                <p className="text-body-sm text-content-secondary leading-relaxed mb-4">
-                  Was managing events across 8 ticketing platforms, losing audience data, spending hours on admin. Now has one platform: ticketing, membership (300+ subscribers), and a facilitator training course. Bilingual English/Hebrew.
-                </p>
-                <blockquote className="mt-6 pt-6 border-t border-border">
-                  <p className="text-body-sm text-content-secondary italic leading-relaxed mb-3">
-                    "I was managing tickets on 8 platforms, WhatsApp groups for everything, total chaos. Jordi put it all in one place. Now I just focus on my workshops and the community runs itself."
-                  </p>
-                  <footer className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-accent-glow flex items-center justify-center text-accent font-serif text-xs">U</div>
-                    <div>
-                      <span className="text-meta text-content-primary">Uria Tsur</span>
-                      <span className="text-meta text-content-muted ml-2">Vocal Facilitator & Musician</span>
-                    </div>
-                  </footer>
-                </blockquote>
-                <a href="/work/uria-tsur" className="mt-6 text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
-                  Full case study <span aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-dark-card border border-border rounded-2xl overflow-hidden">
               <div className="relative w-full border-b border-border bg-gradient-to-br from-lime-900/25 via-lime-900/5 to-transparent p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
                   <h3 className="font-serif text-h2 font-light">Inner Ascend</h3>
@@ -342,8 +308,8 @@ export default function PractitionersPage() {
           <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
-                { label: 'Platform build', value: '$1,500 – $3,000', detail: 'Scoped to your needs' },
-                { label: 'Ongoing partnership', value: '$250 – $500/mo', detail: 'Maintenance & evolution' },
+                { label: 'Custom build', value: 'From $2,000', detail: 'Scoped to your needs' },
+                { label: 'Ongoing partnership', value: 'From $200/mo', detail: 'Maintenance & evolution' },
                 { label: 'Timeline', value: '2 – 6 weeks', detail: 'To launch' },
               ].map((item, i) => (
                 <div key={i}>

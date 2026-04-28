@@ -281,8 +281,8 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {[
-              { label: 'Platform build', value: 'From $1,500' },
-              { label: 'Ongoing partnership', value: 'Monthly partnership' },
+              { label: 'Custom build', value: 'From $2,000' },
+              { label: 'Ongoing partnership', value: 'From $200 / month' },
               { label: 'Timeline', value: '2 – 6 weeks' },
             ].map((item, i) => (
               <div key={i} className="text-center md:text-left">
@@ -292,6 +292,8 @@ export default function HomePage() {
             ))}
           </div>
 
+          <p className="text-body-sm text-content-muted mb-2">Every site is custom-built from scratch. No templates, no themes, no page builders.</p>
+          <p className="text-body-sm text-content-muted mb-2">$2,000 base for a full build. Partnerships from $200/month for ongoing maintenance and evolution.</p>
           <p className="text-body-sm text-content-muted mb-2">You own everything. Code, data, domain. From day one.</p>
           <p className="text-body-sm text-content-muted mb-2">I stay on as your technical partner. My success is tied to yours.</p>
           <p className="text-body-sm text-content-muted mb-6 italic">Some people call this a fractional CTO. I just call it partnership.</p>

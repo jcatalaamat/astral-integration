@@ -8,8 +8,8 @@ const tiers = [
     name: 'Launch',
     who: 'For solo practitioners.',
     desc: 'You\'re running your practice on WhatsApp, Calendly, and a website that doesn\'t do what you need. You need a clean, professional digital home that actually works — and a technical partner who grows with you.',
-    build: '$1,500 – $3,000',
-    monthly: '$250 – $500/mo',
+    build: '$2,000 – $3,000',
+    monthly: 'From $200/mo',
     timeline: '1–2 weeks',
     includes: [
       'Custom website designed for your brand',

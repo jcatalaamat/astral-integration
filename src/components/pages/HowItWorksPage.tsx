@@ -40,8 +40,8 @@ const process = [
 ];
 
 const investment = [
-  { label: 'Platform build', value: '$1,500 – $10,000+', note: 'Scoped to your needs' },
-  { label: 'Ongoing partnership', value: 'From $250/month', note: 'Maintenance, updates, evolution' },
+  { label: 'Custom build', value: 'From $2,000', note: 'Scoped to your needs · custom from start' },
+  { label: 'Ongoing partnership', value: 'From $200/month', note: 'Maintenance, updates, evolution' },
   { label: 'Timeline', value: '2–6 weeks', note: 'To launch' },
   { label: 'Ownership', value: 'Yours. All of it.', note: 'Code, data, domain. From day one.' },
 ];
