@@ -103,7 +103,7 @@ export default function HomePage() {
 
         <div className="flex flex-col md:flex-row gap-4 mt-12 relative z-10 animate-fadeUp animate-delay-900">
           <a
-            href="https://calendly.com/astralamat/let-s-talk-about-your-work"
+            href="https://calendly.com/astral-integration/free-strategy-call"
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
@@ -307,7 +307,7 @@ export default function HomePage() {
             </a>
             <span className="hidden sm:inline text-content-muted">·</span>
             <a
-              href="https://calendly.com/astralamat/let-s-talk-about-your-work"
+              href="https://calendly.com/astral-integration/free-strategy-call"
               target="_blank"
               rel="noopener noreferrer"
               className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
@@ -413,7 +413,7 @@ export default function HomePage() {
                   </button>
                   <span className="text-content-muted text-body-sm">or</span>
                   <a
-                    href="https://calendly.com/astralamat/let-s-talk-about-your-work"
+                    href="https://calendly.com/astral-integration/free-strategy-call"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"

@@ -215,7 +215,7 @@ export default function ContactPage() {
                   Book a free 30-minute strategy call. No pitch — just a conversation about your work and what the right infrastructure might look like.
                 </p>
                 <a
-                  href="https://calendly.com/astralamat/let-s-talk-about-your-work"
+                  href="https://calendly.com/astral-integration/free-strategy-call"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-8 py-3 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
