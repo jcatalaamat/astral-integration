@@ -93,12 +93,16 @@ export default function HomePage() {
           Your practice deserves<br />infrastructure that <em className="italic gradient-text">matches it.</em>
         </h1>
 
-        <p className="text-body text-content-secondary max-w-[640px] mt-8 relative z-10 animate-fadeUp animate-delay-500">
-          Unify your programs, retreats, community, and operations into one cohesive platform you fully own — built to evolve as your work grows.
+        <p className="text-body text-content-secondary max-w-[680px] mt-8 relative z-10 animate-fadeUp animate-delay-500">
+          Send me your messy notes — a voice memo at 2am, a Google Doc, a Notion page, a screenshot of your Instagram bio. I'll research your work, build your platform, wire your payments, set up your community, and hand you the keys.
+        </p>
+
+        <p className="text-body text-content-secondary max-w-[640px] mt-5 relative z-10 animate-fadeUp animate-delay-600">
+          One cohesive platform you fully own — built to evolve as your work grows.
         </p>
 
         <p className="text-body-sm text-content-muted mt-6 relative z-10 animate-fadeUp animate-delay-700">
-          Former CTO. Senior engineer. Your long-term technical partner.
+          Former CTO. Senior full-stack engineer. Your long-term technical partner.
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 mt-12 relative z-10 animate-fadeUp animate-delay-900">
