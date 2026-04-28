@@ -49,7 +49,7 @@ const investment = [
 const faqs = [
   {
     q: 'How is pricing determined?',
-    a: 'Every project is different — a practitioner launching her first platform needs different architecture than a school with 300 students across 9 certification levels. I scope and price based on what the work actually requires, not a menu. After our first conversation, I send a clear proposal with no surprises.',
+    a: 'Every project is different — a practitioner launching her first platform needs different architecture than a school with hundreds of students across multiple certification levels. I scope and price based on what the work actually requires, not a menu. After our first conversation, I send a clear proposal with no surprises.',
   },
   {
     q: 'What does the ongoing partnership include?',
@@ -180,7 +180,7 @@ export default function HowItWorksPage() {
             The model.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mb-16">
-            Every project is different — a practitioner launching her first platform needs different architecture than a school with 300 students across 9 certification levels. I scope and price based on what the work actually requires, not a menu.
+            Every project is different — a practitioner launching her first platform needs different architecture than a school with hundreds of students across multiple certification levels. I scope and price based on what the work actually requires, not a menu.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-3xl">

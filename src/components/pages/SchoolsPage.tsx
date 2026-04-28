@@ -302,14 +302,14 @@ export default function SchoolsPage() {
             Built for schools that are growing.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mb-16">
-            Every school is different — a practitioner launching her first certification needs different architecture than an academy with 300 students across 9 levels. I scope and price based on what the work actually requires.
+            Every school is different — a practitioner launching her first certification needs different architecture than an academy with hundreds of students across multiple levels. I scope and price based on what the work actually requires.
           </p>
 
           <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
-                { label: 'Platform build', value: '$5,000 – $10,000', detail: 'Scoped to your needs' },
-                { label: 'Ongoing partnership', value: '$1,000 – $2,000/mo', detail: 'Maintenance & evolution' },
+                { label: 'Custom build', value: 'From $2,000', detail: 'Scoped to your needs · custom from start' },
+                { label: 'Ongoing partnership', value: 'From $200/mo', detail: 'Maintenance & evolution' },
                 { label: 'Timeline', value: '2 – 6 weeks', detail: 'To launch' },
               ].map((item, i) => (
                 <div key={i}>

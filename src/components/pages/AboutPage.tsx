@@ -143,7 +143,7 @@ export default function AboutPage() {
               I ended up in Mazunte — a small village on the Oaxacan coast where half the town is practitioners, facilitators, artists, and builders of alternative schools and projects. And I saw the same pattern everywhere: brilliant people running powerful work on scattered tools that were never built for them.
             </p>
             <p className="text-body text-content-secondary leading-relaxed">
-              A Reiki Master Teacher with 300 students tracking everything in Google Sheets. A retreat center with five revenue streams managed on WhatsApp. A community with no digital home except Facebook groups. A touring facilitator juggling eight different ticketing platforms.
+              A retreat center with five revenue streams managed on WhatsApp. A community with no digital home except Facebook groups. A textile artisan whose work was scattered across Instagram. A writer with no editorial home. A regenerative land project trying to communicate its vision to aligned families.
             </p>
             <p className="text-body text-content-secondary leading-relaxed">
               I knew how to build the systems these people needed. And I understood — from the inside — why generic platforms would never work for them. A certification isn't a Udemy course. A retreat isn't a hotel booking. A healing practice isn't a SaaS business. The architecture has to reflect the work.
