@@ -160,7 +160,7 @@ export default function ProcessPage() {
             </p>
 
             <a
-              href="/review"
+              href="/contact"
               className="inline-block px-10 py-4 bg-content-primary text-studio-bg hover:bg-content-primary/90 active:bg-content-primary/80 transition-colors text-body font-medium"
             >
               Request a Review
