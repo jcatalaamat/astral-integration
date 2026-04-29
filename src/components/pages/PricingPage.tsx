@@ -27,8 +27,8 @@ const tiers = [
     name: 'Systems',
     who: 'For schools & structured programs.',
     desc: 'You have students, clients, or guests — certifications, multiple revenue streams, a real following. You don\'t just need a website. You need a platform and a technical partner who owns it.',
-    build: '$5,000 – $10,000',
-    monthly: '$1,000 – $2,000/mo',
+    build: '$5,000 – $8,000',
+    monthly: 'From $500/mo',
     timeline: '3–6 weeks',
     includes: [
       'Everything in Launch',
@@ -53,8 +53,8 @@ const tiers = [
     name: 'Ecosystem',
     who: 'For centers, multi-program, and network operations.',
     desc: 'Your methodology is taught by hundreds of facilitators across countries and languages. The infrastructure needs to match.',
-    build: '$10,000+',
-    monthly: 'Custom monthly / rev share',
+    build: '$8,000+',
+    monthly: 'From $800/mo',
     timeline: '6–12 weeks',
     includes: [
       'Everything in Systems',
