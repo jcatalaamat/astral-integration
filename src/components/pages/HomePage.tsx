@@ -11,8 +11,8 @@ const featured = caseStudies.slice(0, 4);
 
 export default function HomePage() {
   useDocumentMeta({
-    title: 'Astral Integration — Your practice deserves infrastructure that matches it.',
-    description: 'Senior engineer and former CTO building custom digital infrastructure for schools, practices, and original work — from first platform to global scale. Long-term technical partnership.',
+    title: 'Astral Integration — We take a % of what you make. No upfront. No fees.',
+    description: 'We build custom digital infrastructure for artists, creatives, changemakers, practitioners, facilitators, and organizations. No upfront cost — we take a small % of what you make. Aligned partnership from day one.',
     ogUrl: 'https://astralintegration.co/',
   });
 

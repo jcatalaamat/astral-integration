@@ -40,8 +40,8 @@ const realBuilds = [
 
 export default function MakersPage() {
   useDocumentMeta({
-    title: 'For Makers & Artisans — Astral Integration',
-    description: 'Your craft deserves a digital home that honors the work — not a marketplace template, not Etsy fees. Custom sites for textile artisans, slow-fashion brands, ceramicists, writers, and bespoke makers.',
+    title: 'For Makers & Artisans — 5% rev share, no upfront — Astral Integration',
+    description: 'Your craft deserves a digital home that honors the work — not a marketplace template, not Etsy fees. Custom sites for textile artisans, slow-fashion brands, ceramicists, writers, and bespoke makers. No upfront cost — we take 5% of what you sell. Boutique tier.',
     ogUrl: 'https://astralintegration.co/makers',
   });
 

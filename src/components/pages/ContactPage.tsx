@@ -8,7 +8,7 @@ import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 export default function ContactPage() {
   useDocumentMeta({
     title: 'Contact — Astral Integration',
-    description: 'Tell me about your work. I take on a small number of partnerships at a time — healers, schools, retreat centers, and original work that needs custom digital infrastructure.',
+    description: 'Tell us about your work. We take on a small number of partnerships at a time — artists, creatives, changemakers, practitioners, facilitators, and organizations needing custom digital infrastructure. No upfront cost — aligned partnership from day one.',
     ogUrl: 'https://astralintegration.co/contact',
   });
 

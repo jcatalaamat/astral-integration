@@ -23,8 +23,8 @@ const systemCapabilities = [
 
 export default function SchoolsPage() {
   useDocumentMeta({
-    title: 'For Schools & Academies — Astral Integration',
-    description: 'Your certification program deserves more than a spreadsheet. Multi-level progression, student tracking, practitioner directories, and AI assistants — built for how schools actually work.',
+    title: 'For Schools & Academies — 12% rev share, no upfront — Astral Integration',
+    description: 'Your certification program deserves more than a spreadsheet. Multi-level progression, student tracking, practitioner directories, and AI assistants — built for how schools actually work. No upfront cost — we take 12% of platform revenue. Membership tier.',
     ogUrl: 'https://astralintegration.co/schools',
   });
 

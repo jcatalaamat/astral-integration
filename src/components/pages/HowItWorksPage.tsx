@@ -80,7 +80,7 @@ const faqs = [
 export default function HowItWorksPage() {
   useDocumentMeta({
     title: 'How It Works — Astral Integration',
-    description: 'The partnership model: how I build, what it costs, and how the long-term relationship works. Pricing, process, and frequently asked questions.',
+    description: 'How the partnership works: we build first at no cost, then take a small % of what you make (5–15% based on what we build). Aligned incentives from day one. Process, pricing, FAQ.',
     ogUrl: 'https://astralintegration.co/how-it-works',
   });
 
