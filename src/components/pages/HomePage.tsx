@@ -4,10 +4,7 @@ import { CheckCircle } from 'lucide-react';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
-import { caseStudies } from '../../data/caseStudies';
-
-// Show 4 featured case studies on homepage
-const featured = caseStudies.slice(0, 4);
+import { caseStudies, CaseStudy } from '../../data/caseStudies';
 
 export default function HomePage() {
   useDocumentMeta({
@@ -27,6 +24,18 @@ export default function HomePage() {
     const t = setInterval(() => setWordIndex((i) => (i + 1) % rotatingWords.length), 2400);
     return () => clearInterval(t);
   }, []);
+
+  const [activeStudy, setActiveStudy] = useState<CaseStudy | null>(null);
+  useEffect(() => {
+    if (!activeStudy) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setActiveStudy(null); };
+    window.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [activeStudy]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -208,48 +217,65 @@ export default function HomePage() {
             Different problems, different architectures. Same principle: original work, custom infrastructure, long-term partnership.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {featured.map((study) => (
-              <div
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {caseStudies.map((study) => (
+              <button
                 key={study.slug}
-                className="bg-dark-card border border-border rounded-2xl overflow-hidden hover:border-accent/40 transition-all group"
+                onClick={() => study.url && setActiveStudy(study)}
+                disabled={!study.url}
+                className="bg-dark-card border border-border rounded-2xl overflow-hidden hover:border-accent/50 hover:shadow-glow transition-all group text-left flex flex-col disabled:cursor-not-allowed disabled:opacity-70"
               >
-                <a href={`/work/${study.slug}`} className="block">
-                  <div className={`w-full border-b border-border bg-gradient-to-br ${study.gradient} p-6`}>
-                    <h3 className="font-serif text-h3 font-light group-hover:text-accent transition-colors">{study.client}</h3>
-                    <p className="text-meta uppercase text-gold mt-1">{study.type}</p>
+                {/* browser frame + live iframe preview */}
+                <div className="relative w-full aspect-[16/10] overflow-hidden border-b border-border bg-dark-bg">
+                  {/* browser chrome */}
+                  <div className="absolute top-0 left-0 right-0 h-7 bg-dark-bg/95 backdrop-blur border-b border-border flex items-center px-3 gap-2 z-10">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
+                    <span className="ml-2 text-[10px] font-mono uppercase tracking-wider text-content-muted truncate">
+                      {study.url ? new URL(study.url).hostname : 'private portal'}
+                    </span>
                   </div>
-                  <div className="p-6 pb-3">
-                    <p className="text-body-sm text-content-secondary leading-relaxed line-clamp-3">{study.challenge}</p>
-                  </div>
-                </a>
-                <div className="px-6 pb-5 flex items-center gap-4">
-                  <a href={`/work/${study.slug}`} className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-1">
-                    Case study <span aria-hidden="true">&rarr;</span>
-                  </a>
+                  {/* preview iframe — scaled down */}
                   {study.url ? (
-                    <a
-                      href={study.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-body-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1"
-                    >
-                      Visit site <span aria-hidden="true">&rarr;</span>
-                    </a>
-                  ) : study.status === 'In progress' ? (
-                    <span className="text-meta uppercase text-content-muted">Private portal</span>
-                  ) : null}
+                    <div className="absolute top-7 left-0 w-[1280px] h-[800px] origin-top-left pointer-events-none" style={{ transform: 'scale(0.3125)' }}>
+                      <iframe
+                        src={study.url}
+                        title={`${study.client} preview`}
+                        className="w-full h-full border-0"
+                        loading="lazy"
+                        sandbox="allow-same-origin allow-scripts"
+                      />
+                    </div>
+                  ) : (
+                    <div className={`absolute inset-0 top-7 bg-gradient-to-br ${study.gradient} flex items-center justify-center`}>
+                      <span className="text-meta uppercase text-content-muted tracking-wider">private portal</span>
+                    </div>
+                  )}
+                  {/* hover overlay */}
+                  <div className="absolute inset-0 bg-dark-bg/0 group-hover:bg-dark-bg/30 transition-all flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100">
+                    <span className="px-4 py-2 bg-accent text-white text-meta uppercase tracking-wider rounded-full">
+                      Open preview →
+                    </span>
+                  </div>
                 </div>
-              </div>
+
+                {/* card body */}
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="font-serif text-h4 font-light group-hover:text-accent transition-colors">{study.client}</h3>
+                  <p className="text-meta uppercase text-gold mt-1 mb-3">{study.category}</p>
+                  <p className="text-body-sm text-content-secondary leading-relaxed line-clamp-3 flex-1">{study.challenge}</p>
+                </div>
+              </button>
             ))}
           </div>
 
-          <div className="mt-10 text-center">
+          <div className="mt-12 text-center">
             <a
               href="/work"
               className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
             >
-              All {caseStudies.length} case studies <span aria-hidden="true">&rarr;</span>
+              Full case study writeups <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </div>
@@ -460,6 +486,81 @@ export default function HomePage() {
       </section>
 
       <Footer />
+
+      {/* ═══════ CASE STUDY PREVIEW MODAL ═══════ */}
+      {activeStudy && (
+        <div
+          className="fixed inset-0 z-[100] bg-dark-bg/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 animate-fadeUp"
+          onClick={() => setActiveStudy(null)}
+        >
+          <div
+            className="relative w-full max-w-[1400px] h-full max-h-[90vh] bg-dark-card border border-border rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* close button */}
+            <button
+              onClick={() => setActiveStudy(null)}
+              aria-label="Close preview"
+              className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-dark-bg/90 hover:bg-accent border border-border hover:border-accent flex items-center justify-center text-content-secondary hover:text-white transition-all"
+            >
+              ✕
+            </button>
+
+            {/* iframe column */}
+            <div className="flex-1 bg-dark-bg flex flex-col min-h-0">
+              {/* browser chrome */}
+              <div className="h-9 bg-dark-bg border-b border-border flex items-center px-4 gap-2 flex-shrink-0">
+                <span className="w-3 h-3 rounded-full bg-red-400/60" />
+                <span className="w-3 h-3 rounded-full bg-yellow-400/60" />
+                <span className="w-3 h-3 rounded-full bg-green-400/60" />
+                <span className="ml-3 text-meta font-mono text-content-muted">
+                  {activeStudy.url ? new URL(activeStudy.url).hostname : ''}
+                </span>
+              </div>
+              {activeStudy.url && (
+                <iframe
+                  src={activeStudy.url}
+                  title={activeStudy.client}
+                  className="w-full flex-1 border-0 bg-white"
+                  sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                />
+              )}
+            </div>
+
+            {/* info column */}
+            <div className="md:w-[380px] p-6 md:p-8 overflow-y-auto bg-dark-card border-t md:border-t-0 md:border-l border-border flex-shrink-0">
+              <p className="text-meta uppercase text-accent mb-2">{activeStudy.category}</p>
+              <h3 className="font-serif text-h2 font-light mb-2">{activeStudy.client}</h3>
+              <p className="text-meta uppercase text-gold mb-6">{activeStudy.type}</p>
+
+              <p className="text-body-sm text-content-secondary leading-relaxed mb-6 line-clamp-[12]">{activeStudy.challenge}</p>
+
+              <div className="flex flex-col gap-3">
+                <a
+                  href={`/work/${activeStudy.slug}`}
+                  className="px-6 py-3 bg-accent text-white rounded-full text-body-sm font-medium btn-glow text-center"
+                >
+                  Read full case study
+                </a>
+                {activeStudy.url && (
+                  <a
+                    href={activeStudy.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-transparent text-content-secondary border border-border rounded-full text-body-sm font-medium hover:border-border-hover hover:text-content-primary transition-all text-center inline-flex items-center justify-center gap-2"
+                  >
+                    Visit live site <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </div>
+
+              <p className="text-meta text-content-muted mt-6">
+                Press <kbd className="px-1.5 py-0.5 bg-dark-bg border border-border rounded text-[10px]">Esc</kbd> or click outside to close.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
