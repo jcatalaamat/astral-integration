@@ -40,8 +40,8 @@ const process = [
 ];
 
 const investment = [
-  { label: 'Custom build', value: 'From $2,000', note: 'Scoped to your needs · custom from start' },
-  { label: 'Ongoing partnership', value: 'From $200/month', note: 'Maintenance, updates, evolution' },
+  { label: 'Upfront cost', value: '$0', note: 'No fees · we build first' },
+  { label: 'Revenue share', value: '5–15%', note: 'Above $5K/mo · scoped to scope' },
   { label: 'Timeline', value: '2–6 weeks', note: 'To launch' },
   { label: 'Ownership', value: 'Yours. All of it.', note: 'Code, data, domain. From day one.' },
 ];

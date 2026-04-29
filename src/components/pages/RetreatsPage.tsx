@@ -329,8 +329,8 @@ export default function RetreatsPage() {
           <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
-                { label: 'Custom build', value: 'From $2,000', detail: 'Scoped to your needs · custom from start' },
-                { label: 'Ongoing partnership', value: 'From $200/mo', detail: 'Maintenance & evolution' },
+                { label: 'Upfront cost', value: '$0', detail: 'No fees · we build first' },
+                { label: 'Revenue share', value: '5–15%', detail: 'Above $5K/mo · scoped to scope' },
                 { label: 'Timeline', value: '2 – 6 weeks', detail: 'To launch' },
               ].map((item, i) => (
                 <div key={i}>
