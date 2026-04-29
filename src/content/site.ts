@@ -10,6 +10,6 @@ export const site = {
 export const meta = {
   home: {
     title: 'Astral Integration — Growth Systems for Soul-Led Businesses',
-    description: 'AI-powered platforms, websites, and automations for healers, coaches, retreat centers, and creators who are ready to scale without losing their soul.'
+    description: 'AI-powered platforms, websites, and automations for artists, creatives, changemakers, practitioners, facilitators, and organizations ready to scale without losing their soul.'
   }
 };

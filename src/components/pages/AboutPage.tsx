@@ -169,7 +169,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-[1fr_1fr] gap-12 items-start">
             <div className="space-y-5">
               <p className="text-body text-content-secondary leading-relaxed">
-                I've trained in multiple modalities — Access Bars, Theta Healing, Reiki, Gene Keys, Family Constellations, Ashtanga, Vinyasa, Yin, Kundalini, transpersonal work, psychedelic integration, ceremony, holding space — not because I planned to build platforms for practitioners, but because the work called. Each training changed how I understand what practitioners actually need from their infrastructure.
+                I've trained in multiple modalities — Access Bars, Theta Healing, Reiki, Gene Keys, Family Constellations, Ashtanga, Vinyasa, Yin, Kundalini, transpersonal work, psychedelic integration, ceremony, holding space — not because I planned to build platforms for the people doing this work, but because the work called. Each training changed how I understand what artists, creatives, changemakers, practitioners, facilitators, and organizations actually need from their infrastructure.
               </p>
               <p className="text-body text-content-secondary leading-relaxed">
                 When I build a booking flow for a healer, I know why the intake matters. When I design a certification system, I understand what progression feels like from the student's side. When I build a community platform, I know what containers are — not just "forums with premium access."

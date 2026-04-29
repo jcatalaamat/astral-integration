@@ -51,7 +51,7 @@ export default function InsightsPage() {
             Thinking on infrastructure, platforms, and <em className="italic gradient-text">original work.</em>
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            Notes on what I see building platforms for practitioners, schools, retreat centers, and communities — the patterns, the problems, and why most off-the-shelf tools were never designed for this work.
+            Notes on what I see building platforms for artists, creatives, changemakers, practitioners, facilitators, and organizations — the patterns, the problems, and why most off-the-shelf tools were never designed for this work.
           </p>
         </div>
       </section>

@@ -342,7 +342,7 @@ export default function HomePage() {
             <div>
               <h2 className="font-serif text-h2 font-light mb-4">Jordi Amat.</h2>
               <p className="text-body text-content-secondary leading-relaxed mb-4">
-                Senior full-stack engineer. Former CTO. Access Bars practitioner. I spent a decade building production systems and leading engineering teams. Then I moved to Mazunte and started building for the people doing the most original work in education, healing, and community.
+                Senior full-stack engineer. Former CTO. Access Bars practitioner. I spent a decade building production systems and leading engineering teams. Then I moved to Mazunte and started building for artists, creatives, changemakers, practitioners, facilitators, and organizations — the people and groups doing the most original work.
               </p>
               <a
                 href="/about"
