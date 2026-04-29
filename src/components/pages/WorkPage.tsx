@@ -3,6 +3,7 @@ import Navigation from '../Navigation';
 import Footer from '../Footer';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { caseStudies, CaseStudy, CaseStudyCategory } from '../../data/caseStudies';
+import PreviewFrame from '../PreviewFrame';
 
 const filters: Array<{ label: string; value: CaseStudyCategory | 'All' }> = [
   { label: 'All', value: 'All' },
@@ -116,37 +117,14 @@ export default function WorkPage() {
               {study.url ? (
                 <button
                   onClick={() => setActiveStudy(study)}
-                  className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden border-b border-border bg-dark-bg group block"
+                  className="block w-full group"
                   aria-label={`Open ${study.client} preview`}
                 >
-                  {/* browser chrome */}
-                  <div className="absolute top-0 left-0 right-0 h-9 bg-dark-bg/95 backdrop-blur border-b border-border flex items-center px-4 gap-2 z-10">
-                    <span className="w-3 h-3 rounded-full bg-red-400/60" />
-                    <span className="w-3 h-3 rounded-full bg-yellow-400/60" />
-                    <span className="w-3 h-3 rounded-full bg-green-400/60" />
-                    <span className="ml-3 text-meta font-mono text-content-muted truncate">
-                      {new URL(study.url).hostname}
-                    </span>
-                    <span className="ml-auto text-meta uppercase tracking-wider text-content-muted opacity-0 group-hover:opacity-100 transition-opacity">
-                      Open preview →
-                    </span>
-                  </div>
-                  {/* scaled iframe */}
-                  <div className="absolute top-9 left-0 w-[1280px] h-[720px] origin-top-left pointer-events-none" style={{ transform: 'scale(0.5)' }}>
-                    <iframe
-                      src={study.url}
-                      title={`${study.client} preview`}
-                      className="w-full h-full border-0"
-                      loading="lazy"
-                      sandbox="allow-same-origin allow-scripts"
-                    />
-                  </div>
-                  {/* hover overlay */}
-                  <div className="absolute inset-0 bg-dark-bg/0 group-hover:bg-dark-bg/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
-                    <span className="px-6 py-3 bg-accent text-white text-meta uppercase tracking-wider rounded-full shadow-glow">
-                      Open live preview →
-                    </span>
-                  </div>
+                  <PreviewFrame
+                    url={study.url}
+                    className="aspect-[16/9] md:aspect-[21/9] border-b border-border"
+                    hoverHint="Open live preview →"
+                  />
                 </button>
               ) : (
                 <div className={`w-full aspect-[21/9] border-b border-border bg-gradient-to-br ${study.gradient} flex items-center justify-center`}>

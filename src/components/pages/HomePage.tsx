@@ -5,6 +5,7 @@ import Navigation from '../Navigation';
 import Footer from '../Footer';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { caseStudies, CaseStudy } from '../../data/caseStudies';
+import PreviewFrame from '../PreviewFrame';
 
 export default function HomePage() {
   useDocumentMeta({
@@ -225,40 +226,17 @@ export default function HomePage() {
                 disabled={!study.url}
                 className="bg-dark-card border border-border rounded-2xl overflow-hidden hover:border-accent/50 hover:shadow-glow transition-all group text-left flex flex-col disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {/* browser frame + live iframe preview */}
-                <div className="relative w-full aspect-[16/10] overflow-hidden border-b border-border bg-dark-bg">
-                  {/* browser chrome */}
-                  <div className="absolute top-0 left-0 right-0 h-7 bg-dark-bg/95 backdrop-blur border-b border-border flex items-center px-3 gap-2 z-10">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
-                    <span className="ml-2 text-[10px] font-mono uppercase tracking-wider text-content-muted truncate">
-                      {study.url ? new URL(study.url).hostname : 'private portal'}
-                    </span>
+                {/* live iframe preview, auto-scaled to card width */}
+                {study.url ? (
+                  <PreviewFrame
+                    url={study.url}
+                    className="aspect-[16/10] border-b border-border"
+                  />
+                ) : (
+                  <div className={`relative w-full aspect-[16/10] border-b border-border bg-gradient-to-br ${study.gradient} flex items-center justify-center`}>
+                    <span className="text-meta uppercase text-content-muted tracking-wider">private portal</span>
                   </div>
-                  {/* preview iframe — scaled down */}
-                  {study.url ? (
-                    <div className="absolute top-7 left-0 w-[1280px] h-[800px] origin-top-left pointer-events-none" style={{ transform: 'scale(0.3125)' }}>
-                      <iframe
-                        src={study.url}
-                        title={`${study.client} preview`}
-                        className="w-full h-full border-0"
-                        loading="lazy"
-                        sandbox="allow-same-origin allow-scripts"
-                      />
-                    </div>
-                  ) : (
-                    <div className={`absolute inset-0 top-7 bg-gradient-to-br ${study.gradient} flex items-center justify-center`}>
-                      <span className="text-meta uppercase text-content-muted tracking-wider">private portal</span>
-                    </div>
-                  )}
-                  {/* hover overlay */}
-                  <div className="absolute inset-0 bg-dark-bg/0 group-hover:bg-dark-bg/30 transition-all flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100">
-                    <span className="px-4 py-2 bg-accent text-white text-meta uppercase tracking-wider rounded-full">
-                      Open preview →
-                    </span>
-                  </div>
-                </div>
+                )}
 
                 {/* card body */}
                 <div className="p-6 flex flex-col flex-1">
