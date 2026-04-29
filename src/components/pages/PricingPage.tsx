@@ -99,43 +99,43 @@ const universals = [
 
 const faqs = [
   {
-    q: 'What if I\'m just starting out and don\'t have much revenue yet?',
-    a: 'The Boutique or Service tier is designed exactly for this. A solid foundation doesn\'t require a complex platform. We build what you need now, take a small share of revenue when you grow, and expand as you scale.',
+    q: 'There\'s really no upfront cost?',
+    a: 'Right. We build your platform at no cost to you. We only earn when your platform earns — and only on revenue above $5,000/month. Below that threshold, you owe nothing. We\'re betting on your success alongside you.',
+  },
+  {
+    q: 'How does the revenue share actually work?',
+    a: 'Each month you send us a Stripe export of platform revenue. We invoice the agreed % on revenue above the $5,000/month threshold. Refunds, processing fees, and taxes are deducted before the share is calculated. Audit rights once a year. All financials stay confidential.',
+  },
+  {
+    q: 'What counts as "platform revenue"?',
+    a: 'Revenue collected through the platform we built — bookings, course sales, retreat deposits, memberships, products. We don\'t take a share of in-person work that doesn\'t flow through the platform, or pre-existing offerings that weren\'t migrated to it.',
+  },
+  {
+    q: 'What if I\'m just starting out and don\'t have revenue yet?',
+    a: 'Perfect. We build now, you grow into it. The threshold means you owe nothing until you\'re winning. We\'re aligned: we want you to cross $5K/month as fast as possible, because that\'s when we both start being paid.',
   },
   {
     q: 'Can I upgrade tiers later?',
-    a: 'Yes. Most partnerships start at one tier and grow. A practitioner offering 1:1 sessions (Service) might launch a retreat series and move to Membership. A school that expands internationally might move from Membership to Systems. The rev share follows the build — when we add new features, the share goes up only on revenue from those features, not retroactively.',
+    a: 'Yes. Most partnerships start at one tier and grow. A practitioner offering 1:1 sessions (Service) might launch a retreat series and move to Membership. The rev share follows the build — when we add new features, the share goes up only on revenue from those features, not retroactively.',
   },
   {
-    q: 'What\'s the difference between a monthly retainer and hiring a developer?',
-    a: 'A developer builds what you tell them to build. A monthly retainer with me means I take ownership of your entire technical ecosystem — I make the decisions, anticipate problems, plan the roadmap, and build proactively. It\'s the difference between an employee and a CTO.',
+    q: 'How long is the partnership?',
+    a: 'The rev share term is 24 months from activation (when you first cross the threshold). After that, month-to-month with 60-day notice. During the initial term, mutual exit only — except in cases of breach or platform shutdown.',
   },
   {
-    q: 'Why is there a monthly partnership fee? Can\'t I just pay for the build?',
-    a: 'You can. But a platform without ongoing maintenance and evolution is like a car without oil changes. It works for six months, then things break, security becomes stale, and you\'re stuck with no one to call. The monthly partnership ensures your platform stays healthy, secure, and growing with you.',
-  },
-  {
-    q: 'What if I want to hire my own developer later?',
-    a: 'Great. I\'ll help you hire the right person, hand off the codebase with full documentation, and make sure the transition is clean. No lock-in, ever.',
-  },
-  {
-    q: 'Do you work with people outside the healing/education space?',
-    a: 'Occasionally, if the work resonates. But my deepest expertise is in schools, practices, retreats, and communities. That\'s where I build fastest, understand the most, and add the most value.',
-  },
-  {
-    q: 'How do you work with my existing tools?',
-    a: 'I assess everything you\'re currently using and recommend what to keep, what to replace, and what to integrate. I\'m not dogmatic about tools — if your Stripe setup works, we keep it. If Teachable is holding you back, we replace it.',
+    q: 'What if I want to buy out the rev share later?',
+    a: 'Possible — typically 6–12 months of average rev share paid as a lump sum. We negotiate fairly. The point isn\'t to lock you in; it\'s to align incentives long enough that the partnership pays off for both sides.',
   },
   {
     q: 'What does "you own everything" actually mean?',
-    a: 'The code lives in your GitHub (or I transfer it). The domain is in your name. The database is on your infrastructure. If our partnership ends tomorrow, you walk away with a fully functional platform and zero dependencies on me.',
+    a: 'The code lives in your GitHub (or we transfer it). The domain is in your name. The database is on your infrastructure. The Stripe / payment accounts are yours. If our partnership ends tomorrow, you walk away with a fully functional platform and zero dependencies on us. No lock-in. Ever.',
   },
 ];
 
 export default function PricingPage() {
   useDocumentMeta({
     title: 'Pricing — Astral Integration',
-    description: 'Clear pricing for custom digital platforms. Four tiers: Boutique, Service, Membership, Systems. One-time build + revenue share. You own everything from day one.',
+    description: 'We take a % of what you make. No upfront. No fees. Four tiers — Boutique 5%, Service 8%, Membership 12%, Systems 15% — based on what we build. You own everything from day one.',
     ogUrl: 'https://astralintegration.co/pricing',
   });
 
@@ -177,10 +177,10 @@ export default function PricingPage() {
             Pricing
           </p>
           <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
-            Clear pricing. <em className="italic gradient-text">No surprises.</em>
+            We take a % of what you make. <em className="italic gradient-text">No upfront. No fees.</em>
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            Every partnership is scoped to the work. Here's how pricing works so you know what to expect before we talk.
+            We build your platform and walk alongside you. When you make money, we share. When you don't, you owe nothing. Pure aligned partnership.
           </p>
         </div>
       </section>
@@ -190,16 +190,20 @@ export default function PricingPage() {
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <div className="max-w-prose">
             <p className="text-body text-content-secondary leading-relaxed mb-5">
-              Every engagement has two parts:
+              How this actually works:
             </p>
             <div className="space-y-4 mb-8">
               <div className="bg-dark-card border border-border rounded-xl p-6">
-                <p className="text-body text-content-primary font-medium mb-1">1. Foundation Build</p>
-                <p className="text-body-sm text-content-secondary">The initial platform that replaces your scattered tools with one cohesive system. This is a one-time investment based on scope.</p>
+                <p className="text-body text-content-primary font-medium mb-1">1. We build it. No cost to you.</p>
+                <p className="text-body-sm text-content-secondary">Custom platform, real code, your brand. Ships in 1–12 weeks depending on scope. You own everything from day one — code, data, domain.</p>
               </div>
               <div className="bg-dark-card border border-border rounded-xl p-6">
-                <p className="text-body text-content-primary font-medium mb-1">2. Monthly Partnership</p>
-                <p className="text-body-sm text-content-secondary">Ongoing technical leadership, maintenance, new features, and platform evolution. This is what makes it a partnership, not a project.</p>
+                <p className="text-body text-content-primary font-medium mb-1">2. We share when you grow.</p>
+                <p className="text-body-sm text-content-secondary">A small % of revenue from your platform — only above $5,000/month. Below that, you pay nothing. We're aligned: your wins are our wins.</p>
+              </div>
+              <div className="bg-dark-card border border-border rounded-xl p-6">
+                <p className="text-body text-content-primary font-medium mb-1">3. We stay alongside you.</p>
+                <p className="text-body-sm text-content-secondary">Maintenance, new features, technical leadership — included. Not a handoff. A partnership.</p>
               </div>
             </div>
           </div>
@@ -223,12 +227,12 @@ export default function PricingPage() {
 
                 <div className="space-y-4 mb-8">
                   <div>
-                    <p className="text-meta uppercase text-content-muted mb-1">Foundation build</p>
-                    <p className="font-serif text-h3 font-light text-accent">{tier.build}</p>
+                    <p className="text-meta uppercase text-content-muted mb-1">Upfront</p>
+                    <p className="font-serif text-h3 font-light text-content-secondary">$0</p>
                   </div>
                   <div>
                     <p className="text-meta uppercase text-content-muted mb-1">Revenue share</p>
-                    <p className="font-serif text-h3 font-light text-accent">{tier.monthly}</p>
+                    <p className="font-serif text-h2 font-light text-accent">{tier.monthly}</p>
                   </div>
                   <div>
                     <p className="text-meta uppercase text-content-muted mb-1">Timeline</p>
