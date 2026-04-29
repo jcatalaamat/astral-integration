@@ -21,6 +21,13 @@ export default function HomePage() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
 
+  const rotatingWords = ['practice', 'craft', 'teachings', 'art', 'community', 'business'];
+  const [wordIndex, setWordIndex] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setWordIndex((i) => (i + 1) % rotatingWords.length), 2400);
+    return () => clearInterval(t);
+  }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -90,15 +97,15 @@ export default function HomePage() {
         <div className="absolute w-[300px] h-[300px] bg-gold rounded-full blur-[100px] opacity-15 top-[30%] left-[10%] animate-float" style={{ animationDelay: '-14s' }} />
 
         <h1 className="font-serif text-display font-light max-w-[900px] relative z-10 animate-fadeUp animate-delay-300">
-          Your practice deserves<br />infrastructure that <em className="italic gradient-text">matches it.</em>
+          Your <em key={wordIndex} className="italic gradient-text inline-block animate-fadeUp">{rotatingWords[wordIndex]}</em><br />deserves infrastructure that matches it.
         </h1>
 
         <p className="text-body text-content-secondary max-w-[680px] mt-8 relative z-10 animate-fadeUp animate-delay-500">
-          Send me your messy notes — a voice memo at 2am, a Google Doc, a Notion page, a screenshot of your Instagram bio. I'll research your work, build your platform, wire your payments, set up your community, and hand you the keys.
+          We build the digital infrastructure. No upfront. We take a % of what you make.
         </p>
 
-        <p className="text-body text-content-secondary max-w-[640px] mt-5 relative z-10 animate-fadeUp animate-delay-600">
-          One cohesive platform you fully own — built to evolve as your work grows.
+        <p className="text-body text-content-secondary max-w-[680px] mt-5 relative z-10 animate-fadeUp animate-delay-600">
+          Send us your messy notes — a voice memo, a Google Doc, a screenshot of your Instagram bio. We'll research your work, build your platform, wire your payments, set up your community, and hand you the keys.
         </p>
 
         <p className="text-body-sm text-content-muted mt-6 relative z-10 animate-fadeUp animate-delay-700">
@@ -131,11 +138,11 @@ export default function HomePage() {
       <section className="py-section px-6 md:px-12">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <h2 className="font-serif text-display-sm font-light mb-8 max-w-[700px]">
-            You changed someone's life this week.
+            You inspired hundreds of people this weekend.
           </h2>
           <div className="max-w-prose space-y-5">
             <p className="text-body text-content-secondary leading-relaxed">
-              And then spent the weekend fighting five disconnected tools.
+              And then spent the next three days fighting five disconnected tools.
             </p>
             <p className="text-body text-content-muted leading-relaxed">
               Courses in one place.<br />
@@ -164,8 +171,9 @@ export default function HomePage() {
             Different work, different architecture. If you already know what you need, start here.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
+              { label: 'Makers', href: '/makers', desc: 'Artisans, creators, slow-fashion, writers selling craft' },
               { label: 'Practitioners', href: '/practitioners', desc: 'Healers, coaches, facilitators running on scattered tools' },
               { label: 'Schools', href: '/schools', desc: 'Certification programs and structured learning paths' },
               { label: 'Retreats', href: '/retreats', desc: 'Booking, intake, and multi-stream revenue' },

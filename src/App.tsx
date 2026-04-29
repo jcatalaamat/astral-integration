@@ -7,6 +7,7 @@ import ContactPage from './components/pages/ContactPage';
 import InsightsPage from './components/pages/InsightsPage';
 import BlogPostPage from './components/pages/BlogPostPage';
 import AccessPage from './components/pages/AccessPage';
+import MakersPage from './components/pages/MakersPage';
 import PractitionersPage from './components/pages/PractitionersPage';
 import SchoolsPage from './components/pages/SchoolsPage';
 import RetreatsPage from './components/pages/RetreatsPage';
@@ -35,6 +36,7 @@ function App() {
           <Route path="/insights" element={<InsightsPage />} />
           <Route path="/insights/:slug" element={<BlogPostPage />} />
           <Route path="/access" element={<AccessPage />} />
+          <Route path="/makers" element={<MakersPage />} />
           <Route path="/practitioners" element={<PractitionersPage />} />
           <Route path="/schools" element={<SchoolsPage />} />
           <Route path="/retreats" element={<RetreatsPage />} />

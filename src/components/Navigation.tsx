@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 const whoIHelpLinks = [
+  { label: 'Makers', href: '/makers' },
   { label: 'Practitioners', href: '/practitioners' },
   { label: 'Schools', href: '/schools' },
   { label: 'Retreats', href: '/retreats' },

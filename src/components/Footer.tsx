@@ -1,5 +1,6 @@
 export default function Footer() {
   const whoIHelp = [
+    { label: 'Makers', href: '/makers' },
     { label: 'Practitioners', href: '/practitioners' },
     { label: 'Schools', href: '/schools' },
     { label: 'Retreats', href: '/retreats' },

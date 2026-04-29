@@ -28,6 +28,7 @@ const ROUTES = [
   '/tools/life-os',
   '/tools/content-studio',
   '/access',
+  '/makers',
   '/practitioners',
   '/schools',
   '/retreats',
