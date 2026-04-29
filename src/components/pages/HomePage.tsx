@@ -297,7 +297,7 @@ export default function HomePage() {
           </div>
 
           <p className="text-body-sm text-content-muted mb-2">Every site is custom-built from scratch. No templates, no themes, no page builders.</p>
-          <p className="text-body-sm text-content-muted mb-2">No upfront fees. We build for free, then take a % of revenue once you're earning above $5K/month. Aligned partnership.</p>
+          <p className="text-body-sm text-content-muted mb-2">No upfront fees. We build for free, then take a small % of platform revenue from dollar one. Aligned partnership.</p>
           <p className="text-body-sm text-content-muted mb-2">You own everything. Code, data, domain. From day one.</p>
           <p className="text-body-sm text-content-muted mb-2">I stay on as your technical partner. My success is tied to yours.</p>
           <p className="text-body-sm text-content-muted mb-6 italic">Some people call this a fractional CTO. I just call it partnership.</p>

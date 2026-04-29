@@ -309,7 +309,7 @@ export default function PractitionersPage() {
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
                 { label: 'Upfront cost', value: '$0', detail: 'No fees · we build first' },
-                { label: 'Revenue share', value: '5–15%', detail: 'Above $5K/mo · scoped to scope' },
+                { label: 'Revenue share', value: '5–15%', detail: 'From dollar one · scoped to scope' },
                 { label: 'Timeline', value: '2 – 6 weeks', detail: 'To launch' },
               ].map((item, i) => (
                 <div key={i}>

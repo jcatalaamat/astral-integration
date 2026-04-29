@@ -283,7 +283,7 @@ export default function OrganizationsPage() {
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
                 { label: 'Upfront cost', value: '$0', detail: 'No fees · we build first' },
-                { label: 'Revenue share', value: '15%', detail: 'Above $5K/mo · Systems tier' },
+                { label: 'Revenue share', value: '15%', detail: 'From dollar one · Systems tier' },
                 { label: 'Timeline', value: '6 – 12 weeks', detail: 'Phased delivery' },
               ].map((item, i) => (
                 <div key={i}>

@@ -100,11 +100,11 @@ const universals = [
 const faqs = [
   {
     q: 'There\'s really no upfront cost?',
-    a: 'Right. We build your platform at no cost to you. We only earn when your platform earns — and only on revenue above $5,000/month. Below that threshold, you owe nothing. We\'re betting on your success alongside you.',
+    a: 'Right. We build your platform at no cost to you. We only earn when your platform earns — a small % of revenue from dollar one. If your platform never earns, we never earn. We\'re betting on your success alongside you.',
   },
   {
     q: 'How does the revenue share actually work?',
-    a: 'Each month you send us a Stripe export of platform revenue. We invoice the agreed % on revenue above the $5,000/month threshold. Refunds, processing fees, and taxes are deducted before the share is calculated. Audit rights once a year. All financials stay confidential.',
+    a: 'Each month you send us a Stripe export of platform revenue. We invoice the agreed % on the prior month\'s gross. Refunds, processing fees, and taxes are deducted before the share is calculated. Audit rights once a year. All financials stay confidential.',
   },
   {
     q: 'What counts as "platform revenue"?',
@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     q: 'What if I\'m just starting out and don\'t have revenue yet?',
-    a: 'Perfect. We build now, you grow into it. The threshold means you owe nothing until you\'re winning. We\'re aligned: we want you to cross $5K/month as fast as possible, because that\'s when we both start being paid.',
+    a: 'Perfect. We build now, you grow into it. Our share scales with your revenue — small at the start, meaningful when you scale. We\'re aligned: we want you to grow as fast as possible, because we grow with you.',
   },
   {
     q: 'Can I upgrade tiers later?',
@@ -180,7 +180,7 @@ export default function PricingPage() {
             We take a % of what you make. <em className="italic gradient-text">No upfront. No fees.</em>
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            We build your platform and walk alongside you. When you make money, we share. When you don't, you owe nothing. Pure aligned partnership.
+            We build your platform and walk alongside you. We take a small % of your revenue — from dollar one. When you make money, we make money. Pure aligned partnership.
           </p>
         </div>
       </section>
@@ -198,8 +198,8 @@ export default function PricingPage() {
                 <p className="text-body-sm text-content-secondary">Custom platform, real code, your brand. Ships in 1–12 weeks depending on scope. You own everything from day one — code, data, domain.</p>
               </div>
               <div className="bg-dark-card border border-border rounded-xl p-6">
-                <p className="text-body text-content-primary font-medium mb-1">2. We share when you grow.</p>
-                <p className="text-body-sm text-content-secondary">A small % of revenue from your platform — only above $5,000/month. Below that, you pay nothing. We're aligned: your wins are our wins.</p>
+                <p className="text-body text-content-primary font-medium mb-1">2. We share what you make.</p>
+                <p className="text-body-sm text-content-secondary">A small % of revenue from your platform — from dollar one. We're aligned: your wins are our wins. The bigger you grow, the more we both make.</p>
               </div>
               <div className="bg-dark-card border border-border rounded-xl p-6">
                 <p className="text-body text-content-primary font-medium mb-1">3. We stay alongside you.</p>
