@@ -5,68 +5,85 @@ import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 
 const tiers = [
   {
-    name: 'Launch',
-    who: 'For solo practitioners.',
-    desc: 'You\'re running your practice on WhatsApp, Calendly, and a website that doesn\'t do what you need. You need a clean, professional digital home that actually works — and a technical partner who grows with you.',
+    name: 'Boutique',
+    who: 'For makers & artisans.',
+    desc: 'You make beautiful things. Your work needs a digital home that honors the craft — not a template, not a marketplace fee, not a generic shop.',
     build: '$2,000',
-    monthly: '$200/mo',
+    monthly: '5% rev share',
     timeline: '1–2 weeks',
     includes: [
-      'Custom website designed for your brand',
-      'Booking / scheduling system',
-      'Payment processing (Stripe)',
-      'Contact forms and basic email automation',
-      'Hosting, domain, SSL — all managed',
-      'Bug fixes and maintenance',
-      'Email and chat support',
+      'Custom-designed site',
+      'Product catalog · showcase',
+      'Inventory tracking',
+      'Stripe checkout',
+      'Order management',
+      'Mobile responsive · SEO',
+      'Hosting · SSL · backups',
+      '30-day bug warranty post-launch',
     ],
-    audience: 'Yoga teachers, massage therapists, coaches, healers, facilitators — anyone building their practice who needs a solid digital foundation.',
+    audience: 'Textile artisans, ceramicists, plant dyers, slow-fashion brands, bespoke makers, writers selling print work.',
     highlight: false,
   },
   {
-    name: 'Systems',
-    who: 'For schools & structured programs.',
-    desc: 'You have students, clients, or guests — certifications, multiple revenue streams, a real following. You don\'t just need a website. You need a platform and a technical partner who owns it.',
+    name: 'Service',
+    who: 'For solo practitioners & facilitators.',
+    desc: 'You teach, heal, hold space. Your bookings, payments, and brand should live in one place that feels like you — not five tools that don\'t talk.',
     build: '$5,000',
-    monthly: '$500/mo',
-    timeline: '3–6 weeks',
+    monthly: '8% rev share',
+    timeline: '2–3 weeks',
     includes: [
-      'Everything in Launch',
-      'Multi-offering platform (retreats + courses + membership, etc.)',
-      'Custom booking flows with intake questionnaires',
-      'Course or content delivery system',
-      'Membership portal with gated content',
-      'Client/student dashboard',
-      'Certification and progression systems',
-      'Practitioner or facilitator directory',
-      'AI assistant trained on your methodology',
-      'Email automation (onboarding sequences, reminders)',
-      'Bilingual / multilingual support',
-      'Weekly strategy calls',
-      'Architecture decisions and vendor management',
-      'CTO-level technical leadership',
+      'Everything in Boutique',
+      'Booking calendar (1:1 + group)',
+      'Pre-session intake forms',
+      'Email automation (confirmations, reminders)',
+      'Testimonials · press · lineage',
+      'Multi-offering pages (sessions, workshops, retreats)',
+      'Direct partnership channel (no support tickets)',
     ],
-    audience: 'Schools with certification programs, retreat centers with multiple revenue streams, touring facilitators, established teachers with 500+ students, coaches with membership programs.',
+    audience: 'Yoga teachers, healers, coaches, breathwork facilitators, sound facilitators, integration therapists, touring teachers.',
+    highlight: false,
+  },
+  {
+    name: 'Membership',
+    who: 'For schools, retreat centers, communities.',
+    desc: 'Your work has students, members, retreats. People come back. The platform needs to remember them, host their journey, and grow with them.',
+    build: '$8,000',
+    monthly: '12% rev share',
+    timeline: '4–6 weeks',
+    includes: [
+      'Everything in Service',
+      'Member login · portal',
+      'Recurring subscription billing',
+      'Gated content',
+      'Courses · curriculum delivery',
+      'Community space (forum, threads)',
+      'Member directory',
+      'Drip sequences (onboarding, re-engagement)',
+      'Multi-stream revenue routing',
+    ],
+    audience: 'Retreat centers, certification schools, ceremony houses, multi-program teachers, women\'s circles, men\'s groups.',
     highlight: true,
   },
   {
-    name: 'Ecosystem',
-    who: 'For centers, multi-program, and network operations.',
-    desc: 'Your methodology is taught by hundreds of facilitators across countries and languages. The infrastructure needs to match.',
-    build: '$8,000',
-    monthly: '$800/mo',
+    name: 'Systems',
+    who: 'For multi-program organizations & networks.',
+    desc: 'Your methodology is taught by hundreds. Multiple languages, regions, programs. The infrastructure needs to match the scale of the work.',
+    build: '$12,000',
+    monthly: '15% rev share',
     timeline: '6–12 weeks',
     includes: [
-      'Everything in Systems',
-      'Multi-region facilitator management',
-      'Cross-timezone scheduling and coordination',
-      'Credential verification systems',
-      'Regional admin dashboards',
-      'Multi-language content management',
-      'Dedicated technical leadership',
-      'Custom integrations and API development',
+      'Everything in Membership',
+      'Multilingual (2+ languages)',
+      'AI assistant trained on your methodology',
+      'Certification + progression tracking',
+      'Public practitioner directory (auto-populated)',
+      'Custom workflows + automations',
+      'API integrations to existing tools',
+      'Advanced analytics + dashboards',
+      'Multi-region / sub-brand support',
+      'CTO-level technical leadership',
     ],
-    audience: 'Organizations with facilitators in multiple countries, franchise-like certification systems, large networks.',
+    audience: 'Lineage organizations, global certification programs, methodology networks (Mariana Harpreet, Jugat Guru, KRI, 3HO scale).',
     highlight: false,
   },
 ];
@@ -83,11 +100,11 @@ const universals = [
 const faqs = [
   {
     q: 'What if I\'m just starting out and don\'t have much revenue yet?',
-    a: 'The Launch tier is designed exactly for this. A solid foundation doesn\'t require a complex platform. We build what you need now and expand as you grow.',
+    a: 'The Boutique or Service tier is designed exactly for this. A solid foundation doesn\'t require a complex platform. We build what you need now, take a small share of revenue when you grow, and expand as you scale.',
   },
   {
     q: 'Can I upgrade tiers later?',
-    a: 'Yes. Most partnerships start at one level and grow. A practitioner who launches a retreat series might move from Launch to Systems. A school that expands internationally might move from Systems to Ecosystem. The platform evolves with you.',
+    a: 'Yes. Most partnerships start at one tier and grow. A practitioner offering 1:1 sessions (Service) might launch a retreat series and move to Membership. A school that expands internationally might move from Membership to Systems. The rev share follows the build — when we add new features, the share goes up only on revenue from those features, not retroactively.',
   },
   {
     q: 'What\'s the difference between a monthly retainer and hiring a developer?',
@@ -118,7 +135,7 @@ const faqs = [
 export default function PricingPage() {
   useDocumentMeta({
     title: 'Pricing — Astral Integration',
-    description: 'Clear pricing for custom digital platforms. Three tiers: Launch, Systems, and Ecosystem. Foundation build + monthly partnership. You own everything from day one.',
+    description: 'Clear pricing for custom digital platforms. Four tiers: Boutique, Service, Membership, Systems. One-time build + revenue share. You own everything from day one.',
     ogUrl: 'https://astralintegration.co/pricing',
   });
 
@@ -192,7 +209,7 @@ export default function PricingPage() {
       {/* Tiers */}
       <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {tiers.map((tier, i) => (
               <div
                 key={i}
@@ -210,7 +227,7 @@ export default function PricingPage() {
                     <p className="font-serif text-h3 font-light text-accent">{tier.build}</p>
                   </div>
                   <div>
-                    <p className="text-meta uppercase text-content-muted mb-1">Monthly partnership</p>
+                    <p className="text-meta uppercase text-content-muted mb-1">Revenue share</p>
                     <p className="font-serif text-h3 font-light text-accent">{tier.monthly}</p>
                   </div>
                   <div>
@@ -286,7 +303,7 @@ export default function PricingPage() {
               <span className="w-8 h-px bg-accent" />
               Revenue-Aligned Option
             </p>
-            <h3 className="font-serif text-h3 mb-4">For Systems and Ecosystem partnerships.</h3>
+            <h3 className="font-serif text-h3 mb-4">For Membership and Systems partnerships.</h3>
             <p className="text-body-sm text-content-secondary leading-relaxed mb-6">
               I also offer an option where part of my compensation is tied to the revenue processed through your platform.
             </p>
