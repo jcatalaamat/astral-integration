@@ -217,7 +217,7 @@ export default function HomePage() {
             Different problems, different architectures. Same principle: original work, custom infrastructure, long-term partnership.
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {caseStudies.map((study) => (
               <button
                 key={study.slug}
