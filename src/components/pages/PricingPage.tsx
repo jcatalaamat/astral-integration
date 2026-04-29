@@ -8,8 +8,8 @@ const tiers = [
     name: 'Launch',
     who: 'For solo practitioners.',
     desc: 'You\'re running your practice on WhatsApp, Calendly, and a website that doesn\'t do what you need. You need a clean, professional digital home that actually works — and a technical partner who grows with you.',
-    build: '$2,000 – $3,000',
-    monthly: 'From $200/mo',
+    build: '$2,000',
+    monthly: '$200/mo (10% of build)',
     timeline: '1–2 weeks',
     includes: [
       'Custom website designed for your brand',
@@ -27,8 +27,8 @@ const tiers = [
     name: 'Systems',
     who: 'For schools & structured programs.',
     desc: 'You have students, clients, or guests — certifications, multiple revenue streams, a real following. You don\'t just need a website. You need a platform and a technical partner who owns it.',
-    build: '$5,000 – $8,000',
-    monthly: 'From $500/mo',
+    build: '$5,000',
+    monthly: '$500/mo (10% of build)',
     timeline: '3–6 weeks',
     includes: [
       'Everything in Launch',
@@ -53,8 +53,8 @@ const tiers = [
     name: 'Ecosystem',
     who: 'For centers, multi-program, and network operations.',
     desc: 'Your methodology is taught by hundreds of facilitators across countries and languages. The infrastructure needs to match.',
-    build: '$8,000+',
-    monthly: 'From $800/mo',
+    build: '$8,000',
+    monthly: '$800/mo (10% of build)',
     timeline: '6–12 weeks',
     includes: [
       'Everything in Systems',

@@ -165,7 +165,7 @@ export function recommendTier(businessType: BusinessType | null, features: Featu
   if (isSchool) {
     return {
       tier: 'Systems',
-      price: '$5,000 – $8,000 (scoped to your needs)',
+      price: '$5,000 (scoped to your needs)',
       timeline: '3–6 weeks',
     };
   }
