@@ -8,7 +8,6 @@ const tiers = [
     name: 'Boutique',
     who: 'For makers & artisans.',
     desc: 'You make beautiful things. Your work needs a digital home that honors the craft — not a template, not a marketplace fee, not a generic shop.',
-    build: '$2,000',
     monthly: '5% rev share',
     timeline: '1–2 weeks',
     includes: [
@@ -28,7 +27,6 @@ const tiers = [
     name: 'Service',
     who: 'For solo practitioners & facilitators.',
     desc: 'You teach, heal, hold space. Your bookings, payments, and brand should live in one place that feels like you — not five tools that don\'t talk.',
-    build: '$5,000',
     monthly: '8% rev share',
     timeline: '2–3 weeks',
     includes: [
@@ -47,7 +45,6 @@ const tiers = [
     name: 'Membership',
     who: 'For schools, retreat centers, communities.',
     desc: 'Your work has students, members, retreats. People come back. The platform needs to remember them, host their journey, and grow with them.',
-    build: '$8,000',
     monthly: '12% rev share',
     timeline: '4–6 weeks',
     includes: [
@@ -68,7 +65,6 @@ const tiers = [
     name: 'Systems',
     who: 'For multi-program organizations & networks.',
     desc: 'Your methodology is taught by hundreds. Multiple languages, regions, programs. The infrastructure needs to match the scale of the work.',
-    build: '$12,000',
     monthly: '15% rev share',
     timeline: '6–12 weeks',
     includes: [
@@ -100,43 +96,43 @@ const universals = [
 const faqs = [
   {
     q: 'There\'s really no upfront cost?',
-    a: 'Right. We build your platform at no cost to you. We only earn when your platform earns — a small % of revenue from dollar one. If your platform never earns, we never earn. We\'re betting on your success alongside you.',
+    a: 'Right. I build your platform at no cost to you. I only earn when your platform earns — a small % of revenue from dollar one. If your platform never earns, I never earn. I\'m betting on your success alongside you.',
   },
   {
     q: 'How does the revenue share actually work?',
-    a: 'Each month you send us a Stripe export of platform revenue. We invoice the agreed % on the prior month\'s gross. Refunds, processing fees, and taxes are deducted before the share is calculated. Audit rights once a year. All financials stay confidential.',
+    a: 'Each month you send me a Stripe export of platform revenue. I invoice the agreed % on the prior month\'s gross. Refunds, processing fees, and taxes are deducted before the share is calculated. Audit rights once a year. All financials stay confidential.',
   },
   {
     q: 'What counts as "platform revenue"?',
-    a: 'Revenue collected through the platform we built — bookings, course sales, retreat deposits, memberships, products. We don\'t take a share of in-person work that doesn\'t flow through the platform, or pre-existing offerings that weren\'t migrated to it.',
+    a: 'Revenue collected through the platform I built — bookings, course sales, retreat deposits, memberships, products. I don\'t take a share of in-person work that doesn\'t flow through the platform, or pre-existing offerings that weren\'t migrated to it.',
   },
   {
     q: 'What if I\'m just starting out and don\'t have revenue yet?',
-    a: 'Perfect. We build now, you grow into it. Our share scales with your revenue — small at the start, meaningful when you scale. We\'re aligned: we want you to grow as fast as possible, because we grow with you.',
+    a: 'Perfect. I build now, you grow into it. My share scales with your revenue — small at the start, meaningful when you scale. I want you to grow as fast as possible, because I grow with you.',
   },
   {
     q: 'Can I upgrade tiers later?',
-    a: 'Yes. Most partnerships start at one tier and grow. A practitioner offering 1:1 sessions (Service) might launch a retreat series and move to Membership. The rev share follows the build — when we add new features, the share goes up only on revenue from those features, not retroactively.',
+    a: 'Yes. Most partnerships start at one tier and grow. A practitioner offering 1:1 sessions (Service) might launch a retreat series and move to Membership. The rev share follows the build — when I add new features, the share goes up only on revenue from those features, not retroactively.',
   },
   {
     q: 'How long is the partnership?',
-    a: 'The rev share term is 24 months from activation (when you first cross the threshold). After that, month-to-month with 60-day notice. During the initial term, mutual exit only — except in cases of breach or platform shutdown.',
+    a: 'The rev share term is 24 months from launch. After that, month-to-month with 60-day notice. During the initial term, mutual exit only — except in cases of breach or platform shutdown.',
   },
   {
     q: 'What if I want to buy out the rev share later?',
-    a: 'Possible — typically 6–12 months of average rev share paid as a lump sum. We negotiate fairly. The point isn\'t to lock you in; it\'s to align incentives long enough that the partnership pays off for both sides.',
+    a: 'Possible — typically 6–12 months of average rev share paid as a lump sum. I negotiate fairly. The point isn\'t to lock you in; it\'s to align incentives long enough that the partnership pays off for both sides.',
   },
   {
     q: 'What does "you own everything" actually mean?',
-    a: 'The code lives in your GitHub (or we transfer it). The domain is in your name. The database is on your infrastructure. The Stripe / payment accounts are yours. If our partnership ends tomorrow, you walk away with a fully functional platform and zero dependencies on us. No lock-in. Ever.',
+    a: 'The code lives in your GitHub (or I transfer it). The domain is in your name. The database is on your infrastructure. The Stripe / payment accounts are yours. If our partnership ends tomorrow, you walk away with a fully functional platform and zero dependencies on me. No lock-in. Ever.',
   },
 ];
 
 export default function PricingPage() {
   useDocumentMeta({
     title: 'Pricing — Astral Studio',
-    description: 'We take a % of what you make. No upfront. No fees. Four tiers — Boutique 5%, Service 8%, Membership 12%, Systems 15% — based on what we build. You own everything from day one.',
-    ogUrl: 'https://astralintegration.co/pricing',
+    description: 'I take a % of what you make. No upfront cost. Four tiers — Boutique 5%, Service 8%, Membership 12%, Systems 15% — based on what I build. You own everything from day one.',
+    ogUrl: 'https://astralstudio.io/pricing',
   });
 
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -177,10 +173,10 @@ export default function PricingPage() {
             Pricing
           </p>
           <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
-            We take a % of what you make. <em className="italic gradient-text">No upfront. No fees.</em>
+            I take a % of what you make. <em className="italic gradient-text">No upfront cost.</em>
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            We build your platform and walk alongside you. We take a small % of your revenue — from dollar one. When you make money, we make money. Pure aligned partnership.
+            I build your platform and stay alongside you. A small % of your revenue — from dollar one. When you make money, I make money. Aligned partnership.
           </p>
         </div>
       </section>
@@ -194,15 +190,15 @@ export default function PricingPage() {
             </p>
             <div className="space-y-4 mb-8">
               <div className="bg-dark-card border border-border rounded-xl p-6">
-                <p className="text-body text-content-primary font-medium mb-1">1. We build it. No cost to you.</p>
+                <p className="text-body text-content-primary font-medium mb-1">1. I build it. No cost to you.</p>
                 <p className="text-body-sm text-content-secondary">Custom platform, real code, your brand. Ships in 1–12 weeks depending on scope. You own everything from day one — code, data, domain.</p>
               </div>
               <div className="bg-dark-card border border-border rounded-xl p-6">
-                <p className="text-body text-content-primary font-medium mb-1">2. We share what you make.</p>
-                <p className="text-body-sm text-content-secondary">A small % of revenue from your platform — from dollar one. We're aligned: your wins are our wins. The bigger you grow, the more we both make.</p>
+                <p className="text-body text-content-primary font-medium mb-1">2. I take a small % of what you make.</p>
+                <p className="text-body-sm text-content-secondary">Revenue from your platform — from dollar one. Your wins are my wins. The bigger you grow, the more we both earn.</p>
               </div>
               <div className="bg-dark-card border border-border rounded-xl p-6">
-                <p className="text-body text-content-primary font-medium mb-1">3. We stay alongside you.</p>
+                <p className="text-body text-content-primary font-medium mb-1">3. I stay alongside you.</p>
                 <p className="text-body-sm text-content-secondary">Maintenance, new features, technical leadership — included. Not a handoff. A partnership.</p>
               </div>
             </div>
@@ -299,40 +295,6 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Revenue-Aligned Pricing */}
-      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
-        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
-          <div className="bg-dark-card border border-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
-            <p className="text-meta uppercase text-accent mb-4 flex items-center gap-4">
-              <span className="w-8 h-px bg-accent" />
-              Revenue-Aligned Option
-            </p>
-            <h3 className="font-serif text-h3 mb-4">For Membership and Systems partnerships.</h3>
-            <p className="text-body-sm text-content-secondary leading-relaxed mb-6">
-              I also offer an option where part of my compensation is tied to the revenue processed through your platform.
-            </p>
-
-            <div className="space-y-3 mb-6">
-              {[
-                'A percentage (typically 5\u201312%) of transactions processed through the platform I built',
-                'This can reduce your upfront and monthly costs',
-                'It means I\'m financially invested in your platform\'s success \u2014 not just its launch',
-                'Buyout option available at any time',
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                  <p className="text-body-sm text-content-secondary">{item}</p>
-                </div>
-              ))}
-            </div>
-
-            <p className="text-body-sm text-content-muted">
-              This isn't for every partnership. It makes sense when significant revenue flows through your platform (retreats, courses, memberships, events). For simpler sites, the standard model is a better fit. I'll recommend the right structure during our conversation.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-section px-6 md:px-12">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
@@ -369,18 +331,16 @@ export default function PricingPage() {
       <section className="py-section px-6 md:px-12 bg-dark-card">
         <div className="max-w-content mx-auto text-center reveal" ref={addRevealRef}>
           <h2 className="font-serif text-display-sm font-light mb-6">
-            Ready to talk?
+            Send me your project.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mx-auto mb-10">
-            I take on 3–5 partnerships at a time. If your work is ready for real infrastructure, let's have a conversation.
+            I take on 3–5 partnerships at a time. Tell me about your work and I'll send a clear proposal — scope, timeline, and the rev share that fits.
           </p>
           <a
-            href="https://calendly.com/astral-integration/free-strategy-call"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="inline-block px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
           >
-            Book a Call
+            Start a Conversation
           </a>
         </div>
       </section>

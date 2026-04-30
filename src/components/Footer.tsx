@@ -41,7 +41,7 @@ export default function Footer() {
               Custom digital infrastructure for schools, practices, retreat centers, and original work.
             </p>
             <p className="text-body-sm text-content-muted mt-4">
-              hello@astralintegration.co
+              hello@astralstudio.io
             </p>
           </div>
 

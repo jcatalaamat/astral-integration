@@ -346,7 +346,7 @@ export default function MakersPage() {
                   Book a call directly <span aria-hidden="true">→</span>
                 </a>
               </div>
-              {formStatus === 'error' && <p className="text-meta text-red-400">Something went wrong. Try again or email hello@astralintegration.co directly.</p>}
+              {formStatus === 'error' && <p className="text-meta text-red-400">Something went wrong. Try again or email hello@astralstudio.io directly.</p>}
             </form>
           </div>
         </div>

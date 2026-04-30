@@ -22,7 +22,7 @@ const process = [
     details: [
       'Weekly progress updates — you see the platform taking shape in real time',
       'Your content, your logic, your brand. I handle the engineering',
-      'Iterative — we adjust as we go based on what we learn',
+      'Iterative — I adjust as we go based on what we learn',
       'You\'re involved in key decisions but never managing a developer',
     ],
   },
@@ -40,8 +40,8 @@ const process = [
 ];
 
 const investment = [
-  { label: 'Upfront cost', value: '$0', note: 'No fees · we build first' },
-  { label: 'Revenue share', value: '5–15%', note: 'Above $5K/mo · scoped to scope' },
+  { label: 'Upfront cost', value: '$0', note: 'No fees · I build first' },
+  { label: 'Revenue share', value: '5–15%', note: 'From dollar one · based on scope' },
   { label: 'Timeline', value: '2–6 weeks', note: 'To launch' },
   { label: 'Ownership', value: 'Yours. All of it.', note: 'Code, data, domain. From day one.' },
 ];
@@ -80,8 +80,8 @@ const faqs = [
 export default function HowItWorksPage() {
   useDocumentMeta({
     title: 'How It Works — Astral Studio',
-    description: 'How the partnership works: we build first at no cost, then take a small % of what you make (5–15% based on what we build). Aligned incentives from day one. Process, pricing, FAQ.',
-    ogUrl: 'https://astralintegration.co/how-it-works',
+    description: 'How the partnership works: I build first at no cost, then take a small % of what you make (5–15% based on scope). Aligned incentives from day one. Process, pricing, FAQ.',
+    ogUrl: 'https://astralstudio.io/how-it-works',
   });
 
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -246,7 +246,7 @@ export default function HowItWorksPage() {
             No pitch. No pressure. Tell me about your work and let's figure out if this is the right fit.
           </p>
           <a
-            href="/#contact"
+            href="/contact"
             className="inline-block px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
           >
             Start a Conversation

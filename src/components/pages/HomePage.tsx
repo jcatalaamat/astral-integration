@@ -443,7 +443,7 @@ export default function HomePage() {
                 <CheckCircle className="w-12 h-12 text-accent mx-auto mb-6" />
                 <h3 className="font-serif text-h2 mb-4">Message received.</h3>
                 <p className="text-body text-content-secondary mb-3">I'll get back to you within 24–48 hours.</p>
-                <p className="text-body-sm text-content-muted mb-8">Check your inbox for a reply from hello@astralintegration.co</p>
+                <p className="text-body-sm text-content-muted mb-8">Check your inbox for a reply from hello@astralstudio.io</p>
                 <button onClick={() => setFormStatus('idle')} className="text-body-sm text-accent hover:underline">
                   Send another message
                 </button>
@@ -451,7 +451,7 @@ export default function HomePage() {
             )}
 
             <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row gap-6 sm:items-center">
-              <p className="text-body-sm text-content-muted">hello@astralintegration.co</p>
+              <p className="text-body-sm text-content-muted">hello@astralstudio.io</p>
               <a
                 href="/contact"
                 className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"

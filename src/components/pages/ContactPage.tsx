@@ -194,7 +194,7 @@ export default function ContactPage() {
                     I'll get back to you within 24–48 hours.
                   </p>
                   <p className="text-body-sm text-content-muted mb-8">
-                    Check your inbox for a reply from hello@astralintegration.co
+                    Check your inbox for a reply from hello@astralstudio.io
                   </p>
                   <button
                     onClick={() => setFormStatus('idle')}
@@ -228,10 +228,10 @@ export default function ContactPage() {
               <div className="bg-dark-card border border-border rounded-2xl p-8">
                 <h3 className="font-serif text-h3 mb-3">Email directly</h3>
                 <a
-                  href="mailto:hello@astralintegration.co"
+                  href="mailto:hello@astralstudio.io"
                   className="text-body-sm text-accent hover:text-content-primary transition-colors"
                 >
-                  hello@astralintegration.co
+                  hello@astralstudio.io
                 </a>
               </div>
 
