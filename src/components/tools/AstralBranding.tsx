@@ -12,7 +12,7 @@ export default function AstralBranding({ variant = 'default' }: AstralBrandingPr
         className="inline-flex items-center gap-2 text-body-sm text-content-muted hover:text-content-secondary transition-colors"
       >
         <span className="text-accent">✦</span>
-        <span>Astral Integration</span>
+        <span>Astral Studio</span>
       </Link>
     );
   }
@@ -24,7 +24,7 @@ export default function AstralBranding({ variant = 'default' }: AstralBrandingPr
     >
       <span className="text-accent group-hover:scale-110 transition-transform">✦</span>
       <span className="text-body-sm text-content-secondary group-hover:text-content-primary transition-colors">
-        Built by <span className="font-serif italic">Astral Integration</span>
+        Built by <span className="font-serif italic">Astral Studio</span>
       </span>
     </Link>
   );

@@ -5,7 +5,7 @@ import Footer from '../Footer';
 
 export default function BlueprintPage() {
   useEffect(() => {
-    document.title = 'Realignment Blueprint — Astral Integration';
+    document.title = 'Realignment Blueprint — Astral Studio';
   }, []);
 
   return (

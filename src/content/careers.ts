@@ -1,7 +1,7 @@
 export const careersContent = {
   hero: {
     title: 'Careers & Collaboration',
-    subtitle: 'Astral Integration is a small, focused studio building digital infrastructure for real-world work.',
+    subtitle: 'Astral Studio is a small, focused studio building digital infrastructure for real-world work.',
     description: 'We collaborate with people who are interested in long-term systems, not short-term projects — and who are comfortable working in early-stage, high-trust environments.'
   },
   howWeWork: {

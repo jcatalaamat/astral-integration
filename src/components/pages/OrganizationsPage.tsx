@@ -35,7 +35,7 @@ const scaleProblems = [
 
 export default function OrganizationsPage() {
   useDocumentMeta({
-    title: 'For Organizations — 15% rev share, no upfront — Astral Integration',
+    title: 'For Organizations — 15% rev share, no upfront — Astral Studio',
     description: 'Your methodology scaled. Your infrastructure didn\'t. Facilitator directories, class discovery, student journeys, regional dashboards, and multi-language support — built for organizations operating at global scale. No upfront cost — we take 15% of platform revenue. Systems tier.',
     ogUrl: 'https://astralintegration.co/organizations',
   });

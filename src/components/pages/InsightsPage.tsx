@@ -6,7 +6,7 @@ import { blogPosts } from '../../data/blogPosts';
 
 export default function InsightsPage() {
   useDocumentMeta({
-    title: 'Insights — Astral Integration',
+    title: 'Insights — Astral Studio',
     description: 'Thinking on infrastructure, partnership economics, and what it takes to build digital homes for original work — for artists, creatives, changemakers, practitioners, facilitators, and organizations. By Jordi Amat.',
     ogUrl: 'https://astralintegration.co/insights',
   });

@@ -14,7 +14,7 @@ const platformLayers = [
 
 export default function CommunitiesPage() {
   useDocumentMeta({
-    title: 'For Communities — 12% rev share, no upfront — Astral Integration',
+    title: 'For Communities — 12% rev share, no upfront — Astral Studio',
     description: 'Your community deserves a home that isn\'t Facebook. Event listings, directories, classifieds, bilingual support, and weekly digests — community infrastructure built for real places. No upfront cost — we take 12% of platform revenue. Membership tier.',
     ogUrl: 'https://astralintegration.co/communities',
   });

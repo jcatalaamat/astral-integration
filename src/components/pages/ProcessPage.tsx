@@ -5,7 +5,7 @@ import { processSteps } from '../../content';
 
 export default function ProcessPage() {
   useEffect(() => {
-    document.title = 'Process — Astral Integration';
+    document.title = 'Process — Astral Studio';
   }, []);
 
   return (

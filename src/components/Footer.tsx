@@ -35,7 +35,7 @@ export default function Footer() {
               href="/"
               className="font-serif text-xl font-light tracking-wide text-content-muted"
             >
-              Astral <em className="italic text-accent/60">Integration</em>
+              Astral <em className="italic text-accent/60">Studio</em>
             </a>
             <p className="text-body-sm text-content-muted mt-4 max-w-[280px]">
               Custom digital infrastructure for schools, practices, retreat centers, and original work.
@@ -116,7 +116,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-body-sm text-content-muted">
-            © {new Date().getFullYear()} Astral Integration. Jordi Amat.
+            © {new Date().getFullYear()} Astral Studio. Jordi Amat.
           </p>
           <p className="text-meta text-content-muted">
             Built with care in Mazunte, Oaxaca

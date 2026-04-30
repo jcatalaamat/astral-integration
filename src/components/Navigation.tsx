@@ -98,7 +98,7 @@ export default function Navigation() {
             }}
             className="font-serif text-2xl font-light tracking-wide text-content-primary"
           >
-            Astral <em className="italic text-accent">Integration</em>
+            Astral <em className="italic text-accent">Studio</em>
           </a>
 
           {/* Desktop Nav */}

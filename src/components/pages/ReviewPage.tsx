@@ -6,7 +6,7 @@ import Footer from '../Footer';
 
 export default function ReviewPage() {
   useEffect(() => {
-    document.title = 'Digital Realignment Review — Astral Integration';
+    document.title = 'Digital Realignment Review — Astral Studio';
   }, []);
   const [formData, setFormData] = useState({
     name: '',

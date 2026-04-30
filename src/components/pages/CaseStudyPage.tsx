@@ -10,7 +10,7 @@ export default function CaseStudyPage() {
   const currentIndex = caseStudies.findIndex((s) => s.slug === slug);
 
   useDocumentMeta({
-    title: study ? `${study.client} — Astral Integration` : 'Case Study — Astral Integration',
+    title: study ? `${study.client} — Astral Studio` : 'Case Study — Astral Studio',
     description: study ? study.challenge.slice(0, 160) : '',
     ogUrl: `https://astralintegration.co/work/${slug}`,
   });

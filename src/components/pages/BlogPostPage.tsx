@@ -10,7 +10,7 @@ export default function BlogPostPage() {
   const post = blogPosts.find((p) => p.slug === slug);
 
   useDocumentMeta({
-    title: post ? `${post.title} — Astral Integration` : 'Insights — Astral Integration',
+    title: post ? `${post.title} — Astral Studio` : 'Insights — Astral Studio',
     description: post?.excerpt || '',
     ogUrl: `https://astralintegration.co/insights/${slug}`,
   });

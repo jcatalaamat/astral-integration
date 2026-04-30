@@ -59,7 +59,7 @@ export default function ToolsFooter() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-body-sm text-content-muted">
-            © {new Date().getFullYear()} Astral Integration
+            © {new Date().getFullYear()} Astral Studio
           </p>
           <AstralBranding />
         </div>

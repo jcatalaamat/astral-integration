@@ -6,7 +6,7 @@ import { startHereContent } from '../../content';
 
 export default function StartHerePage() {
   useEffect(() => {
-    document.title = 'Start Here — Astral Integration';
+    document.title = 'Start Here — Astral Studio';
   }, []);
 
   return (

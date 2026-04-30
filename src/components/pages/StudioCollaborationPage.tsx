@@ -6,7 +6,7 @@ import { studioCollaborationContent } from '../../content';
 
 export default function StudioCollaborationPage() {
   useEffect(() => {
-    document.title = 'Studio Collaboration — Astral Integration';
+    document.title = 'Studio Collaboration — Astral Studio';
   }, []);
 
   return (

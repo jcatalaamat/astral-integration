@@ -5,7 +5,7 @@ import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 
 export default function AboutPage() {
   useDocumentMeta({
-    title: 'About Jordi Amat — Astral Integration',
+    title: 'About Jordi Amat — Astral Studio',
     description: 'Senior engineer, former CTO, practitioner. From leading engineering teams to building custom digital infrastructure for artists, creatives, changemakers, practitioners, facilitators, and organizations — from Mazunte, Oaxaca.',
     ogUrl: 'https://astralintegration.co/about',
   });
@@ -149,7 +149,7 @@ export default function AboutPage() {
               I knew how to build the systems these people needed. And I understood — from the inside — why generic platforms would never work for them. A certification isn't a Udemy course. A retreat isn't a hotel booking. A healing practice isn't a SaaS business. The architecture has to reflect the work.
             </p>
             <p className="text-body text-content-primary leading-relaxed font-medium">
-              Astral Integration is what happened when a decade of engineering met a life lived inside the work it serves.
+              Astral Studio is what happened when a decade of engineering met a life lived inside the work it serves.
             </p>
           </div>
         </div>

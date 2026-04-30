@@ -1,7 +1,7 @@
 export const aboutContent = {
   intro: {
     headline: 'A small, focused studio building digital infrastructure for real-world work.',
-    description: 'Astral Integration helps people and organizations translate existing work into clear, functional digital systems. We work with projects that already exist — communities, practitioners, programs, spaces, initiatives — and support them in clarifying how their work is expressed, accessed, and sustained digitally.'
+    description: 'Astral Studio helps people and organizations translate existing work into clear, functional digital systems. We work with projects that already exist — communities, practitioners, programs, spaces, initiatives — and support them in clarifying how their work is expressed, accessed, and sustained digitally.'
   },
   role: {
     headline: 'Our role is not to invent the work.',
@@ -18,7 +18,7 @@ export const aboutContent = {
         description: 'Systems architect and builder. Focuses on translating complex work into clean digital infrastructure.'
       }
     ],
-    note: 'Astral Integration operates as a lean studio with a small core team and trusted collaborators. We favor depth over scale.'
+    note: 'Astral Studio operates as a lean studio with a small core team and trusted collaborators. We favor depth over scale.'
   },
   values: {
     headline: 'How We Work',

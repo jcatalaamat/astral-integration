@@ -7,7 +7,7 @@ import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 
 export default function ToolsHub() {
   useDocumentMeta({
-    title: 'Free Tools — Astral Integration',
+    title: 'Free Tools — Astral Studio',
     description: 'Simple, beautiful tools to help you run your soul-led business with clarity. Life OS, Content Studio, and more.',
     ogUrl: 'https://astralintegration.co/tools',
   });
@@ -32,7 +32,7 @@ export default function ToolsHub() {
           </h1>
           <p className="text-h4 text-content-secondary max-w-prose mx-auto mb-8 animate-fadeUp animate-delay-200">
             Simple, beautiful tools to help you run your business with clarity.
-            Built by the team behind Astral Integration.
+            Built by the team behind Astral Studio.
           </p>
           <p className="text-body-sm text-content-muted animate-fadeUp animate-delay-300">
             No sign-up required • Free forever • Your data stays yours
@@ -68,7 +68,7 @@ export default function ToolsHub() {
               </p>
               <p className="text-body text-content-secondary mb-8">
                 Use them freely. If you ever need custom development, automations, or a full digital
-                transformation—that's what we do at Astral Integration.
+                transformation—that's what we do at Astral Studio.
               </p>
               <Link
                 to="/"

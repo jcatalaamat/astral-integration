@@ -4,7 +4,7 @@ import Footer from '../Footer';
 
 export default function CareersPage() {
   useEffect(() => {
-    document.title = 'Careers & Collaboration — Astral Integration';
+    document.title = 'Careers & Collaboration — Astral Studio';
   }, []);
 
   return (
@@ -20,7 +20,7 @@ export default function CareersPage() {
             </h1>
 
             <p className="text-h2 md:text-h1 text-content-primary font-medium mb-12 max-w-2xl">
-              Astral Integration is a small, focused studio building digital infrastructure for real-world work.
+              Astral Studio is a small, focused studio building digital infrastructure for real-world work.
             </p>
 
             <p className="text-body text-content-secondary leading-relaxed mb-8 max-w-prose">

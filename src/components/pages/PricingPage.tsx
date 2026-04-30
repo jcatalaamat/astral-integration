@@ -134,7 +134,7 @@ const faqs = [
 
 export default function PricingPage() {
   useDocumentMeta({
-    title: 'Pricing — Astral Integration',
+    title: 'Pricing — Astral Studio',
     description: 'We take a % of what you make. No upfront. No fees. Four tiers — Boutique 5%, Service 8%, Membership 12%, Systems 15% — based on what we build. You own everything from day one.',
     ogUrl: 'https://astralintegration.co/pricing',
   });

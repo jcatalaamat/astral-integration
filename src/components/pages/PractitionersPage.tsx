@@ -25,7 +25,7 @@ const beforeAfter = [
 
 export default function PractitionersPage() {
   useDocumentMeta({
-    title: 'For Practitioners — 8% rev share, no upfront — Astral Integration',
+    title: 'For Practitioners — 8% rev share, no upfront — Astral Studio',
     description: 'You have the audience. You deserve the infrastructure. We replace your 6 disconnected tools with one platform — your brand, your domain, everything connected. No upfront cost — we take 8% of platform revenue. Service tier.',
     ogUrl: 'https://astralintegration.co/practitioners',
   });
