@@ -17,7 +17,7 @@ export default function RetreatsPage() {
   useDocumentMeta({
     title: 'For Retreats & Centers — 12% rev share, no upfront — Astral Studio',
     description: 'A retreat booking isn\'t a hotel reservation. Custom intake flows, multi-stream revenue, capacity management, and preparation sequences — built for how retreat centers actually work. No upfront cost — we take 12% of platform revenue. Membership tier.',
-    ogUrl: 'https://astralintegration.co/retreats',
+    ogUrl: 'https://astralstudio.io/retreats',
   });
 
   const [formData, setFormData] = useState({ name: '', email: '', site: '', message: '' });

@@ -8,7 +8,7 @@ export default function InsightsPage() {
   useDocumentMeta({
     title: 'Insights — Astral Studio',
     description: 'Thinking on infrastructure, partnership economics, and what it takes to build digital homes for original work — for artists, creatives, changemakers, practitioners, facilitators, and organizations. By Jordi Amat.',
-    ogUrl: 'https://astralintegration.co/insights',
+    ogUrl: 'https://astralstudio.io/insights',
   });
 
   const revealRefs = useRef<(HTMLElement | null)[]>([]);

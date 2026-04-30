@@ -7,7 +7,7 @@ export default function AboutPage() {
   useDocumentMeta({
     title: 'About Jordi Amat — Astral Studio',
     description: 'Senior engineer, former CTO, practitioner. From leading engineering teams to building custom digital infrastructure for artists, creatives, changemakers, practitioners, facilitators, and organizations — from Mazunte, Oaxaca.',
-    ogUrl: 'https://astralintegration.co/about',
+    ogUrl: 'https://astralstudio.io/about',
   });
 
   const revealRefs = useRef<(HTMLElement | null)[]>([]);

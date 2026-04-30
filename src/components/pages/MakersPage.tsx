@@ -42,7 +42,7 @@ export default function MakersPage() {
   useDocumentMeta({
     title: 'For Makers & Artisans — 5% rev share, no upfront — Astral Studio',
     description: 'Your craft deserves a digital home that honors the work — not a marketplace template, not Etsy fees. Custom sites for textile artisans, slow-fashion brands, ceramicists, writers, and bespoke makers. No upfront cost — we take 5% of what you sell. Boutique tier.',
-    ogUrl: 'https://astralintegration.co/makers',
+    ogUrl: 'https://astralstudio.io/makers',
   });
 
   const [formData, setFormData] = useState({ name: '', email: '', site: '', message: '' });

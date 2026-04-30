@@ -11,7 +11,7 @@ export default function HomePage() {
   useDocumentMeta({
     title: 'Astral Studio — We take a % of what you make. No upfront. No fees.',
     description: 'We build custom digital infrastructure for artists, creatives, changemakers, practitioners, facilitators, and organizations. No upfront cost — we take a small % of what you make. Aligned partnership from day one.',
-    ogUrl: 'https://astralintegration.co/',
+    ogUrl: 'https://astralstudio.io/',
   });
 
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });

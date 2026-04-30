@@ -9,7 +9,7 @@ export default function ContactPage() {
   useDocumentMeta({
     title: 'Contact — Astral Studio',
     description: 'Tell us about your work. We take on a small number of partnerships at a time — artists, creatives, changemakers, practitioners, facilitators, and organizations needing custom digital infrastructure. No upfront cost — aligned partnership from day one.',
-    ogUrl: 'https://astralintegration.co/contact',
+    ogUrl: 'https://astralstudio.io/contact',
   });
 
   const [formData, setFormData] = useState({

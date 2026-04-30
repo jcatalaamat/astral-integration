@@ -9,7 +9,7 @@ export default function ToolsHub() {
   useDocumentMeta({
     title: 'Free Tools — Astral Studio',
     description: 'Simple, beautiful tools to help you run your soul-led business with clarity. Life OS, Content Studio, and more.',
-    ogUrl: 'https://astralintegration.co/tools',
+    ogUrl: 'https://astralstudio.io/tools',
   });
   const toolsList = Object.values(TOOLS);
 
