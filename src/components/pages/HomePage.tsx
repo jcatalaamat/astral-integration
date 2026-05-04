@@ -113,7 +113,7 @@ export default function HomePage() {
         <div className="absolute w-[300px] h-[300px] bg-gold rounded-full blur-[100px] opacity-15 top-[30%] left-[10%] animate-float" style={{ animationDelay: '-14s' }} />
 
         <h1 className="font-serif text-display font-light max-w-[900px] relative z-10 animate-fadeUp animate-delay-300">
-          I turn your <em key={`l-${wordIndex}`} className="italic gradient-text inline-block animate-fadeUp">{rotatingPairs[wordIndex].left}</em><br />into a <em key={`r-${wordIndex}`} className="italic gradient-text inline-block animate-fadeUp">{rotatingPairs[wordIndex].right}</em> business.
+          I turn your <em key={wordIndex} className="italic gradient-text inline-block animate-fadeUp">{rotatingPairs[wordIndex].left}</em><br />into a real business.
         </h1>
 
         <p className="text-body text-content-secondary max-w-[720px] mt-8 relative z-10 animate-fadeUp animate-delay-500">
