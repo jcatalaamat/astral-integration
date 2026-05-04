@@ -302,8 +302,11 @@ export default function HomePage() {
               <p className="text-meta uppercase text-accent mb-3">Infrastructure retainer</p>
               <p className="font-serif text-h2 font-light mb-2">$550<span className="text-h4 text-content-muted">/mo</span></p>
               <p className="text-meta text-content-muted mb-6">Ongoing — cancel anytime</p>
-              <p className="text-body-sm text-content-secondary leading-relaxed mb-8">
+              <p className="text-body-sm text-content-secondary leading-relaxed mb-4">
                 I run the machine that fills your room. Site that converts, email that nurtures, automation that repurposes, systems that don't need babysitting.
+              </p>
+              <p className="text-body-sm text-content-muted leading-relaxed mb-8">
+                Includes weekly office hours — a group call with the other practices I work with. Bring what you're stuck on.
               </p>
               <a
                 href="https://calendly.com/astral-integration/free-strategy-call"

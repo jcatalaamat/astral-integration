@@ -5,8 +5,8 @@ import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 
 export default function AboutPage() {
   useDocumentMeta({
-    title: 'About Jordi Amat — Astral Studio',
-    description: 'Senior engineer, former CTO, practitioner. From leading engineering teams to building custom digital infrastructure for artists, creatives, changemakers, practitioners, facilitators, and organizations — from Mazunte, Oaxaca.',
+    title: 'About — Astral Studio',
+    description: 'Senior engineer, former CTO, Access Bars practitioner. Building custom digital infrastructure for practices, schools, and retreat centers — from Mazunte, Oaxaca.',
     ogUrl: 'https://astralstudio.io/about',
   });
 

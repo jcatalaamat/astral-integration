@@ -16,7 +16,7 @@ const featurePillars = [
   },
   {
     name: 'Stripe checkout · no marketplace fees',
-    desc: 'Direct sales. You set the price, you keep the brand, you own the relationship. Stripe takes their 2.9%. Etsy keeps 6.5% + listing fees + ad costs. We replace that.',
+    desc: 'Direct sales. You set the price, you keep the brand, you own the relationship. Stripe takes their 2.9%. Etsy keeps 6.5% + listing fees + ad costs. I replace that.',
   },
   {
     name: 'Inventory + custom orders',
@@ -163,12 +163,12 @@ export default function MakersPage() {
         </div>
       </section>
 
-      {/* What we build */}
+      {/* What I build */}
       <section className="py-section px-6 md:px-12">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
-            What We Build
+            What I Build
           </p>
           <h2 className="font-serif text-display-sm font-light mb-4">
             A site that reads like a gallery.
