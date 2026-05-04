@@ -37,7 +37,7 @@ export default function Footer() {
               Astral <em className="italic text-accent/60">Studio</em>
             </a>
             <p className="text-body-sm text-content-muted mt-4 max-w-[280px]">
-              Custom digital infrastructure for schools, practices, retreat centers, and original work.
+              I build the platforms that hold real work.
             </p>
             <p className="text-body-sm text-content-muted mt-4">
               hello@astralstudio.io
