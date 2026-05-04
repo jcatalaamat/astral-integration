@@ -20,11 +20,11 @@ export default function HomePage() {
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
 
   const rotatingPairs = [
-    { left: 'practice', right: 'thriving' },
-    { left: 'teachings', right: 'real' },
-    { left: 'craft', right: 'working' },
-    { left: 'retreat', right: 'living' },
-    { left: 'school', right: 'scaling' },
+    { left: 'practice', right: 'lasting' },
+    { left: 'training', right: 'integrative' },
+    { left: 'craft', right: 'embodied' },
+    { left: 'retreat', right: 'personalized' },
+    { left: 'school', right: 'regenerative' },
   ];
   const [wordIndex, setWordIndex] = useState(0);
   useEffect(() => {
@@ -255,7 +255,7 @@ export default function HomePage() {
               },
               {
                 title: 'Yours, day one',
-                tagline: 'No vendor lock-in. No SaaS dependency.',
+                tagline: 'Your space, not rented infrastructure.',
                 bullets: [
                   'Code lives in your GitHub',
                   'Data lives in your database',
