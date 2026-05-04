@@ -35,7 +35,6 @@ const ROUTES = [
   '/communities',
   '/organizations',
   '/how-it-works',
-  '/pricing',
 ];
 
 // Simple static file server for the dist folder

@@ -9,8 +9,8 @@ import PreviewFrame from '../PreviewFrame';
 
 export default function HomePage() {
   useDocumentMeta({
-    title: 'Astral Studio — We take a % of what you make. No upfront. No fees.',
-    description: 'We build custom digital infrastructure for artists, creatives, changemakers, practitioners, facilitators, and organizations. No upfront cost — we take a small % of what you make. Aligned partnership from day one.',
+    title: 'Astral Studio — I turn your practice into a business.',
+    description: 'Bookings, payments, memberships, automations, and the AI underneath. Custom platforms for teachers, schools, and retreat centers.',
     ogUrl: 'https://astralstudio.io/',
   });
 
@@ -19,10 +19,16 @@ export default function HomePage() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
 
-  const rotatingWords = ['practice', 'craft', 'teachings', 'art', 'community', 'business'];
+  const rotatingPairs = [
+    { left: 'practice', right: 'thriving business' },
+    { left: 'teachings', right: 'real business' },
+    { left: 'craft', right: 'working business' },
+    { left: 'retreat', right: 'living business' },
+    { left: 'school', right: 'scaling business' },
+  ];
   const [wordIndex, setWordIndex] = useState(0);
   useEffect(() => {
-    const t = setInterval(() => setWordIndex((i) => (i + 1) % rotatingWords.length), 2400);
+    const t = setInterval(() => setWordIndex((i) => (i + 1) % rotatingPairs.length), 2400);
     return () => clearInterval(t);
   }, []);
 
@@ -107,19 +113,15 @@ export default function HomePage() {
         <div className="absolute w-[300px] h-[300px] bg-gold rounded-full blur-[100px] opacity-15 top-[30%] left-[10%] animate-float" style={{ animationDelay: '-14s' }} />
 
         <h1 className="font-serif text-display font-light max-w-[900px] relative z-10 animate-fadeUp animate-delay-300">
-          Your <em key={wordIndex} className="italic gradient-text inline-block animate-fadeUp">{rotatingWords[wordIndex]}</em><br />deserves infrastructure that matches it.
+          I turn your <em key={`l-${wordIndex}`} className="italic gradient-text inline-block animate-fadeUp">{rotatingPairs[wordIndex].left}</em><br />into a <em key={`r-${wordIndex}`} className="italic gradient-text inline-block animate-fadeUp">{rotatingPairs[wordIndex].right}</em>.
         </h1>
 
-        <p className="text-body text-content-secondary max-w-[680px] mt-8 relative z-10 animate-fadeUp animate-delay-500">
-          We build the digital infrastructure. No upfront. We take a % of what you make.
-        </p>
-
-        <p className="text-body text-content-secondary max-w-[680px] mt-5 relative z-10 animate-fadeUp animate-delay-600">
-          Send us your messy notes — a voice memo, a Google Doc, a screenshot of your Instagram bio. We'll research your work, build your platform, wire your payments, set up your community, and hand you the keys.
+        <p className="text-body text-content-secondary max-w-[720px] mt-8 relative z-10 animate-fadeUp animate-delay-500">
+          Bookings, payments, memberships, automations, and the AI underneath. Built around your work, not a template.
         </p>
 
         <p className="text-body-sm text-content-muted mt-6 relative z-10 animate-fadeUp animate-delay-700">
-          Former CTO. Senior full-stack engineer. Your long-term technical partner.
+          Former CTO. Senior full-stack engineer.
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 mt-12 relative z-10 animate-fadeUp animate-delay-900">
@@ -152,16 +154,34 @@ export default function HomePage() {
           </h2>
           <div className="max-w-prose space-y-5">
             <p className="text-body text-content-secondary leading-relaxed">
-              And then spent the next three days fighting five disconnected tools.
+              Then spent three days chasing five tools to make it real. Calendly for the bookings, Stripe for the deposits, Mailchimp for the follow-up, a Notion doc for the intake, the WhatsApp group for everything else.
             </p>
             <p className="text-body text-content-muted leading-relaxed">
-              Courses in one place.<br />
-              Bookings in another.<br />
-              Payments somewhere else.<br />
-              Community split across WhatsApp and email.
+              Your practice already works. People show up because the work is real. The waitlist fills. The retreats sell out.
             </p>
             <p className="text-body text-content-primary leading-relaxed font-medium">
-              Your practice deserves better. That's when infrastructure becomes strategy.
+              What doesn't work is the running of it. That's not a strategy problem. It's a build problem.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════ AI SUBSTRATE ═══════ */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            The AI
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-8 max-w-[760px]">
+            And the AI sits underneath.
+          </h2>
+          <div className="max-w-prose space-y-5">
+            <p className="text-body text-content-secondary leading-relaxed">
+              Not a chatbot. Not a feature on a marketing page. Your work — your teachings, your past emails, your intake forms, your live recordings — trained into a model that drafts your launches in your voice, answers a student at 3am in the language of your tradition, and keeps learning every time you teach.
+            </p>
+            <p className="text-body text-content-primary leading-relaxed font-medium">
+              You don't see it. Your students feel it.
             </p>
           </div>
         </div>
@@ -259,6 +279,58 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═══════ HOW ENGAGEMENTS START ═══════ */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            How engagements start
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-6 max-w-[760px]">
+            Send me your messy notes.
+          </h2>
+          <div className="max-w-prose space-y-5 mb-12">
+            <p className="text-body text-content-secondary leading-relaxed">
+              A voice memo, a Google Doc, a screenshot of your Instagram bio, the WhatsApp thread where you actually explain the work. I research it. I wrap it into a real business — site, bookings, payments, memberships, automations, the AI underneath.
+            </p>
+            <p className="text-body text-content-secondary leading-relaxed">
+              Then I either stay on as your long-term tech, install your digital CEO and step back, or hand you the keys. Whichever fits.
+            </p>
+            <p className="text-body-sm text-content-muted leading-relaxed">
+              Before any of that, an audit. So we both know what we're building.
+            </p>
+          </div>
+
+          <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
+            <p className="text-meta uppercase text-accent mb-3">Audit</p>
+            <p className="font-serif text-h2 font-light mb-2">$1,500</p>
+            <p className="text-meta text-content-muted mb-6">Fixed fee · refundable against the engagement that follows</p>
+            <p className="text-body-sm text-content-secondary leading-relaxed mb-8">
+              A written diagnostic of your current stack, five prioritized fixes, and a deal-shape proposal for what comes next.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
+              <a
+                href="https://calendly.com/astral-integration/free-strategy-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-3 bg-accent text-white rounded-full text-body-sm font-medium btn-glow text-center"
+              >
+                Start an audit
+              </a>
+              <span className="text-content-muted text-body-sm">or</span>
+              <a
+                href="https://calendly.com/astral-integration/free-strategy-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
+              >
+                Just book a call <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════ HOW IT WORKS (summary) ═══════ */}
       <section id="how" className="py-section px-6 md:px-12">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
@@ -267,17 +339,17 @@ export default function HomePage() {
             How It Works
           </p>
           <h2 className="font-serif text-display-sm font-light mb-4">
-            Long-term partnership. Aligned from day one.
+            Three phases. One engagement.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mb-12">
-            I don't build and disappear. I build, maintain, and evolve your platform over years — because my success is tied to yours.
+            I learn your work, I build the platform, I hand you the keys. What happens after launch is a conversation, not a contract.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
-              { step: '01', title: 'We talk.', desc: 'You tell me what you\'re building. I learn the work, the methodology, the people you serve. If it\'s a fit, I send a proposal within days.' },
+              { step: '01', title: 'I learn your work.', desc: 'You tell me what you\'re building. I learn the methodology, the people you serve, the way you actually teach. If it\'s a fit, I send a proposal within days.' },
               { step: '02', title: 'I build.', desc: 'Custom platform, real code, your brand. You see it come together week by week. Most projects launch in 2–6 weeks.' },
-              { step: '03', title: 'I stay.', desc: 'This isn\'t a handoff. I remain your technical partner — maintaining, evolving, and scaling your platform as the work grows.' },
+              { step: '03', title: 'I hand you the keys.', desc: 'You own the code, the data, the domain. Whether I stay on after launch is a conversation, not a contract.' },
             ].map((item, i) => (
               <div key={i}>
                 <div className="flex items-center gap-3 mb-4">
@@ -295,33 +367,10 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {[
-              { label: 'Upfront cost', value: '$0' },
-              { label: 'Revenue share', value: '5–15%' },
-              { label: 'Timeline', value: '1–12 weeks' },
-            ].map((item, i) => (
-              <div key={i} className="text-center md:text-left">
-                <p className="text-meta uppercase text-content-muted mb-1">{item.label}</p>
-                <p className="font-serif text-h2 font-light text-accent">{item.value}</p>
-              </div>
-            ))}
-          </div>
-
           <p className="text-body-sm text-content-muted mb-2">Every site is custom-built from scratch. No templates, no themes, no page builders.</p>
-          <p className="text-body-sm text-content-muted mb-2">No upfront fees. We build for free, then take a small % of platform revenue from dollar one. Aligned partnership.</p>
-          <p className="text-body-sm text-content-muted mb-2">You own everything. Code, data, domain. From day one.</p>
-          <p className="text-body-sm text-content-muted mb-2">I stay on as your technical partner. My success is tied to yours.</p>
-          <p className="text-body-sm text-content-muted mb-6 italic">Some people call this a fractional CTO. I just call it partnership.</p>
+          <p className="text-body-sm text-content-muted mb-6">You own everything. Code, data, domain. From day one.</p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
-            <a
-              href="/pricing"
-              className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
-            >
-              Full pricing & FAQ <span aria-hidden="true">&rarr;</span>
-            </a>
-            <span className="hidden sm:inline text-content-muted">·</span>
             <a
               href="https://calendly.com/astral-integration/free-strategy-call"
               target="_blank"

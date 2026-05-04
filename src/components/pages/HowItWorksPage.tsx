@@ -6,12 +6,12 @@ import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 const process = [
   {
     step: '01',
-    title: 'We talk.',
-    desc: 'You tell me what you\'re building — or what you\'ve already built — and where it needs to go. I learn the work, the methodology, the people you serve. I assess whether this is a partnership I want to invest in.',
+    title: 'I learn your work.',
+    desc: 'You tell me what you\'re building — or what you\'ve already built — and where it needs to go. I learn the methodology, the people you serve, the way you actually teach.',
     details: [
       'A 30–60 minute conversation about your work, your people, and your current setup',
       'I research your space — what exists, what\'s missing, what the architecture needs to look like',
-      'If it\'s a fit, I send you a partnership proposal within a few days: scope, timeline, pricing',
+      'If it\'s a fit, I send a proposal within a few days: scope, timeline, deal shape',
       'Not every project is the right fit. But stage isn\'t the filter — the work is',
     ],
   },
@@ -28,40 +28,29 @@ const process = [
   },
   {
     step: '03',
-    title: 'I stay.',
-    desc: 'This isn\'t a handoff. I remain your technical partner — maintaining, evolving, and scaling your platform as the work grows.',
+    title: 'I hand you the keys.',
+    desc: 'You own the code, the data, the domain. Whether I stay on after launch is a conversation, not a contract.',
     details: [
-      'Ongoing maintenance, updates, and feature development',
-      'New offerings, new revenue streams, new stages of growth — the infrastructure adapts',
-      'My pricing is structured so my success is tied to yours',
-      'You always have a senior engineer who knows your system inside and out',
+      'You own everything from day one — code, data, domain, content',
+      'Some clients keep me on for ongoing maintenance and new feature work',
+      'Some take the keys and run it themselves',
+      'Either is fine. The work shapes the relationship, not the other way around',
     ],
   },
 ];
 
-const investment = [
-  { label: 'Upfront cost', value: '$0', note: 'No fees · I build first' },
-  { label: 'Revenue share', value: '5–15%', note: 'From dollar one · based on scope' },
-  { label: 'Timeline', value: '2–6 weeks', note: 'To launch' },
-  { label: 'Ownership', value: 'Yours. All of it.', note: 'Code, data, domain. From day one.' },
-];
-
 const faqs = [
   {
-    q: 'How is pricing determined?',
-    a: 'Every project is different — a practitioner launching her first platform needs different architecture than a school with hundreds of students across multiple certification levels. I scope and price based on what the work actually requires, not a menu. After our first conversation, I send a clear proposal with no surprises.',
-  },
-  {
-    q: 'What does the ongoing partnership include?',
-    a: 'Maintenance, updates, feature development, and scaling. When your work grows — new offerings, new markets, new needs — the infrastructure grows with it. You always have a senior engineer who knows your system inside and out.',
+    q: 'How does pricing work?',
+    a: 'Every engagement is shaped to the work. A practitioner launching her first booking flow needs different scope than a school with hundreds of students across multiple certifications. After our first conversation, I send a clear proposal with the deal shape that fits — fixed-fee audit, project build, or ongoing partnership.',
   },
   {
     q: 'Do I own the code and data?',
-    a: 'Yes. From day one. Your code, your data, your domain, your content. Everything is yours. I maintain and develop it as your technical partner, but you own it all.',
+    a: 'Yes. From day one. Your code, your data, your domain, your content. Everything is yours. If I stay on as your technical partner I maintain and develop it. If you take the keys, you keep them.',
   },
   {
     q: 'What platform or tech stack do you use?',
-    a: 'Every project is custom-built with modern web technologies — typically React, TypeScript, and Node.js with the specific architecture shaped by what the work needs. No WordPress. No Squarespace. No templates. Real code, built for your specific requirements.',
+    a: 'Every project is custom-built with modern web technologies — typically React, TypeScript, and Node.js, with the specific architecture shaped by what the work needs. No WordPress. No Squarespace. No templates. Real code, built for your specific requirements.',
   },
   {
     q: 'How long does a project take?',
@@ -69,18 +58,18 @@ const faqs = [
   },
   {
     q: 'What happens after launch?',
-    a: 'I stay. My pricing is structured so my success is tied to yours. I handle maintenance, feature development, and scaling as a long-term partner — not a contractor who delivers and disappears.',
+    a: 'Up to you. Some clients keep me on for ongoing maintenance and new feature work as the practice scales. Some take the keys and run it themselves. The work shapes the relationship, not the other way around.',
   },
   {
     q: 'How is this different from hiring a web developer?',
-    a: 'A developer builds what you spec and leaves. I learn your work, make architectural decisions based on deep understanding, and stay as a long-term partner. I\'m not filling tickets — I\'m building the infrastructure that allows your work to scale without fragmentation.',
+    a: 'A developer builds what you spec and leaves. I learn your work, make architectural decisions based on deep understanding, and stay as long as the work calls for it. I\'m not filling tickets — I\'m building the infrastructure that lets your work scale without fragmenting across six tools.',
   },
 ];
 
 export default function HowItWorksPage() {
   useDocumentMeta({
-    title: 'How It Works — Astral Studio',
-    description: 'How the partnership works: I build first at no cost, then take a small % of what you make (5–15% based on scope). Aligned incentives from day one. Process, pricing, FAQ.',
+    title: 'How it works — Astral Studio',
+    description: 'How an engagement runs: I learn your work, I build the platform, I hand you the keys. Process, FAQ, what to expect.',
     ogUrl: 'https://astralstudio.io/how-it-works',
   });
 
@@ -122,10 +111,10 @@ export default function HowItWorksPage() {
             How It Works
           </p>
           <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
-            Long-term partnership.<br />Aligned from <em className="italic gradient-text">day one.</em>
+            I learn your work.<br />I build it. I hand you the <em className="italic gradient-text">keys.</em>
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            I don't build and disappear. I build, maintain, and evolve your platform over years — because I'm invested in its success and structurally committed to its growth.
+            Three phases. Most projects launch in 2–6 weeks. What happens after launch is a conversation, not a contract.
           </p>
         </div>
       </section>
@@ -165,41 +154,6 @@ export default function HowItWorksPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* The Investment */}
-      <section className="py-section px-6 md:px-12">
-        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
-          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
-            <span className="w-8 h-px bg-accent" />
-            The Investment
-          </p>
-          <h2 className="font-serif text-display-sm font-light mb-4">
-            The model.
-          </h2>
-          <p className="text-body text-content-secondary max-w-prose mb-16">
-            Every project is different — a practitioner launching her first platform needs different architecture than a school with hundreds of students across multiple certification levels. I scope and price based on what the work actually requires, not a menu.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-3xl">
-            {investment.map((item, i) => (
-              <div key={i} className="bg-dark-card border border-border rounded-2xl p-8">
-                <p className="text-meta uppercase text-content-muted mb-2">{item.label}</p>
-                <p className="font-serif text-h2 font-light text-accent mb-2">{item.value}</p>
-                <p className="text-body-sm text-content-muted">{item.note}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="max-w-prose">
-            <p className="text-body text-content-secondary leading-relaxed mb-4">
-              My pricing is structured so my success is tied to yours. I don't build and disappear — I remain your technical partner, maintaining and evolving the platform as your work grows.
-            </p>
-            <p className="text-body-sm text-content-muted">
-              Start with a conversation — I'll learn about your work and send a clear proposal with no surprises.
-            </p>
           </div>
         </div>
       </section>

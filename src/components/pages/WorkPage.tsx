@@ -17,8 +17,8 @@ const filters: Array<{ label: string; value: CaseStudyCategory | 'All' }> = [
 
 export default function WorkPage() {
   useDocumentMeta({
-    title: 'Case Studies — Astral Studio',
-    description: 'Detailed case studies: the challenges, architectural decisions, and infrastructure behind each platform. From textile artisans to retreat centers to community platforms — all built with no upfront cost, on aligned partnership.',
+    title: 'Selected builds — Astral Studio',
+    description: 'Detailed case studies: the challenges, architectural decisions, and infrastructure behind each platform. From makers to retreat centers to community platforms.',
     ogUrl: 'https://astralstudio.io/work',
   });
 

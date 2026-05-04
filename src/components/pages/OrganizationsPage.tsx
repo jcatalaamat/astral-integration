@@ -35,8 +35,8 @@ const scaleProblems = [
 
 export default function OrganizationsPage() {
   useDocumentMeta({
-    title: 'For Organizations — 15% rev share, no upfront — Astral Studio',
-    description: 'Your methodology scaled. Your infrastructure didn\'t. Facilitator directories, class discovery, student journeys, regional dashboards, and multi-language support — built for organizations operating at global scale. No upfront cost — we take 15% of platform revenue. Systems tier.',
+    title: 'For organizations — Astral Studio',
+    description: 'I turn your network into infrastructure. Multi-program billing, practitioner directories, sub-brand support, custom workflows, the AI under all of it. CTO-level engineering for the scale your work has reached.',
     ogUrl: 'https://astralstudio.io/organizations',
   });
 
@@ -120,10 +120,10 @@ export default function OrganizationsPage() {
             For Organizations
           </p>
           <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
-            Your methodology scaled.<br />Your infrastructure <em className="italic gradient-text">didn't.</em>
+            I turn your network into <em className="italic gradient-text">infrastructure.</em>
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            Hundreds — or thousands — of certified facilitators across countries and languages. Students taking classes worldwide with no unified record. Regional coordinators managing by email. The methodology succeeded beyond anyone's expectations. The infrastructure is decades behind it.
+            Multi-program billing, practitioner directories, sub-brand support, custom workflows, the AI under all of it. CTO-level engineering for the scale your work has reached.
           </p>
         </div>
       </section>
@@ -265,53 +265,27 @@ export default function OrganizationsPage() {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* How engagements start */}
       <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
-            The Model
+            How to start
           </p>
           <h2 className="font-serif text-display-sm font-light mb-4">
-            A different conversation.
+            Phased delivery, scoped to the work.
           </h2>
-          <p className="text-body text-content-secondary max-w-prose mb-16">
-            Organization-scale infrastructure is scoped per engagement. The approach: start with the highest-impact module — usually the facilitator directory or class discovery — prove the architecture works, then expand.
+          <p className="text-body text-content-secondary max-w-prose mb-8">
+            Start with the highest-impact module — facilitator directory or class discovery — prove the architecture works, then expand. You own everything. No vendor lock-in. No SaaS dependency.
           </p>
-
-          <div className="bg-dark-card border border-border rounded-2xl p-8 md:p-10 max-w-prose">
-            <div className="grid grid-cols-3 gap-6 mb-8">
-              {[
-                { label: 'Upfront cost', value: '$0', detail: 'No fees · we build first' },
-                { label: 'Revenue share', value: '15%', detail: 'From dollar one · Systems tier' },
-                { label: 'Timeline', value: '6 – 12 weeks', detail: 'Phased delivery' },
-              ].map((item, i) => (
-                <div key={i}>
-                  <p className="text-meta uppercase text-content-muted mb-1">{item.label}</p>
-                  <p className="font-serif text-h3 font-light text-accent">{item.value}</p>
-                  <p className="text-meta text-content-muted mt-1">{item.detail}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-6 border-t border-border space-y-2">
-              <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">You own everything.</strong> Code, data, infrastructure. No vendor lock-in. No SaaS dependency.
-              </p>
-              <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">Phased delivery.</strong> First module ships in weeks. Proves the architecture. Then we expand.
-              </p>
-              <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">Long-term partnership.</strong> I stay as your technical partner. My pricing is structured so my success is tied to yours.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <a href="/pricing" className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
-              Full pricing & FAQ <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div>
+          <a
+            href="https://calendly.com/astral-integration/free-strategy-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+          >
+            Book a call
+          </a>
         </div>
       </section>
 
