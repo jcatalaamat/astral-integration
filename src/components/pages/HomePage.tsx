@@ -266,6 +266,58 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═══════ HOW ENGAGEMENTS START ═══════ */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            How engagements start
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            Two ways in. One conversation.
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-12">
+            High intent, start with an audit. Still figuring out what you need, start with a call.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10">
+              <p className="text-meta uppercase text-accent mb-3">Audit</p>
+              <p className="font-serif text-h2 font-light mb-2">Fixed-fee</p>
+              <p className="text-meta text-content-muted mb-6">Quoted on the call</p>
+              <p className="text-body-sm text-content-secondary leading-relaxed mb-8">
+                A written diagnostic of your current stack, five prioritized fixes, and a deal-shape proposal for what comes next. Refundable against the retainer if we move forward.
+              </p>
+              <a
+                href="https://calendly.com/astral-integration/free-strategy-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-3 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+              >
+                Start an audit
+              </a>
+            </div>
+
+            <div className="bg-dark-card border border-border rounded-2xl p-8 md:p-10">
+              <p className="text-meta uppercase text-accent mb-3">Infrastructure retainer</p>
+              <p className="font-serif text-h2 font-light mb-2">$550<span className="text-h4 text-content-muted">/mo</span></p>
+              <p className="text-meta text-content-muted mb-6">Ongoing — cancel anytime</p>
+              <p className="text-body-sm text-content-secondary leading-relaxed mb-8">
+                I run the machine that fills your room. Site that converts, email that nurtures, automation that repurposes, systems that don't need babysitting.
+              </p>
+              <a
+                href="https://calendly.com/astral-integration/free-strategy-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-3 bg-transparent text-content-secondary border border-border rounded-full text-body-sm font-medium hover:border-border-hover hover:text-content-primary transition-all"
+              >
+                Book a call
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════ HOW IT WORKS (summary) ═══════ */}
       <section id="how" className="py-section px-6 md:px-12">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
@@ -274,10 +326,10 @@ export default function HomePage() {
             How It Works
           </p>
           <h2 className="font-serif text-display-sm font-light mb-4">
-            Long-term partnership. Aligned from day one.
+            Three phases. One engagement.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mb-12">
-            I don't build and disappear. I build, maintain, and evolve your platform over years — because my success is tied to yours.
+            I learn your work, I build the platform, I hand you the keys. What happens after launch is a conversation, not a contract.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
