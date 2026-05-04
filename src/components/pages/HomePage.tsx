@@ -141,16 +141,13 @@ export default function HomePage() {
           </h2>
           <div className="max-w-prose space-y-5">
             <p className="text-body text-content-secondary leading-relaxed">
-              And then spent the next three days fighting five disconnected tools.
+              Then spent three days chasing five tools to make it real. Calendly for the bookings, Stripe for the deposits, Mailchimp for the follow-up, a Notion doc for the intake, the WhatsApp group for everything else.
             </p>
             <p className="text-body text-content-muted leading-relaxed">
-              Courses in one place.<br />
-              Bookings in another.<br />
-              Payments somewhere else.<br />
-              Community split across WhatsApp and email.
+              Your practice already works. People show up because the work is real. The waitlist fills. The retreats sell out.
             </p>
             <p className="text-body text-content-primary leading-relaxed font-medium">
-              Your practice deserves better. That's when infrastructure becomes strategy.
+              What doesn't work is the running of it. That's not a strategy problem. It's a build problem.
             </p>
           </div>
         </div>
