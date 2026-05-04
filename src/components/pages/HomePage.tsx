@@ -153,6 +153,27 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═══════ AI SUBSTRATE ═══════ */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            The AI
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-8 max-w-[760px]">
+            And the AI sits underneath.
+          </h2>
+          <div className="max-w-prose space-y-5">
+            <p className="text-body text-content-secondary leading-relaxed">
+              Not a chatbot. Not a feature on a marketing page. Your work — your teachings, your past emails, your intake forms, your live recordings — trained into a model that drafts your launches in your voice, answers a student at 3am in the language of your tradition, and keeps learning every time you teach.
+            </p>
+            <p className="text-body text-content-primary leading-relaxed font-medium">
+              You don't see it. Your students feel it.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════ 5 DOORS ═══════ */}
       <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
