@@ -40,8 +40,8 @@ const realBuilds = [
 
 export default function MakersPage() {
   useDocumentMeta({
-    title: 'For Makers & Artisans — 5% rev share, no upfront — Astral Studio',
-    description: 'Your craft deserves a digital home that honors the work — not a marketplace template, not Etsy fees. Custom sites for textile artisans, slow-fashion brands, ceramicists, writers, and bespoke makers. No upfront cost — we take 5% of what you sell. Boutique tier.',
+    title: 'For makers — Astral Studio',
+    description: 'I build the shop your craft deserves. Custom site, inventory, Stripe checkout, order management, brand voice. Built around your work, not a template.',
     ogUrl: 'https://astralstudio.io/makers',
   });
 
@@ -125,10 +125,10 @@ export default function MakersPage() {
             For Makers & Artisans
           </p>
           <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
-            Your craft deserves a home that <em className="italic gradient-text">honors the work.</em>
+            I build the <em className="italic gradient-text">shop</em><br />your craft deserves.
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            You make beautiful things — bespoke robes, plant-dyed garments, ceramics, prints, long-form writing. Your work doesn't belong on an Etsy template that takes 6.5% and treats your craft like inventory. It needs a digital home that breathes the texture of what you make.
+            Custom site, inventory, Stripe checkout, order management, the brand voice your work actually has. Built around what you make, not a template.
           </p>
         </div>
       </section>
@@ -225,46 +225,27 @@ export default function MakersPage() {
         </div>
       </section>
 
-      {/* Pricing card */}
+      {/* How engagements start */}
       <section className="py-section px-6 md:px-12">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
-            Pricing
+            How to start
           </p>
           <h2 className="font-serif text-display-sm font-light mb-4">
-            Boutique tier.
+            Every engagement is shaped to the work.
           </h2>
-          <p className="text-body text-content-secondary max-w-prose mb-12">
-            Custom site, catalog, checkout, inventory. We build it for free and take a small share when you sell.
+          <p className="text-body text-content-secondary max-w-prose mb-8">
+            You own the code, your customers, your domain. From day one. No marketplace fee, no monthly subscription, no platform tax.
           </p>
-
-          <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
-            <div className="grid grid-cols-3 gap-6 mb-8">
-              {[
-                { label: 'Upfront cost', value: '$0', detail: 'No fees · we build first' },
-                { label: 'Revenue share', value: '5%', detail: 'From dollar one · Boutique tier' },
-                { label: 'Timeline', value: '1–2 weeks', detail: 'To launch' },
-              ].map((item, i) => (
-                <div key={i}>
-                  <p className="text-meta uppercase text-content-muted mb-1">{item.label}</p>
-                  <p className="font-serif text-h3 font-light text-accent">{item.value}</p>
-                  <p className="text-meta text-content-muted mt-1">{item.detail}</p>
-                </div>
-              ))}
-            </div>
-            <p className="text-body-sm text-content-muted leading-relaxed">
-              You keep your code, your customers, your domain — from day one. We share in the upside as you grow. No marketplace fee, no monthly subscription, no platform tax.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-4">
-              <a href="/pricing" className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
-                Full pricing & FAQ <span aria-hidden="true">→</span>
-              </a>
-              <a href="https://calendly.com/astral-integration/free-strategy-call" target="_blank" rel="noopener noreferrer" className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
-                Book a call <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </div>
+          <a
+            href="https://calendly.com/astral-integration/free-strategy-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+          >
+            Book a call
+          </a>
         </div>
       </section>
 

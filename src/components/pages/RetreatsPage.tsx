@@ -15,8 +15,8 @@ const offeringStreams = [
 
 export default function RetreatsPage() {
   useDocumentMeta({
-    title: 'For Retreats & Centers — 12% rev share, no upfront — Astral Studio',
-    description: 'A retreat booking isn\'t a hotel reservation. Custom intake flows, multi-stream revenue, capacity management, and preparation sequences — built for how retreat centers actually work. No upfront cost — we take 12% of platform revenue. Membership tier.',
+    title: 'For retreats — Astral Studio',
+    description: 'I turn your retreat center into a platform. Bookings, intake, capacity management, preparation sequences, multi-stream payments. Built around your offerings, not a booking widget.',
     ogUrl: 'https://astralstudio.io/retreats',
   });
 
@@ -101,10 +101,10 @@ export default function RetreatsPage() {
             For Retreats & Centers
           </p>
           <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
-            A retreat booking isn't<br />a hotel <em className="italic gradient-text">reservation.</em>
+            I turn your retreat center<br />into a <em className="italic gradient-text">platform.</em>
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            Your center runs retreats, therapy, homestays, workshops — each with its own intake, pricing, and client journey. A "Book Now" button doesn't cut it when someone needs screening, preparation materials, and capacity management before they walk through the door.
+            Bookings, intake, capacity management, preparation sequences, multi-stream payments. Built around your offerings, not a booking widget.
           </p>
         </div>
       </section>
@@ -312,53 +312,27 @@ export default function RetreatsPage() {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* How engagements start */}
       <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
-            The Model
+            How to start
           </p>
           <h2 className="font-serif text-display-sm font-light mb-4">
-            Scoped to your center's complexity.
+            Every engagement is shaped to the work.
           </h2>
-          <p className="text-body text-content-secondary max-w-prose mb-16">
-            A single-offering retreat space is a different build than a center with five revenue streams. I scope and price based on what the work actually requires.
+          <p className="text-body text-content-secondary max-w-prose mb-8">
+            You own the code, the data, the client records. From day one. No platform commissions on direct bookings.
           </p>
-
-          <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
-            <div className="grid grid-cols-3 gap-6 mb-8">
-              {[
-                { label: 'Upfront cost', value: '$0', detail: 'No fees · we build first' },
-                { label: 'Revenue share', value: '5–15%', detail: 'From dollar one · scoped to scope' },
-                { label: 'Timeline', value: '2 – 6 weeks', detail: 'To launch' },
-              ].map((item, i) => (
-                <div key={i}>
-                  <p className="text-meta uppercase text-content-muted mb-1">{item.label}</p>
-                  <p className="font-serif text-h3 font-light text-accent">{item.value}</p>
-                  <p className="text-meta text-content-muted mt-1">{item.detail}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-6 border-t border-border space-y-2">
-              <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">You own everything.</strong> Code, data, domain, client records. From day one.
-              </p>
-              <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">No platform commissions.</strong> Unlike Airbnb's 15-20%, your direct bookings cost zero in platform fees.
-              </p>
-              <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">Long-term partner.</strong> My pricing is structured so my success is tied to yours.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <a href="/pricing" className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
-              Full pricing & FAQ <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div>
+          <a
+            href="https://calendly.com/astral-integration/free-strategy-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+          >
+            Book a call
+          </a>
         </div>
       </section>
 

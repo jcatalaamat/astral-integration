@@ -25,8 +25,8 @@ const beforeAfter = [
 
 export default function PractitionersPage() {
   useDocumentMeta({
-    title: 'For Practitioners — 8% rev share, no upfront — Astral Studio',
-    description: 'You have the audience. You deserve the infrastructure. We replace your 6 disconnected tools with one platform — your brand, your domain, everything connected. No upfront cost — we take 8% of platform revenue. Service tier.',
+    title: 'For practitioners — Astral Studio',
+    description: 'I turn your practice into a business. Booking calendar, intake forms, payments, automations, and the AI that handles the inbox between sessions.',
     ogUrl: 'https://astralstudio.io/practitioners',
   });
 
@@ -120,10 +120,10 @@ export default function PractitionersPage() {
             For Practitioners
           </p>
           <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
-            You have the audience.<br />You deserve the <em className="italic gradient-text">infrastructure.</em>
+            I turn your <em className="italic gradient-text">practice</em><br />into a business.
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            You're running your practice on Wix + Stripe + Calendly + Linktree + a prayer. I replace all of it with one platform — your brand, your domain, everything connected. Most practitioners launch in 2–3 weeks.
+            Booking calendar, intake forms, payments, automations, and the AI that handles the inbox between sessions. Built around your sessions, not a calendar app.
           </p>
         </div>
       </section>
@@ -291,50 +291,27 @@ export default function PractitionersPage() {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* How engagements start */}
       <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
-            The Model
+            How to start
           </p>
           <h2 className="font-serif text-display-sm font-light mb-4">
-            Built for practitioners who are ready.
+            Every engagement is shaped to the work.
           </h2>
-          <p className="text-body text-content-secondary max-w-prose mb-16">
-            Every project is scoped to what the work actually requires. My pricing is structured so my success is tied to yours — I don't build and disappear.
+          <p className="text-body text-content-secondary max-w-prose mb-8">
+            You own the code, the data, the domain. From day one.
           </p>
-
-          <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
-            <div className="grid grid-cols-3 gap-6 mb-8">
-              {[
-                { label: 'Upfront cost', value: '$0', detail: 'No fees · we build first' },
-                { label: 'Revenue share', value: '5–15%', detail: 'From dollar one · scoped to scope' },
-                { label: 'Timeline', value: '2 – 6 weeks', detail: 'To launch' },
-              ].map((item, i) => (
-                <div key={i}>
-                  <p className="text-meta uppercase text-content-muted mb-1">{item.label}</p>
-                  <p className="font-serif text-h3 font-light text-accent">{item.value}</p>
-                  <p className="text-meta text-content-muted mt-1">{item.detail}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-6 border-t border-border space-y-2">
-              <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">You own everything.</strong> Code, data, domain, content. From day one.
-              </p>
-              <p className="text-body-sm text-content-muted">
-                <strong className="text-content-secondary">Long-term partner.</strong> I stay as your technical partner — maintaining and evolving the platform as your work grows.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <a href="/pricing" className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2">
-              Full pricing & FAQ <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div>
+          <a
+            href="https://calendly.com/astral-integration/free-strategy-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+          >
+            Book a call
+          </a>
         </div>
       </section>
 
