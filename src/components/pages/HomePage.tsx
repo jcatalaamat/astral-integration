@@ -274,47 +274,36 @@ export default function HomePage() {
             How engagements start
           </p>
           <h2 className="font-serif text-display-sm font-light mb-4">
-            Two ways in. One conversation.
+            Start with an audit.
           </h2>
           <p className="text-body text-content-secondary max-w-prose mb-12">
-            High intent, start with an audit. Still figuring out what you need, start with a call.
+            Before any build, I learn your work end to end and write up what I find. The audit fee is refundable against the engagement that follows.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10">
-              <p className="text-meta uppercase text-accent mb-3">Audit</p>
-              <p className="font-serif text-h2 font-light mb-2">Fixed-fee</p>
-              <p className="text-meta text-content-muted mb-6">Quoted on the call</p>
-              <p className="text-body-sm text-content-secondary leading-relaxed mb-8">
-                A written diagnostic of your current stack, five prioritized fixes, and a deal-shape proposal for what comes next. Refundable against the retainer if we move forward.
-              </p>
+          <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
+            <p className="text-meta uppercase text-accent mb-3">Audit</p>
+            <p className="font-serif text-h2 font-light mb-2">$1,500</p>
+            <p className="text-meta text-content-muted mb-6">Fixed fee · refundable against the engagement that follows</p>
+            <p className="text-body-sm text-content-secondary leading-relaxed mb-8">
+              A written diagnostic of your current stack, five prioritized fixes, and a deal-shape proposal for what comes next.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
               <a
                 href="https://calendly.com/astral-integration/free-strategy-call"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-3 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+                className="inline-block px-8 py-3 bg-accent text-white rounded-full text-body-sm font-medium btn-glow text-center"
               >
                 Start an audit
               </a>
-            </div>
-
-            <div className="bg-dark-card border border-border rounded-2xl p-8 md:p-10">
-              <p className="text-meta uppercase text-accent mb-3">Infrastructure retainer</p>
-              <p className="font-serif text-h2 font-light mb-2">$550<span className="text-h4 text-content-muted">/mo</span></p>
-              <p className="text-meta text-content-muted mb-6">Ongoing — cancel anytime</p>
-              <p className="text-body-sm text-content-secondary leading-relaxed mb-4">
-                I run the machine that fills your room. Site that converts, email that nurtures, automation that repurposes, systems that don't need babysitting.
-              </p>
-              <p className="text-body-sm text-content-muted leading-relaxed mb-8">
-                Includes weekly office hours — a group call with the other practices I work with. Bring what you're stuck on.
-              </p>
+              <span className="text-content-muted text-body-sm">or</span>
               <a
                 href="https://calendly.com/astral-integration/free-strategy-call"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-3 bg-transparent text-content-secondary border border-border rounded-full text-body-sm font-medium hover:border-border-hover hover:text-content-primary transition-all"
+                className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
               >
-                Book a call
+                Just book a call <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
           </div>
