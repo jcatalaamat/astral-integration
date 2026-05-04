@@ -273,12 +273,20 @@ export default function HomePage() {
             <span className="w-8 h-px bg-accent" />
             How engagements start
           </p>
-          <h2 className="font-serif text-display-sm font-light mb-4">
-            Start with an audit.
+          <h2 className="font-serif text-display-sm font-light mb-6 max-w-[760px]">
+            Send me your messy notes.
           </h2>
-          <p className="text-body text-content-secondary max-w-prose mb-12">
-            Before any build, I learn your work end to end and write up what I find. The audit fee is refundable against the engagement that follows.
-          </p>
+          <div className="max-w-prose space-y-5 mb-12">
+            <p className="text-body text-content-secondary leading-relaxed">
+              A voice memo, a Google Doc, a screenshot of your Instagram bio, the WhatsApp thread where you actually explain the work. I research it. I wrap it into a real business — site, bookings, payments, memberships, automations, the AI underneath.
+            </p>
+            <p className="text-body text-content-secondary leading-relaxed">
+              Then I either stay on as your long-term tech, install your digital CEO and step back, or hand you the keys. Whichever fits.
+            </p>
+            <p className="text-body-sm text-content-muted leading-relaxed">
+              Before any of that, an audit. So we both know what we're building.
+            </p>
+          </div>
 
           <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
             <p className="text-meta uppercase text-accent mb-3">Audit</p>
