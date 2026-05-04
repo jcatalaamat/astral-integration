@@ -19,10 +19,16 @@ export default function HomePage() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
 
-  const rotatingWords = ['practice', 'teachings', 'craft', 'retreat', 'school'];
+  const rotatingPairs = [
+    { left: 'practice', right: 'thriving business' },
+    { left: 'teachings', right: 'real business' },
+    { left: 'craft', right: 'working business' },
+    { left: 'retreat', right: 'living business' },
+    { left: 'school', right: 'scaling business' },
+  ];
   const [wordIndex, setWordIndex] = useState(0);
   useEffect(() => {
-    const t = setInterval(() => setWordIndex((i) => (i + 1) % rotatingWords.length), 2400);
+    const t = setInterval(() => setWordIndex((i) => (i + 1) % rotatingPairs.length), 2400);
     return () => clearInterval(t);
   }, []);
 
@@ -107,7 +113,7 @@ export default function HomePage() {
         <div className="absolute w-[300px] h-[300px] bg-gold rounded-full blur-[100px] opacity-15 top-[30%] left-[10%] animate-float" style={{ animationDelay: '-14s' }} />
 
         <h1 className="font-serif text-display font-light max-w-[900px] relative z-10 animate-fadeUp animate-delay-300">
-          I turn your <em key={wordIndex} className="italic gradient-text inline-block animate-fadeUp">{rotatingWords[wordIndex]}</em><br />into a business.
+          I turn your <em key={`l-${wordIndex}`} className="italic gradient-text inline-block animate-fadeUp">{rotatingPairs[wordIndex].left}</em><br />into a <em key={`r-${wordIndex}`} className="italic gradient-text inline-block animate-fadeUp">{rotatingPairs[wordIndex].right}</em>.
         </h1>
 
         <p className="text-body text-content-secondary max-w-[720px] mt-8 relative z-10 animate-fadeUp animate-delay-500">
