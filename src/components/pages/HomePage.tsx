@@ -282,9 +282,9 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
-              { step: '01', title: 'We talk.', desc: 'You tell me what you\'re building. I learn the work, the methodology, the people you serve. If it\'s a fit, I send a proposal within days.' },
+              { step: '01', title: 'I learn your work.', desc: 'You tell me what you\'re building. I learn the methodology, the people you serve, the way you actually teach. If it\'s a fit, I send a proposal within days.' },
               { step: '02', title: 'I build.', desc: 'Custom platform, real code, your brand. You see it come together week by week. Most projects launch in 2–6 weeks.' },
-              { step: '03', title: 'I stay.', desc: 'This isn\'t a handoff. I remain your technical partner — maintaining, evolving, and scaling your platform as the work grows.' },
+              { step: '03', title: 'I hand you the keys.', desc: 'You own the code, the data, the domain. Whether I stay on after launch is a conversation, not a contract.' },
             ].map((item, i) => (
               <div key={i}>
                 <div className="flex items-center gap-3 mb-4">
@@ -302,33 +302,10 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {[
-              { label: 'Upfront cost', value: '$0' },
-              { label: 'Revenue share', value: '5–15%' },
-              { label: 'Timeline', value: '1–12 weeks' },
-            ].map((item, i) => (
-              <div key={i} className="text-center md:text-left">
-                <p className="text-meta uppercase text-content-muted mb-1">{item.label}</p>
-                <p className="font-serif text-h2 font-light text-accent">{item.value}</p>
-              </div>
-            ))}
-          </div>
-
           <p className="text-body-sm text-content-muted mb-2">Every site is custom-built from scratch. No templates, no themes, no page builders.</p>
-          <p className="text-body-sm text-content-muted mb-2">No upfront fees. We build for free, then take a small % of platform revenue from dollar one. Aligned partnership.</p>
-          <p className="text-body-sm text-content-muted mb-2">You own everything. Code, data, domain. From day one.</p>
-          <p className="text-body-sm text-content-muted mb-2">I stay on as your technical partner. My success is tied to yours.</p>
-          <p className="text-body-sm text-content-muted mb-6 italic">Some people call this a fractional CTO. I just call it partnership.</p>
+          <p className="text-body-sm text-content-muted mb-6">You own everything. Code, data, domain. From day one.</p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
-            <a
-              href="/pricing"
-              className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
-            >
-              Full pricing & FAQ <span aria-hidden="true">&rarr;</span>
-            </a>
-            <span className="hidden sm:inline text-content-muted">·</span>
             <a
               href="https://calendly.com/astral-integration/free-strategy-call"
               target="_blank"
