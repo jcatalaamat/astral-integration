@@ -9,8 +9,8 @@ import PreviewFrame from '../PreviewFrame';
 
 export default function HomePage() {
   useDocumentMeta({
-    title: 'Astral Studio — We take a % of what you make. No upfront. No fees.',
-    description: 'We build custom digital infrastructure for artists, creatives, changemakers, practitioners, facilitators, and organizations. No upfront cost — we take a small % of what you make. Aligned partnership from day one.',
+    title: 'Astral Studio — I turn your practice into a business.',
+    description: 'Bookings, payments, memberships, automations, and the AI underneath. Custom platforms for teachers, schools, and retreat centers.',
     ogUrl: 'https://astralstudio.io/',
   });
 
@@ -18,13 +18,6 @@ export default function HomePage() {
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
-
-  const rotatingWords = ['practice', 'craft', 'teachings', 'art', 'community', 'business'];
-  const [wordIndex, setWordIndex] = useState(0);
-  useEffect(() => {
-    const t = setInterval(() => setWordIndex((i) => (i + 1) % rotatingWords.length), 2400);
-    return () => clearInterval(t);
-  }, []);
 
   const [activeStudy, setActiveStudy] = useState<CaseStudy | null>(null);
   useEffect(() => {
@@ -107,19 +100,15 @@ export default function HomePage() {
         <div className="absolute w-[300px] h-[300px] bg-gold rounded-full blur-[100px] opacity-15 top-[30%] left-[10%] animate-float" style={{ animationDelay: '-14s' }} />
 
         <h1 className="font-serif text-display font-light max-w-[900px] relative z-10 animate-fadeUp animate-delay-300">
-          Your <em key={wordIndex} className="italic gradient-text inline-block animate-fadeUp">{rotatingWords[wordIndex]}</em><br />deserves infrastructure that matches it.
+          I turn your <em className="italic gradient-text">practice</em><br />into a business.
         </h1>
 
-        <p className="text-body text-content-secondary max-w-[680px] mt-8 relative z-10 animate-fadeUp animate-delay-500">
-          We build the digital infrastructure. No upfront. We take a % of what you make.
-        </p>
-
-        <p className="text-body text-content-secondary max-w-[680px] mt-5 relative z-10 animate-fadeUp animate-delay-600">
-          Send us your messy notes — a voice memo, a Google Doc, a screenshot of your Instagram bio. We'll research your work, build your platform, wire your payments, set up your community, and hand you the keys.
+        <p className="text-body text-content-secondary max-w-[720px] mt-8 relative z-10 animate-fadeUp animate-delay-500">
+          Bookings, payments, memberships, automations, and the AI underneath. Built around your work, not a template.
         </p>
 
         <p className="text-body-sm text-content-muted mt-6 relative z-10 animate-fadeUp animate-delay-700">
-          Former CTO. Senior full-stack engineer. Your long-term technical partner.
+          Former CTO. Senior full-stack engineer.
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 mt-12 relative z-10 animate-fadeUp animate-delay-900">
