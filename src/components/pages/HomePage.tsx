@@ -187,6 +187,100 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═══════ WHAT I BUILD ═══════ */}
+      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            What I Build
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            Six pieces. One platform.
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-12">
+            The hero promised five things and an AI underneath. Here's what each one actually looks like when it's built around your work.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Bookings & intake',
+                tagline: 'Built around how you onboard, not a calendar widget.',
+                bullets: [
+                  'Multi-offering calendar (sessions, workshops, retreats, cohorts)',
+                  'Pre-session intake forms tied to the specific work',
+                  'Preparation sequences — emails, prep videos, reading lists',
+                  'Capacity management for group offerings',
+                ],
+              },
+              {
+                title: 'Payments',
+                tagline: 'Direct, owned, Stripe-clean.',
+                bullets: [
+                  'Stripe checkout with deposits and balance payments',
+                  'Multi-stream routing — sessions, memberships, retreats, shop',
+                  'No marketplace fees, no platform tax, no aggregator',
+                  'Refunds and disputes handled in-house',
+                ],
+              },
+              {
+                title: 'Memberships',
+                tagline: 'A real container for the people who keep coming back.',
+                bullets: [
+                  'Member login + private portal',
+                  'Recurring subscription billing with tier support',
+                  'Gated content — courses, recordings, drips',
+                  'Member directory and progression tracking',
+                ],
+              },
+              {
+                title: 'Automations',
+                tagline: 'The busywork that runs while you teach.',
+                bullets: [
+                  'Lifecycle email — welcome, onboard, re-engagement, win-back',
+                  'Content repurposing — recording → clips → posts → blog',
+                  'Booking confirmations, reminders, follow-up nudges',
+                  'Calendar sync, contract sending, post-session tasks',
+                ],
+              },
+              {
+                title: 'The AI underneath',
+                tagline: 'Trained on your work. Quietly, in the background.',
+                bullets: [
+                  'Drafts launches, emails, captions in your voice',
+                  'Answers a student at 3am in the language of your tradition',
+                  'Trained on past recordings, intake forms, methodology',
+                  'Gets sharper every time you teach',
+                ],
+              },
+              {
+                title: 'Yours, day one',
+                tagline: 'No vendor lock-in. No SaaS dependency.',
+                bullets: [
+                  'Code lives in your GitHub',
+                  'Data lives in your database',
+                  'Domain is in your name',
+                  'If we ever stop working together, you walk with the keys',
+                ],
+              },
+            ].map((feature, i) => (
+              <div key={i} className="bg-dark-card border border-border rounded-2xl p-7 hover:border-accent/40 transition-colors">
+                <h3 className="font-serif text-h4 font-light mb-2">{feature.title}</h3>
+                <p className="text-body-sm text-accent mb-4">{feature.tagline}</p>
+                <ul className="space-y-2">
+                  {feature.bullets.map((b, j) => (
+                    <li key={j} className="flex items-start gap-2 text-body-sm text-content-secondary leading-relaxed">
+                      <span className="w-1 h-1 rounded-full bg-content-muted mt-2 flex-shrink-0" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══════ 5 DOORS ═══════ */}
       <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
