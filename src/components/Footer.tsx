@@ -12,6 +12,7 @@ export default function Footer() {
     { label: 'Case studies', href: '/work' },
     { label: 'How it works', href: '/how-it-works' },
     { label: 'Built vs bought', href: '/built-vs-bought' },
+    { label: 'FAQ', href: '/faq' },
     { label: 'Insights', href: '/insights' },
   ];
 
