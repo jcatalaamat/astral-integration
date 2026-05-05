@@ -37,7 +37,7 @@ export default function Navigation() {
                 rel="noopener noreferrer"
                 className="btn-jugat saffron"
               >
-                Start an audit
+                Book a call
               </a>
             </li>
           </ul>
@@ -85,7 +85,7 @@ export default function Navigation() {
             rel="noopener noreferrer"
             className="btn-jugat saffron mt-8 justify-center"
           >
-            Start an audit →
+            Book a call →
           </a>
         </div>
       )}

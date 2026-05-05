@@ -123,7 +123,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="btn-jugat saffron"
               >
-                Start an audit
+                Book a call
               </a>
             </li>
           </ul>
@@ -158,7 +158,7 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="btn-jugat saffron"
             >
-              Start an audit →
+              Book a call →
             </a>
             <a
               href="#work"
