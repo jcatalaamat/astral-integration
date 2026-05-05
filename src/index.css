@@ -2,100 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Dark theme base */
+/* Jugat-guru theme — warm cream + saffron + indigo */
 html, body {
-  background-color: #0a0a0f;
-  color: #E8E6F0;
-  color-scheme: dark;
+  background-color: #F7EDD5;
+  color: #1C1610;
+  color-scheme: light;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-}
-
-/* Grain texture overlay */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 100;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 /* Selection color */
 ::selection {
-  background-color: #c4956a;
-  color: white;
+  background-color: #E88838;
+  color: #1C1610;
 }
 
-/* Focus visible — global accessibility */
+/* Focus visible */
 :focus-visible {
-  outline: 2px solid rgba(196, 149, 106, 0.50);
+  outline: 2px solid rgba(232, 136, 56, 0.50);
   outline-offset: 2px;
 }
 
-/* Custom scrollbar - dark theme */
-::-webkit-scrollbar {
-  width: 8px;
-}
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #F0E1BD; }
+::-webkit-scrollbar-thumb { background: #B2611A; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #E88838; }
 
-::-webkit-scrollbar-track {
-  background: #111118;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #c4956a;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #d4a57a;
-}
-
-/* Animation utilities */
+/* Animations */
 @keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-.animate-fadeUp {
-  opacity: 0;
-  animation: fadeUp 1s ease forwards;
-}
-
-.animate-delay-100 {
-  animation-delay: 0.1s;
-}
-
-.animate-delay-200 {
-  animation-delay: 0.2s;
-}
-
-.animate-delay-300 {
-  animation-delay: 0.3s;
-}
-
-.animate-delay-500 {
-  animation-delay: 0.5s;
-}
-
-.animate-delay-700 {
-  animation-delay: 0.7s;
-}
-
-.animate-delay-900 {
-  animation-delay: 0.9s;
-}
-
-.animate-delay-1200 {
-  animation-delay: 1.2s;
-}
+.animate-fadeUp { opacity: 0; animation: fadeUp 1s ease forwards; }
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+.animate-delay-700 { animation-delay: 0.7s; }
+.animate-delay-900 { animation-delay: 0.9s; }
+.animate-delay-1200 { animation-delay: 1.2s; }
 
 /* Reveal animation for scroll */
 .reveal {
@@ -103,90 +54,159 @@ body::after {
   transform: translateY(40px);
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Gradient text utility */
-.gradient-text {
-  background: linear-gradient(135deg, #d4a57a, #c4956a, #a67b52);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Display headings — DM Serif Display */
+.serif {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+}
+.serif-i {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
-/* Glass effect */
+/* Em accent — italic + saffron-deep, jugat signature */
+.em-accent {
+  font-style: italic;
+  color: #B2611A;
+  font-weight: 400;
+}
+
+/* Mono / eyebrow tag */
+.mono-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #B2611A;
+  font-weight: 400;
+}
+
+/* Pill buttons */
+.btn-jugat {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 22px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.btn-jugat.pri {
+  background: #1C1610;
+  color: #FCF6E4;
+  border-color: #1C1610;
+}
+.btn-jugat.pri:hover {
+  background: #1E1548;
+  border-color: #1E1548;
+}
+.btn-jugat.saffron {
+  background: #E88838;
+  color: #1C1610;
+  border-color: #E88838;
+}
+.btn-jugat.saffron:hover {
+  background: #B2611A;
+  color: #FCF6E4;
+  border-color: #B2611A;
+}
+.btn-jugat.ghost {
+  background: transparent;
+  color: #1C1610;
+  border-color: rgba(28, 22, 16, 0.26);
+}
+.btn-jugat.ghost:hover {
+  border-color: #1C1610;
+  background: #F0E1BD;
+}
+
+/* Ornamental flourish */
+.flourish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 0 auto;
+}
+.flourish .rule {
+  height: 1px;
+  background: #B2611A;
+  opacity: 0.4;
+  flex: 0 0 60px;
+}
+
+/* Hero radial saffron glow */
+.hero-glow {
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 1200px;
+  border-radius: 50%;
+  opacity: 0.8;
+  background: radial-gradient(circle, rgba(244, 169, 90, 0.35) 0%, rgba(247, 237, 213, 0) 55%);
+  pointer-events: none;
+}
+
+/* Legacy aliases — neutralized for jugat theme */
+.gradient-text {
+  color: #B2611A;
+  font-style: italic;
+}
 .glass {
   backdrop-filter: blur(20px);
-  background: rgba(10, 10, 15, 0.7);
+  background: rgba(252, 246, 228, 0.85);
 }
-
-/* Glow button effect */
 .btn-glow {
-  box-shadow: 0 0 40px rgba(196, 149, 106, 0.15);
   transition: all 0.3s ease;
 }
-
 .btn-glow:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 60px rgba(196, 149, 106, 0.3), 0 10px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 60px rgba(232, 136, 56, 0.3);
 }
 
-/* Tool theme CSS variables */
+/* Tool theme variables */
 :root {
-  --tool-primary: #c4956a;
-  --tool-primary-glow: rgba(196, 149, 106, 0.15);
-  --tool-accent: #2A9D6A;
+  --tool-primary: #B2611A;
+  --tool-primary-glow: rgba(232, 136, 56, 0.15);
+  --tool-accent: #1E1548;
 }
+[data-tool="life-os"] { --tool-primary: #B2611A; --tool-accent: #1E1548; }
+[data-tool="content-studio"] { --tool-primary: #E88838; --tool-accent: #B2611A; }
+.tool-gradient-text { color: var(--tool-primary); font-style: italic; }
+.btn-tool-glow { transition: all 0.3s ease; }
+.btn-tool-glow:hover { transform: translateY(-2px); box-shadow: 0 0 60px var(--tool-primary-glow); }
 
-[data-tool="life-os"] {
-  --tool-primary: #c4956a;
-  --tool-primary-glow: rgba(196, 149, 106, 0.15);
-  --tool-accent: #2A9D6A;
-}
-
-[data-tool="content-studio"] {
-  --tool-primary: #C9A96E;
-  --tool-primary-glow: rgba(201, 169, 110, 0.15);
-  --tool-accent: #c4956a;
-}
-
-/* Tool-specific gradient text */
-.tool-gradient-text {
-  background: linear-gradient(135deg, var(--tool-primary), var(--tool-accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Tool-specific button glow */
-.btn-tool-glow {
-  box-shadow: 0 0 40px var(--tool-primary-glow);
-  transition: all 0.3s ease;
-}
-
-.btn-tool-glow:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 60px var(--tool-primary-glow), 0 10px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Blueprint terminal */
+/* Blueprint terminal — neutralized */
 .blueprint-terminal {
   position: relative;
-  background: #0c0c12;
-  border: 1px solid rgba(196, 149, 106, 0.15);
+  background: #1E1548;
+  color: #FCF6E4;
+  border: 1px solid #1E1548;
   border-radius: 12px;
   padding: 1.5rem;
   padding-top: 2.5rem;
   overflow-x: auto;
-  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
-  color: #9895A8;
-  box-shadow: 0 0 60px rgba(196, 149, 106, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  font-family: 'DM Mono', monospace;
 }
-
-/* Terminal chrome dots */
 .blueprint-terminal::before {
   content: '● ● ●';
   position: absolute;
@@ -194,23 +214,5 @@ body::after {
   left: 1.25rem;
   font-size: 0.5rem;
   letter-spacing: 0.35em;
-  color: rgba(196, 149, 106, 0.35);
-}
-
-/* Scrollbar for terminal */
-.blueprint-terminal::-webkit-scrollbar {
-  height: 6px;
-}
-
-.blueprint-terminal::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.blueprint-terminal::-webkit-scrollbar-thumb {
-  background: rgba(196, 149, 106, 0.2);
-  border-radius: 3px;
-}
-
-.blueprint-terminal::-webkit-scrollbar-thumb:hover {
-  background: rgba(196, 149, 106, 0.4);
+  color: rgba(252, 246, 228, 0.35);
 }
