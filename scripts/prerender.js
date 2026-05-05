@@ -37,6 +37,7 @@ const ROUTES = [
   '/how-it-works',
   '/built-vs-bought',
   '/faq',
+  '/ai',
 ];
 
 // Simple static file server for the dist folder
