@@ -201,6 +201,94 @@ export default function OrganizationsPage() {
         </div>
       </section>
 
+      {/* What it looks like — UI mockup */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            What it looks like
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            1,247 facilitators. <em className="em-accent not-italic">38 regions.</em>
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-16">
+            One admin pane. Search, filter, moderate, export. The directory you'd otherwise hire 6 engineers and 12 months to build.
+          </p>
+
+          <div className="relative max-w-[620px] mx-auto bg-cream border border-rule overflow-hidden shadow-card" style={{ borderRadius: '14px' }}>
+            <div className="flex items-center gap-1.5 px-3 py-2.5 border-b border-rule bg-bg-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str" />
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str opacity-60" />
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str opacity-40" />
+              <span className="ml-3 mono-tag text-[9px] text-mute">admin.your-org.com · facilitators</span>
+            </div>
+            <div className="p-5 space-y-5 min-h-[440px]">
+              {/* admin header stats */}
+              <div className="grid grid-cols-3 gap-3">
+                <div>
+                  <p className="mono-tag text-[8px] text-mute mb-1">Facilitators</p>
+                  <p className="serif text-2xl text-ink leading-none"><em className="em-accent not-italic">1,247</em></p>
+                </div>
+                <div>
+                  <p className="mono-tag text-[8px] text-mute mb-1">Regions</p>
+                  <p className="serif text-2xl text-ink leading-none">38</p>
+                </div>
+                <div>
+                  <p className="mono-tag text-[8px] text-mute mb-1">Active 30d</p>
+                  <p className="serif text-2xl text-ink leading-none">892</p>
+                </div>
+              </div>
+
+              {/* filter row */}
+              <div className="flex items-center gap-1.5 flex-wrap text-[10px]">
+                <span className="px-2.5 py-1 bg-saffron-dp text-cream mono-tag" style={{ borderRadius: '999px' }}>All</span>
+                <span className="px-2.5 py-1 border border-rule text-mute mono-tag" style={{ borderRadius: '999px' }}>Active</span>
+                <span className="px-2.5 py-1 border border-rule text-mute mono-tag" style={{ borderRadius: '999px' }}>Pending</span>
+                <span className="px-2.5 py-1 border border-rule text-mute mono-tag" style={{ borderRadius: '999px' }}>Under review</span>
+                <span className="ml-auto mono-tag text-[8px] text-mute">⌘K to search</span>
+              </div>
+
+              {/* facilitator rows table */}
+              <div className="border border-rule overflow-hidden" style={{ borderRadius: '8px' }}>
+                <div className="grid grid-cols-[1.5fr_1fr_1fr_auto] gap-3 px-3 py-2 bg-bg-2 mono-tag text-[8px] text-mute">
+                  <span>Name</span><span>Region</span><span>Modality</span><span>Status</span>
+                </div>
+                {[
+                  { name: 'Ana Reyes', reg: 'Oaxaca · MX', mod: 'Sound healing', state: 'active' },
+                  { name: 'David Kohli', reg: 'Goa · IN', mod: 'Vedic astrology', state: 'active' },
+                  { name: 'Lila Tanaka', reg: 'Lisboa · PT', mod: 'Cacao circle', state: 'pending' },
+                  { name: 'Marco Vidal', reg: 'CDMX · MX', mod: 'Breathwork', state: 'review' },
+                ].map((f, k) => (
+                  <div key={k} className="grid grid-cols-[1.5fr_1fr_1fr_auto] gap-3 px-3 py-2.5 border-t border-rule items-center text-[11px]">
+                    <span className="text-ink truncate">{f.name}</span>
+                    <span className="text-ink-2 truncate">{f.reg}</span>
+                    <span className="text-ink-2 truncate">{f.mod}</span>
+                    <span className={`mono-tag text-[8px] px-1.5 py-0.5 ${
+                      f.state === 'active' ? 'bg-saffron-dp/12 text-saffron-dp' :
+                      f.state === 'pending' ? 'bg-bg-3 text-mute-strong' :
+                      'bg-terra/10 text-terra'
+                    }`} style={{ borderRadius: '4px' }}>
+                      {f.state}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* moderation queue + export */}
+              <div className="grid grid-cols-[1fr_auto] gap-3 items-center">
+                <div className="bg-bg-2 border border-rule p-3" style={{ borderRadius: '8px' }}>
+                  <p className="mono-tag text-[8px] text-saffron-dp mb-1">Moderation queue</p>
+                  <p className="text-xs text-ink"><em className="em-accent not-italic">3</em> profiles pending review</p>
+                </div>
+                <button className="btn-jugat saffron text-xs px-4 py-2.5">Export CSV →</button>
+              </div>
+
+              <p className="mono-tag text-[8px] text-mute text-center pt-1">Directory at scale · moderated · yours.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* "Why not build custom?" — unique objection */}
       <section className="py-section px-6 md:px-12 bg-bg-2">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
