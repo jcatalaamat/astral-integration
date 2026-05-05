@@ -203,6 +203,93 @@ export default function RetreatsPage() {
         </div>
       </section>
 
+      {/* What it looks like — UI mockup */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            What it looks like
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            One retreat. <em className="em-accent not-italic">Every detail.</em>
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-16">
+            Capacity, deposits, intake forms, room assignments, currencies. One pane that replaces airtable, stripe, your inbox, and the spreadsheet that breaks every quarter.
+          </p>
+
+          <div className="relative max-w-[560px] mx-auto bg-cream border border-rule overflow-hidden shadow-card" style={{ borderRadius: '14px' }}>
+            <div className="flex items-center gap-1.5 px-3 py-2.5 border-b border-rule bg-bg-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str" />
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str opacity-60" />
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str opacity-40" />
+              <span className="ml-3 mono-tag text-[9px] text-mute">your-center.com · retreats / sound-healing</span>
+            </div>
+            <div className="p-5 space-y-5 min-h-[420px]">
+              {/* retreat header */}
+              <div>
+                <p className="serif text-xl text-ink leading-tight">Sound Healing Retreat</p>
+                <p className="mono-tag text-[9px] text-mute mt-1">Mazunte · Sept 12-19 · 7 nights</p>
+              </div>
+
+              {/* capacity bar */}
+              <div>
+                <div className="flex items-baseline justify-between mb-1.5">
+                  <p className="mono-tag text-[9px] text-saffron-dp">Capacity</p>
+                  <p className="mono-tag text-[10px] text-ink"><em className="em-accent not-italic">12</em><span className="text-mute"> / 16 booked</span></p>
+                </div>
+                <div className="h-2 bg-bg-2 overflow-hidden" style={{ borderRadius: '2px' }}>
+                  <div className="h-full bg-saffron-dp" style={{ width: '75%' }} />
+                </div>
+                <p className="mono-tag text-[8px] text-mute mt-1">4 spots · waitlist 3</p>
+              </div>
+
+              {/* deposits + intake */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="border border-rule p-3" style={{ borderRadius: '8px' }}>
+                  <p className="mono-tag text-[8px] text-mute mb-1.5">Deposits collected</p>
+                  <p className="serif text-xl text-ink leading-none"><em className="em-accent not-italic">$6,000</em></p>
+                  <p className="text-[10px] text-ink-2 mt-1.5">of $36,000 total</p>
+                </div>
+                <div className="border border-rule p-3" style={{ borderRadius: '8px' }}>
+                  <p className="mono-tag text-[8px] text-mute mb-1.5">Intake forms</p>
+                  <p className="serif text-xl text-ink leading-none"><em className="em-accent not-italic">9</em><span className="text-mute text-sm"> / 12</span></p>
+                  <p className="text-[10px] text-ink-2 mt-1.5">3 pending · auto-nudge sent</p>
+                </div>
+              </div>
+
+              {/* rooms */}
+              <div>
+                <p className="mono-tag text-[8px] text-mute mb-2">Room assignments</p>
+                <div className="grid grid-cols-3 gap-1.5 text-[10px]">
+                  {[
+                    { type: 'Single', n: '5/5', state: 'full' },
+                    { type: 'Double', n: '4/5', state: 'partial' },
+                    { type: 'Triple', n: '1/2', state: 'partial' },
+                  ].map((r, k) => (
+                    <div key={k} className={`px-2.5 py-2 ${r.state === 'full' ? 'bg-saffron-dp/8 border border-saffron-dp/30' : 'border border-rule'}`} style={{ borderRadius: '6px' }}>
+                      <p className="mono-tag text-[8px] text-mute">{r.type}</p>
+                      <p className={`text-xs ${r.state === 'full' ? 'text-saffron-dp' : 'text-ink'}`}>{r.n}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* currency mix */}
+              <div className="bg-bg-2 border border-rule p-3" style={{ borderRadius: '8px' }}>
+                <p className="mono-tag text-[8px] text-mute mb-1.5">Currency mix</p>
+                <div className="flex items-baseline gap-4 text-xs text-ink">
+                  <span><em className="em-accent not-italic">$4,200</em> <span className="text-mute text-[10px]">USD</span></span>
+                  <span>MX$<em className="em-accent not-italic">32,400</em></span>
+                  <span>€<em className="em-accent not-italic">600</em></span>
+                </div>
+              </div>
+
+              <p className="mono-tag text-[8px] text-mute text-center pt-1">Every guest, every payment, every form — one view.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* "Why not Booking.com?" — unique objection for Retreats */}
       <section className="py-section px-6 md:px-12 bg-bg-2">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
