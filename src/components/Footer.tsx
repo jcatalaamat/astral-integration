@@ -11,6 +11,7 @@ export default function Footer() {
   const workLinks = [
     { label: 'Case studies', href: '/work' },
     { label: 'How it works', href: '/how-it-works' },
+    { label: 'Built vs bought', href: '/built-vs-bought' },
     { label: 'Insights', href: '/insights' },
   ];
 
