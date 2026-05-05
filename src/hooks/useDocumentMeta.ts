@@ -7,6 +7,7 @@ interface DocumentMeta {
   ogDescription?: string;
   ogImage?: string;
   ogUrl?: string;
+  noindex?: boolean;
 }
 
 export function useDocumentMeta(meta: DocumentMeta) {
@@ -28,5 +29,15 @@ export function useDocumentMeta(meta: DocumentMeta) {
     if (meta.ogImage) setMeta('og:image', meta.ogImage);
     setMeta('twitter:title', meta.ogTitle || meta.title);
     setMeta('twitter:description', meta.ogDescription || meta.description);
-  }, [meta.title, meta.description, meta.ogTitle, meta.ogDescription, meta.ogImage, meta.ogUrl]);
+
+    const robotsId = 'meta-robots-dynamic';
+    document.getElementById(robotsId)?.remove();
+    if (meta.noindex) {
+      const el = document.createElement('meta');
+      el.id = robotsId;
+      el.name = 'robots';
+      el.content = 'noindex, nofollow';
+      document.head.appendChild(el);
+    }
+  }, [meta.title, meta.description, meta.ogTitle, meta.ogDescription, meta.ogImage, meta.ogUrl, meta.noindex]);
 }

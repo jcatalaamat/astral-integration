@@ -900,6 +900,7 @@ export default function AccessPage() {
     title: 'Access Consciousness — Platform Prototype — Astral Studio',
     description: 'What else is possible when 13,000 facilitators share one platform? An unsolicited prototype for Access Consciousness — facilitator directory, class discovery, student journey, and facilitator dashboard. Built by Jordi Amat.',
     ogUrl: 'https://astralstudio.io/access',
+    noindex: true,
   });
 
   useEffect(() => {
