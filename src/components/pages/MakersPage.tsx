@@ -258,8 +258,42 @@ export default function MakersPage() {
         </div>
       </section>
 
-      {/* Real builds */}
+      {/* "Why not Shopify?" — inline comparison */}
       <section className="py-section px-6 md:px-12 bg-bg-2">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            The Honest Question
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            "Why not Shopify?"
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-8">
+            Shopify is built for fast-moving consumer goods. Your craft moves at a different speed. Different infrastructure for a different rhythm. Here's what Shopify can't do:
+          </p>
+          <div className="max-w-prose space-y-3">
+            {[
+              'Lead with story — every product page prioritizes "buy now," your craft needs "process first"',
+              'Show edition data, material origin, dye batch, mordant time — the things that make the piece what it is',
+              'Run a real waitlist — it\'s a third-party plugin, not a native primitive',
+              'Adapt to a 12-piece-a-year inventory model — the system assumes scale',
+              'Look like anything but Shopify — even with a custom theme, the bones show',
+              'Hold a 2,000-word essay next to a $400 piece without it feeling clumsy',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <span className="text-accent text-body-sm mt-0.5 flex-shrink-0">&times;</span>
+                <p className="text-body-sm text-content-secondary">{item}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-body text-content-primary font-medium mt-8 max-w-prose">
+            Shopify sells more, faster. Your work sells less, slower, and worth more. Different infrastructure.
+          </p>
+        </div>
+      </section>
+
+      {/* Real builds */}
+      <section className="py-section px-6 md:px-12">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
