@@ -48,10 +48,10 @@ export default function InsightsPage() {
             Insights
           </p>
           <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
-            Thinking on infrastructure, platforms, and <em className="italic gradient-text">original work.</em>
+            Notes from the <em className="italic gradient-text">studio.</em>
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            Notes on what I see building platforms for artists, creatives, changemakers, practitioners, facilitators, and organizations — the patterns, the problems, and why most off-the-shelf tools were never designed for this work.
+            Thinking on infrastructure, partnership economics, and what it takes to build digital homes for original work. Written between projects — when something\'s worth saying twice, it ends up here.
           </p>
         </div>
       </section>
@@ -70,7 +70,7 @@ export default function InsightsPage() {
                 <div className="flex items-center gap-4 mb-4">
                   <span className="text-meta uppercase text-accent">{post.category}</span>
                   <span className="text-meta text-content-muted">{post.readTime}</span>
-                  <span className="text-meta text-content-muted">{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                  <span className="text-meta text-content-muted">{new Date(post.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
                 </div>
                 <h2 className="font-serif text-h2 font-light group-hover:text-accent transition-colors mb-3">
                   {post.title}
@@ -92,16 +92,16 @@ export default function InsightsPage() {
       <section className="py-section px-6 md:px-12 bg-dark-card">
         <div className="max-w-content mx-auto text-center reveal" ref={addRevealRef}>
           <h2 className="font-serif text-display-sm font-light mb-6">
-            Building something original?
+            Building something <em className="em-accent">original?</em>
           </h2>
           <p className="text-body text-content-secondary max-w-prose mx-auto mb-10">
-            If your work needs infrastructure that doesn't exist yet, I'd like to hear about it.
+            Send me your messy notes. The spreadsheet that breaks every quarter, the tools you're stitching together, the offering you can't seem to ship cleanly. The studio is small on purpose — but if it's a fit, we figure out the next step on a 20-min call.
           </p>
           <a
             href="/contact"
-            className="inline-block px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
+            className="btn-jugat saffron"
           >
-            Start a Conversation
+            Send me your messy notes →
           </a>
         </div>
       </section>

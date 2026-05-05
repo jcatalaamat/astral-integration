@@ -21,6 +21,7 @@ const ROUTES = [
   '/about',
   '/contact',
   '/insights',
+  '/insights/the-studio-is-small-on-purpose',
   '/insights/the-linktree-problem',
   '/insights/six-tools-one-platform',
   '/insights/catch-them-before-they-scale',
