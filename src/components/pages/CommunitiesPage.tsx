@@ -253,8 +253,42 @@ export default function CommunitiesPage() {
         </div>
       </section>
 
-      {/* Case Study: Mazunte Today — the proof */}
+      {/* "Why not a Facebook group?" — inline comparison */}
       <section className="py-section px-6 md:px-12 bg-bg-2">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            The Honest Question
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            "Why not a Facebook group?"
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-8">
+            Facebook groups are free. They also leak — your members, your relationships, your reach. Mighty Networks, Discord, WhatsApp groups all share the same problem. Here's what those platforms can't do:
+          </p>
+          <div className="max-w-prose space-y-3">
+            {[
+              'Let you own the member list — Meta owns it, Discord owns it, the platform decides who sees what',
+              'Show every post — algorithmic feeds bury anything that doesn\'t generate engagement',
+              'Run real event RSVPs that connect to a calendar your members already use',
+              'Hold a facilitator directory, a language toggle, a location filter — none are native',
+              'Stay ad-free — the platform monetizes by selling your members\' attention',
+              'Survive a platform purge — people delete Facebook every six months and your community goes with them',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <span className="text-accent text-body-sm mt-0.5 flex-shrink-0">&times;</span>
+                <p className="text-body-sm text-content-secondary">{item}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-body text-content-primary font-medium mt-8 max-w-prose">
+            Free isn't free when the platform owns the relationship. Build on land you own.
+          </p>
+        </div>
+      </section>
+
+      {/* Case Study: Mazunte Today — the proof */}
+      <section className="py-section px-6 md:px-12">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
