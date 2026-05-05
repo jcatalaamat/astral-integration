@@ -211,6 +211,87 @@ export default function PractitionersPage() {
         </div>
       </section>
 
+      {/* What it looks like — UI mockup */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            What it looks like
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            One tab. <em className="em-accent not-italic">Five tools.</em>
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-16">
+            Today's sessions, intake forms waiting on you, this week's payments, the note you wrote yourself last Sunday. One view. Built around how you actually work.
+          </p>
+
+          <div className="relative max-w-[560px] mx-auto bg-cream border border-rule overflow-hidden shadow-card" style={{ borderRadius: '14px' }}>
+            <div className="flex items-center gap-1.5 px-3 py-2.5 border-b border-rule bg-bg-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str" />
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str opacity-60" />
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str opacity-40" />
+              <span className="ml-3 mono-tag text-[9px] text-mute">your-domain.com · today</span>
+            </div>
+            <div className="p-5 space-y-5 min-h-[420px]">
+              {/* greeting + date */}
+              <div className="flex items-baseline justify-between">
+                <p className="serif text-xl text-ink">Good morning, <em className="em-accent not-italic">Sera.</em></p>
+                <p className="mono-tag text-[9px] text-mute">Tue · 14 May 2026</p>
+              </div>
+
+              {/* today's sessions */}
+              <div>
+                <p className="mono-tag text-[9px] text-saffron-dp mb-2">Today · 3 sessions</p>
+                <div className="space-y-1.5">
+                  {[
+                    { time: '10:00', client: 'Maya Lindstrom', type: '75-min private · sadhana check-in', active: true },
+                    { time: '14:00', client: 'David Kohli', type: '60-min · birth chart reading', active: false },
+                    { time: '17:30', client: 'Anjali R.', type: '90-min · mantra initiation', active: false },
+                  ].map((s, k) => (
+                    <div key={k} className={`flex items-center gap-3 px-3 py-2 ${s.active ? 'bg-saffron-dp/8 border border-saffron-dp/30' : 'border border-rule'}`} style={{ borderRadius: '6px' }}>
+                      <span className={`mono-tag text-[10px] ${s.active ? 'text-saffron-dp' : 'text-mute'}`}>{s.time}</span>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs text-ink truncate">{s.client}</p>
+                        <p className="text-[10px] text-ink-2 truncate">{s.type}</p>
+                      </div>
+                      {s.active && <span className="mono-tag text-[8px] text-saffron-dp">Next ↑</span>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* split: intake + payments */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="border border-rule p-3" style={{ borderRadius: '8px' }}>
+                  <p className="mono-tag text-[8px] text-mute mb-1.5">Intake forms</p>
+                  <p className="serif text-2xl text-ink leading-none"><em className="em-accent not-italic">2</em><span className="text-mute text-base"> pending</span></p>
+                  <p className="text-[10px] text-ink-2 mt-2">Lila T. · Sam K.</p>
+                </div>
+                <div className="border border-rule p-3" style={{ borderRadius: '8px' }}>
+                  <p className="mono-tag text-[8px] text-mute mb-1.5">This week</p>
+                  <p className="serif text-2xl text-ink leading-none"><em className="em-accent not-italic">$1,840</em></p>
+                  <p className="text-[10px] text-ink-2 mt-2">7 paid · 1 outstanding</p>
+                </div>
+              </div>
+
+              {/* pinned note */}
+              <div className="bg-bg-2 border border-rule p-3" style={{ borderRadius: '8px' }}>
+                <div className="flex items-center justify-between mb-1.5">
+                  <p className="mono-tag text-[8px] text-saffron-dp">Pinned note</p>
+                  <span className="mono-tag text-[8px] text-mute">last Sun</span>
+                </div>
+                <p className="text-xs text-ink-2 leading-relaxed">
+                  Maya — week 3 of sadhana. Ask about the dawn practice. Energy was foggy last call. Possibly the new dosha mix?
+                </p>
+              </div>
+
+              {/* footer caption */}
+              <p className="mono-tag text-[8px] text-mute text-center pt-1">Calendar · Stripe · Mailerlite · Notion · Forms — one view.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Relevant Work */}
       <section className="py-section px-6 md:px-12 bg-bg-2">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
