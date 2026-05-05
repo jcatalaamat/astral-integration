@@ -572,51 +572,38 @@ export default function HomePage() {
       {/* ═══════ HOW ENGAGEMENTS START ═══════ */}
       <section id="engagements" className="bg-bg py-section">
         <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-start">
-            {/* messy notes copy */}
-            <div className="max-w-[640px]">
-              <p className="eyebrow mb-4">· How engagements start ·</p>
-              <h2 className="serif mb-7" style={{ fontSize: 'clamp(40px, 5.5vw, 84px)', lineHeight: 1.02, letterSpacing: '-0.012em' }}>
-                Send me your <em className="em-accent">messy notes.</em>
-              </h2>
-              <div className="space-y-4">
-                <p className="text-base text-ink-2 leading-relaxed">
-                  A voice memo, a Google Doc, a screenshot of your Instagram bio, the WhatsApp thread where you actually explain the work. I research it. I wrap it into a real business — site, bookings, payments, memberships, automations, the AI underneath.
-                </p>
-                <p className="text-base text-ink-2 leading-relaxed">
-                  Then I either stay on as your long-term tech, install your digital CEO and step back, or hand you the keys. <em className="em-accent">Whichever fits.</em>
-                </p>
-                <p className="text-sm text-mute-strong leading-relaxed pt-2 border-t border-rule mt-5">
-                  Before any of that, an audit. So we both know what we're building.
-                </p>
-              </div>
+          <div className="max-w-[760px] mx-auto text-center">
+            <p className="eyebrow mb-4">· How engagements start ·</p>
+            <h2 className="serif mb-8" style={{ fontSize: 'clamp(40px, 6vw, 92px)', lineHeight: 1, letterSpacing: '-0.012em' }}>
+              Send me your <em className="em-accent">messy notes.</em>
+            </h2>
+            <div className="space-y-5 max-w-prose mx-auto">
+              <p className="text-base md:text-lg text-ink-2 leading-relaxed">
+                A voice memo, a Google Doc, a screenshot of your Instagram bio, the WhatsApp thread where you actually explain the work. I research it. I wrap it into a real business — site, bookings, payments, memberships, automations, the AI underneath.
+              </p>
+              <p className="text-base md:text-lg text-ink-2 leading-relaxed">
+                Then I either stay on as your long-term tech, install your digital CEO and step back, or hand you the keys. <em className="em-accent">Whichever fits.</em>
+              </p>
             </div>
 
-            {/* audit card */}
-            <div className="bg-cream border-2 border-saffron-dp p-8 md:p-10 max-w-[420px] w-full" style={{ borderRadius: '16px' }}>
-              <p className="mono-tag text-[10px] text-saffron-dp tracking-[0.22em] mb-3">Audit · Fixed fee</p>
-              <p className="serif mb-1" style={{ fontSize: 'clamp(48px, 5vw, 72px)', lineHeight: 1 }}>
-                <em className="em-accent">$1,500</em>
-              </p>
-              <p className="mono-tag text-[10px] text-mute mb-6">Refundable against the engagement that follows</p>
-              <p className="text-sm text-ink-2 leading-relaxed mb-7">
-                A written diagnostic of your current stack, five prioritized fixes, and a deal-shape proposal for what comes next.
-              </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
               <a
                 href="https://calendly.com/astral-integration/free-strategy-call"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-jugat saffron w-full justify-center"
+                className="btn-jugat saffron"
               >
-                Start an audit →
+                Book a call →
               </a>
               <a
-                href="https://calendly.com/astral-integration/free-strategy-call"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center text-xs text-mute mt-4 hover:text-saffron-dp transition-colors"
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="btn-jugat ghost"
               >
-                or just book a call
+                Send a message
               </a>
             </div>
           </div>
