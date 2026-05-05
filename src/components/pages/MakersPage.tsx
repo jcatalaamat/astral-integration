@@ -193,6 +193,71 @@ export default function MakersPage() {
         </div>
       </section>
 
+      {/* What it looks like — UI mockup */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            What it looks like
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            Slow shop. <em className="em-accent not-italic">Story first.</em>
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-16">
+            A product page that doesn't feel like Shopify. Process before price. Waitlist instead of buy-now-pay-now. The pace of the work, on the page.
+          </p>
+
+          <div className="relative max-w-[480px] mx-auto bg-cream border border-rule overflow-hidden shadow-card" style={{ borderRadius: '14px' }}>
+            <div className="flex items-center gap-1.5 px-3 py-2.5 border-b border-rule bg-bg-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str" />
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str opacity-60" />
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str opacity-40" />
+              <span className="ml-3 mono-tag text-[9px] text-mute">your-craft.com · linen wrap</span>
+            </div>
+            <div className="p-5 space-y-5 min-h-[420px]">
+              {/* product "image" — paper-textured placeholder */}
+              <div className="aspect-[4/3] bg-bg-3 border border-rule grid place-items-center relative overflow-hidden" style={{ borderRadius: '8px' }}>
+                <div className="absolute inset-0 opacity-40" style={{ background: 'repeating-linear-gradient(45deg, transparent 0, transparent 6px, rgba(178,97,26,0.04) 6px, rgba(178,97,26,0.04) 7px)' }} />
+                <span className="serif text-3xl text-saffron-dp/40 italic relative">indigo</span>
+              </div>
+
+              {/* title + edition */}
+              <div>
+                <p className="serif text-xl text-ink leading-tight">Linen wrap · indigo dye</p>
+                <div className="flex items-center gap-2 mt-1.5">
+                  <span className="mono-tag text-[9px] text-saffron-dp">1 of 12 · made by hand</span>
+                  <span className="w-1 h-1 rounded-full bg-mute" />
+                  <span className="mono-tag text-[9px] text-mute">2026 batch</span>
+                </div>
+              </div>
+
+              {/* expandable story */}
+              <div className="border border-rule p-3" style={{ borderRadius: '8px' }}>
+                <div className="flex items-center justify-between mb-1.5">
+                  <p className="mono-tag text-[8px] text-saffron-dp">The process</p>
+                  <span className="text-saffron-dp text-xs">−</span>
+                </div>
+                <p className="text-xs text-ink-2 leading-relaxed">
+                  The mordant takes four days. Linen rinsed, dipped, dried, dipped again. Indigo deepens with air, not heat. Each piece holds its own gradient — no two finish the same.
+                </p>
+              </div>
+
+              {/* waitlist (not buy now) */}
+              <div className="bg-bg-2 border border-rule p-3" style={{ borderRadius: '8px' }}>
+                <p className="mono-tag text-[8px] text-saffron-dp mb-1.5">Next batch ships November</p>
+                <p className="text-xs text-ink mb-2.5">Join the waitlist · no charge until ready</p>
+                <div className="flex gap-1.5">
+                  <input type="text" placeholder="your@email.com" className="flex-1 px-2.5 py-2 border border-rule text-[11px] text-ink-2 bg-cream" style={{ borderRadius: '6px' }} readOnly />
+                  <button className="btn-jugat saffron text-[11px] px-3 py-2">Save my spot →</button>
+                </div>
+              </div>
+
+              <p className="mono-tag text-[8px] text-mute text-center pt-1">Your craft · sold the way it was made.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Real builds */}
       <section className="py-section px-6 md:px-12 bg-bg-2">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
