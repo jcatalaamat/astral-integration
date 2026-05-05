@@ -292,8 +292,42 @@ export default function PractitionersPage() {
         </div>
       </section>
 
-      {/* Relevant Work */}
+      {/* "Why not Squarespace + Calendly + Stripe?" — inline comparison */}
       <section className="py-section px-6 md:px-12 bg-bg-2">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            The Honest Question
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            "Why not Squarespace + Calendly + Stripe?"
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-8">
+            That's the stack most practitioners are on. It works — until your work outgrows it. Five tools held together with duct tape and a Notion doc you copy-paste from. Here's what that stack can't do:
+          </p>
+          <div className="max-w-prose space-y-3">
+            {[
+              'Share state — your client books on Calendly, pays on Stripe, fills the form on Typeform, and you stitch it together by hand',
+              'Tie intake forms to specific session types — every form is generic',
+              'Show you a client history view — you scroll through email to remember what Maya said last time',
+              'Handle payment plans, deposits, and refunds without an ordeal',
+              'Run AI trained on your work — every reply is from scratch, in nobody\'s voice',
+              'Give you ownership of the customer relationship — the platform owns the list',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <span className="text-accent text-body-sm mt-0.5 flex-shrink-0">&times;</span>
+                <p className="text-body-sm text-content-secondary">{item}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-body text-content-primary font-medium mt-8 max-w-prose">
+            These are five tools held together with duct tape. I build the one tool — the one that knows your work.
+          </p>
+        </div>
+      </section>
+
+      {/* Relevant Work */}
+      <section className="py-section px-6 md:px-12">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
