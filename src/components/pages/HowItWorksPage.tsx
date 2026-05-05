@@ -158,6 +158,86 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* Week by Week — concrete timeline */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            Week by week
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            What happens in <em className="em-accent not-italic">six weeks.</em>
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-12">
+            A typical engagement, week by week. Yours might be shorter or longer. The shape stays the same — discovery, architecture, build, work-specific layer, AI substrate, launch.
+          </p>
+
+          <div className="border border-rule overflow-hidden bg-cream" style={{ borderRadius: '12px' }}>
+            <div className="hidden md:grid grid-cols-[80px_1fr_1.4fr_120px] gap-4 px-5 py-3 bg-bg-2 mono-tag text-[9px] text-mute">
+              <span>Week</span>
+              <span>What happens</span>
+              <span>Deliverable</span>
+              <span>Who</span>
+            </div>
+            {[
+              { w: '01', what: 'Discovery + research + proposal', deliv: 'Scoped proposal, deal shape, timeline you can sign or push back on', who: 'me' },
+              { w: '02', what: 'Architecture + content modeling + brand tokens', deliv: 'Data schema, page map, design tokens, the bones of the system', who: 'me · you review' },
+              { w: '03', what: 'Core build — auth, bookings, payments, the unglamorous spine', deliv: 'Working booking flow, Stripe integration, login, your data model live', who: 'me' },
+              { w: '04', what: 'The work-specific layer — what makes your offering yours', deliv: 'Cohort logic, intake-per-offering, edition data, retreat capacity — whatever your shape needs', who: 'me · you review' },
+              { w: '05', what: 'AI substrate + automations', deliv: 'Trained model in your voice, automated sequences, integrations to email + calendar', who: 'me' },
+              { w: '06', what: 'Launch + handoff', deliv: 'Live platform on your domain, repo access, deploy keys, documentation, runbook', who: 'both' },
+            ].map((row, i) => (
+              <div key={i} className="grid md:grid-cols-[80px_1fr_1.4fr_120px] gap-2 md:gap-4 px-5 py-4 border-t border-rule items-start">
+                <p className="serif text-2xl text-saffron-dp leading-none md:pt-1">{row.w}</p>
+                <div>
+                  <p className="md:hidden mono-tag text-[8px] text-mute mb-1">What happens</p>
+                  <p className="text-sm text-ink leading-snug">{row.what}</p>
+                </div>
+                <div>
+                  <p className="md:hidden mono-tag text-[8px] text-mute mb-1 mt-2">Deliverable</p>
+                  <p className="text-sm text-ink-2 leading-snug">{row.deliv}</p>
+                </div>
+                <div>
+                  <p className="md:hidden mono-tag text-[8px] text-mute mb-1 mt-2">Who owns</p>
+                  <p className="mono-tag text-[10px] text-mute-strong">{row.who}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-body-sm text-content-muted max-w-prose mt-8">
+            You see weekly progress throughout — not a six-month silence followed by a launch reveal. Most weeks include a 30-minute review call where I show you what shipped and what's next.
+          </p>
+        </div>
+      </section>
+
+      {/* What if I stop building — exit clause */}
+      <section className="py-section px-6 md:px-12 bg-indigo">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-saffron-br mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-saffron-br" />
+            The bus factor
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-6 text-cream max-w-[900px]">
+            What if I stop <em className="serif-i text-saffron-br">building?</em>
+          </h2>
+          <div className="max-w-prose space-y-5 text-cream/85">
+            <p className="text-body md:text-lg leading-relaxed">
+              Honest answer: the platform keeps running.
+            </p>
+            <p className="text-body leading-relaxed">
+              Your code lives in your GitHub from day one. Your domain is in your name. Your data is in your database, on a server you own. The AI model is yours, the training data is yours, the customer list is yours. If I disappear tomorrow, any senior full-stack engineer can pick up the codebase — it's standard React + TypeScript + Node, documented as I build, no proprietary lock-in.
+            </p>
+            <p className="text-body leading-relaxed">
+              What you're paying for is not access to me. It's the architecture I build. The rev share is 18 months because that's how long it takes for the platform to outearn the build. After that, we keep working together because the work calls for it — not because you're locked in.
+            </p>
+            <p className="text-body-sm text-saffron-br font-medium pt-2">
+              You don't need an exit clause. You already have the keys.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-section px-6 md:px-12 bg-bg-2">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
