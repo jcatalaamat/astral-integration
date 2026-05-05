@@ -35,7 +35,7 @@ export default function Footer() {
               href="/"
               className="serif text-2xl text-ink"
             >
-              Astral <em className="em-accent">Integration</em>
+              Astral <em className="em-accent">Studio</em>
             </a>
             <p className="text-sm text-ink-2 mt-4 max-w-[280px] leading-relaxed">
               I build the platforms that hold real work.
@@ -116,7 +116,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-rule flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-mute-strong">
-            © {new Date().getFullYear()} Astral Integration · Jordi Amat
+            © {new Date().getFullYear()} Astral Studio · Jordi Amat
           </p>
           <p className="mono-tag text-[10px] text-mute tracking-[0.18em]">
             Built in Mazunte, Oaxaca

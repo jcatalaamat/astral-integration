@@ -794,7 +794,7 @@ function AccessPrototype() {
     <header style={{background:"#1a3a4a",padding:"0 24px"}}>
       <div style={{maxWidth:800,margin:"0 auto",display:"flex",alignItems:"center",justifyContent:"space-between",height:56}}>
         <div style={{display:"flex",alignItems:"center",gap:10}}><div style={{width:8,height:8,borderRadius:"50%",background:"#7ac0a0"}} /><span style={{color:"#fff",fontSize:14,fontWeight:600}}>Access Consciousness</span></div>
-        <span style={{color:"rgba(255,255,255,0.4)",fontSize:10,fontFamily:mn,letterSpacing:"0.08em"}}>PROTOTYPE · ASTRAL INTEGRATION</span>
+        <span style={{color:"rgba(255,255,255,0.4)",fontSize:10,fontFamily:mn,letterSpacing:"0.08em"}}>PROTOTYPE · ASTRAL STUDIO</span>
       </div>
     </header>
 

@@ -31,7 +31,7 @@ function headerBlock(): string[] {
   const date = new Date().toISOString().split('T')[0];
   return [
     `╔${'═'.repeat(W)}╗`,
-    `║  ${pad('ASTRAL INTEGRATION — PLATFORM BLUEPRINT', W - 2)}║`,
+    `║  ${pad('ASTRAL STUDIO — PLATFORM BLUEPRINT', W - 2)}║`,
     `║  ${pad(`Generated ${date}`, W - 2)}║`,
     `╚${'═'.repeat(W)}╝`,
   ];
