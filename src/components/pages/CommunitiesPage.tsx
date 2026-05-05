@@ -174,6 +174,85 @@ export default function CommunitiesPage() {
         </div>
       </section>
 
+      {/* What it looks like — UI mockup */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            What it looks like
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            Your tribe, <em className="em-accent not-italic">mapped.</em>
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-16">
+            Facilitators in your area. Events this week. The local utility people open before they make plans — instead of scrolling facebook groups they're embarrassed to be in.
+          </p>
+
+          <div className="relative max-w-[560px] mx-auto bg-cream border border-rule overflow-hidden shadow-card" style={{ borderRadius: '14px' }}>
+            <div className="flex items-center gap-1.5 px-3 py-2.5 border-b border-rule bg-bg-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str" />
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str opacity-60" />
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str opacity-40" />
+              <span className="ml-3 mono-tag text-[9px] text-mute">your-community.com · this week</span>
+            </div>
+            <div className="p-5 space-y-5 min-h-[420px]">
+              {/* location filter */}
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="mono-tag text-[8px] text-mute">Near</span>
+                <span className="px-2.5 py-1 bg-saffron-dp text-cream text-[10px] mono-tag" style={{ borderRadius: '999px' }}>Mazunte · 25 km</span>
+                <span className="px-2.5 py-1 border border-rule text-[10px] text-mute mono-tag" style={{ borderRadius: '999px' }}>Modality</span>
+                <span className="px-2.5 py-1 border border-rule text-[10px] text-mute mono-tag" style={{ borderRadius: '999px' }}>Language</span>
+              </div>
+
+              {/* facilitator cards */}
+              <div>
+                <p className="mono-tag text-[8px] text-saffron-dp mb-2">Facilitators</p>
+                <div className="space-y-2">
+                  {[
+                    { initials: 'AR', name: 'Ana Reyes', mod: 'Sound healing · ES/EN', next: 'Sat 8 May · gong bath' },
+                    { initials: 'JM', name: 'Jordan Mata', mod: 'Cacao circle · ES', next: 'Sun 9 May · luna nueva' },
+                    { initials: 'KL', name: 'Kira López', mod: 'Yoga · breathwork · EN', next: 'Mon 10 May · 7am rooftop' },
+                  ].map((f, k) => (
+                    <div key={k} className="flex items-center gap-3 px-3 py-2.5 border border-rule" style={{ borderRadius: '6px' }}>
+                      <span className="w-9 h-9 rounded-full bg-saffron-dp/15 text-saffron-dp grid place-items-center text-xs font-medium flex-shrink-0">{f.initials}</span>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs text-ink truncate">{f.name}</p>
+                        <p className="text-[10px] text-ink-2 truncate">{f.mod}</p>
+                      </div>
+                      <p className="mono-tag text-[8px] text-mute hidden sm:block">{f.next}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* event grid */}
+              <div>
+                <p className="mono-tag text-[8px] text-saffron-dp mb-2">Events · 12 this week</p>
+                <div className="grid grid-cols-5 gap-1.5">
+                  {[
+                    { d: 'Tue', n: 6, dot: 0 },
+                    { d: 'Wed', n: 7, dot: 2 },
+                    { d: 'Thu', n: 8, dot: 1 },
+                    { d: 'Fri', n: 9, dot: 3 },
+                    { d: 'Sat', n: 10, dot: 4 },
+                  ].map((e, k) => (
+                    <div key={k} className={`p-2 ${e.dot > 0 ? 'bg-saffron-dp/8 border border-saffron-dp/30' : 'border border-rule'}`} style={{ borderRadius: '6px' }}>
+                      <p className="mono-tag text-[8px] text-mute">{e.d}</p>
+                      <p className="text-xs text-ink mt-0.5">{e.n}</p>
+                      <div className="flex gap-0.5 mt-1.5">
+                        {Array.from({ length: e.dot }).map((_, di) => <span key={di} className="w-1 h-1 rounded-full bg-saffron-dp" />)}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <p className="mono-tag text-[8px] text-mute text-center pt-1">Directory · events · in your language · for the place that's already there.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Case Study: Mazunte Today — the proof */}
       <section className="py-section px-6 md:px-12 bg-bg-2">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
