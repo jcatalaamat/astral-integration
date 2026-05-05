@@ -38,6 +38,7 @@ const ROUTES = [
   '/built-vs-bought',
   '/faq',
   '/ai',
+  '/integrations',
 ];
 
 // Simple static file server for the dist folder
