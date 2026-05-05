@@ -137,7 +137,7 @@ export default function PractitionersPage() {
           </p>
           <h2 className="font-serif text-display-sm font-light mb-4">Is this you?</h2>
           <p className="text-body text-content-secondary max-w-prose mb-12">
-            Check the ones that apply. Be honest.
+            Check the ones that apply.
           </p>
 
           <div className="space-y-4 max-w-prose mb-10">

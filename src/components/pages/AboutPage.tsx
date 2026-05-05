@@ -149,7 +149,7 @@ export default function AboutPage() {
               I knew how to build the systems these people needed. And I understood — from the inside — why generic platforms would never work for them. A certification isn't a Udemy course. A retreat isn't a hotel booking. A healing practice isn't a SaaS business. The architecture has to reflect the work.
             </p>
             <p className="text-body text-content-primary leading-relaxed font-medium">
-              Astral Studio is what happened when a decade of engineering met a life lived inside the work it serves.
+              That's why I started Astral Studio. A decade of engineering, on the inside of the work it serves.
             </p>
           </div>
         </div>
