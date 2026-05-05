@@ -109,7 +109,7 @@ export default function HomePage() {
       <nav className={`fixed top-0 left-0 right-0 z-50 bg-cream/85 backdrop-blur-lg border-b border-rule transition-all duration-300 ${navVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}>
         <div className="max-w-content mx-auto px-6 md:px-12 h-[76px] flex items-center justify-between gap-8">
           <a href="/" className="flex items-center gap-3.5">
-            <span className="serif text-[22px] tracking-tight">Astral <em className="em-accent">Integration</em></span>
+            <span className="serif text-[22px] tracking-tight">Astral <em className="em-accent">Studio</em></span>
           </a>
           <ul className="hidden md:flex gap-9 list-none items-center">
             <li><a href="#work" className="text-sm text-ink-2 hover:text-saffron-dp transition-colors font-medium">Work</a></li>

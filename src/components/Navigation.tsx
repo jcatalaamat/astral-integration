@@ -23,7 +23,7 @@ export default function Navigation() {
       <nav className="sticky top-0 z-50 bg-cream/85 backdrop-blur-lg border-b border-rule">
         <div className="max-w-content mx-auto px-6 md:px-12 h-[72px] flex items-center justify-between gap-8">
           <a href="/" className="serif text-xl text-ink">
-            Astral <em className="em-accent">Integration</em>
+            Astral <em className="em-accent">Studio</em>
           </a>
           <ul className="hidden md:flex gap-8 list-none items-center">
             <li><a href="/work" className="text-sm text-ink-2 hover:text-saffron-dp transition-colors font-medium">Work</a></li>
