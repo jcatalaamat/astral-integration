@@ -28,7 +28,7 @@ const featurePillars = [
   },
   {
     name: 'You own everything',
-    desc: 'Your code lives in your GitHub. Your domain is in your name. Your customer list is in your database. If we ever stop working together, you walk away with the keys. No platform holding your craft hostage.',
+    desc: 'Your code lives in your GitHub. Your domain is in your name. Your customer list is in your database. If we ever part ways, you walk away with the keys. No platform holding your craft hostage.',
   },
 ];
 
@@ -257,9 +257,9 @@ export default function MakersPage() {
               <span className="w-8 h-px bg-accent" />
               Get in Touch
             </p>
-            <h2 className="font-serif text-display-sm font-light mb-4">Tell us about your craft.</h2>
+            <h2 className="font-serif text-display-sm font-light mb-4">Send me your instagram and a photo of one piece.</h2>
             <p className="text-body-sm text-content-muted mb-10">
-              No pitch. Just a conversation about your work and whether we can build the right home for it.
+              No pitch. Just a conversation about your work and whether I can build the right home for it.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -306,7 +306,7 @@ export default function MakersPage() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-5 py-4 bg-dark-bg border border-border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors resize-none"
-                  placeholder="Tell us about your craft, materials, process — whatever feels true."
+                  placeholder="Tell me about your craft, materials, process — whatever feels true."
                 />
               </div>
               <div className="flex flex-col sm:flex-row gap-4 sm:items-center">

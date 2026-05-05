@@ -140,7 +140,7 @@ export default function HomePage() {
           <h1 className="serif text-display max-w-[1200px] mx-auto" style={{ fontSize: 'clamp(48px, 7.5vw, 128px)', lineHeight: 0.95, letterSpacing: '-0.018em' }}>
             I turn your<br />
             <em key={wordIndex} className="em-accent inline-block animate-fadeUp">{rotatingPairs[wordIndex].left}</em><br />
-            into a <em className="em-accent">thriving</em> business.
+            into a business.
           </h1>
 
           <p className="text-base md:text-lg text-ink-2 max-w-[640px] mx-auto leading-relaxed mt-12">

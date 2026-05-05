@@ -345,10 +345,10 @@ export default function RetreatsPage() {
               Let's Talk
             </p>
             <h2 className="font-serif text-display-sm font-light mb-4">
-              Tell me about your center.
+              Send me your intake doc and your booking spreadsheet.
             </h2>
             <p className="text-body text-content-secondary mb-4">
-              What offerings do you run? What does the booking process look like today? I'll tell you what the architecture needs to look like.
+              The retreats you run, how guests book today, where the spreadsheet falls apart. I'll read it and tell you what the architecture needs to look like.
             </p>
             <p className="text-body-sm text-content-muted mb-10">
               No cost. No pitch. Just a conversation about your center's infrastructure.

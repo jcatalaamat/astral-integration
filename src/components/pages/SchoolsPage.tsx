@@ -324,10 +324,10 @@ export default function SchoolsPage() {
               Let's Talk
             </p>
             <h2 className="font-serif text-display-sm font-light mb-4">
-              Tell me about your school.
+              Send me your curriculum and your enrollment spreadsheet.
             </h2>
             <p className="text-body text-content-secondary mb-4">
-              How many levels? How many students? What does the certification path look like? I'll tell you what the architecture needs — and whether this is the right partnership.
+              How many levels, how many students, what the certification path looks like. I'll read it and tell you what the architecture needs — and whether this is the right partnership.
             </p>
             <p className="text-body-sm text-content-muted mb-10">
               No cost. No pitch. Just a conversation about your school's infrastructure.

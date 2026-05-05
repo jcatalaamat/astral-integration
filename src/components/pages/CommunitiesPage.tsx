@@ -285,10 +285,10 @@ export default function CommunitiesPage() {
               Let's Talk
             </p>
             <h2 className="font-serif text-display-sm font-light mb-4">
-              Tell me about your community.
+              Send me your facebook group and your event calendar.
             </h2>
             <p className="text-body text-content-secondary mb-4">
-              Where is it? What's missing? What would people check every day if it existed?
+              Where the community lives now, what's missing, what people would check every day if it existed. I'll read it and sketch the architecture.
             </p>
             <p className="text-body-sm text-content-muted mb-10">
               No cost. No pitch. Just a conversation about what your community needs.

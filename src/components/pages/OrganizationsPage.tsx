@@ -298,10 +298,10 @@ export default function OrganizationsPage() {
               Let's Talk
             </p>
             <h2 className="font-serif text-display-sm font-light mb-4">
-              This conversation starts differently.
+              Send me your facilitator roster and your moderation rules.
             </h2>
             <p className="text-body text-content-secondary mb-4">
-              Organization-scale infrastructure needs a real discovery conversation. Tell me about the organization — the facilitator network, the student journey, the coordination challenges — and I'll tell you what the architecture needs to look like.
+              Organization-scale infrastructure needs a real discovery. The facilitator network, the student journey, the coordination challenges — send me what you have. I'll read it and tell you what the architecture needs to look like.
             </p>
             <p className="text-body-sm text-content-muted mb-10">
               No pitch. No generic proposal. A conversation between a senior engineer who understands this domain and someone who knows the organization's infrastructure gaps.
