@@ -67,11 +67,6 @@ export default function HomePage() {
     return () => observer.disconnect();
   }, []);
 
-  const addRevealRef = (el: HTMLElement | null) => {
-    if (el && !revealRefs.current.includes(el)) {
-      revealRefs.current.push(el);
-    }
-  };
 
   const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {};
@@ -483,38 +478,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════ 5 DOORS ═══════ */}
-      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
-        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
-          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
-            <span className="w-8 h-px bg-accent" />
-            I Build For
-          </p>
-          <h2 className="font-serif text-display-sm font-light mb-4">
-            Find your starting point.
-          </h2>
-          <p className="text-body text-content-secondary max-w-prose mb-12">
-            Different work, different architecture. If you already know what you need, start here.
-          </p>
+      {/* ═══════ 6 DOORS — audience picker ═══════ */}
+      <section className="bg-bg-2 py-section">
+        <div className="max-w-content mx-auto px-6 md:px-12">
+          <div className="text-center mb-14 md:mb-16">
+            <p className="eyebrow mb-4">· I build for ·</p>
+            <h2 className="serif" style={{ fontSize: 'clamp(40px, 6vw, 92px)', lineHeight: 1, letterSpacing: '-0.012em' }}>
+              Find your <em className="em-accent">starting point.</em>
+            </h2>
+            <p className="text-base text-ink-2 max-w-[640px] mx-auto leading-relaxed mt-6">
+              Different work, different architecture. If you already know what you need, start here.
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { label: 'Makers', href: '/makers', desc: 'Artisans, creators, slow-fashion, writers selling craft' },
               { label: 'Practitioners', href: '/practitioners', desc: 'Healers, coaches, facilitators running on scattered tools' },
               { label: 'Schools', href: '/schools', desc: 'Certification programs and structured learning paths' },
               { label: 'Retreats', href: '/retreats', desc: 'Booking, intake, and multi-stream revenue' },
               { label: 'Communities', href: '/communities', desc: 'Directories, events, and local platforms' },
+              { label: 'Makers', href: '/makers', desc: 'Artisans, creators, slow-fashion, writers selling craft' },
               { label: 'Organizations', href: '/organizations', desc: 'Networks and facilitator infrastructure at scale' },
             ].map((door) => (
               <a
                 key={door.label}
                 href={door.href}
-                className="group bg-dark-card border border-border rounded-2xl p-6 hover:border-accent/40 hover:bg-dark-cardHover transition-all"
+                className="group bg-cream border border-rule p-6 hover:border-saffron-dp transition-colors"
+                style={{ borderRadius: '14px' }}
               >
-                <p className="font-serif text-h4 group-hover:text-accent transition-colors mb-2">{door.label}</p>
-                <p className="text-meta text-content-muted leading-relaxed mb-3">{door.desc}</p>
-                <span className="text-meta text-accent opacity-0 group-hover:opacity-100 transition-opacity inline-flex items-center gap-1">
-                  Explore <span aria-hidden="true">&rarr;</span>
+                <p className="serif text-2xl text-ink group-hover:text-saffron-dp transition-colors mb-2">{door.label}</p>
+                <p className="text-sm text-ink-2 leading-relaxed mb-3">{door.desc}</p>
+                <span className="mono-tag text-[9px] text-saffron-dp tracking-[0.2em] inline-flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Explore <span aria-hidden="true">→</span>
                 </span>
               </a>
             ))}
@@ -522,43 +517,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════ FEATURED WORK ═══════ */}
-      <section id="work" className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
-        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
-          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
-            <span className="w-8 h-px bg-accent" />
-            The Work
-          </p>
-          <h2 className="font-serif text-display-sm font-light mb-4">Selected builds.</h2>
-          <p className="text-body text-content-secondary max-w-prose mb-16">
-            Different problems, different architectures. Same principle: original work, custom infrastructure, long-term partnership.
-          </p>
+      {/* ═══════ FEATURED WORK — case study iframe cards ═══════ */}
+      <section id="work" className="bg-bg py-section">
+        <div className="max-w-content mx-auto px-6 md:px-12">
+          <div className="text-center mb-14 md:mb-16">
+            <p className="eyebrow mb-4">· The work ·</p>
+            <h2 className="serif" style={{ fontSize: 'clamp(40px, 6vw, 92px)', lineHeight: 1, letterSpacing: '-0.012em' }}>
+              Selected <em className="em-accent">builds.</em>
+            </h2>
+            <p className="text-base text-ink-2 max-w-[640px] mx-auto leading-relaxed mt-6">
+              Different problems, different architectures. Same principle — original work, custom infrastructure.
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-5">
             {caseStudies.map((study) => (
               <button
                 key={study.slug}
                 onClick={() => study.url && setActiveStudy(study)}
                 disabled={!study.url}
-                className="bg-dark-card border border-border rounded-2xl overflow-hidden hover:border-accent/50 hover:shadow-glow transition-all group text-left flex flex-col disabled:cursor-not-allowed disabled:opacity-70"
+                className="bg-cream border border-rule overflow-hidden hover:border-saffron-dp transition-all group text-left flex flex-col disabled:cursor-not-allowed disabled:opacity-70"
+                style={{ borderRadius: '14px' }}
               >
-                {/* live iframe preview, auto-scaled to card width */}
                 {study.url ? (
                   <PreviewFrame
                     url={study.url}
-                    className="aspect-[16/10] border-b border-border"
+                    className="aspect-[16/10] border-b border-rule"
                   />
                 ) : (
-                  <div className={`relative w-full aspect-[16/10] border-b border-border bg-gradient-to-br ${study.gradient} flex items-center justify-center`}>
-                    <span className="text-meta uppercase text-content-muted tracking-wider">private portal</span>
+                  <div className={`relative w-full aspect-[16/10] border-b border-rule bg-gradient-to-br ${study.gradient} flex items-center justify-center`}>
+                    <span className="mono-tag text-[10px] text-mute tracking-wider">private portal</span>
                   </div>
                 )}
-
-                {/* card body */}
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="font-serif text-h4 font-light group-hover:text-accent transition-colors">{study.client}</h3>
-                  <p className="text-meta uppercase text-gold mt-1 mb-3">{study.category}</p>
-                  <p className="text-body-sm text-content-secondary leading-relaxed line-clamp-3 flex-1">{study.challenge}</p>
+                  <h3 className="serif text-2xl text-ink group-hover:text-saffron-dp transition-colors">{study.client}</h3>
+                  <p className="mono-tag text-[10px] text-saffron-dp mt-1 mb-3 tracking-[0.2em]">{study.category}</p>
+                  <p className="text-sm text-ink-2 leading-relaxed line-clamp-3 flex-1">{study.challenge}</p>
                 </div>
               </button>
             ))}
@@ -567,137 +561,132 @@ export default function HomePage() {
           <div className="mt-12 text-center">
             <a
               href="/work"
-              className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
+              className="mono-tag text-[10px] text-saffron-dp hover:text-ink transition-colors inline-flex items-center gap-2 tracking-[0.22em]"
             >
-              Full case study writeups <span aria-hidden="true">&rarr;</span>
+              Full case study writeups <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
       </section>
 
       {/* ═══════ HOW ENGAGEMENTS START ═══════ */}
-      <section className="py-section px-6 md:px-12">
-        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
-          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
-            <span className="w-8 h-px bg-accent" />
-            How engagements start
-          </p>
-          <h2 className="font-serif text-display-sm font-light mb-6 max-w-[760px]">
-            Send me your messy notes.
-          </h2>
-          <div className="max-w-prose space-y-5 mb-12">
-            <p className="text-body text-content-secondary leading-relaxed">
-              A voice memo, a Google Doc, a screenshot of your Instagram bio, the WhatsApp thread where you actually explain the work. I research it. I wrap it into a real business — site, bookings, payments, memberships, automations, the AI underneath.
-            </p>
-            <p className="text-body text-content-secondary leading-relaxed">
-              Then I either stay on as your long-term tech, install your digital CEO and step back, or hand you the keys. Whichever fits.
-            </p>
-            <p className="text-body-sm text-content-muted leading-relaxed">
-              Before any of that, an audit. So we both know what we're building.
-            </p>
-          </div>
+      <section id="engagements" className="bg-bg py-section">
+        <div className="max-w-content mx-auto px-6 md:px-12">
+          <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-start">
+            {/* messy notes copy */}
+            <div className="max-w-[640px]">
+              <p className="eyebrow mb-4">· How engagements start ·</p>
+              <h2 className="serif mb-7" style={{ fontSize: 'clamp(40px, 5.5vw, 84px)', lineHeight: 1.02, letterSpacing: '-0.012em' }}>
+                Send me your <em className="em-accent">messy notes.</em>
+              </h2>
+              <div className="space-y-4">
+                <p className="text-base text-ink-2 leading-relaxed">
+                  A voice memo, a Google Doc, a screenshot of your Instagram bio, the WhatsApp thread where you actually explain the work. I research it. I wrap it into a real business — site, bookings, payments, memberships, automations, the AI underneath.
+                </p>
+                <p className="text-base text-ink-2 leading-relaxed">
+                  Then I either stay on as your long-term tech, install your digital CEO and step back, or hand you the keys. <em className="em-accent">Whichever fits.</em>
+                </p>
+                <p className="text-sm text-mute-strong leading-relaxed pt-2 border-t border-rule mt-5">
+                  Before any of that, an audit. So we both know what we're building.
+                </p>
+              </div>
+            </div>
 
-          <div className="bg-dark-card border border-accent/30 ring-1 ring-accent/20 rounded-2xl p-8 md:p-10 max-w-prose">
-            <p className="text-meta uppercase text-accent mb-3">Audit</p>
-            <p className="font-serif text-h2 font-light mb-2">$1,500</p>
-            <p className="text-meta text-content-muted mb-6">Fixed fee · refundable against the engagement that follows</p>
-            <p className="text-body-sm text-content-secondary leading-relaxed mb-8">
-              A written diagnostic of your current stack, five prioritized fixes, and a deal-shape proposal for what comes next.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
+            {/* audit card */}
+            <div className="bg-cream border-2 border-saffron-dp p-8 md:p-10 max-w-[420px] w-full" style={{ borderRadius: '16px' }}>
+              <p className="mono-tag text-[10px] text-saffron-dp tracking-[0.22em] mb-3">Audit · Fixed fee</p>
+              <p className="serif mb-1" style={{ fontSize: 'clamp(48px, 5vw, 72px)', lineHeight: 1 }}>
+                <em className="em-accent">$1,500</em>
+              </p>
+              <p className="mono-tag text-[10px] text-mute mb-6">Refundable against the engagement that follows</p>
+              <p className="text-sm text-ink-2 leading-relaxed mb-7">
+                A written diagnostic of your current stack, five prioritized fixes, and a deal-shape proposal for what comes next.
+              </p>
               <a
                 href="https://calendly.com/astral-integration/free-strategy-call"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-3 bg-accent text-white rounded-full text-body-sm font-medium btn-glow text-center"
+                className="btn-jugat saffron w-full justify-center"
               >
-                Start an audit
+                Start an audit →
               </a>
-              <span className="text-content-muted text-body-sm">or</span>
               <a
                 href="https://calendly.com/astral-integration/free-strategy-call"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
+                className="block text-center text-xs text-mute mt-4 hover:text-saffron-dp transition-colors"
               >
-                Just book a call <span aria-hidden="true">&rarr;</span>
+                or just book a call
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══════ HOW IT WORKS (summary) ═══════ */}
-      <section id="how" className="py-section px-6 md:px-12">
-        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
-          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
-            <span className="w-8 h-px bg-accent" />
-            How It Works
-          </p>
-          <h2 className="font-serif text-display-sm font-light mb-4">
-            Three phases. One engagement.
-          </h2>
-          <p className="text-body text-content-secondary max-w-prose mb-12">
-            I learn your work, I build the platform, I hand you the keys. What happens after launch is a conversation, not a contract.
-          </p>
+      {/* ═══════ HOW IT WORKS (3 phases) ═══════ */}
+      <section id="how" className="bg-bg-2 py-section">
+        <div className="max-w-content mx-auto px-6 md:px-12">
+          <div className="text-center mb-14 md:mb-16">
+            <p className="eyebrow mb-4">· Three phases ·</p>
+            <h2 className="serif" style={{ fontSize: 'clamp(40px, 6vw, 92px)', lineHeight: 1, letterSpacing: '-0.012em' }}>
+              Three phases. <em className="em-accent">One engagement.</em>
+            </h2>
+            <p className="text-base text-ink-2 max-w-[640px] mx-auto leading-relaxed mt-6">
+              I learn your work. I build the platform. I hand you the keys. What happens after launch is a conversation, not a contract.
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-5">
             {[
-              { step: '01', title: 'I learn your work.', desc: 'You tell me what you\'re building. I learn the methodology, the people you serve, the way you actually teach. If it\'s a fit, I send a proposal within days.' },
-              { step: '02', title: 'I build.', desc: 'Custom platform, real code, your brand. You see it come together week by week. Most projects launch in 2–6 weeks.' },
-              { step: '03', title: 'I hand you the keys.', desc: 'You own the code, the data, the domain. Whether I stay on after launch is a conversation, not a contract.' },
+              { num: 'Nº 01', title: 'I learn your work.', desc: 'You tell me what you\'re building. I learn the methodology, the people you serve, the way you actually teach. If it\'s a fit, I send a proposal within days.' },
+              { num: 'Nº 02', title: 'I build.', desc: 'Custom platform, real code, your brand. You see it come together week by week. Most projects launch in 2–6 weeks.' },
+              { num: 'Nº 03', title: 'I hand you the keys.', desc: 'You own the code, the data, the domain. Whether I stay on after launch is a conversation, not a contract.' },
             ].map((item, i) => (
-              <div key={i}>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center text-body-sm font-medium flex-shrink-0 ${
-                    i === 2 ? 'bg-accent text-white' : 'bg-dark-card border border-border text-content-muted'
-                  }`}>
-                    {item.step}
-                  </div>
-                </div>
-                <div className={`bg-dark-card border rounded-xl p-6 ${i === 2 ? 'border-accent/30' : 'border-border'}`}>
-                  <h4 className="font-serif text-h4 mb-3">{item.title}</h4>
-                  <p className="text-body-sm text-content-secondary">{item.desc}</p>
-                </div>
+              <div key={i} className={`bg-cream border p-7 md:p-8 ${i === 2 ? 'border-saffron-dp' : 'border-rule'}`} style={{ borderRadius: '14px' }}>
+                <p className="mono-tag text-[10px] text-saffron-dp mb-5 tracking-[0.22em]">{item.num}</p>
+                <h3 className="serif text-2xl md:text-3xl mb-4">
+                  {item.title.split(' ').map((w, k) => (
+                    k === item.title.split(' ').length - 1
+                      ? <em key={k} className="em-accent">{w}</em>
+                      : <span key={k}>{w} </span>
+                  ))}
+                </h3>
+                <p className="text-sm text-ink-2 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <p className="text-body-sm text-content-muted mb-2">Every site is custom-built from scratch. No templates, no themes, no page builders.</p>
-          <p className="text-body-sm text-content-muted mb-6">You own everything. Code, data, domain. From day one.</p>
-
-          <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
-            <a
-              href="https://calendly.com/astral-integration/free-strategy-call"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
-            >
-              Book a call <span aria-hidden="true">&rarr;</span>
-            </a>
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-2 max-w-[820px] mx-auto mt-12 pt-8 border-t border-rule">
+            <p className="text-sm text-mute-strong leading-relaxed">Every site is custom-built from scratch. No templates, no themes, no page builders.</p>
+            <p className="text-sm text-mute-strong leading-relaxed">You own everything. Code, data, domain. From day one.</p>
           </div>
         </div>
       </section>
 
       {/* ═══════ ABOUT (short) ═══════ */}
-      <section id="about" className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
-        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
-          <div className="grid md:grid-cols-[200px_1fr] gap-10 items-start">
-            <div className="w-[200px] h-[240px] rounded-2xl border border-border relative overflow-hidden mx-auto md:mx-0">
+      <section id="about" className="bg-bg py-section">
+        <div className="max-w-content mx-auto px-6 md:px-12">
+          <div className="grid md:grid-cols-[240px_1fr] gap-10 md:gap-14 items-start max-w-[960px] mx-auto">
+            <div className="w-[200px] md:w-[240px] aspect-[5/6] border border-rule overflow-hidden mx-auto md:mx-0" style={{ borderRadius: '14px' }}>
               <img src="/founder.jpeg" alt="Jordi Amat" className="w-full h-full object-cover" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/60 to-transparent" />
             </div>
 
             <div>
-              <h2 className="font-serif text-h2 font-light mb-4">Jordi Amat.</h2>
-              <p className="text-body text-content-secondary leading-relaxed mb-4">
-                Senior full-stack engineer. Former CTO. Access Bars practitioner. I spent a decade building production systems and leading engineering teams. Then I moved to Mazunte and started building for artists, creatives, changemakers, practitioners, facilitators, and organizations — the people and groups doing the most original work.
+              <p className="eyebrow mb-4">· The builder ·</p>
+              <h2 className="serif mb-5" style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', lineHeight: 1, letterSpacing: '-0.012em' }}>
+                Jordi <em className="em-accent">Amat.</em>
+              </h2>
+              <p className="text-base text-ink-2 leading-relaxed mb-3">
+                Senior full-stack engineer. Former CTO. Access Bars practitioner. I spent a decade building production systems and leading engineering teams.
+              </p>
+              <p className="text-base text-ink-2 leading-relaxed mb-6">
+                Then I moved to Mazunte and started building for the people whose work I respect — teachers, schools, retreat centers, makers. <em className="em-accent">The studio is small on purpose.</em>
               </p>
               <a
                 href="/about"
-                className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
+                className="mono-tag text-[10px] text-saffron-dp hover:text-ink transition-colors inline-flex items-center gap-2 tracking-[0.22em]"
               >
-                Full story <span aria-hidden="true">&rarr;</span>
+                Full story <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
@@ -705,103 +694,107 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ CONTACT ═══════ */}
-      <section id="contact" className="py-section px-6 md:px-12 bg-dark-card">
-        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
-          <div className="max-w-prose">
-            <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
-              <span className="w-8 h-px bg-accent" />
-              Get in Touch
-            </p>
-            <h2 className="font-serif text-display-sm font-light mb-4">Tell me about your work.</h2>
-            <p className="text-body-sm text-content-muted mb-10">
-              No pitch. No pressure. Just a conversation about what you need and whether I can help.
-            </p>
+      <section id="contact" className="bg-bg-2 py-section">
+        <div className="max-w-content mx-auto px-6 md:px-12">
+          <div className="max-w-[640px] mx-auto">
+            <div className="text-center mb-10">
+              <p className="eyebrow mb-4">· Tell me about your work ·</p>
+              <h2 className="serif" style={{ fontSize: 'clamp(36px, 5vw, 72px)', lineHeight: 1, letterSpacing: '-0.012em' }}>
+                Send me your <em className="em-accent">notes.</em>
+              </h2>
+              <p className="text-base text-ink-2 leading-relaxed mt-5">
+                No pitch. No pressure. A conversation about what you need and whether I can help.
+              </p>
+            </div>
 
             {formStatus !== 'success' ? (
-              <form onSubmit={handleContactSubmit} className="space-y-6">
+              <form onSubmit={handleContactSubmit} className="space-y-5 bg-cream border border-rule p-7 md:p-10" style={{ borderRadius: '16px' }}>
                 <div>
-                  <label htmlFor="name" className="block text-body-sm text-content-muted mb-3">Name</label>
+                  <label htmlFor="name" className="block mono-tag text-[10px] text-mute mb-2 tracking-[0.2em]">Name</label>
                   <input
                     type="text"
                     id="name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className={`w-full px-5 py-4 bg-dark-bg border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors ${
-                      formErrors.name ? 'border-red-400 focus:ring-red-400/20' : 'border-border'
+                    className={`w-full px-4 py-3 bg-bg border text-ink placeholder-mute focus:outline-none focus:border-saffron-dp focus:ring-1 focus:ring-saffron-dp/40 transition-colors ${
+                      formErrors.name ? 'border-terra' : 'border-rule'
                     }`}
+                    style={{ borderRadius: '8px' }}
                     placeholder="Your name"
                   />
-                  {formErrors.name && <p className="mt-2 text-body-sm text-red-400">{formErrors.name}</p>}
+                  {formErrors.name && <p className="mt-2 text-xs text-terra">{formErrors.name}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-body-sm text-content-muted mb-3">Email</label>
+                  <label htmlFor="email" className="block mono-tag text-[10px] text-mute mb-2 tracking-[0.2em]">Email</label>
                   <input
                     type="email"
                     id="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className={`w-full px-5 py-4 bg-dark-bg border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors ${
-                      formErrors.email ? 'border-red-400 focus:ring-red-400/20' : 'border-border'
+                    className={`w-full px-4 py-3 bg-bg border text-ink placeholder-mute focus:outline-none focus:border-saffron-dp focus:ring-1 focus:ring-saffron-dp/40 transition-colors ${
+                      formErrors.email ? 'border-terra' : 'border-rule'
                     }`}
+                    style={{ borderRadius: '8px' }}
                     placeholder="your@email.com"
                   />
-                  {formErrors.email && <p className="mt-2 text-body-sm text-red-400">{formErrors.email}</p>}
+                  {formErrors.email && <p className="mt-2 text-xs text-terra">{formErrors.email}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-body-sm text-content-muted mb-3">What are you working on?</label>
+                  <label htmlFor="message" className="block mono-tag text-[10px] text-mute mb-2 tracking-[0.2em]">What are you working on?</label>
                   <textarea
                     id="message"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={5}
-                    className={`w-full px-5 py-4 bg-dark-bg border rounded-xl text-content-primary placeholder-content-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30 transition-colors resize-none ${
-                      formErrors.message ? 'border-red-400 focus:ring-red-400/20' : 'border-border'
+                    className={`w-full px-4 py-3 bg-bg border text-ink placeholder-mute focus:outline-none focus:border-saffron-dp focus:ring-1 focus:ring-saffron-dp/40 transition-colors resize-none ${
+                      formErrors.message ? 'border-terra' : 'border-rule'
                     }`}
+                    style={{ borderRadius: '8px' }}
                     placeholder="Tell me about your work, your people, and what you're trying to build..."
                   />
-                  {formErrors.message && <p className="mt-2 text-body-sm text-red-400">{formErrors.message}</p>}
+                  {formErrors.message && <p className="mt-2 text-xs text-terra">{formErrors.message}</p>}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
+                <div className="flex flex-col sm:flex-row gap-3 sm:items-center pt-2">
                   <button
                     type="submit"
                     disabled={formStatus === 'sending'}
-                    className="px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-jugat saffron justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {formStatus === 'sending' ? 'Sending...' : formStatus === 'error' ? 'Error - try again' : 'Send Message'}
+                    {formStatus === 'sending' ? 'Sending…' : formStatus === 'error' ? 'Error · try again' : 'Send message →'}
                   </button>
-                  <span className="text-content-muted text-body-sm">or</span>
+                  <span className="text-mute text-xs">or</span>
                   <a
                     href="https://calendly.com/astral-integration/free-strategy-call"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
+                    className="mono-tag text-[10px] text-saffron-dp hover:text-ink transition-colors inline-flex items-center gap-1.5 tracking-[0.22em]"
                   >
-                    Book a call directly <span aria-hidden="true">&rarr;</span>
+                    Book a call directly <span aria-hidden="true">→</span>
                   </a>
                 </div>
               </form>
             ) : (
-              <div className="py-16 text-center">
-                <CheckCircle className="w-12 h-12 text-accent mx-auto mb-6" />
-                <h3 className="font-serif text-h2 mb-4">Message received.</h3>
-                <p className="text-body text-content-secondary mb-3">I'll get back to you within 24–48 hours.</p>
-                <p className="text-body-sm text-content-muted mb-8">Check your inbox for a reply from hello@astralstudio.io</p>
-                <button onClick={() => setFormStatus('idle')} className="text-body-sm text-accent hover:underline">
+              <div className="bg-cream border border-saffron-dp p-10 md:p-14 text-center" style={{ borderRadius: '16px' }}>
+                <CheckCircle className="w-12 h-12 text-saffron-dp mx-auto mb-6" />
+                <h3 className="serif text-3xl md:text-4xl mb-3">Message <em className="em-accent">received.</em></h3>
+                <p className="text-base text-ink-2 mb-2">I'll get back to you within 24–48 hours.</p>
+                <p className="text-xs text-mute mb-7">Check your inbox for a reply from hello@astralstudio.io</p>
+                <button onClick={() => setFormStatus('idle')} className="mono-tag text-[10px] text-saffron-dp hover:text-ink transition-colors tracking-[0.22em]">
                   Send another message
                 </button>
               </div>
             )}
 
-            <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row gap-6 sm:items-center">
-              <p className="text-body-sm text-content-muted">hello@astralstudio.io</p>
+            <div className="mt-10 pt-8 border-t border-rule flex flex-col sm:flex-row gap-4 sm:items-center justify-between">
+              <p className="text-sm text-mute-strong">hello@astralstudio.io</p>
               <a
                 href="/contact"
-                className="text-body-sm text-accent hover:text-content-primary transition-colors inline-flex items-center gap-2"
+                className="mono-tag text-[10px] text-saffron-dp hover:text-ink transition-colors inline-flex items-center gap-1.5 tracking-[0.22em]"
               >
-                Full contact page with Calendly <span aria-hidden="true">&rarr;</span>
+                Full contact page <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
