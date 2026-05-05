@@ -203,6 +203,91 @@ export default function SchoolsPage() {
         </div>
       </section>
 
+      {/* What it looks like — UI mockup */}
+      <section className="py-section px-6 md:px-12">
+        <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
+          <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
+            <span className="w-8 h-px bg-accent" />
+            What it looks like
+          </p>
+          <h2 className="font-serif text-display-sm font-light mb-4">
+            Cohort 03. <em className="em-accent not-italic">Module 4 of 7.</em>
+          </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-16">
+            Students moving through your curriculum, in your structure. You see who's ahead, who's behind, and who's about to graduate — without opening a spreadsheet.
+          </p>
+
+          <div className="relative max-w-[560px] mx-auto bg-cream border border-rule overflow-hidden shadow-card" style={{ borderRadius: '14px' }}>
+            <div className="flex items-center gap-1.5 px-3 py-2.5 border-b border-rule bg-bg-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str" />
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str opacity-60" />
+              <span className="w-2.5 h-2.5 rounded-full bg-rule-str opacity-40" />
+              <span className="ml-3 mono-tag text-[9px] text-mute">your-school.com · cohorts</span>
+            </div>
+            <div className="p-5 space-y-5 min-h-[420px]">
+              {/* cohort header */}
+              <div className="flex items-baseline justify-between">
+                <p className="serif text-xl text-ink">Sangat 2026 · <em className="em-accent not-italic">Cohort 03</em></p>
+                <p className="mono-tag text-[9px] text-mute">Started Feb 14</p>
+              </div>
+
+              {/* module progress */}
+              <div>
+                <p className="mono-tag text-[9px] text-saffron-dp mb-2">Curriculum · 7 modules</p>
+                <div className="grid grid-cols-7 gap-1.5">
+                  {[
+                    { n: 1, label: 'Roots', state: 'done' },
+                    { n: 2, label: 'Breath', state: 'done' },
+                    { n: 3, label: 'Mantra', state: 'done' },
+                    { n: 4, label: 'Sadhana', state: 'active' },
+                    { n: 5, label: 'Service', state: 'next' },
+                    { n: 6, label: 'Lineage', state: 'next' },
+                    { n: 7, label: 'Cert', state: 'next' },
+                  ].map((m) => (
+                    <div key={m.n} className="flex flex-col items-center gap-1.5">
+                      <div className={`w-full aspect-square grid place-items-center text-xs font-medium ${
+                        m.state === 'done' ? 'bg-saffron-dp text-cream' :
+                        m.state === 'active' ? 'bg-saffron-dp/15 border border-saffron-dp text-saffron-dp' :
+                        'border border-rule text-mute'
+                      }`} style={{ borderRadius: '6px' }}>{m.n}</div>
+                      <span className={`mono-tag text-[7px] ${m.state === 'next' ? 'text-mute' : 'text-ink-2'} text-center leading-tight`}>{m.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* student stats */}
+              <div className="grid grid-cols-3 gap-3">
+                <div className="border border-rule p-3" style={{ borderRadius: '8px' }}>
+                  <p className="mono-tag text-[8px] text-mute mb-1.5">Active</p>
+                  <p className="serif text-2xl text-ink leading-none"><em className="em-accent not-italic">27</em></p>
+                </div>
+                <div className="border border-rule p-3" style={{ borderRadius: '8px' }}>
+                  <p className="mono-tag text-[8px] text-mute mb-1.5">Certified</p>
+                  <p className="serif text-2xl text-ink leading-none"><em className="em-accent not-italic">8</em></p>
+                </div>
+                <div className="border border-rule p-3" style={{ borderRadius: '8px' }}>
+                  <p className="mono-tag text-[8px] text-mute mb-1.5">Paused</p>
+                  <p className="serif text-2xl text-ink leading-none">2</p>
+                </div>
+              </div>
+
+              {/* upcoming call */}
+              <div className="bg-bg-2 border border-rule p-3" style={{ borderRadius: '8px' }}>
+                <div className="flex items-center justify-between mb-1">
+                  <p className="mono-tag text-[8px] text-saffron-dp">Upcoming</p>
+                  <span className="mono-tag text-[8px] text-mute">Sun 11 May</span>
+                </div>
+                <p className="text-xs text-ink">Module 5 cohort call · <em className="em-accent not-italic">14 confirmed</em></p>
+                <p className="text-[10px] text-ink-2 mt-1">Service in the lineage — pre-read sent</p>
+              </div>
+
+              <p className="mono-tag text-[8px] text-mute text-center pt-1">Curriculum · cohorts · certifications · in your structure.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* "Why not Teachable?" — unique to Schools */}
       <section className="py-section px-6 md:px-12 bg-bg-2">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
