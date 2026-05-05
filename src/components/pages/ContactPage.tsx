@@ -92,13 +92,13 @@ export default function ContactPage() {
             Contact
           </p>
           <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
-            Tell me about <em className="italic gradient-text">your work.</em>
+            Send me your <em className="italic gradient-text">messy notes.</em>
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            I take on a small number of partnerships at a time. If you've created something original and need a technical partner who builds with you for the long haul, I'd like to hear about it.
+            The spreadsheet that breaks every quarter. The five tools you're stitching together by hand. The offering you can't seem to ship cleanly. Tell me what's actually on your screen.
           </p>
           <p className="text-body-sm text-content-muted mt-4 max-w-prose">
-            No pitch. No pressure. Just a conversation about what you need and whether I can help.
+            The studio is small on purpose — I take on a handful of partnerships at a time. No pitch, no pressure. Just a conversation about whether I can help.
           </p>
         </div>
       </section>

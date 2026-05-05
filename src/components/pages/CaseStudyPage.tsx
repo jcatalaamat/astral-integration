@@ -117,17 +117,15 @@ export default function CaseStudyPage() {
       <section className="py-section px-6 md:px-12 bg-dark-card">
         <div className="max-w-content mx-auto text-center">
           <h2 className="font-serif text-display-sm font-light mb-6">
-            Your work is next.
+            Your work is <em className="em-accent">next.</em>
           </h2>
           <p className="text-body text-content-secondary max-w-prose mx-auto mb-10">
-            If you've created something original and need a technical partner who thinks in systems — not features — I'd like to hear about it.
+            Send me your messy notes — the spreadsheet that breaks every quarter, the tools you're stitching together, the offering you can't seem to ship cleanly. The studio is small on purpose. I take on a handful of engagements at a time.
           </p>
-          <a
-            href="/#contact"
-            className="inline-block px-10 py-4 bg-accent text-white rounded-full text-body-sm font-medium btn-glow"
-          >
-            Start a Conversation
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <a href="/contact" className="btn-jugat saffron">Send me your messy notes →</a>
+            <a href="/built-vs-bought" className="btn-jugat ghost">See how the math works</a>
+          </div>
         </div>
       </section>
 
