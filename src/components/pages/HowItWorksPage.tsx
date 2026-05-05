@@ -120,7 +120,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Process */}
-      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
+      <section className="py-section px-6 md:px-12 bg-bg-2">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
@@ -159,7 +159,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-section px-6 md:px-12 bg-gradient-to-b from-dark-bg to-[#0d0d14]">
+      <section className="py-section px-6 md:px-12 bg-bg-2">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
