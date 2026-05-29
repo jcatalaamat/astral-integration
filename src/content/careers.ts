@@ -11,9 +11,10 @@ export const careersContent = {
       'We prioritize clarity before execution',
       'We work lean, with a small core and trusted collaborators',
       'We favor ownership and shared upside over hourly billing',
+      'Most collaborations are rev-share or equity, not salary — built on alignment, not headcount',
       'We work remotely and asynchronously'
     ],
-    note: 'This is not a traditional company structure. It is a studio forming its core.'
+    note: 'This is not a traditional company structure — it is a studio forming its core. Compensation is alignment-led: rev-share and equity for almost everyone. Cash is reserved for at most one committed, sales-closing core role at a time; everyone else shares in the upside.'
   },
   whoWereLookingFor: {
     headline: "Who We're Looking For",
@@ -80,15 +81,21 @@ export const careersContent = {
       compensation: 'Paid per project or milestone. Occasional long-term collaboration.'
     },
     {
-      title: 'Ambassadors & Connectors',
-      type: 'Referral-based',
-      focus: 'Introductions and referrals.',
+      title: 'Ambassadors, Connectors & Closing Partners',
+      type: 'Aligned · rev-share / equity',
+      focus: 'Open doors, vouch, and help close — across every world and language.',
       responsibilities: [
-        'Introduce communities, practitioners, or organizations',
-        'Make warm connections when there is clear fit'
+        'Introduce communities, practitioners, and organizations where there is real fit',
+        'Vouch — translate trust, not pitch',
+        'Optionally help sell and close (a Partner role) when you are in the room'
       ],
-      compensation: 'Cash-based percentage per engagement or referral.',
-      note: 'No meetings. No management. Simple terms.'
+      suits: [
+        'people who connect everyone in their scene, lineage, city or language',
+        'teachers, community-holders, organizers, musicians',
+        'natural closers who believe in the work'
+      ],
+      compensation: 'Ongoing rev-share — Connector 10–15%, Partner (sells + closes) 20–25% — for as long as the client stays. Equity for the right long-term fit. Alignment-led, mostly non-cash.',
+      note: 'This is the Ambassadors program → jordiamat.com/ambassadors. Your growth becomes their monthly income.'
     }
   ],
   whatWeDontOffer: {

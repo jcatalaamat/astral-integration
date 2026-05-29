@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astral Studio — Original Work Deserves Infrastructure That Matches</title>
+<meta name="description" content="Astral Studio builds custom digital infrastructure for artists, creatives, changemakers, practitioners, facilitators, and organizations. No upfront — we take a small % of what you make. From Mazunte, Oaxaca and online to clients across the world.">
+<meta name="theme-color" content="#0D0B08">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Serif:ital@0;1&family=Manrope:wght@300..700&display=swap" rel="stylesheet">
+
+<style>
+/* ===========================================================
+   ASTRAL STUDIO — V2
+   Earthy Academy palette · East-meets-Mediterranean editorial
+   Built for makers, practitioners, schools, retreats,
+   communities and organizations.
+   =========================================================== */
+
+:root {
+  --ink: #0D0B08;
+  --ink-2: #14100C;
+  --ink-3: #1E1812;
+  --ink-4: #2A211A;
+
+  --bone: #F2E9DA;
+  --bone-2: #EADFC9;
+  --bone-3: #DCCBAA;
+  --bone-4: #C9B691;
+
+  --saffron: #C48A3B;
+  --saffron-deep: #8E6425;
+  --saffron-glow: #D9A862;
+  --rose: #B48274;
+  --olive: #6A7149;
+  --olive-deep: #4A5134;
+
+  --mist: #9A8D7A;
+  --mist-dark: #5A5043;
+  --mist-pale: #B8AB97;
+
+  --f-display: 'Fraunces', serif;
+  --f-serif: 'Instrument Serif', serif;
+  --f-body: 'Manrope', system-ui, sans-serif;
+
+  --max: 1320px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --rail: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body {
+  font-family: var(--f-body);
+  font-weight: 300;
+  color: var(--bone);
+  background: var(--ink);
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; background: none; border: none; color: inherit; cursor: pointer; }
+
+/* ---------- type ---------- */
+.eyebrow {
+  font-family: var(--f-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--saffron);
+}
+.eyebrow.mist { color: var(--mist); }
+.eyebrow.ink { color: var(--mist-dark); }
+
+.display {
+  font-family: var(--f-display);
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  font-weight: 350;
+  letter-spacing: -0.028em;
+  line-height: 0.98;
+}
+.display em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  font-weight: 300;
+  color: var(--saffron-glow);
+}
+.lede {
+  font-family: var(--f-display);
+  font-variation-settings: "opsz" 24;
+  font-weight: 350;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+.serif-italic { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-spacing: -0.005em; }
+.quiet { color: var(--mist); font-weight: 300; }
+.numeric { font-variant-numeric: tabular-nums; }
+
+/* grain */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+  z-index: 1;
+}
+
+/* ===========================================================
+   NAV
+   =========================================================== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.1rem var(--gutter);
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+  transition: background 400ms ease, backdrop-filter 400ms ease, padding 400ms ease;
+}
+.nav.scrolled {
+  background: rgba(13, 11, 8, 0.78);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  padding-top: 0.8rem; padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(242, 233, 218, 0.06);
+}
+.nav__mark {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-family: var(--f-display); font-weight: 400;
+  font-size: 1.05rem; letter-spacing: 0.02em;
+}
+.nav__mark .mark-mini { width: 28px; height: 28px; color: var(--saffron); transition: transform 1.6s cubic-bezier(.22,1,.36,1); }
+.nav__mark:hover .mark-mini { transform: rotate(180deg); }
+.nav__mark span em { font-style: italic; font-weight: 300; color: var(--mist); }
+.nav__links { display: flex; gap: 2.25rem; list-style: none; align-items: center; }
+.nav__links a {
+  font-size: 0.82rem; font-weight: 400; letter-spacing: 0.04em;
+  color: var(--bone-2); position: relative; padding: 0.4rem 0;
+  transition: color 260ms ease;
+}
+.nav__links a::after {
+  content: ""; position: absolute; left: 0; right: 100%; bottom: 0.15rem;
+  height: 1px; background: var(--saffron);
+  transition: right 360ms cubic-bezier(.22,1,.36,1);
+}
+.nav__links a:hover { color: var(--bone); }
+.nav__links a:hover::after { right: 0; }
+.nav__cta {
+  border: 1px solid rgba(242, 233, 218, 0.22);
+  padding: 0.6rem 1.1rem; border-radius: 999px;
+  font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+  transition: background 260ms ease, border-color 260ms ease, color 260ms ease;
+}
+.nav__cta:hover { background: var(--bone); color: var(--ink); border-color: var(--bone); }
+.nav__cta::after { display: none; }
+.nav__menu-btn { display: none; padding: 0.5rem; color: var(--bone); }
+@media (max-width: 980px) {
+  .nav__links { display: none; }
+  .nav__menu-btn { display: block; }
+}
+
+.drawer {
+  position: fixed; inset: 0; background: var(--ink); z-index: 150;
+  padding: 2rem var(--gutter); transform: translateY(-100%);
+  transition: transform 460ms cubic-bezier(.83,0,.17,1);
+  display: flex; flex-direction: column;
+}
+.drawer.open { transform: translateY(0); }
+.drawer__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
+.drawer__links { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
+.drawer__links a {
+  font-family: var(--f-display); font-size: 2rem; font-weight: 350; letter-spacing: -0.02em;
+}
+.drawer__links a em { color: var(--saffron); font-style: italic; font-weight: 300; }
+
+/* ===========================================================
+   HERO
+   =========================================================== */
+.hero {
+  position: relative; min-height: 100vh;
+  padding: 7.5rem var(--gutter) 3rem;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 85% 20%, rgba(196, 138, 59, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 80% at 20% 90%, rgba(180, 130, 116, 0.09) 0%, transparent 60%),
+    linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+}
+.hero__inner { position: relative; z-index: 2; max-width: 720px; }
+.hero__eyebrow {
+  display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;
+  opacity: 0; animation: rise 900ms 200ms cubic-bezier(.22,1,.36,1) forwards;
+}
+.hero__eyebrow .line { width: 42px; height: 1px; background: var(--saffron); opacity: 0.5; }
+.hero__title {
+  font-size: clamp(3rem, 7vw, 6.6rem);
+  margin-bottom: 1.75rem;
+  opacity: 0; animation: rise 1100ms 380ms cubic-bezier(.22,1,.36,1) forwards;
+}
+.hero__title .row { display: block; }
+.hero__title .row-2 { margin-left: 0.8em; }
+.hero__sub {
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  max-width: 600px; color: var(--bone-2); margin-bottom: 1.5rem;
+  opacity: 0; animation: rise 1100ms 560ms cubic-bezier(.22,1,.36,1) forwards;
+}
+.hero__sub em { font-family: var(--f-serif); color: var(--bone); }
+.hero__small {
+  font-size: 0.9rem; color: var(--mist); margin-bottom: 2.5rem; max-width: 540px;
+  opacity: 0; animation: rise 1100ms 700ms cubic-bezier(.22,1,.36,1) forwards;
+}
+.hero__ctas {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  opacity: 0; animation: rise 1100ms 740ms cubic-bezier(.22,1,.36,1) forwards;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 1rem 1.5rem; border-radius: 999px;
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  transition: transform 320ms cubic-bezier(.22,1,.36,1), background 320ms ease, color 320ms ease, border-color 320ms ease;
+  border: 1px solid transparent; white-space: nowrap;
+}
+.btn svg { width: 14px; height: 14px; transition: transform 320ms cubic-bezier(.22,1,.36,1); }
+.btn:hover svg { transform: translateX(3px); }
+.btn--primary { background: var(--bone); color: var(--ink); }
+.btn--primary:hover { background: var(--saffron-glow); }
+.btn--ghost { color: var(--bone); border-color: rgba(242, 233, 218, 0.22); }
+.btn--ghost:hover { border-color: var(--saffron); color: var(--saffron-glow); }
+.btn--ink { background: var(--ink); color: var(--bone); }
+.btn--ink:hover { background: var(--ink-4); }
+.btn--ink-ghost { color: var(--ink); border-color: rgba(13, 11, 8, 0.22); }
+.btn--ink-ghost:hover { border-color: var(--saffron-deep); color: var(--saffron-deep); }
+
+.hero__emblem {
+  position: relative; aspect-ratio: 1 / 1; max-width: 460px;
+  justify-self: center; z-index: 2;
+  opacity: 0; animation: bloom 1600ms 300ms cubic-bezier(.22,1,.36,1) forwards;
+}
+.hero__emblem svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.enso { color: var(--saffron-glow); filter: drop-shadow(0 0 30px rgba(217, 168, 98, 0.6)); animation: slowspin 80s linear infinite; }
+.hero__emblem-stamp {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  text-align: center; color: var(--bone);
+}
+.hero__emblem-stamp .mono {
+  font-family: var(--f-display); font-style: italic; font-weight: 300;
+  font-size: clamp(2rem, 4vw, 3rem); line-height: 1; letter-spacing: 0.02em;
+  color: var(--saffron-glow);
+}
+.hero__emblem-stamp .yr {
+  font-family: var(--f-display); font-weight: 300;
+  font-size: 0.78rem; letter-spacing: 0.32em; margin-top: 0.5rem; color: var(--mist);
+}
+.hero__tag {
+  position: absolute; bottom: 2rem; right: var(--gutter); z-index: 2;
+  font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--mist); display: flex; align-items: center; gap: 0.75rem;
+}
+.hero__tag .dot { width: 4px; height: 4px; background: var(--saffron); border-radius: 50%; }
+@media (max-width: 980px) {
+  .hero { grid-template-columns: 1fr; padding-top: 6.5rem; gap: 1rem; }
+  .hero__emblem { display: none; }
+  .hero__tag { position: static; margin-top: 2rem; }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bloom { from { opacity: 0; transform: scale(0.88); } to { opacity: 1; transform: scale(1); } }
+@keyframes slowspin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+
+/* ===========================================================
+   CREDENTIALS marquee
+   =========================================================== */
+.credentials {
+  position: relative;
+  border-top: 1px solid rgba(242, 233, 218, 0.08);
+  border-bottom: 1px solid rgba(242, 233, 218, 0.08);
+  background: var(--ink-2);
+  padding: 2.2rem 0;
+  overflow: hidden;
+}
+.credentials__track { display: flex; gap: 4rem; animation: marquee 60s linear infinite; white-space: nowrap; }
+.credentials__item {
+  display: inline-flex; align-items: center; gap: 0.8rem;
+  font-size: 0.82rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bone-2);
+}
+.credentials__item .big {
+  font-family: var(--f-display); font-weight: 350; font-style: italic;
+  font-size: 1.3rem; letter-spacing: -0.01em; text-transform: none; color: var(--saffron-glow);
+}
+.credentials__item .dot { width: 3px; height: 3px; background: var(--saffron); border-radius: 50%; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ===========================================================
+   SECTION SHARED
+   =========================================================== */
+section { position: relative; }
+.section { padding: clamp(5rem, 9vw, 9rem) var(--gutter); }
+.section--bone { background: var(--bone); color: var(--ink); }
+.section--bone .quiet { color: var(--mist-dark); }
+.section--ink { background: var(--ink); color: var(--bone); }
+.section--ink-warm {
+  background:
+    radial-gradient(ellipse 70% 50% at 80% 30%, rgba(196, 138, 59, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 10% 85%, rgba(180, 130, 116, 0.08) 0%, transparent 55%),
+    linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+  color: var(--bone);
+}
+.wrap { max-width: var(--max); margin: 0 auto; }
+.section__head {
+  display: grid; grid-template-columns: 1fr 2fr; gap: 3rem;
+  align-items: end; margin-bottom: 4rem;
+  padding-bottom: 2rem; border-bottom: 1px solid currentColor;
+  border-bottom-color: rgba(0,0,0,0.1);
+}
+.section--ink .section__head, .section--ink-warm .section__head { border-bottom-color: rgba(242, 233, 218, 0.12); }
+.section__num {
+  font-family: var(--f-display); font-style: italic; font-weight: 300;
+  font-size: clamp(2.5rem, 5vw, 4rem); color: var(--saffron); line-height: 1;
+}
+.section--bone .section__num { color: var(--saffron-deep); }
+.section__title {
+  font-size: clamp(2.2rem, 5vw, 4.2rem); letter-spacing: -0.025em; max-width: 720px;
+}
+@media (max-width: 760px) {
+  .section__head { grid-template-columns: 1fr; gap: 1.25rem; align-items: start; }
+}
+
+/* ===========================================================
+   01 PHILOSOPHY (lineage slot)
+   =========================================================== */
+#philosophy { background: var(--bone); color: var(--ink); }
+.lineage-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 2rem;
+}
+.lineage-grid p { font-size: 1.05rem; line-height: 1.7; color: var(--mist-dark); margin-bottom: 1.25rem; }
+.lineage-grid p:last-child { margin-bottom: 0; }
+.lineage-grid p strong { color: var(--ink); font-weight: 500; }
+.lineage-mark {
+  position: relative; align-self: center; aspect-ratio: 1;
+  max-width: 280px; margin: 0 auto; color: var(--saffron-deep);
+}
+.lineage-pull {
+  font-family: var(--f-display); font-style: italic; font-weight: 300;
+  font-size: clamp(1.75rem, 3.2vw, 2.6rem); line-height: 1.18; letter-spacing: -0.015em;
+  color: var(--ink); margin-bottom: 2rem;
+}
+.lineage-pull em { color: var(--saffron-deep); }
+@media (max-width: 980px) {
+  .lineage-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .lineage-mark { max-width: 200px; }
+}
+
+/* ===========================================================
+   02 STUDIO (teacher slot)
+   =========================================================== */
+#studio { background: var(--bone-2); color: var(--ink); }
+.teacher-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start; }
+.teacher-portrait {
+  position: relative; aspect-ratio: 4 / 5; border-radius: 2px; overflow: hidden;
+  background: linear-gradient(165deg, #4a3f30 0%, #2a1f18 60%, #1a120e 100%);
+}
+.teacher-portrait::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 35%, rgba(196, 138, 59, 0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(180, 130, 116, 0.18) 0%, transparent 70%);
+}
+.teacher-portrait::after {
+  content: ""; position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n2'><feTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n2)' opacity='0.35'/></svg>");
+  opacity: 0.4; mix-blend-mode: overlay;
+}
+.teacher-portrait__label {
+  position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem;
+  display: flex; justify-content: space-between; align-items: end;
+  color: var(--bone); z-index: 2;
+  font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase;
+}
+.teacher-portrait__label .name {
+  font-family: var(--f-display); font-style: italic; font-weight: 300;
+  font-size: 1.4rem; letter-spacing: -0.005em; text-transform: none;
+  color: var(--bone); line-height: 1.1;
+}
+.teacher-portrait__photo-hint {
+  position: absolute; top: 1.25rem; left: 1.25rem; z-index: 2;
+  color: rgba(242, 233, 218, 0.55); font-size: 0.65rem;
+  letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--f-body);
+}
+.teacher-body h3 {
+  font-family: var(--f-display); font-style: italic; font-weight: 300;
+  font-size: clamp(1.9rem, 3vw, 2.6rem); letter-spacing: -0.02em; line-height: 1.15;
+  margin-bottom: 1.5rem; color: var(--ink);
+}
+.teacher-body p { color: var(--mist-dark); margin-bottom: 1.1rem; line-height: 1.75; }
+.teacher-body p strong { color: var(--ink); font-weight: 500; }
+.teacher-quals {
+  margin-top: 2.5rem; padding-top: 2rem;
+  border-top: 1px solid rgba(13,11,8,0.12);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+}
+.teacher-quals h4 {
+  font-family: var(--f-body); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.28em; text-transform: uppercase; color: var(--saffron-deep); margin-bottom: 1rem;
+}
+.teacher-quals ul { list-style: none; }
+.teacher-quals li {
+  font-size: 0.9rem; padding: 0.4rem 0; color: var(--mist-dark);
+  border-bottom: 1px dashed rgba(13,11,8,0.1);
+}
+.teacher-quals li:last-child { border-bottom: 0; }
+@media (max-width: 980px) {
+  .teacher-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .teacher-portrait { max-width: 440px; }
+  .teacher-quals { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+/* ===========================================================
+   03 AUDIENCES (paths slot, expanded to 6)
+   =========================================================== */
+#audiences { background: var(--ink); color: var(--bone); }
+.paths-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: rgba(242, 233, 218, 0.12);
+  border: 1px solid rgba(242, 233, 218, 0.12);
+}
+.path-card {
+  padding: 2.5rem 2rem 3rem; background: var(--ink); position: relative;
+  transition: background 420ms ease;
+  min-height: 440px; display: flex; flex-direction: column;
+}
+.path-card:hover { background: var(--ink-3); }
+.path-card__num {
+  font-family: var(--f-display); font-style: italic; font-weight: 300;
+  font-size: 0.9rem; color: var(--saffron); letter-spacing: 0.05em; margin-bottom: 1.5rem;
+}
+.path-card__title {
+  font-family: var(--f-display); font-weight: 350;
+  font-size: clamp(1.7rem, 2.6vw, 2.2rem); letter-spacing: -0.02em; line-height: 1.05;
+  margin-bottom: 0.4rem;
+}
+.path-card__title em { font-style: italic; color: var(--saffron-glow); font-weight: 300; }
+.path-card__sub {
+  font-family: var(--f-body); font-size: 0.7rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--mist); margin-bottom: 1.2rem;
+}
+.path-card__share {
+  font-family: var(--f-display); font-style: italic; font-weight: 300;
+  font-size: 1.2rem; color: var(--saffron-glow); margin-bottom: 1.5rem;
+  letter-spacing: -0.005em;
+}
+.path-card__body { color: var(--bone-2); font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.5rem; }
+.path-card__links { margin-top: auto; list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.path-card__links a, .path-card__links li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.55rem 0; border-bottom: 1px solid rgba(242, 233, 218, 0.1);
+  font-size: 0.84rem; color: var(--bone-3);
+  transition: color 260ms ease, border-color 260ms ease, padding 260ms ease;
+}
+.path-card__links a:hover { color: var(--saffron-glow); border-color: var(--saffron); padding-left: 0.25rem; }
+.path-card__links .arrow { font-family: var(--f-display); font-style: italic; opacity: 0.6; transition: transform 260ms ease; }
+.path-card__links a:hover .arrow { transform: translateX(4px); opacity: 1; }
+@media (max-width: 1100px) { .paths-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px)  { .paths-grid { grid-template-columns: 1fr; } }
+
+/* ===========================================================
+   04 PRICING + PROCESS (curriculum slot)
+   =========================================================== */
+#pricing { background: var(--bone); color: var(--ink); }
+.pricing-lede {
+  max-width: 680px;
+  font-family: var(--f-display); font-weight: 350;
+  font-size: clamp(1.3rem, 2vw, 1.65rem); letter-spacing: -0.015em; line-height: 1.45;
+  color: var(--mist-dark); margin-bottom: 4rem;
+}
+.pricing-lede em { color: var(--saffron-deep); font-style: italic; }
+.pricing-ladder {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: rgba(13, 11, 8, 0.1); border: 1px solid rgba(13, 11, 8, 0.1);
+  margin-bottom: 4rem;
+}
+.tier {
+  background: var(--bone); padding: 2rem 1.4rem 2.4rem;
+  display: flex; flex-direction: column; gap: 0.8rem;
+  position: relative; transition: background 320ms ease;
+}
+.tier:hover { background: var(--bone-2); }
+.tier__num {
+  font-family: var(--f-display); font-style: italic; font-weight: 300;
+  font-size: 2.5rem; line-height: 1; color: var(--saffron-deep); margin-bottom: 0.4rem;
+}
+.tier:nth-child(2) .tier__num { color: var(--rose); }
+.tier:nth-child(3) .tier__num { color: var(--olive-deep); }
+.tier:nth-child(4) .tier__num { color: var(--mist-dark); }
+.tier__name {
+  font-family: var(--f-display); font-weight: 400; font-size: 1.4rem;
+  letter-spacing: -0.01em; color: var(--ink);
+}
+.tier__who {
+  font-family: var(--f-serif); font-style: italic;
+  font-size: 0.95rem; color: var(--saffron-deep);
+}
+.tier__share {
+  font-family: var(--f-body); font-size: 0.7rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--mist-dark); margin-top: 0.2rem;
+}
+.tier__share strong { color: var(--ink); font-weight: 600; letter-spacing: 0.05em; }
+.tier__desc { font-size: 0.86rem; line-height: 1.55; color: var(--mist-dark); }
+.tier__includes {
+  list-style: none; margin-top: auto; padding-top: 1rem;
+  border-top: 1px dashed rgba(13,11,8,0.15);
+  display: flex; flex-direction: column; gap: 0.3rem;
+}
+.tier__includes li {
+  font-size: 0.78rem; color: var(--mist-dark); padding-left: 0.9rem; position: relative;
+}
+.tier__includes li::before {
+  content: "·"; position: absolute; left: 0; color: var(--saffron-deep); font-weight: 700;
+}
+@media (max-width: 1100px) { .pricing-ladder { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .pricing-ladder { grid-template-columns: 1fr; } }
+
+.process {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  padding-top: 3rem; border-top: 1px solid rgba(13, 11, 8, 0.12);
+}
+.process__step h4 {
+  font-family: var(--f-display); font-weight: 400; font-style: italic;
+  font-size: 1.4rem; color: var(--ink); margin-bottom: 0.5rem; letter-spacing: -0.01em;
+}
+.process__step .tag {
+  display: inline-block; font-size: 0.64rem; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--saffron-deep); margin-bottom: 0.6rem;
+}
+.process__step p { font-size: 0.92rem; line-height: 1.65; color: var(--mist-dark); }
+@media (max-width: 800px) { .process { grid-template-columns: 1fr; gap: 2rem; } }
+
+.stats-bar {
+  margin-top: 3rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: rgba(13,11,8,0.1); border: 1px solid rgba(13,11,8,0.1);
+}
+.stat { background: var(--bone); padding: 1.4rem 1.2rem; }
+.stat .key {
+  font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--mist-dark);
+}
+.stat .val {
+  margin-top: 0.4rem; font-family: var(--f-display); font-style: italic; font-weight: 300;
+  font-size: 1.6rem; color: var(--saffron-deep); letter-spacing: -0.01em;
+}
+@media (max-width: 720px) { .stats-bar { grid-template-columns: repeat(2, 1fr); } }
+
+/* ===========================================================
+   05 WORK (retreats slot)
+   =========================================================== */
+#work {
+  padding: clamp(5rem, 9vw, 9rem) var(--gutter);
+  background:
+    radial-gradient(ellipse 70% 45% at 15% 100%, rgba(196, 138, 59, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 35% at 90% 0%, rgba(180, 130, 116, 0.08) 0%, transparent 55%),
+    linear-gradient(180deg, var(--ink-2) 0%, var(--ink) 100%);
+  color: var(--bone);
+  overflow: hidden;
+}
+.work-intro { max-width: 720px; margin-bottom: 4rem; }
+.work-intro p {
+  font-family: var(--f-display); font-weight: 350;
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem); line-height: 1.45; letter-spacing: -0.01em;
+  color: var(--bone-2);
+}
+.work-intro p em { color: var(--saffron-glow); font-style: italic; }
+
+.work-info-bar {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: rgba(242, 233, 218, 0.12); border: 1px solid rgba(242, 233, 218, 0.12);
+  margin-bottom: 4rem;
+}
+.work-info { background: var(--ink); padding: 1.5rem 1.4rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.work-info .key { font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--mist); }
+.work-info .val {
+  font-family: var(--f-display); font-style: italic; font-weight: 300;
+  font-size: 1.5rem; color: var(--saffron-glow); letter-spacing: -0.01em;
+}
+@media (max-width: 800px) { .work-info-bar { grid-template-columns: repeat(2, 1fr); } }
+
+.works-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+.work-card {
+  position: relative;
+  background: rgba(242, 233, 218, 0.03);
+  border: 1px solid rgba(242, 233, 218, 0.1);
+  padding: 2rem 1.75rem;
+  display: flex; flex-direction: column; gap: 0.9rem;
+  transition: background 420ms ease, border-color 420ms ease, transform 420ms cubic-bezier(.22,1,.36,1);
+}
+.work-card:hover { background: rgba(242, 233, 218, 0.055); border-color: rgba(196, 138, 59, 0.4); transform: translateY(-3px); }
+.work-card__top {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+  padding-bottom: 1rem; border-bottom: 1px solid rgba(242, 233, 218, 0.1);
+}
+.work-card__num {
+  font-family: var(--f-display); font-style: italic; font-weight: 300;
+  font-size: 2.2rem; color: var(--saffron); line-height: 1;
+}
+.work-card__meta {
+  text-align: right; font-size: 0.7rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--mist); line-height: 1.6;
+}
+.work-card__title {
+  font-family: var(--f-display); font-weight: 400;
+  font-size: 1.55rem; letter-spacing: -0.015em; line-height: 1.15; color: var(--bone);
+}
+.work-card__title em { font-style: italic; font-weight: 300; color: var(--saffron-glow); }
+.work-card__sub {
+  font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--mist-pale); margin-top: -0.3rem;
+}
+.work-card__body {
+  font-family: var(--f-serif); font-style: italic;
+  font-size: 0.97rem; line-height: 1.55; color: var(--bone-3);
+}
+.work-card__list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem 0.6rem; margin-top: 0.5rem; }
+.work-card__list li {
+  font-size: 0.72rem; color: var(--bone-3); padding: 0.3rem 0.65rem;
+  background: rgba(242, 233, 218, 0.05); border-radius: 2px; letter-spacing: 0.04em;
+}
+.work-card__cta {
+  margin-top: auto; padding-top: 1rem;
+  border-top: 1px dashed rgba(242, 233, 218, 0.12);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mist);
+}
+.work-card__cta a { color: var(--saffron-glow); transition: color 220ms; }
+.work-card__cta a:hover { color: var(--bone); }
+@media (max-width: 860px) { .works-list { grid-template-columns: 1fr; } }
+
+/* ===========================================================
+   06 CAPABILITIES (treatments slot)
+   =========================================================== */
+#capabilities { background: var(--bone); color: var(--ink); }
+.cap-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+  background: rgba(13, 11, 8, 0.1); border: 1px solid rgba(13, 11, 8, 0.1);
+}
+.cap {
+  background: var(--bone); padding: 2.4rem 2rem;
+  display: grid; grid-template-columns: auto 1fr; gap: 1.8rem;
+  align-items: start; transition: background 320ms ease;
+}
+.cap:hover { background: var(--bone-2); }
+.cap__icon {
+  width: 64px; height: 64px;
+  border: 1px solid rgba(13,11,8,0.2); border-radius: 50%;
+  display: grid; place-items: center;
+  color: var(--saffron-deep);
+  background: rgba(196, 138, 59, 0.05); flex-shrink: 0;
+}
+.cap__icon svg { width: 28px; height: 28px; }
+.cap__body h3 {
+  font-family: var(--f-display); font-weight: 400;
+  font-size: 1.35rem; letter-spacing: -0.015em; margin-bottom: 0.3rem;
+}
+.cap__body h3 em { color: var(--saffron-deep); font-style: italic; }
+.cap__sub {
+  display: inline-block; font-size: 0.62rem; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--saffron-deep);
+  padding: 0.2rem 0.55rem; border: 1px solid rgba(196, 138, 59, 0.35);
+  border-radius: 2px; margin-bottom: 0.75rem;
+}
+.cap__body p { font-size: 0.9rem; line-height: 1.65; color: var(--mist-dark); margin-bottom: 0.85rem; }
+.cap__list {
+  list-style: none; display: flex; flex-wrap: wrap; gap: 0.35rem;
+  padding-top: 0.8rem; border-top: 1px dashed rgba(13,11,8,0.15);
+}
+.cap__list li {
+  font-size: 0.7rem; letter-spacing: 0.04em; color: var(--mist-dark);
+  padding: 0.25rem 0.55rem; background: rgba(13,11,8,0.04);
+  border: 1px solid rgba(13,11,8,0.08); border-radius: 2px;
+}
+@media (max-width: 820px) {
+  .cap-grid { grid-template-columns: 1fr; }
+  .cap { grid-template-columns: 1fr; gap: 1.25rem; }
+}
+
+/* ===========================================================
+   07 INSIGHTS (voices slot)
+   =========================================================== */
+#insights { background: var(--ink); color: var(--bone); }
+.voice-feature {
+  display: grid; grid-template-columns: 1fr 1.1fr; gap: 4rem;
+  align-items: start; margin-bottom: 5rem; padding-bottom: 5rem;
+  border-bottom: 1px solid rgba(242, 233, 218, 0.1);
+}
+.voice-feature__quote {
+  font-family: var(--f-serif); font-style: italic;
+  font-size: clamp(1.5rem, 2.4vw, 2rem); line-height: 1.4; letter-spacing: -0.01em;
+  color: var(--bone);
+}
+.voice-feature__quote::before {
+  content: "❝"; display: block;
+  font-family: var(--f-display); font-size: 5rem; color: var(--saffron);
+  line-height: 0.5; margin-bottom: 2.5rem; font-style: normal;
+}
+.voice-feature__attr {
+  margin-top: 2rem; font-family: var(--f-body);
+  font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--mist);
+}
+.voice-feature__attr .name {
+  color: var(--saffron-glow); display: block; margin-bottom: 0.25rem;
+  letter-spacing: 0.04em; font-style: italic; text-transform: none;
+  font-size: 1.05rem; font-family: var(--f-display);
+}
+.voice-feature__aside p { color: var(--bone-3); font-size: 0.98rem; line-height: 1.7; margin-bottom: 1.1rem; }
+.voice-feature__aside h4 {
+  font-family: var(--f-display); font-weight: 350; font-style: italic;
+  font-size: 1.5rem; margin-bottom: 1.25rem; color: var(--saffron-glow); letter-spacing: -0.01em;
+}
+.voice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.voice-card {
+  padding: 2rem 1.75rem;
+  background: rgba(242, 233, 218, 0.03);
+  border: 1px solid rgba(242, 233, 218, 0.1);
+  display: flex; flex-direction: column; gap: 1rem;
+  transition: background 420ms ease, border-color 420ms ease;
+}
+.voice-card:hover { background: rgba(242, 233, 218, 0.055); border-color: rgba(196, 138, 59, 0.35); }
+.voice-card .tag {
+  font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--saffron);
+}
+.voice-card h4 {
+  font-family: var(--f-display); font-weight: 400; font-size: 1.3rem;
+  letter-spacing: -0.015em; line-height: 1.2; color: var(--bone);
+}
+.voice-card p {
+  font-family: var(--f-serif); font-style: italic;
+  font-size: 0.95rem; line-height: 1.55; color: var(--bone-2);
+}
+.voice-card__attr {
+  margin-top: auto; padding-top: 1.2rem;
+  border-top: 1px solid rgba(242, 233, 218, 0.1);
+  font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mist);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.voice-card__attr a { color: var(--saffron-glow); }
+@media (max-width: 980px) {
+  .voice-feature { grid-template-columns: 1fr; gap: 1rem; }
+  .voice-grid { grid-template-columns: 1fr; }
+}
+
+/* ===========================================================
+   08 PARTNERSHIP (medical slot)
+   =========================================================== */
+#partnership { background: var(--bone-2); color: var(--ink); padding: clamp(5rem, 8vw, 8rem) var(--gutter); }
+.medical-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
+.medical-icon { aspect-ratio: 1; max-width: 280px; margin: 0 auto; color: var(--olive-deep); }
+.medical-body h3 {
+  font-family: var(--f-display); font-weight: 350;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem); letter-spacing: -0.02em; line-height: 1.1;
+  margin-bottom: 1.5rem; color: var(--ink);
+}
+.medical-body h3 em { color: var(--olive-deep); font-style: italic; font-weight: 300; }
+.medical-body p { font-size: 1rem; line-height: 1.75; color: var(--mist-dark); margin-bottom: 1.25rem; }
+.medical-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; margin-bottom: 2rem; }
+.medical-chips span {
+  font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--olive-deep);
+  padding: 0.4rem 0.8rem; background: rgba(106, 113, 73, 0.1);
+  border: 1px solid rgba(106, 113, 73, 0.25); border-radius: 2px;
+}
+@media (max-width: 980px) {
+  .medical-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .medical-icon { max-width: 180px; }
+}
+
+/* ===========================================================
+   09 CONTACT
+   =========================================================== */
+#contact {
+  padding: clamp(5rem, 9vw, 9rem) var(--gutter);
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(196, 138, 59, 0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 35% at 15% 10%, rgba(180, 130, 116, 0.08) 0%, transparent 55%),
+    linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+  color: var(--bone); position: relative; overflow: hidden;
+}
+.contact-head { max-width: 880px; margin-bottom: 4rem; }
+.contact-head h2 {
+  font-family: var(--f-display); font-weight: 350;
+  font-size: clamp(2.6rem, 6vw, 5.5rem); letter-spacing: -0.03em; line-height: 0.95; margin-bottom: 2rem;
+}
+.contact-head h2 em { color: var(--saffron-glow); font-style: italic; font-weight: 300; }
+.contact-head p {
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--bone-3); max-width: 680px; line-height: 1.55;
+}
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1px;
+  background: rgba(242, 233, 218, 0.12); border: 1px solid rgba(242, 233, 218, 0.12);
+}
+.contact-method { background: var(--ink); padding: 2rem 1.75rem; display: flex; flex-direction: column; gap: 0.5rem; transition: background 320ms ease; }
+.contact-method:hover { background: var(--ink-3); }
+.contact-method .lbl { font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--mist); }
+.contact-method .val { font-family: var(--f-display); font-weight: 350; font-size: 1.2rem; letter-spacing: -0.01em; color: var(--bone); }
+.contact-method .val em { color: var(--saffron-glow); font-style: italic; font-weight: 300; }
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .contact-grid { grid-template-columns: 1fr; } }
+
+.contact-form {
+  margin-top: 4rem; max-width: 760px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+}
+.field { display: flex; flex-direction: column; gap: 0.5rem; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-size: 0.68rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--mist); }
+.field input, .field select, .field textarea {
+  background: transparent; border: 0;
+  border-bottom: 1px solid rgba(242, 233, 218, 0.2);
+  padding: 0.75rem 0; color: var(--bone);
+  font: inherit; font-size: 1rem; transition: border-color 240ms ease;
+  font-family: inherit;
+}
+.field input::placeholder, .field textarea::placeholder { color: var(--mist-dark); }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-bottom-color: var(--saffron); }
+.field textarea { resize: vertical; min-height: 100px; }
+.field select {
+  -webkit-appearance: none; appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%239A8D7A' stroke-width='1.2' fill='none'/></svg>");
+  background-repeat: no-repeat; background-position: right 0 center; padding-right: 1.5rem;
+}
+.field select option { background: var(--ink-2); color: var(--bone); }
+.form-submit { grid-column: 1 / -1; margin-top: 1rem; }
+.form-submit .btn { padding: 1.1rem 2rem; }
+@media (max-width: 720px) { .contact-form { grid-template-columns: 1fr; } }
+
+/* ===========================================================
+   FOOTER
+   =========================================================== */
+.foot {
+  padding: 4rem var(--gutter) 2.5rem;
+  background: var(--ink); color: var(--mist);
+  border-top: 1px solid rgba(242, 233, 218, 0.08);
+}
+.foot__top {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem;
+  padding-bottom: 3rem; border-bottom: 1px solid rgba(242, 233, 218, 0.08); margin-bottom: 2rem;
+}
+.foot__brand h4 {
+  font-family: var(--f-display); font-weight: 400; font-size: 1.35rem;
+  color: var(--bone); margin-bottom: 0.8rem; letter-spacing: -0.01em;
+}
+.foot__brand p { font-size: 0.9rem; line-height: 1.6; max-width: 340px; }
+.foot__col h5 {
+  font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--saffron); margin-bottom: 1.2rem;
+}
+.foot__col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+.foot__col a { font-size: 0.9rem; color: var(--bone-3); transition: color 220ms ease; }
+.foot__col a:hover { color: var(--saffron-glow); }
+.foot__bot {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  font-size: 0.75rem; letter-spacing: 0.12em; color: var(--mist-dark);
+}
+.foot__bot a { color: var(--mist); transition: color 220ms ease; }
+.foot__bot a:hover { color: var(--saffron-glow); }
+@media (max-width: 860px) { .foot__top { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+@media (max-width: 520px) { .foot__top { grid-template-columns: 1fr; } }
+
+/* ===========================================================
+   REVEAL
+   =========================================================== */
+.reveal {
+  opacity: 0; transform: translateY(32px);
+  transition: opacity 900ms cubic-bezier(.22,1,.36,1), transform 900ms cubic-bezier(.22,1,.36,1);
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__mark" aria-label="Astral Studio home">
+    <svg class="mark-mini" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <circle cx="20" cy="20" r="3" fill="currentColor"/>
+      <line x1="20" y1="2" x2="20" y2="8" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="20" y1="32" x2="20" y2="38" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="2" y1="20" x2="8" y2="20" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="32" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="1.2"/>
+    </svg>
+    <span>Astral<em> Studio</em></span>
+  </a>
+  <ul class="nav__links">
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#studio">Studio</a></li>
+    <li><a href="#audiences">Who we build for</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#insights">Insights</a></li>
+    <li><a href="#contact" class="nav__cta">Begin</a></li>
+  </ul>
+  <button class="nav__menu-btn" aria-label="Open menu" id="menuOpen">
+    <svg width="22" height="14" viewBox="0 0 22 14" fill="none"><path d="M0 1h22M0 7h22M0 13h14" stroke="currentColor" stroke-width="1.4"/></svg>
+  </button>
+</nav>
+
+<!-- ===== MOBILE DRAWER ===== -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__top">
+    <span class="nav__mark">
+      <svg class="mark-mini" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.4" fill="none"/>
+        <circle cx="20" cy="20" r="3" fill="currentColor"/>
+      </svg>
+      <span>Astral<em> Studio</em></span>
+    </span>
+    <button aria-label="Close menu" id="menuClose">
+      <svg width="20" height="20" viewBox="0 0 20 20"><path d="M1 1l18 18M19 1L1 19" stroke="currentColor" stroke-width="1.4"/></svg>
+    </button>
+  </div>
+  <ul class="drawer__links">
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#studio">Studio</a></li>
+    <li><a href="#audiences">Who we build for</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#insights">Insights</a></li>
+    <li><a href="#partnership">Partnership</a></li>
+    <li><a href="#contact"><em>Begin</em></a></li>
+  </ul>
+</div>
+
+<main id="top">
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero grain" aria-label="Introduction">
+  <div class="hero__inner">
+    <div class="hero__eyebrow">
+      <span class="line"></span>
+      <span class="eyebrow">Astral Studio · Mazunte · Est. 2026</span>
+    </div>
+
+    <h1 class="display hero__title">
+      <span class="row">Original work</span>
+      <span class="row"><em>deserves</em></span>
+      <span class="row row-2">infrastructure that matches.</span>
+    </h1>
+
+    <p class="hero__sub">
+      We build custom digital platforms for <em>artists, creatives, changemakers, practitioners, facilitators</em> and organizations — from a small village on the Oaxacan coast, and online to clients across the world.
+    </p>
+
+    <p class="hero__small">
+      No upfront cost. We take a small percentage of what your platform makes. Aligned partnership from day one — your wins are our wins.
+    </p>
+
+    <div class="hero__ctas">
+      <a href="#contact" class="btn btn--primary">
+        Begin a conversation
+        <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#work" class="btn btn--ghost">See the work</a>
+      <a href="#pricing" class="btn btn--ghost">Pricing</a>
+    </div>
+  </div>
+
+  <!-- emblem -->
+  <div class="hero__emblem" aria-hidden="true">
+    <svg viewBox="0 0 400 400" class="enso">
+      <defs>
+        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="1.5" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <g filter="url(#softGlow)" stroke="currentColor" fill="none" stroke-linecap="round">
+        <path d="M200 30
+                 C 290 30, 370 110, 370 200
+                 C 370 290, 290 370, 200 370
+                 C 110 370, 30 290, 30 200
+                 C 30 125, 85 60, 160 40"
+              stroke-width="5" opacity="1"/>
+        <circle cx="200" cy="200" r="140" stroke-width="1.5" opacity="0.5"/>
+        <circle cx="200" cy="200" r="110" stroke-width="1.2" opacity="0.4"/>
+        <circle cx="200" cy="200" r="80" stroke-width="1" opacity="0.35"/>
+        <g opacity="0.75" stroke-width="1.5">
+          <line x1="200" y1="10" x2="200" y2="22"/>
+          <line x1="200" y1="378" x2="200" y2="390"/>
+          <line x1="10" y1="200" x2="22" y2="200"/>
+          <line x1="378" y1="200" x2="390" y2="200"/>
+        </g>
+      </g>
+    </svg>
+    <div class="hero__emblem-stamp">
+      <div class="mono">Since<br>2026</div>
+      <div class="yr">· Mazunte · Online ·</div>
+    </div>
+  </div>
+
+  <div class="hero__tag">
+    <span class="dot"></span>
+    <span>15.66° N · Mazunte · Oaxaca · MX</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CREDENTIALS
+     ============================================================ -->
+<section class="credentials" aria-label="Credentials">
+  <div class="credentials__track">
+    <!-- set 1 -->
+    <div class="credentials__item"><span class="big">8</span>Live builds shipped</div>
+    <span class="dot"></span>
+    <div class="credentials__item"><span class="big">6</span>Audience tiers served</div>
+    <span class="dot"></span>
+    <div class="credentials__item"><span class="big">$0</span>Upfront cost</div>
+    <span class="dot"></span>
+    <div class="credentials__item"><span class="big">5–15%</span>Revenue share, never fees</div>
+    <span class="dot"></span>
+    <div class="credentials__item">Former CTO · 10+ yrs production</div>
+    <span class="dot"></span>
+    <div class="credentials__item">Custom code · No templates</div>
+    <span class="dot"></span>
+    <div class="credentials__item">You own everything · Day one</div>
+    <span class="dot"></span>
+    <!-- set 2 (loop) -->
+    <div class="credentials__item"><span class="big">8</span>Live builds shipped</div>
+    <span class="dot"></span>
+    <div class="credentials__item"><span class="big">6</span>Audience tiers served</div>
+    <span class="dot"></span>
+    <div class="credentials__item"><span class="big">$0</span>Upfront cost</div>
+    <span class="dot"></span>
+    <div class="credentials__item"><span class="big">5–15%</span>Revenue share, never fees</div>
+    <span class="dot"></span>
+    <div class="credentials__item">Former CTO · 10+ yrs production</div>
+    <span class="dot"></span>
+    <div class="credentials__item">Custom code · No templates</div>
+    <span class="dot"></span>
+    <div class="credentials__item">You own everything · Day one</div>
+    <span class="dot"></span>
+  </div>
+</section>
+
+<!-- ============================================================
+     01 PHILOSOPHY
+     ============================================================ -->
+<section id="philosophy" class="section">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <div class="section__num">01</div>
+      <h2 class="display section__title">We build the infrastructure for <em>real-world</em> work.</h2>
+    </div>
+
+    <div class="lineage-grid">
+      <div class="reveal">
+        <p class="lineage-pull">
+          Our role is not to invent the work — it is to support what is already real with <em>structure that fits</em>.
+        </p>
+        <div class="lineage-mark" aria-hidden="true">
+          <svg viewBox="0 0 200 200" fill="none">
+            <g stroke="currentColor" stroke-width="1" fill="none">
+              <circle cx="100" cy="100" r="90" opacity="0.25"/>
+              <circle cx="100" cy="100" r="70" opacity="0.35"/>
+              <circle cx="100" cy="100" r="50" opacity="0.5"/>
+              <circle cx="100" cy="100" r="30" opacity="0.7"/>
+              <circle cx="100" cy="100" r="6" fill="currentColor" stroke="none"/>
+              <g opacity="0.6">
+                <line x1="100" y1="5" x2="100" y2="18"/>
+                <line x1="100" y1="182" x2="100" y2="195"/>
+                <line x1="5" y1="100" x2="18" y2="100"/>
+                <line x1="182" y1="100" x2="195" y2="100"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <p>
+          You inspire hundreds in a weekend, then spend three days fighting five disconnected tools — Calendly for bookings, Teachable for courses, Stripe for checkout, Mailchimp for the list, WhatsApp for the community. Six platforms, six brands, none of them yours.
+        </p>
+        <p>
+          <strong>That is not a digital presence — it is digital fragmentation.</strong> Every link sends people out of your world and into someone else's. The most valuable thing you have is the relationship with your people, and it is being held hostage by software that was never built for the work.
+        </p>
+        <p>
+          We work with projects that already exist — <em>communities, practitioners, programs, spaces, initiatives</em> — and support them in clarifying how the work is expressed, accessed, and sustained digitally. We step in as a clarifying and structuring layer: read what already exists, identify what matters now, and help it take a form that others can understand and engage with.
+        </p>
+        <p>
+          We build systems, not one-off deliverables. We prioritize clarity before execution. We work lean, with a small core and trusted collaborators. We favor ownership and shared upside over hourly billing. We work remotely and asynchronously.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     02 STUDIO — JORDI
+     ============================================================ -->
+<section id="studio" class="section">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <div class="section__num">02</div>
+      <h2 class="display section__title">The studio, <em>Jordi Amat</em>.</h2>
+    </div>
+
+    <div class="teacher-grid">
+      <div class="teacher-portrait reveal">
+        <div class="teacher-portrait__photo-hint">portrait</div>
+        <svg viewBox="0 0 300 380" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="position:absolute; inset:0;" aria-hidden="true">
+          <defs>
+            <radialGradient id="pg" cx="50%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="#d9a862" stop-opacity="0.35"/>
+              <stop offset="60%" stop-color="#7a5534" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#1a120e" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="300" height="380" fill="url(#pg)"/>
+          <g stroke="#d9a862" stroke-width="0.6" fill="none" opacity="0.25">
+            <circle cx="150" cy="155" r="85"/>
+            <circle cx="150" cy="155" r="55"/>
+            <circle cx="150" cy="155" r="30"/>
+          </g>
+          <g stroke="#f2e9da" stroke-width="0.6" fill="none" opacity="0.18">
+            <path d="M150 70 L 150 240"/>
+            <path d="M 65 155 L 235 155"/>
+          </g>
+        </svg>
+        <div class="teacher-portrait__label">
+          <div>
+            <div class="name">Jordi Amat</div>
+            <div>Founder · Senior Engineer · Former CTO</div>
+          </div>
+          <div>Mazunte<br>México</div>
+        </div>
+      </div>
+
+      <div class="teacher-body reveal">
+        <h3>From London to Barcelona to Mexico City — and, finally, to a small village on the Oaxacan coast.</h3>
+
+        <p>Jordi is from Catalonia. He spent a decade building production systems and leading engineering teams in fintech and SaaS — first as a senior full-stack engineer, then as <strong>CTO of a venture-backed startup</strong>. He shipped real software to real users, hired and led teams, and learned what it takes to turn a methodology into infrastructure that holds.</p>
+
+        <p>In 2022 he moved to <strong>Mazunte</strong>, a small village on the coast of Oaxaca, Mexico, with his partner Nina and their two children. This isn't a digital nomad chapter — it's home. They chose this place for the community, the land, and the kind of life they want their kids to grow up in.</p>
+
+        <p>Half the village are practitioners, facilitators, artists, and builders of alternative schools and projects. He saw the same pattern everywhere: brilliant people running powerful work on scattered tools that were never built for them. So he started <strong>Astral Studio</strong> — a small, focused studio building the infrastructure that meets the work.</p>
+
+        <p>He has trained in <em>Access Bars, Theta Healing, Reiki, Gene Keys, Family Constellations, Ashtanga, Vinyasa, Yin, Kundalini, transpersonal work, psychedelic integration, ceremony, holding space</em> — not because he planned to build platforms for the people doing this work, but because the work called. Each training changed how he understands what artists, creatives, changemakers, practitioners, facilitators, and organizations actually need from their infrastructure.</p>
+
+        <div class="teacher-quals">
+          <div>
+            <h4>Engineering</h4>
+            <ul>
+              <li>Former CTO · venture-backed startup</li>
+              <li>10+ years shipping production software</li>
+              <li>Senior full-stack · TypeScript, Node, Postgres</li>
+              <li>React, Next, Tamagui, Flutter, Supabase</li>
+              <li>Stripe Connect, infrastructure design</li>
+              <li>AI / LLM integration · agent systems</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Practice</h4>
+            <ul>
+              <li>Access Bars Practitioner</li>
+              <li>Theta Healing · Reiki</li>
+              <li>Gene Keys · Family Constellations</li>
+              <li>Ashtanga · Vinyasa · Yin · Kundalini</li>
+              <li>Transpersonal · psychedelic integration</li>
+              <li>Ceremony · holding space</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     03 AUDIENCES
+     ============================================================ -->
+<section id="audiences" class="section section--ink">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <div class="section__num">03</div>
+      <h2 class="display section__title">Six doors, <em>one studio</em>.</h2>
+    </div>
+
+    <div class="paths-grid reveal">
+
+      <div class="path-card">
+        <div class="path-card__num">i · Makers</div>
+        <h3 class="path-card__title">Your craft deserves a home that <em>honors the work</em>.</h3>
+        <div class="path-card__sub">Boutique tier</div>
+        <div class="path-card__share">5% rev share · no upfront</div>
+        <p class="path-card__body">
+          Artisans, slow-fashion brands, ceramicists, writers, bespoke makers. Off-the-shelf templates assume inventory and turnover. Slow, bespoke work is the opposite — process and material first, products second.
+        </p>
+        <ul class="path-card__links">
+          <li>Custom site · gallery presentation<span class="arrow">→</span></li>
+          <li>Stripe checkout · no marketplace fees<span class="arrow">→</span></li>
+          <li>Inventory + custom-order pathway<span class="arrow">→</span></li>
+          <li>You own everything<span class="arrow">→</span></li>
+        </ul>
+      </div>
+
+      <div class="path-card">
+        <div class="path-card__num">ii · Practitioners</div>
+        <h3 class="path-card__title">You have the audience. You deserve the <em>infrastructure</em>.</h3>
+        <div class="path-card__sub">Service tier</div>
+        <div class="path-card__share">8% rev share · no upfront</div>
+        <p class="path-card__body">
+          Healers, coaches, facilitators running on Wix + Stripe + Calendly + Linktree + a prayer. We replace all of it with one platform — your brand, your domain, everything connected. Most launch in 2–3 weeks.
+        </p>
+        <ul class="path-card__links">
+          <li>Bookings + payments in one step<span class="arrow">→</span></li>
+          <li>Pre-session intake forms<span class="arrow">→</span></li>
+          <li>Email automation · confirmations<span class="arrow">→</span></li>
+          <li>Multi-offering pages<span class="arrow">→</span></li>
+        </ul>
+      </div>
+
+      <div class="path-card">
+        <div class="path-card__num">iii · Schools</div>
+        <h3 class="path-card__title">Your certification program deserves more than a <em>spreadsheet</em>.</h3>
+        <div class="path-card__sub">Membership tier</div>
+        <div class="path-card__share">12% rev share · no upfront</div>
+        <p class="path-card__body">
+          Multi-level training paths with real prerequisites and real progression. Records in Google Sheets, hours tracked on WhatsApp, graduates lost the moment they certify. The methodology is solid; the infrastructure isn't.
+        </p>
+        <ul class="path-card__links">
+          <li>Prerequisite-gated progression<span class="arrow">→</span></li>
+          <li>Practice hour tracking<span class="arrow">→</span></li>
+          <li>Auto-populated practitioner directory<span class="arrow">→</span></li>
+          <li>AI assistant on your methodology<span class="arrow">→</span></li>
+        </ul>
+      </div>
+
+      <div class="path-card">
+        <div class="path-card__num">iv · Retreats</div>
+        <h3 class="path-card__title">A retreat booking isn't a <em>hotel reservation</em>.</h3>
+        <div class="path-card__sub">Membership tier</div>
+        <div class="path-card__share">12% rev share · no upfront</div>
+        <p class="path-card__body">
+          Centers run retreats, therapy, homestays, workshops — each with its own intake, pricing, and client journey. A "Book Now" button doesn't cut it when someone needs screening, preparation materials, and capacity management before they walk through the door.
+        </p>
+        <ul class="path-card__links">
+          <li>Stream-specific intake flows<span class="arrow">→</span></li>
+          <li>Capacity + screening logic<span class="arrow">→</span></li>
+          <li>Automated preparation sequences<span class="arrow">→</span></li>
+          <li>Multi-stream client database<span class="arrow">→</span></li>
+        </ul>
+      </div>
+
+      <div class="path-card">
+        <div class="path-card__num">v · Communities</div>
+        <h3 class="path-card__title">Every town needs a <em>digital backbone</em>.</h3>
+        <div class="path-card__sub">Membership tier</div>
+        <div class="path-card__share">12% rev share · no upfront</div>
+        <p class="path-card__body">
+          Events scattered across Instagram stories. Practitioners discoverable only by word of mouth. Visitors ask "what's happening tonight?" and nobody has a good answer. We build the digital layer that holds a community together.
+        </p>
+        <ul class="path-card__links">
+          <li>Event listings · daily updated<span class="arrow">→</span></li>
+          <li>Practitioner + business directory<span class="arrow">→</span></li>
+          <li>Bilingual from day one<span class="arrow">→</span></li>
+          <li>Weekly digest · classifieds<span class="arrow">→</span></li>
+        </ul>
+      </div>
+
+      <div class="path-card">
+        <div class="path-card__num">vi · Organizations</div>
+        <h3 class="path-card__title">Your methodology scaled. Your infrastructure <em>didn't</em>.</h3>
+        <div class="path-card__sub">Systems tier</div>
+        <div class="path-card__share">15% rev share · no upfront</div>
+        <p class="path-card__body">
+          Hundreds — or thousands — of certified facilitators across countries and languages. Students taking classes worldwide with no unified record. Regional coordinators managing by email. The methodology succeeded beyond anyone's expectations. The infrastructure is decades behind it.
+        </p>
+        <ul class="path-card__links">
+          <li>Multi-region facilitator directory<span class="arrow">→</span></li>
+          <li>Class discovery · student journey<span class="arrow">→</span></li>
+          <li>Multilingual (2+ languages)<span class="arrow">→</span></li>
+          <li>AI assistant trained on methodology<span class="arrow">→</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     04 PRICING + PROCESS
+     ============================================================ -->
+<section id="pricing" class="section">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <div class="section__num">04</div>
+      <h2 class="display section__title">We take a % of what you make. <em>No upfront. No fees.</em></h2>
+    </div>
+
+    <p class="pricing-lede reveal">
+      Every site is custom-built from scratch. <em>No templates, no themes, no page builders.</em> We build for free, then take a small percentage of platform revenue from dollar one. You own everything — code, data, domain — from day one. We stay alongside you as your technical partner.
+    </p>
+
+    <div class="pricing-ladder reveal">
+
+      <div class="tier">
+        <div class="tier__num">i</div>
+        <div class="tier__name">Boutique</div>
+        <div class="tier__who">For makers &amp; artisans</div>
+        <div class="tier__share">$0 upfront · <strong>5%</strong> rev share · 1–2 wks</div>
+        <p class="tier__desc">Your work needs a digital home that honors the craft — not a template, not a marketplace fee, not a generic shop.</p>
+        <ul class="tier__includes">
+          <li>Custom-designed site</li>
+          <li>Product catalog · showcase</li>
+          <li>Inventory tracking</li>
+          <li>Stripe checkout · order management</li>
+          <li>Mobile responsive · SEO</li>
+        </ul>
+      </div>
+
+      <div class="tier">
+        <div class="tier__num">ii</div>
+        <div class="tier__name">Service</div>
+        <div class="tier__who">For solo practitioners &amp; facilitators</div>
+        <div class="tier__share">$0 upfront · <strong>8%</strong> rev share · 2–3 wks</div>
+        <p class="tier__desc">Your bookings, payments, and brand should live in one place that feels like you — not five tools that don't talk.</p>
+        <ul class="tier__includes">
+          <li>Everything in Boutique</li>
+          <li>Booking calendar (1:1 + group)</li>
+          <li>Pre-session intake forms</li>
+          <li>Email automation</li>
+          <li>Multi-offering pages</li>
+        </ul>
+      </div>
+
+      <div class="tier">
+        <div class="tier__num">iii</div>
+        <div class="tier__name">Membership</div>
+        <div class="tier__who">For schools, retreat centers, communities</div>
+        <div class="tier__share">$0 upfront · <strong>12%</strong> rev share · 4–6 wks</div>
+        <p class="tier__desc">Your work has students, members, retreats. People come back. The platform needs to remember them, host their journey, and grow with them.</p>
+        <ul class="tier__includes">
+          <li>Everything in Service</li>
+          <li>Member login · portal</li>
+          <li>Recurring subscription billing</li>
+          <li>Gated content · curriculum</li>
+          <li>Community space</li>
+        </ul>
+      </div>
+
+      <div class="tier">
+        <div class="tier__num">iv</div>
+        <div class="tier__name">Systems</div>
+        <div class="tier__who">For multi-program organizations &amp; networks</div>
+        <div class="tier__share">$0 upfront · <strong>15%</strong> rev share · 6–12 wks</div>
+        <p class="tier__desc">Your methodology is taught by hundreds. Multiple languages, regions, programs. The infrastructure needs to match the scale of the work.</p>
+        <ul class="tier__includes">
+          <li>Everything in Membership</li>
+          <li>Multilingual (2+ languages)</li>
+          <li>AI assistant on methodology</li>
+          <li>Certification + progression</li>
+          <li>Auto-populated practitioner directory</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="process reveal">
+      <div class="process__step">
+        <div class="tag">01 · We talk</div>
+        <h4>You tell, we listen.</h4>
+        <p>You tell us what you're building. We learn the work, the methodology, the people you serve. Send messy notes — a voice memo, a Google Doc, a screenshot of your Instagram bio. If it's a fit, we send a proposal within days.</p>
+      </div>
+      <div class="process__step">
+        <div class="tag">02 · We build</div>
+        <h4>Custom code, your brand.</h4>
+        <p>Real code, your brand, your domain. You see it come together week by week. Most projects launch in 2–6 weeks. We wire payments, set up your community, and hand you the keys.</p>
+      </div>
+      <div class="process__step">
+        <div class="tag">03 · We stay</div>
+        <h4>Long-term partner.</h4>
+        <p>This isn't a handoff. We remain your technical partner — maintaining, evolving, and scaling your platform as the work grows. Some people call this a fractional CTO. We just call it partnership.</p>
+      </div>
+    </div>
+
+    <div class="stats-bar reveal">
+      <div class="stat"><div class="key">Upfront cost</div><div class="val">$0</div></div>
+      <div class="stat"><div class="key">Rev share</div><div class="val">5–15%</div></div>
+      <div class="stat"><div class="key">Timeline</div><div class="val">1–12 wks</div></div>
+      <div class="stat"><div class="key">Ownership</div><div class="val">100% yours</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     05 WORK
+     ============================================================ -->
+<section id="work" class="grain">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <div class="section__num">05</div>
+      <h2 class="display section__title">Selected work, <em>shipped to live</em>.</h2>
+    </div>
+
+    <div class="work-intro reveal">
+      <p>
+        Different problems, different architectures. Same principle — <em>original work, custom infrastructure, long-term partnership</em>.
+      </p>
+    </div>
+
+    <div class="work-info-bar reveal">
+      <div class="work-info"><div class="key">Live builds</div><div class="val">8 platforms</div></div>
+      <div class="work-info"><div class="key">Geography</div><div class="val">MX · ES · INTL</div></div>
+      <div class="work-info"><div class="key">Stack</div><div class="val">React · Node · PG</div></div>
+      <div class="work-info"><div class="key">Avg ship time</div><div class="val">2–6 wks</div></div>
+    </div>
+
+    <div class="works-list">
+
+      <article class="work-card reveal">
+        <div class="work-card__top">
+          <div class="work-card__num">01</div>
+          <div class="work-card__meta">Retreats<br>Valle de Bravo, MX</div>
+        </div>
+        <h3 class="work-card__title"><em>Sacred</em> Counsel</h3>
+        <div class="work-card__sub">Retreat center &amp; integration practice</div>
+        <p class="work-card__body">
+          A center with 20+ years of experience running retreats, integration therapy, private homestays, and a 21-day metabolic detox — five distinct revenue streams, each with its own intake logic, pricing, and client journey. Built on a unified platform with stream-specific intake, automated preparation sequences, and capacity management per offering type.
+        </p>
+        <ul class="work-card__list">
+          <li>Multi-stream intake</li>
+          <li>Capacity logic</li>
+          <li>Preparation flows</li>
+          <li>Unified client DB</li>
+        </ul>
+        <div class="work-card__cta">
+          <span>Live · sacredcounsel.space</span>
+          <a href="https://sacredcounsel.space" target="_blank" rel="noopener">Visit ↗</a>
+        </div>
+      </article>
+
+      <article class="work-card reveal">
+        <div class="work-card__top">
+          <div class="work-card__num">02</div>
+          <div class="work-card__meta">Communities<br>Mazunte, Oaxaca</div>
+        </div>
+        <h3 class="work-card__title"><em>Mazunte</em> Today</h3>
+        <div class="work-card__sub">Bilingual community platform</div>
+        <p class="work-card__body">
+          A coastal town with dozens of practitioners, venues, and events every night — and no central place to find any of it. Built as a directory-first community utility: event listings updated daily, practitioner and business directory, classifieds, weekly digest. Bilingual EN/ES from day one.
+        </p>
+        <ul class="work-card__list">
+          <li>Event listings</li>
+          <li>Directory</li>
+          <li>Classifieds</li>
+          <li>EN · ES</li>
+        </ul>
+        <div class="work-card__cta">
+          <span>Live · mazunte.today</span>
+          <a href="https://mazunte.today" target="_blank" rel="noopener">Visit ↗</a>
+        </div>
+      </article>
+
+      <article class="work-card reveal">
+        <div class="work-card__top">
+          <div class="work-card__num">03</div>
+          <div class="work-card__meta">Organizations<br>Zapotal, Oaxaca</div>
+        </div>
+        <h3 class="work-card__title"><em>Amakura</em></h3>
+        <div class="work-card__sub">Escuela regenerativa</div>
+        <p class="work-card__body">
+          A multidisciplinary collective in Zapotal running a school of regenerative agriculture, bioconstruction, arts &amp; crafts — plus workshops, community events, and a small online store. A unified platform that brings every program into a single digital home that reflects the collective's identity. The brand feels like the land — earthy, alive, multidisciplinary.
+        </p>
+        <ul class="work-card__list">
+          <li>Multi-program</li>
+          <li>Workshop enrollment</li>
+          <li>Course catalogs</li>
+          <li>Store</li>
+        </ul>
+        <div class="work-card__cta">
+          <span>In progress · amakura.xyz</span>
+          <a href="https://amakura.xyz" target="_blank" rel="noopener">Visit ↗</a>
+        </div>
+      </article>
+
+      <article class="work-card reveal">
+        <div class="work-card__top">
+          <div class="work-card__num">04</div>
+          <div class="work-card__meta">Practitioners<br>International</div>
+        </div>
+        <h3 class="work-card__title"><em>Inner</em> Ascend</h3>
+        <div class="work-card__sub">Private membership · inner development</div>
+        <p class="work-card__body">
+          A practitioner with a coherent methodology for inner development, clarity, and embodied direction — but no quiet, structured space for the people seeking depth over noise. A private container delivering progression-based practice, an AI assistant trained on the methodology's language, journey tracking across the path, and a pipeline into facilitator training.
+        </p>
+        <ul class="work-card__list">
+          <li>Curriculum engine</li>
+          <li>Progression markers</li>
+          <li>AI assistant</li>
+          <li>Facilitator pipeline</li>
+        </ul>
+        <div class="work-card__cta">
+          <span>Live · inner-ascend.com</span>
+          <a href="https://inner-ascend.com" target="_blank" rel="noopener">Visit ↗</a>
+        </div>
+      </article>
+
+      <article class="work-card reveal">
+        <div class="work-card__top">
+          <div class="work-card__num">05</div>
+          <div class="work-card__meta">Communities<br>El Zapotal, Oaxaca</div>
+        </div>
+        <h3 class="work-card__title"><em>Proyecto</em> Salvaje</h3>
+        <div class="work-card__sub">Regenerative neighborhood</div>
+        <p class="work-card__body">
+          A regenerative neighborhood offering 750 m² plots on fertile land for families willing to build with natural materials, share infrastructure, and live by community agreements. The platform filters before it attracts: leads with the land and values, presents requirements transparently, multi-currency pricing (MXN/EUR/USD).
+        </p>
+        <ul class="work-card__list">
+          <li>Plot inventory</li>
+          <li>Multi-currency</li>
+          <li>Inquiry routing</li>
+          <li>Land story</li>
+        </ul>
+        <div class="work-card__cta">
+          <span>Live · proyectosalvaje.com</span>
+          <a href="https://proyectosalvaje.com" target="_blank" rel="noopener">Visit ↗</a>
+        </div>
+      </article>
+
+      <article class="work-card reveal">
+        <div class="work-card__top">
+          <div class="work-card__num">06</div>
+          <div class="work-card__meta">Makers<br>International</div>
+        </div>
+        <h3 class="work-card__title"><em>Mend</em> a Mano</h3>
+        <div class="work-card__sub">Bespoke linen &amp; wool robes</div>
+        <p class="work-card__body">
+          A textile artisan crafting bespoke robes — no digital presence beyond word of mouth. Each garment takes weeks to make. An editorial approach: linen-textured, paced, intentional. Process and material first, products second. Custom orders begin with a conversation, not a cart.
+        </p>
+        <ul class="work-card__list">
+          <li>Editorial</li>
+          <li>Process storytelling</li>
+          <li>Custom-order pathway</li>
+          <li>Slow rhythm</li>
+        </ul>
+        <div class="work-card__cta">
+          <span>Live · mendamano.xyz</span>
+          <a href="https://mendamano.xyz" target="_blank" rel="noopener">Visit ↗</a>
+        </div>
+      </article>
+
+      <article class="work-card reveal">
+        <div class="work-card__top">
+          <div class="work-card__num">07</div>
+          <div class="work-card__meta">Makers<br>International</div>
+        </div>
+        <h3 class="work-card__title"><em>Portal</em> Poem</h3>
+        <div class="work-card__sub">Writing practice — a portal to the self</div>
+        <p class="work-card__body">
+          A writer holding a daily prompt practice — "writing as the way home." A blog template would have flattened it. We treated the site like a paper journal — slow typography, generous whitespace, intentional rhythm. The page invites you to write before it invites you to read.
+        </p>
+        <ul class="work-card__list">
+          <li>Paper aesthetic</li>
+          <li>Prompt-first</li>
+          <li>Editorial</li>
+          <li>No algorithm</li>
+        </ul>
+        <div class="work-card__cta">
+          <span>Live · portalpoem.com</span>
+          <a href="https://portalpoem.com" target="_blank" rel="noopener">Visit ↗</a>
+        </div>
+      </article>
+
+      <article class="work-card reveal">
+        <div class="work-card__top">
+          <div class="work-card__num">08</div>
+          <div class="work-card__meta">Makers<br>International</div>
+        </div>
+        <h3 class="work-card__title"><em>Kura</em> Terra</h3>
+        <div class="work-card__sub">Plant-dyed slow fashion</div>
+        <p class="work-card__body">
+          A plant-dyed slow fashion brand creating wearable art from natural pigments. Each piece is unique. The site reads like a gallery — process and story before price, generous space around each piece, earth tones throughout. The buying flow is unhurried: find the right person for each piece, not move units.
+        </p>
+        <ul class="work-card__list">
+          <li>Gallery presentation</li>
+          <li>Pigment process</li>
+          <li>Slow checkout</li>
+          <li>Earth palette</li>
+        </ul>
+        <div class="work-card__cta">
+          <span>Live · kuraterra.xyz</span>
+          <a href="https://kuraterra.xyz" target="_blank" rel="noopener">Visit ↗</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     06 CAPABILITIES
+     ============================================================ -->
+<section id="capabilities" class="section">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <div class="section__num">06</div>
+      <h2 class="display section__title">What we <em>install</em>.</h2>
+    </div>
+
+    <div class="cap-grid reveal">
+
+      <div class="cap">
+        <div class="cap__icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="4" y="6" width="24" height="20" rx="2"/>
+            <path d="M4 12h24M9 9h.01M13 9h.01M17 9h.01"/>
+          </svg>
+        </div>
+        <div class="cap__body">
+          <span class="cap__sub">Layer 01</span>
+          <h3>Digital <em>homes</em></h3>
+          <p>Clear, grounded websites. Thoughtful content hierarchy. Simple navigation and flows. Design that supports understanding, not noise. Built around your work, not a template.</p>
+          <ul class="cap__list">
+            <li>Custom marketing site</li>
+            <li>Editorial pages</li>
+            <li>Brand system</li>
+            <li>SEO + analytics</li>
+            <li>Bilingual ready</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cap">
+        <div class="cap__icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 8h20M6 16h20M6 24h12"/>
+            <circle cx="26" cy="24" r="2"/>
+          </svg>
+        </div>
+        <div class="cap__body">
+          <span class="cap__sub">Layer 02</span>
+          <h3>Offer <em>structures</em></h3>
+          <p>Single or layered offerings. Clear entry points and progression. Formats that match the work. Systems that allow engagement without pressure — discovery to engagement, without friction.</p>
+          <ul class="cap__list">
+            <li>Service menus</li>
+            <li>Tiered pricing</li>
+            <li>Intake routing</li>
+            <li>Custom-order flows</li>
+            <li>Application gates</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cap">
+        <div class="cap__icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="5" y="5" width="9" height="9" rx="1"/>
+            <rect x="18" y="5" width="9" height="9" rx="1"/>
+            <rect x="5" y="18" width="9" height="9" rx="1"/>
+            <rect x="18" y="18" width="9" height="9" rx="1"/>
+          </svg>
+        </div>
+        <div class="cap__body">
+          <span class="cap__sub">Layer 03</span>
+          <h3>Platforms &amp; <em>products</em></h3>
+          <p>Programs and learning environments. Memberships and libraries. Applications and tools. Scalable systems built with intention — including AI assistants trained on your methodology and language.</p>
+          <ul class="cap__list">
+            <li>Course delivery</li>
+            <li>Member portals</li>
+            <li>Practitioner directories</li>
+            <li>Curriculum engines</li>
+            <li>Methodology AI</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cap">
+        <div class="cap__icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="16" cy="16" r="11"/>
+            <path d="M16 8v8l5 3"/>
+          </svg>
+        </div>
+        <div class="cap__body">
+          <span class="cap__sub">Layer 04</span>
+          <h3>Operational <em>systems</em></h3>
+          <p>Booking and scheduling. Payments and subscriptions. Onboarding and follow-up. Integrations and automation that match how the work actually moves — without losing the relationship in the pipes.</p>
+          <ul class="cap__list">
+            <li>Booking calendars</li>
+            <li>Stripe Connect</li>
+            <li>Email automation</li>
+            <li>Internal dashboards</li>
+            <li>API integrations</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     07 INSIGHTS
+     ============================================================ -->
+<section id="insights" class="section section--ink">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <div class="section__num">07</div>
+      <h2 class="display section__title">Field notes from the <em>build</em>.</h2>
+    </div>
+
+    <div class="voice-feature reveal">
+      <div>
+        <div class="voice-feature__quote">
+          The Linktree isn't the problem. It's the symptom. The problem is that nobody built you a home. Six different companies are holding your relationships hostage, each optimizing for their own metrics — not yours.
+        </div>
+        <div class="voice-feature__attr">
+          <span class="name">The Linktree Problem</span>
+          Field note · 4 min · Infrastructure
+        </div>
+      </div>
+      <div class="voice-feature__aside">
+        <h4>Why linking to six platforms isn't a digital strategy.</h4>
+        <p>Your Linktree has six links. Calendly for bookings. Teachable for courses. Stripe for payments. A Squarespace site. A WhatsApp group. A Mailchimp form. Every click sends people out of your world and into someone else's. Your booking platform doesn't know who took your course. Your course platform doesn't know who's on your email list. You have no unified view of the people you serve — just fragments scattered across platforms that were never designed to talk to each other.</p>
+        <p>The practitioners we work with typically have between 3 and 8 platforms in their stack. The shift isn't complicated: replace all of them with one custom platform that does exactly what you need, under your brand, with your data, in one place.</p>
+      </div>
+    </div>
+
+    <div class="voice-grid">
+
+      <div class="voice-card reveal">
+        <span class="tag">Field note · 5 min</span>
+        <h4>Six tools, one platform.</h4>
+        <p>"A teacher running a certification school across Teachable, Calendly, Stripe, WhatsApp, and Google Sheets. Five platforms, none of them talked. Then we built one platform that understands what a certification school actually is — prerequisite-gated progression, hour tracking, automatic practitioner directory. Five platforms became one. The spreadsheet disappeared."</p>
+        <div class="voice-card__attr">
+          <span>Case study</span>
+          <a href="/insights/six-tools-one-platform">Read →</a>
+        </div>
+      </div>
+
+      <div class="voice-card reveal">
+        <span class="tag">Field note · 4 min</span>
+        <h4>Catch them before they scale.</h4>
+        <p>"Most practitioners come to us when something is already breaking. The spreadsheet with 300 students is unwieldy. The booking calendar has double-bookings. The brand is spread across seven platforms. The ones who come early — 20 students, not 300 — have the smoothest experience. Build the boat while the water is calm."</p>
+        <div class="voice-card__attr">
+          <span>Strategy</span>
+          <a href="/insights/catch-them-before-they-scale">Read →</a>
+        </div>
+      </div>
+
+      <div class="voice-card reveal">
+        <span class="tag">Field note · 4 min</span>
+        <h4>The Linktree Problem.</h4>
+        <p>"Your Linktree has six links. Each one sends people to a different platform with a different login, a different brand, a different experience. That's not a digital presence — it's digital fragmentation. Every click leaves your world. The most valuable thing you have is the relationship with your people."</p>
+        <div class="voice-card__attr">
+          <span>Infrastructure</span>
+          <a href="/insights/the-linktree-problem">Read →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     08 PARTNERSHIP (medical bridge slot)
+     ============================================================ -->
+<section id="partnership">
+  <div class="wrap medical-grid">
+    <div class="medical-icon reveal" aria-hidden="true">
+      <svg viewBox="0 0 220 220" fill="none" stroke="currentColor" stroke-width="1.2">
+        <circle cx="85" cy="110" r="70" opacity="0.7"/>
+        <circle cx="135" cy="110" r="70" opacity="0.7"/>
+        <circle cx="110" cy="110" r="10" fill="currentColor" stroke="none"/>
+        <line x1="25" y1="185" x2="195" y2="185" opacity="0.4"/>
+        <text x="110" y="210" text-anchor="middle" font-family="Fraunces, serif" font-size="10" font-style="italic" fill="currentColor" stroke="none" opacity="0.6">Studio Collaboration</text>
+      </svg>
+    </div>
+
+    <div class="medical-body reveal">
+      <div class="eyebrow" style="color: var(--olive-deep); margin-bottom: 1.25rem;">For projects with long-term potential</div>
+      <h3>A <em>studio collaboration</em> — not a service tier.</h3>
+      <p>
+        Some projects extend beyond defined client work. When alignment is strong and long-term potential is clear, we occasionally engage as a <strong>studio partner</strong>: ongoing involvement in system design and evolution, technical leadership, shared ownership or equity arrangements, building and maintaining core platforms over years.
+      </p>
+      <p>
+        This is not a service you can purchase, an investment fund, an accelerator, or available to all projects. It is a relationship that develops when there is genuine alignment between our work and yours. Studio collaborations typically emerge from existing relationships — a completed Digital Realignment Review that reveals deeper potential, an introduction from someone in our network, or a project we encounter through other work.
+      </p>
+      <div class="medical-chips">
+        <span>Long-term partnership</span>
+        <span>Equity-aligned</span>
+        <span>Technical leadership</span>
+        <span>Selective engagement</span>
+      </div>
+      <a href="#contact" class="btn btn--ink">
+        Begin a conversation
+        <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     09 CONTACT
+     ============================================================ -->
+<section id="contact" class="grain">
+  <div class="wrap">
+    <div class="contact-head reveal">
+      <div class="eyebrow" style="margin-bottom: 2rem;">09 · Begin</div>
+      <h2 class="display">Every project begins with a <em>conversation</em>.</h2>
+      <p>Tell us what your work is, where clarity feels missing, and what you're hoping to resolve. Send messy notes — a voice memo, a Google Doc, a screenshot of your Instagram bio. We read between the lines. A reply usually arrives within 24–48 hours.</p>
+    </div>
+
+    <div class="contact-grid reveal">
+      <a href="https://calendly.com/astral-integration/free-strategy-call" class="contact-method" target="_blank" rel="noopener">
+        <span class="lbl">Strategy call</span>
+        <span class="val"><em>Calendly</em> · 30 min</span>
+      </a>
+      <a href="mailto:hello@astralintegration.co" class="contact-method">
+        <span class="lbl">Email</span>
+        <span class="val">hello@<em>astralintegration</em>.co</span>
+      </a>
+      <a href="https://wa.me/" class="contact-method" target="_blank" rel="noopener">
+        <span class="lbl">WhatsApp</span>
+        <span class="val"><em>Mazunte</em> · MX</span>
+      </a>
+      <div class="contact-method">
+        <span class="lbl">Location</span>
+        <span class="val"><em>Mazunte</em> · Oaxaca · MX</span>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" onsubmit="event.preventDefault(); document.getElementById('formMsg').style.display='block'; this.style.opacity='0.5';">
+      <div class="field">
+        <label for="f-name">Your name</label>
+        <input id="f-name" type="text" placeholder="First &amp; last" required>
+      </div>
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input id="f-email" type="email" placeholder="you@somewhere.com" required>
+      </div>
+      <div class="field">
+        <label for="f-reason">Reason for reaching out</label>
+        <select id="f-reason" required>
+          <option value="">Select a reason</option>
+          <option>Digital Realignment Review</option>
+          <option>I'm a Maker / Artisan</option>
+          <option>I'm a Practitioner / Facilitator</option>
+          <option>I run a School / Academy</option>
+          <option>I run a Retreat / Center</option>
+          <option>I'm building a Community / Local platform</option>
+          <option>I lead an Organization / Network</option>
+          <option>Studio Collaboration</option>
+          <option>Careers &amp; Roles</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-when">Timeframe</label>
+        <select id="f-when">
+          <option>Within the next month</option>
+          <option>This quarter</option>
+          <option>Next quarter</option>
+          <option>Exploring — no rush</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label for="f-note">Tell us about your work</label>
+        <textarea id="f-note" placeholder="What is your work? Where does clarity feel missing? What are you hoping to resolve? Links and messy notes welcome…"></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn btn--primary">
+          Send to Astral Studio
+          <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p id="formMsg" style="display:none; margin-top: 1.5rem; font-family: var(--f-serif); font-style: italic; color: var(--saffron-glow); font-size: 1.1rem;">Message received — we'll reply within 24–48 hours.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="foot">
+  <div class="wrap foot__top">
+    <div class="foot__brand">
+      <h4>Astral Studio</h4>
+      <p>A small, focused studio building digital infrastructure for real-world work. Founded by Jordi Amat. Mazunte, Oaxaca — and online to clients across the world.</p>
+      <p style="margin-top: 1rem; font-size: 0.78rem; color: var(--mist-dark); letter-spacing: 0.04em;">No upfront · 5–15% rev share · You own everything.</p>
+    </div>
+    <div class="foot__col">
+      <h5>Build</h5>
+      <ul>
+        <li><a href="#audiences">Makers</a></li>
+        <li><a href="#audiences">Practitioners</a></li>
+        <li><a href="#audiences">Schools</a></li>
+        <li><a href="#audiences">Retreats</a></li>
+        <li><a href="#audiences">Communities</a></li>
+        <li><a href="#audiences">Organizations</a></li>
+      </ul>
+    </div>
+    <div class="foot__col">
+      <h5>Studio</h5>
+      <ul>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#studio">Jordi</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#partnership">Collaboration</a></li>
+        <li><a href="https://jordiamat.com" target="_blank" rel="noopener">Personal site ↗</a></li>
+      </ul>
+    </div>
+    <div class="foot__col">
+      <h5>Begin</h5>
+      <ul>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://calendly.com/astral-integration/free-strategy-call" target="_blank" rel="noopener">Strategy call ↗</a></li>
+        <li><a href="mailto:hello@astralintegration.co">hello@astralintegration.co</a></li>
+        <li><a href="#insights">Field notes</a></li>
+        <li><a href="#work">Selected work</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot__bot">
+    <div>© 2026 Astral Studio · Built with intention in Mazunte.</div>
+    <div>
+      <a href="https://astralintegration.co" target="_blank" rel="noopener">astralintegration.co</a>
+      <span style="padding: 0 0.75rem; opacity: 0.4;">·</span>
+      <a href="#top">Top</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // nav scroll state
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 20) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // reveal on view
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.14, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // mobile drawer
+  const drawer = document.getElementById('drawer');
+  const openBtn = document.getElementById('menuOpen');
+  const closeBtn = document.getElementById('menuClose');
+  const open = () => { drawer.classList.add('open'); drawer.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; };
+  const close = () => { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; };
+  openBtn?.addEventListener('click', open);
+  closeBtn?.addEventListener('click', close);
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+</script>
+
+</body>
+</html>

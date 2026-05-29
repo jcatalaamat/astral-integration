@@ -19,6 +19,7 @@ import BuiltVsBoughtPage from './components/pages/BuiltVsBoughtPage';
 import FaqPage from './components/pages/FaqPage';
 import AiPage from './components/pages/AiPage';
 import IntegrationsPage from './components/pages/IntegrationsPage';
+import CareersPage from './components/pages/CareersPage';
 import ToolsHub from './components/pages/ToolsHub';
 import { LifeOSLanding, LifeOSApp } from './components/pages/life-os';
 import { ContentStudioLanding, ContentStudioApp } from './components/pages/content-studio';
@@ -50,6 +51,7 @@ function App() {
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/ai" element={<AiPage />} />
           <Route path="/integrations" element={<IntegrationsPage />} />
+          <Route path="/careers" element={<CareersPage />} />
 
           {/* Tools Hub */}
           <Route path="/tools" element={<ToolsHub />} />

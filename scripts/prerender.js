@@ -19,6 +19,7 @@ const ROUTES = [
   '/work/portal-poem',
   '/work/kura-terra',
   '/about',
+  '/careers',
   '/contact',
   '/insights',
   '/insights/the-studio-is-small-on-purpose',
