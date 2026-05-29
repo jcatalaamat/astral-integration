@@ -35,8 +35,8 @@ const scaleProblems = [
 
 export default function OrganizationsPage() {
   useDocumentMeta({
-    title: 'For organizations — Astral Studio',
-    description: 'I turn your network into infrastructure. Multi-program billing, practitioner directories, sub-brand support, custom workflows, the AI under all of it. CTO-level engineering for the scale your work has reached.',
+    title: 'Operating partner for organizations at scale — Astral Studio',
+    description: 'I become the operating partner your organization is missing — I build the system that runs your operation (billing, directories, memberships, coordination, admin) then run it with you. Senior engineer and former CTO who sits on top of your team rather than replacing it.',
     ogUrl: 'https://astralstudio.io/organizations',
   });
 
@@ -117,13 +117,13 @@ export default function OrganizationsPage() {
         <div className="max-w-content mx-auto">
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
-            For Organizations
+            For Organizations · at scale
           </p>
-          <h1 className="font-serif text-display font-light mb-8 max-w-[800px]">
-            I turn your network into <em className="italic gradient-text">infrastructure.</em>
+          <h1 className="font-serif text-display font-light mb-8 max-w-[820px]">
+            I become the <em className="italic gradient-text">operating partner</em> your organization is missing.
           </h1>
           <p className="text-body text-content-secondary max-w-prose">
-            Multi-program billing, practitioner directories, sub-brand support, custom workflows, the AI under all of it. CTO-level engineering for the scale your work has reached.
+            I build the system that runs your operation — billing, directories, memberships, coordination, the admin — then run it with you. Senior-engineer and former-CTO judgment, with a practitioner's read on the work. I sit on top of the team you already have; I don't replace them.
           </p>
         </div>
       </section>
@@ -353,18 +353,38 @@ export default function OrganizationsPage() {
         </div>
       </section>
 
-      {/* How engagements start */}
+      {/* The engagement — build → run → align (operating-partner offer, folded from automate.*) */}
       <section className="py-section px-6 md:px-12 bg-bg-2">
         <div className="max-w-content mx-auto reveal" ref={addRevealRef}>
           <p className="text-meta uppercase text-accent mb-6 flex items-center gap-4">
             <span className="w-8 h-px bg-accent" />
-            How to start
+            The Engagement
           </p>
           <h2 className="font-serif text-display-sm font-light mb-4">
-            Phased delivery, scoped to the work.
+            Not a hire. A system — and the hand that runs it.
           </h2>
+          <p className="text-body text-content-secondary max-w-prose mb-12">
+            I sit on top of the team you already have — I don't replace them. I build the engine that runs the operation, then I run it with you, so the work that should take an afternoon stops taking a quarter.
+          </p>
+
+          <div className="space-y-6 mb-12">
+            {[
+              { n: '01', t: 'Build the engine', d: 'I wire your stack — booking, billing, the directory, memberships, content, the admin — into one system that ships, tuned to how your organization actually works. A fixed-scope build with a real, working deliverable.' },
+              { n: '02', t: 'Run it — as your operating partner', d: 'I operate and evolve the system and direct the small team on top of it. Your people message; the work ships. A monthly engagement, not a headcount.' },
+              { n: '03', t: 'Align for the long game', d: 'For the right organization, part of it can move to revenue-share or a small stake. I win when you win — not by the hour.' },
+            ].map((p, i) => (
+              <div key={i} className="bg-dark-card border border-border rounded-2xl p-6 md:p-8">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-serif text-sm font-medium flex-shrink-0">{p.n}</div>
+                  <h3 className="font-serif text-h3">{p.t}</h3>
+                </div>
+                <p className="text-body-sm text-content-secondary leading-relaxed md:pl-14">{p.d}</p>
+              </div>
+            ))}
+          </div>
+
           <p className="text-body text-content-secondary max-w-prose mb-8">
-            Start with the highest-impact module — facilitator directory or class discovery — prove the architecture works, then expand. You own everything. No vendor lock-in. No SaaS dependency.
+            Scope and shape are set on a call — every organization's bottleneck is different. That's where we start. You own everything: code, data, domain. No vendor lock-in, no SaaS dependency.
           </p>
           <a
             href="https://calendly.com/astral-integration/free-strategy-call"
