@@ -123,6 +123,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-5 mono-tag text-[10px] tracking-[0.18em]">
             <a href="https://jordiamat.com" className="text-mute hover:text-saffron-dp transition-colors">Jordi, the person ↗</a>
+            <a href="https://jordiamat.com/ambassadors" className="text-mute hover:text-saffron-dp transition-colors">Ambassadors ↗</a>
             <a href="https://astralamat.com" target="_blank" rel="noopener noreferrer" className="text-mute hover:text-saffron-dp transition-colors">The inner work ↗</a>
           </div>
           <p className="mono-tag text-[10px] text-mute tracking-[0.18em]">
