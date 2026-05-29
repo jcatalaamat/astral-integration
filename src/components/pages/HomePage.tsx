@@ -669,12 +669,20 @@ export default function HomePage() {
               <p className="text-base text-ink-2 leading-relaxed mb-6">
                 Then I moved to Mazunte and started building for the people whose work I respect — teachers, schools, retreat centers, makers. <em className="em-accent">The studio is small on purpose.</em>
               </p>
-              <a
-                href="/about"
-                className="mono-tag text-[10px] text-saffron-dp hover:text-ink transition-colors inline-flex items-center gap-2 tracking-[0.22em]"
-              >
-                Full story <span aria-hidden="true">→</span>
-              </a>
+              <div className="flex flex-wrap gap-x-7 gap-y-3">
+                <a
+                  href="/about"
+                  className="mono-tag text-[10px] text-saffron-dp hover:text-ink transition-colors inline-flex items-center gap-2 tracking-[0.22em]"
+                >
+                  Full story <span aria-hidden="true">→</span>
+                </a>
+                <a
+                  href="https://jordiamat.com"
+                  className="mono-tag text-[10px] text-saffron-dp hover:text-ink transition-colors inline-flex items-center gap-2 tracking-[0.22em]"
+                >
+                  Jordi, the person <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
