@@ -32,7 +32,7 @@ export default function ToolsHub() {
           </h1>
           <p className="text-h4 text-content-secondary max-w-prose mx-auto mb-8 animate-fadeUp animate-delay-200">
             Simple, beautiful tools to help you run your business with clarity.
-            Built by the team behind Astral Studio.
+            Built by Astral Studio.
           </p>
           <p className="text-body-sm text-content-muted animate-fadeUp animate-delay-300">
             No sign-up required • Free forever • Your data stays yours

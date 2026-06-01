@@ -21,7 +21,7 @@ const sections: Section[] = [
       },
       {
         q: 'Why one builder instead of an agency?',
-        a: 'Because agencies sell time. I sell architecture. An agency assigns three junior developers and a project manager and charges $200K because that\'s how the business works. I\'ve built this kind of platform five times before — I know what the architecture should look like before we start. One senior builder with deep context outperforms a team of strangers managing a Jira board.',
+        a: 'Because agencies sell time. I sell architecture. An agency assigns three junior developers and a project manager and charges $200K because that\'s how the business works. I\'ve built this kind of platform eight times before — I know what the architecture should look like before we start. One senior builder with deep context outperforms a team of strangers managing a Jira board.',
       },
       {
         q: 'How is this different from hiring a freelancer?',
@@ -95,7 +95,7 @@ const sections: Section[] = [
       },
       {
         q: 'Can I take the platform somewhere else?',
-        a: 'Yes. The codebase is standard React + TypeScript + Node — any senior full-stack engineer can pick it up. There\'s no proprietary lock-in, no astral-only dependencies, no SaaS billing you can\'t cancel. Standard tools you can hire for anywhere.',
+        a: 'Yes. The codebase is standard React + TypeScript + Node — any senior full-stack engineer can pick it up. There\'s no proprietary lock-in, no Astral-only dependencies, no SaaS billing you can\'t cancel. Standard tools you can hire for anywhere.',
       },
     ],
   },

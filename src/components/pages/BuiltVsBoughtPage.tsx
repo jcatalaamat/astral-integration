@@ -86,7 +86,7 @@ const alternatives = [
       'Twelve months of meetings before the first feature lands',
       'And when it ships, the codebase belongs to the agency, not you',
     ],
-    closer: 'You don\'t need an agency. You need a senior builder who has done this five times before.',
+    closer: 'You don\'t need an agency. You need a senior builder who has done this eight times before.',
   },
 ];
 
@@ -288,7 +288,7 @@ export default function BuiltVsBoughtPage() {
             </a>
           </div>
           <p className="mono-tag text-[10px] text-mute mt-6 tracking-[0.18em]">
-            See if astral fits your shape · no pitch
+            See if Astral fits your shape · no pitch
           </p>
         </div>
       </section>

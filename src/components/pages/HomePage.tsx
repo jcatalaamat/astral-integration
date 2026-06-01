@@ -8,8 +8,8 @@ import PreviewFrame from '../PreviewFrame';
 
 export default function HomePage() {
   useDocumentMeta({
-    title: 'Astral Studio — I turn your practice into a business.',
-    description: 'Bookings, payments, memberships, automations, and the AI underneath. Custom platforms for teachers, schools, and retreat centers.',
+    title: 'Astral Studio — the last tech hire you\'ll ever make.',
+    description: 'I build the invisible infrastructure your work runs on — bookings, payments, memberships, the admin — then run it with you. You own all of it.',
     ogUrl: 'https://astralstudio.io/',
   });
 
@@ -18,18 +18,6 @@ export default function HomePage() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
 
-  const rotatingPairs = [
-    { left: 'practice', right: 'lasting' },
-    { left: 'training', right: 'integrative' },
-    { left: 'craft', right: 'embodied' },
-    { left: 'retreat', right: 'personalized' },
-    { left: 'school', right: 'regenerative' },
-  ];
-  const [wordIndex, setWordIndex] = useState(0);
-  useEffect(() => {
-    const t = setInterval(() => setWordIndex((i) => (i + 1) % rotatingPairs.length), 2400);
-    return () => clearInterval(t);
-  }, []);
 
   const [navVisible, setNavVisible] = useState(false);
   useEffect(() => {
@@ -135,16 +123,15 @@ export default function HomePage() {
         <div className="hero-glow" />
 
         <div className="relative z-10 max-w-[1200px] mx-auto">
-          <div className="mono-tag text-saffron-dp mb-10 md:mb-12 tracking-[0.32em] text-[10px]">A studio for original work · Mazunte, Oaxaca</div>
+          <div className="mono-tag text-saffron-dp mb-10 md:mb-12 tracking-[0.32em] text-[10px]">A one-person studio · built by hand</div>
 
           <h1 className="serif text-display max-w-[1200px] mx-auto" style={{ fontSize: 'clamp(48px, 7.5vw, 128px)', lineHeight: 0.95, letterSpacing: '-0.018em' }}>
-            I turn your<br />
-            <em key={wordIndex} className="em-accent inline-block animate-fadeUp">{rotatingPairs[wordIndex].left}</em><br />
-            into a business.
+            the last tech hire<br />
+            <em className="em-accent inline-block">you'll ever make.</em>
           </h1>
 
           <p className="text-base md:text-lg text-ink-2 max-w-[640px] mx-auto leading-relaxed mt-12">
-            Bookings, payments, memberships, automations, and the AI underneath. Built around your work, not a template.
+            i build the invisible infrastructure your work runs on — bookings, payments, memberships, the follow-ups, the admin — then run it with you, so you stay in your work. you own all of it.
           </p>
 
           <p className="mono-tag text-mute mt-5 text-[10px] tracking-[0.24em]">
@@ -307,7 +294,7 @@ export default function HomePage() {
                     {p.mockup === 'bookings' && (
                       <div className="space-y-3">
                         <div className="flex items-center justify-between">
-                          <p className="serif text-lg text-ink">May <em className="em-accent not-italic">2026</em></p>
+                          <p className="serif text-lg text-ink">June <em className="em-accent not-italic">2026</em></p>
                           <div className="flex gap-1.5"><span className="w-7 h-7 border border-rule grid place-items-center text-xs text-mute">‹</span><span className="w-7 h-7 border border-rule grid place-items-center text-xs text-mute">›</span></div>
                         </div>
                         <div className="grid grid-cols-7 gap-1 mono-tag text-[8px] text-mute">
@@ -315,11 +302,11 @@ export default function HomePage() {
                         </div>
                         <div className="grid grid-cols-7 gap-1 text-xs">
                           {[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23].map(d=>(
-                            <span key={d} className={`aspect-square grid place-items-center border ${d===14?'bg-saffron-dp text-cream border-saffron-dp font-medium':'border-transparent text-ink-2'}`}>{d}</span>
+                            <span key={d} className={`aspect-square grid place-items-center border ${d===16?'bg-saffron-dp text-cream border-saffron-dp font-medium':'border-transparent text-ink-2'}`}>{d}</span>
                           ))}
                         </div>
                         <div className="bg-bg-2 border border-rule p-3 mt-2" style={{borderRadius:'8px'}}>
-                          <p className="mono-tag text-[8px] text-saffron-dp mb-1">Selected · Tue 14 May</p>
+                          <p className="mono-tag text-[8px] text-saffron-dp mb-1">Selected · Tue 16 June</p>
                           <p className="text-sm text-ink"><em className="em-accent">2:00 pm</em> · 75-min private session</p>
                         </div>
                         <button className="w-full btn-jugat saffron text-xs justify-center">Confirm booking →</button>

@@ -42,7 +42,7 @@ const process = [
 const faqs = [
   {
     q: 'How does pricing work?',
-    a: 'The default deal: $0 setup, $0 monthly, 15% of revenue for 18 months. No cap. After 18 months the rev share ends and the platform is yours, free and clear. Squarespace charges $60/mo even when you make $0 — astral charges nothing until the platform earns. If you want a different shape (lower percentage with a flat retainer, or fully predictable flat-fee), we figure it out on the call. Full breakdown on the FAQ page.',
+    a: 'The default deal: $0 setup, $0 monthly, 15% of revenue for 18 months. No cap. After 18 months the rev share ends and the platform is yours, free and clear. Squarespace charges $60/mo even when you make $0 — Astral charges nothing until the platform earns. If you want a different shape (lower percentage with a flat retainer, or fully predictable flat-fee), I figure it out on the call. Full breakdown on the FAQ page.',
   },
   {
     q: 'Do I own the code and data?',

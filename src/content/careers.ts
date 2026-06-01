@@ -2,23 +2,23 @@ export const careersContent = {
   hero: {
     title: 'Careers & Collaboration',
     subtitle: 'Astral Studio is a small, focused studio building digital infrastructure for real-world work.',
-    description: 'We collaborate with people who are interested in long-term systems, not short-term projects — and who are comfortable working in early-stage, high-trust environments.'
+    description: 'I collaborate with people who are interested in long-term systems, not short-term projects — and who are comfortable working in early-stage, high-trust environments.'
   },
   howWeWork: {
-    headline: 'How We Work',
+    headline: 'How I Work',
     items: [
-      'We build systems, not one-off deliverables',
-      'We prioritize clarity before execution',
-      'We work lean, with a small core and trusted collaborators',
-      'We favor ownership and shared upside over hourly billing',
+      'I build systems, not one-off deliverables',
+      'I prioritize clarity before execution',
+      'I work lean, with trusted collaborators',
+      'I favor ownership and shared upside over hourly billing',
       'Most collaborations are rev-share or equity, not salary — built on alignment, not headcount',
-      'We work remotely and asynchronously'
+      'I work remotely and asynchronously'
     ],
     note: 'This is not a traditional company structure — it is a studio forming its core. Compensation is alignment-led: rev-share and equity for almost everyone. Cash is reserved for at most one committed, sales-closing core role at a time; everyone else shares in the upside.'
   },
   whoWereLookingFor: {
-    headline: "Who We're Looking For",
-    description: "We're interested in people who:",
+    headline: "Who I'm Looking For",
+    description: "I'm interested in people who:",
     items: [
       'think in systems',
       'are comfortable with ambiguity',
@@ -99,7 +99,7 @@ export const careersContent = {
     }
   ],
   whatWeDontOffer: {
-    headline: "What We Don't Offer",
+    headline: "What I Don't Offer",
     items: [
       'Full-time employment (at this stage)',
       'Hourly agency-style work',
@@ -109,12 +109,12 @@ export const careersContent = {
   },
   howToReachOut: {
     headline: 'How to Reach Out',
-    description: 'If one of the roles above feels aligned, contact us with:',
+    description: 'If one of the roles above feels aligned, reach out with:',
     items: [
       'a brief introduction',
       'relevant experience or examples',
       "the role you're interested in"
     ],
-    note: 'We respond personally to aligned inquiries.'
+    note: 'I respond personally to aligned inquiries.'
   }
 };
