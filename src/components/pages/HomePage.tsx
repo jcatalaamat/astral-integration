@@ -166,11 +166,11 @@ export default function HomePage() {
         <div className="max-w-content mx-auto px-6 md:px-12 text-center">
           <p className="eyebrow mb-4">Site condition</p>
           <h2 className="serif text-display-sm max-w-[800px] mx-auto" style={{ fontSize: 'clamp(40px, 6vw, 92px)', lineHeight: 1, letterSpacing: '-0.012em' }}>
-            You inspired hundreds<br />of people this <em className="em-accent">weekend.</em>
+            You changed someone's life this week.<br />And then spent the weekend <em className="em-accent">fighting Kajabi.</em>
           </h2>
           <div className="max-w-prose mx-auto mt-10 space-y-5 text-left md:text-center">
             <p className="text-base md:text-lg text-ink-2 leading-relaxed">
-              Then spent three days chasing five tools to make it real. Calendly for the bookings, Stripe for the deposits, Mailchimp for the follow-up, a Notion doc for the intake, the WhatsApp group for everything else.
+              Three days chasing five tools to make it real. Calendly for the bookings, Stripe for the deposits, Mailchimp for the follow-up, a Notion doc for the intake, the WhatsApp group for everything else.
             </p>
             <p className="text-base text-mute-strong leading-relaxed">
               Your practice already works. People show up because the work is real. The waitlist fills. The retreats sell out.
@@ -447,6 +447,15 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═══════ BAND — the platform disappears ═══════ */}
+      <section className="bg-bg py-section">
+        <div className="max-w-content mx-auto px-6 md:px-12 text-center">
+          <p className="serif max-w-[900px] mx-auto" style={{ fontSize: 'clamp(28px, 4vw, 60px)', lineHeight: 1.18, letterSpacing: '-0.012em' }}>
+            The platform disappears — <em className="em-accent">what remains is the teaching relationship.</em>
+          </p>
+        </div>
+      </section>
+
       {/* ═══════ AI SUBSTRATE — indigo full-bleed ═══════ */}
       <section className="bg-indigo py-section">
         <div className="max-w-content mx-auto px-6 md:px-12 text-center">
@@ -634,6 +643,35 @@ export default function HomePage() {
             <p className="text-sm text-mute-strong leading-relaxed">Every site is custom-built from scratch. No templates, no themes, no page builders.</p>
             <p className="text-sm text-mute-strong leading-relaxed">You own everything. Code, data, domain. From day one.</p>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════ BAND — same act, different ports ═══════ */}
+      <section className="bg-bg-2 py-section">
+        <div className="max-w-content mx-auto px-6 md:px-12 text-center">
+          <p className="serif max-w-[1000px] mx-auto" style={{ fontSize: 'clamp(26px, 3.6vw, 52px)', lineHeight: 1.2, letterSpacing: '-0.012em' }}>
+            Building and healing are the same act — <em className="em-accent">the same service, listening on different ports.</em>
+          </p>
+        </div>
+      </section>
+
+      {/* ═══════ WHAT THIS IS — and isn't ═══════ */}
+      <section className="bg-bg py-section">
+        <div className="max-w-content mx-auto px-6 md:px-12">
+          <div className="text-center mb-12">
+            <p className="eyebrow mb-4">· What this is — and isn't ·</p>
+            <h2 className="serif" style={{ fontSize: 'clamp(40px, 6vw, 92px)', lineHeight: 1, letterSpacing: '-0.012em' }}>
+              A partner who <em className="em-accent">stays.</em>
+            </h2>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 max-w-[760px] mx-auto">
+            {['a web dev', 'an agency billing by the hour', 'a freelancer who disappears', 'another tool to learn'].map((t) => (
+              <span key={t} className="text-base text-mute line-through border border-rule rounded-full px-5 py-2.5">{t}</span>
+            ))}
+          </div>
+          <p className="serif-i text-center text-saffron-dp max-w-[820px] mx-auto mt-10" style={{ fontSize: 'clamp(22px, 3vw, 36px)', lineHeight: 1.25 }}>
+            A long-term technical partner whose success is tied to yours.
+          </p>
         </div>
       </section>
 
