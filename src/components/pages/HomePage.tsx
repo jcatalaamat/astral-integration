@@ -474,45 +474,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════ 6 DOORS — audience picker ═══════ */}
-      <section className="bg-bg-2 py-section">
-        <div className="max-w-content mx-auto px-6 md:px-12">
-          <div className="text-center mb-14 md:mb-16">
-            <p className="eyebrow mb-4">· I build for ·</p>
-            <h2 className="serif" style={{ fontSize: 'clamp(40px, 6vw, 92px)', lineHeight: 1, letterSpacing: '-0.012em' }}>
-              Find your <em className="em-accent">starting point.</em>
-            </h2>
-            <p className="text-base text-ink-2 max-w-[640px] mx-auto leading-relaxed mt-6">
-              Different work, different architecture. If you already know what you need, start here.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { label: 'Practitioners', href: '/practitioners', desc: 'Healers, coaches, facilitators running on scattered tools' },
-              { label: 'Schools', href: '/schools', desc: 'Certification programs and structured learning paths' },
-              { label: 'Retreats', href: '/retreats', desc: 'Booking, intake, and multi-stream revenue' },
-              { label: 'Communities', href: '/communities', desc: 'Directories, events, and local platforms' },
-              { label: 'Makers', href: '/makers', desc: 'Artisans, creators, slow-fashion, writers selling craft' },
-              { label: 'Organizations', href: '/organizations', desc: 'Networks and facilitator infrastructure at scale' },
-            ].map((door) => (
-              <a
-                key={door.label}
-                href={door.href}
-                className="group bg-cream border border-rule p-6 hover:border-saffron-dp transition-colors"
-                style={{ borderRadius: '14px' }}
-              >
-                <p className="serif text-2xl text-ink group-hover:text-saffron-dp transition-colors mb-2">{door.label}</p>
-                <p className="text-sm text-ink-2 leading-relaxed mb-3">{door.desc}</p>
-                <span className="mono-tag text-[9px] text-saffron-dp tracking-[0.2em] inline-flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                  Explore <span aria-hidden="true">→</span>
-                </span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ═══════ FEATURED WORK — case study iframe cards ═══════ */}
       <section id="work" className="bg-bg py-section">
         <div className="max-w-content mx-auto px-6 md:px-12">
